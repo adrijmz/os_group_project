@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Probing the Information Encoded in Neural-based Acoustic Models of Automatic Speech Recognition Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2024-02-29">29 Feb 2024</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Quentin</forename><surname>Raymondaud</surname></persName>
+							<email>quentin.raymondaud@univ-avignon.fr</email>
+							<affiliation key="aff0">
+								<orgName type="institution">LIA -Avignon University Avignon</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mickael</forename><surname>Rouvier</surname></persName>
+							<email>mickael.rouvier@univ-avignon.fr</email>
+							<affiliation key="aff1">
+								<orgName type="institution">LIA -Avignon University Avignon</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Richard</forename><surname>Dufour</surname></persName>
+							<email>richard.dufour@univ-nantes.fr</email>
+							<affiliation key="aff2">
+								<orgName type="institution">LS2N -Nantes University Nantes</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Probing the Information Encoded in Neural-based Acoustic Models of Automatic Speech Recognition Systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2024-02-29">29 Feb 2024</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2DFC2BDD0A16118E36340BE6DA73AB0F</idno>
+					<idno type="arXiv">arXiv:2402.19443v1[cs.SD]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>automatic speech recognition</term>
+					<term>acoustic model</term>
+					<term>deep neural network</term>
+					<term>artificial intelligence explanation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Deep learning architectures have made significant progress in terms of performance in many research areas. The automatic speech recognition (ASR) field has thus benefited from these scientific and technological advances, particularly for acoustic modeling, now integrating deep neural network architectures. However, these performance gains have translated into increased complexity regarding the information learned and conveyed through these &quot;black-box&quot; architectures. Following many researches in neural networks interpretability, we propose in this article a protocol that aims to determine which and where information is located in an ASR acoustic model (AM). To do so, we propose to evaluate AM performance on a determined set of tasks using intermediate representations (here, at different layer levels). Regarding the performance variation and targeted tasks, we can emit hypothesis about which information is enhanced or perturbed at different architecture steps. Experiments are performed on both speaker verification, acoustic environment classification, gender classification, tempo-distortion detection systems and speech sentiment/emotion identification. Analysis showed that neural-based AMs hold heterogeneous information that seems surprisingly uncorrelated with phoneme recognition, such as emotion, sentiment or speaker identity. The low-level hidden layers globally appears useful for the structuring of information while the upper ones would tend to delete useless information for phoneme recognition.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

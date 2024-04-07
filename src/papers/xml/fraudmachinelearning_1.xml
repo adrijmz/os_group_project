@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Global Transitions Proceedings</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Madhurya</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Vidyavardhaka College of Engineering</orgName>
+								<address>
+									<settlement>Mysuru</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">L</forename><surname>Gururaj</surname></persName>
+							<email>gururaj1711@vvce.ac.in</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Vidyavardhaka College of Engineering</orgName>
+								<address>
+									<settlement>Mysuru</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Soundarya</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Vidyavardhaka College of Engineering</orgName>
+								<address>
+									<settlement>Mysuru</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">P</forename><surname>Vidyashree</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Vidyavardhaka College of Engineering</orgName>
+								<address>
+									<settlement>Mysuru</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Rajendra</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Vidyavardhaka College of Engineering</orgName>
+								<address>
+									<settlement>Mysuru</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Global Transitions Proceedings</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F9676D0B4D1F8F7F4AE91122CEEF6313</idno>
+					<idno type="DOI">10.1016/j.gltp.2022.04.006</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Class imbalance Data-driven model Data prediction Illegitimate Malicious Vector machine</keywords>
+			</textClass>
+			<abstract>
+				<p>In today&apos;s world, a lot of processes are carried over the Internet to make our lives easier. But, on the other hand, many unauthorized and illegitimate activities that take place over it are causing major trouble for the growth of the economy. One of them being the fraud cases that misguide people and lead to financial losses. Major frauds reported recently occur through the malicious techniques that are made to work on Credit cards that are used for financial transactions over online platforms. Hence, it is the need of the hour to investigate this problem. Several companies have started their study in this regard and have formulated data driven models that use various Machine Learning algorithms and models on datasets to analyse false activity. Several techniques used are Support Vector Machine, Gradient Boost, Random Forest and their mixtures. In this comparative study, the anomaly of class imbalance and ways to implement its solutions are analysed to prove certain results. The effectiveness of the algorithms varies on the set of data and the instance in which it is used. They prove that all algorithms despite of all the calculations show certain imbalance at some point in the study The limitations have also been evaluated and highlighted to help in future. In this study, it is found that although logistic regression had more accuracy but when the learning curves were plotted it signified that the majority of the algorithm under fit while KNN has the ability only to learn. Hence KNN is better classifier for the credit card fraud detection.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

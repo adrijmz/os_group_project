@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Reza</forename><forename type="middle">Ghaiumy</forename><surname>Anaraky</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Byron</forename><surname>Lowens</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yao</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Kaileigh</forename><forename type="middle">A</forename><surname>Byrne</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Marten</forename><surname>Risius</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xinru</forename><surname>Page</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pamela</forename><surname>Wisniewski</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Masoumeh</forename><surname>Soleimani</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Morteza</forename><surname>Soltani</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Bart</forename><surname>Knijnenburg</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Reza</forename><surname>Ghaiumy</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">New York University</orgName>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F5EFB4D67BBC24FF09E10ECD9F9668AC</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Privacy decision making, older adults</keywords>
+			</textClass>
+			<abstract>
+				<p>Online websites often use dark patterns to increase users&apos; information disclosure. Common examples include &quot;opt-out&quot; privacy defaults, positive framing, and positive justification messages encouraging disclosure behavior. Considering that prior research has found older users undergo a different privacy decision-making process compared to younger adults, more research is needed to inform the behavioral privacy disclosure effects of these strategies for different age groups. To address this gap, we used an existing dataset of an experiment with a photo-tagging Facebook application. This experiment had a 2x2x5 between-subjects design where the manipulations were common dark pattern design strategies: framing (positive vs. negative), privacy defaults (opt-in vs. opt-out), and justification messages (positive normative, negative normative, positive rationale, negative rationale, none). We compared older (above 65 years old, N=44) and young adults (18 to 25 years old, N=162) privacy concerns and disclosure behaviors (i.e., accepting or refusing automated photo tagging) in the scope of dark pattern design. Overall, we find support for the effectiveness of dark pattern designs in the sense that positive framing and opt-out privacy defaults significantly increased disclosure behavior, while negative justification messages significantly decreased privacy concerns. Regarding older adults, our results show that certain dark patterns do lead to more disclosure than for younger adults, but also to increased privacy concerns for older adults than for younger. However, there was no influence of these concerns on disclosure, and instead, they are outweighed by the prodisclosure effects of dark patterns. This suggests that privacy concerns may not be a sufficient force to drive individuals to act on protecting their privacy when in the presence of dark patterns and that such patterns may be even more dangerous for older users. We discuss the implications of this work.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

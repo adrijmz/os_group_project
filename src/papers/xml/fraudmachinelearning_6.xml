@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Decision Analytics Journal</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Jonathan</forename><surname>Kwaku Afriyie</surname></persName>
+							<email>jonathan.afriyie@knust.edu.gh</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Kassim</forename><surname>Tawiah</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mathematics and Statistics</orgName>
+								<orgName type="institution">University of Energy and Natural Resources</orgName>
+								<address>
+									<settlement>Sunyani</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wilhemina</forename><forename type="middle">Adoma</forename><surname>Pels</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sandra</forename><surname>Addai-Henne</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Harriet</forename><forename type="middle">Achiaa</forename><surname>Dwamena</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Biometrics Unit</orgName>
+								<orgName type="institution">Council for Scientific and Industrial Research-Crops Research Institute</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Emmanuel</forename><forename type="middle">Odame</forename><surname>Owiredu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Samuel</forename><surname>Amening Ayeh</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><surname>Eshun</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Statistics and Actuarial Science</orgName>
+								<orgName type="institution">Kwame Nkrumah University of Science and Technology</orgName>
+								<address>
+									<settlement>Kumasi</settlement>
+									<country key="GH">Ghana</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Decision Analytics Journal</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">A6E46E44EF3EFDD5FE19CE0CF70E6894</idno>
+					<idno type="DOI">10.1016/j.dajour.2023.100163</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Machine learning Decision tree Random forest Logistic regression Credit card Fraud detection and prediction</keywords>
+			</textClass>
+			<abstract>
+				<p>Fraudsters are now more active in their attacks on credit card transactions than ever before. With the advancement in data science and machine learning, various algorithms have been developed to determine whether a transaction is fraudulent. We study the performance of three different machine learning models: logistic regression, random forest, and decision trees to classify, predict, and detect fraudulent credit card transactions. We compare these models&apos; performance and show that random forest produces a maximum accuracy of 96% (with an area under the curve value of 98.9%) in predicting and detecting fraudulent credit card transactions. Thus, we recommend random forest as the most appropriate machine learning algorithm for predicting and detecting fraud in credit card transactions. Credit Card holders above 60 years were found to be mostly victims of these fraudulent transactions, with a greater proportion of fraudulent transactions occurring between the hours of 22:00GMT and 4:00GMT.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

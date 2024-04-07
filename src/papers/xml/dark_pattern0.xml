@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Integrating Dark Pattern Taxonomies</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2024-02-26">26 Feb 2024</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Frank</forename><forename type="middle">B W</forename><surname>Lewis</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">University of Saskatchewan</orgName>
+								<address>
+									<postCode>S7N 5C9</postCode>
+									<settlement>Saskatoon</settlement>
+									<region>SK</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Integrating Dark Pattern Taxonomies</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2024-02-26">26 Feb 2024</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">9D2DCC567BBBA166A40C873BF4A8D47D</idno>
+					<idno type="arXiv">arXiv:2402.16760v1[cs.CY]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>The problem of &quot;Dark Patterns&quot; in user interface/user experience (UI/UX) design has proven a difficult issue to tackle. Malicious and explotitative design has expanded to multiple domains in the past 10 years and which has in turn led to multiple taxonomies attempting to describe them. While these taxonomies holds their own merit, and constitute unique contributions to the literature, their usefulness as separate entities is limited. We believe that in order to make meaningful progress in regulating malicious interface design, we must first form a globally harmonized system (GHS) for the classification and labeling of Dark Patterns. By leaning on network analysis tools and methods, this paper synthesizes existing taxonomies and their elements through as a directed graph. In doing so, the interconnectedness of Dark patterns can be more clearly revealed via community (cluster) detection. Ultimately, we hope that this work can serve as the inspiration for the creation of a glyph-based GHS for the classification of Dark Patterns.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

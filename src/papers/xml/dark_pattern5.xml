@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Defending Against the Dark Arts: Recognising Dark Patterns in Social Media</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-05-22">22 May 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Thomas</forename><surname>Mildner</surname></persName>
+							<email>mildner@uni-bremen.de</email>
+						</author>
+						<author>
+							<persName><forename type="first">Merle</forename><surname>Freye</surname></persName>
+							<email>mfreye@uni-bremen.de</email>
+						</author>
+						<author>
+							<persName><forename type="first">Gian-Luca</forename><surname>Savino</surname></persName>
+							<email>gian-luca.savino@unisg.ch</email>
+						</author>
+						<author>
+							<persName><forename type="first">Philip</forename><forename type="middle">R</forename><surname>Doyle</surname></persName>
+							<email>philip.doyle1@ucdconnect.ie</email>
+						</author>
+						<author>
+							<persName><forename type="first">Benjamin</forename><forename type="middle">R</forename><surname>Cowan</surname></persName>
+							<email>benjamin.cowan@ucd.ie</email>
+						</author>
+						<author>
+							<persName><forename type="first">Rainer</forename><surname>Malaka</surname></persName>
+							<email>malaka@tzi.de</email>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution">University of Bremen</orgName>
+								<address>
+									<settlement>Bremen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">University of Bremen</orgName>
+								<address>
+									<settlement>Bremen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">University of St.Gallen St</orgName>
+								<address>
+									<settlement>Gallen</settlement>
+									<country key="CH">Switzerland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="institution">University College Dublin Dublin</orgName>
+								<address>
+									<country key="IE">Ireland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="institution">University College Dublin Dublin</orgName>
+								<address>
+									<country key="IE">Ireland</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff5">
+								<orgName type="institution">University of Bremen</orgName>
+								<address>
+									<settlement>Bremen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Defending Against the Dark Arts: Recognising Dark Patterns in Social Media</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-05-22">22 May 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2BF7B4808AFDA6C700BA59F3DF674698</idno>
+					<idno type="DOI">10.1145/3563657.3595964</idno>
+					<idno type="arXiv">arXiv:2305.13154v1[cs.HC]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>SNS</term>
+					<term>social media</term>
+					<term>social networking services</term>
+					<term>interface design</term>
+					<term>dark patterns</term>
+					<term>well-being</term>
+					<term>ethical interfaces</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Interest in unethical user interfaces has grown in HCI over recent years, with researchers identifying malicious design strategies referred to as &quot;dark patterns&quot;. While such strategies have been described in numerous domains, we lack a thorough understanding of how they operate in social networking services (SNSs). Pivoting towards regulations against such practices, we address this gap by offering novel insights into the types of dark patterns deployed in SNSs and people&apos;s ability to recognise them across four widely used mobile SNS applications. Following a cognitive walkthrough, experts (𝑁 = 6) could identify instances of dark patterns in all four SNSs, including co-occurrences. Based on the results, we designed a novel rating procedure for evaluating the malice of interfaces. Our evaluation shows that regular users (𝑁 = 193) could differentiate between interfaces featuring dark patterns and those without. Such rating procedures could support policymakers&apos; current moves to regulate deceptive and manipulative designs in online interfaces. CCS CONCEPTS • Human-centered computing → Empirical studies in HCI; HCI theory, concepts and models; Empirical studies in interaction design; Interaction design theory, concepts and paradigms; • Security and privacy → Usability in security and privacy.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

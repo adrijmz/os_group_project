@@ -15,7 +15,7 @@ def extract_metadata_pdf(pdf_path):
         print("Error al procesar el archivo:", pdf_path)
         return None
 
-def main(folder_path):
+def main(folder_path, output_directory):
     for filename in os.listdir(folder_path):
         if filename.endswith(".pdf"):
             pdf_path = os.path.join(folder_path, filename)
@@ -26,7 +26,8 @@ def main(folder_path):
                 print(metadata_xml)
                 print("="*50)
                 # Guardar los metadatos en un archivo XML en la carpeta xml
-                xml_path = "./papers/xml/"
+                xml_filename = os.path.splitext(filename)[0] + ".xml"
+                xml_path = os.path.join(output_directory, xml_filename)
                 with open(xml_path, "w") as xml_file:
                     xml_file.write(metadata_xml)
 
@@ -55,4 +56,4 @@ if __name__ == "__main__":
 
     # Crear la carpeta de salida si no existe
     os.makedirs(output_directory, exist_ok=True)
-    main(pdf_directory)
+    main(pdf_directory, output_directory)

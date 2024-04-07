@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Player Beware: Driving Forces and Influencing Factors for Game-Adapted Dark Patterns</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2024-01-11">11 Jan 2024</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Kirill</forename><surname>Kronhardt</surname></persName>
+							<email>kirill.kronhardt@tu-dortmund.de</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">TU Dortmund University Inclusive Human-Robot Interaction Dortmund</orgName>
+								<orgName type="institution" key="instit2">NRW</orgName>
+								<address>
+									<country>Germany Kevin Rolfes</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="institution" key="instit1">Westfalian University of Applied Sciences Gelsenkirchen</orgName>
+								<orgName type="institution" key="instit2">NRW</orgName>
+								<address>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">Jens Gerken</orgName>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="institution" key="instit1">TU Dortmund University Inclusive Human-Robot Interaction Dortmund</orgName>
+								<orgName type="institution" key="instit2">NRW</orgName>
+								<address>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Player Beware: Driving Forces and Influencing Factors for Game-Adapted Dark Patterns</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2024-01-11">11 Jan 2024</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">A91DD1A6330EAF3A0BE65F3F75D6243A</idno>
+					<idno type="DOI">10.1145/nnnnnnn.nnnnnnn</idno>
+					<idno type="arXiv">arXiv:2401.06247v1[cs.HC]</idno>
+					<note type="submission">Submitted to Proceedings on Privacy Enhancing Technologies 2024(1)</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>education</term>
+					<term>privacy</term>
+					<term>dark patterns</term>
+					<term>serious games</term>
+					<term>awareness</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Dark patterns are often used in interface design to manipulate users into performing actions they would otherwise not take, such as consenting to excessive data collection. We present a narrative serious game concept, along with seven game-adapted dark patterns designed to create awareness of and bolster resistance against dark patterns through direct consequences of player actions. We performed a qualitative, exploratory study investigating player behavior when confronted with game-adapted dark patterns. A thematic analysis provides insights into influencing factors for adapting dark patterns into gameplay, as well as player motivations and driving forces influencing player behavior.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

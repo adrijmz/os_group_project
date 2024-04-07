@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="es">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">La inteligencia artificial como herramienta para la detección del fraude fiscal: Caso Colombia Artificial intelligence as a tool for the detection of tax fraud: The case of Colombia</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">John</forename><surname>Moreno-Hernandez</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Universidad Cooperativa de</orgName>
+								<address>
+									<country key="CO">Colombia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Juana</forename><surname>Campos-Molano</surname></persName>
+							<idno type="ORCID">0000-0002-2612-0516</idno>
+							<affiliation key="aff2">
+								<orgName type="institution">Estudiante VIII Semestre del programa de Contaduría Pública de la Universidad</orgName>
+								<address>
+									<settlement>Cooperativa</settlement>
+									<country key="CO">Colombia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yesica</forename><surname>Medina-Betancourt</surname></persName>
+							<idno type="ORCID">0000-0001-8459-4368</idno>
+							<affiliation key="aff2">
+								<orgName type="institution">Estudiante VIII Semestre del programa de Contaduría Pública de la Universidad</orgName>
+								<address>
+									<settlement>Cooperativa</settlement>
+									<country key="CO">Colombia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Daniel</forename><surname>Poloche-Valencia</surname></persName>
+							<idno type="ORCID">0000-0003-3254-3635</idno>
+							<affiliation key="aff2">
+								<orgName type="institution">Estudiante VIII Semestre del programa de Contaduría Pública de la Universidad</orgName>
+								<address>
+									<settlement>Cooperativa</settlement>
+									<country key="CO">Colombia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><forename type="middle">Johver</forename><surname>Moreno Hernandez</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<address>
+									<settlement>Revista Económica</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="department">Magíster en Educación</orgName>
+								<orgName type="institution">Universidad Cooperativa</orgName>
+								<address>
+									<country key="CO">Colombia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">La inteligencia artificial como herramienta para la detección del fraude fiscal: Caso Colombia Artificial intelligence as a tool for the detection of tax fraud: The case of Colombia</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">:2602-8204</idno>
+					</monogr>
+					<idno type="MD5">966C10A8F756B666FD0C374D5FD1026B</idno>
+					<idno type="DOI">10.54753/rve.v11i2.1677</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Tax fraud</term>
+					<term>Artificial intelligence</term>
+					<term>Taxes</term>
+					<term>Machine learning techniques</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Fecha de aceptación Junio 2023 RESUMEN El fraude fiscal a través de los años ha sido uno de los problemas mundiales de mayor impacto en las economías, lo que representa un riesgo en los sistemas tributarios, por lo que la lucha contra este flagelo se ha convertido en un tema de gran relevancia mundial. Para ello, se han analizado diferentes herramientas que ayudan a su minimización, donde aparece la Inteligencia Artificial (IA), como nueva tecnología digital que analiza, detecta y predice situaciones de fraude, con el uso de grandes bases de datos y creación de programas mundiales basados en algoritmos, que de manera automática da respuesta a una anomalía detectada. Por lo anterior, el objetivo de esta investigación es analizar como la IA, ayuda a la detección de fraudes fiscales y que avances ha presentado Colombia en su uso. A nivel metodológico es un estudio documental y analítico, basados en la literatura científica. Como resultado, los gobiernos internacionales a través de la IA, han desarrollado diferentes sistemas como AQM (Aranda Query Manager), para la detección de fraudes en impuestos; herramienta valiosa para la disminución de la evasión y elusión fiscal; pero es importante resaltar los avances usando técnicas de aprendizaje automático no supervisadas que ha mostrado resultados de precisión del 98 %. Palabras clave: Fraude fiscal. Inteligencia artificial. Impuestos. Técnicas de aprendizaje automático.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="es">
+	</text>
+</TEI>

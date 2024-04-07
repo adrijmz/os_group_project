@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Tax Fraud Detection through Neural Networks: An Application Using a Sample of Personal Income Taxpayers</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2019-03-30">30 March 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">César</forename><surname>Pérez López</surname></persName>
+							<idno type="ORCID">0000-0001-8524-2751</idno>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Instituto de Estudios Fiscales</orgName>
+								<orgName type="institution" key="instit2">Universidad Rey Juan Carlos</orgName>
+								<address>
+									<postCode>28670</postCode>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">María</forename><forename type="middle">Jesús</forename><surname>Delgado Rodríguez</surname></persName>
+							<idno type="ORCID">0000-0003-3830-2701</idno>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Economía de la Empresa (ADO)</orgName>
+								<orgName type="institution">Economía Aplicada II y Fundamentos Análisis Económico</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">Universidad Rey Juan Carlos</orgName>
+								<address>
+									<postCode>28670</postCode>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sonia</forename><surname>De</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Lucas</forename><surname>Santos</surname></persName>
+							<idno type="ORCID">0000-0002-1490-3820</idno>
+							<affiliation key="aff3">
+								<orgName type="department">Facultad de Ciencias Económicas y Empresariales</orgName>
+								<orgName type="institution">Universidad Autónoma de Madrid</orgName>
+								<address>
+									<addrLine>Ciudad Universitaria de Cantoblanco</addrLine>
+									<postCode>28049</postCode>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Tax Fraud Detection through Neural Networks: An Application Using a Sample of Personal Income Taxpayers</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2019-03-30">30 March 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">081085366C0F305A15EB3782D18DFA5D</idno>
+					<idno type="DOI">10.3390/fi11040086</idno>
+					<note type="submission">Received: 27 February 2019; Accepted: 26 March 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>tax fraud</term>
+					<term>neural networks</term>
+					<term>intelligent systems and networks</term>
+					<term>personal income tax</term>
+					<term>prediction</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The goal of the present research is to contribute to the detection of tax fraud concerning personal income tax returns (IRPF, in Spanish) filed in Spain, through the use of Machine Learning advanced predictive tools, by applying Multilayer Perceptron neural network (MLP) models. The possibilities springing from these techniques have been applied to a broad range of personal income return data supplied by the Institute of Fiscal Studies (IEF). The use of the neural networks enabled taxpayer segmentation as well as calculation of the probability concerning an individual taxpayer&apos;s propensity to attempt to evade taxes. The results showed that the selected model has an efficiency rate of 84.3%, implying an improvement in relation to other models utilized in tax fraud detection. The proposal can be generalized to quantify an individual&apos;s propensity to commit fraud with regards to other kinds of taxes. These models will support tax offices to help them arrive at the best decisions regarding action plans to combat tax fraud.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

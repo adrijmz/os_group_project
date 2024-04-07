@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Why is the User Interface a Dark Pattern? : Explainable Auto-Detection and its Analysis</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Yuki</forename><surname>Yada</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Waseda University</orgName>
+								<address>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tsuneo</forename><surname>Matsumoto</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">National Consumer Affairs Center of Japan</orgName>
+								<address>
+									<settlement>Sagamihara</settlement>
+									<region>Kanagawa</region>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Fuyuko</forename><surname>Kido</surname></persName>
+							<email>fkido@aoni.waseda.jp</email>
+							<affiliation key="aff2">
+								<orgName type="institution">Waseda Research Institute for Science and Engineering</orgName>
+								<address>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hayato</forename><surname>Yamana</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Waseda University</orgName>
+								<address>
+									<settlement>Tokyo</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Why is the User Interface a Dark Pattern? : Explainable Auto-Detection and its Analysis</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">5CB774415E7B1C12A380F0A1A6313E26</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Dark patterns</term>
+					<term>user protection</term>
+					<term>privacy</term>
+					<term>text classification</term>
+					<term>and explainable AI</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Dark patterns are deceptive user interface designs for online services that make users behave in unintended ways. Dark patterns, such as privacy invasion, financial loss, and emotional distress, can harm users. These issues have been the subject of considerable debate in recent years. In this paper, we study interpretable dark pattern auto-detection, that is, why a particular user interface is detected as having dark patterns. First, we trained a model using transformer-based pre-trained language models, BERT, on a text-based dataset for the automatic detection of dark patterns in e-commerce. Then, we applied posthoc explanation techniques, including local interpretable model agnostic explanation (LIME) and Shapley additive explanations (SHAP), to the trained model, which revealed which terms influence each prediction as a dark pattern. In addition, we extracted and analyzed terms that affected the dark patterns. Our findings may prevent users from being manipulated by dark patterns, and aid in the construction of more equitable internet services. Our code is available at https://github.com/yamanalab/whydarkpattern.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

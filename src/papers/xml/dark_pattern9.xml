@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Automated detection of dark patterns in cookie banners: how to do it poorly and why it is hard to do it any other way</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Than</forename><forename type="middle">Htut</forename><surname>Soe</surname></persName>
+							<email>than.soe@uib.no</email>
+							<affiliation key="aff0">
+								<orgName type="institution">University of Bergen</orgName>
+								<address>
+									<settlement>Norway</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Cristiana</forename><forename type="middle">Teixeira</forename><surname>Santos</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Utrecht University</orgName>
+								<address>
+									<addrLine>The Netherlands</addrLine>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Marija</forename><surname>Slavkovik</surname></persName>
+							<email>marija.slavkovik@uib.no</email>
+							<affiliation key="aff0">
+								<orgName type="institution">University of Bergen</orgName>
+								<address>
+									<settlement>Norway</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Automated detection of dark patterns in cookie banners: how to do it poorly and why it is hard to do it any other way</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">3015FA6290E25C916A0B711A5A083D52</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-07T18:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>Cookie banners, the pop ups that appear to collect your consent for data collection, are a tempting ground for dark patterns. Dark patterns are design elements that are used to influence the user&apos;s choice towards an option that is not in their interest. The use of dark patterns renders consent elicitation meaningless and voids the attempts to improve a fair collection and use of data. Can machine learning be used to automatically detect the presence of dark patterns in cookie banners? In this work, a dataset of cookie banners of 300 news websites was used to train a prediction model that does exactly that. The machine learning pipeline we used includes feature engineering, parameter search, training a Gradient Boosted Tree classifier and evaluation. The accuracy of the trained model is promising, but allows a lot of room for improvement. We provide an in-depth analysis of the interdisciplinary challenges that automated dark pattern detection poses to artificial intelligence. The dataset and all the code created using machine learning is available at the url to repository removed for review.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>
