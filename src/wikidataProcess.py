@@ -3,24 +3,26 @@ import os
 from qwikidata.sparql  import return_sparql_query_results
 from time import sleep
 
-def query_wikidata(title):
+def query_wikidata(doi):
 
     # Realizar la consulta SPARQL
     query = f"""
-    SELECT DISTINCT ?doi ?published_in ?cites ?num_pag ?pages ?publication_date ?language ?instace_of ?main_subject
-    WHERE {{
-        ?paper rdfs:label "{title}"@en.
-        OPTIONAL {{ ?paper wdt:P356 ?doi. }}
-        OPTIONAL {{ ?paper wdt:1433 ?published_in}}
-        OPTIONAL {{ ?paper wdt:P2860 ?cites. }}
-        OPTIONAL {{ ?paper wdt:P1104 ?num_pag. }}
-        OPTIONAL {{ ?paper wdt:P304 ?pages. }}
-        OPTIONAL {{ ?paper wdt:P577 ?publication_date. }}
-        OPTIONAL {{ ?paper wdt:P407 ?language. }}
-        OPTIONAL {{ ?paper wdt:P31 ?instace_of.}}
-        OPTIONAL {{ ?paper wdt:P921 ?main_subject.}}
-    }}
-    LIMIT 1
+    SELECT DISTINCT ?title ?doi ?published_in ?cites ?num_pag ?pages ?publication_date ?language ?instance_of ?main_subject
+WHERE {{
+    ?paper wdt:P356 "{doi}".
+    ?paper rdfs:label ?title.
+    FILTER (LANG(?title) = "en").
+    OPTIONAL {{ ?paper wdt:P356 ?doi. }}
+    OPTIONAL {{ ?paper wdt:P1433 ?published_in. }}
+    OPTIONAL {{ ?paper wdt:P2860 ?cites. }}
+    OPTIONAL {{ ?paper wdt:P1104 ?num_pag. }}
+    OPTIONAL {{ ?paper wdt:P304 ?pages. }}
+    OPTIONAL {{ ?paper wdt:P577 ?publication_date. }}
+    OPTIONAL {{ ?paper wdt:P407 ?language. }}
+    OPTIONAL {{ ?paper wdt:P31 ?instance_of. }}
+    OPTIONAL {{ ?paper wdt:P921 ?main_subject. }}
+}}
+LIMIT 1
     """
     result = return_sparql_query_results(query)
     print(result)
@@ -43,21 +45,21 @@ def main():
         writer.writeheader()
 
         # Iterar sobre los archivos en la carpeta de títulos
-        titles_folder = './papers/titles/'
+        titles_folder = './papers/doi/'
         for filename in os.listdir(titles_folder):
             if filename.endswith('.txt'):
                 # Leer los títulos del archivo
                 with open(os.path.join(titles_folder, filename), 'r') as file:
-                    titles = [line.strip() for line in file.readlines()]
+                    dois = [line.strip() for line in file.readlines()]
 
                 # Iterar sobre los títulos y realizar la consulta para cada uno
-                for title in titles:
-                    results = query_wikidata(title)
+                for doi in dois:
+                    results = query_wikidata(doi)
                     if results:
                         # Escribir los resultados en el archivo CSV
                         for result in results:
                             writer.writerow({
-                                'Title': title,
+                                'Title': result.get('title', {}).get('value', 'N/A'),
                                 'DOI': result.get('doi', {}).get('value', 'N/A'),
                                 'Cites': result.get('cites', {}).get('value', 'N/A'),
                                 'Number of Pages': result.get('num_pag', {}).get('value', 'N/A'),
