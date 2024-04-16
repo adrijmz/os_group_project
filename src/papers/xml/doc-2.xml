@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Credit Card Fraud Detection using Python &amp; Machine Learning Algorithms</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ekta</forename><surname>Mangal</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Mahatma Gandhi Missions College Of Engineering &amp; Technology</orgName>
+								<address>
+									<settlement>Noida</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><surname>Divya</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Mahatma Gandhi Missions College Of Engineering &amp; Technology</orgName>
+								<address>
+									<settlement>Noida</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><surname>Shubham</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Mahatma Gandhi Missions College Of Engineering &amp; Technology</orgName>
+								<address>
+									<settlement>Noida</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Radhika</forename><surname>Gussain</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Mahatma Gandhi Missions College Of Engineering &amp; Technology</orgName>
+								<address>
+									<settlement>Noida</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Credit Card Fraud Detection using Python &amp; Machine Learning Algorithms</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8E1752F8AA8929BDFAA8CB7266F22EB4</idno>
+					<idno type="DOI">10.22214/ijraset.2023.52242</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>Browsing and many other online sites have increased the digital payment modes through which risk of frauds during transactions got increased. It is necessary to have a look on fraud transactions so that the customers does not pay for what they haven&apos;t done. Such complications may be intercept with Data mining through Machine Learning. It aims to display the customization of a data set by applying machine learning with Credit Card Fraud Detection. The CCFD complications comprise of analyzing previous transactions through credit card along the data of the unauthorized users. These models are then applied to analyze whether the new transaction is authorized or not. In this project, we have concentrated on examining and pre-refining the data sets in addition to the deployment of numerous inconsistency observation methods such as Logical Regression, Random Forest, Decision tree, XG Boost on Credit Card Transaction data.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

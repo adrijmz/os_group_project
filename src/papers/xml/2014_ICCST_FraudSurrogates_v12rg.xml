@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Surrogate Techniques for Testing Fraud Detection Algorithms in Credit Card Operations</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Addisson</forename><surname>Salazar</surname></persName>
+							<email>asalazar@dcom.upv.es</email>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Telecommunications and Multimedia Applications</orgName>
+								<orgName type="institution">Universitat Politècnica de València</orgName>
+								<address>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Gonzalo</forename><surname>Safont</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Telecommunications and Multimedia Applications</orgName>
+								<orgName type="institution">Universitat Politècnica de València</orgName>
+								<address>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Luis</forename><surname>Vergara</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Telecommunications and Multimedia Applications</orgName>
+								<orgName type="institution">Universitat Politècnica de València</orgName>
+								<address>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Surrogate Techniques for Testing Fraud Detection Algorithms in Credit Card Operations</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">82396F49D13EA331AFBF81502CC6E9FC</idno>
+					<idno type="DOI">10.1109/CCST.2014.6986987</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>fraud detection</term>
+					<term>surrogate techniques</term>
+					<term>non-linear signal processing</term>
+					<term>data mining</term>
+					<term>pattern recognition</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Banks collect large amount of historical records corresponding to millions of credit cards operations, but, unfortunately, only a small portion, if any, is open access. This is because, e.g., the records include confidential customer data and banks are afraid of public quantitative evidence of existing fraud operations. This paper tackles this problem with the application of surrogate techniques to generate new synthetic credit card data. The quality of the surrogate multivariate data is guaranteed by constraining them to have the same covariance, marginal distributions, and joint distributions as the original multivariate data. The performance of fraud detection algorithms (in terms of receiver operating characteristic (ROC) curves) using a varying proportion of real and surrogate data is tested. We demonstrate the feasibility of surrogates in a real scenario considering very low false alarm and high disproportion between legitimate and fraud operations.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">International Journal of Research Publication and Reviews</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Bhargav</forename><surname>Chowdari</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science and Engineering</orgName>
+								<orgName type="institution" key="instit1">Saveetha School of Engineering</orgName>
+								<orgName type="institution" key="instit2">Saveetha Institute of Medical And Technical Sciences</orgName>
+								<orgName type="institution" key="instit3">Saveetha University</orgName>
+								<address>
+									<settlement>Chennai</settlement>
+									<region>Tamilnadu</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">S</forename><surname>Parthiban</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Project Guide</orgName>
+								<orgName type="department" key="dep2">Corresponding Author</orgName>
+								<orgName type="department" key="dep3">Department of Computer Science and Engineering</orgName>
+								<orgName type="institution" key="instit1">Saveetha School of Engineering</orgName>
+								<orgName type="institution" key="instit2">Saveetha Institute of Medical And Technical Sciences</orgName>
+								<orgName type="institution" key="instit3">Saveetha University</orgName>
+								<address>
+									<settlement>Chennai</settlement>
+									<region>Tamilnadu</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">International Journal of Research Publication and Reviews</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">2582-7421</idno>
+					</monogr>
+					<idno type="MD5">61A02F13F82647BE664CDF64AE34078F</idno>
+					<idno type="DOI">10.55248/gengpi.2022.3.8.37</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>t-SNE</term>
+					<term>Novel Logistic Regression</term>
+					<term>Fraud detection</term>
+					<term>Supervised Learning</term>
+					<term>Machine learning</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Aim: The principle objective of this article is to improve the accuracy of Credit card fraud detection using Novel logistic regression compared with the t-SNE. Materials and Methods: The categorizing is performed by adopting a sample size of n = 10 in novel logistic regression and sample size n = 10 in t-SNE with a sample size = 10, obtained using the G-power value 80%. Results: The analysis of the results shows that the Novel logistic regression has a high accuracy of (99.89) in comparison with the t-SNE(60.99). There is a statistically significant difference between the study groups with (p&lt; 0.05). Conclusion: For Credit card fraud detection it shows that the Logistic Regression appears to generate more accuracy than the t-SNE</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

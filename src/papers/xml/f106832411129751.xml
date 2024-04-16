@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A widespread survey on machine learning techniques and user substantiation methods for credit card fraud detection</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2022-11-30">30 November 2022</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">T</forename><forename type="middle">John</forename><surname>Berkmans</surname></persName>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">S</forename><surname>Karthick</surname></persName>
+							<email>karthiks2@srmist.edu.in</email>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science Engineering</orgName>
+								<orgName type="institution">SRM Institute of Science and Technology (SRMIST)</orgName>
+								<address>
+									<settlement>Kattankulathur</settlement>
+									<region>Chennai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Computational Intelligence</orgName>
+								<orgName type="institution">SRM Institute of Science and Technology (SRMIST)</orgName>
+								<address>
+									<settlement>Kattankulathur</settlement>
+									<region>Chennai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="department">School of Computing from SRM Institute of Science and Technology (SRMIST)</orgName>
+								<address>
+									<settlement>Kattankulathur</settlement>
+									<region>Chennai</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A widespread survey on machine learning techniques and user substantiation methods for credit card fraud detection</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">online: 1743-8195</idno>
+						<imprint>
+							<date type="published" when="2022-11-30">30 November 2022</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">35216AAC19DAF65FA3198074D1C7D828</idno>
+					<idno type="DOI">10.1504/IJBIDM.2023.10047750</idno>
+					<note type="submission">Received: 08 September 2021 Accepted: 28 December 2021</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>credit card transaction</term>
+					<term>machine learning</term>
+					<term>bio-metrics</term>
+					<term>XGBoost</term>
+					<term>SVM</term>
+					<term>random forest</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>In this modern scientific digital world, credit card usage has enormously increased everyday. Simultaneously a huge amount of credit card misuse also has been expressively popular. It prompts monetary misfortunes for both charge cardholders and monetary associations. To keep away from that, monetary associations created and conveyed Visa extortion discovery techniques. In the upcoming years, everybody will utilise the greatest exchange through online mode just to save their time. So we partition this review into two primary parts. In the first part, we centre around old-style AI models, and in this part we focus on what the client knows (knowledge-based strategy). For the second part, we focus more on the turn of events procedure of client verification, and their conduct biometrics to distinguish an individual remarkable conduct while utilising their electronic gadgets. An outline of the current methodology in this writing review means to grow a more precise, dependable, versatile, super-fast, effective, and modest model of charge card extortion identification.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

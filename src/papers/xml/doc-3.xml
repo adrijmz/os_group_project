@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Credit Card Fraud Detection Using Machine Learning and Blockchain</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Mr</forename><surname>Soham Patil</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Pune Institute of Computer Technology</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mr</forename><forename type="middle">Amey</forename><surname>Godse</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Pune Institute of Computer Technology</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mr</forename><forename type="middle">Prasad</forename><surname>Gawade</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Pune Institute of Computer Technology</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mr</forename><surname>Prajwal Halkare</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Pune Institute of Computer Technology</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mr</forename><surname>Abhinay Dhamankar</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Pune Institute of Computer Technology</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Credit Card Fraud Detection Using Machine Learning and Blockchain</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B65FEC7140411E36E7FA669451442FEA</idno>
+					<idno type="DOI">10.22214/ijraset.2023.52214</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>anomaly detection</term>
+					<term>blockchain</term>
+					<term>fraud detection</term>
+					<term>machine learning</term>
+					<term>random forest</term>
+					<term>XGBoost I</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>This paper proposes a secure fraud detection model that combines machine learning algorithms and blockchain technology. According to the study it notes that while blockchain is considered a secure method of integration into finance, fraud and anomalies are still common in the network. To address this, the we use two machine learning algorithms, XGboost and KMeans classifier, to classify transactions based on patterns of fraudulent and legitimate transactions .The transaction data is also classified by supervised machine learning algorithms like Random forests and Decision Tree Classifier. The proposed model integrates these algorithms with blockchain technology to detect fraudulent transactions in the Etherium network. The paper includes a security analysis of the proposed smart contract and an attacker model to protect the system from potential attacks and vulnerabilities. The precision and AUC of the models are also calculated to measure the accuracy of the system. Overall, the paper proposes an innovative approach to addressing fraud and anomalies in the network using machine learning and blockchain technology. The integration of these technologies has the potential to improve the security of online transactions and e-banking systems.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

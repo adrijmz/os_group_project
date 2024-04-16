@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Analysis and prediction for credit card fraud detection dataset using data mining approaches</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Arun</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer and Information Science</orgName>
+								<orgName type="institution">Annamalai University</orgName>
+								<address>
+									<addrLine>Annamalai Nagar -608 002, Tamil Nadu</addrLine>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">PG Department of Computer Science</orgName>
+								<orgName type="department" key="dep2">Deputed from Department of Computer and Information Science</orgName>
+								<orgName type="institution">Government Arts College</orgName>
+								<address>
+									<addrLine>Chidambaram -608 102</addrLine>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">Annamalai University</orgName>
+								<address>
+									<addrLine>Tamil Nadu</addrLine>
+									<settlement>Annamalai Nagar)</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Analysis and prediction for credit card fraud detection dataset using data mining approaches</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">2550-696X</idno>
+					</monogr>
+					<idno type="MD5">6A746120ABBBDDA03542DBB113045641</idno>
+					<idno type="DOI">10.53730/ijhs.v6nS5.9534</idno>
+					<note type="submission">Manuscript submitted: 27 Feb 2022, Manuscript revised: 9 April 2022, Accepted for publication: 18 June 2022</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Credit Card</term>
+					<term>Data Mining</term>
+					<term>Regression Model</term>
+					<term>Normalization</term>
+					<term>and Correlation Coefficient</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Analysis of fraud detection is one of the recent research areas in data analytics. Credit card fraud is rapidly increasing in different ways significantly with modern technology. The Credit card consumers and processing financial company have losing large amount annually. The fraudsters rapidly and continuously try to find and follow novel technologies to commit the illegal actions against consumers. In COVID-19 pandemic situations online shopping trends growing exponentially and parallelly increase Credit card fraud rapidly. In this paper we trained different data mining techniques with statistical approaches for credit card fraud detection. Numerical illustrations to prove the proposed results.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

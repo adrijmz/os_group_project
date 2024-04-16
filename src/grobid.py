@@ -31,6 +31,25 @@ def main(folder_path, output_directory):
                 with open(xml_path, "w") as xml_file:
                     xml_file.write(metadata_xml)
 
+# read every xml file to get the title and save it in a .txt file
+def get_title_from_xml(xml_directory, title_directory):
+    for filename in os.listdir(xml_directory):
+        if filename.endswith(".xml"):
+            xml_path = os.path.join(xml_directory, filename)
+            with open(xml_path, "r") as xml_file:
+                xml_content = xml_file.read()
+                title_start = xml_content.find('<title level="a" type="main">') + len('<title level="a" type="main">')
+                title_end = xml_content.find("</title>")
+                title = xml_content[title_start:title_end]
+                
+                # Guardar el título en un archivo .txt en la carpeta titles
+                title_filename = os.path.splitext(filename)[0] + ".txt"
+                title_path = os.path.join(title_directory, title_filename)
+                with open(title_path, "w") as title_file:
+                    title_file.write(title)
+
+    
+
 
 if __name__ == "__main__":
 
@@ -52,8 +71,11 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     pdf_directory = args.INPUT
-    output_directory = args.OUTPUT
+    xml_directory = args.OUTPUT
+    title_directory = './papers/titles/'
 
     # Crear la carpeta de salida si no existe
-    os.makedirs(output_directory, exist_ok=True)
-    main(pdf_directory, output_directory)
+    os.makedirs(xml_directory, exist_ok=True)
+    os.makedirs(title_directory, exist_ok=True)
+    main(pdf_directory, xml_directory)
+    get_title_from_xml(xml_directory, title_directory)

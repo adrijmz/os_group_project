@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The use of data mining of to create of a fraud prevention and detection system in credit card</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">K</forename><surname>Sivakumar</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution" key="instit1">Saveetha School of Engineering</orgName>
+								<orgName type="institution" key="instit2">Saveetha Institute of Medical and Technical Sciences(SIMATS)</orgName>
+								<orgName type="institution" key="instit3">Saveetha University</orgName>
+								<address>
+									<postCode>602105</postCode>
+									<settlement>Chennai</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">G</forename><surname>Manoharan</surname></persName>
+							<email>vijimanoharan77@gmail.com</email>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="laboratory">Research Scholar</orgName>
+								<orgName type="institution">Sathyabama Institute of Science and Technology</orgName>
+								<address>
+									<postCode>Chennai-600119</postCode>
+									<settlement>Tamilnadu</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Prakaash</surname></persName>
+							<email>prakaashphd333@gmail.com</email>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Panimalar Institute of Technology</orgName>
+								<address>
+									<settlement>Chennai-600</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The use of data mining of to create of a fraud prevention and detection system in credit card</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">2550-696X</idno>
+					</monogr>
+					<idno type="MD5">F6C6603AD9BF5EBCD3314C970ADB8681</idno>
+					<idno type="DOI">10.53730/ijhs.v6nS5.10371</idno>
+					<note type="submission">Manuscript submitted: 27 Feb 2022, Manuscript revised: 9 April 2022, Accepted for publication: 18 June 2022</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Data Mining</term>
+					<term>Fraud</term>
+					<term>Prevention</term>
+					<term>System</term>
+					<term>Detection and Methodologies</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>After defining the problem, we&apos;ll examine the various techniques (pre-and post-dynamic) for managing installment card fraud recognition, as well as collect all the data from various elements of card-based monetary fraud (regions, fraudulent activity, etc.). When all of the information has been gathered, it&apos;s time to put it into practice. It is best to avoid using data that has been gleaned from several sources because it has little practical use until it can be combined. For this collaboration, we&apos;re looking into novel datacombination approaches that can help us find the location of financial fraud. The Fraud Prevention and Detection systems were developed utilizing a variety of data mining techniques, including rule learning, rule generation, and rule selection.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

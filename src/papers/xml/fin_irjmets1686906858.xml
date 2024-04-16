@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">CREDIT CARD FRAUD DETECTION USING MACHINE LEARNING &amp; PYTHON</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Samprit</forename><surname>Ghosh</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Koushik</forename><surname>Nath</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Electronics &amp; Communication Engineering</orgName>
+								<orgName type="laboratory">AICTE</orgName>
+								<orgName type="institution">Techno International Newtown</orgName>
+								<address>
+									<settlement>Kolkata</settlement>
+									<region>West Bengal</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">International Research Journal of Modernization in Engineering Technology and Science</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">International Research Journal of Modernization in Engineering, Technology and Science</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">CREDIT CARD FRAUD DETECTION USING MACHINE LEARNING &amp; PYTHON</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">2582-5208</idno>
+					</monogr>
+					<idno type="MD5">BE61B8A56FEC4A7F4DD757D919DED26B</idno>
+					<idno type="DOI">10.56726/IRJMETS42136</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Automated Fraud Detection</term>
+					<term>Isolation Forest Method</term>
+					<term>Local Outlier Factor</term>
+					<term>Applications Of Machine Learning</term>
+					<term>And Data Science</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>In recent years, credit cards have taken on important roles in people&apos;s lives. The danger of fraud has increased as a result of the unexpected boom in e-commerce and the widespread usage of credit cards for online purchases. Instead, than carrying around a lot of cash, it is easier to keep credit cards on hand. But that&apos;s also dangerous now. A serious problem that is now on the increase dramatically is credit card fraud .Currently, new researchers are having a lot of trouble detecting credit card fraud. We put in place a clever algorithm that can spot any type of fraud in a credit card transaction. By identifying a trend for each consumer in between fraudulent and legal transactions, we were able to solve the issue. The pattern of each customer&apos;s transactions is predicted using the isolation forest algorithm and the local outlier factor, and decisions are then made in light of that information. All attributes are tagged similarly to avoid data mismatches.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

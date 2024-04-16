@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Naoufal</forename><surname>Rtayli</surname></persName>
+							<email>rtayli.naoufal@gmail.com</email>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Faculty of Sciences</orgName>
+								<orgName type="institution">Abdelmalek Essaadi University</orgName>
+								<address>
+									<settlement>Tetouan</settlement>
+									<country key="MA">Morocco</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">Naif Arab University for Security Sciences Journal of Information Security and Cybercrimes Research</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">EC6851CF54CA62FCE031CF8323A96B7C</idno>
+					<idno type="DOI">10.26735/TLYG7256</idno>
+					<note type="submission">Received 30 Oct. 2021; Accepted 09 June. 2022; Available Online 22 June. 2022</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-16T15:41+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Cybersecurity</term>
+					<term>Credit Card Fraud Detection</term>
+					<term>Imbalanced Data Problem</term>
+					<term>Artificial Deep Neural Networks</term>
+					<term>Machine Iearning Techniques</term>
+					<term>Classification Accuracy</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Due to fast-evolving technology, the world is moving to the use of credit cards rather than money in their daily lives, giving rise to many new opportunities for fraudsters to use credit cards maliciously. Based on the Nilson report, losses related to global cards were estimated to be over $35 billion by 2020. In order to maintain the security of users of these cards, the credit card company must develop a service to ensure that users are protected from any risks they may be exposed to. For this reason, we introduce a fraud detection model, denoted ST-BPNN, which is based on machine and deep learning approaches to identify fraudulent transactions. ST-BPNN was applied on real fraud detection data provided by the European bank. Comparing the obtained results from ST-BPNN with a recent state-of-the-art approach shows that our proposed model demonstrates high predictive performance for detecting fraudulent transactions.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>
