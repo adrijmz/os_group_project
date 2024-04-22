@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A deep learning-based quality assessment model of collaboratively edited documents: A case study of Wikipedia</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Ping</forename><surname>Wang</surname></persName>
+							<email>wangping@whu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Center for the Studies of Information Resources</orgName>
+								<orgName type="department" key="dep2">School of Information Management</orgName>
+								<orgName type="institution">Wuhan University</orgName>
+								<address>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">School of Information Management</orgName>
+								<orgName type="department" key="dep2">Center for the Studies of Information Resources</orgName>
+								<orgName type="institution">Wuhan University</orgName>
+								<address>
+									<addrLine>16 Luojia Hill Road</addrLine>
+									<postCode>430072</postCode>
+									<settlement>Wuhan</settlement>
+									<region>Hubei</region>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaodan</forename><surname>Li</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Electronic and Computer Engineering</orgName>
+								<orgName type="institution">Duke University</orgName>
+								<address>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Renli</forename><surname>Wu</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">School of Information Management</orgName>
+								<orgName type="institution">Wuhan University</orgName>
+								<address>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A deep learning-based quality assessment model of collaboratively edited documents: A case study of Wikipedia</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">34839ECBCBAEC0EA032487B20A78FF40</idno>
+					<idno type="DOI">10.1177/0165551519877646</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Deep learning</term>
+					<term>feature framework</term>
+					<term>information quality assessment</term>
+					<term>Wikipedia</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Wikipedia is becoming increasingly critical in helping people obtain information and knowledge. Its leading advantage is that users can not only access information but also modify it. However, this presents a challenging issue: how can we measure the quality of a Wikipedia article? The existing approaches assess Wikipedia quality by statistical models or traditional machine learning algorithms. However, their performance is not satisfactory. Moreover, most existing models fail to extract complete information from articles, which degrades the model&apos;s performance. In this article, we first survey related works and summarise a comprehensive feature framework. Then, state-of-the-art deep learning models are introduced and applied to assess Wikipedia quality. Finally, a comparison among deep learning models and traditional machine learning models is conducted to validate the effectiveness of the proposed model. The models are compared extensively in terms of their training and classification performance. Moreover, the importance of each feature and the importance of different feature sets are analysed separately.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

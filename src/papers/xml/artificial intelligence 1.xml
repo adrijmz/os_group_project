@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The Gene Wiki: community intelligence applied to human gene annotation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2009-09-15">15 September 2009</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Jon</forename><forename type="middle">W</forename><surname>Huss</surname><genName>III</genName></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Genomics Institute of the Novartis Research Foundation</orgName>
+								<address>
+									<postCode>92121</postCode>
+									<settlement>San Diego</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pierre</forename><surname>Lindenbaum</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Bioinformatics</orgName>
+								<orgName type="institution">CEPH/Fondation Jean-Dausset</orgName>
+								<address>
+									<settlement>Paris</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michael</forename><surname>Martone</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Rush University Medical College</orgName>
+								<address>
+									<postCode>60612</postCode>
+									<settlement>Chicago</settlement>
+									<region>IL</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Donabel</forename><surname>Roberts</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Bioinformatics and Medical Informatics Graduate Program</orgName>
+								<orgName type="institution">San Diego State University</orgName>
+								<address>
+									<postCode>92182</postCode>
+									<settlement>San Diego</settlement>
+									<region>CA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Angel</forename><surname>Pizarro</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department" key="dep1">Department of Pharmacology</orgName>
+								<orgName type="department" key="dep2">Institute for Translational Medicine and Therapeutics</orgName>
+								<orgName type="institution">University of Pennsylvania School of Medicine</orgName>
+								<address>
+									<postCode>19104</postCode>
+									<settlement>Philadelphia</settlement>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Faramarz</forename><surname>Valafar</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Bioinformatics and Medical Informatics Graduate Program</orgName>
+								<orgName type="institution">San Diego State University</orgName>
+								<address>
+									<postCode>92182</postCode>
+									<settlement>San Diego</settlement>
+									<region>CA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><forename type="middle">B</forename><surname>Hogenesch</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department" key="dep1">Department of Pharmacology</orgName>
+								<orgName type="department" key="dep2">Institute for Translational Medicine and Therapeutics</orgName>
+								<orgName type="institution">University of Pennsylvania School of Medicine</orgName>
+								<address>
+									<postCode>19104</postCode>
+									<settlement>Philadelphia</settlement>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Andrew</forename><forename type="middle">I</forename><surname>Su</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Genomics Institute of the Novartis Research Foundation</orgName>
+								<address>
+									<postCode>92121</postCode>
+									<settlement>San Diego</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The Gene Wiki: community intelligence applied to human gene annotation</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2009-09-15">15 September 2009</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2BC3905664ECA83E63760361FC46F3FA</idno>
+					<idno type="DOI">10.1093/nar/gkp760</idno>
+					<note type="submission">Received August 14, 2009; Revised August 26, 2009; Accepted August 29, 2009</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>Annotating the function of all human genes is a critical, yet formidable, challenge. Current gene annotation efforts focus on centralized curation resources, but it is increasingly clear that this approach does not scale with the rapid growth of the biomedical literature. The Gene Wiki utilizes an alternative and complementary model based on the principle of community intelligence. Directly integrated within the online encyclopedia, Wikipedia, the goal of this effort is to build a gene-specific review article for every gene in the human genome, where each article is collaboratively written, continuously updated and community reviewed. Previously, we described the creation of Gene Wiki &apos;stubs&apos; for approximately 9000 human genes. Here, we describe ongoing systematic improvements to these articles to increase their utility. Moreover, we retrospectively examine the community usage and improvement of the Gene Wiki, providing evidence of a critical mass of users and editors. Gene Wiki articles are freely accessible within the Wikipedia web site, and additional links and information are available at http://en.wikipedia .org/wiki/Portal:Gene_Wiki.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

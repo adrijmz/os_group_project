@@ -1,0 +1,2 @@
+# all DS_Store files
+find . -name ".DS_Store" -delete

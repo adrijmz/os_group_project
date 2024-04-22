@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A systematic review of the applications of artificial intelligence and machine learning in autoimmune diseases</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">I</forename><forename type="middle">S</forename><surname>Stafford</surname></persName>
+							<idno type="ORCID">0000-0003-1666-1906</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Human Genetics and Genomic Medicine</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Institute for Life Sciences</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">M</forename><surname>Kellermann</surname></persName>
+							<idno type="ORCID">0000-0002-2304-5856</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Human Genetics and Genomic Medicine</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">E</forename><surname>Mossotto</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Human Genetics and Genomic Medicine</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Institute for Life Sciences</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Beattie</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Paediatric Gastroenterology</orgName>
+								<orgName type="institution">Southampton Children&apos;s Hospital</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Macarthur</surname></persName>
+							<idno type="ORCID">0000-0002-5396-9750</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Institute for Life Sciences</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">S</forename><surname>Ennis</surname></persName>
+							<email>s.ennis@soton.ac.uk</email>
+							<idno type="ORCID">0000-0003-2648-0869</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Human Genetics and Genomic Medicine</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A systematic review of the applications of artificial intelligence and machine learning in autoimmune diseases</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">24C494E1503A77EFA5EAFB3385613621</idno>
+					<idno type="DOI">10.1038/s41746-020-0229-3</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>Autoimmune diseases are chronic, multifactorial conditions. Through machine learning (ML), a branch of the wider field of artificial intelligence, it is possible to extract patterns within patient data, and exploit these patterns to predict patient outcomes for improved clinical management. Here, we surveyed the use of ML methods to address clinical problems in autoimmune disease. A systematic review was conducted using MEDLINE, embase and computers and applied sciences complete databases. Relevant papers included &quot;machine learning&quot; or &quot;artificial intelligence&quot; and the autoimmune diseases search term(s) in their title, abstract or key words. Exclusion criteria: studies not written in English, no real human patient data included, publication prior to 2001, studies that were not peer reviewed, non-autoimmune disease comorbidity research and review papers. 169 (of 702) studies met the criteria for inclusion. Support vector machines and random forests were the most popular ML methods used. ML models using data on multiple sclerosis, rheumatoid arthritis and inflammatory bowel disease were most common. A small proportion of studies (7.7% or 13/169) combined different data types in the modelling process. Cross-validation, combined with a separate testing set for more robust model evaluation occurred in 8.3% of papers (14/169). The field may benefit from adopting a best practice of validation, cross-validation and independent testing of ML models. Many models achieved good predictive results in simple scenarios (e.g. classification of cases and controls). Progression to more complex predictive models may be achievable in future through integration of multiple data types.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Artificial intelligence and deep learning in ophthalmology</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2018-10-25">25 October 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><roleName>Dr</roleName><forename type="first">Daniel</forename><surname>Shu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wei</forename><surname>Ting</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Louis</forename><forename type="middle">R</forename><surname>Pasquale</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lily</forename><surname>Peng</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><forename type="middle">Peter</forename><surname>Campbell</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Aaron</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rajiv</forename><surname>Raman</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Gavin</forename><surname>Siew</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wei</forename><surname>Tan</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Leopold</forename><surname>Schmetterer</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pearse</forename><forename type="middle">A</forename><surname>Keane</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tien</forename><forename type="middle">Yin</forename><surname>Wong</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+								<address>
+									<postCode>168751</postCode>
+									<country>Singapore, Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Artificial intelligence and deep learning in ophthalmology</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2018-10-25">25 October 2018</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">A6254AB8DBDBA7768EBFF9D07137A74C</idno>
+					<idno type="DOI">10.1136/bjophthalmol-2018-313173</idno>
+					<note type="submission">Received 4 September 2018 Revised 17 September 2018 Accepted 23 September 2018</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

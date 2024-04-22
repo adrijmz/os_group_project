@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">nature machine intelligence Article</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-10-19">19 October 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Fabio</forename><surname>Petroni</surname></persName>
+							<email>fabiopetroni@samaya.ai</email>
+							<idno type="ORCID">0009-0005-5996-9830</idno>
+							<affiliation key="aff0">
+								<orgName type="institution">Samaya AI</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Samuel</forename><surname>Broscheit</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Amazon Alexa AI</orgName>
+								<address>
+									<settlement>Tübingen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Aleksandra</forename><surname>Piktus</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Patrick</forename><surname>Lewis</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Gautier</forename><surname>Izacard</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Inria and ENS</orgName>
+								<orgName type="institution">PSL University</orgName>
+								<address>
+									<settlement>Paris</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lucas</forename><surname>Hosseini</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jane</forename><surname>Dwivedi-Yu</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Maria</forename><surname>Lomeli</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Timo</forename><surname>Schick</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michele</forename><surname>Bevilacqua</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Samaya AI</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pierre-Emmanuel</forename><surname>Mazaré</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Armand</forename><surname>Joulin</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Edouard</forename><surname>Grave</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sebastian</forename><surname>Riedel</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">FAIR</orgName>
+								<address>
+									<settlement>Meta, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="institution">University College London</orgName>
+								<address>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">nature machine intelligence Article</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-10-19">19 October 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">ADF8D3E25866FE657621B582BDABB4D4</idno>
+					<idno type="DOI">10.1038/s42256-023-00726-1</idno>
+					<note type="submission">Received: 29 September 2022 Accepted: 4 September 2023</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>Verifiability is a core content policy of Wikipedia: claims need to be backed by citations. Maintaining and improving the quality of Wikipedia references is an important challenge and there is a pressing need for better tools to assist humans in this effort. We show that the process of improving references can be tackled with the help of artificial intelligence (AI) powered by an information retrieval system and a language model. This neural-network-based system, which we call SIDE, can identify Wikipedia citations that are unlikely to support their claims, and subsequently recommend better ones from the web. We train this model on existing Wikipedia references, therefore learning from the contributions and combined wisdom of thousands of Wikipedia editors. Using crowdsourcing, we observe that for the top 10% most likely citations to be tagged as unverifiable by our system, humans prefer our system&apos;s suggested alternatives compared with the originally cited reference 70% of the time. To validate the applicability of our system, we built a demo to engage with the English-speaking Wikipedia community and find that SIDE&apos;s first citation recommendation is preferred twice as often as the existing Wikipedia citation for the same top 10% most likely unverifiable claims according to SIDE. Our results indicate that an AI-based system could be used, in tandem with humans, to improve the verifiability of Wikipedia.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

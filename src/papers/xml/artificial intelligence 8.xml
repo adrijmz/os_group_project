@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Exploring the impact of artificial intelligence on teaching and learning in higher education</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Stefan</forename><forename type="middle">A D</forename><surname>Popenici</surname></persName>
+							<email>stefan.popenici@cdu.edu.au</email>
+							<affiliation key="aff0">
+								<orgName type="department">Office of Learning and Teaching</orgName>
+								<orgName type="institution">Charles Darwin University</orgName>
+								<address>
+									<addrLine>Orange 1.2.15, Ellengowan Drive</addrLine>
+									<postCode>0909</postCode>
+									<settlement>Casuarina Campus, Darwin</settlement>
+									<region>Northern Territory</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sharon</forename><surname>Kerr</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Office of Learning and Teaching</orgName>
+								<orgName type="institution">Charles Darwin University</orgName>
+								<address>
+									<addrLine>Orange 1.2.15, Ellengowan Drive</addrLine>
+									<postCode>0909</postCode>
+									<settlement>Casuarina Campus, Darwin</settlement>
+									<region>Northern Territory</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Exploring the impact of artificial intelligence on teaching and learning in higher education</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F6EA8DD4768365CB0D03695B32061E6D</idno>
+					<idno type="DOI">10.1186/s41039-017-0062-8</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Higher education</term>
+					<term>Artificial intelligence</term>
+					<term>Teacherbots</term>
+					<term>Augmentation</term>
+					<term>Machine learning</term>
+					<term>Teaching</term>
+					<term>Graduate attributes</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>This paper explores the phenomena of the emergence of the use of artificial intelligence in teaching and learning in higher education. It investigates educational implications of emerging technologies on the way students learn and how institutions teach and evolve. Recent technological advancements and the increasing speed of adopting new technologies in higher education are explored in order to predict the future nature of higher education in a world where artificial intelligence is part of the fabric of our universities. We pinpoint some challenges for institutions of higher education and student learning in the adoption of these technologies for teaching, learning, student support, and administration and explore further directions for research.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

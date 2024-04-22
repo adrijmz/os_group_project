@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A multilevel review of artificial intelligence in organizations: Implications for organizational behavior research and practice</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Sarah</forename><surname>Bankins</surname></persName>
+							<email>sarah.bankins@mq.edu.au</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Management</orgName>
+								<orgName type="department" key="dep2">Macquarie Business School</orgName>
+								<orgName type="institution">Macquarie University</orgName>
+								<address>
+									<settlement>Sydney</settlement>
+									<region>New South Wales</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Anna</forename><forename type="middle">Carmella</forename><surname>Ocampo</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of People Management and Organisation</orgName>
+								<orgName type="department" key="dep2">ESADE Business School</orgName>
+								<orgName type="institution">Universitat Ramon Llull</orgName>
+								<address>
+									<settlement>Barcelona</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mauricio</forename><surname>Marrone</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Department of Actuarial Studies and Business Analytics</orgName>
+								<orgName type="department" key="dep2">Macquarie Business School</orgName>
+								<orgName type="institution">Macquarie University</orgName>
+								<address>
+									<settlement>Sydney</settlement>
+									<region>New South Wales</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">|</forename><surname>Simon</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Lloyd</forename><forename type="middle">D</forename><surname>Restubog</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">School of Labor and Employment Relations</orgName>
+								<orgName type="institution">University of Illinois at Urbana-Champaign</orgName>
+								<address>
+									<settlement>Champaign</settlement>
+									<region>Illinois</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="department">UQ Business School</orgName>
+								<orgName type="institution">The University of Queensland</orgName>
+								<address>
+									<settlement>Brisbane</settlement>
+									<region>Queensland</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">|</forename><surname>Sang</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Eun</forename><surname>Woo</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">Department of Psychological Sciences</orgName>
+								<orgName type="institution">Purdue University</orgName>
+								<address>
+									<settlement>West Lafayette</settlement>
+									<region>Indiana</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff6">
+								<orgName type="department">Macquarie Business School</orgName>
+								<orgName type="institution">Macquarie University</orgName>
+								<address>
+									<postCode>2109</postCode>
+									<settlement>Wallumattagal Campus, Sydney</settlement>
+									<region>New South Wales</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A multilevel review of artificial intelligence in organizations: Implications for organizational behavior research and practice</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">E5DE39BE1DBD10B088EA5BA8A4480699</idno>
+					<idno type="DOI">10.1002/job.2735</idno>
+					<note type="submission">Received: 19 January 2021 Revised: 21 May 2023 Accepted: 29 June 2023</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>algorithmic management</term>
+					<term>artificial intelligence (AI)</term>
+					<term>future of work</term>
+					<term>multilevel framework</term>
+					<term>technology and work</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The rising use of artificially intelligent (AI) technologies, including generative AI tools, in organizations is undeniable. As these systems become increasingly integrated into organizational practices and processes, understanding their impact on workers&apos; experiences and job designs is critical. However, the ongoing discourse surrounding AI use in the workplace remains divided. Proponents of the technology extol its benefits for enhancing efficiency and productivity, while others voice concerns about the potential harm to human workers. To provide greater clarity on this pressing issue, this article presents a systematic review of empirical research that sheds light on the implications of AI use at work. Organized under five inductively generated themes within a multilevel framework, we uncover individual, group, and organizational factors that shape the interplay between humans and AI. Specifically, the themes are: (1) human-AI collaboration; (2) perceptions of algorithmic and human capabilities; (3) worker attitudes towards AI; (4) AI as a control mechanism in algorithmic management of platform-based work; and (5) labor market implications of AI use. Our review offers insights into these themes and identifies five pathways for future research. Finally, we provide practical recommendations for organizational leaders seeking to implement AI technologies while prioritizing their employees&apos; well-being.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Chaos, Solitons and Fractals</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2020-06-25">25 June 2020</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Nonlinear</forename><surname>Science</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Complex</forename><surname>Phenomena</surname></persName>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Samuel</forename><surname>Lalmuanawma</surname></persName>
+							<email>samuellalmuanawma@mzu.edu.in</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics &amp; Computer Science</orgName>
+								<orgName type="institution">Mizoram University</orgName>
+								<address>
+									<postCode>796004</postCode>
+									<settlement>Tanhril, Aizawl</settlement>
+									<region>Mizoram</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jamal</forename><surname>Hussain</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics &amp; Computer Science</orgName>
+								<orgName type="institution">Mizoram University</orgName>
+								<address>
+									<postCode>796004</postCode>
+									<settlement>Tanhril, Aizawl</settlement>
+									<region>Mizoram</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lalrinfela</forename><surname>Chhakchhuak</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Computing</orgName>
+								<orgName type="institution">Uiversity of York</orgName>
+								<address>
+									<postCode>YO10 5DD</postCode>
+									<settlement>Heslington</settlement>
+									<region>York</region>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Chaos, Solitons and Fractals</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2020-06-25">25 June 2020</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">418A48B061C3BDA414C10C71AD56B664</idno>
+					<idno type="DOI">10.1016/j.chaos.2020.110059</idno>
+					<note type="submission">Received 10 June 2020 Accepted 23 June 2020</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Covid-19 Machine learning Artificial intelligence Pandemic</keywords>
+			</textClass>
+			<abstract>
+				<p>Background and objective: During the recent global urgency, scientists, clinicians, and healthcare experts around the globe keep on searching for a new technology to support in tackling the Covid-19 pandemic. The evidence of Machine Learning (ML) and Artificial Intelligence (AI) application on the previous epidemic encourage researchers by giving a new angle to fight against the novel Coronavirus outbreak. This paper aims to comprehensively review the role of AI and ML as one significant method in the arena of screening, predicting, forecasting, contact tracing, and drug development for SARS-CoV-2 and its related epidemic. Method: A selective assessment of information on the research article was executed on the databases related to the application of ML and AI technology on Covid-19. Rapid and critical analysis of the three crucial parameters, i.e., abstract, methodology, and the conclusion was done to relate to the model&apos;s possibilities for tackling the SARS-CoV-2 epidemic. Result: This paper addresses on recent studies that apply ML and AI technology towards augmenting the researchers on multiple angles. It also addresses a few errors and challenges while using such algorithms in real-world problems. The paper also discusses suggestions conveying researchers on model design, medical experts, and policymakers in the current situation while tackling the Covid-19 pandemic and ahead. Conclusion: The ongoing development in AI and ML has significantly improved treatment, medication, screening, prediction, forecasting, contact tracing, and drug/vaccine development process for the Covid-19 pandemic and reduce the human intervention in medical practice. However, most of the models are not deployed enough to show their real-world operation, but they are still up to the mark to tackle the SARS-CoV-2 epidemic.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Artificial intelligence, machine learning, computer-aided diagnosis, and radiomics: advances in imaging towards to precision medicine Inteligência artificial, aprendizado de máquina, diagnóstico auxiliado por computador e radiômica: avanços da imagem rumo à medicina de precisão</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Marcel</forename><forename type="middle">Koenigkam</forename><surname>Santos</surname></persName>
+							<email>marcelk46@fmrp.usp.br</email>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Ciências das Imagens e Física Médica (CCIFM) da Faculdade de Medicina de Ribeirão Preto da</orgName>
+								<orgName type="institution">Universidade de São Paulo (FMRP-USP)</orgName>
+								<address>
+									<addrLine>Ribeirão Preto</addrLine>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">José</forename><forename type="middle">Raniery</forename><surname>Ferreira Júnior</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Escola de Engenharia de São Carlos da Universidade de São Paulo (EESC-USP)</orgName>
+								<address>
+									<settlement>São Carlos</settlement>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">Faculdade de Medicina de Ribeirão Preto da Universidade de São Paulo (FMRP-USP)</orgName>
+								<address>
+									<addrLine>Ribeirão Preto</addrLine>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Danilo</forename><forename type="middle">Tadao</forename><surname>Wada</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Ciências das Imagens e Física Médica (CCIFM) da Faculdade de Medicina de Ribeirão Preto da</orgName>
+								<orgName type="institution">Universidade de São Paulo (FMRP-USP)</orgName>
+								<address>
+									<addrLine>Ribeirão Preto</addrLine>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ariane</forename><surname>Priscilla</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Magalhães</forename><surname>Tenório</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Faculdade de Medicina de Ribeirão Preto da Universidade de São Paulo (FMRP-USP)</orgName>
+								<address>
+									<addrLine>Ribeirão Preto</addrLine>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Marcello</forename><forename type="middle">Henrique</forename><surname>Nogueira-Barbosa</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Faculdade de Medicina de Ribeirão Preto da Universidade de São Paulo (FMRP-USP)</orgName>
+								<address>
+									<addrLine>Ribeirão Preto</addrLine>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Paulo</forename><surname>Mazzoncini De Azevedo Marques</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Faculdade de Medicina de Ribeirão Preto da Universidade de São Paulo (FMRP-USP)</orgName>
+								<address>
+									<addrLine>Ribeirão Preto</addrLine>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><roleName>Dr</roleName><forename type="first">Marcel</forename><surname>Koenigkam</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Santos</forename><forename type="middle">Avenida</forename><surname>Bandeirantes</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<address>
+									<addrLine>Campus Universitário, Monte Alegre. Ribeirão Preto</addrLine>
+									<postCode>3900, 14048-900</postCode>
+									<region>SP</region>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Artificial intelligence, machine learning, computer-aided diagnosis, and radiomics: advances in imaging towards to precision medicine Inteligência artificial, aprendizado de máquina, diagnóstico auxiliado por computador e radiômica: avanços da imagem rumo à medicina de precisão</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">9A7D069205A5710E85DC8E06527F2871</idno>
+					<idno type="DOI">10.1590/0100-3984.2019.0049</idno>
+					<note type="submission">Received 29 March 2019. Accepted after revision 15 April 2019.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Artificial intelligence</term>
+					<term>Machine learning</term>
+					<term>Computer aided diagnosis</term>
+					<term>Radiomics</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The discipline of radiology and diagnostic imaging has evolved greatly in recent years. We have observed an exponential increase in the number of exams performed, subspecialization of medical fields, and increases in accuracy of the various imaging methods, making it a challenge for the radiologist to &quot;know everything about all exams and regions&quot;. In addition, imaging exams are no longer only qualitative and diagnostic, providing now quantitative information on disease severity, as well as identifying biomarkers of prognosis and treatment response. In view of this, computer-aided diagnosis systems have been developed with the objective of complementing diagnostic imaging and helping the therapeutic decision-making process. With the advent of artificial intelligence, &quot;big data&quot;, and machine learning, we are moving toward the rapid expansion of the use of these tools in daily life of physicians, making each patient unique, as well as leading radiology toward the concept of multidisciplinary approach and precision medicine. In this article, we will present the main aspects of the computational tools currently available for analysis of images and the principles of such analysis, together with the main terms and concepts involved, as well as examining the impact that the development of artificial intelligence has had on radiology and diagnostic imaging.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>

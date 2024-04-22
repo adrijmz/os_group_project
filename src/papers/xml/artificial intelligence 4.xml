@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The role of artificial intelligence in achieving the Sustainable Development Goals</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ricardo</forename><surname>Vinuesa</surname></persName>
+							<email>rvinuesa@mech.kth.se</email>
+							<idno type="ORCID">0000-0001-6570-5499</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Linné FLOW Centre</orgName>
+								<orgName type="institution">KTH Mechanics</orgName>
+								<address>
+									<postCode>SE-100 44</postCode>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hossein</forename><surname>Azizpour</surname></persName>
+							<idno type="ORCID">0000-0001-5211-6388</idno>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Division of Robotics, Perception, and Learning</orgName>
+								<orgName type="department" key="dep2">School of EECS</orgName>
+								<orgName type="institution">KTH Royal Institute Of Technology</orgName>
+								<address>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Iolanda</forename><surname>Leite</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Division of Robotics, Perception, and Learning</orgName>
+								<orgName type="department" key="dep2">School of EECS</orgName>
+								<orgName type="institution">KTH Royal Institute Of Technology</orgName>
+								<address>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Madeline</forename><surname>Balaam</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Division of Media Technology and Interaction Design</orgName>
+								<orgName type="institution">KTH Royal Institute of Technology</orgName>
+								<address>
+									<addrLine>Lindstedtsvägen 3</addrLine>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Virginia</forename><surname>Dignum</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Computing Sciences</orgName>
+								<orgName type="laboratory">Responsible AI Group</orgName>
+								<orgName type="institution">Umeå University</orgName>
+								<address>
+									<postCode>SE-90358</postCode>
+									<settlement>Umeå</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Sami</forename><surname>Domisch</surname></persName>
+							<idno type="ORCID">0000-0002-8127-9335</idno>
+							<affiliation key="aff4">
+								<orgName type="department">Leibniz-Institute of Freshwater Ecology and Inland Fisheries</orgName>
+								<address>
+									<addrLine>Müggelseedamm 310</addrLine>
+									<postCode>12587</postCode>
+									<settlement>Berlin</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Anna</forename><surname>Felländer</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="institution">AI Sustainability Center</orgName>
+								<address>
+									<postCode>SE-114 34</postCode>
+									<settlement>Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Simone</forename><forename type="middle">Daniela</forename><surname>Langhans</surname></persName>
+							<affiliation key="aff6">
+								<orgName type="laboratory">Basque Centre for Climate Change (BC3)</orgName>
+								<address>
+									<postCode>48940</postCode>
+									<settlement>Leioa</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff7">
+								<orgName type="department">Department of Zoology</orgName>
+								<orgName type="institution">University of Otago</orgName>
+								<address>
+									<addrLine>340 Great King Street</addrLine>
+									<postCode>9016</postCode>
+									<settlement>Dunedin</settlement>
+									<country key="NZ">New Zealand</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Max</forename><surname>Tegmark</surname></persName>
+							<affiliation key="aff8">
+								<orgName type="department">Center for Brains, Minds and Machines</orgName>
+								<orgName type="institution">Massachusetts Institute of Technology</orgName>
+								<address>
+									<postCode>02139</postCode>
+									<settlement>Cambridge</settlement>
+									<region>Massachusetts</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Francesco</forename><surname>Fuso Nerini</surname></persName>
+							<email>francesco.fusonerini@energy.kth.se</email>
+							<idno type="ORCID">0000-0002-4770-4051</idno>
+							<affiliation key="aff9">
+								<orgName type="laboratory">Unit of Energy Systems Analysis (dESA)</orgName>
+								<orgName type="institution">KTH Royal Institute of Technology</orgName>
+								<address>
+									<postCode>68SE-1004</postCode>
+									<settlement>Brinellvagen, Stockholm</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The role of artificial intelligence in achieving the Sustainable Development Goals</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">7572ACF1C8DB69A29CBBCEEEB9D061DF</idno>
+					<idno type="DOI">10.1038/s41467-019-14108-y</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+				<p>The emergence of artificial intelligence (AI) and its progressively wider impact on many sectors requires an assessment of its effect on the achievement of the Sustainable Development Goals. Using a consensus-based expert elicitation process, we find that AI can enable the accomplishment of 134 targets across all the goals, but it may also inhibit 59 targets. However, current research foci overlook important aspects. The fast development of AI needs to be supported by the necessary regulatory insight and oversight for AI-based technologies to enable sustainable development. Failure to do so could result in gaps in transparency, safety, and ethical standards. T he emergence of artificial intelligence (AI) is shaping an increasing range of sectors. For instance, AI is expected to affect global productivity 1 , equality and inclusion 2 , environmental outcomes 3 , and several other areas, both in the short and long term 4. Reported potential impacts of AI indicate both positive 5 and negative 6 impacts on sustainable development. However, to date, there is no published study systematically assessing the extent to which AI might impact all aspects of sustainable development-defined in this study as the 17 Sustainable Development Goals (SDGs) and 169 targets internationally agreed in the 2030 Agenda for Sustainable Development 7. This is a critical research gap, as we find that AI may influence the ability to meet all SDGs. Here we present and discuss implications of how AI can either enable or inhibit the delivery of all 17 goals and 169 targets recognized in the 2030 Agenda for Sustainable Development. Relationships were characterized by the methods reported at the end of this study, which can be summarized as a consensus-based expert elicitation process, informed by previous studies aimed at mapping SDGs interlinkages 8-10. A summary of the results is given in Fig. 1 and the Supplementary Data 1 provides a complete list of all the SDGs and targets, together with the detailed results from this work. Although there is no internationally agreed definition of AI, for this study we considered as AI any software technology with at least one of the following capabilities: perception-including audio, visual, textual, and tactile (e.g., face recognition), decision-making (e.g., medical diagnosis systems), prediction (e.g., weather forecast), automatic knowledge</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+	</text>
+</TEI>
