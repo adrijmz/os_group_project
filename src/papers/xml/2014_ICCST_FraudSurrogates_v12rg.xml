@@ -60,7 +60,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:20+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -77,10 +77,309 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>Banks collect large amount of historical records corresponding to millions of credit cards operations, but, unfortunately, only a small portion, if any, is open access. This is because, e.g., the records include confidential customer data and banks are afraid of public quantitative evidence of existing fraud operations. This paper tackles this problem with the application of surrogate techniques to generate new synthetic credit card data. The quality of the surrogate multivariate data is guaranteed by constraining them to have the same covariance, marginal distributions, and joint distributions as the original multivariate data. The performance of fraud detection algorithms (in terms of receiver operating characteristic (ROC) curves) using a varying proportion of real and surrogate data is tested. We demonstrate the feasibility of surrogates in a real scenario considering very low false alarm and high disproportion between legitimate and fraud operations.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Banks collect large amount of historical records corresponding to millions of credit cards operations, but, unfortunately, only a small portion, if any, is open access. This is because, e.g., the records include confidential customer data and banks are afraid of public quantitative evidence of existing fraud operations. This paper tackles this problem with the application of surrogate techniques to generate new synthetic credit card data. The quality of the surrogate multivariate data is guaranteed by constraining them to have the same covariance, marginal distributions, and joint distributions as the original multivariate data. The performance of fraud detection algorithms (in terms of receiver operating characteristic (ROC) curves) using a varying proportion of real and surrogate data is tested. We demonstrate the feasibility of surrogates in a real scenario considering very low false alarm and high disproportion between legitimate and fraud operations.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>E-commerce by using credit cards is a sensitive area of cyber security where the security and privacy mechanisms are critical. This area features a massive volume of on-line transactions that are continuously exposed to frauds. A fraudster is a kind of intruder that attempt to violate the cyber security of a financial company, much of the times by spoofing the identity of a normal customer. Different algorithms have been proposed so far for credit card fraud detection which are to be tested with real data to assess their performance. Banks collect large amount of historical records corresponding to millions of credit cards operations, but, unfortunately, only a small portion, if any, is open access. This is because, e.g., the records include confidential customer data and banks are afraid of public quantitative evidence of existing fraud operations <ref type="bibr" target="#b0">[1]</ref>.</p><p>A solution is to generate synthetic records which replicate as much as possible the behavior of the real data. Surrogate techniques give an approach to this problem, which is the main focus of this paper. Surrogates algorithms have been extensively used to detect the possible presence of nonlinearities in a given time series realization. Basically, surrogate replicas of the original data are generated trying to preserve the correlation (second-order statistic) and amplitude distribution (first-order statistic). These replicas are generated in such a form that linearity applies. Then some statistics for detecting possible presence of non linearities are computed from both the surrogate replicas and the original data. If significant differences are given, then existence of nonlinearity is decided <ref type="bibr" target="#b1">[2]</ref> <ref type="bibr" target="#b2">[3]</ref>.</p><p>In this paper, we used a reduced set of real credit card data to generate surrogate multivariate series of credit card data transactions. A new extension of the IAAFT (Iteratively Amplitude Adjusted Fourier Transform) algorithm is considered <ref type="bibr" target="#b3">[4]</ref>. In this extension, the surrogate multivariate data are constrained to have the same covariance, marginal distributions, and joint distributions as the original multivariate data.</p><p>Fraud detection methods has been increasingly studied for several reasons such as: difficult solution, the increase of using credit card for purchases due to rapid advancement of ecommerce, and financial company requirements to decrease economical losses, as well as improve customer satisfaction and service quality. There is extensive literature that reviews these methods (see for instance <ref type="bibr" target="#b4">[5]</ref> and the references within). However, only few of these references are from the research field of signal processing, see for instance <ref type="bibr" target="#b5">[6]</ref>.</p><p>We have used surrogate data for assessing the performance of the algorithm in <ref type="bibr" target="#b5">[6]</ref>, comparing with the results obtained with the reduced set of real data and different mixture ratios of real and surrogate data. We demonstrate that surrogate data are valid to be combined with real data in order to complete a dataset that contains legitimate and fraud credit card operations. The detection results obtained from this kind of mixed datasets are comparable with those obtained from only real data under real requirements of very low false alarm. To the best of our knowledge, this is the first work that approaches this kind of application.</p><p>The rest of the paper is organized as follows. Section II describes the applied surrogate techniques. Section III includes the fraud detection method that is based on a combination of several detection algorithms. Section IV contains the results of the surrogate metrics and the detection tests using ROC curves in a real scenario. Finally, the conclusions of this work are included in Section V.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. MULTIVARIATE SURROGATE DATA</head><p>The main idea of surrogate techniques is to synthesize new stationary data by a randomisation in the Fourier domain <ref type="bibr" target="#b1">[2]</ref>. For multivariate series, cross-correlation among the variables should be conserved <ref type="bibr" target="#b2">[3]</ref>. The randomisation in the Fourier domain is chosen so that the differences of phase between components stay the same. Let   X n be a multivariate series</p><formula xml:id="formula_0">with M components (   j x n with 0, , 1 n N   </formula><p>being its th j  component). For initialization, the Fourier transform of each component can be computed:</p><formula xml:id="formula_1">         1 2 0 j nf N i i x f N j j j n Fx f x n e Ax f e        <label>(1)</label></formula><p>A classical multivariate surrogate can be computed using the following expression <ref type="bibr" target="#b2">[3]</ref>:</p><formula xml:id="formula_2">                1 1 2 / 0 , ,<label>, 1 , j t M</label></formula><formula xml:id="formula_3">N i x f f i nf N j j f S n s n s n s n Ax f e e N                (<label>2</label></formula><formula xml:id="formula_4">)</formula><p>where   f  is a random phase i.i.d. uniform in   0, 2 . However the algorithm of (1) does not impose any constraint to the surrogates that should be restricted to have the same marginal distributions and covariance as the original series (variables). As shown in Fig. <ref type="figure" target="#fig_1">1</ref> and Fig. <ref type="figure" target="#fig_3">2</ref> the marginals of the credit card operations are non-Gaussians. Thus, an iterative algorithm that projects on the two constraints (the covariance function expressed in the Fourier domain and the prescribed marginal distributions) has been proposed <ref type="bibr" target="#b1">[2]</ref>. This algorithm is called IAAFT (Iteratively Amplitude Adjusted Fourier Transform) surrogate, which is the following procedure:</p><p>1. Initialize</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head> </head><p>(1) j r n using <ref type="bibr" target="#b1">(2)</ref>. The prescribed values j v are the rank-ordered values of  </p><formula xml:id="formula_5">: j j x v sort x  .</formula><p>2. At iteration l , the following two steps are applied:</p><p>Step 1. Projection on the prescribed covariance. Calculate:</p><formula xml:id="formula_6">       ( )( ) ( ) 1 2 ( ) ( ) 0 l i f j l j nf N i r l l N j r n Fr f r n e A f e       <label>(3)</label></formula><p>and transform it back by replacing the amplitudes by the desired ones   j Ax f while keeping the phase</p><formula xml:id="formula_7">  ( ) l j r f  of this iteration:     ( )( ) 1 2 ( ) 0 1 l i f j nf N i r l N j j f s n Ax f e e N       <label>(4)</label></formula><p>Step 2. Projection on the prescribed marginal distributions. Independently of each component, apply the rank ordering mapping with the prescribed values j v :</p><formula xml:id="formula_8">        ( 1) ( ) l l j j j r n v rank s n  <label>(5)</label></formula><p>The procedure stops when R S  , being</p><formula xml:id="formula_9">      1 , , t M R n r n r n       and       1 , , t M S n s n s n      </formula><p>, or when R and/or S do not evolve anymore from one iteration to the next.</p><p>Recently, the IAAFT method was modified (M-IAAFT) by defining a theoretical model with a stationary covariance function C (standing for the <ref type="bibr" target="#b3">[4]</ref>. For the surrogate algorithm, C has to be first transformed into Fourier amplitudes</p><formula xml:id="formula_10">  jk C n for 0, 1 n N    and , 1 i j M   )</formula><formula xml:id="formula_11">  j x A f and phases   j x f </formula><p>of one realisation X , before generating new realisations. This model is used as seed Gaussian series and estimated by circulant embedding methods (see for instance <ref type="bibr" target="#b6">[7]</ref>). This procedure consists of the following steps:</p><p>1. For the desired covariance   jk C n , create a Gaussian signal X with circulant embedding methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Compute amplitude</head><formula xml:id="formula_12">  j x A f and phases   j x f  of the Fourier transform of each component 1, , j M  </formula><p>using (1).</p><p>3.a For each j , draw  </p><formula xml:id="formula_13">j v n ,   1 n N   from desired   j j p v . 3b. Sort values   j j v sort v  .</formula><p>4. Initialise algorithm IAAFT by (1)  R S  using (2).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Apply the iterations of algorithm IAFFT:</head><p>(3), ( <ref type="formula" target="#formula_7">4</ref>), (5).</p><p>6. Stop if R close enough to S or they do not change.</p><p>In addition, one improvement of M-IAFFT was proposed, which consists of also prescribing the joint distribution of the variables. This is done using an optimal transport approximation in the step 2 of the IAAFT procedure (see the details in <ref type="bibr" target="#b3">[4]</ref> and <ref type="bibr" target="#b7">[8]</ref>). Thus, the surrogate multivariate data are constrained to have the same covariance, marginal distributions, and joint distributions as the original multivariate data. In this work, we applied this last approach especially considering that: the marginal distributions are complex since they are reduced dimension data estimated from sparse variables (some of them nominal); and small differences in the data could arise great changes in fraud detection due to the resemblance between some legitimate and fraud operations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. FRAUD DETECTION PROCEDURE</head><p>The selected fraud detection procedure is a previous work of the authors reported in <ref type="bibr" target="#b5">[6]</ref> and it is based on fusion and signal processing techniques. Let us review some of the principal aspects of this procedure. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Pre-processing</head><p>The pre-processing stage begins by reading the data files sent from the bank. These data are cross-referenced against the information of confirmed fraudulent transactions, and each transaction is labeled as fraud or non-fraud. Time of transaction, amount, and other variables are used for cross-reference. The system extracts a series of features from labeled data, both direct (e.g. amount) and indirect features (e.g. time between two consecutive transactions for the same credit card).</p><p>Transaction files are composed by D variables, but several of these variables are nominal in nature, i.e., they allow some distinction between transactions but they are not useful for direct comparisons because they are not distributed over a numerical range. Some instances of these variables are: business name, city, cell phone number, etc. These variables are ignored. Even though these nominal variables are not viable for classification, they could be used for a better description of fraud patterns.</p><p>The rest of the variables were selected for detection, for a total of ' D variables, which defines a high-dimensional problem. Taking into account the huge volumes of data, they were exposed to dimension reduction using Principal Component Analysis (PCA), keeping enough variables to obtain an explained variance over 98%. The M resulting components are linear combinations of the original ' D input variables. M is the number of variables or series for the surrogate algorithm (see Section II). For the case studied in Section IV, 8 M  .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Data Selection</head><p>Once the number of data for training was decided, the system extracts the selected data. The pre-processed transactions are selected according to their time of transaction, taking a number of earlier data for training and selecting the current data for classification (testing data).</p><p>Training transactions are used to estimate prototypical frauds that will help with the classification stage. This estimation is done using a fuzzy clustering algorithm <ref type="bibr" target="#b8">[9]</ref>. Several numbers of partitions are attempted until obtain an optimum value according to a quality criterion based on the partition and partition entropy coefficients <ref type="bibr" target="#b8">[9]</ref>. The centroids of the optimal partition clusters are the prototypical fraudulent transactions.</p><p>All fraudulent transactions (including prototypical ones) are replicated to improve the ratio of fraudulent to legitimate transactions. An augmented sample of fraudulent transactions is obtained by adding 10 replicates with spherical Gaussian noise to the original records <ref type="bibr" target="#b9">[10]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Training and Classification</head><p>Once data is split into training and testing, training data are further split according to the kinds of operations. Each one of these data subsets is used to train the classifiers. Training stage is used to find optimal classifier parameters that will be used in classification or testing stage. In this work, we used as detectors: Discriminant Analyzers LDA and QDA <ref type="bibr" target="#b10">[11]</ref> and a non-Gaussian-Mixture-based classifier explained in <ref type="bibr" target="#b11">[12]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Fusion and Post-processing</head><p>The fusion function maps the individual scores for every detector to a single score. This fusion process is named "soft fusion" because values are fused over the whole range of the scores (between 0 and 1). The scores from each detector are combined using order statistics filters (the median and the minimum) and the mean. The resulting fused scores are used to calculate the classification performance of the system. Postprocessing steps such as extracting key performance indicators (KPI) for the company can be optionally performed. Some of these indicators are: VDR -Value Detection Rate (the total fraud percentage saved by the system for a certain cutoff values of score); ADR-Account Detection Rate (the percentage of detected cards); and ADT-Average Detected Transaction (the mean amount of transactions required for detecting a fraudulent card).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. RESULTS AND DISCUSSION</head><p>The data were provided by an internationally operating financial company. For confidentiality, this institution cannot be named. The real data consisted of 8,000,000 and 1,600 records of legitimate and fraud operations. The number of the variables was 8, corresponding to principal components extracted from the original variables of the records. It can be seen in Fig. <ref type="figure" target="#fig_1">1</ref> that the surrogate legitimate operations were very close to the real legitimate operations. The histograms in Fig. <ref type="figure" target="#fig_1">1</ref>.b were very similar for surrogate and real operations, particularly for components 2 to 7. For components 1 and 8, even though the histograms are different, the results are still similar. The autocorrelations in Fig1.c were basically identical for real and surrogate data. Finally, the cross-correlations in Fig. <ref type="figure" target="#fig_1">1</ref>.d were harder to fit than the autocorrelations. However, for some cases the surrogate data obtained an almost exact fit of the cross-correlation function. Fig. <ref type="figure" target="#fig_3">2</ref> shows the results of the surrogate algorithm for fraud operations, and shows the same values than Fig. <ref type="figure" target="#fig_1">1</ref>. It can be seen that the surrogate fraud operations are close to the real fraud operations. The histograms of the surrogate data in Fig. <ref type="figure" target="#fig_3">2</ref>.b were very close to that of the fraud data, particularly for the fourth component. They were less close to the real data than the histograms in Fig. <ref type="figure" target="#fig_1">1</ref>.b due the lower amount of fraud operations, which worsened the estimation of the parameters of the distributions. The autocorrelations of the surrogate fraud operations (Fig. <ref type="figure" target="#fig_3">2</ref>.c) were very close to that of the real fraud operations. Finally, the cross-correlations in Fig. <ref type="figure" target="#fig_3">2</ref>.d are similar for real and surrogate data. Fig. <ref type="figure">3</ref> shows the joint probability density functions (pdf) of real and surrogate legitimate operations. Although the joint pdfs are calculated for the whole 8 components at once, they are shown in slices of two components to make the result more readable. Column Fig. <ref type="figure">3</ref>.a shows the joint pdf of real legitimate operations for components 1 and 2 (first row), 1 and 3 (second), 1 and 4 (third), and 1 and 5 (fourth). Column Fig. <ref type="figure">3</ref>.b shows the same pdf, but calculated on surrogate legitimate data. Column Fig. <ref type="figure">3</ref>.c shows the joint pdf of real legitimate operations for components 1 and 6 (first row), 1 and 7 (second), 1 and 8 (third), and 2 and 3 (fourth). Column Fig.     The results in Fig. <ref type="figure">3</ref> show that the surrogate legitimate data had a very similar joint pdf to that of real legitimate data. The peaks of the pdf for the surrogates were located at the same positions as the peaks of the pdf for the true data, and the shapes of both pdfs were very close in all cases. The pdf of the surrogates were more diffuse (i.e. less discrete), which might be caused by the amount of non-stationarity in the legitimate operations.</p><p>Fig. <ref type="figure">4</ref> shows the pdf of real and surrogate fraud operations. As with Fig. <ref type="figure">3</ref>, the pdfs are sliced to make the result more readable; the same slices were used in both Figures. The surrogate algorithm obtained a similar pdf as that of the real operations, although the fit was a bit worse than that for legitimate operations. This was caused in part by the fact that the fraud data showed a more complex pdf than the legitimate operations. Furthermore, it is possible that the more diffuse pdf for the surrogates was also caused by the large amount of non-stationarity in fraud data. This is understandable, since fraudsters are constantly adapting to increase their chance to successfully defraud the banking companies. The similarity of the surrogates and the real operations was also tested by performing automatic fraud detection, using the method shown in <ref type="bibr" target="#b5">[6]</ref>. The operations were split 50%/50% into training and testing. Detection performance was assessed using the ROC curves of the obtained fraud scores. To test the effect of the surrogate data on the classification, the detection was first performed only with real operations. Then, a certain amount of randomly-selected operations were replaced with surrogate operations and the detection was repeated. If the surrogates resemble the true data, the ROC curves will be similar. The amount of replaced operations was changed from 0% (only true operations) to 50%, 75%, and 100% (only surrogate operations).</p><p>The obtained ROC curves are shown in Fig. <ref type="figure" target="#fig_5">5</ref>. It can be seen that the curves are similar in all cases, particularly once the false positive rate (FPR) rises above 0.1. However, in the case of automatic fraud detection, it is of particular importance to obtain a low FPR. This is because false alarms correspond to negative experiences for the bank's clients, which can affect its business. The results for this zone of interest with low values of FPR are shown in Fig. <ref type="figure">6</ref>. The behavior of the ROC curves is similar in all cases, although there are some differences in value for very low amounts of FPR. In all cases, the lower the amount of surrogate operations, the closer the ROC became to that of the real operations. However, all the curves were very close for FPR above 0.06. Even if there were some differences for very low values of FPR, the curves with surrogates did not over-estimate the performance of the system, but instead obtained a reasonable (if low) estimate of the ROC with only real operations.  This similarity between curves was also tested by calculating the area under the curve (AUC) for all the ROC curves. These values were calculated both for the full curves, and for the values within the zone of interest. The results are shown in Table <ref type="table" target="#tab_3">I</ref>. It can be seen that the AUC is similar in all cases, although it is slightly higher for the case with no surrogate data. The difference is a bit more noticeable in the zone of interest, but it is very small once one considers the full ROC curves. These results are in concordance with Fig. <ref type="figure" target="#fig_5">5</ref> and Fig. <ref type="figure">6</ref>, where the ROC curve with 0% surrogate operations rises higher than the other curves for very low values of FPR, but all the curves were very similar for FPR above 0.06. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. CONCLUSION</head><p>An application of surrogate techniques to enhance datasets for testing fraud detection algorithms has been presented. We have demonstrated that significant statistical characteristics (covariance, marginal distributions, and joint distributions as the original multivariate data) similar as the original multivariate data were obtained for the surrogate multivariate data.</p><p>A fraud detection method for credit card operations was tested using the surrogate data. The detection results obtained for different mixtures of real and surrogate data were comparable under real requirements of very low false alarm. This work opens several possible financial applications of surrogates.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>The procedure follows four stages: (A) Pre-processing; (B) Data selection; (C) Training and classification; and (D) Fusion and post-processing.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 shows the results of the surrogate algorithm for legitimate operations. The first column on the left (Fig.1.a) shows 500 samples of the surrogate data, which has eight components. The second column (Fig.1.b) shows the histogram of the eight components in surrogate data, in black bars, with the histogram of the legitimate operations superimposed in red. The third column (Fig.1.c) compares the autocorrelations of each surrogate component (in blue) with the corresponding autocorrelation of the legitimate data (in red). Finally, the fourth column (Fig.1.d) shows the crosscorrelations of the first component with the other components (first seven rows) and the cross-correlation of the second component with the third component (eighth row). The crosscorrelations of the surrogate data are shown in blue, and the cross-correlations of the legitimate data are shown in red.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Results of surrogate data from legitimate operations.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Results of surrogate data from fraud operations.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 3 .Fig. 4 .</head><label>34</label><figDesc>Fig. 3. Joint distribution of legitimate operations.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. ROC curves for different percentages of surrogate data.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>3.d shows the same pdf, but calculated on surrogate legitimate data.</figDesc><table><row><cell>1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>4000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 2</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>2000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell cols="2">-0. 8</cell><cell>-0. 6</cell><cell>-0. 4</cell><cell>-0. 2</cell><cell>0</cell><cell>0. 2</cell><cell>0. 4</cell><cell>0. 6</cell><cell>0. 8</cell><cell>1</cell><cell>-1 0</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>1 0</cell></row><row><cell>2</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>1 0000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>5000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 05</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-2</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell></cell><cell>-6</cell><cell>-5</cell><cell>-4</cell><cell></cell><cell>-3</cell><cell>-2</cell><cell>-1</cell><cell>0</cell><cell></cell><cell>1</cell><cell>-1 0</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row><row><cell>0. 5</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>5000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 06</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-0. 5 0</cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell cols="2">-1 . 5 0</cell><cell>-1</cell><cell>-0. 5</cell><cell>0</cell><cell>0. 5</cell><cell>1</cell><cell>1. 5</cell><cell>2</cell><cell>2. 5</cell><cell>3</cell><cell>-1 0 0 0. 02 0. 04</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row><row><cell>0. 5</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>5000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 04</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 02</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-0. 5</cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell cols="2">-1 . 2 0</cell><cell>-1</cell><cell>-0. 8</cell><cell>-0. 6</cell><cell>-0. 4</cell><cell>-0. 2</cell><cell>0</cell><cell>0. 2</cell><cell>0. 4</cell><cell>0. 6</cell><cell>-1 0 0</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row><row><cell>0. 5</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>4000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 04</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>2000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 02</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-0. 5</cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell>0</cell><cell>-1</cell><cell></cell><cell></cell><cell>-0. 5</cell><cell></cell><cell></cell><cell>0</cell><cell></cell><cell></cell><cell>0. 5</cell><cell>-1 0 0</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row><row><cell>-0. 5 0 0. 5</cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell cols="2">-0. 4 0 5000 1 0000</cell><cell>-0. 2</cell><cell>0</cell><cell></cell><cell>0. 2</cell><cell>0. 4</cell><cell>0. 6</cell><cell cols="2">0. 8</cell><cell>1</cell><cell>-1 0 0 0. 01 0. 02 0. 03</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row><row><cell>0 0. 5</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>5000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 01 0. 02</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-0. 5</cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell cols="2">-0. 8 0</cell><cell>-0. 6</cell><cell>-0. 4</cell><cell></cell><cell>-0. 2</cell><cell>0</cell><cell>0. 2</cell><cell cols="2">0. 4</cell><cell>0. 6</cell><cell>-1 0 0</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row><row><cell>0. 5</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>1 0000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 02</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>5000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0. 01</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>-0. 5</cell><cell>0</cell><cell>50</cell><cell>100</cell><cell>150</cell><cell>200</cell><cell>250</cell><cell>300</cell><cell>350</cell><cell>400</cell><cell>450</cell><cell>500</cell><cell cols="2">-0. 8 0</cell><cell>-0. 6</cell><cell>-0. 4</cell><cell></cell><cell>-0. 2</cell><cell>0</cell><cell>0. 2</cell><cell cols="2">0. 4</cell><cell>0. 6</cell><cell>-1 0 0</cell><cell>-8</cell><cell>-6</cell><cell>-4</cell><cell>-2</cell><cell>0</cell><cell>2</cell><cell>4</cell><cell>6</cell><cell>8</cell><cell>10</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>TABLE I .</head><label>I</label><figDesc>AREA UNDER THE CURVE (AUC) OF THE DIFFERENT CONSIDERED CASES.</figDesc><table><row><cell>Amount</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>of surrogate data AUC calculated on the: Full ROC curves Zoom in the detection zone of interest</head><label></label><figDesc></figDesc><table><row><cell>0%</cell><cell>0.8708</cell><cell>0.0656</cell></row><row><cell>50%</cell><cell>0.8641</cell><cell>0.0640</cell></row><row><cell>75%</cell><cell>0.8563</cell><cell>0.0591</cell></row><row><cell>100%</cell><cell>0.8678</cell><cell>0.0589</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head></head><label></label><figDesc>Fig. 6. Zoom in the detection zone of interest of the ROC curves for different percentages of surrogate data.</figDesc><table><row><cell></cell><cell>0.7</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0.6</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>True Positive Rate</cell><cell>0.3 0.4 0.5 0.2</cell><cell></cell><cell></cell><cell></cell><cell cols="2">Real data Surrogates 100% Surrogates 50% Surrogates 75%</cell></row><row><cell></cell><cell>0.1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0</cell><cell>0</cell><cell>0.02</cell><cell>0.04</cell><cell>0.06</cell><cell>0.08</cell><cell>0.1</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">False Positive Rate</cell><cell></cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>ACKNOWLEDGMENT This work has been supported by Universitat Politècnica de València under grant SP20120646, Generalitat Valenciana under grant ISIC/2012/006; and Spanish Administration and European Union FEDER Programme under grant TEC2011-23403.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Data mining for credit card fraud: A comparative study</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bhattacharyya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tharakunnel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Westland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Decision Support Systems</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="602" to="613" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Surrogate time series</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schreiber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Schmitz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica D</title>
+		<imprint>
+			<biblScope unit="volume">142</biblScope>
+			<biblScope unit="issue">3-4</biblScope>
+			<biblScope unit="page" from="346" to="382" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Generating surrogate data for time series with several simultaneously measured variables</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Prichard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Theiler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physical Review Letters</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="951" to="954" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Using surrogates and optimal transport for synthesis of stationary multivariate series with prescribed covariance function and non-Gaussian joint distribution</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Borgnat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Abry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Flandrin</surname></persName>
+		</author>
+		<idno>ICASSP 2012</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE International Conference on Acoustics, Speech and Signal Processing</title>
+				<meeting>IEEE International Conference on Acoustics, Speech and Signal Processing</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="3729" to="3732" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A comprehensive survey of data mining-based fraud detection research</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Phua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gayler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Research Repository</title>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Automatic credit card fraud detection based on non-linear signal processing</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Salazar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Safont</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Soriano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Vergara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 46th Annual IEEE International Carnahan Conference</title>
+				<meeting>the 46th Annual IEEE International Carnahan Conference<address><addrLine>Boston, USA, ICCST</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012">2012. 2012</date>
+			<biblScope unit="volume">6393560</biblScope>
+			<biblScope unit="page" from="207" to="212" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Fast and exact synthesis of stationary multivariate Gaussian time series using circulant embedding</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Helgason</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Pipiras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Abry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Signal Processing</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1123" to="1133" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Wasserstein barycenter and its application to texture mixing</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rabin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Peyr´e</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Delon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bernot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SSVM&apos;11</title>
+				<meeting>SSVM&apos;11</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Pattern recognition with fuzzy objective function algorithms</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Bezdek</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1981">1981</date>
+			<publisher>Plenum Press</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">ICA using spacings estimates of entropy</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">G</forename><surname>Learned-Miller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Fisher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Machine Learning Research</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1271" to="1295" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><surname>Duda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Stork</surname></persName>
+		</author>
+		<title level="m">Pattern Classification</title>
+				<meeting><address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>John Wiley &amp; Sons</publisher>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">On Statistical Pattern Recognition in Independent Component Analysis Mixture Modelling</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Salazar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Springer Theses in Electrical Engineering Series</title>
+				<meeting><address><addrLine>Berlin, Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

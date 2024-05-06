@@ -64,7 +64,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -81,10 +81,653 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>Analysis of fraud detection is one of the recent research areas in data analytics. Credit card fraud is rapidly increasing in different ways significantly with modern technology. The Credit card consumers and processing financial company have losing large amount annually. The fraudsters rapidly and continuously try to find and follow novel technologies to commit the illegal actions against consumers. In COVID-19 pandemic situations online shopping trends growing exponentially and parallelly increase Credit card fraud rapidly. In this paper we trained different data mining techniques with statistical approaches for credit card fraud detection. Numerical illustrations to prove the proposed results.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Analysis of fraud detection is one of the recent research areas in data analytics. Credit card fraud is rapidly increasing in different ways significantly with modern technology. The Credit card consumers and processing financial company have losing large amount annually. The fraudsters rapidly and continuously try to find and follow novel technologies to commit the illegal actions against consumers. In COVID-19 pandemic situations online shopping trends growing exponentially and parallelly increase Credit card fraud rapidly. In this paper we trained different data mining techniques with statistical approaches for credit card fraud detection. Numerical illustrations to prove the proposed results.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. Introduction</head><p>Data mining is the discovery of information or models for pre-existing data. The corresponding models made up of one of several things. In data analytics research, the statisticians were the first to use the term "Data Mining". The term data mining was a critical term mentioning to challenges to retrieve hidden information that was not stayed by the data. The statistical based researchers view data mining concepts as the creation of a statistical model, that is, a fundamental probability distribution from which the visible data is drawn <ref type="bibr" target="#b0">[1]</ref>. The credit card customers and industry has considered computing statistical models for automation. Recently, these types of statistical models have been used to various areas likes academic research, especially with respect to share markets and e-commerce. The credit card fraud-detection domain is s growing field in Covid periods and presents many challenging and issues for using data mining techniques <ref type="bibr" target="#b1">[2]</ref>.</p><p>The global e-commerce will predict to reach almost 7k billion US dollars in 2023 as shown in Fig. <ref type="figure">1</ref>. E-commerce frauds mainly focused on credit cards as a means of payment through credit card adoption. The credit card fraud ratio is the same or perhaps slightly growing indicted worldwide as shown in Fig. <ref type="figure">2</ref>  <ref type="bibr" target="#b2">[3]</ref>. The annual value of consumers losses on card-not-present (CNP) fraud for debit and credit cards issued in the United Kingdom (UK) alone for 2019 amounted to 470.2 million GBP <ref type="bibr" target="#b3">[4]</ref>. Over the years, technology has significantly changed, and so have the fraud patterns. Today, CNP is a dominant type of fraud, as visible in Fig. <ref type="figure">2</ref>, and it is reported that <ref type="bibr" target="#b4">[5]</ref>: CNP fraud accounted for 1.43 billion in fraud losses in 2018 that means increase of 17.7% compared with 2017 <ref type="bibr" target="#b5">[6]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. Related Works</head><p>Credit card fraud detection is one of the most essential research area discovered domains of fraud detection and its depend on the computerization recorded transactions to detect fraudulent behavior. Every time a credit card is used, transaction data, composed of several attributes (e.g., credit card identifier, transaction date, recipient, amount of the transaction), are stored in the databases of the service provider. However, a single transaction information is typically not sufficient to detect a fraud occurrence and the analysis must consider aggregate measures like total spent per day, transaction number per week or average amount of a transaction <ref type="bibr" target="#b6">[7]</ref>.</p><p>Data mining technique used in solving unsolvable problems in the field of credit fraud detection problem. Credit card fraud detection mainly used to identify those transactions that are fraudulent into two main classes of valid (genuine) and fraudulent transactions. Credit card fraud finding is constructed on analysis of a card's spending behavior. Many techniques have been applied to credit card fraud detection, artificial neural network, genetic algorithm, support vector machine, frequent itemset mining, decision tree, migrating bird's optimization algorithm and naïve bayes <ref type="bibr" target="#b7">[8]</ref>. Now a days most of the research compare their proposed related review of literature and its algorithms with a benchmark algorithm. The comparison using different standard binary for classification measurement called as misclassification error, receiver operating characteristic (ROC), Kolmogorov-Smirnov (KS), F1Score <ref type="bibr" target="#b8">[9]</ref> or AUC statistics <ref type="bibr" target="#b9">[10]</ref>. The above measures may not be the most appropriate evaluation methods for evaluating the credit card fraud detection models and assume that different misclassification errors carry the same cost and similarly with the correct classified transactions <ref type="bibr" target="#b10">[11]</ref>. Now a days most of the researchers are using statistical modeling tools used to solve the task, observe the true singularities in the real world only through a proxy given as a restricted set of point-wise observations. In credit-card fraud detection, the true phenomenon of interest is the genuine purchase behavior of card holders or, likewise, the malicious behavior of fraudsters <ref type="bibr" target="#b11">[12]</ref>. In our experiment, we use random forest as a classifier <ref type="bibr" target="#b12">[13]</ref>. The popularity of decision tree models in data mining is owed to their simplification in algorithm and flexibility in handling different data attribute types <ref type="bibr" target="#b13">[14]</ref>. However, single-tree model is possibly sensitive to specific training data and easy to overfit <ref type="bibr" target="#b14">[15]</ref> and <ref type="bibr" target="#b15">[16]</ref>.</p><p>Seven classification algorithms such as J48, Random Tree (RT), Decision Stump (DS), Logistic Model Tree (LMT), Hoeffding Tree (HT), Reduce Error Pruning (REP) and Random Forest (RF) are used to measure the accuracy. Data mining and machine learning techniques build with WEKA (Waikato Environment for Knowledge Analysis) tools which is used to finding experimental results of weather related dataset. Out of seven classification algorithms, Random tree algorithm outperforms other algorithms by yielding an accuracy of 85.714% <ref type="bibr" target="#b16">[17]</ref> and the authors discuss another paper clearly data mining with decision tree approaches using medical related data <ref type="bibr" target="#b17">[18]</ref>.</p><p>The real-world research mainly focuses on unsupervised learning techniques can help the fraud detection systems to find various anomalies relating to the credit card issues. In this research paper authors present a hybrid supervised and unsupervised techniques to improve the fraud detection accuracy. Unsupervised outlier scores, figured at different levels of granularity, are compared and tested on a real, annotated, credit card fraud detection dataset <ref type="bibr" target="#b18">[19]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. Credit Card Fraud Detection</head><p>The pandemic situations, the credit card companies can diagnose fraudulent credit card transactions so that customers are not exciting for items that they did not obtaining. The following Fig. <ref type="figure">1</ref> and Fig. <ref type="figure">2</ref> indicate credit card fraud detection increase year by year and explain evaluation of the total value of credit card fraud within single euro payments area. Finally, it is also vital for businesses not to detect transactions which are honest as fraudulent, if not, the companies would keep blocking the credit card, and which may lead to client disappointment. So at this time are two important expects of this analysis:</p><p>• What would happen when the company will not be able to detect the fraudulent transaction and would not confirm from a customer about this recent transaction whether it was made by him/her. • In contract, what would happen when the company will detect a genuine transaction as fraudulent and keep calling customer for confirmation or might block the card.</p><p>The datasets <ref type="bibr" target="#b19">[20]</ref> contain transactions that have 492 frauds out of 284,807 transactions. So, the dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions. When we try to build the prediction model with this kind of unbalanced dataset, then the model will be more inclined towards to detect new unseen transaction as genuine as our dataset contains about 99% genuine data. As our credit card dataset is highly imbalanced, use accuracy score as a metric because it will be usually high and misleading, we should focus on f1-score, precision/recall score or confusion matrix.</p><p>Due to confidentiality issue, original features v1, v2, ... v28 have been transformed with PCA, however, we may guess that these features might be originally credit card number, expiry date, CVV, cardholder name, transaction location, transaction date-time, etc. Two features have not been changed with PCA are 'Time' and 'Amount'. In this research feature 'Time' contains the seconds forgotten between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount for the corresponding card customer, this feature can be used for cost-sensitive learning and the feature 'Class' denoted as response variable, and it takes value 1 in case of fraud and 0 otherwise.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. Experimental Setup and Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Multiple Linear Regression (MLR)</head><p>In statistical analysis, linear regression is a basic and most of the researchers are commonly used prediction problems. The overall interpretation of regression analysis is to clearly be explained two types of things, set of predictor variables do amazing jobs for predicting the futures based on dependent variables and variables are important predictors of the outcome variable. This regression which is used to explain the relationship between one dependent variable and one or more independent variables.</p><p>Multiple linear regression model known as multiple regression. It is used to finding the prediction and a statistical technique which is include several explanatory variables is to be used to predict the outcome of the response or predicted variable. The advantages of MLE model are to model the linearity between the explanatory or independent variable and response or dependent variable and the MLE equations as defined in the following. yi = β0+ β1xi1+ β2xi2 + … + βpxip + ε</p><p>Where, yi denoted as response or dependent variable, xi means explanatory or independent variables, β0 means y-intercept that means terms of constant, βp coefficients of the given slope for the given independent variables and ε denoted as error terms in the given model also known as residuals <ref type="bibr" target="#b20">[21]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Symbolic Representation</head><p>The main objective for symbolic representation is to be used to understand the nature of the parameter. The symbolic representation is one the methods for solving the statistical related problems. In this research mainly focused three major parameters namely time, confidentiality, amount, and class label. The parameters 'time' assigned as 'θ', sources of 'confidentiality' level assigned as 'µ'. Similarly, other fields like 'amount' of transactions named as 'δ' and the 'class' label assigned as 'η' respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Correlation Coefficient</head><p>The linear correlation coefficient which is used to the given data that measures the strength of the given data and the linear relationship between two variables namely x and y. The linear correlation coefficient indicates the sign and direction of the linear relationship between x and y. When r nothing but correlation coefficient and the range of near 1 to −1. The correlation coefficient equation returns near 1 which means linear relationship is strong and the correlation coefficient return near 0, the linear relationship is weak. The linear correlation coefficient equation is presented in equation <ref type="bibr" target="#b1">(2)</ref>.</p><formula xml:id="formula_1">𝑟 = 𝑛(∑ 𝑥𝑦)−(∑ 𝑥) (∑ 𝑦) √[𝑛 ∑ 𝑥 2 −(∑ 𝑥) 2 ] [𝑛 ∑ 𝑦 2 −(∑ 𝑦) 2 ]</formula><p>(2)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Decision Tree</head><p>The decision tree approaches used to involve the probability-based decision making which is represented the outcomes in a tree-shaped diagram to chart out a course of action in a statistical probability analysis. In this approach used to solve complex problems or branches and each possible branch indicate the decision tree could be a possible outcome. In this research using four different decision tree approaches namely M5, random forest, random tree, and REP tree. M5 model decision tree approaches is used to learner for regression task which is used to predict values of numerical response variable Y. The M5 decision tree approaches having linear regression functions are used to find the leaf nodes. M5 decision tree approaches very useful for finding the forecasting in various research area which can predict continuous numerical attributes. Random forests are an ensemble learning method for finding classification, regression, and other related tasks of decision trees at training time. It is used to solve the classification tasks; the output of the random forest is the class selected by most trees.</p><p>Random tree is easy to intellectualize but will naturally suffer from extreme variance, which makes them not good in terms of precision. One way to affect this restriction is to make several alternatives of a single decision tree by choosing every time a separate subset of the same training set in the context of randomization-based ensemble methods. Random Trees (RT) belong to a class of machine learning algorithms which is used to makes predictions by averaging over the predictions of several independent base models. REP decision tree is a method for finding to generate a tree from a given dataset. It is careful to be an extension of C45 decision tree approach by enhancing the pruning stage by using Reduced Error Pruning (REP).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Mean Absolute Error (MAE)</head><p>In statistical analysis the mean absolute error is used to measure the model error between paired observations expressing the similar singularity. For statistical examples of 'y' and 'x' include the comparisons of predicted versus observed values and subsequent time versus initial time. The mean absolute error which is used to an alternative technique of measurement.</p><formula xml:id="formula_2">𝑀𝐴𝐸 = ∑ | 𝑛 𝑖=1 𝑦 𝑖 −𝑥 𝑖 | 𝑛<label>(3)</label></formula><p>Where, y i denoted as prediction and x i means true values and 'n' denoted as total number of data points or number of observations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. Root Mean Squared Error (RMSE)</head><p>Root mean square error is the standard deviation of the residuals called prediction errors. Residuals is used to measure of how far from the regression line data points presented. RMSE is a measure of how spread out these residuals and used to find it tells you how concentrated the data is around the line of best fit. The RMSE mainly used for forecasting or predicting the future of commonly used in climatology, forecasting, and regression analysis to verify experimental results.</p><formula xml:id="formula_3">𝑅𝑀𝑆𝐷 = √ ∑ (𝑥 𝑖 −𝑥 𝑖 ̂ ) 2 𝑁 𝑖=1 𝑁<label>(4)</label></formula><p>Where 'i' means individual variable in the corresponding columns, 'N' means number of non-missing data points, 𝑥 𝑖 means actual observations of time series data and 𝑥 𝑖 ̂ means estimated times series.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>G. Relative Absolute Error (RAE)</head><p>Relative Absolute Error (RAE) is used to find the performance of a predictive model. The Relative Absolute Error is expressed as a ratio, comparing a mean error or residual to errors produced by a trivial or naive model. The RAE approximation error in a data value is the discrepancy between an exact value and some approximation to it.</p><formula xml:id="formula_4"> = | 𝑢 𝐴 −𝑢 𝐸 𝑢 𝐸 | . 100%<label>(5)</label></formula><p>Where  means percentage of the error occurs in the corresponding model, 𝑢 𝐴 actual value observed and 𝑢 𝐸 expected values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>H. Root Relative Squared Error (RRSE)</head><p>The root relative squared error is used to find the relative to a simple predictor had been used. The simple predictor and find the average of the actual values.</p><p>Based on statistical analysis, the root relative squared error Ei of each individual model and i is evaluated by the RRSE equation.</p><formula xml:id="formula_5">𝐸 𝑖 = √ ∑ (𝑃 (𝑖𝑗) −𝑇 𝑗 ) 2 𝑛 𝑗=1 ∑ (𝑇 𝑗 −𝑇 ̅ ) 2 𝑛 𝑗=1<label>(6)</label></formula><p>Where P(ij) means predicted values by the corresponding individual model i means record of j (out of n records), Tj stands for target value for record of j and T ̅ presented using the given formula:</p><formula xml:id="formula_6">𝑇 ̅ = 1 𝑛 ∑ 𝑇 𝑗 𝑛 𝑗=1</formula><p>For RRSE called a perfect fit, the numerator is equal to 0 and Ei = 0. The Ei index ranges between 0 to infinity, with 0 corresponding to the ideal for the corresponding model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. Data Normalization</head><p>Highlight scaling is a strategy used to institutionalize the scope of independent variables or feature of data. In information handling, it is otherwise called data normalization and is generally performed the information preprocessing step is accustomed to carry all values into the range [0, 1]. This is additionally called unity-based standardization. This can be summed up to limit the scope of values in the dataset between any self-assertive point 'a' and 'b' and assign (0.1, 0.9) respectively, the similar methods discussed using various dataset <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b23">24]</ref>.</p><formula xml:id="formula_7">min max min ) ( ) ( X X a b X X a X      <label>(7)</label></formula><p>Where 'a' and 'b' namely define the maximum and minimum range, 'X' means corresponding column value, Xmin denoted as minimum value of the corresponding column and Xmax denoted as maximum value of the column.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. Experimental</head><p>The current situations to increase most of the people for using debit/credit card in day-to-day activities. In this manner for using cards trust &amp; safety is a major problem for using all platform. Fraud detection and prevention at every step of the credit/debit card user journey. The above dataset could be inferred that the 28 anonymized features and 2 non anonymized features such as amount and Class which means whether the transaction was a fraud or not. The statistical description and summary show in Table <ref type="table" target="#tab_0">1</ref> having some preliminary statistical measurements.    </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>VI. Summary and Conclusions</head><p>For using Table <ref type="table" target="#tab_1">2</ref> and the datasets <ref type="bibr" target="#b19">[20]</ref> contain transactions that have 492 frauds out of 284,807 transactions. In this case, the fraud transactions occur 0.1954% and the genuine transaction transactions occurs 99.8040%. Based on the descriptive statistics, mean is the average samples of credit card transactions level observed data.</p><p>The entire dataset having the average amount of transactions Rs. 88.35 and the standard deviation which is used to find the amount of variation or dispersion of amount Rs. 250.12. The maximum amount of credit card transition Rs. 25691.16 and the minimum Rs. 0, the numerical illustrations show in Table <ref type="table" target="#tab_2">3</ref>, Fig. <ref type="figure">3</ref> and Fig. <ref type="figure">4</ref> based on time and amount of transactions. Clustering analysis for credit card fraud detection using four parameters namely time, confidentiality, amount, and class, the corresponding clustering analysis shows in Fig. <ref type="figure">4</ref>.</p><p>Multiple linear regression which is used to predict the future with symbolic notations using equation <ref type="bibr" target="#b0">(1)</ref>. In this case, the dataset having four types of parameters namely time (), confidentiality (), amount () and class (). MLE used to finding forecasting time, confidentiality, amount and class equations, the corresponding equations shows in Table <ref type="table">4</ref>. Fig. <ref type="figure">5</ref>, indicate the plot matrix which is used to understanding the clustering pattern in various combinations of the parameters namely time (), confidentiality (), amount () and class (), the corresponding diagrammatical representation shows in Fig. <ref type="figure">5</ref>.</p><p>Multiple linear regression approaches followed by finding four response or dependent variable 𝑦 𝑖 using equation (1) relating to the independent variable namely time (), confidentiality (), amount () and class () and the table having different scale of data namely second, percentage and error terms shows in Table <ref type="table">4</ref>. In this case different scales of data not suitable for numerical analysis, in this case various scales of data converted into similar scale using the familiar normalization equation ( <ref type="formula" target="#formula_7">7</ref>) and show the corresponding normalized valued present in Table <ref type="table" target="#tab_4">5</ref> and Fig. <ref type="figure">6</ref>. The normalization techniques are very essential for researchers in data mining and data analytics, and it is used to very helpful to write the necessary interpretation.</p><p>The decision tree approaches used to involve the probability-based decision making which is represented the outcomes in a tree-shaped diagram. In Table <ref type="table" target="#tab_5">6</ref>, indicates four decision tree approaches and its accuracy parameters namely correlation coefficient, mean absolute error, root mean squared error, relative absolute error, and root relative squared error shows in Table <ref type="table" target="#tab_5">6</ref>. The Fig. <ref type="figure">7</ref> bar chart indicates, comparison between four decision tree approaches, REP decision tree burning size are less and random tree size is high. The time taken to build the model having the random forest spend more time and REP tree take less time compared to other approaches result shows in Fig. <ref type="figure">8</ref>. The linear correlation coefficient which is used to measures the strength of the given data and the linear relationship between two variables namely x and y using equation <ref type="bibr" target="#b1">(2)</ref>. In this case random forest consuming high correlation and random tree return low correlation, the results show in Fig. <ref type="figure">9</ref>. In statistical analysis the Mean Absolute Error (MAE) is used to measure the model error between paired observations. In this approach used to measure MAE, the M5 decision tree return high, and the random forest and random tree approaches return low and the related result shows in Fig. <ref type="figure">10</ref>.</p><p>The Root Mean Squared Error (RMSE) is the standard deviation of the residuals called prediction errors. Residuals is used to measure of how far from the regression line data points presented. In this approach random tree return high value and M5 decision tree return low value, corresponding result shows in Fig. <ref type="figure">11</ref>. Relative Absolute Error (RAE) is used to find the performance of a predictive model and the root relative squared error is used to find the relative to a simple predictor had been used. The related results show in Fig. <ref type="figure" target="#fig_0">12</ref>.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 EFig. 2</head><label>12</label><figDesc>Fig. 1 E-commerce sales worldwide from 2014 to 2023 (billion U.S. dollars)</figDesc><graphic coords="6,87.00,440.00,372.00,195.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 3a</head><label>3a</label><figDesc>Fig. 3a Analysis of credit card fraud detection with time</figDesc><graphic coords="9,92.20,189.00,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 7 Fig. 8 Fig. 9</head><label>789</label><figDesc>Fig. 7 Decision tree comparison using tree size to build the tree</figDesc><graphic coords="13,92.20,247.00,360.00,240.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="7,56.60,270.60,430.60,193.60" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="10,92.20,80.20,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="10,92.20,341.40,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="11,92.20,79.60,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="11,80.00,341.00,384.60,314.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="12,78.40,448.80,387.80,197.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="14,92.20,80.20,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="14,92.20,341.40,360.00,240.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="15,92.20,79.60,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="15,92.20,341.00,360.00,240.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="16,92.20,80.20,360.00,237.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Features in German Credit Dataset<ref type="bibr" target="#b24">[25]</ref>.As our credit card dataset is highly imbalanced, use accuracy score as a metric because it will be usually high and misleading, we should focus on f1-score, precision/recall score or confusion matrix.</figDesc><table><row><cell>Features</cell><cell>Description</cell></row><row><cell>C1</cell><cell>Credit card transaction time in seconds</cell></row><row><cell>C2-C29</cell><cell>Confidentiality features which are indicated v1 to v28</cell></row><row><cell>C30</cell><cell>Transferred amount</cell></row><row><cell>C31</cell><cell>Class which is indicated whether the transaction called fraud or not means (1 and 0)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Credit card fraud detection dataset with time, confidentiality features and transferred amount</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Credit card fraud detection dataset with descriptive statistics</figDesc><table><row><cell>Descriptive Statistics</cell><cell>Time ()</cell><cell>Confidentiality ()</cell><cell cols="2">Amount () Class ()</cell></row><row><cell>Minimum</cell><cell>0</cell><cell>-7.084</cell><cell>0</cell><cell>0</cell></row><row><cell>Maximum</cell><cell>172792</cell><cell>0.802</cell><cell cols="2">25691.160 1</cell></row><row><cell>Mean</cell><cell cols="2">94813.860 0</cell><cell>88.350</cell><cell>0.002</cell></row><row><cell>Standard Deviation</cell><cell cols="2">47488.150 0.198</cell><cell>250.120</cell><cell>0.042</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4a .</head><label>4a</label><figDesc>Multiple linear regression approaches</figDesc><table><row><cell cols="2">Name of the Parameters</cell><cell cols="3">Regression Equations</cell><cell></cell><cell></cell></row><row><cell>Time ()</cell><cell></cell><cell cols="6">-41198.1685 *  + -9.6678 *  + -75896.4961 *  + 95799.1183</cell></row><row><cell>Confidentiality ()</cell><cell></cell><cell cols="4">-0 *  + -0.0002 *  + -1.5103 *  + 0.0765</cell><cell></cell></row><row><cell>Amount ()</cell><cell></cell><cell cols="5">-0.0003 *  + -339.9048 *  + -482.3367 *  + 113.6039</cell></row><row><cell>Class ()</cell><cell></cell><cell cols="4">-0 *  + -0.0719 *  + -0 *  + 0.0079</cell><cell></cell></row><row><cell cols="7">Table 4b. Multiple linear regression approaches and its accuracy parameters</cell></row><row><cell>Name of the Parameters</cell><cell cols="2">Time taken (Seconds)</cell><cell>Correlation Coefficient</cell><cell>Mean Absolute Error</cell><cell>Root Mean Squared Error</cell><cell>Relative Absolute Error (%)</cell><cell>Root Relative Squared Error (%)</cell></row><row><cell>Time ()</cell><cell>0.36</cell><cell></cell><cell>0.16</cell><cell cols="2">41912.04 46887.85</cell><cell>97.93</cell><cell>98.74</cell></row><row><cell>Confidentiality ()</cell><cell>0.22</cell><cell></cell><cell>0.42</cell><cell>0.12</cell><cell>0.1797</cell><cell>93.87</cell><cell>90.77</cell></row><row><cell>Amount ()</cell><cell>0.21</cell><cell></cell><cell>0.25</cell><cell>102.25</cell><cell>242.07</cell><cell>98.76</cell><cell>96.78</cell></row><row><cell>Class ()</cell><cell>0.21</cell><cell></cell><cell>0.33</cell><cell>0.01</cell><cell>0.04</cell><cell>291.54</cell><cell>94.46</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 .</head><label>5</label><figDesc>Finding accuracy for credit card fraud detection data using normalization</figDesc><table><row><cell>Name of the Parameters</cell><cell>Time Taken (Seconds)</cell><cell>Correlation Coefficient</cell><cell>Mean Absolute Error</cell><cell>Root Mean Squared Error</cell><cell>Relative Absolute Error (%)</cell><cell>Root Relative Squared Error (%)</cell></row><row><cell>Time ()</cell><cell>0.3600</cell><cell>0.1600</cell><cell>0.9000</cell><cell>0.9000</cell><cell>0.1164</cell><cell>0.9000</cell></row><row><cell>Confidentiality ()</cell><cell>0.2200</cell><cell>0.4200</cell><cell>0.1000</cell><cell>0.1000</cell><cell>0.1000</cell><cell>0.1000</cell></row><row><cell>Amount ()</cell><cell>0.2100</cell><cell>0.2500</cell><cell>0.1020</cell><cell>0.1041</cell><cell>0.1198</cell><cell>0.7033</cell></row><row><cell>Class ()</cell><cell>0.2100</cell><cell>0.3300</cell><cell>0.1000</cell><cell>0.1000</cell><cell>0.9000</cell><cell>0.4704</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6 .</head><label>6</label><figDesc>Decision tree approaches using cross-validation</figDesc><table><row><cell>Decision Tree Classifier</cell><cell>Size of the Tree</cell><cell>Time taken build model (Seconds) to</cell><cell>Correlation Coefficient</cell><cell>Mean Absolute Error</cell><cell>Root Mean Squared Error</cell><cell>Relative Absolute Error (%)</cell><cell>Root Relative Squared Error (%)</cell></row><row><cell>M5</cell><cell>240</cell><cell>12.05</cell><cell>0.5744</cell><cell>0.0023</cell><cell>0.0340</cell><cell cols="2">66.5190 81.8706</cell></row><row><cell>Random Forest</cell><cell>100</cell><cell>171.03</cell><cell>0.6246</cell><cell>0.0019</cell><cell>0.0325</cell><cell cols="2">56.5373 78.3061</cell></row><row><cell cols="2">Random Tree 1137</cell><cell>3.23</cell><cell>0.4438</cell><cell>0.0019</cell><cell>0.0434</cell><cell cols="2">54.6672 104.5627</cell></row><row><cell>REP Tree</cell><cell>77</cell><cell>3.19</cell><cell>0.5585</cell><cell>0.0022</cell><cell>0.0346</cell><cell cols="2">64.1355 83.3015</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Mining of massive data sets</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Leskovec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rajaraman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Ullman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<publisher>Cambridge university press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Distributed data mining in credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">K</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Prodromidis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Stolfo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Intel. Sys. and their App</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="67" to="74" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection in card-not-present transactions: where to invest</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Mekterovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pintar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Brkic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appli. Sci</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page">6766</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Statista retail e-commerce sales worldwide from</title>
+		<ptr target="https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales" />
+		<editor>Billion U.S. Dollars</editor>
+		<imprint>
+			<date type="published" when="2014">2022. 2014 to 2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Statista value of annual losses on &quot;card-not present&quot; fraud on ukissued debit and credit cards in the United Kingdom (UK) from</title>
+		<ptr target="https://www.statista.com/statistics/286245/united-kingdom-uk-card-not-present-fraudlosses/" />
+		<imprint>
+			<date type="published" when="2002">2022. 2002 to 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">C</forename><surname>Bank</surname></persName>
+		</author>
+		<title level="m">Sixth report on card fraud, European central bank</title>
+				<meeting><address><addrLine>Frankfurt, Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Serge and Gianluca, learned lessons in credit card fraud detection from a practitioner perspective</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pozzolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Andrea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Olivier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yann-Ael</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Syst. with Appli</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="4915" to="4928" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection using machine learning techniques: A comparative analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Awoyemi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">O</forename><surname>Adetunmbi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Oluwadare</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Int. Con. on Comp. Net. and Info</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">performance criteria for plastic card fraud detection tools</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Hand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Whitrow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Juszczak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Weston</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. of the Oper. Res. Soc</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="956" to="962" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Binary classifier evaluation matrices: error rate, KS statistics, AUROC</title>
+		<ptr target="http://rstudio-pubs-static.s3.amazonaws.com/303414_fb0a43efb0d7433983fdc9adcf87317f.htm" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Feature engineering strategies for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Correa Bahnsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aouada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stojanovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ottersten</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Sys. with Appli</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="134" to="142" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Sequence classification for credit-card fraud detection</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jurgovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Granitzer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ziegler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Calabretto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Portier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>He-Guelton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Caelen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Sys. with Appli</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="234" to="245" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Random forests</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Breiman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mach. Lear</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="5" to="32" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Induction on decision tree</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Quinlan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mach. Lear</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="81" to="106" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Data mining for credit card fraud: a comparative study</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bhattacharyya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tharakunnel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Westland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Deci. Supp. Sys</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="602" to="613" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Random Forest for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE 15th Int. Con. on Net., Sen. and Con</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A comparative study of data mining algorithms for decision tree approaches using WEKA tool</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karthikeyan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. in Nat. and Appli. Sci</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="230" to="243" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Comparative Study of Decision Tree Approaches in Data Mining Using Chronic Disease Indicators (CDI) Data</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karthikeyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Santhosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Y</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Mohamed Parveesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. of Compu. and Theo. Nano</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1472" to="1477" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Comparative study for better result on query suggestion of article searching with MySQL pattern matching and Jaccard similarity</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Rinartha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Suryasa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2017 5th International Conference on Cyber and IT Service Management (CITSM)</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Combining unsupervised and supervised learning in credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Carcillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">A</forename><surname>Le Borgne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Caelen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kessaci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Oble</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bontempi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Infor. Sci</title>
+		<imprint>
+			<biblScope unit="volume">557</biblScope>
+			<biblScope unit="page" from="317" to="331" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Credit card fraud detection dataset</title>
+		<ptr target="https://www.kaggle.com/dktalaicha/credit-card-fraud-detection-using-smote-adasyn/data" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Multiple linear regression</title>
+		<ptr target="https://www.investopedia.com/terms/m/mlr.asp" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Data mining approaches to predict the factors that affect the agriculture growth using stochastic model</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karthikeyan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. of Comp. Sci. and Engg</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="18" to="23" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Data mining approaches to predict the factors that affect the groundwater level using stochastic model</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karthikeyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Arulpavai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AIP Con. Proc</title>
+		<imprint>
+			<biblScope unit="volume">2177</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">20079</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Predication of labour demand in agriculture based on comparative study of different data using data mining and stochastic approach</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karthikeyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Arulpavai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. of Engg. Sci. Inv</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="86" to="97" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">The effects of anemia education using web-based she smart to improve knowledge, attitudes, and practice in adolescent girls</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ernawati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Baso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hidayanty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Syarif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aminuddin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bahar</surname></persName>
+		</author>
+		<idno type="DOI">10.21744/ijhms.v5n1.1831</idno>
+		<ptr target="https://doi.org/10.21744/ijhms.v5n1.1831" />
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Health &amp; Medical Sciences</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="44" to="49" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Design of metaheuristic feature selection with deep learning based credit card fraud detection model</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Arun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rajesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Second International Conference on Artificial Intelligence and Smart Energy (ICAIS)</title>
+				<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page" from="191" to="197" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

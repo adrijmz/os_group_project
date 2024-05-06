@@ -4,7 +4,7 @@ import argparse
 
 
 def extract_metadata_pdf(pdf_path):
-    url = "http://localhost:8070/api/processHeaderDocument"
+    url = "http://localhost:8070/api/processFulltextDocument"
     files = {'input': open(pdf_path, 'rb')}
     headers = {}
 
@@ -14,6 +14,18 @@ def extract_metadata_pdf(pdf_path):
     else:
         print("Error al procesar el archivo:", pdf_path)
         return None
+    
+def delete_labels_from_abstract(abstract):
+    # Eliminar las etiquetas HTML del abstract
+    while True:
+        start = abstract.find("<")
+        if start == -1:
+            break
+        end = abstract.find(">", start)
+        if end == -1:
+            break
+        abstract = abstract[:start] + abstract[end + 1:]
+    return abstract
 
 def main(folder_path, output_directory):
     for filename in os.listdir(folder_path):
@@ -28,7 +40,7 @@ def main(folder_path, output_directory):
                     xml_file.write(metadata_xml)
 
 # read every xml file to get the title and save it in a .txt file
-def get_doi_from_xml(xml_directory, title_directory):
+def get_doi_from_xml(xml_directory, title_directory, abstract_directory):
     for filename in os.listdir(xml_directory):
         if filename.endswith(".xml"):
             xml_path = os.path.join(xml_directory, filename)
@@ -38,15 +50,26 @@ def get_doi_from_xml(xml_directory, title_directory):
                 doi_end = xml_content.find('</idno>', doi_start)
                 doi = xml_content[doi_start:doi_end]
                 doi = doi.upper()
-                
+
+
                 # Guardar el título en un archivo .txt en la carpeta titles
                 title_filename = os.path.splitext(filename)[0] + ".txt"
                 title_path = os.path.join(title_directory, title_filename)
                 with open(title_path, "w") as title_file:
                     title_file.write(doi)
 
-    
-
+                abstract_start = xml_content.find('<abstract>')
+                print(' For file: ', filename, ' abstract start: ', abstract_start)
+                if(abstract_start != -1):
+                    abstract_start += len('<abstract>')
+                    abstract_end = xml_content.find('</abstract>')
+                    abstract = xml_content[abstract_start:abstract_end]
+                    abstract = delete_labels_from_abstract(abstract)
+                    # Guardar el abstract en un archivo .txt en la carpeta abstract
+                    abstract_filename = os.path.splitext(filename)[0] + ".txt"
+                    abstract_path = os.path.join(abstract_directory, abstract_filename)
+                    with open(abstract_path, "w") as abstract_file:
+                        abstract_file.write(abstract)
 
 if __name__ == "__main__":
 
@@ -70,9 +93,11 @@ if __name__ == "__main__":
     pdf_directory = args.INPUT
     xml_directory = args.OUTPUT
     title_directory = './papers/doi/'
+    abstract_directory = './papers/abstract/'
 
     # Crear la carpeta de salida si no existe
     os.makedirs(xml_directory, exist_ok=True)
     os.makedirs(title_directory, exist_ok=True)
+    os.makedirs(abstract_directory, exist_ok=True)
     main(pdf_directory, xml_directory)
-    get_doi_from_xml(xml_directory, title_directory)
+    get_doi_from_xml(xml_directory, title_directory, abstract_directory)

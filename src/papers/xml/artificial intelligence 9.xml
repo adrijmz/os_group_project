@@ -111,12 +111,13 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 					</monogr>
 					<idno type="MD5">24C494E1503A77EFA5EAFB3385613621</idno>
 					<idno type="DOI">10.1038/s41746-020-0229-3</idno>
+					<note type="submission">Received: 12 August 2019; Accepted: 17 January 2020;</note>
 				</biblStruct>
 			</sourceDesc>
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -124,10 +125,3992 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</encodingDesc>
 		<profileDesc>
 			<abstract>
-				<p>Autoimmune diseases are chronic, multifactorial conditions. Through machine learning (ML), a branch of the wider field of artificial intelligence, it is possible to extract patterns within patient data, and exploit these patterns to predict patient outcomes for improved clinical management. Here, we surveyed the use of ML methods to address clinical problems in autoimmune disease. A systematic review was conducted using MEDLINE, embase and computers and applied sciences complete databases. Relevant papers included &quot;machine learning&quot; or &quot;artificial intelligence&quot; and the autoimmune diseases search term(s) in their title, abstract or key words. Exclusion criteria: studies not written in English, no real human patient data included, publication prior to 2001, studies that were not peer reviewed, non-autoimmune disease comorbidity research and review papers. 169 (of 702) studies met the criteria for inclusion. Support vector machines and random forests were the most popular ML methods used. ML models using data on multiple sclerosis, rheumatoid arthritis and inflammatory bowel disease were most common. A small proportion of studies (7.7% or 13/169) combined different data types in the modelling process. Cross-validation, combined with a separate testing set for more robust model evaluation occurred in 8.3% of papers (14/169). The field may benefit from adopting a best practice of validation, cross-validation and independent testing of ML models. Many models achieved good predictive results in simple scenarios (e.g. classification of cases and controls). Progression to more complex predictive models may be achievable in future through integration of multiple data types.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Autoimmune diseases are chronic, multifactorial conditions. Through machine learning (ML), a branch of the wider field of artificial intelligence, it is possible to extract patterns within patient data, and exploit these patterns to predict patient outcomes for improved clinical management. Here, we surveyed the use of ML methods to address clinical problems in autoimmune disease. A systematic review was conducted using MEDLINE, embase and computers and applied sciences complete databases. Relevant papers included "machine learning" or "artificial intelligence" and the autoimmune diseases search term(s) in their title, abstract or key words. Exclusion criteria: studies not written in English, no real human patient data included, publication prior to 2001, studies that were not peer reviewed, non-autoimmune disease comorbidity research and review papers. 169 (of 702) studies met the criteria for inclusion. Support vector machines and random forests were the most popular ML methods used. ML models using data on multiple sclerosis, rheumatoid arthritis and inflammatory bowel disease were most common. A small proportion of studies (7.7% or 13/169) combined different data types in the modelling process. Cross-validation, combined with a separate testing set for more robust model evaluation occurred in 8.3% of papers (14/169). The field may benefit from adopting a best practice of validation, cross-validation and independent testing of ML models. Many models achieved good predictive results in simple scenarios (e.g. classification of cases and controls). Progression to more complex predictive models may be achievable in future through integration of multiple data types.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Autoimmune disease</head><p>Three elements contribute to autoimmune disease development: genetic predisposition, environmental factors and immune system dysregulation (Fig. <ref type="figure">1</ref>). Due to the heterogeneity of onset and progression, diagnosis and prognosis for autoimmune disease is unpredictable.</p><p>A predisposition to autoimmunity is strongly linked to genetics, and caused by defects in mechanisms that result in loss of selftolerance. <ref type="bibr" target="#b0">1</ref> Autoimmune disease develops after further immune system dysregulation, in both the innate and adaptive immune system. <ref type="bibr" target="#b1">2</ref> Microbial antigens, foreign antigens and cytokine dysregulation, can cause induction of self-reactive lymphocytes. <ref type="bibr" target="#b2">3</ref> Moreover, hyper-activation of T and B cells may occur, along with a change in the duration and quality of their response, which further disrupts the homeostasis of the immune system. <ref type="bibr" target="#b1">2</ref> The prevalence of autoimmune disease is difficult to estimate; diseases are variably represented across different studies and no definitive list exists. <ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref> There is a reported prevalence rate of between 4.5% 5 and 9.4%, <ref type="bibr" target="#b3">4</ref> across all autoimmune diseases. The importance of personalised medicine Personalised care is valuable for autoimmune disease, with variability within the disorders, <ref type="bibr" target="#b6">7</ref> and presence of autoimmune comorbidities for 15-29% of patients. <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref> Arguably, patients with multiple autoimmune comorbidities would particularly benefit from personalised healthcare for the causal molecular mechanism as opposed to specialist treatment of symptoms.</p><p>The data revolution Standard patient care generates diverse clinical data types. Examples of such data include laboratory test results from blood or urinary samples, symptoms at diagnosis and images obtained using colonoscopies and magnetic resonance imaging (MRI). The majority of these data are reproduced longitudinally over a chronic disease course.</p><p>In addition to this wealth of clinical data, 'omic data-such as patients' genomic, transcriptomic and proteomic profiles-are now increasingly available. 'Omic data are large, as molecular measurements are made on a genome-wide scale, <ref type="bibr" target="#b11">12</ref> and high throughput omics technologies have allowed fast analysis of these data. The inclusion of multiple types of 'omic data into machine learning models may give a more complete picture of autoimmune disease, leading to novel insights.</p><p>The need for artificial intelligence and machine learning Combined clinical and 'omic data have limited utility without methods for interpretation. Artificial intelligence and machine learning techniques have the capacity to identify clinically relevant patterns amongst an abundance of information, <ref type="bibr" target="#b12">13</ref> fulfilling an unmet need. The ability to stratify patient's using these data has implications for their care, from estimation of autoimmune disease risk, diagnosis, initial and ongoing management, monitoring, treatment response and outcome.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Defining artificial intelligence and machine learning</head><p>The terms "machine learning" (ML) and "artificial intelligence" (AI) are often conflated. Artificial intelligence is the study of methods to imitate intelligent human behaviour (for example to make decisions under conditions of uncertainty). Machine learning is a subset of AI that focuses on the study of algorithms that enable a computer to perform specific tasks (typically classification or regression) without specific instructions, but instead inferring patterns from data. <ref type="bibr" target="#b13">14</ref> Both AI and ML differ from traditional statistical methods as they focus on prediction and classification from high-dimensional data, rather than inference. Successful ML requires robust data from which it can learn. These data must be sufficiently abundant to enable the model to be robust and generalisable to unseen data. Supervised and unsupervised machine learning Two types of ML are discussed here: supervised and unsupervised learning. During supervised learning, an algorithm is trained on a "training dataset" to recognise the patterns that are associated with specific "labels" (for example, healthy or diseased). Once predictive patterns have been learned from training data, the ML algorithm is then able to assign labels to unseen "test data". In a well-trained model, the patterns identified in the training data will generalise to the test data. Brief descriptions of some of the most common supervised ML techniques referred to in this review are summarised in Box 1.</p><p>For unsupervised learning, training data are unlabelled, and the algorithm instead attempts to find and represent patterns within the data, for example by identifying clusters based upon the similarity of the examples. Other types of ML exist, but are reviewed elsewhere. <ref type="bibr" target="#b14">15</ref> Some of the more common unsupervised methods discussed in this review include hierarchical clustering and self-organising maps.</p><p>The pros and cons of alternative machine learning models Recommendations cannot be made on the best model to use in general, as this is always situation specific and dependent on data type, size and dimensionality. Decision trees are simple and highly interpretable, but they rarely achieve performance accuracies higher than other algorithms. Using the random forest method can improve performance, at the cost of losing some interpretability. K nearest neighbours is a non-parametric method, and copes well when complex boundaries separate classes, but this flexibility can lead to poor classification results due to overfitting. <ref type="bibr" target="#b15">16</ref> Neural networks and support vector machines have similar strengths and weakness: they achieve high accuracies, and can extract linear combinations of features, but interpretability is poor, scaling to very large data can be difficult, and they are not robust to outliers. <ref type="bibr" target="#b16">17</ref> Technical aspects regarding the operation and fitting of machine learning algorithms are outside the scope of this systematic review, but comprehensively discussed elsewhere. <ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b16">17</ref> Avoiding overfitting Machine learning models are often complicated, and can involve optimizing many free parameters. For this reason, they are prone to overfitting. Overfitting is the process by which the algorithm learns patterns that are specific to the training data but do not generalise to test data. For example, there may be some random technical error in the training data that is not of clinical relevance, yet is learned by the algorithm. Training any model accurately while avoiding overfitting is a central part of an ML pipeline. If data are abundant and/or the ML model is computationally expensive to train then the standard strategy is to remove a portion of the data for training, optimize the model on the remaining portion, and finally determine the model performance by comparison with the unseen test portion. If data are not abundant, a process known as cross-validation is typically employed (Fig. <ref type="figure" target="#fig_0">2</ref>). There are many variations of cross-validation but they are all essentially generalisations of the training/test splitting process described above. For example, in k-fold cross validation, the data are randomly split into k subsets, with all but one subset used to train an ML model, and the remaining subset used to test the model. This process leads to the generation of k ML models. Each subset of the data is used only once as a test set, and overall model performance is determined by averaging the performance of the k models (Box 2 describes model evaluation metrics).  Fig. <ref type="figure">1</ref> The three factors contributing to autoimmune disease development. I genetic susceptibility is conferred by a combination of genes that may include genes encoding human leukocyte antigen (HLA) innate and adaptive immune proteins, and directly or indirectly affect the regulation of the immune system. II examples of potential environmental triggers for dysregulation. III autoantibody production alone will not always result in disease development; self-antigen production and subsequent elevated immune response is necessary. <ref type="bibr" target="#b2">3</ref> Box 1 Popular supervised machine learning methods</p><p>Neural networks: outputs are learned from inputs via a series of nested nonlinear functions, encoded in a network of "neurons", which may vary in its topology. <ref type="bibr" target="#b58">59</ref> Decision trees: outputs are learned from inputs via a series of yes/no questions that successively divide the predictor space into discrete piece. <ref type="bibr" target="#b174">175</ref> Random forest: a simple ensemble method that grows a large number of decision trees, each of which see only a subset of the data, and learns output from input by combining the predictions. <ref type="bibr" target="#b78">79</ref> k nearest neighbours: learns output from input by comparing the identity of each data point to its (k) nearest neighbours. <ref type="bibr" target="#b116">117</ref> Support vector machine: a binary classification method that can be adapted to multiclass classification or regression. They seek to partition the predictor space into two, such that data points from each class are concentrated on one side of the decision boundary. <ref type="bibr" target="#b117">118</ref> Natural language processing: a set of advanced ML methods that seek to extract sentiment from text. <ref type="bibr" target="#b18">19</ref> Artificial intelligence, machine learning and autoimmune disease This systematic review aims to inform on the current status of the application of artificial intelligence and machine learning methods to autoimmune disease to improve patient care. To the best knowledge of the researchers, this is the first study on this topic. The review identifies the most common methods, data and applications, the issues surrounding this exciting interdisciplinary approach, and promising future possibilities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Summary of results</head><p>Of 702 papers identified in database searches, 169 were selected for inclusion in the analysis, 227 duplicates were removed, 273 records were excluded based on the abstract and 33 were excluded after reading the full article (Fig. <ref type="figure">3</ref>) using the criteria described above. A summary and detailed information for qualifying studies are described in Table <ref type="table" target="#tab_3">1</ref> and Supplementary Table <ref type="table" target="#tab_3">1</ref>, respectively. Six diseases included in the database search returned no studies that met the inclusion and exclusion criteria (Addison disease, myasthenia gravis, polymyalgia rheumatica, Sjӧgren syndrome, systemic vasculitis and uveitis). Machine learning and artificial intelligence are most commonly applied to multiple sclerosis (MS), rheumatoid arthritis (RA) and inflammatory bowel disease (IBD). MS, IBD and RA models used the most types of data, including 13 studies generating models using two data types (always including clinical data). Random forests and support vector machines were the most commonly used methods throughout diseases and applications. Clinical data were used in models for every type of autoimmune disease, and models using genetic data were created for the majority of disorders. The variety in methodological approaches, applications and data, as well as use of validation methods (Supplementary Table <ref type="table" target="#tab_3">1</ref>) renders metaanalysis of these methods inappropriate.</p><p>The applications for ML can be categorised into six broad topics: patient identification, risk prediction, diagnosis, disease subtype classification, disease progression and outcome and monitoring and management.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification of patients</head><p>Studies utilised ML methods to identify patients with autoimmune diseases from electronic medical records, <ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref> and employed natural language processing. Gronsbell et al. worked to improve the efficiency of algorithms for this purpose. <ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b26">27</ref> These algorithms are intended to replace International Classification of Diseases billing codes, which have error rates of between 17.1-76.9% due to inconsistent terminology. <ref type="bibr" target="#b18">19</ref> Electronic medical records also identified comorbidities associated with alopecia and vitiligo using natural language processing. This identified similar autoimmune comorbidities for both diseases. <ref type="bibr" target="#b27">28,</ref><ref type="bibr" target="#b28">29</ref> Identifying and assessing autoimmune disease risk Prediction of disease risk <ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref> and identification of novel risk factors through feature selection <ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref> was documented for IBD, type 1 diabetes (T1D), RA, systemic lupus erythematosus (SLE) and MS. Fifteen studies employed genetic data, using either sequencing arrays (GWAS) or exome data (nine studies), individual SNPs <ref type="bibr" target="#b37">38</ref> within in the HLA regions <ref type="bibr" target="#b36">37,</ref><ref type="bibr" target="#b44">45</ref> or pre-selected genes, <ref type="bibr" target="#b40">41</ref> or gene expression data. <ref type="bibr" target="#b29">30,</ref><ref type="bibr" target="#b42">43</ref> Only one study employed clinical data, <ref type="bibr" target="#b30">31</ref> and two others combined clinical and genomic data. <ref type="bibr" target="#b29">30,</ref><ref type="bibr" target="#b44">45</ref> Popular models included random forest, support vector machine and logistic regression.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Diagnosis</head><p>Patient diagnosis was the most frequent ML application, and this approach was used for all autoimmune diseases. Distinguishing cases from healthy controls was an aim for 27 studies. Diagnostic classification models used patients with other autoimmune diseases as controls, <ref type="bibr" target="#b45">[46]</ref><ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref> differentiated between diseases with overlapping or similar symptoms or phenotype, for example stratifying coeliac disease and irritable bowel syndrome, <ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref><ref type="bibr" target="#b51">[52]</ref><ref type="bibr" target="#b52">[53]</ref><ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref> or examined classification of multiple autoimmune diseases. <ref type="bibr" target="#b56">57,</ref><ref type="bibr" target="#b57">58</ref> ML specifically for early diagnosis was specified by seven studies for the later onset degenerative conditions MS and RA. <ref type="bibr" target="#b47">48,</ref><ref type="bibr" target="#b58">[59]</ref><ref type="bibr" target="#b59">[60]</ref><ref type="bibr" target="#b60">[61]</ref><ref type="bibr" target="#b61">[62]</ref><ref type="bibr" target="#b62">[63]</ref><ref type="bibr" target="#b63">[64]</ref> Other diagnostic applications included distinguishing coeliac disease from an at-risk group <ref type="bibr" target="#b64">65,</ref><ref type="bibr" target="#b65">66</ref> and differentiating those who have complications in T1D. <ref type="bibr" target="#b66">67,</ref><ref type="bibr" target="#b67">68</ref> Random forests and support vector machine most frequently utilised.</p><p>Classifying disease subtypes Disease subtypes in one RA, two IBD, and six MS studies were classified by ML. Three types of unsupervised clustering were used by these studies: hierarchical clustering for identifying novel IBD subtypes; <ref type="bibr" target="#b68">69</ref> consensus clustering to identify high, low and mixed levels of inflammation in RA; <ref type="bibr" target="#b69">70</ref> and agglomerative hierarchical clustering to cluster MS by genetic signature. <ref type="bibr" target="#b70">71</ref> Two of these studies employed support vector machine, <ref type="bibr" target="#b68">69,</ref><ref type="bibr" target="#b69">70</ref> which is a popular supervised method in general, as well as random forest. There was wide variation in data types used. These  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Box 2 Metrics for ML method evaluation</head><p>Accuracy: percentage of correct predictions. <ref type="bibr" target="#b197">198</ref> Area under the receiver-operator curve (AUC): appropriate for binary classification problems, this method uses a plot of sensitivity versus specificity to determine model performance. <ref type="bibr" target="#b15">16</ref> Balanced accuracy: measure of the total number of correct predictions in either class, therefore taking into account an unbalanced dataset. <ref type="bibr" target="#b197">198</ref> F-score: an accuracy measure calculated using precision and recall. <ref type="bibr" target="#b198">199</ref> Out-of-bag error: this metric applies to tree-based ensemble methods, and measures the test error by comparing predictions with true labels for samples that were not used in the construction of a particular decision tree. <ref type="bibr" target="#b15">16</ref> Precision: equivalent to positive predictive value. <ref type="bibr" target="#b15">16</ref> Recall: another term for sensitivity. <ref type="bibr" target="#b15">16</ref> R 2 : measures the amount of variation explained by the model regression. <ref type="bibr" target="#b15">16</ref> Sensitivity: correctly identified true positives. <ref type="bibr" target="#b15">16</ref> included clinical (in particular MRI), genetic, RNA sequencing and gene expression data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Disease progression and outcome</head><p>Disease progression and outcome was a focus for 27 studies. Other considered issues were disease severity <ref type="bibr" target="#b71">[72]</ref><ref type="bibr" target="#b72">[73]</ref><ref type="bibr" target="#b73">[74]</ref><ref type="bibr" target="#b74">[75]</ref><ref type="bibr" target="#b75">[76]</ref><ref type="bibr" target="#b76">[77]</ref><ref type="bibr" target="#b77">[78]</ref> in psoriasis, RA, IBD and coeliac disease; treatment response <ref type="bibr" target="#b78">[79]</ref><ref type="bibr" target="#b79">[80]</ref><ref type="bibr" target="#b80">[81]</ref><ref type="bibr" target="#b81">[82]</ref><ref type="bibr" target="#b82">[83]</ref><ref type="bibr" target="#b83">[84]</ref><ref type="bibr" target="#b84">[85]</ref><ref type="bibr" target="#b85">[86]</ref><ref type="bibr" target="#b86">[87]</ref> in IBD, RA and primary biliary cirrhosis (PBC); and survival prediction <ref type="bibr" target="#b87">[88]</ref><ref type="bibr" target="#b88">[89]</ref><ref type="bibr" target="#b89">[90]</ref> in PBC, RA and SLE. Other models focused on improved image segmentation to aid prognoses <ref type="bibr" target="#b90">[91]</ref><ref type="bibr" target="#b91">[92]</ref><ref type="bibr" target="#b92">[93]</ref><ref type="bibr" target="#b93">[94]</ref><ref type="bibr" target="#b94">[95]</ref><ref type="bibr" target="#b95">[96]</ref> for IBD and MS. Disease progression and outcome was the second-most prevalent area for model development. Throughout, the most common models were support vector machines, random forest and neural networks. The majority of data used was clinical, with very few papers utilising 'omic data. <ref type="bibr" target="#b85">86,</ref><ref type="bibr" target="#b96">[97]</ref><ref type="bibr" target="#b97">[98]</ref><ref type="bibr" target="#b98">[99]</ref> Monitoring and management Ten different studies of type 1 diabetes (T1D) used ML for monitoring and management: four predicted blood glucose level, four identified or predicted hypoglycaemic events, and two supported decision making using case-based reasoning or decision support systems. The majority of models used clinical data. Three models were developed using activity measurements for monitoring movement in MS, and one in RA. Support vector regression was used most frequently. <ref type="bibr" target="#b99">[100]</ref><ref type="bibr" target="#b100">[101]</ref><ref type="bibr" target="#b101">[102]</ref><ref type="bibr" target="#b102">[103]</ref><ref type="bibr" target="#b103">[104]</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Validation and independent testing</head><p>Eighteen studies only used hold-out validation, not including studies with random forest models, where cross validation is unnecessary, or neural networks, where this process can be too computationally intensive. Eleven studies did not use any validation method, and so model integrity and applicability is unconfirmed. Methods that use hold-out validation have the potential to provide useful information, but it is accepted that unless the dataset is very large, these models are not as robustly validated as those that have used k-fold or leave-one-out cross validation, or a combination of cross-validation and testing on an independent dataset. Only 14 of 169 studies combined cross-validation with independent test data for evaluating their models. These studies did not have any model types or applications in common. Clinical and genomic data were most common inputs for these studies. Models that used cross-validation and independent test data were applied to a number of the autoimmune diseases.</p><p>The research reviewed here demonstrates that, much like the disease studied, the ML models and methods used are heterogeneous. It can be difficult then, to determine which methods should be taken forward to clinical application. Alternatively, models from existing studies could be combined. Models have utilised different types of 'omic data, including proteomic, metagenomic and exome data. More popular has been sequencing array (SNP/GWAS) data, particularly when predicting Fig. <ref type="figure">3</ref> Methodological flowchart and number of papers reviewed at each stage. The inclusion and exclusion criteria are applied to the title and abstract at the screening step and to the full article at the eligibility step. During the screening step, it was unclear from some abstracts if the article fulfilled the criteria, and therefore a full read is completed at the eligibility step to clarify the status of those records. Two reviewers completed screening independently, and where consensus could not be reached, a third reviewer assessed these articles and decided whether they were included or excluded. Information includes the number of studies per autoimmune disease, the years they occurred, popular applications and methods and data types used. Median sample size was a better representation than mean, due to large cohorts in studies using data from genome-wide association studies and electronic medical records. EMR electronic medical record, GWAS genome-wide association study, miRNA micro RNA, MRI magnetic resonance imaging, SNP single nucleotide polymorphism, VOC volatile organic compound.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Screening</head><p>autoimmune disease risk. By far the most prevalent type of data is the use of clinical and laboratory data.</p><p>To optimise the use of these data types, accessibility is key, and EMRs allow easy extraction of these data. Some researchers have moved beyond only storing medical data in these systems. The eMERGE (electronic medical records and genomics) network combines the genomic and EMR repositories to further genomic medicine research. <ref type="bibr" target="#b104">105</ref> Other studies such as SPOKE (Scalable Precision Medicine Oriented Knowledge Engine), wish to integrate these data within the storage platform, by building a knowledge network using unsupervised machine learning that informs on how data types such as GWAS, gene ontology, pathways and drug data are connected to EMRs. <ref type="bibr" target="#b105">106</ref> Improving knowledge of how these data are related is a key step towards implementing precision medicine.</p><p>Many models were created for autoimmune disease diagnosis, more specifically classifying those with disease and controls. The majority achieved high classifier performance (where any combination of the following metrics are over these thresholds: accuracy &gt; 81%, AUC &gt; 0.95, Sensitivity &gt; 82, Specificity &gt; 84), and provided evidence of machine learning's utility in diagnostics.</p><p>Identifying the molecular diagnosis to inform tailored treatment strategies has revolutionised cancer prognoses, improving patient outcomes and quality of life, along with economic benefits to the treatment provider. Targeted therapies such as monoclonal antibodies and small molecule inhibitors transformed treatment of some cancers, or improved patient survival times. <ref type="bibr" target="#b106">107</ref> Key to precision treatment has been the identification of the driver mutations specific to the cancer type. <ref type="bibr" target="#b107">108</ref> Machine learning has been utilised for cancer classification <ref type="bibr" target="#b108">109,</ref><ref type="bibr" target="#b109">110</ref> and discovery of relevant pathways. <ref type="bibr" target="#b108">109</ref> Across the spectrum of autoimmune diseases, there has traditionally been a one-size-fits-all approach to patient therapeutics. The expectation is that machine learning represents a necessary key tool that will use 'big' data to stratify patients and move towards personalised treatment approaches that have proven so effective in cancer. Proof of this concept has already been demonstrated through machine learning to stratify patient's inflammation status in RA, <ref type="bibr" target="#b69">70</ref> and further investigate IBD subtypes. <ref type="bibr" target="#b68">69</ref> Six models from the evaluated studies returned more than one of the following measures as either 1 or 100%: AUC, accuracy, precision and recall, sensitivity and specificity. <ref type="bibr" target="#b58">59,</ref><ref type="bibr" target="#b66">67,</ref><ref type="bibr" target="#b67">68,</ref><ref type="bibr" target="#b110">[111]</ref><ref type="bibr" target="#b111">[112]</ref><ref type="bibr" target="#b112">[113]</ref> This perfect performance indicates that a model may not be required, as there exists data that classifies the groups without error. An alternative explanation of apparently optimal performance may reside in poor implementation of cross-validation strategies.</p><p>Common metrics reported are accuracy, AUC, and sensitivity and specificity. However, accuracy is inferior to AUC, particularly when imbalanced datasets are used. <ref type="bibr" target="#b113">114</ref> The AUC measure is unaffected by imbalanced data, but precision-recall curves may reflect model performance more accurately. <ref type="bibr" target="#b114">115</ref> Dataset rebalancing methods should potentially be utilised more for a thorough review of model performance.</p><p>When creating and evaluating a model, increasing focus could be placed on which measure is more important, sensitivity or specificity. Scully et al. demonstrated this, where a lesion segmentation model could achieve high specificity (99.9%) through labelling all tissue as non-lesion. <ref type="bibr" target="#b95">96</ref> An ML model by Ahmed et al. <ref type="bibr" target="#b61">62</ref> provides evidence for using an additional independent test dataset subsequent to cross validation. In their study, the AUC dropped by 0.25, indicating decreased model performance on new data.</p><p>Studies included in this systematic review have shown that artificial intelligence and machine learning models provide useful insight, despite the heterogeneity of presentation, diagnosis, disease course and patient outcome. However, the heterogeneity in data used, models and model evaluation cause difficulties in obtaining consensus. Furthermore, the number of autoimmune diseases this literature search focussed on was restricted, and may have resulted in an incomplete picture of ML applied to autoimmune diseases.</p><p>From this analysis, it seems appropriate to advocate for standardised methods of model evaluation, by utilising a combination of cross validation and independent test data for model validation. Increased confidence in model results allows for more complex model creation, by layering data types or combining classifiers. These models could be applied to more difficult tasks that reflect the complexity of autoimmune disease. With these advances, AI and ML have the potential to bring personalised medicine closer for patients with complex and chronic disease.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Autoimmune disease selection</head><p>Autoimmune diseases selected for the systematic review are based on prevalence estimates <ref type="bibr" target="#b3">4</ref> and include Addison disease, alopecia, Coeliac disease, Crohn's disease, ulcerative colitis, type 1 diabetes, autoimmune liver diseases, hyper-and hypo-thyroidism, multiple sclerosis, myasthenia gravis, polymyalgia rheumatica, psoriasis, psoriatic arthritis, rheumatoid arthritis, Sjӧgren syndrome, systemic sclerosis, systemic lupus erythematosus, systemic vasculitis, uveitis and vitiligo. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Literature search</head><p>The literature search was performed electronically with OvidSP using MEDLINE from 1946, and EMBASE from 1974. A search was also performed on the Computers &amp; Applied Sciences Complete database available on EBSCO. The literature search was completed in December 2018. All searches conformed to the same structure: the words "machine learning" or "artificial intelligence" combined with the chosen search term(s) for each autoimmune disease (see Table <ref type="table" target="#tab_4">2</ref>). Boolean operators OR and AND (for combining search terms) were used in order to streamline the procedure. In both databases, the title, abstract and subject terms/keyword headings assigned by authors were searched (last search 17/12/2018).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Inclusion and exclusion criteria</head><p>Studies that applied ML methods to autoimmune diseases listed above, or to complications that arise from autoimmune diseases were included. Studies not written in English, published prior to 2001, that did not use real human patient data, were not peer reviewed, or were review papers were also excluded. This systematic review conforms to the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) standards. <ref type="bibr" target="#b115">116</ref> </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Simplified workflow for developing a machine learning model. This includes the cycle of feature selection, training and validation that is required to avoid overfitting (cross validation).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>-</head><label></label><figDesc>Did not apply arƟficial intelligence or machine learning (n=11) -Irrelevant to autoimmune disease (n=2) -No paƟent data used (n=12) -Insufficient data (n=5) -Not peer reviewed (n=2) -Could not obtain full text (n=1)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>18</head><label></label><figDesc></figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 1 .</head><label>1</label><figDesc>Machine learning and artificial intelligence applications to autoimmune diseases.</figDesc><table><row><cell>Most popular machine learning Median sample Data types used</cell><cell>method(s) size (min, max)</cell><cell></cell><cell>Type of Regression, Random Forest, 99 (12, 12566) Clinical, Survey, Genetic, MRI, Lipid</cell><cell>Support Vector Machine Markers, SNPs, Gait Data, Immune</cell><cell>repertoire, Gene Expression</cell><cell>Support Vector Machine, Variations of 338 (22, 922199) Medical Database, Immunoassay,</cell><cell>Random Forest, Neural Network and Metagenomic, Microbiome, GWAS/SNP,</cell><cell>Decision Tree Clinical, Movement Data, Amino acid</cell><cell>analytes, Transcriptomic, EMRs,</cell><cell>Ultrasound images, Proteomic,</cell><cell>Laser images</cell><cell>Random Forest, Support Vector Machine 273 (50, 53279) Clinical, Colonoscopy Images,</cell><cell>Metagenomic, Gene Expression, GWAS,</cell><cell>Microbiota, miRNA Expression, EMRs,</cell><cell>Exome, MRI</cell><cell>Novel Methods/Hybrid Models, Neural 23 (10, 10579) Clinical, Red Blood Cell Images, VOCs,</cell><cell>Network, Support Vector Regression GWAS/SNPs</cell><cell>Logistic Regression, Neural Network, 318 (14, 17057) Clinical, Electronic Health Records, Drug</cell><cell>Random Forest Decision Tree Treatment, SNPs, MRI, Exome, Gene</cell><cell>Expression, Proteomic, Urine Biomarkers</cell><cell>Support Vector Machine 540 (80, 22181) Digital Image, GWAS, Proteomic, RNA</cell><cell>Biomarkers</cell><cell>Random Forest, Logistic Regression, 465 (47, 1498) VOCs, Clinical, Peptide, EMRs</cell><cell>Bayesian Classifier, Support Vector</cell><cell>Machine, Logistic Model, Natural</cell><cell>Language Processing, Combined Fuzzy</cell><cell>Cognitive Map and Possibilistic Fuzzy c-</cell><cell>means clustering.</cell><cell>Hybrid Models 215 (215, 7200) Clinical</cell><cell>Variations on Random Forest 288 (64, 787) Clinical, Clinical Trial, Microbiome</cell><cell></cell><cell>Support Vector Machine, Random Forest 119 (37, 991) Gene Expression, Nailfold</cell><cell>capillaroscopy images, Peripheral Blood</cell><cell>Mononuclear cell data (flow cytometry,</cell><cell>DNA, mRNA)</cell></row><row><cell>Years Most popular</cell><cell>classification/prediction</cell><cell>application(s)</cell><cell>2008-2019 Diagnosis, Prognosis,</cell><cell>Disease Subtype</cell><cell></cell><cell>2003-2018 Risk, Diagnosis, Early</cell><cell>Diagnosis, Identify</cell><cell>Patients</cell><cell></cell><cell></cell><cell></cell><cell>2007-2018 Diagnosis, Response to</cell><cell>Treatment, Disease Risk,</cell><cell>Disease Severity</cell><cell></cell><cell>2009-2018 Disease Management</cell><cell></cell><cell>2009-2018 Variations of prognosis,</cell><cell>Diagnosis</cell><cell></cell><cell>2007-2018 Diagnosis, Disease</cell><cell>Severity</cell><cell>2011-2018 Diagnosis</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>2008-2018 Diagnosis</cell><cell>2009-2018 Prognosis</cell><cell></cell><cell>2016-2018 Diagnosis, Treatment,</cell><cell>Prognosis</cell></row><row><cell>Number of studies</cell><cell></cell><cell></cell><cell>41 30,45,50,51,60,61,71,91-</cell><cell>93,100,101,111,117-144</cell><cell></cell><cell>32 20-22,26,27,31,32,40-42,46-</cell><cell>48,52,59,62-64,70,72,80-82,88,97,145-151</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>30 33-36,43,57,69,73,79,83-</cell><cell>86,94,95,98,152-165</cell><cell></cell><cell></cell><cell>17 37-39,67,68,102-104,166-174</cell><cell></cell><cell>14 19,23,44,49,89,96,175-182</cell><cell></cell><cell></cell><cell>11 53,74-77,99,112,183-186</cell><cell></cell><cell>7 24,25,54,65,66,78,187</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>6 188-193</cell><cell>5 58,87,90,194,195</cell><cell></cell><cell>4 55,113,196,197</cell><cell></cell></row><row><cell>Disease</cell><cell></cell><cell></cell><cell>Multiple sclerosis</cell><cell></cell><cell></cell><cell>Rheumatoid</cell><cell>arthritis</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Inflammatory bowel</cell><cell>disease</cell><cell></cell><cell></cell><cell>Type 1 diabetes</cell><cell></cell><cell>Systemic lupus</cell><cell>erythematosus</cell><cell></cell><cell>Psoriasis</cell><cell></cell><cell>Coeliac disease</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Thyroid diseases</cell><cell>Autoimmune liver</cell><cell>diseases</cell><cell>Systemic sclerosis</cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 2 .</head><label>2</label><figDesc>Search terms used in OvidSP and EBSCO for each autoimmune disease.</figDesc><table><row><cell>Autoimmune disease</cell><cell>Disease Search Term(s) Used</cell></row><row><cell>Addison's disease</cell><cell>Addison*</cell></row><row><cell>Alopecia</cell><cell>Alopecia</cell></row><row><cell>Celiac disease</cell><cell>Celiac, Coeliac</cell></row><row><cell>Inflammatory bowel</cell><cell>Inflammatory bowel disease, Crohn* disease,</cell></row><row><cell>disease</cell><cell>ulcerative colitis</cell></row><row><cell>Type 1 diabetes</cell><cell>Type 1 Diabetes, Insulin dependent</cell></row><row><cell></cell><cell>Diabetes ?</cell></row><row><cell>Autoimmune hepatitis</cell><cell>Autoimmune hepatitis, chronic active</cell></row><row><cell></cell><cell>hepatitis, primary biliary cirrhosis, primary</cell></row><row><cell></cell><cell>sclerosing cholangitis</cell></row><row><cell>Thyroid disease</cell><cell>Autoimmune thyroiditis, Hashimoto*</cell></row><row><cell></cell><cell>thyroiditis, Hashimoto* disease, Grave*</cell></row><row><cell></cell><cell>disease, hyperthyroid*, hypothyroid*</cell></row><row><cell>Multiple sclerosis</cell><cell>Multiple sclerosis</cell></row><row><cell>Myasthenia gravis</cell><cell>Myasthenia gravis</cell></row><row><cell cols="2">Polymyalgia rheumatica Polymyalgia rheumatica</cell></row><row><cell>Psoriasis</cell><cell>Psoriasis</cell></row><row><cell>Psoriatic arthritis</cell><cell>Psoriatic arthritis</cell></row><row><cell>Rheumatoid arthritis</cell><cell>Rheumatoid Arthritis</cell></row><row><cell>Sjӧgren syndrome</cell><cell>Sjogren syndrome</cell></row><row><cell>Systemic sclerosis</cell><cell>Systemic sclerosis</cell></row><row><cell>Systemic lupus</cell><cell>Lupus</cell></row><row><cell>erythematosus</cell><cell></cell></row><row><cell>Systemic vasculitis</cell><cell>Polyarteritis nodosa, microscopic</cell></row><row><cell></cell><cell>polyangiitis, granulomatosis with</cell></row><row><cell></cell><cell>polyangiitis, eosinophilic granulomatosis</cell></row><row><cell></cell><cell>with polyangiitis.</cell></row><row><cell>Uveitis (iridocyclitis)</cell><cell>Uvetitis, iridocyclitis</cell></row><row><cell>Vitiligo</cell><cell>Vitiligo</cell></row><row><cell>Asterisk (</cell><cell></cell></row></table><note>*) and question mark (?) are wildcard characters used for searching the databases OvidSP and EBSCO.</note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">npj Digital Medicine (2020) 30 Scripps Research Translational Institute 1234567890():,;</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1">Scripps Research Translational Institutenpj Digital Medicine (2020) 30</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2">npj Digital Medicine (2020)<ref type="bibr" target="#b29">30</ref> Scripps Research Translational Institute</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGEMENTS</head><p>This study was supported by the Institute for Life Sciences, University of Southampton, and the National Institute for Health Research (NIHR) Southampton Biomedical Centre. The views expressed are those of the author(s) and not necessarily those of the NIHR or the Department of Health and Social Care.</p></div>
+			</div>
+
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DATA AVAILABILITY</head><p>The data (papers) that support the findings of this study are available publicly. Full list of records identified through database searching are available on reasonable request from the authors.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>AUTHOR CONTRIBUTIONS</head><p>I.S.S., S.E. and E.M. formed the search strategy and inclusion and exclusion criteria. I.S. S. performed database searches and reviewed all records for eligibility (title and abstract, full record if necessary). M.K. reviewed all records (title and abstract). E.M. reviewed records where agreement could not be reached between I.S.S. and M.K. regarding study inclusion. I.S.S. read and evaluated all included studies, with analysis and interpretation assistance from </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>COMPETING INTERESTS</head><p>The authors declare no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ADDITIONAL INFORMATION</head><p>Supplementary information is available for this paper at https://doi.org/10.1038/ s41746-020-0229-3.</p><p>Correspondence and requests for materials should be addressed to S.E.</p><p>Reprints and permission information is available at http://www.nature.com/ reprints Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Cellular and genetic mechanisms of self tolerance and autoimmunity</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Goodnow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sprent</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">F</forename><surname>De St Groth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Vinuesa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">435</biblScope>
+			<biblScope unit="page" from="590" to="597" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Dysregulation of immune homeostasis in autoimmune diseases</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Kuchroo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Ohashi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Sartor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Vinuesa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Med</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="42" to="47" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Male</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Roitt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Roth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Roitt</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Immunology</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<pubPlace>Saunders</pubPlace>
+		</imprint>
+	</monogr>
+	<note>8th edn</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Recent insights in the epidemiology of autoimmune diseases: improved prevalence estimates and understanding of clustering of diseases</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Cooper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Bynum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">C</forename><surname>Somers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Autoimmun</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="197" to="207" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Updated assessment of the prevalence, spectrum and case definition of autoimmune disease</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Hayter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Cook</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Autoimmun. Rev</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="754" to="765" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Epidemiology of autoimmune diseases in Denmark</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">W</forename><surname>Eaton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">R</forename><surname>Rose</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kalaydjian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Pedersen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Mortensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Autoimmun</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Heterogeneity of autoimmune diseases: pathophysiologic insights from genetics and implications for new therapies</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Feldman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Med</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">730</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Prevalence of co-existing autoimmune disease in rheumatoid arthritis: a cross-sectional study</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Simon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Ther</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="2481" to="2490" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Myasthenia gravis and risks for comorbidity</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Gilhus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nacu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Andersen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Owe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. J. Neurol</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="17" to="23" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Autoimmune comorbidities in Hashimoto&apos;s thyroiditis: different patterns of association in adulthood and childhood/adolescence</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Ruggeri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. J. Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">176</biblScope>
+			<biblScope unit="page">133</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Comorbid autoimmune diseases in patients with vitiligo: a crosssectional study</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gill</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Acad. Dermatol</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="295" to="302" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Avoiding common pitfalls in machine learning omic data science</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Teschendorff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="422" to="427" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Artificial intelligence in healthcare: past, present and future</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stroke Vasc. Neurol</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="230" to="243" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Machine learning and artificial intelligence: two fellow travelers on the quest for intelligent behavior in machines</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kersting</surname></persName>
+		</author>
+		<idno type="DOI">10.3389/fdata.2018.00006</idno>
+		<ptr target="https://doi.org/10.3389/fdata.2018.00006" />
+	</analytic>
+	<monogr>
+		<title level="j">Front. Big Data</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">6</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Survey of machine learning algorithms for disease diagnostic</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fatima</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pasha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Intell. Learn. Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">09</biblScope>
+			<biblScope unit="page" from="1" to="16" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">An Introduction to Statistical Learning with</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>James</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Witten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hastie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tibshirani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Applications in R. 1 ed</title>
+		<imprint>
+			<biblScope unit="volume">XIV</biblScope>
+			<date type="published" when="2013">2013</date>
+			<publisher>Springer-Verlag</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">The elements of statistical learning: data mining, inference, and prediction</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hastie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tibshirani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Friedman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<publisher>Springer</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd ed. ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Predicting sample size required for classification performance</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Figueroa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zeng-Treitler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kandula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Ngo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Med. Inf. Decis. Mak</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Word2Vec inversion and traditional text classifiers for phenotyping lupus</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Turner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Med. Inform. Decis. Mak</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">126</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Defining disease phenotypes in primary care electronic health records by a machine learning approach: a case study in identifying rheumatoid arthritis</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">e0154515</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Automatic identification of methotrexate-induced liver toxicity in patients with rheumatoid arthritis from the electronic medical record</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Med. Inf. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="e151" to="e161" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Applying active learning to high-throughput phenotyping algorithms for electronic health records data</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Med. Inf. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="e253" to="e259" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Automated and flexible identification of complex disease: building a model for systemic lupus erythematosus using noisy labeling</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Murray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Avati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Schmajuk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yazdany</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Med. Inf. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="61" to="65" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">The utility of including pathology reports in improving the computational identification of patients</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Boyle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Pathol. Inform</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">46</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Use of computerized algorithm to identify individuals in need of testing for celiac disease</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Ludvigsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Med. Inf. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="e306" to="e310" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Automated feature selection of predictors in electronic medical records data</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gronsbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Minnier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Cai</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/biom.12987</idno>
+		<ptr target="https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.12987" />
+	</analytic>
+	<monogr>
+		<title level="j">Biometrics</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Semi-supervised approaches to efficient evaluation of model prediction performance</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Gronsbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Cai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. R. Stat. Soc. Ser. B (Stat. Methodol.)</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="579" to="594" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Autoimmune, atopic, and mental health comorbid conditions associated with alopecia areata in the United States</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">P</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mullangi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Qureshi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA Dermatol</title>
+		<imprint>
+			<biblScope unit="volume">150</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="789" to="794" />
+			<date type="published" when="2013">2014 Jun. 2013</date>
+		</imprint>
+	</monogr>
+	<note>Erratum appears in JAMA Dermatol</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Comorbidities associated with vitiligo: a ten-year retrospective study</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">M</forename><surname>Sheth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Qureshi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Dermatology</title>
+		<imprint>
+			<biblScope unit="volume">227</biblScope>
+			<biblScope unit="page" from="311" to="315" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Abrogation of T cell quiescence characterizes patients at high risk for multiple sclerosis after the initial neurological event</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Corvol</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page" from="11839" to="11844" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Effective early disease risk assessment with matrix factorization on a large-scale medical database: a case study on rheumatoid arthritis</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Y</forename><surname>Hsieh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Tseng</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Edram</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">e0207579</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">A genome-wide screen of gene-gene interactions for rheumatoid arthritis susceptibility</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Ackerman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Carulli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Genet</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page" from="473" to="485" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Large sample size, wide variant spectrum, and advanced machinelearning technique boost risk prediction for inflammatory bowel disease</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am. J. Hum. Genet</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="1008" to="1012" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Working toward precision medicine: predicting phenotypes from exomes in the Critical Assessment of Genome Interpretation (CAGI) challenges</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Daneshjou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Mutat</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="1182" to="1192" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Crohn disease risk prediction-Best practices and pitfalls with exome data</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Giollo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Mutat</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="1193" to="1200" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">CAGI4 Crohn&apos;s exome challenge: marker SNP versus exome variant models for assigning risk of Crohn disease</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Pal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kundu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Moult</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Mutat</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="1225" to="1234" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">An objectoriented regression for building disease predictive models with multiallelic HLA genes</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bolouri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Geraghty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lernmark</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genet. Epidemiol</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="315" to="332" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Definition of high-risk type 1 diabetes HLA-DR and HLA-DQ types using only three single nucleotide polymorphisms</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Varney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Morahan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="2135" to="2140" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">From disease association to risk assessment: an optimistic view from genome-wide association studies on type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Genet</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">A genome-wide association study reveals ARL15, a novel non-HLA susceptibility gene for rheumatoid arthritis in North Indians</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Negi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arthritis Rheumatism</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="3026" to="3035" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Supervised machine learning and logistic regression identifies novel epistatic risk factors with PTPN22 for rheumatoid arthritis</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">B S</forename><surname>Briggs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Immun</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="199" to="208" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Detecting single-nucleotide polymorphism by single-nucleotide polymorphism interactions in rheumatoid arthritis using a two-step approach with machine learning and a Bayesian threshold least absolute shrinkage and selection operator (LASSO) model</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Gonzalez-Recio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">L</forename><surname>De Maturana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T</forename><surname>Vega</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Engelman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Broman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Proc</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">S63</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Machine learning-based gene prioritization identifies novel candidate risk genes for inflammatory bowel disease</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Isakov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Dotan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ben-Shachar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inflamm. Bowel Dis</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1516" to="1523" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Encore: genetic association interaction network centrality pipeline and application to SLE exome data</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genet. Epidemiol</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="614" to="621" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Incorporating machine learning approaches to assess putative environmental risk factors for multiple sclerosis</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Mowry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mult. Scler. Relat. Disord</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="135" to="141" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Specific serum protein biomarkers of rheumatoid arthritis detected by MALDI-TOF-MS combined with magnetic beads</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Niu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Immunol</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="611" to="618" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Proteomic mass spectra classification using decision tree based ensemble methods</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Geurts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="3138" to="3145" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Discovery of new rheumatoid arthritis biomarkers using the surface-enhanced laser desorption/ionization time-of-flight mass spectrometry proteinchip approach</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>De Seny</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arthritis Rheumatism</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="3801" to="3812" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">MALDI-TOF MS combined with magnetic beads for detecting serum protein biomarkers and establishment of boosting decision tree model for diagnosis of systemic lupus erythematosus</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rheumatology</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="626" to="631" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Automatic classification of pathological gait patterns using ground reaction forces and machine learning algorithms</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alaqtash</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Conf. Proc. IEEE Eng. Med Biol. Soc</title>
+		<imprint>
+			<biblScope unit="page" from="453" to="457" />
+			<date type="published" when="2011">2011. 2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title level="m" type="main">Identifying key symptoms differentiating myalgic encephalomyelitis and chronic fatigue syndrome from multiple sclerosis</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ohanian</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="41" to="45" />
+		</imprint>
+	</monogr>
+	<note>Neurol. (E-Cronico</note>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Diagnosis of arthritis through fuzzy inference system</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Panneerselvam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Vennila</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Med. Syst</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="1459" to="1468" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Differentiation of tumour-stage mycosis fungoides, psoriasis vulgaris and normal controls in a pilot study using serum proteomic analysis</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Cowen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br. J. Dermatol</title>
+		<imprint>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="page" from="946" to="953" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Differentiating coeliac disease from irritable bowel syndrome by urinary volatile organic compound analysis-A pilot study</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Arasaradnam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">e107312</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">An automated system for detecting and measuring nailfold capillaries</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Berks</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Medical image computing and computer-assisted intervention: MICCAI International Conference on Medical Image Computing and Computer-Assisted Intervention</title>
+				<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="658" to="665" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Microarray analysis of autoimmune diseases by machine learning procedures</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Armananzas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE transactions on information technology in biomedi</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="341" to="350" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+	<note>IEEE Engineering in Medicine and Biology. Society</note>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title level="m" type="main">A comparative study of the gut microbiota in immunemediated inflammatory diseases-does a common dysbiosis exist? Microbiome</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Forbes</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">221</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Dysbiosis of the salivary microbiota in pediatric-onset primary sclerosing cholangitis and its potential as a biomarker</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Iwasawa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">5480</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A computational method to differentiate normal individuals, osteoarthritis and rheumatoid arthritis patients using serum biomarkers</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Heard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. R. Soc. Interface</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">20140428</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Evaluation of machine learning algorithms performance for the prediction of early multiple sclerosis from resting-state FMRI connectivity data</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Saccà</surname></persName>
+		</author>
+		<ptr target="https://link.springer.com/article/10.1007%2Fs11682-018-9926-9" />
+	</analytic>
+	<monogr>
+		<title level="j">Brain Imaging Behav</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Deep learning of joint myelin and T1w MRI features in normalappearing brain tissue to distinguish between multiple sclerosis patients and healthy controls</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yoo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">NeuroImage: Clin</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="169" to="178" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Protein oxidation, nitration and glycation biomarkers for early-stage diagnosis of osteoarthritis of the knee and typing and progression of arthritic disease</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Anwar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Savage</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Thornalley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rabbani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arthritis Res. Ther</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">250</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Laser imaging techniques for follow-up analysis of joint inflammation in patients with rheumatoid arthritis</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Scheel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Med. Laser Appl</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="198" to="205" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Prediction of arthritis using a modified Kohonen mapping and case based reasoning</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wyns</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eng. Appl. Artif. Intell</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">205</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Machine learning in detection of undiagnosed celiac disease</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Hujoel</surname></persName>
+		</author>
+		<idno>1354-1355.e1351</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Gastroenterol. Hepatol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Artificial intelligence techniques applied to the development of a decision-support system for diagnosing celiac disease</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Tenorio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Med. Inform</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="793" to="802" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Phase separation of the plasma membrane in human red blood cells as a potential tool for diagnosis and progression monitoring of type 1 diabetes mellitus</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Maulucci</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">A decision support system for type 1 diabetes mellitus diagnostics based on dual channel analysis of red blood cell membrane fluidity</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Cordelli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Methods Prog. Biomed</title>
+		<imprint>
+			<biblScope unit="volume">162</biblScope>
+			<biblScope unit="page" from="263" to="271" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Classification of paediatric inflammatory bowel disease using machine learning</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Mossotto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">2427</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Identification of three rheumatoid arthritis disease subtypes by machine learning integration of synovial histologic features and RNA sequencing data</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Orange</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arthritis Rheumatol</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page" from="690" to="701" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">An unsupervised machine learning method for discovering patient clusters based on genetic signatures</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lopez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tucker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Salameh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tucker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biomed. Inform</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="30" to="39" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Automatic prediction of rheumatoid arthritis disease activity from the electronic medical records</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Phenotypic characterisation of Crohn&apos;s disease severity</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Niehaus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Uhlig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Clifton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Conference proceedings:. Annual International Conference of the IEEE Engineering in Medicine and Biology Society</title>
+				<imprint>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="7023" to="7026" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Psoriasis image representation using patchbased dictionary learning for erythema severity scoring</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>George</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Aldeen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Garnavi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Med. Imaging Graph</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="44" to="55" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">A novel and robust Bayesian approach for segmentation of psoriasis lesions and its risk stratification</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Londhe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sonawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Methods Prog. Biomed</title>
+		<imprint>
+			<biblScope unit="volume">150</biblScope>
+			<biblScope unit="page" from="9" to="22" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">A novel approach to multiclass psoriasis disease risk stratification: Machine learning paradigm</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Londhe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sonawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed. Signal Process. Control</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="27" to="40" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Objective measurement of erythema in psoriasis using digital color photography with color calibration</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Raina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ski. Res. Technol</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="375" to="380" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">A novel hybrid method based on fuzzy cognitive maps and fuzzy clustering algorithms for grading celiac disease</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Amirkhani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Mosavi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mohammadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Papageorgiou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput. Appl</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="1573" to="1588" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Predicting corticosteroid-free endoscopic remission with vedolizumab in ulcerative colitis</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Waljee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Alimentary Pharmacol. Thera</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="763" to="772" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">A novel method predicting clinical response using only background clinical data in RA patients before treatment with infliximab</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Miyoshi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod. Rheumatol</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="813" to="816" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">The application of machine learning algorithms to the analysis of electromyographic patterns from arthritic patients</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Nair</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>French</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Laroche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Thomas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Neural Syst. Rehabil. Eng</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="174" to="184" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Prediction of dose escalation for rheumatoid arthritis patients under infliximab treatment</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Van Looy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eng. Appl. Artif. Intell</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="819" to="828" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">Machine learning algorithms for objective remission and clinical outcomes with thiopurines</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Waljee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Crohn&apos;s Colitis</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="801" to="810" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<monogr>
+		<title level="m" type="main">A biological networkbased regularized artificial neural network model for robust phenotype prediction from gene expression data</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ziemek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Zarringhalam</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>BMC Bioinforma</publisher>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">565</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">Algorithms outperform metabolite tests in predicting response of patients with inflammatory bowel disease to thiopurines</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Waljee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Gastroenterol. Hepatol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="143" to="150" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<monogr>
+		<title level="m" type="main">Fecal microbiota signatures are associated with response to ustekinumab therapy among Crohn&apos;s disease patients</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Doherty</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="e02120" to="e02117" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Machine learning for treatment assignment: improving individualized risk attribution</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Weiss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Kuusisto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Boyd</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Page</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AMIA Annu. Symp. Proc. AMIA Symp</title>
+		<imprint>
+			<biblScope unit="page" from="1306" to="1315" />
+			<date type="published" when="2015">2015. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Development and validation of a multivariate predictive model for rheumatoid arthritis mortality using a machine learning approach</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Lezcano-Valverde</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">10189</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Predicting three-year kidney graft survival in recipients with systemic lupus erythematosus</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ASAIO J. (Am. Soc. Artif. Intern. Organs: 1992)</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="300" to="309" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">Analysis of survival data having time-dependent covariates</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tsujitani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sakon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="389" to="394" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">A comparison of supervised machine learning algorithms and feature vectors for MS lesion segmentation using multimodal structural MRI</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Sweeney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLOS ONE</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">e95753</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">Objective evaluation of multiple sclerosis lesion segmentation using a data management and processing infrastructure</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Commowick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">13650</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">BOOST: a supervised approach for multiple sclerosis lesion segmentation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cabezas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Neurosci. Methods</title>
+		<imprint>
+			<biblScope unit="volume">237</biblScope>
+			<biblScope unit="page" from="108" to="117" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">Active learning based segmentation of Crohns disease from abdominal MRI</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mahapatra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Vos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Buhmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Methods Prog. Biomed</title>
+		<imprint>
+			<biblScope unit="volume">128</biblScope>
+			<biblScope unit="page" from="75" to="85" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title level="a" type="main">Combining multiple expert annotations using semi-supervised learning and graph cuts for medical image segmentation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mahapatra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Vis. Image Underst</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page" from="114" to="123" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title level="a" type="main">An Automated Method for Segmenting White Matter Lesions through Multi-Level Morphometric Feature Classification with Application to Lupus</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scully</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front Hum. Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">27</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title level="a" type="main">Biological function integrated prediction of severe radiographic progression in rheumatoid arthritis: A nested case control study</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">B</forename><surname>Joo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Arthritis and Rheumatology Conference: American College of Rheumatology/Association of Rheumatology Health Professionals Annual Scientific Meeting, ACR/ARHP</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">244</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<monogr>
+		<title level="m" type="main">Multi-omics differentially classify disease state and treatment outcome in pediatric Crohn&apos;s disease</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Douglas</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">13</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title level="a" type="main">Genetic signature to provide robust risk assessment of psoriatic arthritis development in psoriasis patients</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Patrick</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41467-018-06672-6</idno>
+		<ptr target="https://doi.org/10.1038/s41467-018-06672-6" />
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Commun</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">4178</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<analytic>
+		<title level="a" type="main">Remote monitoring in the home validates clinical gait measures for multiple sclerosis</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Supratak</surname></persName>
+		</author>
+		<idno type="DOI">10.3389/fneur.2018.00561</idno>
+		<ptr target="https://doi.org/10.3389/fneur.2018.00561" />
+	</analytic>
+	<monogr>
+		<title level="j">Front. Neurol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">561</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title level="a" type="main">A machine learning approach for gait speed estimation using skin-mounted wearable sensors: From healthy controls to individuals with multiple sclerosis</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Mcginnis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">e0178366</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<analytic>
+		<title level="a" type="main">A Glucose Model Based on Support Vector Regression for the Prediction of Hypoglycemic Events Under Free-Living Conditions</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Georga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">C</forename><surname>Protopappas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ardigo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Polyzos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">I</forename><surname>Fotiadis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Technol. Ther</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="634" to="643" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b102">
+	<analytic>
+		<title level="a" type="main">A consensus-perceived glycemic variability metric</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Marling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Struble</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Bunescu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Shubrook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">L</forename><surname>Schwartz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="871" to="879" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b103">
+	<analytic>
+		<title level="a" type="main">Evaluation of shortterm predictors of glucose concentration in type 1 diabetes combining feature ranking with regression models</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Georga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">C</forename><surname>Protopappas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Polyzos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">I</forename><surname>Fotiadis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Med Biol. Eng. Comput</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="1305" to="1318" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b104">
+	<analytic>
+		<title level="a" type="main">The Electronic Medical Records and Genomics (eMERGE) Network: past, present, and future</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Gottesman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genet. Med</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="761" to="771" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b105">
+	<analytic>
+		<title level="a" type="main">Integrating biomedical research and electronic health records to create knowledge-based biologically meaningful machine-readable embeddings</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Nelson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Butte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Baranzini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Commun</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">3045</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b106">
+	<analytic>
+		<title level="a" type="main">Targeted therapies: a new generation of cancer treatments</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Gerber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am. Fam. Physician</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="311" to="319" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b107">
+	<analytic>
+		<title level="a" type="main">Identifying driver mutations in sequenced cancer genomes: computational approaches to enable precision medicine</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Raphael</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dobson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Oesper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Vandin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Med</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">5</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b108">
+	<analytic>
+		<title level="a" type="main">Cancer classification and pathway discovery using non-negative matrix factorization</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zeng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biomed. Inform</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page">103247</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b109">
+	<analytic>
+		<title level="a" type="main">Semi-supervised projective nonnegative matrix factorization for cancer classification</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Guan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Luo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">e0138814</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b110">
+	<analytic>
+		<title level="a" type="main">Machine-learning based lipid mediator serum concentration patterns allow identification of multiple sclerosis patients with high accuracy</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lotsch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">14884</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b111">
+	<analytic>
+		<title level="a" type="main">Computer-aided diagnosis of psoriasis skin images with HOS, texture and color features: a first comparative study of its kind</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Londhe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sonawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Methods Prog. Biomed</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page" from="98" to="109" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b112">
+	<analytic>
+		<title level="a" type="main">Integration of Genome-Wide DNA Methylation and Transcription Uncovered Aberrant Methylation-Regulated Genes and Pathways in the Peripheral Blood Mononuclear Cells of Systemic Sclerosis</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhu</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2018/7342472</idno>
+		<ptr target="https://doi.org/10.1155/2018/7342472" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Rheumatol</title>
+		<imprint>
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b113">
+	<analytic>
+		<title level="a" type="main">Using AUC and accuracy in evaluating learning algorithms</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">X</forename><surname>Ling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ieee T Knowl. Data En</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="299" to="310" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b114">
+	<analytic>
+		<title level="a" type="main">Facing Imbalanced Data-Recommendations for the Use of Performance Metrics</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Jeni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Cohn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Humaine Association Conference on Affective Computing and Intelligent Interaction</title>
+				<meeting><address><addrLine>Torre, FDL</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013">2013. 2013 2-5 Sept. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b115">
+	<analytic>
+		<title level="a" type="main">The PG. Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Moher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Liberati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tetzlaff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Altman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLOS Med</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">e1000097</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b116">
+	<analytic>
+		<title level="a" type="main">Comparison of machine learning methods for stationary wavelet entropy-based multiple sclerosis detection: decision tree, k-nearest neighbors, and support vector machine</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Simulation</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="861" to="871" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b117">
+	<analytic>
+		<title level="a" type="main">Exploration of machine learning techniques in predicting multiple sclerosis disease course</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLOS ONE</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">e0174866</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b118">
+	<analytic>
+		<title level="a" type="main">Multiple sclerosis risk factors contribute to onset heterogeneity</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">B S</forename><surname>Briggs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mult. Scler. Relat. Disord</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="11" to="16" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b119">
+	<analytic>
+		<title level="a" type="main">Computer aided diagnosis system for multiple sclerosis disease based on phase to amplitude coupling in covert visual attention</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ahmadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Davoudi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Daliri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Methods Prog. Biomed</title>
+		<imprint>
+			<biblScope unit="volume">169</biblScope>
+			<biblScope unit="page" from="9" to="18" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b120">
+	<analytic>
+		<title level="a" type="main">Predicting conversion from clinically isolated syndrome to multiple sclerosis-An imaging-based machine learning approach</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">NeuroImage: Clin</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">101593</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b121">
+	<analytic>
+		<title level="a" type="main">Characterization of relapsing-remitting multiple sclerosis patients using support vector machine classifications of functional and diffusion MRI data</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zurita</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">NeuroImage: Clin</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="724" to="730" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b122">
+	<analytic>
+		<title level="a" type="main">Multiple sclerosis identification by 14-layer convolutional neural network with batch normalization, dropout, and stochastic pooling</title>
+		<author>
+			<persName><forename type="first">S.-H</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.3389/fnins.2018.00818</idno>
+		<ptr target="https://doi.org/10.3389/fnins.2018.00818" />
+	</analytic>
+	<monogr>
+		<title level="j">Front. Neuroscience</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b123">
+	<analytic>
+		<title level="a" type="main">Multivariate prediction of multiple sclerosis using robust quantitative MR-based image metrics</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Neeb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schenk</surname></persName>
+		</author>
+		<ptr target="https://www.sciencedirect.com/science/article/pii/S0939388918300680?via%3Dihub" />
+	</analytic>
+	<monogr>
+		<title level="j">Zeitschrift für Medizinische Physik</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b124">
+	<monogr>
+		<title level="m" type="main">Collaboration between a human group and artificial intelligence can improve prediction of multiple sclerosis course: a proof-of-principle study</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tacchella</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">F1000Research. 2017</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">2172</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b125">
+	<analytic>
+		<title level="a" type="main">Machine learning EEG to predict cognitive functioning and processing speed over a 2-year Period in multiple sclerosis patients and controls</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kiiski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brain Topogr</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="346" to="363" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b126">
+	<analytic>
+		<title level="a" type="main">A machine learning pipeline for multiple sclerosis course detection from clinical scales and patient reported outcomes</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fiorini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Conf. Proc. IEEE Eng. Med Biol. Soc</title>
+		<imprint>
+			<biblScope unit="page" from="4443" to="4446" />
+			<date type="published" when="2015">2015. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b127">
+	<analytic>
+		<title level="a" type="main">Combined structural and functional patterns discriminating upper limb motor disability in multiple sclerosis using multivariate approaches</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brain Imaging Behav</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="754" to="768" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b128">
+	<analytic>
+		<title level="a" type="main">Machine-learned data structures of lipid marker serum concentrations in multiple sclerosis patients differ from those in healthy subjects</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lötsch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mol. Sci</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">1217</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b129">
+	<analytic>
+		<title level="a" type="main">The differential diagnosis of multiple sclerosis using convex combination of infinite kernels</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Karaca</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cattani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Ayan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CNS Neurol. Disord. Drug Targets</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="36" to="43" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b130">
+	<monogr>
+		<title level="m" type="main">Statistical classifiers for diagnosing disease from immune repertoires: a case study using multiple sclerosis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ostmeyer</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>BMC Bioinforma</publisher>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">401</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b131">
+	<analytic>
+		<title level="a" type="main">Machine learning approach for classifying multiple sclerosis courses by combining clinical data with lesion loads and magnetic resonance metabolic features</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ion-Mărgineanu</surname></persName>
+		</author>
+		<idno type="DOI">10.3389/fnins.2017.00398</idno>
+		<ptr target="https://doi.org/10.3389/fnins.2017.00398" />
+	</analytic>
+	<monogr>
+		<title level="j">Front. Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">398</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b132">
+	<analytic>
+		<title level="a" type="main">Graph theory-based brain connectivity for automatic classification of multiple sclerosis clinical courses</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kocevar</surname></persName>
+		</author>
+		<idno type="DOI">10.3389/fnins.2016.00478</idno>
+		<ptr target="https://doi.org/10.3389/fnins.2016.00478" />
+	</analytic>
+	<monogr>
+		<title level="j">Front. Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">478</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b133">
+	<analytic>
+		<title level="a" type="main">Development of a sensitive outcome for economical drug screening for progressive multiple sclerosis treatment</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kosa</surname></persName>
+		</author>
+		<idno type="DOI">10.3389/fneur.2016.00131</idno>
+		<ptr target="https://doi.org/10.3389/fneur.2016.00131" />
+	</analytic>
+	<monogr>
+		<title level="j">Front. Neurol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">131</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b134">
+	<analytic>
+		<title level="a" type="main">Prognostic biomarkers of IFNb therapy in multiple sclerosis patients</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Baranzini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mult. Scler</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="894" to="904" />
+			<date type="published" when="2015">2015</date>
+			<publisher>Houndmills</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b135">
+	<analytic>
+		<title level="a" type="main">Predicting outcome in clinically isolated syndrome using machine learning</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Wottschel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroimage Clin</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="281" to="287" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b136">
+	<analytic>
+		<title level="a" type="main">Predictive value of imaging markers at multiple sclerosis disease onset based on gadolinium-and USPIO-enhanced MRI and machine learning</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Crimi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">e93024</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b137">
+	<monogr>
+		<title level="m" type="main">Spatial modeling of multiple sclerosis for disease subtype prediction</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Taschler</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<publisher>Springer International Publishing</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b138">
+	<analytic>
+		<title level="a" type="main">An application of Random Forests to a genome-wide association dataset: methodological considerations &amp; new findings</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Goldstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Hubbard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Cutler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Barcellos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genet</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">49</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b139">
+	<analytic>
+		<title level="a" type="main">Evidence for CRHR1 in multiple sclerosis using supervised machine learning and meta-analysis in 12,566 individuals</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">B</forename><surname>Briggs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Mol. Genet</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="4286" to="4295" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b140">
+	<analytic>
+		<title level="a" type="main">A supervised framework with intensity subtraction and deformation field features for the detection of new T2-w lesions in multiple sclerosis</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Salem</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">NeuroImage: Clin</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="607" to="615" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b141">
+	<analytic>
+		<title level="a" type="main">Multi-view longitudinal CNN for multiple sclerosis lesion segmentation</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Birenbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Greenspan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eng. Appl. Artif. Intell</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="111" to="118" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b142">
+	<analytic>
+		<title level="a" type="main">Assessing multiple sclerosis with kinect: designing computer vision systems for real-world use</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Morrison</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum.-Computer Interact</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="191" to="226" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b143">
+	<analytic>
+		<title level="a" type="main">Removing confounding factors via constraint-based clustering: An application to finding homogeneous groups of multiple sclerosis patients</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Brodley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Healy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Chitnis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artif. Intell. Med</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="79" to="88" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b144">
+	<analytic>
+		<title level="a" type="main">Glycomics meets artificial intelligence -Potential of glycan analysis for identification of seropositive and seronegative rheumatoid arthritis patients revealed</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Chocholova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Chim. Acta</title>
+		<imprint>
+			<biblScope unit="volume">481</biblScope>
+			<biblScope unit="page" from="49" to="55" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b145">
+	<analytic>
+		<title level="a" type="main">Metagenomics biomarkers selected for prediction of three different diseases in Chinese population</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+		<ptr target="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820663/" />
+	</analytic>
+	<monogr>
+		<title level="j">BioMed Res. Int</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b146">
+	<analytic>
+		<title level="a" type="main">Developing fine-grained actigraphies for rheumatoid arthritis patients from a single accelerometer using machine learning</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Andreu-Perez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">2113</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b147">
+	<analytic>
+		<title level="a" type="main">Expression of chemokines CXCL4 and CXCL7 by synovial macrophages defines an early stage of rheumatoid arthritis</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yeo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Rheum. Dis</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="763" to="771" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b148">
+	<analytic>
+		<title level="a" type="main">A CD4 T cell gene signature for early rheumatoid arthritis implicates interleukin 6-mediated STAT3 signalling, particularly in anti-citrullinated peptide antibody-negative disease</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Pratt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Rheum. Dis</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="1374" to="1381" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b149">
+	<analytic>
+		<title level="a" type="main">Risk estimation and risk prediction using machine-learning methods</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kruppa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ziegler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">R</forename><surname>Konig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Genet</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page" from="1639" to="1654" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b150">
+	<analytic>
+		<title level="a" type="main">Detection of flares by decrease in physical activity, collected using wearable activity trackers, in rheumatoid arthritis or axial spondyloarthritis: an application of Machine-Learning analyses in rheumatology</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gossec</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arthritis Care Res</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">22</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b151">
+	<analytic>
+		<title level="a" type="main">Predicting hospitalization and outpatient corticosteroid use in inflammatory bowel disease patients using machine learning</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Waljee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inflamm. Bowel Dis</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="45" to="53" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b152">
+	<analytic>
+		<title level="a" type="main">Fully automated diagnostic system with artificial intelligence using endocytoscopy to identify the presence of histologic inflammation associated with ulcerative colitis (with video)</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Maeda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gastrointest. Endosc</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page" from="408" to="415" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b153">
+	<analytic>
+		<title level="a" type="main">Predictors of long-term outcomes in patients with acute severe colitis: a northern Indian cohort study</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jain</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Gastroenterol. Hepatol. (Aust.)</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="615" to="622" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b154">
+	<monogr>
+		<title level="m" type="main">Interpretation of microbiota-based diagnostics by explaining individual classifier decisions. BMC Bioinforma</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Eck</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">441</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b155">
+	<analytic>
+		<title level="a" type="main">Bayesian Machine Learning Techniques for revealing complex interactions among genetic and clinical factors in association with extraintestinal Manifestations in IBD patients</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Menti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AMIA Annu. Symp. Proc. AMIA Symp</title>
+		<imprint>
+			<biblScope unit="page" from="884" to="893" />
+			<date type="published" when="2016">2016. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b156">
+	<analytic>
+		<title level="a" type="main">Sparse modeling reveals miRNA signatures for diagnostics of inflammatory bowel disease</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hubenthal</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0140155</idno>
+		<ptr target="https://doi.org/10.1371/journal.pone.0140155" />
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">e0140155</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b157">
+	<analytic>
+		<title level="a" type="main">Alignment-free supervised classification of metagenomes by recursive SVM</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/1471-2164-14-641</idno>
+		<ptr target="https://doi.org/10.1186/1471-2164-14-641" />
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">641</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b158">
+	<analytic>
+		<title level="a" type="main">A decision tree-based approach for determining low bone mineral density in inflammatory bowel disease using WEKA software</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Firouzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. J. Gastroenterol. Hepatol</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="1075" to="1081" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b159">
+	<analytic>
+		<title level="a" type="main">Novel computer-assisted diagnosis system for endoscopic disease activity in patients with ulcerative colitis</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ozawa</surname></persName>
+		</author>
+		<ptr target="https://www.sciencedirect.com/science/article/pii/S0016510718331936?via%3Dihub" />
+	</analytic>
+	<monogr>
+		<title level="j">Gastrointestinal Endoscopy</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b160">
+	<analytic>
+		<title level="a" type="main">Predicting and explaining inflammation in Crohn&apos;s disease patients using predictive analytics methods and electronic medical record data</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Delen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Agrawal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Health Inform J</title>
+		<imprint>
+			<biblScope unit="page">1460458217751015</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b161">
+	<analytic>
+		<title level="a" type="main">A probabilistic pathway score (PROPS) for classification with applications to inflammatory bowel disease</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="985" to="993" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b162">
+	<analytic>
+		<title level="a" type="main">Surrogate-assisted feature extraction for high-throughput phenotyping</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Med. Inf. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="e143" to="e149" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b163">
+	<analytic>
+		<title level="a" type="main">Classification methods for the analysis of LH-PCR data associated with inflammatory bowel disease patients</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Wisittipanit</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J. Bioinform Res. Appl</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="111" to="129" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b164">
+	<analytic>
+		<title level="a" type="main">Effect of fuzzy partitioning in Crohn&apos;s disease classification: a neuro-fuzzy-based approach</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ahmed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Med. Biol. Eng. Comput</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="101" to="115" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b165">
+	<analytic>
+		<title level="a" type="main">NIRCa: An artificial neural network-based insulin resistance calculator</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Stawiski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Pietrzak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mlynarski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Fendler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Szadkowska</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pediatr. Diabetes</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="231" to="235" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b166">
+	<analytic>
+		<title level="a" type="main">Continuous blood glucose level prediction of Type 1 Diabetes based on Artificial Neural Network</title>
+		<author>
+			<persName><forename type="first">Ben</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biocybern. Biomed. Eng</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="828" to="840" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b167">
+	<analytic>
+		<title level="a" type="main">Analyzing breath samples of hypoglycemic events in type 1 diabetes patients: towards developing an alternative to diabetes alert dogs</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Siegel</surname></persName>
+		</author>
+		<idno type="DOI">10.1088/1752-7163/aa6ac6</idno>
+		<ptr target="https://doi.org/10.1088/1752-7163/aa6ac6" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Breath Res</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">26007</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b168">
+	<analytic>
+		<title level="a" type="main">Online prediction of glucose concentration in type 1 diabetes using extreme learning machines</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Georga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">C</forename><surname>Protopappas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Polyzos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">I</forename><surname>Fotiadis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Conference proceedings:. Annual International Conference of the IEEE Engi</title>
+				<imprint>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="3262" to="3265" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b169">
+	<analytic>
+		<title level="a" type="main">Evaluation of an algorithm for retrospective hypoglycemia detection using professional continuous glucose monitoring data</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Jensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="117" to="122" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b170">
+	<analytic>
+		<title level="a" type="main">Use of case-based reasoning to enhance intensive management of patients on insulin pump therapy</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">L</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Shubrook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Marling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="603" to="611" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b171">
+	<analytic>
+		<title level="a" type="main">Glycemic control indices and their aggregation in the prediction of nocturnal hypoglycemia from intermittent blood glucose measurements</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sampath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Tkachenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Renard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Pereverzev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="1245" to="1250" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b172">
+	<analytic>
+		<title level="a" type="main">Non-invasive hypoglycemia monitoring system using extreme learning machine for Type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>San</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ISA Trans</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page" from="440" to="446" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b173">
+	<analytic>
+		<title level="a" type="main">Decision support in diabetes care: the challenge of supporting patients in their daily living using a mobile glucose predictor</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Perez-Gandia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="243" to="250" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b174">
+	<analytic>
+		<title level="a" type="main">Bootstrap aggregating of alternating decision trees to detect sets of SNPs that associate with disease</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Guy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Santago</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Langefeld</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genet. Epidemiol</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="99" to="106" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b175">
+	<analytic>
+		<title level="a" type="main">Biomarkers of erosive arthritis in systemic lupus erythematosus: application of machine learning models</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ceccarelli</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0207926</idno>
+		<ptr target="https://doi.org/10.1371/journal.pone.0207926" />
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">e0207926</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b176">
+	<analytic>
+		<title level="a" type="main">Prediction of chronic damage in systemic lupus erythematosus by using machine-learning models</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ceccarelli</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0174200</idno>
+		<ptr target="https://doi.org/10.1371/journal.pone.0174200" />
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">e0174200</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b177">
+	<analytic>
+		<title level="a" type="main">Longitudinal treatment patterns and associated outcomes in patients with newly diagnosed systemic lupus erythematosus</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Ther</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="610" to="624" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b178">
+	<analytic>
+		<title level="a" type="main">Development of biomarker models to predict outcomes in lupus nephritis</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Wolf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arthritis Rheumatol</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="1955" to="1963" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b179">
+	<analytic>
+		<title level="a" type="main">Microarray analysis of autoimmune diseases by machine learning procedures</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Armañanzas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Inf. Technol. Biomedicine</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="341" to="350" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b180">
+	<analytic>
+		<title level="a" type="main">Predicting hospital readmission for lupus patients: an RNN-LSTM-based deep-learning methodology</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Delen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol. Med</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="199" to="209" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b181">
+	<analytic>
+		<title level="a" type="main">Lupus nephritis pathology prediction with clinical indices</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">10231</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b182">
+	<analytic>
+		<title level="a" type="main">Random Bits Forest: a Strong Classifier/Regressor for Big Data</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">30086</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b183">
+	<analytic>
+		<title level="a" type="main">Exploring the color feature power for psoriasis risk stratification and classification: a data mining paradigm</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Londhe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sonawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Biol. Med</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="54" to="68" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b184">
+	<analytic>
+		<title level="a" type="main">Reliable and accurate psoriasis disease classification in dermatology images using comprehensive feature space in machine learning paradigm</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Londhe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sonawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="6184" to="6195" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b185">
+	<analytic>
+		<title level="a" type="main">Reliability analysis of psoriasis decision support system in principal component analysis framework</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Londhe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sonawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Data Knowl. Eng</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page" from="1" to="17" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b186">
+	<analytic>
+		<title level="a" type="main">Synthetic neoepitopes of the transglutaminase-deamidated gliadin complex as biomarkers for diagnosing and monitoring celiac disease</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Choung</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gastroenterology</title>
+		<imprint>
+			<biblScope unit="volume">156</biblScope>
+			<biblScope unit="page" from="582" to="591" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b187">
+	<analytic>
+		<title level="a" type="main">A novel hybrid decision support system for thyroid disease forecasting. Soft Computing -A Fusion of</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Khoso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Foundations. Methodologies Appl</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="5377" to="5383" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b188">
+	<analytic>
+		<title level="a" type="main">Amended fused TOPSIS-VIKOR for classification (ATOVIC) applied to some UCI data sets</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Baccour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page" from="115" to="125" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b189">
+	<analytic>
+		<title level="a" type="main">An approach to generate software agents for health data mining</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Morejón</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Viana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lucena</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Softw. Eng. Knowl. Eng</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="1579" to="1589" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b190">
+	<analytic>
+		<title level="a" type="main">A comparative study on thyroid disease diagnosis using neural networks</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Temurtas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="944" to="949" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b191">
+	<analytic>
+		<title level="a" type="main">A novel hybrid method based on artificial immune recognition system (AIRS) with fuzzy weighted pre-processing for thyroid disease diagnosis</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Polat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Şahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Güneş</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="1141" to="1147" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b192">
+	<analytic>
+		<title level="a" type="main">ESTDD: Expert system for thyroid diseases diagnosis</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Keleş</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Keleş</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="242" to="246" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b193">
+	<analytic>
+		<title level="a" type="main">A KLD-LSSVM based computational method applied for feature ranking and classification of primary biliary cirrhosis stages</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Pandey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Comput. Biol. Drug Des</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="24" to="38" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b194">
+	<analytic>
+		<title level="a" type="main">Primary sclerosing cholangitis risk estimate tool (PREsTo) predicts outcomes in PSC: a derivation &amp; validation study using machine learning</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Eaton</surname></persName>
+		</author>
+		<ptr target="https://www.ncbi.nlm.nih.gov/pubmed/29742811" />
+	</analytic>
+	<monogr>
+		<title level="j">Hepatology</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b195">
+	<analytic>
+		<title level="a" type="main">A functional genomic meta-analysis of clinical trials in systemic sclerosis: toward precision medicine and combination therapy</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Taroni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Martyanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mahoney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Whitfield</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Invest. Dermatol</title>
+		<imprint>
+			<biblScope unit="volume">137</biblScope>
+			<biblScope unit="page" from="1033" to="1041" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b196">
+	<monogr>
+		<title level="m" type="main">A methodology for exploring biomarker-phenotype associations: application to flow cytometry data and systemic sclerosis clinical manifestations</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<publisher>BMC Bioinforma</publisher>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">293</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b197">
+	<monogr>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Brodersen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Stephan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Buhmann</surname></persName>
+		</author>
+		<title level="m">The Balanced Accuracy and Its Posterior Distribution. 2010 20th International Conference on Pattern Recognition</title>
+				<imprint>
+			<date type="published" when="2010">2010 23-26 Aug. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b198">
+	<monogr>
+		<title level="m" type="main">A Probabilistic Interpretation of Precision, Recall and F-Score, with Implication for Evaluation</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Goutte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gaussier</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin; Heidelberg</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

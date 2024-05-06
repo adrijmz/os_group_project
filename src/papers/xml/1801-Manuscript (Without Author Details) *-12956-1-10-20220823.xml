@@ -49,7 +49,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:25+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -67,10 +67,2309 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>Due to fast-evolving technology, the world is moving to the use of credit cards rather than money in their daily lives, giving rise to many new opportunities for fraudsters to use credit cards maliciously. Based on the Nilson report, losses related to global cards were estimated to be over $35 billion by 2020. In order to maintain the security of users of these cards, the credit card company must develop a service to ensure that users are protected from any risks they may be exposed to. For this reason, we introduce a fraud detection model, denoted ST-BPNN, which is based on machine and deep learning approaches to identify fraudulent transactions. ST-BPNN was applied on real fraud detection data provided by the European bank. Comparing the obtained results from ST-BPNN with a recent state-of-the-art approach shows that our proposed model demonstrates high predictive performance for detecting fraudulent transactions.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Due to fast-evolving technology, the world is moving to the use of credit cards rather than money in their daily lives, giving rise to many new opportunities for fraudsters to use credit cards maliciously. Based on the Nilson report, losses related to global cards were estimated to be over $35 billion by 2020. In order to maintain the security of users of these cards, the credit card company must develop a service to ensure that users are protected from any risks they may be exposed to. For this reason, we introduce a fraud detection model, denoted ST-BPNN, which is based on machine and deep learning approaches to identify fraudulent transactions. ST-BPNN was applied on real fraud detection data provided by the European bank. Comparing the obtained results from ST-BPNN with a recent state-of-the-art approach shows that our proposed model demonstrates high predictive performance for detecting fraudulent transactions.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Since the introduction of credit cards and online payments, many scammers have found ways to exploit people and steal their credit card information for use in unauthorized purchases <ref type="bibr">[1]</ref>. The result is a huge amount of fraudulent purchases every day <ref type="bibr" target="#b3">[2]</ref>. Banks and e-commerce sites try to identify these fraudulent transactions and prevent them from happening again. Fig. <ref type="figure" target="#fig_1">1</ref> presents an example of a Credit Card Fraud Detection (CCFD) case.</p><p>Credit card fraud (CCF) involves the use of falsified or stolen credit card information and causes financial harm to the account holders or merchants involved <ref type="bibr">[3]</ref>. Fraud is known to be dynamic and has no pattern, so it is not easily identified. Fraudsters use recent technological advances to their advantage. They somehow bypass security controls, resulting in the loss of billions of dollars. The total number of CCFs in the Single Euro Payments Area (SEPA) in 2016 was 1.8 billion euros out of a total of 4.38 trillion euros in transactions, which is 0.4% less than the previous year <ref type="bibr">[4]</ref>. In 2016, based on Nelson's report, global credit card losses amounted to $21.84 billion and were estimated to reach $32 billion in 2020 <ref type="bibr" target="#b3">[2]</ref>. Using machine learning and deep learning techniques to analyze and detect suspicious activity is one way to track fraudulent transactions to stop fraudsters before the transaction is processed and validated <ref type="bibr">[5]</ref>. real-world data. We evaluate the effectiveness of ST-BPNN using different criteria such as Recall (sensitivity), AUC-ROC, AUPR, and F1 score, then compare the obtained results with a recent state-ofthe-art approach.</p><p>The rest of this paper is organized as follows: Section II summarizes the related works, Section III provides details on the proposed model, and Section IV presents the experimental environment and ST-BPNN model implementation. The obtained results are discussed in Section V and findings and future work are summarized in Section VI.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. related Work</head><p>A comprehensive understanding of fraud detection technologies can be helpful for us to solve the problem of CCF. The work in <ref type="bibr" target="#b33">[18]</ref> provides a comprehensive discussion on the challenges and problems of fraud detection research. Adewumi et.al. <ref type="bibr" target="#b34">[19]</ref> discuss the most popular fraud types and current nature-inspired detection approaches that are used in the fraud detection system. Also, a significant number of research works have been done on CCFD. The techniques developed can be categorized into two sections, as discussed below:</p><p>Machine Learning-based approach: In <ref type="bibr">[1]</ref>, a survey of different data mining and machine learning techniques for CCFD was presented. The paper summarized a list of challenges one might encounter during CCFD in <ref type="bibr" target="#b35">[20]</ref>. In <ref type="bibr" target="#b36">[21]</ref>, a comparison study of logistic regression and NB was performed. Tax et al. <ref type="bibr" target="#b37">[22]</ref> explored an intuitive approach that produces random outliers evenly distributed throughout the hypercube containing the target data to assist in the identification of appropriate hyperparameters, and further enhanced it into a hypersphere in order to match the target data better. Weston et al. <ref type="bibr" target="#b38">[23]</ref> applied peer group analysis on transaction records to identify aberrant values and abnormal transactions. Genetic algorithms combined with scatter search was used to minimize the number of wrongfully classified transactions <ref type="bibr" target="#b39">[24]</ref>. Bahnsen et al. <ref type="bibr" target="#b40">[25]</ref> suggested a cost-sensitive approach with minimal risk of bayes to identify cases of fraud.</p><p>Recently, we found many other approaches used in the field of Credit Card Fraud Identification An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data Deep Neural Networks (DNNs) are rapidly becoming one of the most popular machine learning (ML) tools, due to their ability to solve a wide range of problems, from language translation <ref type="bibr">[6]</ref> [7], image recognition <ref type="bibr">[8]</ref>, atari gaming <ref type="bibr">[9]</ref>, and fraud detection <ref type="bibr" target="#b47">[10]</ref>- <ref type="bibr" target="#b49">[12]</ref>. Neural networks created through supervised learning are capable of discovering subtle relationships between variables, making them well suited for creating an alternative model for complex physical systems <ref type="bibr">[1]</ref>  <ref type="bibr" target="#b50">[13]</ref>. Numerous ML algorithms can be employed to build surrogates, but neural networks have several distinct advantages; they can be scaled up to large volumes of high dimensional data, have low memory requirements, and can be easily updated when new data become available <ref type="bibr" target="#b29">[14]</ref>, <ref type="bibr" target="#b30">[15]</ref>.</p><p>Although it is possible to fit any function to a sufficiently large and shallow neural network <ref type="bibr" target="#b31">[16]</ref>, studies suggest that deep networks often work better than large networks with similar numbers of neurons <ref type="bibr" target="#b32">[17]</ref>. The inclusion of more hidden layers allows higher levels of interaction between parameters, so that deep networks can discover non-linear relationships that may be undetectable with only two hidden layers <ref type="bibr" target="#b32">[17]</ref> [1] <ref type="bibr" target="#b50">[13]</ref>. Based on this observation, we propose a new model based on deep neural networks technology and machine learning techniques to address the problem of CCF. The proposed model is called ST-BPNN and consists of a pre-processing of machine learning techniques which are Synthetic Minority Oversampling Technique (SMOTE) and Tomek Link to solve the problem of imbalanced data, and back-propagation neural networks (BPNN) to detect fraud. The ST-BPNN is performed on a large set of imbalanced of falsified or inancial harm <ref type="bibr">[3]</ref>. Fraud is it is not easily cal advances ass security lars. The total yments Area a total of 4.38 less than the lson's report, 4 billion and 20 <ref type="bibr" target="#b3">[2]</ref>. Using chniques to way to track before the Deep Neural Networks (DNNs) are rapidly becoming one of the most popular machine learning (ML) tools, due to their ability to solve a wide range of problems, from language translation <ref type="bibr">[6]</ref>  <ref type="bibr">[7]</ref>, image recognition <ref type="bibr">[8]</ref>, atari gaming <ref type="bibr">[9]</ref>, and fraud detection <ref type="bibr" target="#b47">[10]</ref> [11] <ref type="bibr" target="#b49">[12]</ref>. Neural networks created through supervised learning are capable of discovering subtle relationships between variables, making them well suited for creating an alternative model for complex physical systems <ref type="bibr">[1]</ref>  <ref type="bibr" target="#b50">[13]</ref>. Numerous ML algorithms can be employed to build surrogates, but neural networks have several distinct advantages; they can be scaled up to large volumes of (CCFI) processes. N. Robinson et al. <ref type="bibr" target="#b51">[26]</ref> used an approach known as Store Model Divergence for Pre-paid Cards, which uses the HMM of a merchant's terminals to capture fraudulent transactions in real-time. Salvatore Carta et al. <ref type="bibr" target="#b52">[27]</ref> adopted new intelligence data technology using the PMC (Prudential Multi-Consensus Model). Their method is designed to bring learners together with different scenarios where one class is much smaller than the other classes or where various classification errors are considered in unique ways. Salazar et al. <ref type="bibr" target="#b36">[21]</ref> studied the performance of their proposed semi-supervised machine learning algorithm to overcome the imbalanced classification problems. They augment the class of limited data to make the variance of the estimate lower by using a method of data subrogation. Then, they investigate the influence of this increase in many simulated and experimental scenarios of an application, for the automatic detection of CCF. Saia <ref type="bibr" target="#b53">[28]</ref> introduced a Discrete Wavelet Transformation (DWT) based approach for fraud detection, by developing an evaluative model with the ability to deal with imbalanced distribution and heterogeneous data. They detected fraudulent activity by exploiting only legitimate transactions through their model definition process, which is affected by less data variation. Furthermore, Saia and Carta <ref type="bibr" target="#b54">[29]</ref> employed the Linear Dependence Based (LDB) model and benchmarked its performance versus random forests, which is one of the better known state-of-the-art models. They validated their work by performing the model on two real-world data sets having a strong imbalanced data distribution. In <ref type="bibr" target="#b55">[30]</ref>, they benefitted from the analysis of an evaluation criterion, in terms of domain frequency, of the spectral pattern of the data. Their method allows obtaining a more stable model to represent information and reduce problems of imbalance and heterogeneity of data.</p><p>Salazar et al. <ref type="bibr" target="#b56">[31]</ref> discussed certain conceptual and empirical solutions after raising the main issues related to the problem of Automatic CCFD (ACCFD). They proposed a framework for ACCFD based on the aggregation of decisions as well as surrogate data. Then, they assessed its sensitivity using various fraud/legitimacy ratios and conclud-ed the paper by suggesting a few areas for further research. Vergara et al. <ref type="bibr" target="#b57">[32]</ref> has enhanced CCFD's performance with a number of algorithms using signal processing on graphics. They use three approaches: one is a version of standard Iterative Amplitude Adjusted Fourier Transform (IAAFT), and the remaining two are variants of Iterative Surrogate Signals on Graph (ISSG) algorithms. By applying these methods to various scenarios where different proportions of transactions are legitimate and illegitimate, detection skills are enhanced and assessed by Receiver Operating Characteristics (ROC) curves and Key Performance Indicators (KPI), both widely used in the financial aspects of business. Zareapoor et al. <ref type="bibr" target="#b58">[33]</ref> integrated a sampling technique with a set of AdaBoost to enhance prediction performance on imbalanced data sets. More specifically, through an empirical experiment their technique shows more appropriate performance measures for exploring skewed datasets. Also, in <ref type="bibr" target="#b59">[34]</ref> Zareapoor et al. developed a balancing strategy to overcome the well-known issues of classification and collection in the CCFD field. They created a contrast vector based on a client's historical behaviors and created a supervised learning model to classify clients. The model, tested on a set of real credit card data provided by FICO, shows significant performance compared to other leading classifiers. In other work, Zareapoor et al. <ref type="bibr" target="#b60">[35]</ref> presented a hybrid model to handle datasets with a large number of classes, which substitute linear kernel for nonlinear ones without losing accuracy. It was performed on a real-world dataset with 20,000 to 65,000 classes, and it gave significant gains compared to several approaches.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Deep Learning-based approach:</head><p>Deep learning arises from the idea of a multi-type representation of the human brain that incorporates basic characteristics at low-level or high-level abstractions. People hierarchically arrange their ideas and concepts. People learn simple concepts first then transform them into more abstract concepts. The human brain consists of many layers of neurons that are feature detectors and sense more abstract characteristics when the levels rise, like the deep neural network. It is easier to generalize for computers to interpret information more abstractly.</p><p>Artificial Neural Networks (ANNs) for CCFD have been discussed in several pieces of literature <ref type="bibr" target="#b61">[36]</ref>, <ref type="bibr" target="#b49">[12]</ref>, <ref type="bibr" target="#b62">[37]</ref>. Among the types of ANNs are deep learning and shallow learning; the former has a complex structure with more than one hidden layer and more nodes in each of them than the shallow model. Roy et al. <ref type="bibr" target="#b49">[12]</ref> and Jurgovsky et al. <ref type="bibr" target="#b61">[36]</ref> introduced recurrent neural networks, which use a sequence of transactions as input to their model. Besides, Gupta et al. <ref type="bibr" target="#b62">[37]</ref> compared different machine learning models based on a deep, feedforward neural network. Ogwueleka <ref type="bibr" target="#b63">[38]</ref> employed an ANN with a rule-based component, whereas Patidar and Sharma <ref type="bibr" target="#b64">[39]</ref> applied an ANN regulated by Genetic Algorithms. Syeda et al. <ref type="bibr" target="#b65">[40]</ref> implemented a Fuzzy Neuron Network (FNN) running on Parallel Machines to speed up the production of rules for the CCFD's client. Srivastava et al. <ref type="bibr" target="#b66">[41]</ref> used a Hidden Markov Model (HMM) initially performed on a CCT sequence of cardholders who behaved normally and indicated how the model can be useful for fraud detection. Kamaruddin and Ravi <ref type="bibr" target="#b67">[42]</ref> proposed a one-class classification approach to overcome the imbalanced data problem. More specifically, they developed a hybrid system composed of Particle Swarm Optimization (PSO) and Auto Associative Neural Network (AANN) implemented within the Spark Computational Framework (SCF). Some other studies have investigated the potential for mapping decision trees and randomized forests using neural networks <ref type="bibr" target="#b68">[43]</ref>, <ref type="bibr" target="#b69">[44]</ref>. A particularly useful approach is to map trees in neural networks with two equivalent hidden layers, with the number of neurons in each layer related to the number of leaves in the decision tree <ref type="bibr" target="#b68">[43]</ref>, <ref type="bibr" target="#b69">[44]</ref>. Mapping "warm starts" the process of neural network training by launching the network in a state that works in the same way as the decision tree; after further training, neural networks obtain a higher accuracy than the original tree-based model. Although both hidden layer models work well for medium-sized datasets, the networks can become large enough for high dimensional nonlinear regression problems with complex decision trees, making it difficult for the subsequent training for small datasets. In <ref type="bibr" target="#b58">[33]</ref>, the back-propagation algorithm is integrated with NB and C4.5 to detect fraud in an imbalanced data-space, generated by minority oversampling with replacement. Padmaja et al. <ref type="bibr" target="#b70">[45]</ref> presented a fraud detection method that combines backpropagation, naïve Bayes, and C4.5 tree algorithms, and applied them to derived data from oversampling with replacement.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. the ProPosed aPProach</head><p>Through this section, we present the proposed approach's steps for CCFD. In this approach, we used a fusion of machine and deep learning algorithms to build a CCFD. More specifically, the proposed model is built from the Back-Propagation Neural Networks (BPNNs) to detect CCF and a combination of SMOTE with Tomek links to tackle the imbalanced data problem in order to enhance the model prediction performance of legitimate and fraudulent transactions. In the area of the CCFD, the concept of classifiers combination is proving to be an important new path for improving individual classifiers' performance in terms of accurate and precise results <ref type="bibr" target="#b71">[46]</ref>- <ref type="bibr" target="#b73">[48]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Credit card fraud detection workflow</head><p>Our proposed approach for CCFD, depicted in Fig. <ref type="figure" target="#fig_5">2</ref>, is developed by using the Synthetic Minority Oversampling (SMOTE) and Tomek Links (TL) Techniques to tackle the problem of imbalanced data and by using BPNNs model to identify fraudulent transactions. The proposed model is operated on a real-world dataset. It is denoted as ST-BPNN and is composed of the following steps illustrated in Fig. <ref type="figure" target="#fig_5">2</ref>.</p><p>The ST-BPNN process is performed as follows:</p><p>-Preprocessing of imbalanced data using the SMOTE and Tomek links (TL) techniques.</p><p>-Fitting the ST-BPNN model using synthetic dataset generated by the SMOTE+TL techniques to improve their classification ability to separate legitimate transactions from fraudulent ones.</p><p>-Predicting fraudulent cases by performing ST-BPNN on the original dataset using the K-fold Cross-validation method.</p><p>-Evaluating the ST-BPNN prediction performance using AUPR, AUC-ROC, Sensitivity, and F1-scores metrics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Data description</head><p>The used data set <ref type="bibr" target="#b74">[49]</ref> to evaluate the performance of the proposed model in detecting fraudulent transactions comes from the European Bank, a dataset that provides transactions that occurred within two days, of which 492 were fraudulent from a total of 284,807 transactions. The data set is highly imbalanced, with positive classes (fraud) representing 0.172% of all transactions. In order to protect customer privacy, it contains only numeric input variables, which are the result of the PCA transformation <ref type="bibr" target="#b75">[50]</ref>.</p><p>Features (or variables) <ref type="bibr" target="#b76">[51]</ref> V1, V2, ... V28 are the principal features converted with the PCA, while the ones that are not converted using the PCA are "Time" and "Amount", wherein Time refers to the time interval (in seconds) between both the current and the previous transaction; Amount is the value of the transaction. The target variable (Class) is binary; 1 = fraud, 0 = genuine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Data visualization</head><p>Fig. <ref type="figure" target="#fig_3">3</ref> shows that the data set used is very imbalanced; the number of frauds (abnormal transactions) is very low compared to the number of genuine transactions (normal transactions) where the fraud rate is 0.17%. Therefore, this huge difference between the classes (legitimate and fraudulent) can lead to misclassification when detecting CCF.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. The imbalanced data problem</head><p>Class imbalance, also known as the skewed distribution of classes, is a very common classification problem. Special data mining methods are applied along with standard clustering algorithms to deal with this issue. Class imbalance results if one class has a higher number of instances than another. It is more vulnerable when we consider the Big Data context. Indeed, the dataset that is used to train the model contains a very small percentage of the minority class, also known as positive points, versus the majority class, which is known as negative points. The correct classification of the minority class over the majority class is in most cases more challenging and crucial, such as the detection of fraud.</p><p>In this case, fraud is the minority class, and it is more critical to identify fraudulent transactions because they are more harmful than normal ones. As a result of these class data ratios, it is very hard for ML classifiers to learn the minority class features and models. Models such as neural networks, decision trees and support vector machines, faced with an unbalanced dataset to detect fraudulent transactions, tend to maximize the overall prediction accuracy at the expense of the minority class <ref type="bibr" target="#b30">[15]</ref>. This is due to a strong bias towards the majority class while ignoring the smaller class <ref type="bibr" target="#b34">[19]</ref>. The proposed model is operated on a real-world dataset.</p><p>It is denoted as ST-BPNN and is composed of the following steps illustrated in Fig. <ref type="figure" target="#fig_5">2</ref>.</p><p>The ST-BPNN process is performed as follows:</p><p>• Preprocessing of imbalanced data using the SMOTE and Tomek links (TL) techniques. • Fitting the ST-BPNN model using synthetic dataset generated by the SMOTE+TL techniques to improve their classification ability to separate legitimate transactions from fraudulent ones. • Predicting fraudulent cases by performing ST-BPNN on the original dataset using the K-fold Cross-validation method. • Evaluating the ST-BPNN prediction performance using AUPR, AUC-ROC, Sensitivity, and F1-scores metrics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Data description</head><p>The used data set <ref type="bibr" target="#b74">[49]</ref> to evaluate the performance of the proposed model in detecting fraudulent transactions comes from the European Bank, a dataset that provides transactions that occurred within two days, of which 492 were fraudulent from a total of 284,807 transactions. The data set is highly imbalanced, with positive classes (fraud) representing 0.172% of all transactions. In order to protect customer privacy, it contains only numeric input variables, which are the result of the PCA transformation <ref type="bibr" target="#b75">[50]</ref>.</p><p>Features (or variables) <ref type="bibr" target="#b76">[51]</ref> V1, V2, ... V28 are the principal features converted with the PCA, while the ones that are not converted using the PCA are "Time" and "Amount", wherein Time refers to the time interval (in seconds) between both the current and the previous transaction; Amount is the value of the transaction. The target variable (Class) is binary; 1 = fraud, 0 = genuine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Data visualization</head><p>Fig. <ref type="figure" target="#fig_3">3</ref> shows that the data set used is very imbalanced; the number of frauds (abnormal transactions) is very low compared to the number of genuine transactions (normal transactions) where the fraud rate is 0.17%. Therefore, this huge difference between the classes (legitimate and fraudulent) can lead to misclassification when detecting CCF. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.The imbalanced data problem</head><p>Class imbalance, also known as the skewed distribution of classes, is a very common classification problem. Special data mining methods are applied along with standard clustering algorithms to deal with this issue. Class imbalance results if one class has a higher number of instances than another. It is more vulnerable when we consider the Big Data context. Indeed, the dataset that is used to train the model contains a very small percentage of the minority class, also known as positive points, versus the majority class, which is known as negative points. The correct classification of the minority class over the majority class is in most cases more challenging and crucial, such as the detection of fraud.</p><p>In this case, fraud is the minority class, and it is more critical to identify fraudulent transactions because they are more harmful than normal ones. As a result of these class data ratios, it is very hard for ML classifiers to learn the minority class features and models. Models such as neural networks, decision trees and support vector machines, faced with an unbalanced dataset to detect fraudulent transactions, tend to maximize the overall prediction accuracy at the expense of the minority class <ref type="bibr" target="#b30">[15]</ref>. This is due to a strong bias towards the majority class while ignoring the smaller class <ref type="bibr" target="#b34">[19]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Data description</head><p>The used data set <ref type="bibr" target="#b74">[49]</ref> to evaluate the performance of the proposed model in detecting fraudulent transactions comes from the European Bank, a dataset that provides transactions that occurred within two days, of which 492 were fraudulent from a total of 284,807 transactions. The data set is highly imbalanced, with positive classes (fraud) representing 0.172% of all transactions. In order to protect customer privacy, it contains only numeric input variables, which are the result of the PCA transformation <ref type="bibr" target="#b75">[50]</ref>.</p><p>Features (or variables) <ref type="bibr" target="#b76">[51]</ref> V1, V2, ... V28 are the principal features converted with the PCA, while the ones that are not converted using the PCA are "Time" and "Amount", wherein Time refers to the time interval (in seconds) between both the current and the previous transaction; Amount is the value of the transaction. The target variable (Class) is binary; 1 = fraud, 0 = genuine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Data visualization</head><p>Fig. <ref type="figure" target="#fig_3">3</ref> shows that the data set used is very imbalanced; the number of frauds (abnormal transactions) is very low compared to the number of genuine transactions (normal transactions) where the fraud rate is 0.17%. Therefore, this huge difference between the classes (legitimate and fraudulent) can lead to misclassification when detecting CCF. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.The imbalanced data problem</head><p>Class imbalance, also known as the skewed distribution of classes, is a very common classification problem. Special data mining methods are applied along with standard clustering algorithms to deal with this issue. Class imbalance results if one class has a higher number of instances than another. It is more vulnerable when we consider the Big Data context. Indeed, the dataset that is used to train the model contains a very small percentage of the minority class, also known as positive points, versus the majority class, which is known as negative points. The correct classification of the minority class over the majority class is in most cases more challenging and crucial, such as the detection of fraud.</p><p>In this case, fraud is the minority class, and it is more critical to identify fraudulent transactions because they are more harmful than normal ones. As a result of these class data ratios, it is very hard for ML classifiers to learn the minority class features and models. Models such as neural networks, decision trees and support vector machines, faced with an unbalanced dataset to detect fraudulent transactions, tend to maximize the overall prediction accuracy at the expense of the minority class <ref type="bibr" target="#b30">[15]</ref>. This is due to a strong bias towards the majority class while ignoring the smaller class <ref type="bibr" target="#b34">[19]</ref>.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Naoufal Rtayli</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Synthetic minority oversampling technique</head><p>Several suggested approaches to the problem of class imbalance are provided at the data and algorithmic levels. The majority are designed for a two-class or binary problem where one class is strongly under-represented but associated with higher importance of identification. Data-level solutions attempt to rebalance the distribution of classes by resampling the data space, while at the algorithm level solutions essay to adjust the learning algorithm of the existing classifier to reinforce learning by relation to the minority class <ref type="bibr" target="#b32">[17]</ref>. To tackle the problem of imbalanced data, we use SMOTE to generate synthetic examples by operating in the functionality space rather than in the data space. The minority class is oversampled by introducing synthetic samples along the line segments combining all or part of the k neighbors closest to the minority class. This technique overcomes the problem of over-sampling and widens the decision region of examples of the minority class, dealing with both a relative and absolute imbalance <ref type="bibr" target="#b77">[52]</ref>. Fig. <ref type="figure" target="#fig_9">4</ref> illustrates how the SMOTE algorithm works. Also, SMOTE as a method usable at the algorithmic level, has the capacity to increment the learning of the algorithm with regard to reducing both the FNR (False Negative Rate) and FPR (False Positive Rate). In the view of Kumari and Mishra <ref type="bibr" target="#b73">[48]</ref>, SMOTE is written in the following way:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. Tomek Links Technique</head><p>A combination of Tomek Links and SMOTE is recommended in <ref type="bibr" target="#b79">[54]</ref>  <ref type="bibr" target="#b73">[48]</ref> to exploit the advantages of each approach for tackling the imbalanced data and improving the classification performances of a fraud identification model.</p><p>Tomek links, a data cleaning technique, was proposed by Ivan Tomek <ref type="bibr" target="#b79">[54]</ref>. Tomek Links (TL) modifies the condensed nearest neighbor process by keeping only limit samples in the condensed subset and thus reduces the computational load. Let S_i, S_j belong to different classes, and 〖d(S〗_i,S_j) is the distance between them [54] <ref type="bibr" target="#b81">[55]</ref>. A pair 〖(S〗_i,S_j) is called a Tomek bond if there is no sample S_1, such as 〖d(S〗_i,S_1) &lt; 〖d(S〗_i,S_j) or 〖d(S〗_j,S_1) &lt;〖 d(S〗_i,S_j). The samples that can be considered as Tomek links are borderline or noisy observations and their removal could improve the decision limit of the problem <ref type="bibr" target="#b81">[55]</ref>. Fig. <ref type="figure" target="#fig_10">5</ref> illustrates how Tomek Links algorithm works.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>G. Deep neural network algorithm for CCFD</head><p>Deep Neural Network (DNN) plays an important role in the field of fraud detection with the advantages of self-adaptation, self-organization, better fault-tolerance, and robustness <ref type="bibr" target="#b82">[56]</ref>.</p><p>DNN is developed to simulate the function of the human brain and is built from simple processing units or neurons, which enable the network to learn sets of input-output mappings. It adjusts the weights of the connections in the neural network by   Also, SMOTE as a method usable at the algorithmic level, has the capacity to increment the learning of the algorithm with regard to reducing both the FNR (False Negative Rate) and FPR (False Positive Rate). In the view of Kumari and Mishra <ref type="bibr" target="#b73">[48]</ref>, SMOTE is written in the following way:  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>G. Deep neural</head><p>Deep Neural Ne the field of fraud adaptation, self-o robustness <ref type="bibr" target="#b82">[56]</ref>.</p><p>DNN is develop brain and is built fr which enable the mappings. It adjus neural network b nonlinear classific unit or neuron is connection links t input signals, and output level of a neural networks distinguished by neurons. They are complex problem between input an modelled <ref type="bibr" target="#b83">[57]</ref>. Fig Backpropagation</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Synthetic Minority Oversampling Technique</head><p>imbalance are provided at the data and algorithmic levels. The majority are designed for a two-class or binary problem where one class is strongly under-represented but associated with higher importance of identification. Data-level solutions attempt to rebalance the distribution of classes by resampling the data space, while at the algorithm level solutions essay to adjust the learning algorithm of the existing classifier to reinforce learning by relation to the minority class <ref type="bibr" target="#b32">[17]</ref>. To tackle the problem of imbalanced data, we use SMOTE to generate synthetic examples by operating in the functionality space rather than in the data space. The minority class is oversampled by introducing synthetic samples along the line segments combining all or part of the k neighbors closest to the minority class. This technique overcomes the problem of over-sampling and widens the decision region of examples of the minority class, dealing with both a relative and absolute imbalance <ref type="bibr" target="#b77">[52]</ref>. Fig. <ref type="figure" target="#fig_9">4</ref> illustrates how the SMOTE algorithm works. Also, SMOTE as a method usable at the algorithmic level, has the capacity to increment the learning of the algorithm with regard to reducing both the FNR (False Negative Rate) and FPR (False Positive Rate). In the view of Kumari and Mishra <ref type="bibr" target="#b73">[48]</ref>, SMOTE is written in the following way:  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Synthetic minority oversampling technique</head><p>Several suggested approaches to the problem of class imbalance are provided at the data and algorithmic levels. The majority are designed for a two-class or binary problem where one class is strongly under-represented but associated with higher importance of identification. Data-level solutions attempt to rebalance the distribution of classes by resampling the data space, while at the algorithm level solutions essay to adjust the learning algorithm of the existing classifier to reinforce learning by relation to the minority class <ref type="bibr" target="#b32">[17]</ref>. To tackle the problem of imbalanced data, we use SMOTE to generate synthetic examples by operating in the functionality space rather than in the data space. The minority class is oversampled by introducing synthetic samples along the line segments combining all or part of the k neighbors closest to the minority class. This technique overcomes the problem of over-sampling and widens the decision region of examples of the minority class, dealing with both a relative and absolute imbalance <ref type="bibr" target="#b77">[52]</ref>. Fig. <ref type="figure" target="#fig_9">4</ref> illustrates how the SMOTE algorithm works. Also, SMOTE as a method usable at the algorithmic level, has the capacity to increment the learning of the algorithm with regard to reducing both the FNR (False Negative Rate) and FPR (False Positive Rate). In the view of Kumari and Mishra <ref type="bibr" target="#b73">[48]</ref>, SMOTE is written in the following way: </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. Tomek Links Technique</head><p>A combination of Tomek Links and SMOTE is recommended in <ref type="bibr" target="#b79">[54]</ref>  <ref type="bibr" target="#b73">[48]</ref> to exploit the advantages of each approach for tackling the imbalanced data and improving the classification performances of a fraud identification model.</p><p>Tomek links, a data cleaning technique, was proposed by Ivan Tomek <ref type="bibr" target="#b79">[54]</ref>. Tomek Links (TL) modifies the condensed nearest neighbor process by keeping only limit samples in the condensed subset and thus reduces the computational load. Let S_i, S_j belong to different classes, and 〖d(S〗_i,S_j) is the distance between them [54] <ref type="bibr" target="#b81">[55]</ref>. A pair 〖(S〗_i,S_j) is called a Tomek bond if there is no sample S_1, such as 〖d(S〗_i,S_1) &lt; 〖d(S 〗_i,S_j) or 〖d(S〗_j,S_1) &lt;〖 d(S〗_i,S_j). The samples that can be considered as Tomek links are borderline or noisy observations and their removal could improve the decision limit of the problem <ref type="bibr" target="#b81">[55]</ref>. Fig. <ref type="figure" target="#fig_10">5</ref> illustrates how Tomek Links algorithm works. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>G. Deep neural network algorithm for CCFD</head><p>Deep Neural Network (DNN) plays an important role in the field of fraud detection with the advantages of selfadaptation, self-organization, better fault-tolerance, and robustness <ref type="bibr" target="#b82">[56]</ref>.</p><p>DNN is developed to simulate the function of the human brain and is built from simple processing units or neurons, which enable the network to learn sets of input-output mappings. It adjusts the weights of the connections in the neural network by learning samples, aiming to solve nonlinear classification problems <ref type="bibr" target="#b64">[39]</ref>. The processing unit or neuron is comprised of a set of synapses or connection links that take input signals, an adder to add input signals, and an activation function that limits the output level of a neuron <ref type="bibr" target="#b64">[39]</ref>. Multilayer feed-forward neural networks are a subtype of the neural network distinguished by the presence of hidden layers of neurons. They are particularly well adapted to addressing complex problems, enabling non-linear relationships between input and output layers to be extracted and modelled <ref type="bibr" target="#b83">[57]</ref>. Fig. <ref type="figure">6</ref> presents a structure example of the Backpropagation Neural Network Topology.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Algorithm 1</head><p>learning samples, aiming to solve nonlinear classification problems <ref type="bibr" target="#b64">[39]</ref>. The processing unit or neuron is comprised of a set of synapses or connection links that take input signals, an adder to add input signals, and an activation function that limits the output level of a neuron <ref type="bibr" target="#b64">[39]</ref>. Multilayer feed-forward neural networks are a subtype of the neural network distinguished by the presence of hidden layers of neurons. They are particularly well adapted to addressing complex problems, enabling non-linear relationships between input and output layers to be extracted and modelled <ref type="bibr" target="#b83">[57]</ref>. Fig. <ref type="figure">6</ref> presents a structure example of the Backpropagation Neural Network Topology.</p><p>Typically, the backpropagation algorithm is composed of two parts: the forward transmission of information and the backpropagation <ref type="bibr" target="#b64">[39]</ref> of error. In the forward transmission process, input information is transmitted through the hidden layers from the layer input to the output one. If the output layer does not get the desired output, calculate the error change value of the output layer, and then turn to reverse propagation and send the error signal back along the original connection path through the network so as to modify each neuron layer's weight until it reaches the required target. Hidden layer output, output layer output, and error function are represented in formulas (1), (2), and (3), respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. exPerImental enVIronment</head><p>This section provides the dataset characteristics, the development environment, the performed strategy, the metrics used to evaluate the classification performance, and the ST-BPNN model implementation.</p><p>We combined two balancing techniques (SMOTE with Tomek links) to preprocess the used dataset before performing CCFD through BPNN. Also, we used 10-fold cross-validation in our experiment, and the average prediction result is used for the ST-BPNN model evaluation. In our experiment, 30% of the dataset was randomly dedicated to testing, and the rest was used for training.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. The development environment</head><p>The development environment used to implement the proposed approach presented in this paper is based on the python language where the Scikit-learn libraries <ref type="bibr" target="#b84">[58]</ref> are used to implement our proposed model ST-BPNN.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Strategy</head><p>To respect the transaction chronology, instead of a canonical k-fold cross-validation criterion we used the TimeSeries Split Scikit-learn function <ref type="bibr" target="#b85">[59]</ref> to perform a time series cross-validation criterion. Such a function allows us to split our dataset in a series of training and test sets, respecting the transaction chronology. For the experiments, the TimeSeriesSplit method was used with n_splits = 10. The data imbalance problem, previously described in Section III, has been faced during the experiments using the combination of SMOTE+TL techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Metrics</head><p>According to the considerations made in the imbalanced data problem section, the performance Typically, the backpropagation algorithm is composed of two parts: the forward transmission of information and the backpropagation <ref type="bibr" target="#b64">[39]</ref> of error. In the forward transmission process, input information is transmitted through the hidden layers from the layer input to the output one. If the output layer does not get the desired output, calculate the error change value of the output layer, and then turn to reverse propagation and send the error signal back along the original connection path through the network so as to modify each neuron layer's weight until it reaches the required target. Hidden layer output, output layer output, and error function are represented in formulas (1), (2), and (3), respectively.</p><formula xml:id="formula_0">𝑧𝑧 𝑗𝑗 = 𝑓𝑓 1 (∑ 𝑤𝑤 1𝑖𝑖𝑗𝑗 𝑥𝑥 𝑖𝑖 + 𝑏𝑏 1𝑗𝑗 𝑚𝑚 𝑖𝑖=1</formula><p>)</p><p>(1)</p><formula xml:id="formula_1">𝑦𝑦 𝑘𝑘 = 𝑓𝑓 2 (∑ 𝑤𝑤 2𝑗𝑗𝑘𝑘 𝑧𝑧 𝑗𝑗 + 𝑏𝑏 2𝑘𝑘 𝑚𝑚 𝑖𝑖=1 ) (2) 𝐸𝐸 = 1 2 ∑ (𝑦𝑦 𝑘𝑘 − 𝑦𝑦 ̂𝑘𝑘) 𝑛𝑛 𝑘𝑘=1<label>(3)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. EXPERIMENTAL ENVIRONMENT</head><p>proposed approach presented in this paper is based on the python language where the Scikit-learn libraries <ref type="bibr" target="#b84">[58]</ref> are used to implement our proposed model ST-BPNN.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Strategy</head><p>To respect the transaction chronology, instead of a canonical k-fold cross-validation criterion we used the TimeSeries Split Scikit-learn function <ref type="bibr" target="#b85">[59]</ref> to perform a time series cross-validation criterion. Such a function allows us to split our dataset in a series of training and test sets, respecting the transaction chronology. For the experiments, the TimeSeriesSplit method was used with n_splits = 10. The data imbalance problem, previously described in Section 3, has been faced during the experiments using the combination of SMOTE+TL techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Metrics</head><p>According to the considerations made in the imbalanced data problem section, the performance of the involved algorithms has been evaluated by using various metrics: the Sensitivity, the AUPR, F1-score, and the AUC (i.e., Area Under the ROC Curve). The latter metrics are chosen because they provide information about the performance in terms of fraudulent transactions correctly classified (Sensitivity), a crucial indicator in the context taken into account, and in terms of the effectiveness of the adopted evaluation model (AUC). To evaluate the algorithm performance in terms of correct and incorrect classification of the legitimate transactions, we took into account two additional metrics, which provide specular information concerning the Sensitivity and Precision: the Typically, the backpropagation algorithm is composed of two parts: the forward transmission of information and the backpropagation <ref type="bibr" target="#b64">[39]</ref> of error. In the forward transmission process, input information is transmitted through the hidden layers from the layer input to the output one. If the output layer does not get the desired output, calculate the error change value of the output layer, and then turn to reverse propagation and send the error signal back along the original connection path through the network so as to modify each neuron layer's weight until it reaches the required target. Hidden layer output, output layer output, and error function are represented in formulas (1), (2), and (3), respectively.</p><formula xml:id="formula_2">𝑧𝑧 𝑗𝑗 = 𝑓𝑓 1 (∑ 𝑤𝑤 1𝑖𝑖𝑗𝑗 𝑥𝑥 𝑖𝑖 + 𝑏𝑏 1𝑗𝑗 𝑚𝑚 𝑖𝑖=1</formula><p>)</p><p>(1)</p><formula xml:id="formula_3">𝑦𝑦 𝑘𝑘 = 𝑓𝑓 2 (∑ 𝑤𝑤 2𝑗𝑗𝑘𝑘 𝑧𝑧 𝑗𝑗 + 𝑏𝑏 2𝑘𝑘 𝑚𝑚 𝑖𝑖=1 ) (2) 𝐸𝐸 = 1 2 ∑ (𝑦𝑦 𝑘𝑘 − 𝑦𝑦 ̂𝑘𝑘) 𝑛𝑛 𝑘𝑘=1<label>(3)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. EXPERIMENTAL ENVIRONMENT</head><p>This section provides the dataset characteristics, the development environment, the performed strategy, the metrics used to evaluate the classification performance, and the ST-BPNN model implementation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>TABLE I DATASETS CHARACTERISTICS</head><p>proposed approach presented in this paper is based on the python language where the Scikit-learn libraries <ref type="bibr" target="#b84">[58]</ref> are used to implement our proposed model ST-BPNN.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Strategy</head><p>To respect the transaction chronology, instead of a canonical k-fold cross-validation criterion we used the TimeSeries Split Scikit-learn function <ref type="bibr" target="#b85">[59]</ref> to perform a time series cross-validation criterion. Such a function allows us to split our dataset in a series of training and test sets, respecting the transaction chronology. For the experiments, the TimeSeriesSplit method was used with n_splits = 10. The data imbalance problem, previously described in Section 3, has been faced during the experiments using the combination of SMOTE+TL techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Metrics</head><p>According to the considerations made in the imbalanced data problem section, the performance of the involved algorithms has been evaluated by using various metrics: the Sensitivity, the AUPR, F1-score, and the AUC (i.e., Area Under the ROC Curve). The latter metrics are chosen because they provide information about the performance in terms of fraudulent transactions correctly classified (Sensitivity), a crucial indicator in the context taken into account, and in terms of the effectiveness of the adopted evaluation model (AUC). To evaluate the algorithm performance in terms of correct and incorrect classification of the legitimate transactions, we took into account two additional metrics, which provide specular information concerning the Sensitivity and Precision: the Area under Precision-recall (AUPR).</p><p>The formulation of all the aforementioned metrics is presented below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Precision</head><p>Precision is a measure that calculates how many positive predictions are correctly identified as positive. It Typically, the backpropagation algorithm is composed of two parts: the forward transmission of information and the backpropagation <ref type="bibr" target="#b64">[39]</ref> of error. In the forward transmission process, input information is transmitted through the hidden layers from the layer input to the output one. If the output layer does not get the desired output, calculate the error change value of the output layer, and then turn to reverse propagation and send the error signal back along the original connection path through the network so as to modify each neuron layer's weight until it reaches the required target. Hidden layer output, output layer output, and error function are represented in formulas (1), (2), and (3), respectively.</p><formula xml:id="formula_4">𝑧𝑧 𝑗𝑗 = 𝑓𝑓 1 (∑ 𝑤𝑤 1𝑖𝑖𝑗𝑗 𝑥𝑥 𝑖𝑖 + 𝑏𝑏 1𝑗𝑗 𝑚𝑚 𝑖𝑖=1</formula><p>)</p><p>(1)</p><formula xml:id="formula_5">𝑦𝑦 𝑘𝑘 = 𝑓𝑓 2 (∑ 𝑤𝑤 2𝑗𝑗𝑘𝑘 𝑧𝑧 𝑗𝑗 + 𝑏𝑏 2𝑘𝑘 𝑚𝑚 𝑖𝑖=1 ) (2) 𝐸𝐸 = 1 2 ∑ (𝑦𝑦 𝑘𝑘 − 𝑦𝑦 ̂𝑘𝑘) 𝑛𝑛 𝑘𝑘=1<label>(3)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. EXPERIMENTAL ENVIRONMENT</head><p>This section provides the dataset characteristics, the development environment, the performed strategy, the metrics used to evaluate the classification performance, and the ST-BPNN model implementation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>TABLE I DATASETS CHARACTERISTICS</head><p>proposed approach presented in this paper is based on the python language where the Scikit-learn libraries <ref type="bibr" target="#b84">[58]</ref> are used to implement our proposed model ST-BPNN.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Strategy</head><p>To respect the transaction chronology, instead of a canonical k-fold cross-validation criterion we used the TimeSeries Split Scikit-learn function <ref type="bibr" target="#b85">[59]</ref> to perform a time series cross-validation criterion. Such a function allows us to split our dataset in a series of training and test sets, respecting the transaction chronology. For the experiments, the TimeSeriesSplit method was used with n_splits = 10. The data imbalance problem, previously described in Section 3, has been faced during the experiments using the combination of SMOTE+TL techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Metrics</head><p>According to the considerations made in the imbalanced data problem section, the performance of the involved algorithms has been evaluated by using various metrics: the Sensitivity, the AUPR, F1-score, and the AUC (i.e., Area Under the ROC Curve). The latter metrics are chosen because they provide information about the performance in terms of fraudulent transactions correctly classified (Sensitivity), a crucial indicator in the context taken into account, and in terms of the effectiveness of the adopted evaluation model (AUC). To evaluate the algorithm performance in terms of correct and incorrect classification of the legitimate transactions, we took into account two additional metrics, which provide specular information concerning the Sensitivity and Precision: the Area under Precision-recall (AUPR).</p><p>The formulation of all the aforementioned metrics is presented below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Precision</head><p>Precision is a measure that calculates how many positive predictions are correctly identified as positive. It of the involved algorithms has been evaluated by using various metrics: the Sensitivity, the AUPR, F1-score, and the AUC (i.e., Area Under the ROC Curve). The latter metrics are chosen because they provide information about the performance in terms of fraudulent transactions correctly classified (Sensitivity), a crucial indicator in the context taken into account, and in terms of the effectiveness of the adopted evaluation model (AUC). To evaluate the algorithm performance in terms of correct and incorrect classification of the legitimate transactions, we took into account two additional metrics, which provide specular information concerning the Sensitivity and Precision: the Area under Precision-recall (AUPR).</p><p>The formulation of all the aforementioned metrics is presented below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Precision</head><p>Precision is a measure that calculates how many positive predictions are correctly identified as positive. It is formulated as follows: Precision=100× niques (SMOTE with used dataset before lso, we used 10-fold t, and the average e ST-BPNN model of the dataset was the rest was used for sed to implement the canonical k-fold cross-validation criterion we used the TimeSeries Split Scikit-learn function <ref type="bibr" target="#b85">[59]</ref> to perform a time series cross-validation criterion. Such a function allows us to split our dataset in a series of training and test sets, respecting the transaction chronology. For the experiments, the TimeSeriesSplit method was used with n_splits = 10. The data imbalance problem, previously described in Section 3, has been faced during the experiments using the combination of SMOTE+TL techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Metrics</head><p>According to the considerations made in the imbalanced data problem section, the performance of the involved algorithms has been evaluated by using various metrics: the Sensitivity, the AUPR, F1-score, and the AUC (i.e., Area Under the ROC Curve). The latter metrics are chosen because they provide information about the performance in terms of fraudulent transactions correctly classified (Sensitivity), a crucial indicator in the context taken into account, and in terms of the effectiveness of the adopted evaluation model (AUC). To evaluate the algorithm performance in terms of correct and incorrect classification of the legitimate transactions, we took into account two additional metrics, which provide specular information concerning the Sensitivity and Precision: the Area under Precision-recall (AUPR).</p><p>The formulation of all the aforementioned metrics is presented below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Precision</head><p>Precision is a measure that calculates how many positive predictions are correctly identified as positive. It is formulated as follows:</p><formula xml:id="formula_6">𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃 = 100 × (𝑇𝑇𝑇𝑇) (𝑇𝑇𝑇𝑇+𝐹𝐹𝑇𝑇) (1)</formula><p>2) Sensitivity Sensitivity (Recall) calculates how many positive instances (true labels) are correctly predicted as positive. It is also known as sensitivity or true positive rate. It is formulated as: niques (SMOTE with used dataset before lso, we used 10-fold t, and the average e ST-BPNN model of the dataset was the rest was used for sed to implement the proposed approach presented in this paper is based on the python language where the Scikit-learn libraries <ref type="bibr" target="#b84">[58]</ref> are used to implement our proposed model ST-BPNN.</p><formula xml:id="formula_7">𝑆𝑆𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑆𝑆𝑃𝑃𝑆𝑆𝑃𝑃𝑆𝑆𝑦𝑦 = 100 × (𝑇𝑇𝑇𝑇) (𝑇𝑇𝑇𝑇+𝐹𝐹𝐹𝐹)<label>(2</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Strategy</head><p>To respect the transaction chronology, instead of a canonical k-fold cross-validation criterion we used the TimeSeries Split Scikit-learn function <ref type="bibr" target="#b85">[59]</ref> to perform a time series cross-validation criterion. Such a function allows us to split our dataset in a series of training and test sets, respecting the transaction chronology. For the experiments, the TimeSeriesSplit method was used with n_splits = 10. The data imbalance problem, previously described in Section 3, has been faced during the experiments using the combination of SMOTE+TL techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C.Metrics</head><p>According to the considerations made in the imbalanced data problem section, the performance of the involved algorithms has been evaluated by using various metrics: the Sensitivity, the AUPR, F1-score, and the AUC (i.e., Area Under the ROC Curve). The latter metrics are chosen because they provide information about the performance in terms of fraudulent transactions correctly classified (Sensitivity), a crucial indicator in the context taken into account, and in terms of the effectiveness of the adopted evaluation model (AUC). To evaluate the algorithm performance in terms of correct and incorrect classification of the legitimate transactions, we took into account two additional metrics, which provide specular information concerning the Sensitivity and Precision: the Area under Precision-recall (AUPR).</p><p>The formulation of all the aforementioned metrics is presented below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Precision</head><p>Precision is a measure that calculates how many positive predictions are correctly identified as positive. It is formulated as follows:</p><formula xml:id="formula_8">𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃 = 100 × (𝑇𝑇𝑇𝑇) (𝑇𝑇𝑇𝑇+𝐹𝐹𝑇𝑇)<label>(1)</label></formula><p>2) Sensitivity Sensitivity (Recall) calculates how many positive instances (true labels) are correctly predicted as positive. It is also known as sensitivity or true positive rate. It is formulated as:</p><formula xml:id="formula_9">𝑆𝑆𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑃𝑆𝑆𝑃𝑃𝑆𝑆𝑃𝑃𝑆𝑆𝑦𝑦 = 100 × (𝑇𝑇𝑇𝑇) (𝑇𝑇𝑇𝑇+𝐹𝐹𝐹𝐹)<label>(2)</label></formula><p>3) F1-score F1-score is Precision and Recall's weighted average. It is defined as: F1-Score =2*(Recall * Precision)/(Recall+precision) (</p><p>(2)</p><formula xml:id="formula_11">3) F-1score</formula><p>F1-score is Precision and Recall's weighted average. It is defined as: F1-Score =2*(Recall * Precision)/(Recall+precision) (3)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4) The Curve of the Area Under the Receiver Operating Characteristic (AUC-ROC)</head><p>The AUC-ROC is obtained as a graph of the rate of true positives versus false-positive rates for different decision thresholds. It is mostly used to measure the performance of a classifier to show their capacity in classification in skewed and overlapping data sets. Fig. <ref type="figure" target="#fig_25">7</ref> presents an example of AUC-ROC.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. ST-BPNN implementation</head><p>In this section, the ST-BPNN is built and implemented in Scikit-learn <ref type="bibr" target="#b84">[58]</ref>, which is a commercial open-source machine learning library. The dataset is divided into a training set and a test set. ST-BPNN learning is performed on the training set and its performance is evaluated on the test set.</p><p>The design of the neural network topology is the critical factor affecting the accuracy of the classification system <ref type="bibr" target="#b29">[14]</ref>, <ref type="bibr" target="#b49">[12]</ref>. Adding hidden nodes can increase the accuracy of the network <ref type="bibr" target="#b49">[12]</ref>; however, an excessive number of hidden nodes will cause an over-fitting problem, which has a negative impact on generalization, leading to prediction bias; therefore, improving accuracy and generalization requires an adequate number of hidden nodes <ref type="bibr" target="#b86">[60]</ref>. There has been no formal theory in determining the number of hidden nodes. The recommendation is based on previous and repeated experiments.</p><p>The most efficient network is the one with the same number of nodes in each hidden layer, according to Larochelle et al. <ref type="bibr" target="#b86">[60]</ref>, <ref type="bibr" target="#b87">[61]</ref>. In the experiments, we test with a different number of nodes in the hidden layers, and we also get structures that work less well or the structure with an equal number of nodes in the hidden layers. Therefore, we adopt the same number of nodes, such as 4, 10, 16, 22, and 28, in the hidden layers, and we conduct ex- </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4) The Curve of the Area Under the Receiver Operating Characteristic (AUC-ROC)</head><p>The AUC-ROC is obtained as a graph of the rate of true positives versus false-positive rates for different decision thresholds. It is mostly used to measure the performance of a classifier to show their capacity in classification in skewed and overlapping data sets. Fig. <ref type="figure" target="#fig_25">7</ref> presents an example of AUC-ROC. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D.ST-BPNN implementation</head><p>In this section, the ST-BPNN is built and implemented in Scikit-learn <ref type="bibr" target="#b84">[58]</ref>, which is a commercial open-source machine learning library. The dataset is divided into a training set and a test set. ST-BPNN learning is performed on the training set and its performance is evaluated on the test set.</p><p>The design of the neural network topology is the critical factor affecting the accuracy of the classification system <ref type="bibr" target="#b29">[14]</ref> <ref type="bibr" target="#b49">[12]</ref>. Adding hidden nodes can increase the accuracy of the network hidden nodes has a negativ prediction bias generalization nodes <ref type="bibr" target="#b86">[60]</ref>. T determining th recommendatio experiments.</p><p>The most eff number of nod Larochelle et al a different num also get structu an equal numbe we adopt the s 22, and 28, i experiments st hidden layer an layer up to 6 h found that the n in each hidden was trained with and a regulariz topology of ST- periments starting from a small network with one hidden layer and then we extend the network layer by layer up to 6 hidden layers. We performed a test and found that the network with 3 hidden layers with 28 nodes in each hidden layer gave a better result. The network was trained with a learning rate of 0.001 per 450 iterations and a regularization parameter L2 of 0.001. The network topology of ST-BPNN is as shown in Fig. <ref type="figure" target="#fig_26">8</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>In this section experiments of To perform STsubsets of data training set (75 training and a evaluate its pe</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. results and dIscussIon</head><p>In this section, we review the results obtained after the experiments of our proposed approach on a real data set. To perform ST-BPNN, we divide the dataset used into two subsets of data: the first subset of data represents the training set (75% of the original dataset) for ST-BPNN training and a test set (25% of the original dataset) to evaluate its performance. We report the results of the experiments performed by comparing our solution to recent state-of-the-art approaches. Discussions on the results are also highlighted.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. The results of our model with and without S M O T E + T L</head><p>As we have seen in the results presented in Table <ref type="table" target="#tab_2">II</ref>, we found that the results of DNN developed using SMOTE+TL techniques (presented in section III) on the training data are better than the results without using SMOTE+TL.</p><p>Fig. <ref type="figure" target="#fig_29">9</ref> and 10 present, respectively, the data distribution after using SMOTE+TL techniques and without them. As shown in Fig. <ref type="figure" target="#fig_30">10</ref>, we can observe that the numbers of fraudulent transactions that present the minority class variable are multiplied using SMOTE+TL techniques (Explained in section III) as a solution to the imbalanced data problem, while in Fig. <ref type="figure" target="#fig_30">10</ref> the fraudulent transactions are not. After that, we train the developed BPNN model on the synthetic dataset (Fig. <ref type="figure" target="#fig_29">9</ref>) where the fraudulent and genuine transactions are balanced in order to increment their learning rate concerning the distinct ability of the proposed model of the fraudulent transaction from the legitimate one.</p><p>Comparing two models based on DNN results, the ST-BPNN model (DNN based on SMOTE+TL) The design of the neural network topology is the critical factor affecting the accuracy of the classification system <ref type="bibr" target="#b29">[14]</ref> <ref type="bibr" target="#b49">[12]</ref>. Adding hidden nodes can increase the accuracy In this section, we review the results obtained after the experiments of our proposed approach on a real data set. To perform ST-BPNN, we divide the dataset used into two subsets of data: the first subset of data represents the training set (75% of the original dataset) for ST-BPNN training and a test set (25% of the original dataset) to evaluate its performance. We report the results of the As a result, it is concluded that pre-processing (e.g. the process of under-sampling or over-sampling) using SMOTE+TL techniques on the imbalanced training set improves the overall performance of the proposed model to correctly detect fraud operations. Therefore, SMOTE+TL techniques are adopted in this work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Comparison with state-of-the-art approaches</head><p>The objective of this subsection is to compare the performance of ST-BPNN with recent studies <ref type="bibr" target="#b54">[29]</ref>, <ref type="bibr" target="#b55">[30]</ref>, <ref type="bibr" target="#b89">[62]</ref>-[67] on CCFD using the same real-world dataset. Fig. <ref type="figure" target="#fig_36">11</ref> summarizes this comparison.</p><p>The results highlighted in Fig. <ref type="figure" target="#fig_36">11</ref>, 12, 13, and 14 indicate that the proposed ST-BPNN approach has the potential to improve the performance of a CCFD system in terms of the number of correctly classified fraudulent transactions. This awareness is associated with the sensitivity value (i.e., 100%) which indicates its ability to correctly classify fraudulent transactions more than the best competing algorithm (GS-OCSVM [67], which has a sensitivity value of 97.1%). Also, by following Fig. <ref type="figure" target="#fig_38">12</ref>, it is apparent that the ST-BPNN has identified all fraudulent transactions (that are 492 frauds) where the number of Error type 2 (fraudulent transactions classified as legitimate) is 0. Moreover, the results obtained from the ST-BPNN in terms of F1-score is better than the recent related work <ref type="bibr" target="#b91">[64]</ref>. ST-BPNN achieves 92% while <ref type="bibr" target="#b91">[64]</ref> achieves 83%.</p><p>By analyzing Fig. <ref type="figure" target="#fig_12">13</ref>, AUPR measurement results highlight the effectiveness of the ST-BPNN model which performs well with a highly imbalanced dataset and has a very good rate of precision and recall (sensitivity) measures; it has 99%, demonstrating its ability to classify new transactions as legitimate or fraudulent. Also, we obtained the same result in terms of AUC (Fig. <ref type="figure" target="#fig_49">11 and 14</ref>). Indeed, ST-BPNN reaches 100% as an AUC rate. It retains the high-performance value compared to other models. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. The results of our model with and without SMOTE+TL</head><p>As we have seen in the results presented in Table <ref type="table">2</ref>, we found that the results of DNN developed using SMOTE+TL techniques (presented in section 3) on the training are better than the results without using SMOTE+TL.</p><p>Fig. <ref type="figure" target="#fig_29">9</ref> and 10 present, respectively, the data distribution after using SMOTE+TL techniques and without them. As shown in Fig. <ref type="figure" target="#fig_30">10</ref>, we can observe that the numbers of fraudulent transactions that present the minority class variable are multiplied using SMOTE+TL techniques (Explained in section 3.2 and Section 3.3) as a solution to the imbalanced data problem, while in Fig. <ref type="figure" target="#fig_30">10</ref> the fraudulent transactions are not. After that, we train the developed BPNN model on the synthetic dataset (Fig. <ref type="figure" target="#fig_29">9</ref>) -where the fraudulent and genuine transactions are balanced -in order to increment their learning rate concerning the distinct ability of the proposed model of the fraudulent transaction from the legitimate one.  Comparing two models based on DNN results, the ST-BPNN model (DNN based on SMOTE+TL) scores higher 79% for Sensitivity.</p><p>As a result, it is concluded that pre-processing (e.g. the process of under-sampling or over-sampling) using SMOTE+TL techniques on the imbalanced training set improves the overall performance of the proposed model to correctly detect fraud operations. Therefore, SMOTE+TL techniques are adopted in this work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Comparison with state-of-the-art approaches</head><p>The objective of this subsection is to compare the performance of ST-BPNN with recent studies <ref type="bibr" target="#b54">[29]</ref> <ref type="bibr" target="#b55">[30]</ref> [62] <ref type="bibr">[63][64]</ref>[65] <ref type="bibr" target="#b93">[66]</ref>[67] on CCFD using the same realworld dataset. Fig. <ref type="figure" target="#fig_36">11</ref> summarizes this comparison.</p><p>The results highlighted in Fig. <ref type="figure" target="#fig_36">11</ref>, 12, 13, and 14 indicate that the proposed ST-BPNN approach has the potential to improve the performance of a CCFD system in terms of the number of correctly classified fraudulent transactions. This awareness is associated with the sensitivity value (i.e., 100%) which indicates its ability to correctly classify fraudulent transactions more than the best competing algorithm (GS-OCSVM [67], which has a sensitivity value of 97.1%). Also, by following Fig. <ref type="figure" target="#fig_38">12</ref>, it is apparent that the ST-BPNN has identified all fraudulent transactions (that are 492 frauds) where the number of Error type 2 (fraudulent transactions classified as legitimate) is 0. Moreover, the results obtained from the ST-BPNN in terms of F1-score is better than the recent related work <ref type="bibr" target="#b91">[64]</ref>. ST-BPNN achieves 92% while <ref type="bibr" target="#b91">[64]</ref> achieves 83%.</p><p>By analyzing Fig. <ref type="figure" target="#fig_12">13</ref>, AUPR measurement results highlight the effectiveness of the ST-BPNN model which performs well with a highly imbalanced dataset and has a very good rate of precision and recall (sensitivity) measures; it has 99%, demonstrating its ability to classify new transactions as legitimate or fraudulent. Also, we obtained the same result in terms of AUC (Fig. <ref type="figure" target="#fig_49">11 and 14</ref>). Indeed, ST-BPNN reaches 100% as an AUC rate. It retains the high-performance value compared to other models.</p><p>In summary, we have proven that in real scenarios characterized by a high data imbalance, the proposed ST-BPNN model can significantly improve a CCFD system, thus reducing losses due to the misclassification of fraudulent events.</p><p>It may be noted that the rationale for the ST-BPNN approach, and the reason it works well in the CCFD field, is because legitimate transactions are much higher in number and generally share a similar pattern that is easy to recognize. As a result, several algorithms are able to more accurately assess whether a transaction is legitimate. On the other hand, when a sample is fraudulent, most algorithms give a lower degree of</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. The results of our model with and without SMOTE+TL</head><p>As we have seen in the results presented in Table <ref type="table">2</ref>, we found that the results of DNN developed using SMOTE+TL techniques (presented in section 3) on the training are better than the results without using SMOTE+TL.</p><p>Fig. <ref type="figure" target="#fig_29">9</ref> and 10 present, respectively, the data distribution after using SMOTE+TL techniques and without them. As shown in Fig. <ref type="figure" target="#fig_30">10</ref>, we can observe that the numbers of fraudulent transactions that present the minority class variable are multiplied using SMOTE+TL techniques (Explained in section 3.2 and Section 3.3) as a solution to the imbalanced data problem, while in Fig. <ref type="figure" target="#fig_30">10</ref> the fraudulent transactions are not. After that, we train the developed BPNN model on the synthetic dataset (Fig. <ref type="figure" target="#fig_29">9</ref>) -where the fraudulent and genuine transactions are balanced -in order to increment their learning rate concerning the distinct ability of the proposed model of the fraudulent transaction from the legitimate one.  Comparing two models based on DNN results, the ST-BPNN model (DNN based on SMOTE+TL) scores higher SMOTE+TL) scores 83% for AUPR, 97.8% for AUC, and 79% for Sensitivity.</p><p>As a result, it is concluded that pre-processing (e.g. the process of under-sampling or over-sampling) using SMOTE+TL techniques on the imbalanced training set improves the overall performance of the proposed model to correctly detect fraud operations. Therefore, SMOTE+TL techniques are adopted in this work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Comparison with state-of-the-art approaches</head><p>The objective of this subsection is to compare the performance of ST-BPNN with recent studies <ref type="bibr" target="#b54">[29]</ref> The results highlighted in Fig. <ref type="figure" target="#fig_36">11</ref>, 12, 13, and 14 indicate that the proposed ST-BPNN approach has the potential to improve the performance of a CCFD system in terms of the number of correctly classified fraudulent transactions. This awareness is associated with the sensitivity value (i.e., 100%) which indicates its ability to correctly classify fraudulent transactions more than the best competing algorithm (GS-OCSVM [67], which has a sensitivity value of 97.1%). Also, by following Fig. <ref type="figure" target="#fig_38">12</ref>, it is apparent that the ST-BPNN has identified all fraudulent transactions (that are 492 frauds) where the number of Error type 2 (fraudulent transactions classified as legitimate) is 0. Moreover, the results obtained from the ST-BPNN in terms of F1-score is better than the recent related work <ref type="bibr" target="#b91">[64]</ref>. ST-BPNN achieves 92% while <ref type="bibr" target="#b91">[64]</ref> achieves 83%.</p><p>By analyzing Fig. <ref type="figure" target="#fig_12">13</ref>, AUPR measurement results highlight the effectiveness of the ST-BPNN model which performs well with a highly imbalanced dataset and has a very good rate of precision and recall (sensitivity) measures; it has 99%, demonstrating its ability to classify new transactions as legitimate or fraudulent. Also, we obtained the same result in terms of AUC (Fig. <ref type="figure" target="#fig_49">11 and 14</ref>). Indeed, ST-BPNN reaches 100% as an AUC rate. It retains the high-performance value compared to other models.</p><p>In summary, we have proven that in real scenarios characterized by a high data imbalance, the proposed ST-BPNN model can significantly improve a CCFD system, thus reducing losses due to the misclassification of fraudulent events.</p><p>It may be noted that the rationale for the ST-BPNN approach, and the reason it works well in the CCFD field, is because legitimate transactions are much higher in number and generally share a similar pattern that is easy to recognize. As a result, several algorithms are able to more accurately assess whether a transaction is legitimate. On the other hand, when a sample is fraudulent, most algorithms give a lower degree of   In summary, we have proven that in real scenarios characterized by a high data imbalance, the proposed ST-BPNN model can significantly improve a CCFD system, thus reducing losses due to the misclassification of fraudulent events.</p><p>It may be noted that the rationale for the ST-BPNN approach, and the reason it works well in the CCFD field, is because legitimate transactions are much higher in number and generally share a similar pattern that is easy to recognize. As a result, several algorithms are able to more accu-rately assess whether a transaction is legitimate. On the other hand, when a sample is fraudulent, most algorithms give a lower degree of probability on their classification, whether the transaction is legitimate or fraudulent. We have solved this problem in our proposed ST-BPNN algorithm by combining the strengths of SMOTE, Tomek Links techniques with the Back Propagation Neural Networks model, and it is the key to achieving high levels of performance.    fundIng This article did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>conflIct of Interest</head><p>Authors declare that they have no conflict of interest.            </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>p a service to ensure that users are protected from any risks they may be fraud detection model, denoted ST-BPNN, which is based on machine and nt transactions. ST-BPNN was applied on real fraud detection data provided ed results from ST-BPNN with a recent state-of-the-art approach shows that ictive performance for detecting fraudulent transactions. alanced data problem; artificial deep neural networks; machine learning and online ys to exploit on for use in huge amount anks and efraudulent ng again. Fig. ud Detection</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Credit Card Fraud Detection (CCFD) case.</figDesc><graphic coords="2,71.88,98.96,242.60,145.55" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Credit Card Fraud Detection (CCFD) case.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Transactions distribution based on the target variable (genuine=0, fraud=1).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Transactions distribution based on the target variable (genuine=0, fraud=1).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Workflow of the ST-BPNN model for CCFD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Transactions distribution based on the target variable (genuine=0, fraud=1).</figDesc><graphic coords="5,331.01,241.63,229.47,163.30" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Workflow of the ST-BPNN model for CCFD.</figDesc><graphic coords="5,80.32,109.86,478.87,118.97" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Workflow of the ST-BPNN model for CCFD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 SMOTE Process [53].</figDesc><graphic coords="6,87.90,307.04,213.51,117.01" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Tomek Links Process [53].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 SMOTE Process [53].</figDesc><graphic coords="6,335.07,94.52,221.72,98.52" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>1 :] 3 :</head><label>13</label><figDesc>Input: Minority data 𝐷𝐷 (𝑡𝑡) = {𝑥𝑥 𝑖𝑖 ∈ 𝑋𝑋} 𝑤𝑤ℎ𝑒𝑒𝑒𝑒𝑒𝑒 𝑖𝑖 = 1,2, … , 𝑇𝑇 2: Number of minority instances (𝑇𝑇), 𝑆𝑆𝑆𝑆𝑂𝑂𝑇𝑇𝑇𝑇 𝑝𝑝𝑒𝑒𝑒𝑒𝑝𝑝𝑒𝑒𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑒𝑒 3: For 𝑖𝑖 = 1,2, … , 𝑇𝑇 do 1: Find the 𝑘𝑘 nearest (minority class) neighbors of 𝑥𝑥 𝑖𝑖 2: 𝑁𝑁 ̂= [ 𝑁𝑁 100 While 𝑁𝑁 ̂≠ 0 do 1: Select one of the 𝑘𝑘 nearest neighbors, call this 𝑥𝑥̅ 2: Select a random number 𝑝𝑝 ∈ [0,1] 3: 𝑥𝑥 ̂= 𝑥𝑥 𝑖𝑖 + 𝑝𝑝(𝑥𝑥̅ − 𝑥𝑥 𝑖𝑖 ) 4: Append 𝑁𝑁 ̂= 𝑁𝑁 ̂− 1 4: End While 4: End For 5: Output: Return synthetic data 𝑆𝑆 there is no sample 〗_i,S_j) or 〖d samples that can borderline or nois improve the deci illustrates how To</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Tomek Links Pr</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 SMOTE Process [53].</figDesc><graphic coords="6,335.07,208.00,221.72,98.52" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>1 :] 3 :</head><label>13</label><figDesc>Input: Minority data 𝐷𝐷 (𝑡𝑡) = {𝑥𝑥 𝑖𝑖 ∈ 𝑋𝑋} 𝑤𝑤ℎ𝑒𝑒𝑒𝑒𝑒𝑒 𝑖𝑖 = 1,2, … , 𝑇𝑇 2: Number of minority instances (𝑇𝑇), 𝑆𝑆𝑆𝑆𝑂𝑂𝑇𝑇𝑇𝑇 𝑝𝑝𝑒𝑒𝑒𝑒𝑝𝑝𝑒𝑒𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑒𝑒 3: For 𝑖𝑖 = 1,2, … , 𝑇𝑇 do 1: Find the 𝑘𝑘 nearest (minority class) neighbors of 𝑥𝑥 𝑖𝑖 2: 𝑁𝑁 ̂= [ 𝑁𝑁 100 While 𝑁𝑁 ̂≠ 0 do 1: Select one of the 𝑘𝑘 nearest neighbors, call this 𝑥𝑥̅ 2: Select a random number 𝑝𝑝 ∈ [0,1] 3: 𝑥𝑥 ̂= 𝑥𝑥 𝑖𝑖 + 𝑝𝑝(𝑥𝑥̅ − 𝑥𝑥 𝑖𝑖 ) 4: Append 𝑁𝑁 ̂= 𝑁𝑁 ̂− 1 4: End While 4: End For 5: Output: Return synthetic data 𝑆𝑆 recommended in each approach f improving the cl identification mod Tomek links, a by Ivan Tomek condensed neare limit samples in th the computationa classes, and 〖d(S [54] [55]. A pair 〖 there is no sample 〗_i,S_j) or 〖d samples that can borderline or nois improve the deci illustrates how To</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Tomek Links Pr</figDesc><graphic coords="6,313.66,288.25,213.55,115.18" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 SMOTE Process [53].</figDesc><graphic coords="6,87.90,307.04,213.51,117.01" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>1 : 3 : 2 :</head><label>132</label><figDesc>Input: Minority data 𝐷𝐷(𝑡𝑡) = {𝑥𝑥 𝑖𝑖 ∈ 𝑋𝑋} 𝑤𝑤ℎ𝑒𝑒𝑒𝑒𝑒𝑒 𝑖𝑖 = 1,2, … , 𝑇𝑇 2: Number of minority instances (𝑇𝑇), 𝑆𝑆𝑆𝑆𝑂𝑂𝑇𝑇𝑇𝑇 𝑝𝑝𝑒𝑒𝑒𝑒𝑝𝑝𝑒𝑒𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑒𝑒 3: For 𝑖𝑖 = 1,2, … , 𝑇𝑇 do 1: Find the 𝑘𝑘 nearest (minority class) neighbors of 𝑥𝑥 𝑖𝑖 2While 𝑁𝑁 ̂≠ 0 do 1: Select one of the 𝑘𝑘 nearest neighbors, call this 𝑥𝑥̅ Select a random number 𝑝𝑝 ∈ [0,1] 3: 𝑥𝑥 ̂= 𝑥𝑥 𝑖𝑖 + 𝑝𝑝(𝑥𝑥̅ − 𝑥𝑥 𝑖𝑖 ) 4: Append 𝑁𝑁 ̂= 𝑁𝑁 ̂− 1 4: End While 4: End For 5: Output: Return synthetic data 𝑆𝑆</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_19"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Tomek Links Process [53].</figDesc><graphic coords="6,313.66,288.25,213.55,115.18" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_20"><head>Fig. 6 A 6 Fig. 6 A</head><label>666</label><figDesc>Fig. 6 A structure example of the Backpropagation Neural Network Topology.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_21"><head>6 Fig. 6 A</head><label>66</label><figDesc>Fig. 6 A structure example of the Backpropagation Neural Network Topology.</figDesc><graphic coords="7,72.68,431.06,241.80,117.88" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_22"><head>6 Fig. 6 A</head><label>66</label><figDesc>Fig. 6 A structure example of the Backpropagation Neural Network Topology.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_23"><head>) 3 )</head><label>3</label><figDesc>F1-score F1-score is Precision and Recall's weighted average. It is defined as: F1-Score =2*(Recall * Precision)/(Recall+precision) (3) ) calculates how many positive instances (true labels) are correctly predicted as positive. It is also known as sensitivity or true positive rate. It is formulated as: Sensitivity=100× ybercrimes Research 2022, Volume 5, Issue (1), pp. xx-xx 6 gation Neural Network lgorithm is composed ion of information and or. In the forward ation is transmitted e layer input to the s not get the desired e value of the output agation and send the inal connection path y each neuron layer's target. Hidden layer error function are (3), respectively.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_24"><head>An</head><label></label><figDesc>Fig. 7 Example of the AUC-ROC graph [69].</figDesc><graphic coords="8,329.25,102.02,233.64,165.04" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_25"><head>Fig. 7</head><label>7</label><figDesc>Fig. 7 Example of the AUC-ROC graph [69].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_26"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8 Network topology of the ST-BPNN model.</figDesc><graphic coords="8,375.48,421.20,387.60,247.26" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_27"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8 Network topology of the ST-BPNN model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_28"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8 Network topology of the ST-BPNN model.</figDesc><graphic coords="9,73.63,103.87,487.35,293.42" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_29"><head>Fig. 9</head><label>9</label><figDesc>Fig. 9 Transaction class distribution after using SMOTE+TL techniques (1=fraud, 0=genuine).</figDesc><graphic coords="10,73.84,230.93,235.73,141.57" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_30"><head>Fig. 10</head><label>10</label><figDesc>Fig. 10 Transaction class distribution before using SMOTE+TL techniques (1=fraud, 0=genuine).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_31"><head>Fig. 9</head><label>9</label><figDesc>Fig. 9 Transaction class distribution after using SMOTE+TL techniques (1=fraud, 0=genuine).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_32"><head>Fig. 10</head><label>10</label><figDesc>Fig. 10 Transaction class distribution before using SMOTE+TL techniques (1=fraud, 0=genuine).</figDesc><graphic coords="10,75.26,409.44,231.67,141.68" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_33"><head></head><label></label><figDesc><ref type="bibr" target="#b55">[30]</ref> [62][63][64][65]<ref type="bibr" target="#b93">[66]</ref>[67] on CCFD using the same realworld dataset. Fig.11summarizes this comparison.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_34"><head>Fig. 9</head><label>9</label><figDesc>Fig. 9 Transaction class distribution after using SMOTE+TL techniques (1=fraud, 0=genuine).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_35"><head>Fig. 10</head><label>10</label><figDesc>Fig. 10 Transaction class distribution before using SMOTE+TL techniques (1=fraud, 0=genuine).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_36"><head>Fig. 11</head><label>11</label><figDesc>Fig. 11 Comparison results of the ST-BPNN in terms of Sensitivity, AUC-ROC, and F1-score with the recent state-ofthe-art approaches.</figDesc><graphic coords="11,93.29,272.57,450.77,393.39" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_37"><head>Fig. 11</head><label>11</label><figDesc>Fig. 11 Comparison results of the ST-BPNN in terms of Sensitivity, AUC-ROC, and F1-score with the recent state-of-the-art approaches.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_38"><head>Fig. 12</head><label>12</label><figDesc>Fig. 12 Confusion matrix for ST-BPNN for CCFD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_39"><head>Fig. 13</head><label>13</label><figDesc>Fig.13The precision-recall curve of the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_40"><head>Fig. 14</head><label>14</label><figDesc>Fig. 14 AUC-ROC of the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_41"><head>Fig. 12</head><label>12</label><figDesc>Fig. 12 Confusion matrix for ST-BPNN for CCFD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_42"><head>Fig. 13</head><label>13</label><figDesc>Fig.13The precision-recall curve of the proposed model.</figDesc><graphic coords="12,77.39,278.68,228.43,136.07" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_43"><head>Fig. 14</head><label>14</label><figDesc>Fig. 14 AUC-ROC of the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_44"><head>Fig. 12</head><label>12</label><figDesc>Fig. 12 Confusion matrix for ST-BPNN for CCFD.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_45"><head>Fig. 13</head><label>13</label><figDesc>Fig.13The precision-recall curve of the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_46"><head>Fig. 14</head><label>14</label><figDesc>Fig. 14 AUC-ROC of the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_47"><head>Fig. 12</head><label>12</label><figDesc>Fig. 12 Confusion matrix for ST-BPNN for CCFD.</figDesc><graphic coords="12,77.39,107.67,228.44,144.77" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_48"><head>Fig. 13</head><label>13</label><figDesc>Fig.13The precision-recall curve of the proposed model.</figDesc><graphic coords="12,77.39,442.83,228.43,138.11" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_49"><head>Fig. 14</head><label>14</label><figDesc>Fig. 14 AUC-ROC of the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>taBle II Performance</head><label>II</label><figDesc>results of the BPnn model after and Before usIng smote+tl technIques.</figDesc><table><row><cell></cell><cell>Sensitivity</cell><cell>AUC</cell><cell>AUPR</cell><cell>F1-score</cell><cell>Legitimate</cell><cell>Fraudulent</cell><cell>Total transactions</cell></row><row><cell>DNN vbased on SMOTE+TL</cell><cell>1</cell><cell>1</cell><cell>0.99</cell><cell>0.92</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>284,315</cell><cell>492</cell><cell>284.807</cell></row><row><cell>DNN without SMOTE+TL</cell><cell>0.79</cell><cell>0.978</cell><cell>0.83</cell><cell>0.81</cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head></head><label></label><figDesc>JISCR_1801 Manuscript Journal of Information Security &amp; Cybercrimes Research 2022, Volume 5, Issue (1), pp. xx-xx 9 probability on their classification, whether the transaction is legitimate or fraudulent. We have solved this problem in our proposed ST-BPNN algorithm by combining the strengths of SMOTE, Tomek Links techniques with the Back Propagation Neural Networks model, and it is the key to achieving high levels of performance.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>TABLE II PERFORMANCE</head><label>II</label><figDesc>RESULTS OF THE BPNN MODEL AFTER AND BEFORE USING SMOTE+TL TECHNIQUES.</figDesc><table><row><cell></cell><cell cols="3">Sensitivity AUC AUPR</cell><cell>F1-score</cell><cell cols="3">Legitimate Fraudulent Total transactions</cell></row><row><cell>DNN based on SMOTE+TL DNN without SMOTE+TL</cell><cell>1 0.79</cell><cell>1 0.978</cell><cell>0.99 0.83</cell><cell>0.92 0.81</cell><cell>284,315</cell><cell>492</cell><cell>284,807</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">Naoufal Rtayli</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1">An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2">JISCR 2022; Volume 5 Issue(1)   </note>
+		</body>
+		<back>
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FUNDING</head><p>This article did not receive any specific grant from funding agencies in the public, commercial, or not-forprofit sectors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FUNDING</head><p>This article did not receive any specific grant from funding agencies in the public, commercial, or not-forprofit sectors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FUNDING</head><p>This article did not receive any specific grant from funding agencies in the public, commercial, or not-forprofit sectors.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONFLICT OF INTEREST</head><p>Authors declare that they have no conflict of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONFLICT OF INTEREST</head><p>Authors declare that they have no conflict of interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONFLICT OF INTEREST</head><p>Authors declare that they have no conflict of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">A Survey on Credit Card Fraud Detection Using Machine Learning</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Popat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chaudhary</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<idno type="DOI">10.1109/ICOEI.2018.8553963</idno>
+		<title level="m">Trend. Electron. Inf. (ICOEI)</title>
+				<meeting><address><addrLine>India</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="1120" to="1125" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Enhanced credit card fraud detection based on SVM-recursive feature elimination and hyper-parameters optimization</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jisa.2020.102596</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Inf. Secur. Appl</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">102596</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">EUROPEAN Central Bank, Sept</title>
+		<ptr target="https://www.ecb.europa.eu/pub/pdf/cardfraud/ecb.cardfraudreport201809.en.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m">Fifth report on card fraud</title>
+				<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Credit Card Risk Detection An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data JISCR_1801 Manuscript Journal of Information Security &amp; Cybercrimes Research</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Issue</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">10</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A Survey on Credit Card Fraud Detection Using Machine Learning</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Popat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chaudhary</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICOEI.2018.8553963</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2018 2nd Int. Conf. Trend. Electron. Inf. (ICOEI)</title>
+				<meeting><address><addrLine>India</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="1120" to="1125" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Enhanced credit card fraud detection based on SVM-recursive feature elimination and hyper-parameters optimization</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jisa.2020.102596</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Inf. Secur. Appl</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">102596</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">EUROPEAN Central Bank, Sept</title>
+		<ptr target="https://www.ecb.europa.eu/pub/pdf/cardfraud/ecb.cardfraudreport201809.en.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m">Fifth report on card fraud</title>
+				<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Credit Card Risk Detection based on Feature-Filter and Fraud Identification</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICDS47004.2019.8942373</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2019 3 rd Int. Conf. Intell. Comput. Data Sciences (ICDS)</title>
+				<meeting><address><addrLine>Morocco</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Google&apos;s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1609.08144</idno>
+		<ptr target="https://arxiv.org/abs/1609.08144" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Real-Time Malaysian Sign Language Translation using Colour Segmentation and Neural Network</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Akmeliawati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Ooi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Kuang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IMTC.2007.379311</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Instrum. Meas. Technol. Conf. IMTC</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2007">2007. 2007. 2007</date>
+			<publisher>Poland</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">A Comprehensive Survey on Graph Neural Networks</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Yu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNNLS.2020.2978386</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw Learn Syst</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="4" to="24" />
+			<date type="published" when="2021-01">Jan. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Pre-training with nonexpert human demonstration for deep reinforcement learning</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>De La Cruz Jr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Taylor</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0269888919000055</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JISCR_1801 Manuscript Journal of Information Security &amp; Cybercrimes Research</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">e10</biblScope>
+			<biblScope unit="page">10</biblScope>
+			<date type="published" when="2019">2019. 2022</date>
+		</imprint>
+	</monogr>
+	<note>Issue</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A Survey on Credit Card Fraud Detection Using Machine Learning</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Popat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chaudhary</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICOEI.2018.8553963</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2018 2nd Int. Conf. Trend. Electron. Inf. (ICOEI)</title>
+				<meeting><address><addrLine>India</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="1120" to="1125" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Enhanced credit card fraud detection based on SVM-recursive feature elimination and hyper-parameters optimization</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jisa.2020.102596</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Inf. Secur. Appl</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">102596</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">EUROPEAN Central Bank, Sept</title>
+		<ptr target="https://www.ecb.europa.eu/pub/pdf/cardfraud/ecb.cardfraudreport201809.en.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m">Fifth report on card fraud</title>
+				<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Credit Card Risk Detection based on Feature-Filter and Fraud Identification</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICDS47004.2019.8942373</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2019 3 rd Int. Conf. Intell. Comput. Data Sciences (ICDS)</title>
+				<meeting><address><addrLine>Morocco</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Google&apos;s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1609.08144</idno>
+		<ptr target="https://arxiv.org/abs/1609.08144" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Real-Time Malaysian Sign Language Translation using Colour Segmentation and Neural Network</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Akmeliawati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Ooi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Kuang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IMTC.2007.379311</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Instrum. Meas. Technol. Conf. IMTC</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2007">2007. 2007. 2007</date>
+			<publisher>Poland</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A Comprehensive Survey on Graph Neural Networks</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Yu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNNLS.2020.2978386</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw Learn Syst</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="4" to="24" />
+			<date type="published" when="2021-01">Jan. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Pre-training with nonexpert human demonstration for deep reinforcement learning</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>De La Cruz Jr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Taylor</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0269888919000055</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JISCR_1801 Manuscript Journal of Information Security &amp; Cybercrimes Research</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">e10</biblScope>
+			<biblScope unit="page">10</biblScope>
+			<date type="published" when="2019">2019. 2022</date>
+		</imprint>
+	</monogr>
+	<note>Issue</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A Survey on Credit Card Fraud Detection Using Machine Learning</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Popat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chaudhary</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICOEI.2018.8553963</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2018 2nd Int. Conf. Trend. Electron. Inf. (ICOEI)</title>
+				<meeting><address><addrLine>India</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="1120" to="1125" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Enhanced credit card fraud detection based on SVM-recursive feature elimination and hyper-parameters optimization</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jisa.2020.102596</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Inf. Secur. Appl</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">102596</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">EUROPEAN Central Bank, Sept</title>
+		<ptr target="https://www.ecb.europa.eu/pub/pdf/cardfraud/ecb.cardfraudreport201809.en.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m">Fifth report on card fraud</title>
+				<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Credit Card Risk Detection based on Feature-Filter and Fraud Identification</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICDS47004.2019.8942373</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2019 3 rd Int. Conf. Intell. Comput. Data Sciences (ICDS)</title>
+				<meeting><address><addrLine>Morocco</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Google&apos;s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1609.08144</idno>
+		<ptr target="https://arxiv.org/abs/1609.08144" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Real-Time Malaysian Sign Language Translation using Colour Segmentation and Neural Network</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Akmeliawati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Ooi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Kuang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IMTC.2007.379311</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Instrum. Meas. Technol. Conf. IMTC</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2007">2007. 2007. 2007</date>
+			<publisher>Poland</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A Comprehensive Survey on Graph Neural Networks</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Yu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNNLS.2020.2978386</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw Learn Syst</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="4" to="24" />
+			<date type="published" when="2021-01">Jan. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Pre-training with nonexpert human demonstration for deep reinforcement learning</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>De La Cruz Jr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Taylor</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0269888919000055</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Eng. Rev</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">e10</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Deep learning for determining a near-optimal topological design without any iteration</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">G</forename><surname>Jang</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00158-018-2101-5</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Struct. Multidiscip. Optim</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="787" to="799" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Survey on deep learning with class imbalance</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Khoshgoftaar</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s40537-019-0192-5</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Big Data</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">27</biblScope>
+			<date type="published" when="2019-03">Mar. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Fraud detection system: A survey</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abdallah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Maarof</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zainal</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jnca.2016.04.007</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Netw. Comput. Appl</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="90" to="113" />
+			<date type="published" when="2016-06">June 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A survey of machinelearning and nature-inspired based credit card fraud detection techniques</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">O</forename><surname>Adewumi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Akinyelu</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s13198-016-0551-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Syst. Assur. Eng. Manag</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="937" to="953" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Comparison of Supervised and Unsupervised Fraud Detection</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Walke</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-030-36365-9_2</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Data Science, Cyber Security and IT Applications</title>
+				<editor>
+			<persName><forename type="first">H</forename><surname>Alfaries</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Mengash</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">E</forename><surname>Yasar</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Shakshuki</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">1097</biblScope>
+			<biblScope unit="page" from="8" to="14" />
+		</imprint>
+	</monogr>
+	<note>Communications in Computer and Information Science</note>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Semi-Supervised Learning For Imbalanced Classification Of Credit Card Transaction</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Salazar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Safont</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Vergara</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IJCNN.2018.8489755</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2018 Int. Jt. Conf. Neural Netw. (IJCNN)</title>
+				<imprint>
+			<publisher>Brazil</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="1" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Uniform object generation for optimizing one-class classifiers</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Tax</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Duin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="155" to="173" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Plastic card fraud detection using peer group analysis</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Weston</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Hand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Whitrow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Juszczak</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11634-008-0021-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Data Anal. Classif</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="45" to="62" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Detecting credit card fraud by genetic algorithm and scatter search</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Duman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Ozcelik</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2011.04.110</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="13057" to="13063" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Cost Sensitive Credit Card Fraud Detection Using Bayes Minimum Risk</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Bahnsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stojanovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aouada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ottersten</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICMLA.2013.68</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2013 12th Int. Conf</title>
+				<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="333" to="338" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Sequential fraud detection for prepaid cards using hidden Markov model divergence</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">N</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aria</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2017.08.043</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="235" to="251" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Fraud detection for E-commerce transactions by employing a prudential Multiple Consensus model</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Carta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Fenu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Reforgiato</forename><surname>Recupero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Saia</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICDS47004.2019.8942373</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. based on Feature-Filter and Fraud Identification</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="8" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note>Conf. Intell. Comput. Data Sciences (ICDS)</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title level="m" type="main">Google&apos;s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1609.08144</idno>
+		<ptr target="https://arxiv.org/abs/1609.08144" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Real-Time Malaysian Sign Language Translation using Colour Segmentation and Neural Network</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Akmeliawati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Ooi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Kuang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IMTC.2007.379311</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Instrum. Meas. Technol. Conf. IMTC</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2007">2007. 2007. 2007</date>
+			<publisher>Poland</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A Comprehensive Survey on Graph Neural Networks</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">S</forename><surname>Yu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNNLS.2020.2978386</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw Learn Syst</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="4" to="24" />
+			<date type="published" when="2021-01">Jan. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Pretraining with non-expert human demonstration for deep reinforcement learning</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>De La Cruz Jr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Taylor</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0269888919000055</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Eng. Rev</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">e10</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Medicare fraud detection using neural networks</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Khoshgoftaar</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s40537-019-0225-0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Big Data</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">63</biblScope>
+			<date type="published" when="2019-07">July 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Deep neural networks and fraud detection</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Sweden, U.U.D.M Proj. Rep</title>
+				<imprint>
+			<date type="published" when="2017">2017. 2017</date>
+			<biblScope unit="page">38</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Deep learning detecting fraud in credit card transactions</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mahoney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Alonzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Beling</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/SIEDS.2018.8374722</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Syst. Inf. Eng. Des. Symp. (SIEDS), USA</title>
+		<imprint>
+			<biblScope unit="page" from="129" to="134" />
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">An Artificial Intelligence Approach to Financial Fraud Detection under IoT Environment: A Survey and Implementation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2018/5483472</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Secur. Commun. Netw</title>
+		<imprint>
+			<biblScope unit="volume">2018</biblScope>
+			<biblScope unit="issue">5483472</biblScope>
+			<date type="published" when="2018-09">Sept. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Empirical Study of the Topology and Geometry of Deep Networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Fawzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Moosavi-Dezfooli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Frossard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Soatto</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/CVPR.2018.00396</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2018 IEEE/CVF Conf. Comput. Vis. Pattern Recognit</title>
+				<meeting><address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="3762" to="3770" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Deep clustering for unsupervised learning of visual features</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Caron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bojanowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Joulin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Douze</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-030-01264-9_9</idno>
+		<idno>doi: 10.1016/j. jisa.2019.02.007</idno>
+	</analytic>
+	<monogr>
+		<title level="m">15 th Eur. Conf. Comput. Vis., in Computer Vision -ECCV 2018</title>
+		<title level="s">Lucture Notes in Computer Science</title>
+		<editor>
+			<persName><forename type="first">V</forename><surname>Ferrari</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Hebert</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Sminchisescu</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Weiss</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2018">2018. 2019</date>
+			<biblScope unit="volume">11218</biblScope>
+			<biblScope unit="page" from="13" to="22" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">A Discrete Wavelet Transform Approach to Fraud Detection</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Saia</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-64701-2_34</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Int. Conf. Netw. Syst. Secur</title>
+		<title level="s">Lecture Notes in Computer Science</title>
+		<editor>
+			<persName><forename type="first">System</forename><surname>Network</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Z</forename><surname>Security</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Yan</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">W</forename><surname>Molva</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Mazurczyk</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Kantola</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">10394</biblScope>
+			<biblScope unit="page" from="464" to="474" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">A linear-dependence-based approach to design proactive credit scoring models</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Saia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Carta</surname></persName>
+		</author>
+		<idno type="DOI">10.5220/0006066701110120</idno>
+	</analytic>
+	<monogr>
+		<title level="m">IC3K 2016 -Proc. 8th Int</title>
+				<meeting><address><addrLine>Portugal</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="111" to="120" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Evaluating credit card transactions in the frequency domain for a proactive fraud detection approach</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Saia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Carta</surname></persName>
+		</author>
+		<idno type="DOI">10.5220/0006425803350342</idno>
+	</analytic>
+	<monogr>
+		<title level="m">ICETE 2017 -Proc. 14th Int. Jt. Conf. E-bus. Telecommun</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="335" to="342" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">New Perspectives of Pattern Recognition for Automatic Credit Card Fraud Detection</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Salazar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Safont</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Vergara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Encyclopedia of Information Science and Technology, M. Khosrow-Pour</title>
+				<meeting><address><addrLine>Pennsylvania, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IGI Global</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="4937" to="4950" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Signal processing on graphs for improving automatic credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Vergara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Salazar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Belda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Safont</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Moral</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Iglesias</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/CCST.2017.8167820</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2017 Int. Carnahan Conf. Secur. Technol. (ICCST)</title>
+				<imprint>
+			<publisher>Spain</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Boosting prediction performance on imbalanced dataset</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zareapoor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Shamsolmoali</surname></persName>
+		</author>
+		<idno type="DOI">10.1504/IJICT.2018.090556</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Inf. Commun. Technol</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="186" to="195" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">A Novel Strategy for Mining Highly Imbalanced Data in Credit Card Transactions</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zareapoor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/10798587.2017.1321228</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Intell. Autom. Soft Comput</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Kernelized support vector machine with deep learning: An efficient approach for extreme multiclass dataset</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zareapoor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Shamsolmoali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kumar Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.patrec.2017.09.018</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit. Lett</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="4" to="13" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Sequence classification for credit-card fraud detection</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jurgovsky</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2018.01.037</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="234" to="245" />
+			<date type="published" when="2018-06-15">June 15. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Identification Using Artificial Neural Networks</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mishra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Comput. Syst</title>
+		<imprint>
+			<biblScope unit="volume">04</biblScope>
+			<biblScope unit="issue">07</biblScope>
+			<biblScope unit="page" from="151" to="159" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Data Mining Application for Cyber Credit-Card Fraud Detection System</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Akhilomen</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-642-39736-3_17</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Data Mining: Applications and Theoretical Aspects</title>
+		<title level="s">Lucture Notes in Computer Science</title>
+		<editor>
+			<persName><forename type="first">P</forename><surname>Perner</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">7987</biblScope>
+			<biblScope unit="page" from="218" to="228" />
+		</imprint>
+	</monogr>
+	<note>Ind. Conf. Data Min</note>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title level="m" type="main">Credit card fraud detection using neural network</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Patidar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Sharma</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Parallel granular neural networks for fast credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Syeda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yan-Qing</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yi</forename><surname>Pan</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/FUZZ.2002.1005055</idno>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE Int. Conf. Fuzzy Syst. FUZZ-IEEE&apos;02. Proc. (Cat. No.02CH37291</title>
+				<meeting><address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2002">2002. 2002. 2002</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="572" to="577" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection Using Hidden Markov Model</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Srivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kundu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sural</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Majumdar</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TDSC.2007.70228</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Dependable Secure Comput</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="37" to="48" />
+			<date type="published" when="2008-03">Jan.-March 2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection using big data analytics: Use of PSOAANN based one-class classification</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Kamaruddin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Ravi</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/2980258.2980319</idno>
+	</analytic>
+	<monogr>
+		<title level="m">ACM Int. Conf. Proc. Series, India</title>
+				<meeting><address><addrLine>Art</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Neural Random Forests</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Biau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Scornet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Welbl</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s13171-018-0133-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sankhya A</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="347" to="386" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Using a random forest to inspire a neural network and improving on it</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Aggarwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1137/1.9781611974973.1</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 17th SIAM Int. Conf. Data Min</title>
+				<meeting>17th SIAM Int. Conf. Data Min<address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Minority report in fraud detection: classification of skewed data</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Phua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Alahakoon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/1007730.1007738</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ACM SIGKDD Explor. Newsl</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="50" to="59" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">An Efficient Hybrid Classifier Model for Anomaly Intrusion Detection System</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ehsan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ishaq</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Farooq</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Comput. Sci. Netw. Secur</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="127" to="135" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Combining unsupervised and supervised learning in credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Carcillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">A</forename><surname>Le Borgne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Caelen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kessaci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Oblé</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bontempi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ins.2019.05.042</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">557</biblScope>
+			<biblScope unit="page" from="317" to="331" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Analysis of Credit Card Fraud Detection Using Fusion Classifiers</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kumari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Mishra</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-981-10-8055-5_11</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Computational Intelligence in Data Mining, An Efficient Deep Learning Classification Model for Predicting Credit Card Fraud on Skewed Data</title>
+				<editor>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Behera</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">J</forename><surname>Nayak</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">B</forename><surname>Naik</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Abraham</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">711</biblScope>
+			<biblScope unit="page" from="111" to="122" />
+		</imprint>
+	</monogr>
+	<note>Advances in Intelligent Systems and Computing</note>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<monogr>
+		<title level="m" type="main">Credit card Fraud data</title>
+		<author>
+			<persName><surname>Raghunath</surname></persName>
+		</author>
+		<ptr target="https://data.world/raghu543/credit-card-fraud-data" />
+		<imprint>
+			<date type="published" when="2017-02-16">Feb. 16, 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">The flywheel fault detection based on Kernel principal component analysis</title>
+		<author>
+			<persName><forename type="first">G. -H</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ITNEC.2019.8729163</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE 3rd Inf. Technol. Netw. Electr. Autom. Control Conf. (ITNEC)</title>
+		<imprint>
+			<biblScope unit="page" from="425" to="432" />
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Comprehensive Analysis of Network Traffic Data</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Miao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ruan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/CIT.2016.22</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Int. Conf. Comput. Inf. Technol. (CIT)</title>
+		<imprint>
+			<biblScope unit="page" from="423" to="430" />
+			<date type="published" when="2016">2016. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Streaming active learning strategies for real-life credit card fraud detection: assessment and visualization</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Carcillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-A</forename><surname>Le Borgne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Caelen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bontempi</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s41060-018-0116-z</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Data Sci. Anal</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="285" to="300" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<monogr>
+		<title level="m" type="main">Resampling to Properly Handle Imbalanced Datasets in Machine Learning</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Charfaoui</surname></persName>
+		</author>
+		<ptr target="https://heartbeat.comet.ml/resampling-to-properly-handle-imbalanced-datasets-in-machine-learning-64d82c16ceaa" />
+		<imprint>
+			<date type="published" when="2020-02">Oct. 02, 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Detecting suspicious behavior in the Bitcoin network</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Jobse</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Dep. Commun. Inf. Sci., Tilburg Univ</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">M.S. thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">SVM classification of microaneurysms with imbalanced dataset based on borderline-SMOTE and data cleaning techniques</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Zheng</surname></persName>
+		</author>
+		<idno type="DOI">10.1117/12.2268519</idno>
+	</analytic>
+	<monogr>
+		<title level="m">9 th Int. Conf. Mach. Vis. (ICMV 2016)</title>
+				<meeting><address><addrLine>France</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<monogr>
+		<title level="m" type="main">Bank Fraud Detection Using Support Vector Machine</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Gyamfi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Abdulai</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018 IEEE 9th</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title/>
+		<idno type="DOI">10.1109/IEMCON.2018.8614994</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Inf. Technol. Electron. Mob. Commun. Conf. (IEMCON), Canada</title>
+		<imprint>
+			<biblScope unit="page" from="37" to="41" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Prediction of forest fires using Artificial neural networks</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Safi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bouroumi</surname></persName>
+		</author>
+		<idno type="DOI">10.12988/ams.2013.13025</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Sci</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">5-8</biblScope>
+			<biblScope unit="page" from="271" to="286" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">An overview and comparison of free Python libraries for data mining and big data analysis</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Stančin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jović</surname></persName>
+		</author>
+		<idno type="DOI">10.23919/MIPRO.2019.8757088</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2019 42nd Int</title>
+				<meeting><address><addrLine>Croatia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="977" to="982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Validity of Cross-Validation for Evaluating Time Series Prediction</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bergmeir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hyndman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Koo</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.csda.2017.11.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Stat. Data Anal</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="70" to="83" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">Exploring strategies for training deep neural networks</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Louradour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lamblin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="40" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Deep learning using robust interdependent codes</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Erhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vincent</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 12th Int. Conf</title>
+				<meeting>12th Int. Conf</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="312" to="319" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Imbalance Data Classification via Neural-Like Structures of Geometric Transformations Model: Local and Global Approaches</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tkachenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Doroshenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Izonin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tsymbal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Havrysh</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-91008-6_12</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Advance in Computer Science for Engineering and Education</title>
+				<editor>
+			<persName><forename type="first">S</forename><surname>Hu</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">I</forename><surname>Petoukhov</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Dychka</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>He</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">754</biblScope>
+			<biblScope unit="page" from="112" to="122" />
+		</imprint>
+	</monogr>
+	<note>Advances in Intelligent Systems and Computing</note>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Ensemble learning for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sohony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pratap</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Nambiar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">CoDS-COMAD &apos;18</title>
+				<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title/>
+		<idno type="DOI">10.1145/3152494.3156815</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. ACM India Jt. Int. Conf. Data Sci. Manag. Data, India</title>
+		<imprint>
+			<biblScope unit="page" from="289" to="294" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">An Autoencoder Based Model for Detecting Fraudulent Credit Card Transaction</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Misra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Thakur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ghosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Saha</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.procs.2020.03.219</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Comput. Sci</title>
+		<imprint>
+			<biblScope unit="volume">167</biblScope>
+			<biblScope unit="page" from="254" to="262" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection using autoencoder based clustering</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zamini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Montazer</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ISTEL.2018.8661129</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2018 9th Int. Symp. Telecommun. (IST)</title>
+				<imprint>
+			<publisher>Iran</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="486" to="491" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">Selection Features and Support Vector Machine for Credit Card Risk Identification</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rtayli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Enneya</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.promfg.2020.05.012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Manuf</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="941" to="948" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">Anomaly Detection based on GS-OCSVM Classification</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kittidachanan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Minsan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pornnopparath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Taninpong</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/KST48564.2020.9059326</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2020 12 th Int. Conf. Knowl. Smart Technol. (KST)</title>
+				<meeting><address><addrLine>Thailand</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="64" to="69" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<monogr>
+		<title level="m" type="main">Receiver operating characteristic (ROC) curve for Fit Binary Logistic Model</title>
+		<author>
+			<persName><surname>Minitab</surname></persName>
+		</author>
+		<ptr target="https://support.minitab.com/en-us/minitab/19/help-and-how-to/statistical-modeling/regression/how-to/fit-binary-logistic-model/interpret-the-results/all-statistics-and-graphs/receiver-operating-characteristic-roc-curve/" />
+		<imprint>
+			<date type="published" when="2020-05-09">May 09, 2020</date>
+		</imprint>
+	</monogr>
+	<note>Naoufal Rtayli</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

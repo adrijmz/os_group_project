@@ -74,7 +74,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 							</affiliation>
 						</author>
 						<author>
-							<persName><forename type="first">Marcello</forename><forename type="middle">Henrique</forename><surname>Nogueira-Barbosa</surname></persName>
+							<persName><roleName>Prof</roleName><forename type="first">Marcello</forename><forename type="middle">Henrique</forename><surname>Nogueira-Barbosa</surname></persName>
 							<affiliation key="aff2">
 								<orgName type="institution">Faculdade de Medicina de Ribeirão Preto da Universidade de São Paulo (FMRP-USP)</orgName>
 								<address>
@@ -102,6 +102,15 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 							<persName><forename type="first">Santos</forename><forename type="middle">Avenida</forename><surname>Bandeirantes</surname></persName>
 						</author>
 						<author>
+							<persName><forename type="first">Marcello</forename><surname>Henrique</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Nogueira</forename><surname>Barbosa</surname></persName>
+						</author>
+						<author>
+							<persName><roleName>Dr</roleName><forename type="first">Edson</forename><surname>Marchiori</surname></persName>
+						</author>
+						<author>
 							<affiliation key="aff3">
 								<address>
 									<addrLine>Campus Universitário, Monte Alegre. Ribeirão Preto</addrLine>
@@ -126,7 +135,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -142,10 +151,1178 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>The discipline of radiology and diagnostic imaging has evolved greatly in recent years. We have observed an exponential increase in the number of exams performed, subspecialization of medical fields, and increases in accuracy of the various imaging methods, making it a challenge for the radiologist to &quot;know everything about all exams and regions&quot;. In addition, imaging exams are no longer only qualitative and diagnostic, providing now quantitative information on disease severity, as well as identifying biomarkers of prognosis and treatment response. In view of this, computer-aided diagnosis systems have been developed with the objective of complementing diagnostic imaging and helping the therapeutic decision-making process. With the advent of artificial intelligence, &quot;big data&quot;, and machine learning, we are moving toward the rapid expansion of the use of these tools in daily life of physicians, making each patient unique, as well as leading radiology toward the concept of multidisciplinary approach and precision medicine. In this article, we will present the main aspects of the computational tools currently available for analysis of images and the principles of such analysis, together with the main terms and concepts involved, as well as examining the impact that the development of artificial intelligence has had on radiology and diagnostic imaging.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The discipline of radiology and diagnostic imaging has evolved greatly in recent years. We have observed an exponential increase in the number of exams performed, subspecialization of medical fields, and increases in accuracy of the various imaging methods, making it a challenge for the radiologist to "know everything about all exams and regions". In addition, imaging exams are no longer only qualitative and diagnostic, providing now quantitative information on disease severity, as well as identifying biomarkers of prognosis and treatment response. In view of this, computer-aided diagnosis systems have been developed with the objective of complementing diagnostic imaging and helping the therapeutic decision-making process. With the advent of artificial intelligence, "big data", and machine learning, we are moving toward the rapid expansion of the use of these tools in daily life of physicians, making each patient unique, as well as leading radiology toward the concept of multidisciplinary approach and precision medicine. In this article, we will present the main aspects of the computational tools currently available for analysis of images and the principles of such analysis, together with the main terms and concepts involved, as well as examining the impact that the development of artificial intelligence has had on radiology and diagnostic imaging.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A disciplina de radiologia e diagnóstico por imagem evoluiu sobremaneira nos últimos anos. Temos observado o aumento exponencial do número de exames realizados, a subespecialização das disciplinas médicas e a maior acurácia dos métodos, tornando um desafio para o médico radiologista "saber tudo sobre todos exames e regiões". Além disso, os exames de imagem deixaram de ser somente qualitativos e diagnósticos e passaram a fornecer informações quantitativas e de gravidade de doença, identificando biomarcadores prognósticos e de resposta ao tratamento. Diante disso, sistemas computadorizados de auxílio diagnóstico vêm sendo desenvolvidos com o objetivo dar suporte ao diagnóstico por imagem e à decisão terapêutica. Com o advento da inteligência artificial, do big data e do aprendizado de máquina, caminhamos para a rápida expansão do uso dessas ferramentas no dia-a-dia dos médicos, tornando cada paciente único, levando a radiologia ao encontro do conceito de abordagem multidisciplinar e medicina de precisão. Neste artigo serão abordados os principais aspectos das ferramentas computacionais atualmente disponíveis para análise das imagens médicas, apresentando os princípios de análise das imagens, os principais termos e conceitos envolvidos nesses processos, assim como o impacto do desenvolvimento da inteligência artificial na radiologia e diagnóstico por imagem.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>The discipline of radiology and diagnostic imaging has evolved greatly in recent years. Radiological imaging can be extremely complex, and it is recognized that the analysis of exams that produce hundreds of images, such as computed tomography (CT) and magnetic resonance imaging (MRI), poses challenges, even for experienced provide quantitative information on disease severity, as well as identifying biomarkers of prognosis and treatment response <ref type="bibr" target="#b3">(4)</ref><ref type="bibr" target="#b4">(5)</ref><ref type="bibr" target="#b5">(6)</ref> . Those changes have been especially prominent in oncology, showing that the information provided by imaging studies can go far beyond determining whether a lesion is benign or malignant, now being able to indicate the histological type of the tumor, staging, presence of mutations, chance of treatment response, risk of recurrence, and expected survival <ref type="bibr" target="#b6">(7)</ref><ref type="bibr" target="#b7">(8)</ref><ref type="bibr" target="#b8">(9)</ref> .</p><p>Computer-aided diagnosis (CAD) systems have been developed with the objectives of improving the accuracy of exams, increasing consistency in interpretation of images, helping the prognostic evaluation, and supporting the therapeutic decision-making process. Although such tools have enormous potential, there are still limitations to their use in routine clinical practice. With the advent of artificial intelligence and "big data", we are moving toward reducing those limitations, homogenizing and expanding the use of CAD tools in daily routine of physicians, making each patient unique, and leading radiology toward the concepts of a multidisciplinary approach and precision medicine <ref type="bibr" target="#b9">(10)</ref><ref type="bibr" target="#b10">(11)</ref><ref type="bibr" target="#b11">(12)</ref><ref type="bibr" target="#b12">(13)</ref><ref type="bibr" target="#b13">(14)</ref> .</p><p>In this article, the main aspects of the computational tools currently available for image analysis will be discussed, as will the impact of the development of artificial intelligence and the role of imaging in precision medicine. Table <ref type="table" target="#tab_0">1</ref> presents the main terms that will be used throughout this text, together with a brief definition of each.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>PRINCIPLES OF COMPUTER-AIDED IMAGE ANALYSIS IN MEDICINE</head><p>Digital medical imaging is an f (x, y) function in a spatial coordinate-partitioned gray scale that can be represented by a matrix in which the intersection of each row and column identifies a single point (pixel) within an image. As depicted in Figure <ref type="figure" target="#fig_0">1</ref>, the value of each pixel in the matrix identifies the gray level at that point (x, y) on a scale of integer values that represent black (the lowest value), white (the highest value), and shades of gray (intermediate values). With CT and MRI, images can be acquired volumetrically, in form of a volume of parallel, evenly spaced slices, so that a point in the image represents a voxel, with a "height" equal to the thickness of the slice <ref type="bibr" target="#b14">(15)</ref><ref type="bibr" target="#b15">(16)</ref><ref type="bibr" target="#b16">(17)</ref> . The processing and analysis tools work with this matrix of numerical values that represent the image <ref type="bibr" target="#b17">(18)</ref> .</p><p>There was a major technological revolution in radiology in the late 1990s and early 2000s, when filmless radiological environments that were fully digitized and integrated with other information systems were established within a model known as a digital hospital <ref type="bibr" target="#b18">(19)</ref> . The foundation of filmless radiology is the picture archiving and communication system (PACS), which is a mean of receiving images in the standard digital imaging and communication in medicine (DICOM) format from the various acquisition devices (conventional radiography, ultrasound, CT, and MRI), making them available for specialists or other computer systems to access, and storing them in an organized way in large databases <ref type="bibr" target="#b19">(20)</ref> . The integration of the PACS with the clinical information systems known as hospital information systems (HIS) and radiology information systems (RIS) has also enabled the development of various CAD models <ref type="bibr" target="#b20">(21,</ref><ref type="bibr" target="#b21">22)</ref> .</p><p>One of the key steps in image processing and analysis is segmentation, which often represents major challenges. The main objective of segmentation is to divide the image into parts that represent normal anatomy and those that are abnormal; to segment is to separate tissues </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Artificial intelligence</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Precision medicine</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Radiomics</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Artificial neural network</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Convolutional neural network</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Definition</head><p>Field of computer science that involves the evolution of pattern recognition systems, allowing computers to learn from errors and predict outcomes.</p><p>Branch of machine learning that attempts to model large amounts of data using multiple processing layers.</p><p>Image characteristics used in computational analysis, classified into three groups: gray levels, texture, and shape.</p><p>Set of data and information that can be stored and analyzed by modern computational analysis tools-large in volume, speed, and variety. Medical diagnosis/detection using the results of automated quantitative image analyses as a "second opinion". System that enables images or exams to be retrieved from information based on the pictorial content of a reference image or exam.</p><p>Human-like intelligence displayed by machines or computer programs.</p><p>Model of medicine that proposes the personalization of health care, with individualized diagnoses and treatments for each patient.</p><p>Massive extraction of measurable imaging data and their integration into multidisciplinary predictive models for the management of the diagnosis, treatment, and prognosis of patients.</p><p>Machine learning method based on the human central nervous system, with computational models made up of layers, each layer being composed of neurons.</p><p>Class of artificial neural network designed to require as little preprocessing as possible.. and structures on the basis of their anatomical characteristics <ref type="bibr" target="#b22">(23)</ref> . In some cases, segmentation can be simplifi ed by using shapes that are predefi ned (circles or rectangles) or outlined in the image, representing a region of interest (ROI) that does not necessarily encompass all of the tissue, structure, or organ. Techniques for the segmentation of images are generally based on basic properties of gray levels, discontinuity (edges), or similarity (after setting thresholds or using a region-growing algorithm), as shown in Figures <ref type="figure" target="#fig_2">2 and 3</ref>. The segmentation process can be manual, semiautomated (the user intervenes at some point in the process), or fully automated <ref type="bibr" target="#b23">(24)</ref> .</p><p>The process of feature extraction consists in calculating numerical values (descriptors) that represent the visual content of an image. Features are obtained by executing algorithms known as feature extractors. Feature extraction algorithms perform quantitative imaging procedures such as histogram construction, texture classifi cation, shape recognition, and contour recognition, as well as area and volume estimates. After features have been extracted by these algorithms, the values are stored in a feature vector.</p><p>Features are basically classifi ed into three main groups: gray level, texture, and shape. The extraction of gray-level features is the most widely used technique, which can be performed directly or by analysis of the histogram. As can be seen in Figure <ref type="figure" target="#fig_4">4</ref>, a histogram is a description of the number of gray levels present in the    (Squamous cell carcinoma) image, and that calculation involves only the pixel/voxel count with the gray-scale intensities <ref type="bibr" target="#b2">(3,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b24">25)</ref> . However, using only gray-level descriptors or histograms does not provide information on the spatial distribution of the content of an image, which can be determined by analyzing texture features <ref type="bibr" target="#b23">(24,</ref><ref type="bibr" target="#b25">26)</ref> . In some images, regions that have similar pixels/voxels are distinguishable because of their different textures (Figure <ref type="figure" target="#fig_3">5</ref>). Texture features have become particularly important because they can refl ect the details of a lesion identifi ed in an image <ref type="bibr" target="#b0">(1,</ref><ref type="bibr" target="#b1">2)</ref> . Shape features describe the edge of the image and the geometric features extracted from the segmented object, such as its contours, junctions, curves, and polygonal regions <ref type="bibr" target="#b1">(2,</ref><ref type="bibr" target="#b26">27)</ref> . Characterizing object shapes quantitatively is a complicated task because it depends on effi ciency of the segmentation algorithms.</p><p>Lesions seen in radiological images of the lung, for example, often have adjacent opacities or structures such as vessels and the mediastinum (Figure <ref type="figure" target="#fig_3">5</ref>), which can lead to poor segmentation and, consequently, poorer characterization by shape features.</p><p>Selection of relevant features is another important step, given the wide range of features that can be extracted from the image. In many cases, some characteristics are irrelevant for a given analysis or data are redundant, introducing noise or inconsistencies into the feature vector <ref type="bibr" target="#b27">(28)</ref> . Therefore, it is necessary to select the most relevant characteristics according to clinical investigation class (diagnosis or outcome). Various algorithms have been created in order to reduce spatial dimensionality of the vector and can be classifi ed into three main types: fi lter, wrapper, and embedded. Most algorithms use machine learning (ML) resources, and some perform feature selection by using artifi cial neural networks (ANNs), decision trees, and random forests <ref type="bibr" target="#b10">(11)</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IMAGE CLASSIFICATION, MACHINE LEARNING, AND DEEP LEARNING</head><p>Image classifi cation typically involves defi ning the image within a pre-established category, such as normal versus pathological. One of the most widely studied areas in artifi cial intelligence and image classifi cation is machine learning. Machine learning allows the identifi cation of patterns seen in previous cases and experiments, as occurs with human intelligence <ref type="bibr" target="#b28">(29)</ref> .</p><p>Machine learning methods have been applied to classifying images acquired with various imaging modalities, using a variety of features, for various diseases, and with tools such as CAD and radiomics <ref type="bibr" target="#b24">(25,</ref><ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b29">30)</ref> . Developing a machine learning method involves creating a training function for a dataset (the feature vectors, in the case of image classifi cation) and making use of logical inference. When classes (diagnoses or clinical outcomes) for fi nal decision of the model are pre-established, the training process is supervised. When there is no defi ned class, the process is unsupervised. In the latter case, the algorithm is aimed at the formation of clusters of similar samples ("exams with a similar pattern"), which may or may not be related to a known condition or disease <ref type="bibr" target="#b30">(31,</ref><ref type="bibr" target="#b31">32)</ref> .</p><p>One of the most traditional machine learning methods involves ANNs, which are widely used in image classifi cation tasks <ref type="bibr" target="#b24">(25,</ref><ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b29">30)</ref> . These neural networks were projected with the structures of the human central nervous system as a reference <ref type="bibr" target="#b32">(33)</ref> , the mathematical models being described in the form of layers, each layer consisting of N neurons. The best known type of ANN is the multilayer perceptron (MLP). Traditionally, the MLP network has an input layer (whose neurons correspond to features of the image), an output layer (whose neurons correspond to classes/outcomes), and a set of intermediate hidden layers (whose neurons correspond to fi t points of the activation functions), as depicted in Figure <ref type="figure" target="#fig_5">6</ref>.</p><p>One of the areas of artifi cial intelligence that has been gaining attention in the scientifi c community most recently is deep learning <ref type="bibr" target="#b15">(16)</ref> . Traditional machine learning methods have limitations in data processing, mainly related to the need for segmentation and development of feature extractors to represent images and serve as input for the classifi ers <ref type="bibr" target="#b33">(34)</ref> . Therefore, researchers began to develop algorithms that integrated the processes of feature extraction and image classifi cation within the ANN itself. Therefore, in deep learning technique, the need for preprocessing or segmentation is minimized. However, the method also has disadvantages, such as the need for a very large set of images (hundreds to thousands); greater dependence on exam quality and clinical data; and diffi culty in identifying the logic used ("processing black box"). The most widely known method of deep learning in medicine is that involving a convolutional neural network (CNN). A CNN is basically composed of three types of layers <ref type="bibr" target="#b34">(35)</ref> : the fi rst (convolutional layer) detects and extracts features; the second (pooling layer) selects and reduces the amount of features; and the third (fully connected layer) serves to integrate all of the features extracted by the previous layers, typically by using an MLP-like neural network to perform the fi nal image classifi cation, which is given by the prediction of the most likely class (Figure <ref type="figure" target="#fig_6">7</ref>).</p><p>Another important step in the machine learning process is validation and performance assessment. Given a set of images, a machine learning classifi er must use at least two different subsets to perform algorithm training and predictive model validation. A widely used strategy in radiology is cross validation. In cross validation, the samples </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Input layer</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Intermediate layers</head><p>Output layer are separated into N subsets <ref type="bibr" target="#b12">(13,</ref><ref type="bibr" target="#b35">36)</ref> : N − 1 for training; and 1 for testing. Another strategy, which reduces the risk of model overfi tting, is based on three subsets <ref type="bibr" target="#b28">(29,</ref><ref type="bibr" target="#b36">37)</ref> : one for training, one for validation, and one (independent subset) for testing only. Performance is typically evaluated by calculating the accuracy, sensitivity, specifi city, and area under the receiver operating characteristic (ROC) curve for the method in question. An area under the curve (AUC) closer to 1 (on a scale from 0 to 1) indicates greater the accuracy of the method (Figure <ref type="figure" target="#fig_7">8</ref>). Tools that employ artifi cial intelligence, machine learning, and deep learning can be used in different ways to analyze images. In the fi eld of radiology and diagnostic imaging, such tools have been applied primarily in CAD, content-based image retrieval (CBIR), and radiomics/radiogenomics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>COMPUTER AIDED DETECTION</head><p>Tools of CAD were initially developed to aid in the interpretation of radiological fi ndings and early identifi cation of diseases, especially breast and lung cancer <ref type="bibr" target="#b6">(7,</ref><ref type="bibr" target="#b9">10)</ref> .The aim of CAD is to improve the accuracy and consistency of diagnostic imaging by using suggestion of a response ("second opinion") provided primarily by image processing, computer vision, and machine learning techniques <ref type="bibr" target="#b0">(1,</ref><ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b37">38)</ref> . Historically, the fi rst CAD systems emerged in the late 1980s and were based on the processing of digitized radiography fi lms. They were fundamentally designed to work as a second reading of exams in population-based cancer screening programs (helping detect nodules and microcalcifi cations on mammograms). Subsequently, similar systems were used in order to detect and classify pulmonary nodules on conventional radiographies and CT scans of the chest. More recently, these systems have been used to facilitate the diagnosis of Alzheimer's disease in nuclear medicine exams. In these traditional CAD models <ref type="bibr" target="#b24">(25,</ref><ref type="bibr" target="#b28">29)</ref> , the idea is for the second reading to be done by the computer rather than by a second radiologist (Figure <ref type="figure" target="#fig_9">9</ref>).</p><p>With the development of artifi cial intelligence and new machine learning tools, auxiliary diagnostic systems have expanded greatly and have been used in many different tasks, with all medical imaging modalities. We can cite, for example, the surprising number of presentations (seminars, abstracts, and oral presentations) related to such systems at the 2018 Annual Meeting of the Radiological Society of North America, currently the largest radiology conference in the world, in terms of number of participants and number of presentations. That year, there were 237 registered events related to artifi cial   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONTENT-BASED IMAGE RETRIEVAL</head><p>The concept of CBIR refers to the search for images whose contents are similar to a reference case by using information derived from the images themselves, represented by their intrinsic content (feature vector), rather than associated texts (reports) or external annotations <ref type="bibr" target="#b40">(41)</ref> . Because it has potential for clinical application, as well as for application in teaching and research, CBIR has been described as one of the most promising computational tool <ref type="bibr" target="#b41">(42,</ref><ref type="bibr" target="#b42">43)</ref> . It can be a very useful tool in daily clinical practice, because it can aid radiologists in diagnostic interpretation of exams, or increase their confi dence level, because it uses a decision model based on similar exams <ref type="bibr" target="#b21">(22)</ref> . Currently, the most common scenario is that the physician, in a case of a diagnostic uncertainty, searches the Internet via a browser or on specialized radiology sites for similar texts or cases, using keywords or using their diagnostic suspicion (e.g., Google searches for "lung nodule on chest CT" or "pulmonary hamartoma"). The use of CBIR takes the place of such strategies and is more effective, rapidly providing physicians with cases similar to that represented by the image for which they seek defi nition. Therefore, whereas CAD systems perform image classifi cation tasks, generally providing a single response (lesion or no lesion, benign or malignant), CBIR systems perform image searches for similarity, providing a set of cases similar to an unknown case indicated by the physician.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RADIOMICS AND RADIOGENOMICS</head><p>The suffi x -omics was fi rst used in the fi eld of molecular biology, to describe the detailed characterization of molecules such as DNA (genomics) and proteins (proteomics). Radiomics has been described as an extension of CAD that associates the quantitative characteristics (features) of images with patient data and clinical outcomes, not only allowing the diagnosis to be made but also providing information regarding the prognosis and treatment response <ref type="bibr" target="#b6">(7,</ref><ref type="bibr" target="#b24">25)</ref> . In view of recent advances in targeted treatment and immunotherapy, particularly in the treatment of malignancies, the need for a robust approach to imaging analysis has become clear, and radiomics has the potential to provide this in a noninvasive, rapid, timely, and affordable manner <ref type="bibr" target="#b11">(12)</ref> . Radiomic analysis is a process of massive extraction of features from tens to hundreds of exams, inserting these features into databases with patient clinical information, allowing them to be shared and analyzed <ref type="bibr" target="#b43">(44)</ref> .</p><p>The volume of health data has been growing at a rapid pace in recent years, characterizing what some authors call the "big data era" of health, and those electronic data are available in large quantities in information systems of large hospitals and other health care centers <ref type="bibr" target="#b44">(45)</ref> .</p><p>Given the large number of features and numerous processing possibilities, some authors have started to develop and suggest the use of a radiomic signature, in which the most signifi cant features of different categories are chosen, analyzed, and tested with accurate protocols and reproducible algorithms <ref type="bibr" target="#b45">(46)</ref> .</p><p>In the medical literature, there are already many studies using radiomics in different types of imaging studies to evaluate different diseases. Most of those studies are related to oncology, such as the study of lung and kidney neoplasms on CT and positron-emission tomography/CT scans, as well as prostate cancer, breast cancer, glioma, and hepatocellular carcinoma on MRI <ref type="bibr" target="#b6">(7,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b35">36)</ref> .</p><p>When the focus of radiomics is the study of correlation between radiological and genomic patterns (a set of genes), the process is known as radiogenomics <ref type="bibr" target="#b46">(47)</ref> . Many studies have shown that imaging features are signifi cantly associated with patterns of gene expression and genetic mutations, demonstrating that radiogenomic analysis can identify different biological mechanisms by means of mathematical and computational devices, enabling the decoding of disease phenotypes by noninvasive methods <ref type="bibr" target="#b47">(48,</ref><ref type="bibr" target="#b48">49)</ref> . Radiogenomics has also been used in studies that analyze tumor heterogeneity (i.e., the presence of multiple tissue and genetic subregions within the same tumor), which is related to disease recurrence and treatment resistance. Radiogenomics is able to quantify the spatial complexity of the tumor and identify these phenotypic/genotypic subregions <ref type="bibr" target="#b49">(50)</ref> , as shown in Figure <ref type="figure" target="#fig_10">10</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSION</head><p>Radiology has undergone signifi cant advances due to the technological revolution that is taking place in the world. First, there was the digitization of radiological environments. Then, evolution of computer vision techniques and artifi cial intelligence led to the development of auxiliary diagnostic systems. More recently, maturation of computational models has provided support to the clinical decision-making and prognostic prediction processes. In this paper, we have presented and discussed the main concepts related to computer-aided image analysis, including aspects of artifi cial intelligence applied to precision medicine.</p><p>We believe that artifi cial intelligence, machine learning, computer-aided diagnosis, and radiomics will change the way radiologists and other imaging specialists work and will likely, in the very near future, change the perspective that everyone in the health care fi eld has on their work. However, some people fear that radiologists and other specialists will be completely replaced by computer algorithms. Although simple tasks and exams (e.g., the evaluation of scoliosis or bone age on conventional radiographies) might be performed and interpreted entirely by such algorithms, the role of the physician in verifying/validating the outcome, making the clinical-epidemiological correlation, and determining the best treatment regimen are unlikely to be threatened. Of course, there are also ethical and legal issues related to medical exam liability.</p><p>Artifi cial intelligence will certainly help "reduce the backlog" of exams; shorten the time to action in urgent cases; streamline interpretation and reporting; increase diagnostic confi dence; make image analysis more objective and reproducible; offer more reliable prognostic information; assist in the teaching and learning of imaging techniques; and lead radiology definitively toward the concepts of precision medicine and multidisciplinary patient assessment. In practice, it is thought that the first change will be that the radiologists of today, who mostly use a workstation with two computer screens (one with the imaging tool, the other with the system for emitting the report and access to clinical and radiological data) will begin to work with three screens, the third being one that includes the artificial intelligence analysis. Rather than fearing what the future will bring, radiologists need to prepare, learn, and adapt, because change is inevitable.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Representation of the function (matrix) of a gray-scale digital image (axial slice of a chest CT).</figDesc><graphic coords="3,61.32,52.51,319.83,176.97" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Semiautomated segmentation, with region growing, of a neoplastic pulmonary nodule on chest CT after placement of a user-defi ned seed pixel (point at the center of the nodule in the fi rst image on the left).</figDesc><graphic coords="3,54.01,617.29,506.96,89.39" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Semiautomated segmentation of the lung on a CT scan of the chest with 256 gray levels and a user-defi ned threshold of 115 Hounsfi eld units: the original CT image (image on the left) is thresholded (to detect the edges) and transformed into a binary image (to separate the lungs).</figDesc><graphic coords="3,54.01,452.98,473.46,124.89" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 5 .</head><label>5</label><figDesc>Figure5. Segmentation of pulmonary nodules on chest CT in two different patients, both nodules having irregular contours and being in proximity with adjacent vessels or chest wall, factors that make it diffi cult to segment the edges of lesions properly. In such cases, texture analysis can facilitate proper segmentation.</figDesc><graphic coords="4,34.08,259.28,237.12,236.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Example of the histogram of an axial CT scan of the chest with 256 gray levels. The histogram shows the distribution of pixels or voxels according to the gray levels (or Hounsfi eld units, if necessary).</figDesc><graphic coords="4,34.07,47.76,324.48,172.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Architecture of a multilayer ANN. The input layer receives the feature information. The output layer represents classes or outcomes (e.g., normal versus pathological).</figDesc><graphic coords="5,215.88,522.88,301.92,198.48" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Chest CT image with a pulmonary nodule as input into a CNN for analysis using deep learning technique.</figDesc><graphic coords="6,40.62,50.54,284.16,199.44" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. Example of ROC curves: curve 1 represents a test with perfect performance (AUC = 1.0); curve 2 represents a test with intermediate performance (AUC = 0.75); and curve 3 represents a random test (AUC = 0.50).</figDesc><graphic coords="6,40.15,491.57,235.68,201.84" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head></head><label></label><figDesc>learning, or deep learning (https:// rsna2018.rsna.org/program/index.cfm). Examples include the following: automated detection of pulmonary nodules, pneumonia, pneumothorax, and pleural effusion on conventional chest radiography; detection and quantification of emphysema, estimation of lung nodule malignancy risk, chance of local invasion by lung cancer, and cardiovascular risk on chest CT; and automated analysis of cardiac function on cardiac MRI. Therefore, possibilities for developing computerized auxiliary diagnostic tools have become almost unlimited<ref type="bibr" target="#b38">(39,</ref><ref type="bibr" target="#b39">40)</ref> .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Example of a CAD tool for detection and analysis of pulmonary nodules. The program not only indicates the presence of a right apical pulmonary nodule but also provides quantitative and three-dimensional information regarding that nodule.</figDesc><graphic coords="7,190.27,290.01,236.36,104.54" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 10 .</head><label>10</label><figDesc>Figure 10. Quantifi cation of the heterogeneity of a pulmonary adenocarcinoma on a CT scan of the chest by radiomic/radiogenomic evaluation. Color scale refers to a feature extracted from the image, refl ecting tissue and genetic subregions of the tumor.</figDesc><graphic coords="8,34.29,557.01,351.34,170.71" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 -Key terms that have been used throughout the text, together with their short definitions.</head><label>1</label><figDesc></figDesc><table><row><cell>Term</cell></row><row><cell>Machine learning</cell></row><row><cell>Deep learning</cell></row><row><cell>Features of the image</cell></row><row><cell>Big data</cell></row><row><cell>Computer aided diagnosis/detection</cell></row><row><cell>Content based imaging retrieval</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">Radiol Bras. 2019 Nov/Dez;52(6):387-396</note>
+		</body>
+		<back>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>.</p><p>a. https://orcid.org/0000-0002-7160-4691; b. https://orcid.org/0000-0002-8202-588X; c. https://orcid.org/0000-0002-6433-4849; d. https://orcid.org/0000-0002-3908-9538; e. https://orcid.org/0000-0002-7436-5315; f. https://orcid.org/0000-0002-7271-2774.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Medical image analysis and informatics</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Azevedo-Marques</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mencattini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Salmeri</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>CRC Press</publisher>
+			<pubPlace>Boca Raton, FL</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Content-based image retrieval in radiology: current status and future directions</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">B</forename><surname>Akgül</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Rubin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Napel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Digit Imaging</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="208" to="222" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Computer-aided diagnosis in medical imaging: historical review, current status and future potential</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Doi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Med Imaging Graph</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="198" to="211" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Endobronchial valves in severe emphysematous patients: CT evaluation of lung fissures completeness, treatment radiological response and quantitative emphysema analysis. Radiol Bras</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Koenigkam-Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Paula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gompelmann</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="15" to="22" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Quantitative computed tomography analysis of the airways in patients with cystic fibrosis using automated software: correlation with spirometry in the evaluation of severity</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Koenigkam-Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Cruvinel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Menezes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiol Bras</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="351" to="357" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Use of computed tomography and automated software for quantitative analysis of the vasculature of patients with pulmonary hypertension. Radiol Bras</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Wada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Pádua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lima</forename><surname>Filho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">O</forename></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="351" to="358" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Radiomics: images are more than pictures, they are data</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Gillies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Kinahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hricak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">278</biblScope>
+			<biblScope unit="page" from="563" to="577" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Morphological computed tomography features of surgically resectable pulmonary squamous cell carcinomas: impact on prognosis and comparison with adenocarcinomas</title>
+		<author>
+			<persName><forename type="first">Koenigkam</forename><surname>Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Muley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Warth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur J Radiol</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="1275" to="1281" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">What&apos;s new in non-small cell lung cancer for pathologists: the importance of accurate subtyping, EGFR mutations and ALK rearrangements</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Cooper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>'toole</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Boyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pathology</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page" from="103" to="115" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">The potential of radiomic-based phenotyping in precision medicine: a review</title>
+		<author>
+			<persName><forename type="first">Hjwl</forename><surname>Aerts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA Oncol</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1636" to="1642" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Radiomics in precision medicine for lung cancer</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Constanzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Tseng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transl Lung Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="635" to="647" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Role of imaging in the era of precision medicine</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Giardino</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Olson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acad Radiol</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="639" to="649" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Defining a radiomic response phenotype: a pilot study using targeted therapy in NSCLC</title>
+		<author>
+			<persName><forename type="first">Hjwl</forename><surname>Aerts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Grossmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Rep</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">33860</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A review on radiomics and the future of theranostics for patient selection in precision medicine</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Keek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Leijenaar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jochems</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Radiol</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<date type="published" when="2018">2018. 20170926</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Guidelines for management of incidental pulmonary nodules detected on CT images: from the Fleischner Society</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Macmahon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Naidich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Goo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">284</biblScope>
+			<biblScope unit="page" from="228" to="243" />
+			<date type="published" when="2017">2017. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Pulmonary nodule characterization, including computer analysis and quantitative features</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Bartholmai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Koo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Thorac Imaging</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="139" to="156" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Update in the evaluation of the solitary pulmonary nodule</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Truong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Ko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Rossi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiographics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="1658" to="1679" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">The essential physics of medical imaging</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Bushberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Seibert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Leidholdt</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Jr</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<publisher>Lippincott Williams &amp; Wilkins</publisher>
+			<pubPlace>Philadelphia, PA</pubPlace>
+		</imprint>
+	</monogr>
+	<note>3rd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Designing and implementing the transition to a fully digital hospital</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Pavlopoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Delopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Inf Technol Biomed</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="6" to="19" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A differential method for representing spinal MRI for perceptual-CBIR</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ponciano-Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Bugatti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Reis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Progress in pattern recognition, image analysis</title>
+				<editor>
+			<persName><forename type="first">J</forename><surname>Ruiz-Shulcloper</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Sanniti</forename><surname>Di Baja</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Berlin, Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="2013">2013. 2013</date>
+			<biblScope unit="page" from="464" to="471" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Making content-based medical image retrieval systems worth for computer-aided diagnosis: from theory to application</title>
+		<author>
+			<persName><forename type="first">Ajm</forename><surname>Traina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mvn</forename><surname>Bedo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lfd</forename><surname>Santos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Medical image analysis and informatics computer-aided diagnosis and therapy</title>
+				<editor>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Azevedo-Marques</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Mencattini</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Salmeri</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Boca Raton, FL</addrLine></address></meeting>
+		<imprint>
+			<publisher>CRC Press</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page">24</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Does a CBIR system really impact decisions of physicians in a clinical environment?</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ponciano-Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Souza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Bugatti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 26th IEEE International Symposium on Computer-Based Medical Systems</title>
+				<meeting>the 26th IEEE International Symposium on Computer-Based Medical Systems</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="41" to="46" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Image processing, analysis and machine vision</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sonka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Hlavac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Boyle</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Boston, MA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Digital image processing</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Gonzalez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Woods</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<publisher>Prentice Hall</publisher>
+			<pubPlace>Upper Saddle River, NJ</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Machine learning in medical imaging</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Giger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Coll Radiol</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="512" to="520" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note>Pt B</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Algorithms for image processing and computer vision</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Parker</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<publisher>Wiley</publisher>
+			<pubPlace>Indianapolis, IN</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Core samples for radiomics features that are insensitive to tumor segmentation: method and pilot study using CT images of hepatocellular carcinoma</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Echegaray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Gevaert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Med Imaging (Bellingham)</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">41011</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Shape, texture and statistical features for classification of benign and malignant vertebral compression fractures in magnetic resonance images</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Frighetto-Pereira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Rangayyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Metzner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol Med</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="147" to="156" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Machine learning for medical imaging</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Erickson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Korfiatis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Akkus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiographics</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="505" to="515" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Current applications and future impact of machine learning in radiology</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Choy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Khalilzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Michalski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">288</biblScope>
+			<biblScope unit="page" from="318" to="328" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">A comparative study of machine learning methods for time-to-event survival data for radiomics risk modelling</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Leger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zwanenburg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pilz</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">13206</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Machine learning methods for quantitative radiomic biomarkers</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Grossmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bussink</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Rep</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">13087</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Neural networks: a comprehensive foundation</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Haykin</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<publisher>Prentice Hall</publisher>
+			<pubPlace>Upper Saddle River, NJ</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Deep learning</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">521</biblScope>
+			<biblScope unit="page" from="436" to="444" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Convolutional neural networks for radiologic images: a radiologist&apos;s guide</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Soffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ben-Cohen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Shimon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page" from="590" to="606" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Radiomics: the bridge between medical imaging and personalized medicine</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lambin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rth</forename><surname>Leijenaar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Deist</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Clin Oncol</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="749" to="762" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Deep learning in medical imaging: general overview</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">W</forename><surname>Cho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Korean J Radiol</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="570" to="584" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Selecting relevant 3D image features of margin sharpness and texture for lung nodule retrieval</title>
+		<author>
+			<persName><surname>Ferreira Jr</surname><genName>Jr</genName></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Azevedo-Marques</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Oliveira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Comput Assist Radiol Surg</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="509" to="517" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Development and validation of deep learning-based automatic detection algorithm for malignant pulmonary nodules on chest radiographs</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Nam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Hwang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="387" to="396" />
+			<date type="published" when="2019-11">2019. 2019 Nov/Dez</date>
+			<publisher>Radiol Bras</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Deep learning-based method for fully automatic quantification of left ventricle function from cine MR images: a multivendor, multicenter study</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yan</forename><forename type="middle">W</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page" from="81" to="88" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">Modelo de qualidade para o desenvolvimento e avaliação da viabilidade clínica de sistemas de recuperação de imagens médicas baseadas em conteúdo (Tese)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Souza</surname></persName>
+		</author>
+		<ptr target="www.teses.usp.br/teses/disponiveis/82/82131/tde-15022013-142541/pt-br.psp" />
+		<imprint>
+			<date type="published" when="2012">2012. 2019 April 1</date>
+			<pubPlace>São Carlos, SP</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Universidade de São Paulo</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Evaluating margin sharpness analysis on similar pulmonary nodule retrieval</title>
+		<author>
+			<persName><forename type="first">Ferreira</forename><surname>Junior</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE 28th International Symposium on Computer-Based Medical Systems</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="60" to="65" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">PRoSPer: perceptual similarity queries in medical CBIR systems through user profiles</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Bugatti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Kaster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ponciano-Silva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol Med</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="8" to="19" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Quantitative radiomics studies for tissue characterization: a review of technology and methodological procedures</title>
+		<author>
+			<persName><forename type="first">Rthm</forename><surname>Larue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Defraene</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">De</forename><surname>Ruysscher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Radiol</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<date type="published" when="2017">2017. 20160665</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Big data: the next era of informatics and data science in medical imaging -a literature review</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Filonenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Seeram</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Clin Exp Radiol</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">CT-based radiomic signature predicts distant metastasis in lung adenocarcinoma</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Coroller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Grossmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiother Oncol</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="345" to="350" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Radiomics and radiogenomics in lung cancer: a review for the clinician</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Thawani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mclane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Beig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lung Cancer</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="34" to="41" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">Predictive radiogenomics modeling of EGFR mutation status in lung cancer</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Gevaert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Echegaray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Khuong</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">41674</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Decoding tumour phenotype by noninvasive imaging using a quantitative radiomics approach</title>
+		<author>
+			<persName><forename type="first">Hjwl</forename><surname>Aerts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Velazquez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rth</forename><surname>Leijenaar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Commun</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">4006</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Radiomics and its emerging role in lung cancer research, imaging biomarkers and clinical management: state of the art</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur J Radiol</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="297" to="307" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<idno type="DOI">.org/10.1590/0100-3984.2019.0049</idno>
+		<ptr target="http://dx" />
+		<title level="m">ERRATUM In the article Artificial intelligence, machine learning, computer-aided diagnosis, and radiomics: advances in imaging towards to precision medicine</title>
+				<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="387" to="396" />
+		</imprint>
+	</monogr>
+	<note>Radiologia Brasileira</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

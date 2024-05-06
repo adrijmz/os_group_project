@@ -129,7 +129,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -137,10 +137,1001 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</encodingDesc>
 		<profileDesc>
 			<abstract>
-				<p>Annotating the function of all human genes is a critical, yet formidable, challenge. Current gene annotation efforts focus on centralized curation resources, but it is increasingly clear that this approach does not scale with the rapid growth of the biomedical literature. The Gene Wiki utilizes an alternative and complementary model based on the principle of community intelligence. Directly integrated within the online encyclopedia, Wikipedia, the goal of this effort is to build a gene-specific review article for every gene in the human genome, where each article is collaboratively written, continuously updated and community reviewed. Previously, we described the creation of Gene Wiki &apos;stubs&apos; for approximately 9000 human genes. Here, we describe ongoing systematic improvements to these articles to increase their utility. Moreover, we retrospectively examine the community usage and improvement of the Gene Wiki, providing evidence of a critical mass of users and editors. Gene Wiki articles are freely accessible within the Wikipedia web site, and additional links and information are available at http://en.wikipedia .org/wiki/Portal:Gene_Wiki.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Annotating the function of all human genes is a critical, yet formidable, challenge. Current gene annotation efforts focus on centralized curation resources, but it is increasingly clear that this approach does not scale with the rapid growth of the biomedical literature. The Gene Wiki utilizes an alternative and complementary model based on the principle of community intelligence. Directly integrated within the online encyclopedia, Wikipedia, the goal of this effort is to build a gene-specific review article for every gene in the human genome, where each article is collaboratively written, continuously updated and community reviewed. Previously, we described the creation of Gene Wiki 'stubs' for approximately 9000 human genes. Here, we describe ongoing systematic improvements to these articles to increase their utility. Moreover, we retrospectively examine the community usage and improvement of the Gene Wiki, providing evidence of a critical mass of users and editors. Gene Wiki articles are freely accessible within the Wikipedia web site, and additional links and information are available at http://en.wikipedia .org/wiki/Portal:Gene_Wiki.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>The sequencing and analysis of the human genome have largely elucidated the 'parts list' of the cellular machinery in the form of approximately 25 000 genes. However, the comprehensive annotation of gene function remains a formidable challenge. The scale of the task ahead is illustrated by two simple analyses of links between PubMed and the Entrez Gene database.</p><p>The first analysis showed that while there are several well-studied genes that have thousands of indexed citations in the literature, that degree of functional annotation falls off steeply <ref type="bibr" target="#b0">(1)</ref>. Almost 80% of Entrez Gene entries had five or fewer linked references in PubMed; almost 50% had zero linked references (Figure <ref type="figure">1A</ref>). This pattern was even more pronounced when examining links to the Gene Ontology (also shown in Figure <ref type="figure">1A</ref>). Clearly, there remains much work to be done to functionally annotate the human genome and to comprehensively catalog these findings in gene annotation databases.</p><p>A second analysis examined the rate at which PubMed entries were being linked to Entrez Gene (Figure <ref type="figure">1B</ref>). Between 1970 and 2008, the number of publications added to PubMed grew at an annualized rate of 3.4%. On examining that same time period, it was found that the number of articles that are currently linked to at least one Entrez Gene entry 'grew' by 18% per year, but still &lt;4% of all PubMed entries in recent years (and &lt;1.5% overall) are linked to Entrez Gene. Assuming that &gt;4% of PubMed-indexed articles have relevance to human gene function, this finding suggests that the rate limiting step is not generating the data, but capturing the derived knowledge in gene annotation databases.</p><p>Currently, the process of annotating gene function typically entails large-scale efforts by the model organism community <ref type="bibr" target="#b1">(2)</ref><ref type="bibr" target="#b2">(3)</ref><ref type="bibr" target="#b3">(4)</ref> and genome annotation centers <ref type="bibr" target="#b4">(5)</ref>. Formal annotation of gene function often utilizes controlled vocabularies like Gene Ontology <ref type="bibr" target="#b5">(6)</ref>. While the annotation process can be aided by the use of computational tools, ultimately the assignment of gene function is a manual process requiring the attention of one or more domain experts <ref type="bibr" target="#b6">(7)</ref>. This centralized model has been very successful in its goal to systematically advance gene annotation, creating essential tools and ontologies in the process.</p><p>However, this model alone may not be sufficient to efficiently and systematically annotate gene function. Many leading voices in the gene annotation and model organism communities recently wrote a feature article in Nature describing the current state and future of biocuration <ref type="bibr" target="#b7">(8)</ref>. They noted the immense challenge to the curator community (typically numbering in tens to hundreds of people) to keep pace with the biomedical literature (currently 18 million articles in PubMed, roughly 750 000 new articles per year). Specifically, these curation experts suggest that merely preserving the existing models of gene annotation will lead to an increasing lag between curated data and biological knowledge, and that 'sooner or later, the research community will need to be involved in the annotation effort to scale up to the rate of data generation' <ref type="bibr" target="#b7">(8)</ref>.</p><p>Thus, although leaders in the curation community have successfully set up a robust pipeline and infrastructure, and although the individuals in the curation community are clearly skilled in the annotation process, the amount of resources devoted to this important task may be simply insufficient relative to the volume of biomedical data being generated.</p><p>Recently, several efforts have been published, which attempt to harness the principle of 'community intelligence' <ref type="bibr" target="#b8">(9)</ref><ref type="bibr" target="#b9">(10)</ref><ref type="bibr" target="#b10">(11)</ref><ref type="bibr" target="#b11">(12)</ref><ref type="bibr" target="#b12">(13)</ref><ref type="bibr" target="#b13">(14)</ref><ref type="bibr" target="#b14">(15)</ref>. In particular, we introduced the Gene Wiki <ref type="bibr" target="#b10">(11)</ref>, an effort to systematically annotate articles in the online encyclopedia, Wikipedia, for approximately 9000 human genes. Articles were created or amended with content mined from structured gene annotation databases, including Entrez Gene, Ensembl, UniProt and Figure <ref type="figure">1</ref>. Analysis of links between the Entrez Gene and PubMed databases. (A) Examining the degree of gene annotation from the perspective of Entrez Gene, we found that while a few genes are very well annotated with links to PubMed references, the vast majority of genes have few or no linked references. (B) Examining links from the perspective of PubMed, we found that only a small fraction of published articles are linked to human genes. Taken together, these findings suggest that the traditional model of centralized curation is not scaling well with the rate of scientific research, and that complementary approaches based on community intelligence may be worth exploring.</p><p>the Protein Data Bank (PDB). Although the emphasis of the Gene Wiki is on describing human gene function, data from model organisms is often contributed as appropriate.</p><p>Here, we present an update describing the recent systematic improvements to the Gene Wiki. Moreover, we report on a retrospective analysis of Gene Wiki usage and editing. Finally, we offer some concluding remarks on general progress and challenges facing efforts to collaboratively engage the entire community of scientists.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DATABASE CONTENT</head><p>As described earlier <ref type="bibr" target="#b10">(11)</ref>, the initial Gene Wiki effort focused on creating or amending gene pages to include a free-text summary, an 'infobox' with links to public databases, Gene Ontology annotations and when available, protein structure identifiers. These data were primarily harvested from the Entrez Gene database <ref type="bibr" target="#b15">(16)</ref>. Since that publication, we have introduced several other systematic improvements to the Gene Wiki.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Protein interactions</head><p>Our previously described Gene Wiki effort resulted in approximately 9000 Wikipedia pages on human genes. However, with the exception of a few well-developed gene pages that existed prior to our involvement, these pages were accessible only through search engines and not through links from other articles. In the parlance of Wikipedia, these stubs were 'orphans' that were disconnected from the Wikipedia network defined by links between articles.</p><p>To better link the pages in the Gene Wiki to other biomedically relevant pages, we systematically created links between gene pages based on known proteinprotein interactions in the literature. Interactions were downloaded from the BioGRID database (http:// thebiogrid.org). We conservatively filtered for interactions that were supported by two independent techniques or two separate publications. A new section for 'Interactions' was created on each Gene Wiki page with at least one entry, which contained both links to the partner's gene page and inline references to the relevant publications. In total, we added 12 628 links on 3389 gene pages.</p><p>Better integration of the Gene Wiki into the larger network of Wikipedia articles greatly improves navigation between related topics. For example, readers can now easily browse from the breast cancer article, to the Gene Wiki page for the commonly mutated BRCA2 gene, to the page for EMSY (C11ORF30), the protein product of which has been shown to interact with BRCA2 and silence its transcriptional activity <ref type="bibr" target="#b16">(17)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>PDB galleries</head><p>Recognizing the importance of structural biology data, we undertook a focused effort to increase links between the Gene Wiki and the PDB <ref type="bibr" target="#b17">(18)</ref>. We first uploaded thumbnail images of all PDB structures to the Wikimedia Commons, a repository for freely usable media. Images were downloaded from the PDBe (http://www.ebi.ac .uk/pdbe/), and in total, 66 693 images were uploaded to the Wikimedia Commons. To aid in browsing and searching, PDB images were also categorized according to their assignments in the Structural Classification of Proteins (SCOP) database <ref type="bibr" target="#b18">(19)</ref>. The set of PDB structures can be browsed at http://commons.wikimedia.org/wiki /SCOP.</p><p>The easy availability of thumbnail images for almost all PDB structures will encourage their incorporation into relevant Gene Wiki and Wikipedia articles. To begin this process, we added an image gallery of PDB thumbnails to every Gene Wiki page with solved structures. To maintain balance with the rest of the pages' content, the image galleries were shown in an expandable window at the bottom of each Gene Wiki page. In total, PDB image galleries were added to 2852 Gene Wiki pages with a total of 16 018 links to PDB structures. For example, the PDB gallery for MDM2 (http://en.wikipedia .org/wiki/Mdm2) shows PDB structures corresponding to the unbound protein, as well as structures in complex with its p53 peptide ligand and two small molecule inhibitors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>On-demand web service</head><p>There are currently approximately 9000 pages in the Gene Wiki collection. To satisfy Wikipedia's 'notability' criterion, we initially limited our effort to genes with the most linked references in PubMed (as indexed in Entrez Gene). However, to enable other Wikipedia editors to easily create Gene Wiki pages for other genes of interest, we created a simple web tool to generate the properly formatted 'wikitext' for any arbitrary gene of interest. This tool can either be used to update existing content to the most recent data, or to create a new page where none previously existed.</p><p>This Gene Wiki formatting tool has been implemented as a BioGPS plugin, accessible at http://biogps.gnf .org/GeneWikiGenerator. By utilizing BioGPS as the search interface, users can search for their gene or genes of interest using most public identifiers and keywords. Upon clicking on a gene, the web tool returns the wikitext in three distinct text boxes, together with links and instructions on how to create a new Gene Wiki page. To allow programmatic usage of this web service, the output is returned as XML and formatted to HTML using an XML style sheet.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RETROSPECTIVE USAGE ANALYSIS</head><p>Previously, we suggested that the long-term success of community intelligence resources is dependent on a positive feedback among page utility, readers and editors <ref type="bibr" target="#b10">(11)</ref>. In the ideal case, each Gene Wiki page provides some baseline level of useful content, which then attracts a certain number of readers. Some (likely small) percentage of those readers will then become contributors, where their contribution could be something as trivial as fixing a typo or as substantial as summarizing a recent paper. Contributions improve the Gene Wiki page, which then draws more readers, and then a larger core of contributors. In other words, usage is directly proportional to utility, contribution rate is directly proportional to usage rate and utility is directly proportional to contribution rate.</p><p>The first step in this process, creating article 'stubs' that had general utility, was the focus of both our first Gene Wiki effort and the systematic improvements described earlier. In addition, we now have the necessary data on usage and editing patterns to retrospectively assess the other two edges of the positive feedback loop.</p><p>Usage was analyzed for the 6-month period between 1 January and 30 June 2009, over the 9678 current Gene Wiki pages. In total, these pages were viewed over 17 million times (3.9 million total page views per month). On a per article basis, the Gene Wiki averaged over 300 pages views per page per month (Figure <ref type="figure">2</ref>; see also Supplementary Table <ref type="table" target="#tab_1">S1</ref>). Closer analysis of these statistics revealed a broad range of usage levels (Table <ref type="table" target="#tab_1">1</ref>). The top-viewed articles are primarily related to genes of general societal interest (e.g. insulin, erythropoietin) and are viewed tens of thousands of times per month, likely dominated by non-scientists. Near the 100th most-popular pages are gene pages that cross many areas of biology (e.g. interleukin 10, c-Met), and these pages are viewed thousands of times per month. Finally, near the 1000th most-viewed pages are genes that are likely of interest to a relatively small population of scientists (e.g. IGSF8, TRPC6), and these pages receive approximately 300 page views per month. We believe that these statistics are indicative of Gene Wiki usage by both scientists and non-scientists.</p><p>Supporting the future growth in usage of the Gene Wiki, we also found that &gt;85% of all Gene Wiki pages are found within the top eight Google hits when searching by gene symbol (Figure <ref type="figure">3</ref>). This figure represents a substantial increase over the 60% observed shortly after the gene stubs were created <ref type="bibr" target="#b10">(11)</ref>.</p><p>We next examined the third leg of the positive feedback loop by analyzing the editing logs of Gene Wiki pages. During the same period between 1 January and 30 June 2009, there were a total of 6848 edits to 1893 Gene Wiki pages by 1923 unique users or Internet Protocol (IP) addresses. (In addition, automated edits by 'bots' accounted for 11 912 edits.) Edits over this period were quite constant at an average of about 1100 edits per month (SD = 171), 263 edits per week (SD = 69) and 38 edits per day (SD = 21). The cumulative effect of these edits was to increase the size of the text in the Gene Wiki by 2.28 MB (4.1%), approximately the equivalent to the text of 19 research articles in PLoS Biology. For individual articles, changes in page size are plotted as a function of current page size and Google rank in Figure <ref type="figure" target="#fig_2">4</ref>.  When examining the usage of statistics, we noticed spikes in the viewing of certain genes, especially those mentioned in the popular press. To explore this observation, we identified the 771 Gene Wiki pages with the most recent variability in monthly page views. Of these, 69 had been searched often enough to have data in Google Trends (http://www.google.com/trends), a service that quantifies how many Google searches have been done for a particular term over time relative to the total number of Google searches. The correlation between Gene Wiki page views and Google Trends over time is readily apparent, with 43% of examined pages having significant correlation (R &gt; 0.3; P &lt; 0.01).</p><p>In many cases, the strong relationship between page views and Google Trends was driven by articles in the popular press (Figure <ref type="figure">5</ref>). For example, the Wikipedia article for human chorionic gonadotropin (HCG) is one of the most frequently viewed articles in the Gene Wiki, presumably for its common usage in pregnancy tests. In May 2009, the Wikipedia article for this gene experienced a sharp spike in views (and edits) when Manny Ramirez was suspended for using HCG as a performanceenhancing drug. Similarly, catalase is frequently viewed article for its relevance to many areas of biology including aging and cancer. However, following a scientific report linking catalase function to premature gray hair in February 2009 <ref type="bibr" target="#b19">(20)</ref>, a prominent spike occurred in the viewing and editing of its Gene Wiki entry. Taken in sum, these data show a dynamic relationship between scientific publications, reports on this science in the popular press and usage of the Gene Wiki. These observations also underscore the potential opportunity and effectiveness of using the Gene Wiki for public outreach and scientific education.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION AND FUTURE DIRECTIONS</head><p>With the explosion in biological wikis, it is clear that the community intelligence model resonates with the biology and scientific community <ref type="bibr" target="#b8">(9)</ref><ref type="bibr" target="#b9">(10)</ref><ref type="bibr" target="#b10">(11)</ref><ref type="bibr" target="#b11">(12)</ref><ref type="bibr" target="#b12">(13)</ref><ref type="bibr" target="#b13">(14)</ref><ref type="bibr" target="#b14">(15)</ref>. Despite the enthusiasm in the potential of this model, it is also clear that realizing this potential is not trivial. Many of these biological wikis appear to suffer from a lack of participation. Establishing a critical mass of users and useful content appears to be the most common obstacle in these efforts.</p><p>By integrating directly with Wikipedia, establishing critical mass has not been an issue for the Gene Wiki. Clearly, Wikipedia already had a critical mass of users and articles, and the Gene Wiki has been able to effectively leverage those resources as demonstrated by the usage and editing metrics presented above. Moreover, within the last year, the American Society for Cell Biology, the Society  for Neuroscience and the National Institutes of Health have all held workshops or initiated efforts focused on science articles in Wikipedia. However, the Gene Wiki inherited a completely different set of challenges. First and most notably, Wikipedia allows users to remain completely anonymous, which often leads to fears of inaccuracy and bias. And second, Wikipedia is primarily focused on building unstructured articles (free text, images, diagrams, etc.) with relatively little attention to how contributed knowledge can be structured for downstream analyses in the way that Gene Ontology annotations, for example, can be utilized <ref type="bibr" target="#b20">(21)</ref>. We intend to focus on these issues in future developments of the Gene Wiki. Although previous studies have suggested that Wikipedia is of comparable accuracy to traditionally curated works <ref type="bibr" target="#b21">(22)</ref>, other efforts have been developed to explicitly account for trustworthiness of content based on historical editing patterns of each user <ref type="bibr" target="#b22">(23)</ref>. Moreover, while we still believe that a completely unstructured Gene Wiki article is useful to the community (similarly to a gene-specific review article), we are also investigating methods to integrate community intelligence with data structure using novel technical solutions [e.g. Semantic MediaWiki <ref type="bibr" target="#b23">(24)</ref>] and biomedical ontologies <ref type="bibr" target="#b24">(25)</ref>.</p><p>It is essential to emphasize that community intelligence efforts are not a replacement for traditionally curated gene annotation authorities <ref type="bibr" target="#b15">(16,</ref><ref type="bibr" target="#b25">(26)</ref><ref type="bibr" target="#b26">(27)</ref><ref type="bibr" target="#b27">(28)</ref>. In contrast, we believe that community intelligence resources are complementary to existing databases and offer a different set of strengths and weaknesses. Certainly, the data generation model is very different, and users of the Gene Wiki need to recognize that the Gene Wiki, like Wikipedia itself, should be treated differently than the primary literature and expertcurated databases.</p><p>Ultimately, we believe that a variety of solutions in the area of community intelligence are worth exploring. Future Gene Wiki development will focus on addressing the challenges described above, and we are also very enthusiastic about complementary efforts as they work to build critical mass and encourage participation. Regardless, the usage metrics presented above demonstrate that the Gene Wiki is relevant right now, certainly to the general public and also to a growing number of scientists. We hope that the scientific community embraces this opportunity both to collaboratively annotate gene function and to directly communicate with the public in science education and outreach.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACCESSIBILITY</head><p>Wikipedia is freely available for viewing at http:// wikipedia.org, and the Gene Wiki Portal page can be accessed at http://en.wikipedia.org/wiki/Portal:Gene _Wiki. All text is licensed under the Creative Commons Attribution/Share-Alike License 3.0 (Unported).</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 3 .Figure 2 .</head><label>32</label><figDesc>Figure 3. Google rank of Gene Wiki pages. When searching by gene symbol, &gt;85% of Gene Wiki pages are found within the first eight hits by the search engine Google.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Analysis of page size versus change in page size. The change in size of each Gene Wiki article during the first 6 months of 2009 is plotted as a function of the page size at the end of June 2009. Larger markers indicate more page views, and marker color indicates the Google rank of the page when searching by gene symbol. Labels are shown for a few representative pages.</figDesc><graphic coords="5,93.90,141.80,375.16,231.16" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="2,140.46,256.73,322.93,220.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>Representative Gene Wiki articles ranked and grouped by number of monthly page views between January and June 2009</figDesc><table><row><cell cols="2">Rank</cell><cell cols="4">Average monthly</cell><cell></cell><cell cols="3">Gene Wiki page</cell></row><row><cell></cell><cell></cell><cell cols="3">page views</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">1</cell><cell cols="2">109 116</cell><cell></cell><cell></cell><cell></cell><cell cols="2">Insulin</cell><cell></cell></row><row><cell cols="2">2</cell><cell></cell><cell>64 582</cell><cell></cell><cell></cell><cell></cell><cell>Titin</cell><cell></cell><cell></cell></row><row><cell cols="2">3</cell><cell></cell><cell>63 673</cell><cell></cell><cell></cell><cell></cell><cell cols="4">Human chorionic gonadotropin</cell></row><row><cell cols="2">4</cell><cell></cell><cell>50 198</cell><cell></cell><cell></cell><cell></cell><cell cols="2">Vasopressin</cell><cell></cell></row><row><cell cols="2">5</cell><cell></cell><cell>49 908</cell><cell></cell><cell></cell><cell></cell><cell cols="2">ANKH</cell><cell></cell></row><row><cell cols="2">6</cell><cell></cell><cell>36 998</cell><cell></cell><cell></cell><cell></cell><cell cols="2">CLOCK</cell><cell></cell></row><row><cell cols="2">7</cell><cell></cell><cell>34 367</cell><cell></cell><cell></cell><cell></cell><cell cols="2">Catalase</cell><cell></cell></row><row><cell cols="2">8</cell><cell></cell><cell>32 382</cell><cell></cell><cell></cell><cell></cell><cell cols="3">Erythropoietin</cell></row><row><cell cols="2">9</cell><cell></cell><cell>30 933</cell><cell></cell><cell></cell><cell></cell><cell cols="2">Glucagon</cell><cell></cell></row><row><cell cols="2">10</cell><cell></cell><cell>29 617</cell><cell></cell><cell></cell><cell></cell><cell cols="3">Parathyroid hormone</cell></row><row><cell cols="2">101</cell><cell></cell><cell>4173</cell><cell></cell><cell></cell><cell></cell><cell cols="3">Tau protein</cell></row><row><cell cols="2">102</cell><cell></cell><cell>4167</cell><cell></cell><cell></cell><cell></cell><cell cols="3">Interleukin 10</cell></row><row><cell cols="2">103</cell><cell></cell><cell>4162</cell><cell></cell><cell></cell><cell></cell><cell cols="2">APC (gene)</cell><cell></cell></row><row><cell cols="2">104</cell><cell></cell><cell>4151</cell><cell></cell><cell></cell><cell></cell><cell cols="2">C-Met</cell><cell></cell></row><row><cell cols="2">105</cell><cell></cell><cell>4106</cell><cell></cell><cell></cell><cell></cell><cell cols="2">Factor V</cell><cell></cell></row><row><cell cols="2">106</cell><cell></cell><cell>4082</cell><cell></cell><cell></cell><cell></cell><cell cols="3">Interleukin 8</cell></row><row><cell cols="2">107</cell><cell></cell><cell>4034</cell><cell></cell><cell></cell><cell></cell><cell>CD44</cell><cell></cell><cell></cell></row><row><cell cols="2">108</cell><cell></cell><cell>4019</cell><cell></cell><cell></cell><cell></cell><cell cols="4">Histamine H1 receptor</cell></row><row><cell cols="2">109</cell><cell></cell><cell>3980</cell><cell></cell><cell></cell><cell></cell><cell cols="4">Kappa Opioid receptor</cell></row><row><cell cols="2">110</cell><cell></cell><cell>3845</cell><cell></cell><cell></cell><cell></cell><cell cols="4">Dihydrofolate reductase</cell></row><row><cell cols="2">1001</cell><cell></cell><cell>308</cell><cell></cell><cell></cell><cell></cell><cell cols="2">CSDA</cell><cell></cell></row><row><cell cols="2">1002</cell><cell></cell><cell>308</cell><cell></cell><cell></cell><cell></cell><cell cols="2">CNTNAP2</cell><cell></cell></row><row><cell cols="2">1003</cell><cell></cell><cell>308</cell><cell></cell><cell></cell><cell></cell><cell cols="2">IGSF8</cell><cell></cell></row><row><cell cols="2">1004</cell><cell></cell><cell>307</cell><cell></cell><cell></cell><cell></cell><cell cols="4">Adenosine A3 receptor</cell></row><row><cell cols="2">1005</cell><cell></cell><cell>307</cell><cell></cell><cell></cell><cell></cell><cell cols="2">RYR1</cell><cell></cell></row><row><cell cols="2">1006</cell><cell></cell><cell>306</cell><cell></cell><cell></cell><cell></cell><cell>ETV6</cell><cell></cell><cell></cell></row><row><cell cols="2">1007</cell><cell></cell><cell>306</cell><cell></cell><cell></cell><cell></cell><cell cols="4">Small heterodimer partner</cell></row><row><cell cols="2">1008</cell><cell></cell><cell>306</cell><cell></cell><cell></cell><cell></cell><cell cols="3">5-HT1D receptor</cell></row><row><cell cols="2">1009</cell><cell></cell><cell>306</cell><cell></cell><cell></cell><cell></cell><cell cols="2">TRPC6</cell><cell></cell></row><row><cell cols="2">1010</cell><cell></cell><cell>306</cell><cell></cell><cell></cell><cell></cell><cell cols="3">Interleukin-6 receptor</cell></row><row><cell></cell><cell>4000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>100%</cell></row><row><cell>Number of genes</cell><cell>3200 800 1600 2400</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>80% 20% 40% 60%</cell><cell>Cumulative % of genes</cell></row><row><cell></cell><cell>0</cell><cell>1 1</cell><cell>2 2</cell><cell>3 3</cell><cell>4 4</cell><cell>5 5</cell><cell>6 6</cell><cell>7 7</cell><cell>8 &gt;8 8 8</cell><cell>0%</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="3">Google rank</cell><cell></cell><cell></cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">Downloaded from https://academic.oup.com/nar/article/38/suppl_1/D633/3112188 by guest on 22 April 2024</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGEMENTS</head><p>The authors acknowledge Konrad F. Koehler for helpful suggestions and enthusiastic editing, Jeff Janes and Julia Turner for technical assistance, as well as the entire community of Wikipedia editors and the Molecular and Cellular Biology WikiProject (http://en.wikipedia. org/wiki/WP:MCB) for contributions and feedback.</p></div>
+			</div>
+
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Funding for this work and for the open access charge was provided by the Novartis Research Foundation and the National Institutes of Health [Grant Number 1R01GM083924 to A.S.].</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTARY DATA</head><p>Supplementary Data are available at NAR Online.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A B</head><p>Figure <ref type="figure">5</ref>. Timelines of Wikipedia views and Google Trends information for HCG (A) and catalase (B). Blue dots represent editing events, with bigger size corresponding to more editing events. The asterisks mark major events in the popular press for HCG and catalase, where Manny Ramirez was linked to performance-enhancing drugs and catalase was linked to premature gray hair, respectively.</p><p>Conflict of interest statement. None declared.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Power-law-like distributions in biomedical publications and research funding</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Hogenesch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">404</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The Mouse Genome Database (MGD): updates and enhancements</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Blake</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Eppig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Bult</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Kadin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Richardson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="D562" to="D567" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Genetic and physical maps of Saccharomyces cerevisiae</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Cherry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ball</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Weng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Juvik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Adler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dunn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dwight</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Riles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Mortimer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">387</biblScope>
+			<biblScope unit="page" from="67" to="73" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">FlyBase: anatomical data, images and queries</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Grumbling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Strelets</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="D484" to="D488" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">The Gene Ontology Annotation (GOA) Database: sharing knowledge in Uniprot with Gene Ontology</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Camon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Magrane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Barrell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Dimmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Maslen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Binns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Harte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Lopez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Apweiler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="D262" to="D266" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Gene Ontology: tool for the unification of biology. The Gene Ontology Consortium</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ashburner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Ball</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Blake</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Botstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Butler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Cherry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Dolinski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Dwight</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Eppig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Genet</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="25" to="29" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Gene Ontology annotations: what they mean and where they come from</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Mcandrews-Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Blake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">S2</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+	<note>Suppl. 5</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Big data: the future of biocuration</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Howe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Costanzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Gojobori</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Hannick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Hide</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kania</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schaeffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>St Pierre</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">455</biblScope>
+			<biblScope unit="page" from="47" to="50" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">The RNA WikiProject: community annotation of RNA families</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Daub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Gardner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tate</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ramsko¨ld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Manske</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">G</forename><surname>Scott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Weinberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Griffiths-Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bateman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">RNA</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2462" to="2464" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">A wiki for the life sciences where authorship matters</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hoffmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Genet</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="1047" to="1051" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A gene wiki for community annotation of gene function</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Huss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Orozco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Goodale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Batalov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Vickers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Valafar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Su</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Biol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">e175</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Calling on a million minds for community annotation in WikiProteins</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ashburner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chichester</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Van Mulligen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Weeber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Den Dunnen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Van Ommen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Musen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cockerill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hermjakob</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">R89</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">WikiPathways: pathway editing for the people</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Pico</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kelder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Van Iersel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hanspers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Conklin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Evelo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Biol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">e184</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">ArrayWiki: an enabling technology for sharing public microarray data repositories and meta-analyses</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Stokes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Torrance</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="page" from="S18" to="24" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Proteopedia -a scientific &apos;wiki&apos; bridging the rift between three-dimensional structure and function of biomacromolecules</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Hodis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Prilusky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Martz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Silman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Moult</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Sussman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">R121</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Entrez Gene: gene-centered information at NCBI</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Maglott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ostell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D</forename><surname>Pruitt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Tatusova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="D26" to="D31" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">EMSY links the BRCA2 pathway to sporadic breast and ovarian cancer</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Hughes-Davies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Huntsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ruas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fuks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Milner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Hsu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Gilks</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="523" to="535" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">The Protein Data Bank</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Berman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Westbrook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Gilliland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Bhat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Weissig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">N</forename><surname>Shindyalov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Bourne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="235" to="242" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Data growth and its impact on the SCOP database: new developments</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Andreeva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Howorth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chandonia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Brenner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Hubbard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chothia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Murzin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="D419" to="D425" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Senile hair graying: H2O2-mediated oxidative stress affects human hair color by blunting methionine sulfoxide repair</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Wood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Decker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hartmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Chavan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rokos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Spencer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hasse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Thornton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shalbaf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Paus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">FASEB J</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="2065" to="2075" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Subramanian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Tamayo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Mootha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Ebert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gillette</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paulovich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Pomeroy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">R</forename><surname>Golub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Lander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="15545" to="15550" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Internet encyclopaedias go head to head</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Giles</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">438</biblScope>
+			<biblScope unit="page" from="900" to="901" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Assigning trust to Wikipedia content</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Adler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chatterjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>De Alfaro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Faella</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Pye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">WikiSym 08: Proceedings of the International Symposium on Wikis</title>
+				<meeting><address><addrLine>Porto, Portugal</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="volume">150</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">The Semantic Web -ISWC</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kro¨tzsch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vrandecˇic´</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vo¨lkel</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006. 2006</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Heidelberg, Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">BioPortal: ontologies and integrated data resources at the click of a mouse</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">F</forename><surname>Noy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">H</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Whetzel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Griffith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jonquet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Rubin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Storey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Chute</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="W170" to="W173" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Flicek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Aken</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Beal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ballester</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Caccamo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Clarke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Coates</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Cunningham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Cutts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="D707" to="D714" />
+			<date type="published" when="2008">2008. 2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">McKusick&apos;s Online Mendelian Inheritance in Man (OMIM)</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Amberger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Bocchini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Scott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hamosh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="D793" to="D796" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">The Universal Protein Resource (UniProt)</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bairoch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bougueleret</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Altairac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Amendolia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Auchincloss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Argoud-Puy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Axelsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Baratin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Blatter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Boeckmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="D169" to="D174" />
+			<date type="published" when="2009">2009. 2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

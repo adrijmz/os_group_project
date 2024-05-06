@@ -160,12 +160,13 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 					</monogr>
 					<idno type="MD5">7572ACF1C8DB69A29CBBCEEEB9D061DF</idno>
 					<idno type="DOI">10.1038/s41467-019-14108-y</idno>
+					<note type="submission">Received: 3 May 2019; Accepted: 16 December 2019;</note>
 				</biblStruct>
 			</sourceDesc>
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -173,10 +174,1315 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</encodingDesc>
 		<profileDesc>
 			<abstract>
-				<p>The emergence of artificial intelligence (AI) and its progressively wider impact on many sectors requires an assessment of its effect on the achievement of the Sustainable Development Goals. Using a consensus-based expert elicitation process, we find that AI can enable the accomplishment of 134 targets across all the goals, but it may also inhibit 59 targets. However, current research foci overlook important aspects. The fast development of AI needs to be supported by the necessary regulatory insight and oversight for AI-based technologies to enable sustainable development. Failure to do so could result in gaps in transparency, safety, and ethical standards. T he emergence of artificial intelligence (AI) is shaping an increasing range of sectors. For instance, AI is expected to affect global productivity 1 , equality and inclusion 2 , environmental outcomes 3 , and several other areas, both in the short and long term 4. Reported potential impacts of AI indicate both positive 5 and negative 6 impacts on sustainable development. However, to date, there is no published study systematically assessing the extent to which AI might impact all aspects of sustainable development-defined in this study as the 17 Sustainable Development Goals (SDGs) and 169 targets internationally agreed in the 2030 Agenda for Sustainable Development 7. This is a critical research gap, as we find that AI may influence the ability to meet all SDGs. Here we present and discuss implications of how AI can either enable or inhibit the delivery of all 17 goals and 169 targets recognized in the 2030 Agenda for Sustainable Development. Relationships were characterized by the methods reported at the end of this study, which can be summarized as a consensus-based expert elicitation process, informed by previous studies aimed at mapping SDGs interlinkages 8-10. A summary of the results is given in Fig. 1 and the Supplementary Data 1 provides a complete list of all the SDGs and targets, together with the detailed results from this work. Although there is no internationally agreed definition of AI, for this study we considered as AI any software technology with at least one of the following capabilities: perception-including audio, visual, textual, and tactile (e.g., face recognition), decision-making (e.g., medical diagnosis systems), prediction (e.g., weather forecast), automatic knowledge</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The emergence of artificial intelligence (AI) and its progressively wider impact on many sectors requires an assessment of its effect on the achievement of the Sustainable Development Goals. Using a consensus-based expert elicitation process, we find that AI can enable the accomplishment of 134 targets across all the goals, but it may also inhibit 59 targets. However, current research foci overlook important aspects. The fast development of AI needs to be supported by the necessary regulatory insight and oversight for AI-based technologies to enable sustainable development. Failure to do so could result in gaps in transparency, safety, and ethical standards.</p><p>T he emergence of artificial intelligence (AI) is shaping an increasing range of sectors. For instance, AI is expected to affect global productivity 1 , equality and inclusion 2 , environmental outcomes 3 , and several other areas, both in the short and long term 4 . Reported potential impacts of AI indicate both positive 5 and negative 6 impacts on sustainable development. However, to date, there is no published study systematically assessing the extent to which AI might impact all aspects of sustainable development-defined in this study as the 17 Sustainable Development Goals (SDGs) and 169 targets internationally agreed in the 2030 Agenda for Sustainable Development 7 . This is a critical research gap, as we find that AI may influence the ability to meet all SDGs.</p><p>Here we present and discuss implications of how AI can either enable or inhibit the delivery of all 17 goals and 169 targets recognized in the 2030 Agenda for Sustainable Development. Relationships were characterized by the methods reported at the end of this study, which can be summarized as a consensus-based expert elicitation process, informed by previous studies aimed at mapping SDGs interlinkages <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref> . A summary of the results is given in Fig. <ref type="figure">1</ref> and the Supplementary Data 1 provides a complete list of all the SDGs and targets, together with the detailed results from this work. Although there is no internationally agreed definition of AI, for this study we considered as AI any software technology with at least one of the following capabilities: perception-including audio, visual, textual, and tactile (e.g., face recognition), decision-making (e.g., medical diagnosis systems), prediction (e.g., weather forecast), automatic knowledge</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>extraction and pattern recognition from data (e.g., discovery of fake news circles in social media), interactive communication (e.g., social robots or chat bots), and logical reasoning (e.g., theory development from premises). This view encompasses a large variety of subfields, including machine learning.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Documented connections between AI and the SDGs</head><p>Our review of relevant evidence shows that AI may act as an enabler on 134 targets (79%) across all SDGs, generally through a technological improvement, which may allow to overcome certain present limitations. However, 59 targets (35%, also across all SDGs) may experience a negative impact from the development of AI. For the purpose of this study, we divide the SDGs into three categories, according to the three pillars of sustainable development, namely Society, Economy, and Environment <ref type="bibr">11,</ref><ref type="bibr" target="#b10">12</ref> (see the Methods section). This classification allows us to provide an overview of the general areas of influence of AI. In Fig. <ref type="figure" target="#fig_0">1</ref>, we also provide the results obtained when weighting how appropriate is the evidence presented in each reference to assess an interlinkage to the percentage of targets assessed, as discussed in the Methods section and below. A detailed assessment of the Society, Economy, and Environment groups, together with illustrative examples, are discussed next.</p><p>AI and societal outcomes. Sixty-seven targets (82%) within the Society group could potentially benefit from AI-based technologies (Fig. <ref type="figure" target="#fig_1">2</ref>). For instance, in SDG 1 on no poverty, SDG 4 on quality education, SDG 6 on clean water and sanitation, SDG 7 on affordable and clean energy, and SDG 11 on sustainable cities, AI may act as an enabler for all the targets by supporting the provision of food, health, water, and energy services to the population. It can also underpin low-carbon systems, for instance, by supporting the creation of circular economies and smart cities that efficiently use their resources <ref type="bibr" target="#b11">13,</ref><ref type="bibr" target="#b12">14</ref> . For example, AI can enable smart and low-carbon cities encompassing a range of interconnected technologies such as electrical autonomous vehicles and smart appliances that can enable demand response in the electricity sector <ref type="bibr" target="#b11">13,</ref><ref type="bibr" target="#b12">14</ref> (with benefits across SDGs 7, 11, and 13 on climate action). AI can also help to integrate variable renewables by enabling smart grids that partially match electrical demand to times when the sun is shining and the wind is blowing <ref type="bibr" target="#b11">13</ref> . Fewer targets in the Society group can be impacted negatively by AI (31 targets, 38%) than the ones with positive impact. However, their consideration is crucial. Many of these relate to how the technological improvements enabled by AI may be implemented in countries with different cultural values and wealth. Advanced AI technology, research, and product design may require massive computational resources only available through large computing centers. These facilities have a very high energy requirement and carbon footprint <ref type="bibr" target="#b13">15</ref> . For instance, cryptocurrency applications such as Bitcoin are globally using as much electricity as some nations' electrical demand <ref type="bibr" target="#b14">16</ref> , compromising outcomes in the SDG 7 sphere, but also on SDG 13 on Climate Action. Some estimates suggest that the total electricity demand of information and communications technologies (ICTs) could require up to 20% of the global electricity demand by 2030, from around 1% today <ref type="bibr" target="#b13">15</ref> . Green growth of ICT technology is therefore essential <ref type="bibr" target="#b15">17</ref> . More efficient cooling systems for data centers, broader energy efficiency, and renewable-energy usage in ICTs will all play a role in containing the electricity demand growth <ref type="bibr" target="#b13">15</ref> . In addition to more efficient and renewable-energy-based data centers, it is essential to embed human knowledge in the development of AI models. Besides the fact that the human brain consumes much less energy than what is used to train AI models, the available knowledge introduced in the model (see, for instance, physics-informed deep learning <ref type="bibr" target="#b16">18</ref> ) does not need to be learnt through data-intensive training, a fact that may significantly reduce the associated energy consumption. Although AI-enabled technology can act as a catalyst to achieve the 2030 Agenda, it may also trigger inequalities  that may act as inhibitors on SDGs 1, 4, and 5. This duality is reflected in target 1.1, as AI can help to identify areas of poverty and foster international action using satellite images <ref type="bibr" target="#b4">5</ref> . On the other hand, it may also lead to additional qualification requirements for any job, consequently increasing the inherent inequalities <ref type="bibr" target="#b17">19</ref> and acting as an inhibitor towards the achievement of this target.</p><p>Another important drawback of AI-based developments is that they are traditionally based on the needs and values of nations in which AI is being developed. If AI technology and big data are used in regions where ethical scrutiny, transparency, and democratic control are lacking, AI might enable nationalism, hate towards minorities, and bias election outcomes <ref type="bibr" target="#b18">20</ref> . The term "big nudging" has emerged to represent using big data and AI to exploit psychological weaknesses to steer decisions-creating problems such as damaging social cohesion, democratic principles, and even human rights <ref type="bibr" target="#b19">21</ref> . AI has been recently utilized to develop citizen scores, which are used to control social behavior <ref type="bibr" target="#b20">22</ref> . This type of score is a clear example of threat to human rights due to AI misuse and one of its biggest problems is the lack of information received by the citizens on the type of analyzed data and the consequences this may have on their lives. It is also important to note that AI technology is unevenly distributed: for instance, complex AI-enhanced agricultural equipment may not be accessible to small farmers and thus produce an increased gap with respect to larger producers in more developed economies <ref type="bibr" target="#b21">23</ref> , consequently inhibiting the achievement of some targets of SDG 2 on zero hunger. There is another important shortcoming of AI in the context of SDG 5 on gender equality: there is insufficient research assessing the potential impact of technologies such as smart algorithms, image recognition, or reinforced learning on discrimination against women and minorities. For instance, machine-learning algorithms uncritically trained on regular news articles will inadvertently learn and reproduce the societal biases against women and girls, which are embedded in current languages. Word embeddings, a popular technique in natural language processing, have been found to exacerbate existing gender stereotypes <ref type="bibr" target="#b1">2</ref> . In addition to the lack of diversity in datasets, another main issue is the lack of gender, racial, and ethnic diversity in the AI workforce <ref type="bibr" target="#b22">24</ref> . Diversity is one of the main principles supporting innovation and societal resilience, which will become essential in a society exposed to changes associated to AI development <ref type="bibr" target="#b23">25</ref> . Societal resilience is also promoted by decentralization, i.e., by the implementation of AI technologies adapted to the cultural background and the particular needs of different regions.</p><p>AI and economic outcomes. The technological advantages provided by AI may also have a positive impact on the achievement of a number of SDGs within the Economy group. We have identified benefits from AI on 42 targets (70%) from these SDGs, whereas negative impacts are reported in 20 targets (33%), as shown in Fig. <ref type="figure" target="#fig_0">1</ref>. Although Acemoglu and Restrepo 1 report a net positive impact of AI-enabled technologies associated to increased productivity, the literature also reflects potential negative impacts mainly related to increased inequalities <ref type="bibr" target="#b24">[26]</ref><ref type="bibr" target="#b25">[27]</ref><ref type="bibr" target="#b26">[28]</ref><ref type="bibr" target="#b27">[29]</ref> . In the context of the Economy group of SDGs, if future markets rely heavily on data analysis and these resources are not equally available in low-and middle-income countries, the economical gap may be significantly increased due to the newly introduced inequalities <ref type="bibr" target="#b28">30,</ref><ref type="bibr" target="#b29">31</ref> significantly impacting SDGs 8 (decent work and economic growth), 9 (industry, innovation and infrastructure), and 10 (reduced inequalities). Brynjolfsson and McAfee 31 argue that AI can exacerbate inequality also within nations. By replacing old jobs with ones requiring more skills, technology disproportionately rewards the educated: since the mid 1970s, the salaries in the United States (US) salaries rose about 25% for those with graduate degrees, while the average high-school dropout took a 30% pay cut. Moreover, automation shifts corporate income to those who own companies from those who work there. Such transfer of revenue from workers to investors helps explain why, even though the combined revenues of Detroit's "Big 3" (GM, Ford, and Chrysler) in 1990 were almost identical to those of Silicon Valley's "Big 3" (Google, Apple, and Facebook) in 2014, the latter had 9 times fewer employees and were worth 30 times more on the stock market <ref type="bibr" target="#b30">32</ref> . Figure <ref type="figure">3</ref> shows an assessment of the documented positive and negative effects on the various targets within the SDGs in the Economy group.</p><p>Although the identified linkages in the Economy group are mainly positive, trade-offs cannot be neglected. For instance, AI can have a negative effect on social media usage, by showing users content specifically suited to their preconceived ideas. This may lead to political polarization <ref type="bibr" target="#b31">33</ref> and affect social cohesion <ref type="bibr" target="#b19">21</ref> with consequences in the context of SDG 10 on reduced inequalities. On the other hand, AI can help identify sources of inequality and conflict <ref type="bibr" target="#b32">34,</ref><ref type="bibr" target="#b33">35</ref> , and therewith potentially reduce inequalities, for instance, by using simulations to assess how virtual societies may respond to changes. However, there is an underlying risk when using AI to evaluate and predict human behavior, which is the inherent bias in the data. It has been reported that a number of discriminatory challenges are faced in the automated targeting of online job advertising using AI <ref type="bibr" target="#b33">35</ref> , essentially related to the previous biases in selection processes conducted by human recruiters. The work by <ref type="bibr">Dalenberg 35</ref> highlights the need of modifying the data preparation process and explicitly adapting the AI-based algorithms used for selection processes to avoid such biases.</p><p>AI and environmental outcomes. The last group of SDGs, i.e., the one related to Environment, is analyzed in Fig. <ref type="figure">4</ref>. The three SDGs in this group are related to climate action, life below water and life on land (SDGs 13, 14, and 15). For the Environment group, we identified 25 targets (93%) for which AI could act as an enabler. Benefits from AI could be derived by the possibility of analyzing large-scale interconnected databases to develop joint actions aimed at preserving the environment. Looking at SDG 13 on climate action, there is evidence that AI advances will support the understanding of climate change and the modeling of its possible impacts. Furthermore, AI will support low-carbon energy systems with high integration of renewable energy and energy efficiency, which are all needed to address climate change <ref type="bibr" target="#b11">13,</ref><ref type="bibr" target="#b34">36,</ref><ref type="bibr" target="#b35">37</ref> . AI can also be used to help improve the health of ecosystems. The achievement of target 14.1, calling to prevent and significantly reduce marine pollution of all kinds, can benefit from AI through algorithms for automatic identification of possible oil spills <ref type="bibr" target="#b36">38</ref> . Another example is target 15.3, which calls for combating desertification and restoring degraded land and soil. According to Mohamadi et al. <ref type="bibr" target="#b37">39</ref> , neural networks and objectiveoriented techniques can be used to improve the classification of vegetation cover types based on satellite images, with the possibility of processing large amounts of images in a relatively short time. These AI techniques can help to identify desertification trends over large areas, information that is relevant for environmental planning, decision-making, and management to avoid further desertification, or help reverse trends by identifying the major drivers. However, as pointed out above, efforts to achieve SDG 13 on climate action could be undermined by the highenergy needs for AI applications, especially if non carbon-neutral energy sources are used. Furthermore, despite the many examples of how AI is increasingly applied to improve biodiversity monitoring and conservation <ref type="bibr" target="#b38">40</ref> , it can be conjectured that an increased access to AI-related information of ecosystems may drive overexploitation of resources, although such misuse has so far not been sufficiently documented. This aspect is discussed below, where currently identified gaps in AI research are considered.</p><p>An assessment of the collected evidence on the interlinkages. A deeper analysis of the gathered evidence was undertaken as shown in Fig. <ref type="figure" target="#fig_0">1</ref> (and explained in the Methods section). In practice, each interlinkage was weighted based on the applicability and appropriateness of each of the references to assess a specific interlinkage-and possibly identify research gaps.</p><p>Although accounting for the type of evidence has a relatively small effect on the positive impacts (we see a reduction of positively affected targets from 79% to 71%), we observe a more significant reduction (from 35% to 23%) in the targets with negative impact of AI. This can be partly due the fact that AI research typically involves quantitative methods that would bias the results towards the positive effects. However, there are some differences across the Society, Economy and Environment spheres. In the Society sphere, when weighting the appropriateness of evidence, positively affected targets diminish by 5 percentage points (p.p.) and negatively affected targets by 13 p.p. In particular, weighting the appropriateness of evidence on negative impacts on SDG 1 (on no poverty) and SDG 6 (on clean water and sanitation) reduces the fraction of affected targets by 43 p.p. and 35 p.p., respectively. In the Economy group instead, positive impacts are reduced more (15 p.p.) than negative ones (10 p.p.) when taking into account the appropriateness of the found evidence to speak of the issues. This can be related to the extensive study in literature assessing the displacement of jobs due to AI (because of clear policy and societal concerns), but overall the longer-term benefits of AI on the economy are perhaps not so extensively characterized by currently available methods. Finally, although the weighting of evidence decreases the positive impacts of AI on the Environment group only by 8 p.p., the negative impacts see the largest average reduction (18 p.p.). This is explained by the fact that, although there are some indications of the potential negative impact of AI on this SDG, there is no strong evidence (in any of the targets) supporting this claim, and therefore this is a relevant area for future research.</p><p>In general, the fact that the evidence on interlinkages between AI and the large majority of targets is not based on tailored analyses and tools to refer to that particular issue provides a strong rationale to address a number of research gaps, which are identified and listed in the section below.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Research gaps on the role of AI in sustainable development</head><p>The more we enable SDGs by deploying AI applications, from autonomous vehicles <ref type="bibr" target="#b39">41</ref> to AI-powered healthcare solutions <ref type="bibr" target="#b40">42</ref> and smart electrical grids <ref type="bibr" target="#b11">13</ref> , the more important it becomes to invest in the AI safety research needed to keep these systems robust and beneficial, so as to prevent them from malfunctioning, or from getting hacked <ref type="bibr" target="#b41">43</ref> . A crucial research venue for a safe integration of AI is understanding catastrophes, which can be enabled by a systemic fault in AI technology. For instance, a recent World Economic Forum (WEF) report raises such a concern due to the integration of AI in the financial sector <ref type="bibr" target="#b42">44</ref> . It is therefore very important to raise awareness on the risks associated to possible failures of AI systems in a society progressively more dependent on this technology. Furthermore, although we were able to find numerous studies suggesting that AI can potentially serve as an enabler for many SDG targets and indicators, a significant fraction of these studies have been conducted in controlled laboratory environments, based on limited datasets or using prototypes <ref type="bibr" target="#b43">[45]</ref><ref type="bibr" target="#b44">[46]</ref><ref type="bibr" target="#b45">[47]</ref> . Hence, extrapolating this information to evaluate the real-world effects often remains a challenge. This is particularly true when measuring the impact of AI across broader scales, both temporally and spatially. We acknowledge that conducting controlled experimental trials for evaluating real-world impacts of AI can result in depicting a snapshot situation, where AI tools are tailored towards that specific environment. However, as society is constantly changing (also due to factors including non-AI-based technological advances), the requirements set for AI are changing as well, resulting in a feedback loop with interactions between society and AI. Another underemphasized aspect in existing literature is the resilience of the society towards AI-enabled changes. Therefore, novel methodologies are required to ensure that the impact of new technologies are assessed from the points of view of efficiency, ethics, and sustainability, prior to launching large-scale AI deployments. In this sense, research aimed at obtaining insight on the reasons for failure of AI systems, introducing combined human-machine analysis tools <ref type="bibr" target="#b46">48</ref> , are an essential step towards accountable AI technology, given the large risk associated to such a failure.</p><p>Although we found more published evidence of AI serving as an enabler than as an inhibitor on the SDGs, there are at least two important aspects that should be considered. First, self-interest can be expected to bias the AI research community and industry towards publishing positive results. Second, discovering detrimental aspects of AI may require longer-term studies and, as mentioned above, there are not many established evaluation methodologies available to do so. Bias towards publishing positive results is particularly apparent in the SDGs corresponding to the Environment group. A good example of this bias is target 14.5 on conserving coastal and marine areas, where machine-learning algorithms can provide optimum solutions given a wide range of parameters regarding the best choice of areas to include in conservation networks <ref type="bibr" target="#b47">49</ref> . However, even if the solutions are optimal from a mathematical point of view (given a certain range of selected parameters), additional research would be needed to assess the long-term impact of such algorithms on equity and fairness <ref type="bibr" target="#b5">6</ref> , precisely because of the unknown factors that may come into play. Regarding the second point stated above, it is likely that the AI projects with the highest potential of maximizing profit will get funded. Without control, research on AI is expected to be directed towards AI applications where funding and commercial interests are. This may result in increased inequality <ref type="bibr" target="#b48">50</ref> . Consequently, there is the risk that AI-based technologies with potential to achieve certain SDGs may not be prioritized, if their expected economic impact is not high. Furthermore, it is essential to promote the development of initiatives to assess the societal, ethical, legal, and environmental implications of new AI technologies.</p><p>Substantive research and application of AI technologies to SDGs is concerned with the development of better data-mining and machine-learning techniques for the prediction of certain events. This is the case of applications such as forecasting extreme weather conditions or predicting recidivist offender behavior. The expectation with this research is to allow the preparation and response for a wide range of events. However, there is a research gap in real-world applications of such systems, e.g., by governments (as discussed above). Institutions have a number of barriers to the adoption AI systems as part of their decision-making process, including the need of setting up measures for cybersecurity and the need to protect the privacy of citizens and their data. Both aspects have implications on human rights regarding the issues of surveillance, tracking, communication, and data storage, as well as automation of processes without rigorous ethical standards <ref type="bibr" target="#b19">21</ref> . Targeting these gaps would be essential to ensure the usability and practicality of AI technologies for governments. This would also be a prerequisite for understanding long-term impacts of AI regarding its potential, regulating its use to reduce the possible bias that can be inherent to AI <ref type="bibr" target="#b5">6</ref> .</p><p>Furthermore, our research suggests that AI applications are currently biased towards SDG issues that are mainly relevant to those nations where most AI researchers live and work. For instance, many systems applying AI technologies to agriculture, e.g., to automate harvesting or optimize its timing, are located within wealthy nations. Our literature search resulted in only a handful of examples where AI technologies are applied to SDGrelated issues in nations without strong AI research. Moreover, if AI technologies are designed and developed for technologically advanced environments, they have the potential to exacerbate problems in less wealthy nations (e.g., when it comes to food production). This finding leads to a substantial concern that developments in AI technologies could increase inequalities both between and within countries, in ways which counteract the overall purpose of the SDGs. We encourage researchers and funders to focus more on designing and developing AI solutions, which respond to localized problems in less wealthy nations and regions. Projects undertaking such work should ensure that solutions are not simply transferred from technology-intensive nations. Instead, they should be developed based on a deep understanding of the respective region or culture to increase the likelihood of adoption and success.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Towards sustainable AI</head><p>The great wealth that AI-powered technology has the potential to create may go mainly to those already well-off and educated, while job displacement leaves others worse off. Globally, the growing economic importance of AI may result in increased inequalities due to the unevenly distributed educational and computing resources throughout the world. Furthermore, the existing biases in the data used to train AI algorithms may result in the exacerbation of those biases, eventually leading to increased discrimination. Another related problem is the usage of AI to produce computational (commercial, political) propaganda based on big data (also defined as "big nudging"), which is spread through social media by independent AI agents with the goals of manipulating public opinion and producing political polarization <ref type="bibr" target="#b49">51</ref> . Despite the fact that current scientific evidence refutes technological determinism of such fake news <ref type="bibr" target="#b49">51</ref> , long-term impacts of AI are possible (although unstudied) due to a lack of robust research methods. A change of paradigm is therefore needed to promote cooperation and to limit the possibilities for control of citizen behavior through AI. The concept of Finance 4.0 has been proposed <ref type="bibr" target="#b50">52</ref> as a multi-currency financial system promoting a circular economy, which is aligned with societal goals and values. Informational selfdetermination (in which the individual takes an active role in how their data are handled by AI systems) would be an essential aspect of such a paradigm <ref type="bibr" target="#b50">52</ref> . The data intensiveness of AI applications creates another problem: the need for more and more detailed information to improve AI algorithms, which is in conflict with the need of more transparent handling and protection of personal data <ref type="bibr" target="#b51">53</ref> . One area where this conflict is particularly important is healthcare: Panch et al. <ref type="bibr" target="#b52">54</ref> argue that although the vast amount of personal healthcare data could lead to the development of very powerful tools for diagnosis and treatment, the numerous problems associated to data ownership and privacy call for careful policy intervention. This is also an area where more research is needed to assess the possible long-term negative consequences. All the challenges mentioned above culminate in the academic discourse about legal personality of robots <ref type="bibr" target="#b53">55</ref> , which may lead to alarming narratives of technological totalitarianism.</p><p>Many of these aspects result from the interplay between technological developments on one side and requests from individuals, response from governments, as well as environmental resources and dynamics on the other. Figure <ref type="figure" target="#fig_4">5</ref> shows a schematic representation of these dynamics, with emphasis on the role of technology. Based on the evidence discussed above, these interactions are not currently balanced and the advent of AI has exacerbated the process. A wide range of new technologies are being developed very fast, significantly affecting the way individuals live as well as the impacts on the environment, requiring new piloting procedures from governments. The problem is that neither individuals nor governments seem to be able to follow the pace of these technological developments. This fact is illustrated by the lack of appropriate legislation to ensure the long-term viability of these new technologies. We argue that it is essential to reverse this trend. A first step in this direction is to establish adequate policy and legislation frameworks, to help direct the vast potential of AI towards the highest benefit for individuals and the environment, as well as towards the achievement of the SDGs. Regulatory oversight should be preceded by regulatory insight, where policymakers have sufficient understanding of AI challenges to be able to formulate sound policy. Developing such insight is even more urgent than oversight, as policy formulated without understanding is likely to be ineffective at best and counterproductive at worst.</p><p>Although strong and connected institutions (covered by SDG 16) are needed to regulate the future of AI, we find that there is limited understanding of the potential impact of AI on institutions. Examples of the positive impacts include AI algorithms aimed at improving fraud detection <ref type="bibr" target="#b54">56,</ref><ref type="bibr" target="#b55">57</ref> or assessing the possible effects of certain legislation <ref type="bibr" target="#b56">58,</ref><ref type="bibr" target="#b57">59</ref> . Another concern is that datadriven approaches for policing may hinder equal access to justice because of algorithm bias, particularly towards minorities <ref type="bibr" target="#b58">60</ref> . Consequently, we believe that it is imperative to develop legislation regarding transparency and accountability of AI, as well as to decide the ethical standards to which AI-based technology should be subjected to. This debate is being pushed forward by initiatives such as the IEEE (Institute of Electrical and Electronics Engineers) ethical aligned design <ref type="bibr" target="#b58">60</ref> and the new EU (European Union) ethical guidelines for trustworthy AI <ref type="bibr" target="#b59">61</ref> . It is noteworthy that despite the importance of an ethical, responsible, and trustworthy approach to AI development and use, in a sense, this issue is independent of the aims of the article. In other words, one can envision AI applications that improve SDG outcomes while not being fully aligned with AI ethics guidelines. We therefore recommend that AI applications that target SDGs are open and explicit about guiding ethical principles, also by indicating explicitly how they align with the existing guidelines. On the other hand, the lack of interpretability of AI, which is currently one of the challenges of AI research, adds an additional complication to the enforcement of such regulatory actions <ref type="bibr" target="#b60">62</ref> . Note that this implies that AI algorithms (which are trained with data consisting of previous regulations and decisions) may act as a "mirror" reflecting biases and unfair policy. This presents an opportunity to possibly identify and correct certain errors in the existing procedures. The friction between the uptake of datadriven AI applications and the need of protecting the privacy and security of the individuals is stark. When not properly regulated, the vast amount of data produced by citizens might potentially be used to influence consumer opinion towards a certain product or political cause <ref type="bibr" target="#b49">51</ref> .</p><p>AI applications that have positive societal welfare implications may not always benefit each individual separately <ref type="bibr" target="#b39">41</ref> . This inherent dilemma of collective vs. individual benefit is relevant in the scope of AI applications but is not one that should be solved by the application of AI itself. This has always been an issue affecting humankind and it cannot solved in a simple way, since such a solution requires participation of all involved stakeholders. The dynamicity of context and the level of abstraction at which human values are described imply that there is not a single ethical theory that holds all the time in all situations <ref type="bibr" target="#b61">63</ref> . Consequently, a single set of utilitarian ethical principles with AI would not be recommendable due to the high complexity of our societies <ref type="bibr" target="#b50">52</ref> . It is also essential to be aware of the potential complexity in the interaction between human and AI agents, and of the increasing need for ethics-driven legislation and certification mechanisms for AI systems. This is true for all AI applications, but especially those that, if they became uncontrolled, could have even catastrophic effects on humanity, such as autonomous weapons. Regarding the latter, associations of AI and robotics experts are already getting together to call for legislation and limitations of their use 64 .</p><p>Furthermore, associations such as the Future of Life Institute are reviewing and collecting policy actions and shared principles around the world to monitor progress towards sustainabledevelopment-friendly AI <ref type="bibr" target="#b64">65</ref> . To deal with the ethical dilemmas raised above, it is important that all applications provide openness about the choices and decisions made during design, development, and use, including information about the provenance and governance of the data used for training algorithms, and about whether and how they align with existing AI guidelines. It is therefore important to adopt decentralized AI approaches for a more equitable development of AI <ref type="bibr" target="#b65">66</ref> .</p><p>We are at a critical turning point for the future of AI. A global and science-driven debate to develop shared principles and legislation among nations and cultures is necessary to shape a future in which AI positively contributes to the achievement of all the SDGs. The current choices to develop a sustainable-development-  AI by 2030 have the potential to unlock benefits that could go far-beyond the SDGs within our century. All actors in all nations should be represented in this dialogue, to ensure that no one is left behind. On the other hand, postponing or not having such a conversation could result in an unequal and unsustainable AI-fueled future.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>In this section we describe the process employed to obtain the results described in the present study and shown in the Supplementary Data 1. The goal was to answer the question "Is there published evidence of AI acting as an enabler or an inhibitor for this particular target?" for each of the 169 targets within the 17 SDGs. To this end, we conducted a consensus-based expert elicitation process, informed by previous studies on mapping SDGs interlinkages <ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b8">9</ref> and following Butler et al. <ref type="bibr" target="#b66">67</ref> and Morgan <ref type="bibr" target="#b67">68</ref> . The authors of this study are academics spanning a wide range of disciplines, including engineering, natural and social sciences, and acted as experts for the elicitation process. The authors performed an expert-driven literature search to support the identified connections between AI and the various targets, where the following sources of information were considered as acceptable evidence: published work on real-world applications (given the quality variation depending on the venue, we ensured that the publications considered in the analysis were of sufficient quality); published evidence on controlled/laboratory scenarios (given the quality variation depending on the venue, we ensured that the publications considered in the analysis were of sufficient quality); reports from accredited organizations (for instance: UN or government bodies); and documented commercialstage applications. On the other hand, the following sources of information were not considered as acceptable evidence: educated conjectures, real-world applications without peer-reviewed research; media, public beliefs or other sources of information.</p><p>The expert elicitation process was conducted as follows: each of the SDGs was assigned to one or more main contributors, and in some cases to several additional contributors as summarized in the Supplementary Data 1 (here the initials correspond to the author names). The main contributors carried out a first literature search for that SDG and then the additional contributors completed the main analysis. One published study on a synergy or a trade-off between a target and AI was considered enough for mapping the interlinkage. However, for nearly all targets several references are provided. After the analysis of a certain SDG was concluded by the contributors, a reviewer was assigned to evaluate the connections and reasoning presented by the contributors. The reviewer was not part of the first analysis and we tried to assign the roles of the main contributor and reviewer to experts with complementary competences for each of the SDGs. The role of the reviewer was to bring up additional points of view and considerations, while critically assessing the analysis. Then, the main contributors and reviewers iteratively discussed to improve the results presented for each of the SDGs until the analysis for all the SDGs was sufficiently refined.</p><p>After reaching consensus regarding the assessment shown in the Supplementary Data 1, we analyzed the results by evaluating the number of targets for which AI may act as an enabler or an inhibitor, and calculated the percentage of targets with positive and negative impact of AI for each of the 17 goals, as shown in Fig. <ref type="figure" target="#fig_0">1</ref>. In addition, we divided the SDGs into the three following categories: Society, Economy, and Environment, consistent with the classification discussed by Refs. <ref type="bibr">11,</ref><ref type="bibr" target="#b10">12</ref> . The SDGs assigned to each of the categories are shown in Fig. <ref type="figure" target="#fig_5">6</ref> and the individual results from each of these groups can be observed in Figs. <ref type="figure" target="#fig_1">2-4</ref>. These figures indicate, for each target within each SDG, whether any published evidence of positive or negative impact was found.</p><p>Taking into account the types of evidence. In the methodology described above, a connection between AI and a certain target is established if at least one reference documenting such a link was found. As the analyzed studies rely on very different types of evidence, it is important to classify the references based on the methods employed to support their conclusions. Therefore, all the references in the Supplementary Data 1 include a classification from (A) to (D) according to the following criteria:</p><p>• References using sophisticated tools and data to refer to this particular issue and with the possibility to be generalized are of type (A).</p><p>• Studies based on data to refer to this particular issue, but with limited generalizability, are of type (B).</p><p>• Anecdotal qualitative studies and methods are of type (C) .</p><p>• Purely theoretical or speculative references are of type (D).</p><p>The various classes were assigned following the same expert elicitation process described above. Then, the contribution of these references towards the linkages is weighted and categories (A), (B), (C), and (D) are assigned relative weights of 1, 0.75, 0.5, and 0.25, respectively. It is noteworthy that, given the vast range of studies on all the SDG areas, the literature search was not exhaustive and, therefore, certain targets are related to more references than others in our study. To avoid any bias associated to the different amounts of references in the various targets, we considered the largest positive and negative weight to establish the connection with each target. Let us consider the following example: for a certain target, one reference of type (B) documents a positive connection and two references of types (A) and (D) document a negative connection with AI. In this case, the potential positive impact of AI on that target will be assessed with 0.75, while the potential negative impact is 1.</p><p>Limitations of the research. The presented analysis represents the perspective of the authors. Some literature on how AI might affect certain SDGs could have been missed by the authors or there might not be published evidence yet on such interlinkage. Nevertheless, the employed methods tried to minimize the subjectivity of the assessment. How AI might affect the delivery of each SDG was assessed and reviewed by several authors and a number of studies were reviewed for each interlinkage. Furthermore, as discussed in the Methods section, each interlinkage was discussed among a subset of authors until consensus was reached on its nature.</p><p>Finally, this study relies on the analysis of the SDGs. The SDGs provide a powerful lens for looking at internationally agreed goals on sustainable development and present a leap forward compared with the Millenium Development Goals in the representation of all spheres of sustainable development, encompassing human rights <ref type="bibr" target="#b68">69</ref> , social sustainability, environmental outcomes, and economic development. However, the SDGs are a political compromise and might be limited in the representation of some of the complex dynamics and crossinteractions among targets. Therefore, the SDGs have to be considered in conjunction with previous and current, and other international agreements <ref type="bibr" target="#b8">9</ref> . For instance, as pointed out in a recent work by UN Human Rights <ref type="bibr" target="#b68">69</ref> , human rights considerations are highly embedded in the SDGs. Nevertheless, the SDGs should be considered as a complement, rather than a replacement, of the United Nations Universal Human Rights Charter 70 . </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Society Economy</head><note type="other">Environment</note></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Summary of positive and negative impact of AI on the various SDGs. Documented evidence of the potential of AI acting as (a) an enabler or (b) an inhibitor on each of the SDGs. The numbers inside the colored squares represent each of the SDGs (see the Supplementary Data 1). The percentages on the top indicate the proportion of all targets potentially affected by AI and the ones in the inner circle of the figure correspond to proportions within each SDG. The results corresponding to the three main groups, namely Society, Economy, and Environment, are also shown in the outer circle of the figure. The results obtained when the type of evidence is taken into account are shown by the inner shaded area and the values in brackets.</figDesc><graphic coords="2,51.61,50.78,492.04,246.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2</head><label>2</label><figDesc>Fig.2Detailed assessment of the impact of AI on the SDGs within the Society group. Documented evidence of positive or negative impact of AI on the achievement of each of the targets from SDGs 1, 2, 3, 4, 5, 6, 7, 11, and 16 (https://www.un.org/sustainabledevelopment/). Each block in the diagram represents a target (see the Supplementary Data 1 for additional details on the targets). For targets highlighted in green or orange, we found published evidence that AI could potentially enable or inhibit such target, respectively. The absence of highlighting indicates the absence of identified evidence. It is noteworthy that this does not necessarily imply the absence of a relationship. (The content of of this figure has not been reviewed by the United Nations and does not reflect its views).</figDesc><graphic coords="3,117.61,71.63,223.72,204.16" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 Fig. 4</head><label>34</label><figDesc>Fig. 3 Detailed assessment of the impact of AI on the SDGs within the Economy group. Documented evidence of positive or negative impact of AI on the achievement of each of the targets from SDGs 8, 9, 10, 12, and 17 (https://www.un.org/sustainabledevelopment/). The interpretation of the blocks and colors is as in Fig. 2. (The content of of this figure has not been reviewed by the United Nations and does not reflect its views).</figDesc><graphic coords="4,117.61,70.91,193.48,121.12" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>o u rc e s , w e ll -b e in g R e s o u rc e s N e e d s , + /-im p a c ts , b e h a v io r s N e w n e e d s T e c h n o l o g y a d v a n c e m e n t s N e w t e c h n o l o g y f o r l e g i s l a t i o n L e g i s l a t i o n a n d s t a n d a r d s N e e d s , + /im p a c ts , p o li c y</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5 Interaction of AI and society. Schematic representation showing the identified agents and their roles towards the development of AI. Thicker arrows indicate faster change. In this representation, technology affects individuals through technical developments, which change the way people work andinteract with each other and with the environment, whereas individuals would interact with technology through new needs to be satisfied. Technology (including technology itself and its developers) affects governments through new developments that need appropriate piloting and testing. Also, technology developers affect government through lobbying and influencing decision makers. Governments provide legislation and standards to technology. The governments affect individuals through policy and legislation, and individuals would require new legislation consistent with the changing circumstances from the governments. The environment interacts with technology by providing the resources needed for technological development and is affected by the environmental impact of technology. Furthermore, the environment is affected either negatively or positively by the needs, impacts, and choices of individuals and governments, which in turn require environmental resources. Finally, the environment is also an underlying layer that provides the "planetary boundaries" to the mentioned interactions.</figDesc><graphic coords="7,87.61,50.78,420.04,371.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Categorization of the SDGs (https://www.un.org/sustainabledevelopment/) into the Society, Economy, and Environment groups. (The content of this figure has not been reviewed by the United Nations and does not reflect its views).</figDesc><graphic coords="8,87.61,50.78,420.04,130.72" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">NATURE COMMUNICATIONS | (2020) 11:233 | https://doi.org/10.1038/s41467-019-14108-y | www.nature.com/naturecommunications</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Acknowledgements R.V. acknowledges funding provided by KTH Sustainability Office. I.L. acknowledges the Swedish Research Council (registration number 2017-05189) and funding through an Early Career Research Fellowship granted by the Jacobs Foundation. M.B. acknowledges Implicit SSF: Swedish Foundation for Strategic Research project RIT15-0046. V.D. acknowledges the support of the Wallenberg AI, Autonomous Systems, and Software Program (WASP) program funded by the Knut and Alice Wallenberg Foundation. S.D. acknowledges funding from the Leibniz Competition (J45/2018). S.L. acknowledges funding from the European Union's Horizon 2020 Research and Innovation Programme under the Marie Skłodowska-Curie grant agreement number 748625. M.T. was supported by the Ethics and Governance of AI Fund. F.F.N. acknowledges funding from the Formas grant number 2018-01253.</p></div>
+			</div>
+
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data availability</head><p>The authors declare that all the data supporting the findings of this study are available within the paper and its Supplementary Data 1 file.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>R.V. and F.F.N. ideated, designed, and wrote the paper; they also coordinated inputs from the other authors, and assessed and reviewed SDG evaluations as for the Supplementary Data 1. H.A. and I.L. supported the design, wrote, and reviewed sections of the paper; they also assessed and reviewed SDG evaluations as for the Supplementary Data 1. M.B., V.D., S.D., A.F. and S.L. wrote and reviewed sections of the paper; they also assessed and reviewed SDG evaluations as for the Supplementary Data 1. M.T. reviewed the paper and acted as final editor.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Additional information</head><p>Supplementary information is available for this paper at https://doi.org/10.1038/s41467-019-14108-y.</p><p>Correspondence and requests for materials should be addressed to R.V. or F.F.N.</p><p>Peer review information Nature Communications thanks Dirk Helbing and the other, anonymous, reviewer(s) for their contribution to the peer review of this work.</p><p>Reprints and permission information is available at http://www.nature.com/reprints Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Artificial Intelligence, Automation, and Work</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Acemoglu</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Restrepo</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+		<respStmt>
+			<orgName>National Bereau of Economic Research</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">NBER Working Paper No. 24196</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Man is to computer programmer as woman is to homemaker? Debiasing word embeddings</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Bolukbasi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K.-W</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Saligrama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kalai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Neural Inf. Process. Syst</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="4349" to="4357" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Automatically identifying, counting, and describing wild animals in camera-trap images with deep learning</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Norouzzadeh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="E5716" to="E5725" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Life 3.0: Being Human in the Age of Artificial Intelligence</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tegmark</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>Random House Audio Publishing Group</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Combining satellite imagery and machine learning to predict poverty</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Jean</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="790" to="794" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Bias detectives: the researchers striving to make algorithms fair</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Courtland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">558</biblScope>
+			<biblScope unit="page" from="357" to="360" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A/RES/70/1Transforming our world: the 2030 Agenda for Sustainable Development</title>
+		<author>
+			<persName><forename type="first">Assembly</forename><surname>Un General</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Resolut</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="1" to="35" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Mapping synergies and trade-offs between energy and the Sustainable Development Goals</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fuso Nerini</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41560-017-0036-5</idno>
+		<ptr target="https://doi.org/10.1038/s41560-017-0036-5" />
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Energy</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="10" to="15" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Connecting climate action with other Sustainable Development Goals</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fuso Nerini</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41893-019-0334-y</idno>
+		<ptr target="https://doi.org/10.1038/s41893-019-0334-y" />
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Sustain</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="674" to="680" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Use SDGs to guide climate action</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fuso Nerini</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/d41586-018-05007-1</idno>
+		<ptr target="https://doi.org/10.1038/d41586-018-05007-1" />
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">557</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m">Stockholm Resilience Centre&apos;s (SRC) contribution to the 2016 Swedish 2030 Agenda HLPF report</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+		<respStmt>
+			<orgName>Stockholm University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">International Energy Agency. Digitalization &amp; Energy (International Energy Agency</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">A research and innovation agenda for zero-emission European cities</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fuso Nerini</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/su11061692</idno>
+		<ptr target="https://doi.org/10.3390/su11061692" />
+	</analytic>
+	<monogr>
+		<title level="j">Sustainability</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<date type="published" when="1692">1692. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">How to stop data centres from gobbling up the world&apos;s electricity</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Jones</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">561</biblScope>
+			<biblScope unit="page" from="163" to="166" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Decarbonizing Bitcoin: law and policy choices for reducing the energy consumption of Blockchain technologies and digital currencies</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Truby</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Res. Soc. Sci</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="399" to="410" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Organic data centers: A sustainable solution for computing facilities</title>
+		<author>
+			<persName><forename type="first">Ahmad</forename><surname>Karnama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ehsan</forename><surname>Bitaraf Haghighi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ricardo</forename><surname>Vinuesa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Results in Engineering</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">100063</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Physics informed deep learning (part I): data-driven solutions of nonlinear partial differential equations</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Raissi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Perdikaris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Karniadakis</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1711.10561</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Economic growth and automation risks in developing countries due to the transition toward digital modernity</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nagano</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/3209415.3209442</idno>
+		<ptr target="https://doi.org/10.1145/3209415.3209442" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 11th International Conference on Theory and Practice of Electronic Governance-ICEGOV &apos;18</title>
+				<meeting>11th International Conference on Theory and Practice of Electronic Governance-ICEGOV &apos;18</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Society: build digital democracy</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Helbing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Pournaras</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">527</biblScope>
+			<biblScope unit="page" from="33" to="34" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><surname>Helbing</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-90869-4_7</idno>
+		<title level="m">Towards Digital Enlightenment</title>
+				<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="73" to="98" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Nagler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Van Den Hoven</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Helbing</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-90869-4_5</idno>
+		<ptr target="https://doi.org/10.1007/978-3-319-90869-4_5" />
+		<title level="m">Towards Digital Enlightenment</title>
+				<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="41" to="46" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">The &quot;left behind&quot;: smallholders in contemporary Russian agriculture</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Wegren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Agrar. Chang</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="913" to="925" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m">NSF -National Science Foundation. Women and Minorities in the S&amp;E Workforce</title>
+				<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+		<respStmt>
+			<orgName>NSF -National Science Foundation</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">The automation of society is next how to survive the digital revolution</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Helbing</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note>version 1.0 (Createspace</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Cockburn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Henderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Stern</surname></persName>
+		</author>
+		<idno type="DOI">10.3386/w24449</idno>
+		<ptr target="https://doi.org/10.3386/w24449" />
+	</analytic>
+	<monogr>
+		<title level="j">The Impact of Artificial Intelligence on Innovation (NBER</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Daily water level forecasting using wavelet decomposition and artificial intelligence techniques</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Seo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Kisi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Hydrol</title>
+		<imprint>
+			<biblScope unit="volume">520</biblScope>
+			<biblScope unit="page" from="224" to="243" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<author>
+			<persName><forename type="first">H</forename><surname>Adeli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<title level="m">Intelligent Infrastructure: Neural Networks, Wavelets, and Chaos Theory for Intelligent Transportation Systems and Smart Structures</title>
+				<imprint>
+			<publisher>CRC Press</publisher>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A systematic review and taxonomy of explanations in decision support and recommender systems</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Nunes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Jannach</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Use. Model Use. Adapt Interact</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="393" to="444" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Vector of hope, source of fear</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bissio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Spotlight Sustain. Dev</title>
+		<imprint>
+			<biblScope unit="page" from="77" to="86" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">The Second Machine Age: Work, Progress, and Prosperity in a Time of Brilliant Technologies</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Brynjolfsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mcafee</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<publisher>W. W. Norton &amp; Company</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">Poorer Than Their Parents? Flat or Falling Incomes in Advanced Economies</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Dobbs</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<publisher>McKinsey Global Institute</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Globalization, artificial intelligence, social networks and political polarization: new challenges for community psychologists</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Francescato</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. Psychol. Glob. Perspect</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="20" to="41" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Simulating norms, social inequality, and functional change in artificial societies</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Saam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Harrer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Artificial Soc.Social Simul</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Preventing discrimination in the automated targeting of job advertisements</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Dalenberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Law Secur. Rev</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="615" to="627" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Fourth Industrial Revolution for the Earth Series Harnessing Artificial Intelligence for the Earth</title>
+	</analytic>
+	<monogr>
+		<title level="j">World Economic Forum</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note>World Economic Forum</note>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Simulations and experiments of heat loss from a parabolic trough absorber tube over a range of pressures and gas compositions in the vacuum chamber</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Vinuesa</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Fdez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>De Arévalo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Luna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cachafeiro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Renew. Sustain. Energy</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Automatic identification of oil spills on satellite images</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Keramitsoglou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cartalis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Kiranoudis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Environ. Model. Softw</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="640" to="652" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Assessing the desertification trend using neural network classification and object-oriented techniques</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mohamadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Heidarizadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Nourollahi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Fac. Istanb. Univ</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="683" to="690" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">AI empowers conservation biology</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kwok</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">567</biblScope>
+			<biblScope unit="page" from="133" to="134" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">The social dilemma of autonomous vehicles</title>
+		<author>
+			<persName><forename type="first">J.-F</forename><surname>Bonnefon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shariff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Rahwan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">352</biblScope>
+			<biblScope unit="page" from="1573" to="1576" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Clinically applicable deep learning for diagnosis and referral in retinal disease</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>De Fauw</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Med</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="1342" to="1350" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Research priorities for robust and beneficial artificial intelligence</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Russell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dewey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tegmark</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AI Mag</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="105" to="114" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">The New Physics of Financial Services -How Artificial Intelligence is Transforming the Financial Ecosystem</title>
+	</analytic>
+	<monogr>
+		<title level="j">World Economic Forum</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note>World Economic Forum</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Application of data mining techniques for predicting rice crop yield in semi-arid climatic zone of India</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gandhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Armstrong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nandawadekar</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/tiar.2017.8273697</idno>
+		<ptr target="https://doi.org/10.1109/tiar.2017.8273697" />
+	</analytic>
+	<monogr>
+		<title level="m">IEEE Technological Innovations in ICT for Agriculture and Rural Development (TIAR</title>
+				<imprint>
+			<date type="published" when="2017">2017. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Corrigendum: dermatologist-level classification of skin cancer with deep neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Esteva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">546</biblScope>
+			<biblScope unit="page">686</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Detecting price manipulation in the financial market</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Coleman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Belatreche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Mcginnity</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/cifer.2014.6924057</idno>
+		<ptr target="https://doi.org/10.1109/cifer.2014.6924057" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Conference on Computational Intelligence for Financial Engineering &amp; Economics</title>
+		<imprint>
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">Towards accountable AI: hybrid humanmachine analyses for characterizing system failure</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Nushi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kamar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Horvitz</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1809.07424</idno>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Solving conservation planning problems with integer linear programming</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">L</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Dujardin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Watts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">P</forename><surname>Possingham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ecol. Model</title>
+		<imprint>
+			<biblScope unit="volume">328</biblScope>
+			<biblScope unit="page" from="14" to="22" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Whittaker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AI Now Report</title>
+		<imprint>
+			<date type="published" when="2018">2018. 2018</date>
+			<publisher>AI Now Institute</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Towards a critique of algorithmic reason. A state-of-the-art review of artificial intelligence, its influence on politics and its regulation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Petit</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Quad. del CAC</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Unintended side effects of the digital transition: European scientists&apos; messages from a proposition-based expert round table</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Scholz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sustainability</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">2001</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ramirez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Maureen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Wright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mcsweeny</surname></persName>
+		</author>
+		<title level="m">Data Brokers: A Call for Transparency and Accountability</title>
+				<imprint>
+			<publisher>Federal Trade Commission</publisher>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">The &quot;inconvenient truth&quot; about AI in healthcare</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Panch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Mattie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Celi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Digit. Med</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">77</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Legal personality of robots, corporations, idols and chimpanzees: a quest for legitimacy</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Solaiman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artif. Intell. Law</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="155" to="179" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Intelligent financial fraud detection: a comprehensive review</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>West</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bhattacharya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Secur</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="47" to="66" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Mining corporate annual reports for intelligent detection of financial statement fraud -A comparative study of machine learning methods</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hajek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Henriques</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl.-Based Syst</title>
+		<imprint>
+			<biblScope unit="volume">128</biblScope>
+			<biblScope unit="page" from="139" to="152" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Perry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mcinnis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Price</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Hollywood</surname></persName>
+		</author>
+		<title level="m">Predictive Policing: The Role of Crime Forecasting in Law Enforcement Operations</title>
+				<imprint>
+			<publisher>RAND Corporation</publisher>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Detecting and preventing emerging epidemics of crime</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Gorr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Neill</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Dis. Surveillance</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">13</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Ethically Aligned Design -Version II overview</title>
+		<idno type="DOI">10.1109/MCS.2018.2810458</idno>
+		<ptr target="https://doi.org/10.1109/MCS.2018.2810458" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Draft Ethics Guidelines for Trustworthy AI</title>
+		<author>
+			<persName><forename type="first">European</forename><surname>Commission</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Digital Single Market</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">The mythos of model interpretability</title>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">C</forename><surname>Lipton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. ACM</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="36" to="43" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><surname>Dignum</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Responsible Artificial Intelligence</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<publisher>Springer International Publishing</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<idno type="DOI">10.1038/s41467-019-14108-yPERSPECTIVE</idno>
+		<ptr target="https://doi.org/10.1038/s41467-019-14108-yPERSPECTIVE" />
+	</analytic>
+	<monogr>
+		<title level="j">NATURE COMMUNICATIONS |</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">naturecommunications Future of Life Institute</title>
+		<idno type="DOI">10.1038/s41467-019-14108-y|www.nature.com/</idno>
+		<ptr target="https://doi.org/10.1038/s41467-019-14108-y|www.nature.com/" />
+	</analytic>
+	<monogr>
+		<title level="j">Open Letter on Autonomous Weapons (Future of Life Institute</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">233</biblScope>
+			<date type="published" when="2015">2020. 2015</date>
+		</imprint>
+	</monogr>
+	<note>NATURE COMMUNICATIONS |</note>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<ptr target="https://futureoflife.org/wp-content/uploads/2019/02/2018-Annual-Report.pdf?x51579" />
+	</analytic>
+	<monogr>
+		<title level="j">Future of Life Institute. Annual Report</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Distributed, decentralized, and democratized artificial intelligence</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Montes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Goertzel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Technol. Forecast. Soc. Change</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="354" to="358" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Systematic review of expert elicitation methods as a tool for source attribution of enteric illness</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Butler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D M</forename><surname>Pintar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Foodborne Pathog. Dis</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="367" to="382" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Use (and abuse) of expert elicitation in support of decision making for public policy</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Morgan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="7176" to="7184" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<monogr>
+		<title level="m" type="main">United Nations Human Rights. Sustainable Development Goals Related Human Rights (United Nations Human Rights</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

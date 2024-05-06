@@ -57,7 +57,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -74,10 +74,346 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>Aim: The principle objective of this article is to improve the accuracy of Credit card fraud detection using Novel logistic regression compared with the t-SNE. Materials and Methods: The categorizing is performed by adopting a sample size of n = 10 in novel logistic regression and sample size n = 10 in t-SNE with a sample size = 10, obtained using the G-power value 80%. Results: The analysis of the results shows that the Novel logistic regression has a high accuracy of (99.89) in comparison with the t-SNE(60.99). There is a statistically significant difference between the study groups with (p&lt; 0.05). Conclusion: For Credit card fraud detection it shows that the Logistic Regression appears to generate more accuracy than the t-SNE</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Aim: The principle objective of this article is to improve the accuracy of Credit card fraud detection using Novel logistic regression compared with the t-SNE.</p><p>Materials and Methods: The categorizing is performed by adopting a sample size of n = 10 in novel logistic regression and sample size n = 10 in t-SNE with a sample size = 10, obtained using the G-power value 80%. Results: The analysis of the results shows that the Novel logistic regression has a high accuracy of (99.89) in comparison with the t-SNE(60.99). There is a statistically significant difference between the study groups with (p&lt; 0.05). Conclusion: For Credit card fraud detection it shows that the Logistic Regression appears to generate more accuracy than the t-SNE</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>One of the most serious ethical challenges in the credit card industry is fraud. Our paper's major goal is to identify credit card theft and offer a reasonable solution to the problem. Credit card fraud has cost customers and banks billions of dollars around the world. Fraudsters are constantly attempting to come up with new ways and tricks to commit fraud, despite the fact that there are several measures in place to prevent it. Fraud detection is extremely important in the banking and finance industries. For detection pu. <ref type="bibr" target="#b9">(Nandi et al. 2022)</ref> Using lost or stolen cards, creating fake or counterfeit cards, copying the original website, deleting or modifying the magnetic strip on the card that holds the user's information, and phishing via skimming or stealing data from a merchant's end are all examples of fraud.. <ref type="bibr" target="#b9">(Nandi et al. 2022</ref>) Using a credit card is one of the methods for purchasing goods or services. The process of discriminating between fraudulent and non-fraudulent transactions so that customers can enjoy their shopping or other transactions without delay is known as fraud detection. Many detections have been employed to address this challenge, including the evolutionary algorithm, itemset mining, and the migratory birds' method <ref type="bibr" target="#b8">(Namanda 2016)</ref>.</p><p>Credit card fraud detection system cases in and around the world are sequenced by comparing machine learning algorithms 1385 journals from IEEE Xplore digital library 894 articles from ScienceDirect, 450 articles from Google Scholar 385 articles from collaborative algorithm and frequent pattern mining algorithm are two highly correlated parts in detection of college. Among all the articles and journals the most cited papers are <ref type="bibr" target="#b5">(Kaur et al. 2019)</ref>. Many proposed a feature selection algorithm with Novel Logistic Regression for designing a high-level intelligent system for credit card detection classification <ref type="bibr" target="#b11">(Seeja and Zareapoor 2014)</ref>.In my opinion,(Jurgovsky 2019)Several works have demonstrated that the performance of Novel Logistic Regression is high and provides high accuracy in the prediction of credit card fraud detection. A study by <ref type="bibr" target="#b10">(Reddy, Vijaya Kumar Reddy, and Ravi Babu 2018)</ref> compares the accuracy of various mining detecting algorithms in detecting credit card fraud. It is important to analyze and compare the various classification algorithms that provide better accuracy <ref type="bibr" target="#b2">(Bonney 1992;</ref><ref type="bibr" target="#b9">Nandi et al. 2022)</ref>. Hence the aim of this research study is to use the Novel Logistic Regression algorithm inorder detect Credit card fraud by achieving better accuracy.</p><p>e Existing System, suffers With data Scalability, that impacts user based collaborative filtering algorithms whose performance falls with the growth in the number of users grows in admission system.The credit card fraud detection methods that were available traditionally for detecting fraud lack certain factors such as size of data along with the huge amount of data used for training purposes.When the number of data keeps on increasing the time taken for training them and the accuracy of the outcome gets affected.Hence the aim of this research study is to use the Novel Logistic Regression algorithm inorder detect Credit card fraud by achieving better accuracy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head><p>The research work was carried out in the machine learning lab, Saveetha School of Engineering, Saveetha Institute of Medical and Technical Sciences where the laboratory facilitates a high configuration system to obtain the experimental results. The number of groups identified for the study were two with the sample size (52) of per group. The computation is performed using G-power with 80% with alpha value 0.05 and beta value is 0.95 with a confidence interval at 95%. The sample preparation group 1 is done for Novel logistic regression Algorithm, logistic regression is a family of algorithms in which comparable people or things are identified in numerous ways and ratings are calculated based on the ratings of similar users.</p><p>The sample preparation group 2 is done for t-SNE. By detecting regular patterns, we may group elements that are highly connected together and quickly uncover shared properties and correlations. By doing Support vector machine, it is possible to perform further machine learning activities such as clustering, classification, and other machine learning tasks.</p><p>MATLAB is a high performance language for technical computing. It integrates computation, visualization and programming in an easy to use environment where problems and solutions are expressed in familiar mathematical notation. The r2014a version of matlab is used for improving the algorithms and minimum 8GB RAM 1 TB HDD storage is required to run the output The data collection is taken from the open source access website IEEE-dataport.org and kaggle that is used for credit card fraud detection using novel logistic regression and Support vector machine algorithm technique.The open data set contains 614 entries.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>LOGISTIC REGRESSION</head><p>It is one of the most popular Machine Learning algorithms under the Supervised Learning technique. It is used for predictive analysis of the categorical dependent variable using a given set of independent variables. Logistic regression predictive analysis of the output of a categorical dependent variable. Therefore the outcome must be a categorical or discrete value. The following algorithm steps follow</p><p>Step 1: Start.</p><p>Step 2: Load datasets path.</p><p>Step 3: Extract feature values.</p><p>Step 4: Apply the logistic regression</p><p>Step 5: Separates the dominant players</p><p>Step 6: Identity the null values</p><p>Step 7: Process to recover from null values</p><p>Step 8: Stop</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>t-SNE</head><p>t-SNE is a popular machine learning algorithm that belongs to the unsupervised learning technique. It can be used for both Classification and Regression problems in ML.It is a non-linear dimensionality reduction algorithm used for exploring high-dimensional data. It maps multi-dimensional data to two or more dimensions suitable for human observation. The following algorithms steps follow</p><p>Step 1: Start.</p><p>Step 2: Load datasets path.</p><p>Step 3: Extract feature values.</p><p>Step 4: Apply the algorithm</p><p>Step 5: Separates the dominant players</p><p>Step 6: Identify the null values</p><p>Step 7: Process to recover from null values</p><p>Step 8: Stop</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical Analysis</head><p>Statistical software used is IBM SPSS with version 26.0 to find standard deviation, mean, standard error mean, mean difference, sig and F value. Independent variables are segment size and data size. Dependent variables are dataset size and accuracy of outcome. Independent T-Test analysis is carried out in this research work</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Table1 represents the comparison of accuracy in credit card fraud detection by using Novel Logistic Regression and t-SNE, by iterating in credit card fraud for various numbers of times.</p><p>Table <ref type="table">1</ref>. Comparison between Novel Logistic Regression and t-SNE algorithms with N= 10 samples of the dataset with the highest accuracy of respectively 99.89% and 60.99% in sample 1 (when N=1) using the dataset size = 614 and the 70% of training and 30% of testing data.  Table <ref type="table" target="#tab_2">3</ref> represents the significance of the data and standard error difference, where the significance of Novel Logistic Regression and t-SNE with the confidence interval is 99.89% and the level of significance of 0.05. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ITERATIONS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>The work shows that Novel Logistic Regression is better than t-SNE at detecting credit card fraud in terms of accuracy and cross-validation. <ref type="bibr" target="#b1">(Baesens, Verbeke, and Van Vlasselaer 2015)</ref>However, the average error of t-SNE appears to be higher than logistic. From the experimental results performed in Jupyter, the accuracy and cross-validations of Novel Logistic Regression are 99.89% and 60.99%. Novel Logistic Regression has better significance (p&lt;0.05) than t-SNE method and while using the independent sample t-tests.This shows that Novel Logistic Regression is better than t-SNE. The different parameters such as TP rate, FP rate, cross-validations are also <ref type="bibr" target="#b4">(Hadi, Hafidudhin, and Tanjung 2018)</ref>compared. According to the SPSS plot, the proposed Novel Logistic Regression classifier performs better in terms of accuracy (99.89%) and cross-validations (60.99%) than the t-SNE algorithm.The most important aspect in forecasting credit card fraud detection is accuracy and cross-validation <ref type="bibr" target="#b6">(Lawi and Aziz 2018)</ref>. A machine learning-based diagnostic system for Credit card fraud detection was proposed using a creditcard.csv dataset. Popular machine learning algorithms, three feature selection algorithms, the cross-validation method, and seven classifier performance metrics such as classification accuracy, specificity, sensitivity, Matthews correlation coefficient, and delay execution were used by the study <ref type="bibr" target="#b2">(Bonney 1992</ref>; Jurgovsky 2019).</p><p>In the study by, <ref type="bibr" target="#b4">(Hadi, Hafidudhin, and Tanjung 2018)</ref>a scalable solution was proposed to enable credit card fraud detection. t-SNE algorithm was used on a Spark framework to predict and showed that even with a dataset of 300 documents, the study achieved a higher accuracy <ref type="bibr" target="#b7">(Li et al. 2021</ref>).In the study of(Akgun and Mei 2020), attribute filtering, frequent element extraction, and various data mining techniques such as decision tree, Naive Bayes, support vector machine, and t-SNE classifications are used to predict credit card fraud detection. When it comes to predicting Credit card fraud detection, the cross validations of the Novel Logistic regression algorithm was better than other machine learning algorithms <ref type="bibr">(Seera et al. 2021)</ref>. The accuracy of the Novel Logistic Regression algorithm depends on the size of the training and testing data set. In our study, the accuracy and cross validations appear to be better than t-SNE. However, the average error appears to be higher in our proposed work which should be minimized(Jurgovsky 2019).</p><p>Although the results of the study are better in both experimental and statistical analysis, there are some limitations in the work. Accuracy assessment cannot provide a better result on larger data sets. In addition, in Novel Logistic Regression, the average error seems to be higher than t-SNE. It would be preferable if the average error could be considerably reduced <ref type="bibr" target="#b9">(Nandi et al. 2022)</ref>. However, the work can be improved by applying optimization algorithm techniques, to achieve better cross validations and lower mean error <ref type="bibr" target="#b3">(Dorronsoro et al. 1997)</ref>. Feature selection algorithms can be used prior to classification to improve the classification accuracy of classifiers. Therefore, thanks to the Data mining algorithms, we can reduce the computation time and improve the accuracy of the classification of classifiers. (Jurgovsky 2019</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>The Novel Logistic Regression is a classification technique that uses the mean to improve accuracy and cross validation. The work shows that the prediction of accuracy and cross validations for credit card fraud detection using Novel Logistic Regression(99.89%) is better than the t-SNE(60.99%) at accurately detecting fraud, but the average error is slightly greater than logistic. Therefore, it is concluded that the Novel Logistic Regression provides acceptable accuracy and cross validations compared to t-SNE data mining algorithm.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .Figure 1</head><label>11</label><figDesc>Fig. 1. Comparison of Novel Logistic Regression algorithm and t-SNE in terms of accuracy. The mean accuracy of the Novel Logistic Regression algorithm is better than t-SNE and standard deviation of Novel Logistic Regression is slightly better than t-SNE algorithm. X Axis : Novel Logistic Regression, t-SNE Y Axis: Mean accuracy of detection ± 1 SD Figure 1 shows the Bar Graph for Comparison of Accuracy. Mean accuracy of Novel Logistic Regression is better than t-SNE and standard deviation of ant colony optimization is slightly better than t-SNE. X axis:Novel Logistic Regression vs t-SNE. Y axis: Mean accuracy of detection ±1 SD .</figDesc><graphic coords="4,153.81,69.95,301.94,150.10" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 2 .</head><label>2</label><figDesc>Statistical results of Novel Logistic Regression and t-SNE algorithms. Mean accuracy value, Standard deviation and Standard Error Mean For Novel Logistic Regression and t-SNE algorithms are obtained for 10 iterations. It is observed that the Novel Logistic Regression (81.3%) performed better than the RF (60.99%) algorithm</figDesc><table><row><cell></cell><cell></cell><cell cols="2">LOGISTIC REGRESSION</cell><cell>t-SNE</cell><cell></cell></row><row><cell></cell><cell>1</cell><cell>99.89</cell><cell></cell><cell>60.99</cell><cell></cell></row><row><cell></cell><cell>2</cell><cell>98.80</cell><cell></cell><cell>60.60</cell><cell></cell></row><row><cell></cell><cell>3</cell><cell>97.82</cell><cell></cell><cell>60.84</cell><cell></cell></row><row><cell></cell><cell>4</cell><cell>97.80</cell><cell></cell><cell>60.20</cell><cell></cell></row><row><cell></cell><cell>5</cell><cell>96.64</cell><cell></cell><cell>59.33</cell><cell></cell></row><row><cell></cell><cell>6</cell><cell>95.72</cell><cell></cell><cell>58.89</cell><cell></cell></row><row><cell></cell><cell>7</cell><cell>95.06</cell><cell></cell><cell>58.66</cell><cell></cell></row><row><cell></cell><cell>8</cell><cell>94.54</cell><cell></cell><cell>58.33</cell><cell></cell></row><row><cell></cell><cell>9</cell><cell>93.56</cell><cell></cell><cell>57.62</cell><cell></cell></row><row><cell></cell><cell>10</cell><cell>93.02</cell><cell></cell><cell>57.01</cell><cell></cell></row><row><cell></cell><cell>Algorithms</cell><cell>Sample(N)</cell><cell>Mean</cell><cell>Std Deviation</cell><cell>Std Error Mean</cell></row><row><cell>Accuracy</cell><cell>LOGISTIC</cell><cell>10</cell><cell>96.28</cell><cell>2.28</cell><cell>0.723</cell></row><row><cell></cell><cell>REGRESSION</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>t-SNE</cell><cell>10</cell><cell>59.24</cell><cell>1.38</cell><cell>0.438</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc></figDesc><table /><note>the statistical analysis of the Novel Logistic Regression algorithm and the t-SNE. Mean accuracy value, Standard deviation is observed that the Novel Logistic Regression algorithm performed better than the t-SNE algorithm. The Novel Logistic Regression algorithm obtained 2.28 standard deviations with 0.723 standard error while the t-SNE algorithm obtained 1.38 standard deviations with 0.438 standard error. Also the independent sample t-test was used to compare the accuracy of two algorithms and a statistically significant difference was noticed with the Novel Logistic Regression model obtained 99.89% accuracy and t-SNE having 60.99% of accuracy. When compared with the other algorithm's performance, the proposed Novel Logistic Regression classifier is significantly better than the t-SNE.</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>The Independent sample t-test of the significance level Novel Logistic Regression and t-SNE algorithms results with two tailed significant values (p=0.001). Therefore both the Novel Logistic Regression and the t-SNE algorithms have a significance level less than 0.05 with a 95 % confidence interval.</figDesc><table><row><cell></cell><cell></cell><cell cols="2">Lavene's test</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">95% Confidence</cell></row><row><cell></cell><cell></cell><cell cols="2">for equality</cell><cell cols="3">T-Test Equality of Means</cell><cell></cell><cell></cell><cell cols="2">interval of the</cell></row><row><cell></cell><cell></cell><cell cols="2">of variances</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>difference</cell></row><row><cell></cell><cell></cell><cell>F</cell><cell>sig</cell><cell>t</cell><cell>df</cell><cell>sig(2</cell><cell>Mean</cell><cell>Std.erro</cell><cell>Lower</cell><cell>Upper</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>tailed)</cell><cell>diff</cell><cell>r</cell><cell></cell></row><row><cell></cell><cell>Equal variance</cell><cell>3.48</cell><cell>.788</cell><cell>43.80</cell><cell>18</cell><cell>&lt;0.001</cell><cell>37.038</cell><cell>0.845</cell><cell>35.261</cell><cell>38.814</cell></row><row><cell>Accuracy</cell><cell>Assumed</cell><cell></cell><cell></cell><cell>7</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Equal variances</cell><cell></cell><cell></cell><cell>43.80</cell><cell>14.82</cell><cell>&lt;0.001</cell><cell>37.038</cell><cell>0.845</cell><cell>35.234</cell><cell>38.841</cell></row><row><cell></cell><cell>not assumed</cell><cell></cell><cell></cell><cell>7</cell><cell>7</cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>The authors would like to express their gratitude towards Saveetha School of Engineering, Saveetha Institute of Medical and Technical Sciences ( Formerly known as Saveetha University) for providing the necessary infrastructure to carry out this research work successfully</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Funding:</head><p>We thank the following organizations for providing financial support that enabled us to complete the study. 1. Manac Infotech Pvt Ltd, HYD 2. Saveetha University 3. Saveetha Institute of Medical And Technical Sciences 4. Saveetha School of Engineering</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of interest</head><p>No conflict of interest in this manuscript.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author Contribution</head><p>Author GBC was involved in data collection, data analysis, algorithm framing, implementation and manuscript writing. Author SP was involved in designing the work flow, guidance and review of the manuscript</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">An Energy Efficient Time-Mode Digit Classification Neural Network Implementation</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">C</forename><surname>Akgun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philosophical Transactions. Series A, Mathematical, Physical, and Engineering Sciences</title>
+		<imprint>
+			<biblScope unit="volume">378</biblScope>
+			<biblScope unit="page">20190163</biblScope>
+			<date type="published" when="2020">2020. 2164</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><forename type="first">Bart</forename><surname>Baesens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wouter</forename><surname>Verbeke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Veronique</forename><surname>Van Vlasselaer</surname></persName>
+		</author>
+		<title level="m">Fraud Analytics Using Descriptive, Predictive, and Social Network Techniques: A Guide to Data Science for Fraud Detection</title>
+				<imprint>
+			<publisher>John Wiley &amp; Sons</publisher>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bonney</surname></persName>
+		</author>
+		<title level="m">Preveventing Credit Card Fraud</title>
+				<imprint>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Neural Fraud Detection in Credit Card Operations</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dorronsoro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ginel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sgnchez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Cruz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Neural Networks / a Publication of the IEEE Neural Networks Council</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="827" to="834" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Comparison of Conventional Systems Credit Card and Credit Card Shariah as Alternative Construction Credit Card on Banking System</title>
+		<author>
+			<persName><forename type="first">Sholikul</forename><surname>Hadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Didin</forename><surname>Hafidudhin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hendri</forename><surname>Tanjung</surname></persName>
+		</author>
+		<idno type="DOI">10.32832/jm-uika.v8i1.733.Jurgovsky</idno>
+		<ptr target="https://doi.org/10.32832/jm-uika.v8i1.733.Jurgovsky" />
+	</analytic>
+	<monogr>
+		<title level="j">Jurnal Manajemen</title>
+		<imprint>
+			<date type="published" when="2018">2018. 2019</date>
+		</imprint>
+	</monogr>
+	<note>Context-Aware Credit Card Fraud Detection</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">ATM Card Cloning and Ethical Considerations</title>
+		<author>
+			<persName><forename type="first">Paramjit</forename><surname>Kaur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kewal</forename><surname>Krishan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Suresh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tanuj</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Kanchan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science and Engineering Ethics</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1311" to="1320" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Classification of Credit Card Default Clients Using LS-SVM Ensemble</title>
+		<author>
+			<persName><forename type="first">Armin</forename><surname>Lawi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Firman</forename><surname>Aziz</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/iac.2018.8780427</idno>
+		<ptr target="https://doi.org/10.1109/iac.2018.8780427" />
+	</analytic>
+	<monogr>
+		<title level="m">Third International Conference on Informatics and Computing (ICIC)</title>
+				<imprint>
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Automated Anomaly Detection via Curiosity-Guided Search and Self-Imitation Learning</title>
+		<author>
+			<persName><forename type="first">Yuening</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhengzhang</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Daochen</forename><surname>Zha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kaixiong</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Haifeng</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Haifeng</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xia</forename><surname>Hu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNNLS.2021.3105636</idno>
+		<ptr target="https://doi.org/10.1109/TNNLS.2021.3105636" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Neural Networks and Learning Systems PP</title>
+		<imprint>
+			<date type="published" when="2021-09">2021. September</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Future Issues with Credit Card Fraud Detection Techniques</title>
+		<author>
+			<persName><forename type="first">Marvin</forename><surname>Namanda</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<publisher>GRIN Verlag</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection Using a Hierarchical Behavior-Knowledge Space Model</title>
+		<author>
+			<persName><forename type="first">Asoke</forename><forename type="middle">K</forename><surname>Nandi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kaur</forename><surname>Kuldeep</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hong</forename><surname>Randhawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Manjeevan</forename><surname>Siang Chua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chee</forename><surname>Seera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lim</forename><surname>Peng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PloS One</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">e0260579</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Efficient Handwritten Digit Classification Using User-Defined Classification Algorithm</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Vijaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">Ravi</forename><surname>Vijaya Kumar Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Babu</surname></persName>
+		</author>
+		<idno type="DOI">10.18517/ijaseit.8.3.5397</idno>
+		<ptr target="https://doi.org/10.18517/ijaseit.8.3.5397" />
+	</analytic>
+	<monogr>
+		<title level="j">International Journal on Advanced Science, Engineering and Information Technology</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">FraudMiner: A Novel Credit Card Fraud Detection Model Based on Frequent Itemset Mining</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Seeja</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Masoumeh</forename><surname>Zareapoor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">TheScientificWorldJournal</title>
+		<imprint>
+			<biblScope unit="volume">2014</biblScope>
+			<biblScope unit="page">252797</biblScope>
+			<date type="published" when="2014-09">2014. September</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">An Intelligent Payment Card Fraud Detection System</title>
+		<author>
+			<persName><forename type="first">Manjeevan</forename><surname>Seera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chee</forename><surname>Peng Lim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ajay</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annals of Operations Research</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="23" />
+			<date>June</date>
+		</imprint>
+	</monogr>
+	<note>Lalitha Dhamotharan, an 2021</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

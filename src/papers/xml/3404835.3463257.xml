@@ -48,7 +48,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -72,10 +72,1398 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>The milestone improvements brought about by deep representation learning and pre-training techniques have led to large performance gains across downstream NLP, IR and Vision tasks. Multimodal modeling techniques aim to leverage large high-quality visio-linguistic datasets for learning complementary information across image and text modalities. In this paper, we introduce the Wikipedia-based Image Text (WIT) Dataset to better facilitate multimodal, multilingual learning. WIT is composed of a curated set of 37.5 million entity rich image-text examples with 11.5 million unique images across 108 Wikipedia languages. Its size enables WIT to be used as a pretraining dataset for multimodal models, as we show when applied to downstream tasks such as image-text retrieval. WIT has four main and unique advantages. First, WIT is the largest multimodal dataset by the number of image-text examples by 3x (at the time of writing). Second, WIT is massively multilingual (first of its kind) with coverage over 100+ languages (each of which has at least 12K examples) and provides cross-lingual texts for many images. Third, WIT represents a more diverse set of concepts and real world entities relative to what previous datasets cover. Lastly, WIT provides a very challenging real-world test set, as we empirically illustrate using an image-text retrieval task as an example. WIT Dataset is available for download and use via a Creative Commons license here: https://github.com/google-research-datasets/wit.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The milestone improvements brought about by deep representation learning and pre-training techniques have led to large performance gains across downstream NLP, IR and Vision tasks. Multimodal modeling techniques aim to leverage large high-quality visio-linguistic datasets for learning complementary information across image and text modalities. In this paper, we introduce the Wikipedia-based Image Text (WIT) Dataset to better facilitate multimodal, multilingual learning. WIT is composed of a curated set of 37.5 million entity rich image-text examples with 11.5 million unique images across 108 Wikipedia languages. Its size enables WIT to be used as a pretraining dataset for multimodal models, as we show when applied to downstream tasks such as image-text retrieval. WIT has four main and unique advantages. First, WIT is the largest multimodal dataset by the number of image-text examples by 3x (at the time of writing). Second, WIT is massively multilingual (first of its kind) with coverage over 100+ languages (each of which has at least 12K examples) and provides cross-lingual texts for many images. Third, WIT represents a more diverse set of concepts and real world entities relative to what previous datasets cover. Lastly, WIT provides a very challenging real-world test set, as we empirically illustrate using an image-text retrieval task as an example. WIT Dataset is available for download and use via a Creative Commons license here: https://github.com/google-research-datasets/wit.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">INTRODUCTION</head><p>Deep learning has fundamentally revolutionized the fields of NLP, IR and Vision via our ability to have a rich semantic understanding of texts and images. Notable examples of this include Deep CNN models <ref type="bibr" target="#b29">[30,</ref><ref type="bibr" target="#b34">35]</ref> which set the bar for standard vision tasks like image recognition and image classification. Attention based transformer models <ref type="bibr" target="#b35">[36]</ref> like BERT <ref type="bibr" target="#b8">[9]</ref> have likewise enabled achieving new benchmark performance across a myriad of text understanding / NLP / IR tasks. These transformational advances have also found their way to multimodal tasks such as image-text retrieval / search <ref type="bibr" target="#b14">[15]</ref> and image captioning <ref type="bibr" target="#b36">[37,</ref><ref type="bibr" target="#b41">42]</ref>. Multimodal models -such as ViLBERT <ref type="bibr" target="#b22">[23]</ref>, UNITER <ref type="bibr" target="#b6">[7]</ref>, Unicoder-VL <ref type="bibr" target="#b17">[18]</ref> amongst others <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b32">33]</ref> -are able to jointly model the complex relationships between text and visual inputs leading to wins in downstream tasks like image search, Visual Question Answering (VQA) <ref type="bibr" target="#b1">[2]</ref> and Visual Commonsense Reasoning (VCR) <ref type="bibr" target="#b40">[41]</ref>.</p><p>Accompanying the modeling improvements across these advancements, an equally critical aspect is the leveraging of massive datasets to enrich representation learning -often via unsupervised pretraining. Increasingly, the efficacy of a model correlates strongly with the size and quality of pretraining data used. For instance, cutting-edge language models like BERT <ref type="bibr" target="#b8">[9]</ref> and T5 <ref type="bibr" target="#b27">[28]</ref> rely on increasingly larger text datasets spanning from those in the O(100M) range like Wikipedia, BooksCorpus <ref type="bibr" target="#b43">[44]</ref> to datasets with billions of examples like C4 <ref type="bibr" target="#b27">[28]</ref> and mC4 <ref type="bibr" target="#b38">[39]</ref>. Similarly, vision models <ref type="bibr" target="#b9">[10]</ref> are reliant on large corpora, such as ImageNet-21k <ref type="bibr" target="#b7">[8]</ref> -which with 14M images is among the largest public datasets. This scale is important since studies have shown performance increases logarithmically with dataset size <ref type="bibr" target="#b33">[34]</ref>. Another key dimension of language datasets is the number of languages covered. By transitioning from English-only to highly multilingual language datasets, models like mT5 <ref type="bibr" target="#b38">[39]</ref> and mBERT <ref type="bibr" target="#b37">[38]</ref>, are an important step for researchers driving globally, equitable availability of information.</p><p>Multimodal visio-linguistic models are no different, and rely on a rich dataset to help them learn to model the relationship between images and texts. However as seen in Table <ref type="table" target="#tab_0">1</ref>, the scale of current public datasets pales in comparison to image-only or text-only ones, with the 30K-sized Flickr <ref type="bibr" target="#b39">[40]</ref> and 3.3M-sized Conceptual Captions (CC) <ref type="bibr" target="#b28">[29]</ref> being among the largest ones. Having large image-text datasets can significantly improve performance, as a couple of recent works <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b26">27]</ref> have shown by leveraging larger noisy (proprietary) datasets. Furthermore the lack of language coverage in these existing datasets (which are mostly only in English) also impedes research in the multilingual multimodal space -which we consider a lost opportunity given the potential shown in leveraging images (as a language-agnostic medium) to help improve our multilingual textual understanding <ref type="bibr" target="#b30">[31]</ref> or even translate <ref type="bibr" target="#b12">[13]</ref>.</p><p>To address these challenges and advance research on multilingual, multimodal learning we present the Wikipedia It is worth pointing out that by leveraging Wikipedia's editing, verification and correction mechanism, WIT is able to ensure a high quality bar. In particular, this use of a curated source like Wikipedia contrasts with the approach used to create other existing datasets (e.g. CC <ref type="bibr" target="#b28">[29]</ref>) which rely on extracting annotations from web crawls. We verified the curated quality of the WIT dataset via an extensive human-annotation process (nearly 4400 image-text examples and 13K judgments across 7 languages), with an overwhelming majority (98.5%) judging the randomly sampled image-text associations favorably.</p><p>Empirical results on image-text retrieval tasks (both zero-shot i.e., pretrained model, as well as finetuned model evaluations) demonstrate the potency of the data. The vast richness of Wikipedia texts </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Dataset</head><p>Images Text Languages Flickr30K <ref type="bibr" target="#b39">[40]</ref> 32K 158K &lt; 8 SBU Captions <ref type="bibr" target="#b24">[25]</ref> ∼1M ∼1M 1 MS-COCO <ref type="bibr" target="#b21">[22]</ref> ∼330K ∼1.5M &lt; 4 CC <ref type="bibr" target="#b5">[6]</ref> ∼3.3M ∼3.3M 1 WIT 11.5M 37.5M 108 and images (grounded in a diverse set of real-world entities and attributes) also means that WIT provides for a realistic evaluation set -one that we demonstrate to be challenging for models trained using existing datasets.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">RELATED WORK</head><p>Visio-Linguistic (VL) datasets: Flickr30K <ref type="bibr" target="#b39">[40]</ref> was among the first datasets that helped drive early research in this space. Similar to other such early datasets (e.g. the 330k example MS-COCO), it was created by having crowd sourced (Mechanical Turk) workers provide captions for ∼30K images (sampled from Flickr). While the explicit human-based captioning helps ensure quality, the resulting datasets have been recognized as insufficient for significant real-world improvements given that they are small and expensive to construct <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b42">43]</ref>. Furthermore, this manual effort has meant extending to other languages has proven to be quite challenging.</p><p>Consequently there exists only a handful of non-English data collections such as Multi30K-DE (German) <ref type="bibr" target="#b11">[12]</ref>, DeCOCO (German) <ref type="bibr" target="#b13">[14]</ref>, Multi30K-FR (French) <ref type="bibr" target="#b10">[11]</ref>, Multi30K-CS (Czech) <ref type="bibr" target="#b3">[4]</ref>, YJCaptions26k (Japanese) <ref type="bibr" target="#b23">[24]</ref>, MLM Dataset (based on Wikipedia in 3 languages) <ref type="bibr" target="#b2">[3]</ref> and MS-COCO-CN (Chinese) <ref type="bibr" target="#b20">[21]</ref>.</p><p>An alternative paradigm to creating such datasets is demonstrated by the Conceptual Captions (CC) dataset <ref type="bibr" target="#b28">[29]</ref>. By leveraging the alt-text annotations for images from a web crawl, the resulting dataset was significantly larger than previous ones (∼3.3M imagetext pairs). The drawback with this approach is the reliance on complex filtering rules and systems to ensure data quality. Unfortunately this makes these extraction-based datasets -like CC and the recently proposed CC12M <ref type="bibr" target="#b5">[6]</ref> -hard to extend and significantly impacts their coverage and diversity. Perhaps unsurprisingly, the complex filtering logic has meant that this approach has so far only been successfully applied to curate English data collections.</p><p>WIT looks to achieve the best of both worlds by leveraging an extractive approach on a clean, curated multilingual repository of human knowledge with its accompanying images, illustrations and detailed text descriptions (Wikipedia).</p><p>VL models: A slew of models have been proposed to leverage the above datasets (either for unsupervised pretraining or finetuning). For example, ViLBERT <ref type="bibr" target="#b22">[23]</ref> uses MS-COCO and CC for pretraining a multimodal transformer based model. UNITER <ref type="bibr" target="#b6">[7]</ref> leverages these datasets and pretrains on tasks like image-text matching and word region alignment. Similarly, models like VL-BERT <ref type="bibr" target="#b32">[33]</ref>, VisualBERT <ref type="bibr" target="#b19">[20]</ref>, ImageBERT <ref type="bibr" target="#b25">[26]</ref>, B2T2 <ref type="bibr" target="#b0">[1]</ref> and Unicoder-VL <ref type="bibr" target="#b18">[19]</ref>, all pretrain on CC or similar datasets using a variety of objectives and tasks. Efficacy of these models is often studied on downstream tasks  like image-text retrieval, referring expressions, image captioning, etc using Flickr30K, MS-COCO and similar curated collections. These models have also shown that a larger and more varied data collection, improves downstream task performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">WIT: WIKIPEDIA IMAGE TEXT DATASET</head><p>We would like to marry the benefits of curated datasets like Flickr30K and MS-COCO (consistent, high quality image text pairs) with those of extractive datasets like CC (automatically created and scalable), while also creating a multilingual and heterogeneous dataset. To do so, we leverage Wikipedia, which inherently uses crowd-sourcing in the data creation process -via its editorial review process -to ensure quality, freshness and accuracy of content. However, even Wikipedia extractions cannot be directly used as is, due to a plethora of low-information (e.g., generic) image-text associations which would not help VL learning. In the remainder of this section, we describe the WIT creation process and detail the filtering processes we introduced to ensure that only the most useful data is selected.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Wikipedia Crawl Data</head><p>We started with all Wikipedia content pages (i.e., ignoring other pages that have discussions, comments and such). These number about ∼124M pages across 279 languages. We used a Flume <ref type="bibr" target="#b4">[5]</ref> pipeline to programatically process, filter, clean and store the Wikipedia data. We next extracted images and different texts related to the image along with some contextual metadata (such as the page URL, the page title, description . . . ). This yielded about ∼150M tuples of (image data, texts data, contextual data), which were the input to the different filters described in the subsequent sections.</p><p>Note that there tends to be a wide variance of HTML formatting / layouts used for image captions across (and sometimes even within) Wikipedias in different languages, and hence our extraction rules needed to be particularly robust to ensure high coverage.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">The Texts used in WIT</head><p>The texts describing the images come from multiple different sources.</p><p>The three directly associated with the image are:</p><p>(1) Reference description (abbreviated as ref ): This is the caption that is visible on the wiki page directly below the image. This is the least common among the three (present in ∼24M of the tuples) but tends to be the most topical and relevant. (2) Attribution description (abbreviated as attr): This is the text found on the Wikimedia page of the image. This text is common to all occurrences of that image across all Wikipedias and thus can be in a language different to the original page article. Often this text is multilingual i.e., with image descriptions in multiple languages. 138M+ of the 150M tuples have this field -though the vast majority of these are uninformative or noisy. However the remaining have rich semantic descriptions of the images that we would like to extract. (3) Alt-text description (abbreviated as alt): This is the "alt" text associated with the image. While not visible in general, it is commonly used for accessibility / screen readers. Despite this (surprisingly) we discovered that this was the least informative of the three texts and in most cases was simply the image file name (We found that of the 121M+ tuples containing this text, only a small fraction to be meaningful descriptions of the image). In addition to these, we also note that the context part of the tuple contains additional texts indirectly associated with the image (such as the section text or page title). A complete example of these texts, along with other metadata fields we provide and more detailed statistics are available on the WIT dataset Github page.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Text-based Filtering</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Image &amp; Image-Text based Filtering</head><p>We applied the following filters on the images in the tuples:</p><p>(1) To ensure rich images, we required that image height and width were at least 100 pixels. (2) Based on a detailed analysis, we eliminated images which were either generic or didn't have meaningful text associations. For example, images of maps are prevalent on Wikipedia </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">Additional Filtering</head><p>To ensure a high-quality dataset free of inappropriate content, we removed tuples with questionable images or texts as done by previous works <ref type="bibr" target="#b28">[29]</ref>. In particular we aimed to remove pornographic / profane / violent / . . . content using multiple techniques based on sophisticated image understanding and multilingual text understanding models. Overall these filters help data quality while only eliminating &lt; 0.2% of all tuples. Akin to other multilingual datasets (e.g., mC4 <ref type="bibr" target="#b38">[39]</ref>), we restricted our initial version to only the top 100 languages and hence only retained tuples for languages with 12K+ tuples. Lastly we created partitioned the data into training, validation and test splits (with 50K images for the latter two) by ensuring that each image only occurs in a single split.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6">Analyzing the WIT Data</head><p>As seen in Table <ref type="table" target="#tab_0">1</ref>, the resulting dataset is significantly larger than previous ones with over 37M (image, text(s), context) tuples, spanning 108 languages and covering 11.5 million unique images. Among its many unique aspects and firsts:</p><p>• Multiple texts per image: WIT provides for multiple different kinds of texts per image. More than half of the tuples (19.4M) have two or more of reference, attribution and alt-texts. descriptions in different languages for the same image) from 3.1M different images using just the reference and alt texts.</p><p>We expect this number to be even higher when counting attributes, many of which are inherently multilingual. • Contextual understanding: WIT is also the first dataset, providing for understanding image captions in the context of the page and surrounding text (incl. ∼ 120𝑀 contextual texts). For the sake of brevity we explore this in future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7">Human Annotator Validation</head><p>To further verify the quality of the WIT dataset we performed a study using (crowd-sourced) human annotators. As seen in Fig. <ref type="figure" target="#fig_2">2</ref>, we asked raters to answer 3 questions. Given an image and the page title, raters first evaluate the quality of the attribution description and reference description in the first two questions (order randomized). The third question understands the contextual quality of these text descriptions given the page description and alt-text description. Each response is on a 3-point scale: "Yes" if the text perfectly describes the image, "Maybe" if it is sufficiently explanatory and "No" if it is irrelevant or the image is inappropriate. We randomly sampled nearly 4.4k examples for this evaluation. To maximize rating quality we used a language identification filter on the attribution to show raters examples in the language of their expertise. In addition to rating ∼ 3𝑘 examples in English, we also rated 300 examples in German, French, Spanish, Russian, Chinese and 100 examples for Hindi. (We chose these languages to capture different language families and different sizes -Hindi is only 65 𝑡ℎ in size). Each example was rated by three raters and majority label was used (Maybe being selected if no majority). As seen from the results in Table <ref type="table" target="#tab_5">5</ref>, an overwhelming majority of examples were found to be very helpful. The data quality as judged by the raters  compares favorably to similar evaluations of existing datasets <ref type="bibr" target="#b28">[29]</ref>.</p><p>Both reference and attribution were found to be high-quality (with a slight edge to reference description). The responses to the third question (which provides the page context) also validated our hypothesis that the relevance of image captions is influenced by the context as seen by the near-perfect ratings when considering the context. Lastly we found no major difference in performance across the different languages demonstrating the multilingual data quality.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">MULTIMODAL EXPERIMENTS WITH WIT</head><p>In this section, we empirically demonstrate the efficacy of the WIT dataset both as a pretraining dataset as well as an evaluation set for a new image-text retrieval task.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Experiment Details</head><p>Model: For this analyses, we leveraged a two-tower or dual-encoder model, inspired by previous works that used them to learn multilingual, multimodal models <ref type="bibr" target="#b30">[31]</ref>. As the name suggests, the model has two encoders -one to encoder the text and the other to represent the images. While the text input to the model was a bag of words, the image tower, the image was first embedded in a manner similar to <ref type="bibr" target="#b16">[17]</ref>. The final embeddings of these two towers is then combined using their cosine similarity, which in turn is optimized using a batch softmax loss. Specifically, for a batch of 𝑛 image-text embedding pairs, the complete 𝑛 × 𝑛 similarity matrix is computed (the (𝑖, 𝑗) entry being the cosine of the 𝑖 𝑡ℎ image embedding and 𝑗 𝑡ℎ text embedding) and a softmax loss applied on each of the row. Note that only the diagonal entries are considered as positive pairs. Setup: We used a batch size of 128 for training and a batch size of 1000 for evaluation. The learning rate was set to 5e-7 The optimizer we used was SGD with Momentum. For the text encoder, we used a bag of words model (with ngrams of size 1 and 2). Each ngram was mapped to an a one amongst a million vocabulary buckets using a hash-function to get a 200D embedding. These ngram embeddings were then summed and passed through a simple FFNN and projected to a final 64D embedding, to match the size of the image encoder embedding. The final activation function we used was ReLU.</p><p>Evaluation: We evaluated the models on the Flickr30K, Multi30K and MS-COCO test sets, as well as the dedicated test sets released as part of WIT. We also spliced the WIT test sets into English-only and i18n (non-English) to understand any performance differences. In all experiments using WIT for pretraining, we use the entire training set (i.e., data for all languages). We also pretrained a model with Conceptual Captions (CC) dataset to compare against. We used Recall@K (K = 1, 3, 5) as the evaluation metric. WIT-ALL R@1 R@5 R@1 R@5 R@1 R@5 WIT-ALL 0.074 0.228 0.054 0.165 0.346 0.642 CC 0.145 0.385 0.111 0.32 0.048 0.122 </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Evaluating a zero-shot pretrained model</head><p>A common evaluation of image-text datasets is as a pretraining dataset for a model, which is then directly applied to a downstream task -in our case image-text retrieval -without any finetuning (i.e., zero-shot). Since WIT contains multiple different texts associated with an image, we first set about understanding the effect of pretraining models on different fields. As seen in Table <ref type="table" target="#tab_6">6</ref>, the different WIT models all perform quite well on both English and non-English sets. The strongest performance was consistently obtained by the concatenation of reference and attribution descriptions -which we now default to for subsequent experiments. It is worth noting that the model pretrained on CC lags behind those trained on WIT, even on the English-only test set.</p><p>To better understand this, we next evaluated the WIT and CC models (in this zero-shot manner) on popular English test collections from Flickr30K and MS-COCO which are more similar to CC. As seen in Table <ref type="table" target="#tab_7">7</ref>, the multilingual WIT model trails the English CC model on these collections, though not as significantly as the gap between WIT and CC on the heldout WIT test sets.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Understanding multilingual performance</head><p>Since WIT encompasses examples from 100+ languages, we next evaluated how multilingual the WIT-based models are. For this, we used Multi30K's three language test sets (Czech (CS), German (DE) and French (FR)). We generated similar language subset datasets from the WIT test set for the same languages (CS, DE, FR) and used that for evaluation. As shown in Table <ref type="table" target="#tab_8">8</ref>, both models struggle on the Multi30K dataset, though again the WIT model shines on the held-out WIT test set. Similar to the Flickr30k dataset, the Multi30k datasets are quite different from the WIT datasets (as we discuss in Sec. 4.5) which may explain this behavior.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">Evaluation On Image/Title Retrieval Task</head><p>Lastly, we evaluated on a real-world task that's based on Wikipedia. This retrieval task requires identifying images that can be found on a given Wikipedia page, using only the page title. We ran this evaluation in both a zero-shot setting (i.e., pretrained model directly) and with finetuning on the training set. Unlike the above experiments, here the input to the text encoder was the page title directly. The evaluation was done with the held-out WIT test split using the page title as text. From Table <ref type="table" target="#tab_9">9</ref>, we clearly observe a large performance </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5">Discussion</head><p>The above experiments clearly demonstrated that WIT-based pretrained models perform extremely well (5x+ gains) on the evaluation sets based on Wikipedia data. However, the models do not do as well on other image-text datasets (Flickr30K/Multi30k and MS-COCO). Since the WIT dataset is not lacking in size or diversity, we probed further into what makes these evaluation sets so different from each other. 4.5.1 Vocabulary Analysis. We first analyzed the vocabulary of the two datasets we used for pretraining : WIT and CC. Since Wikipedia is entity heavy a diverse concept pool, we suspected that the vocabulary of the WIT dataset may reflect this. As shown in Table <ref type="table" target="#tab_0">10</ref>, this was the case with over 72% WIT occurring 3 times or less (vs. 43% for CC).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5.2">Language</head><p>Model. This difference is even more stark when compared to the test collections used for evaluation (COCO and Flickr). When we compared the unigram distributions of different data sets using the Jensen-Shannon Divergence (JSD), we found a massive difference in the vocabularies and concept coverage of the data (see Table <ref type="table" target="#tab_0">11</ref>). While the fact that less than a sixth of WIT is English skews these results slightly, the gap between the English-only slice and other datasets remains sizeable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5.3">Image entity Analysis.</head><p>Part of the reason for this difference is the broad coverage of entities in the WIT dataset. Using an image classification model to tag all WIT images with entities, we found that amongst the ∼4.5M entities identified, a large number (≥ 80% i.e., ∼3.68M) of the entities occur 3 times or less. Thus similar to the texts, the image data too is very diverse with not much repetition. 4.5.4 Key differences in texts. Text fields in WIT often tend to be descriptive, verbose and use specific terminology. However this causes a mismatch when evaluated on the test collections, which are often terse single line captions of common words and objects. The choice of bag of words likely exacerbates this issue. Perhaps the most important difference is the use of specifics vs general words. As found in the CC work <ref type="bibr" target="#b28">[29]</ref>, text hypernymization was crucial to creating a dataset closer to those used for evaluation. For example a text like Two sculptures by artist Duncan McKellar adorn trees outside the derelict Norwich Union offices in Bristol, UK would be transformed to sculptures by person adorn trees outside the derelict offices so as to remove specifics (person names, locations, times etc ..). This is likely the biggest reason why our trained models underperformed on the existing collections. While there are benefits and drawbacks of such hypernymization, we would like to add this in future versions. However there remains significant challenges doing such replacements for a 100+ language dataset consistently and with high quality across languages.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">FUTURE WORK</head><p>In our eagerness and excitement to share the WIT Dataset with the research community, we have just touched the tip of the iceberg by starting out with an image-text retrieval task using a simple dual encoder model. We observed better performance with an ALIGN model <ref type="bibr" target="#b15">[16]</ref> which we plan to expand upon in followup work. Given the superior performance of cross-attention multimodal models, WIT can potentially be used in lieu of or in addition to the existing pretraining datasets in models as illustrated by UNITER, Unicoder-VL, VL-BERT, . . . etc. A range of new i18n tasks can be formulated with WIT as the basis for VQA, VCR and many others. There is also the possibility of using multimodality to enhance multilingual performance, especially for under-represented languages. WIT Dataset provides a crosslingual corpus of text for the same image which could aid in this idea. We also hope to leverage the knowledge base and entities and attributes of WIT to improve Q&amp;A tasks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">CONCLUSION</head><p>In this paper we introduced the Wikipedia Image Text (WIT) dataset -the largest (at time of writing), multilingual, multimodal, contextrich dataset. By extracting texts associated with images and their surrounding contexts from over a 100 languages, WIT provides for a rich and diverse dataset. As a result, it is well suited for use in a myriad of ways including pretraining multimodal models, finetuning image-text retrieval models or building cross-lingual representations to name a few. Our detailed analysis and quality evaluation, validate that WIT is a high quality dataset with strong image-text alignment. We also empirically demonstrated the use of this dataset as both a pretraining and finetuning set, and in the process uncovered some shortcomings of existing datasets. We believe this can serve as a rich resource to drive research in the multilingual, multimodal space for years to come and enable the community to building better and more robust visio-linguistic models well suited to real world tasks.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: The Wikipedia page for Half Dome, Yosemite, California via Wikimedia Commons with examples of the different fields extracted and provided in WIT.</figDesc><graphic coords="2,53.80,83.68,240.24,176.50" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>-based Image Text (WIT) Dataset. WIT is created by extracting multiple different texts associated with an image (e.g., the reference description seen in Fig 1) from Wikipedia articles and Wikimedia image links. This was accompanied by rigorous filtering to only retain high quality image-text associations. The resulting dataset contains over 37.5 million image-text sets and spans 11.5 million unique imagesmaking WIT the largest multimodal dataset at the time of writing. Furthermore WIT provides unparalleled multilingual coveragewith 12K+ examples in each of 108 languages (53 languages have 100K+ image-text pairs).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Human Annotation Template Example</figDesc><graphic coords="4,317.96,531.48,240.25,167.10" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 :</head><label>1</label><figDesc>Existing publicly available image-text datasets pale in comparison to text-only datasets (e.g., mC4 with O(Billions) of examples in 100+ languages) and image-only datasets (e.g., 14M in ImageNet-21k).</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 :</head><label>2</label><figDesc>Example of texts extracted for Half Dome example</figDesc><table><row><cell>Field Name</cell><cell>Text</cell></row><row><cell>Page Title</cell><cell>Half Dome, Yosemite</cell></row><row><cell>Canonical Page URL</cell><cell>en.wikipedia.org/wiki/Half_Dome</cell></row><row><cell>Page Description</cell><cell>Half Dome is a granite dome at the</cell></row><row><cell></cell><cell>eastern end of Yosemite Valley in</cell></row><row><cell></cell><cell>Yosemite National Park, California.</cell></row><row><cell></cell><cell>It is a well-known rock formation ...</cell></row><row><cell>Reference Description</cell><cell>Sunset over Half Dome from Glacier</cell></row><row><cell></cell><cell>Point</cell></row><row><cell cols="2">Attribution Description English: Half Dome as viewed from</cell></row><row><cell></cell><cell>Glacier Point, Yosemite National</cell></row><row><cell></cell><cell>Park, California, United States.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 :</head><label>3</label><figDesc>Statistics of the final WIT dataset and availability of different fields. Tuple refers to one entry in the dataset comprising the image, the three different possible texts and the context. Context texts include the page and (hierarchical) section titles and their respective descriptions</figDesc><table><row><cell>Type</cell><cell>Train</cell><cell>Val</cell><cell>Test</cell><cell>Total / Unique</cell></row><row><cell cols="4">Rows / Tuples 37.04M 261K 210.1K</cell><cell>37.5M</cell></row><row><cell cols="2">Unique Images 11.4M</cell><cell>58K</cell><cell>56.9K</cell><cell>11.5M</cell></row><row><cell>Ref. Text</cell><cell cols="3">16.9M 149.8K 104K</cell><cell>17.1M / 16.6M</cell></row><row><cell>Attr. Text</cell><cell cols="4">34.7M 192.6K 199.7K 35.1M / 10.9M</cell></row><row><cell>Alt Text</cell><cell>5.3M</cell><cell>29K</cell><cell>29K</cell><cell>5.4M / 5.2M</cell></row><row><cell>Context Texts</cell><cell>-</cell><cell>-</cell><cell>-</cell><cell>119.4M</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 :</head><label>4</label><figDesc>WIT: Image-Text Stats by Language However since these are generic and not specific to the actual location, the text association is often incorrect and hence we removed them. Other such noise patterns included common images (e.g., tiny icons), placeholder images and generic missing images.(3) We only retained images that have a research-permissive license such as Creative Commons (the text of Wikipedia is licensed under a CC-BY-SA license). (4) Lastly we found that certain image-text pairs occurred very frequently. These were often generic images that did not have much to do with the main article page. Common examples included flags, logos, maps, insignia and such. To prevent biasing the data, we heavily under-sampled all such images.</figDesc><table><row><cell cols="4">Image-Text # Lang Uniq. Images # Lang</cell></row><row><cell>total &gt; 1M</cell><cell>9</cell><cell>images &gt; 1M</cell><cell>6</cell></row><row><cell>total &gt; 500K</cell><cell>10</cell><cell>images &gt; 500K</cell><cell>12</cell></row><row><cell>total &gt; 100K</cell><cell>36</cell><cell>images &gt; 100K</cell><cell>35</cell></row><row><cell>total &gt; 50K</cell><cell>15</cell><cell>images &gt; 50K</cell><cell>17</cell></row><row><cell>total &gt; 12K</cell><cell>38</cell><cell>images &gt; 12K</cell><cell>38</cell></row><row><cell cols="2">for denoting locations.</cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 3</head><label>3</label><figDesc></figDesc><table><row><cell>provides some more detailed statistics of</cell></row><row><cell>the coverage of the different texts. Overall with nearly 32M</cell></row><row><cell>unique image-text pairs, WIT is nearly an order of magnitude</cell></row><row><cell>larger than prior datasets.</cell></row><row><cell>• Highly multilingual: As seen in Table 4, WIT has broad</cell></row><row><cell>multilingual coverage. Nearly half of the 100+ languages</cell></row><row><cell>contain 100K+ unique image-text tuples and 100K+ unique</cell></row><row><cell>images.</cell></row></table><note>• Large cross-lingual coverage: Images have shown great promise in helping build cross-lingual models<ref type="bibr" target="#b30">[31,</ref><ref type="bibr" target="#b31">32]</ref>. WIT can be used to generate 50M+ cross-lingual pairs (i.e., text</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 5 :</head><label>5</label><figDesc>Results of the human annotations of data quality. These examples and ratings are included with the dataset.</figDesc><table><row><cell>Text</cell><cell></cell><cell>EN</cell><cell></cell><cell></cell><cell>non-EN</cell><cell></cell></row><row><cell></cell><cell cols="6">%Yes %Maybe %No %Yes %Maybe %No</cell></row><row><cell>Reference</cell><cell>92.2</cell><cell>4.4</cell><cell>3.3</cell><cell>94.1</cell><cell>2.9</cell><cell>2.9</cell></row><row><cell>Attribute</cell><cell>92.2</cell><cell>3.3</cell><cell>4.6</cell><cell>93.1</cell><cell>0.8</cell><cell>6.2</cell></row><row><cell cols="2">Contextual 98.7</cell><cell>0.7</cell><cell>0.6</cell><cell>96.6</cell><cell>1.8</cell><cell>1.6</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 6 :</head><label>6</label><figDesc>Zero-shot evaluation for models using different text fields on WIT Image-Text Retrieval test sets</figDesc><table><row><cell cols="2">Pretrain setup</cell><cell cols="2">WIT-All</cell><cell>WIT-EN</cell><cell>WIT-I18N</cell></row><row><cell>Data</cell><cell>Text</cell><cell cols="4">R@1 R@5 R@1 R@5 R@1 R@5</cell></row><row><cell>WIT</cell><cell>ref</cell><cell cols="4">0.126 0.258 0.169 0.358 0.114 0.236</cell></row><row><cell>WIT</cell><cell>attr</cell><cell>0.293</cell><cell>0.55</cell><cell cols="2">0.272 0.523 0.293 0.523</cell></row><row><cell cols="6">WIT ref+attr 0.346 0.642 0.344 0.64 0.344 0.633</cell></row><row><cell>CC</cell><cell>text</cell><cell cols="4">0.048 0.122 0.072 0.186 0.041</cell><cell>0.11</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 7 :</head><label>7</label><figDesc>Zero-shot Evaluation on Flickr30K, MS-COCO and WIT test sets for Image-Text Retrieval Task</figDesc><table><row><cell>Pretrain</cell><cell>MS-COCO</cell><cell>Flickr30K</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 8</head><label>8</label><figDesc></figDesc><table><row><cell cols="5">: Zero-shot Evaluation on Multi30K and WIT I18N</cell></row><row><cell cols="4">test sets (CS, DE, FR) for Image-Text Retrieval Task</cell><cell></cell></row><row><cell>Exp</cell><cell>Multi30K-R@5 CS DE FR</cell><cell>CS</cell><cell>WIT-R@5 DE</cell><cell>FR</cell></row><row><cell cols="5">WIT-ALL 0.006 0.005 0.006 0.553 0.562 0.599</cell></row><row><cell>CC</cell><cell cols="4">0.004 0.005 0.004 0.096 0.084 0.104</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 9 :</head><label>9</label><figDesc>Zero-shot and Finetuned Evaluation on Wiki (Image, Page Title) test set for Retrieval Task</figDesc><table><row><cell>Exp</cell><cell>Finetuning</cell><cell cols="3">WIT-All R@1 R@3 R@5</cell></row><row><cell>WIT-EN</cell><cell>None</cell><cell cols="3">0.067 0.122 0.152</cell></row><row><cell>CC</cell><cell>None</cell><cell cols="3">0.012 0.024 0.032</cell></row><row><cell>WIT-ALL</cell><cell>WIT-ALL</cell><cell>0.1</cell><cell cols="2">0.174 0.214</cell></row><row><cell>CC</cell><cell>CC</cell><cell>0.01</cell><cell cols="2">0.021 0.029</cell></row><row><cell cols="5">Table 10: Vocabulary Comparison</cell></row><row><cell>Dataset</cell><cell cols="4">Unigrams freq &lt;= 3 pct freq &lt;= 3</cell></row><row><cell>CC</cell><cell>149,924</cell><cell cols="2">63,800</cell><cell>42.55%</cell></row><row><cell>WIT (ref)</cell><cell>867,906</cell><cell cols="2">625,100</cell><cell>72.02%</cell></row><row><cell cols="5">Table 11: Language Model Comparison</cell></row><row><cell></cell><cell cols="2">Dataset A vs B</cell><cell>JSD</cell></row><row><cell></cell><cell cols="2">Flickr vs Flickr Test</cell><cell>0.1679</cell></row><row><cell cols="4">COCO vs COCO Test 0.1008</cell></row><row><cell></cell><cell cols="2">CC vs Flickr Test</cell><cell>0.4844</cell></row><row><cell></cell><cell cols="2">CC vs COCO Test</cell><cell>0.4746</cell></row><row><cell></cell><cell>CC vs WIT</cell><cell></cell><cell>0.3825</cell></row><row><cell cols="4">WIT vs Flickr Test 0.6007</cell></row><row><cell cols="4">WIT vs COCO Test 0.5957</cell></row><row><cell cols="5">gain on this task using WIT relative to the CC model both with and</cell></row><row><cell cols="2">without finetuning.</cell><cell></cell><cell></cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Fusion of Detected Objects in Text for Visual Question Answering</title>
+		<author>
+			<persName><forename type="first">Chris</forename><surname>Alberti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jeffrey</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Michael</forename><surname>Collins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">David</forename><surname>Reitter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2019 Conf. on Empirical Methods in Natural Language Processing and the 9th International Joint Conf. on Natural Language Processing</title>
+				<meeting>of the 2019 Conf. on Empirical Methods in Natural Language essing and the 9th International Joint Conf. on Natural Language essing</meeting>
+		<imprint>
+			<publisher>EMNLP-IJCNLP</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="2131" to="2140" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Vqa: Visual question answering</title>
+		<author>
+			<persName><forename type="first">Stanislaw</forename><surname>Antol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aishwarya</forename><surname>Agrawal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jiasen</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Margaret</forename><surname>Mitchell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dhruv</forename><surname>Batra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lawrence</forename><surname>Zitnick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Devi</forename><surname>Parikh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the IEEE International Conf. on Computer Vision (ICCV)</title>
+				<meeting>of the IEEE International Conf. on Computer Vision (ICCV)</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="2425" to="2433" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">MLM: A Benchmark Dataset for Multitask Learning with Multiple Languages and Modalities</title>
+		<author>
+			<persName><forename type="first">Jason</forename><surname>Armitage</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Endri</forename><surname>Kacupaj</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Golsa</forename><surname>Tahmasebzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Maria</forename><surname>Maleshkova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ralph</forename><surname>Ewerth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jens</forename><surname>Lehmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 29th ACM International Conf. on Information &amp; Knowledge Management (CIKM)</title>
+				<meeting>of the 29th ACM International Conf. on Information &amp; Knowledge Management (CIKM)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="2967" to="2974" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Findings of the Third Shared Task on Multimodal Machine Translation</title>
+		<author>
+			<persName><forename type="first">Loïc</forename><surname>Barrault</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fethi</forename><surname>Bougares</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lucia</forename><surname>Specia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chiraag</forename><surname>Lala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Desmond</forename><surname>Elliott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stella</forename><surname>Frank</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the Third Conf. on Machine Translation</title>
+				<meeting>of the Third Conf. on Machine Translation</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="304" to="323" />
+		</imprint>
+	</monogr>
+	<note>Shared Task Papers (WMT)</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">FlumeJava: Easy, Efficient Data-Parallel Pipelines</title>
+		<author>
+			<persName><forename type="first">Craig</forename><surname>Chambers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ashish</forename><surname>Raniwala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Frances</forename><surname>Perry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stephen</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Robert</forename><forename type="middle">R</forename><surname>Henry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Robert</forename><surname>Bradshaw</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nathan</forename><surname>Weizenbaum</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Sigplan Notices</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="363" to="375" />
+			<date type="published" when="2010">2010. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<author>
+			<persName><forename type="first">Soravit</forename><surname>Changpinyo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Piyush</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nan</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Radu</forename><surname>Soricut</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2102.08981</idno>
+		<title level="m">Conceptual 12M: Pushing Web-Scale Image-Text Pre-Training To Recognize Long-Tail Visual Concepts</title>
+				<imprint>
+			<date type="published" when="2021">2021. 2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<author>
+			<persName><forename type="first">Yen-Chun</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Linjie</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Licheng</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ahmed</forename><forename type="middle">El</forename><surname>Kholy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Faisal</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhe</forename><surname>Gan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yu</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jingjing</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1909.11740</idno>
+		<title level="m">Uniter: Learning universal image-text representations</title>
+				<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Imagenet: A large-scale hierarchical image database</title>
+		<author>
+			<persName><forename type="first">Jia</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wei</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Richard</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Li-Jia</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kai</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Li</forename><surname>Fei-Fei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2009 IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</title>
+				<meeting>of the 2009 IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="248" to="255" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title>
+		<author>
+			<persName><forename type="first">Jacob</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ming-Wei</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kenton</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kristina</forename><surname>Toutanova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2019 Conf. of the North American Chapter</title>
+		<title level="s">Long and Short Papers</title>
+		<meeting>of the 2019 Conf. of the North American Chapter</meeting>
+		<imprint>
+			<publisher>NAACL-HLT</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="4171" to="4186" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</title>
+		<author>
+			<persName><forename type="first">Alexey</forename><surname>Dosovitskiy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lucas</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Alexander</forename><surname>Kolesnikov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dirk</forename><surname>Weissenborn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xiaohua</forename><surname>Zhai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Thomas</forename><surname>Unterthiner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mostafa</forename><surname>Dehghani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Matthias</forename><surname>Minderer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Georg</forename><surname>Heigold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sylvain</forename><surname>Gelly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Neil</forename><surname>Houlsby</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 9th International Conf. on Learning Representations (ICLR)</title>
+				<meeting>of the 9th International Conf. on Learning Representations (ICLR)</meeting>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Findings of the Second Shared Task on Multimodal Machine Translation and Multilingual Image Description</title>
+		<author>
+			<persName><forename type="first">Desmond</forename><surname>Elliott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stella</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Loïc</forename><surname>Barrault</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fethi</forename><surname>Bougares</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lucia</forename><surname>Specia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2nd Conf. on Machine Translation (WMT)</title>
+				<meeting>of the 2nd Conf. on Machine Translation (WMT)</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="215" to="233" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Multi30K: Multilingual English-German Image Descriptions</title>
+		<author>
+			<persName><forename type="first">Desmond</forename><surname>Elliott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stella</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Khalil</forename><surname>Sima'an</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lucia</forename><surname>Specia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 5th Workshop on Vision and Language (VL)</title>
+				<meeting>of the 5th Workshop on Vision and Language (VL)</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="70" to="74" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Learning Translations via Images with a Massively Multilingual Image Dataset</title>
+		<author>
+			<persName><forename type="first">John</forename><surname>Hewitt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Daphne</forename><surname>Ippolito</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Brendan</forename><surname>Callahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Reno</forename><surname>Kriz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Derry</forename><surname>Tanti Wijaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chris</forename><surname>Callison-Burch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 56th Annual Meeting of the Association for Computational Linguistics</title>
+		<title level="s">Long Papers</title>
+		<meeting>of the 56th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="2566" to="2576" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Multimodal Pivots for Image Caption Translation</title>
+		<author>
+			<persName><forename type="first">Julian</forename><surname>Hitschler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Shigehiko</forename><surname>Schamoni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stefan</forename><surname>Riezler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 54th Annual Meeting of the Association for Computational Linguistics</title>
+		<title level="s">Long Papers</title>
+		<meeting>of the 54th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="2399" to="2409" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics</title>
+		<author>
+			<persName><forename type="first">Micah</forename><surname>Hodosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Peter</forename><surname>Young</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Julia</forename><surname>Hockenmaier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Artificial Intelligence Research</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="853" to="899" />
+			<date type="published" when="2013">2013. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Scaling Up Visual and Vision-Language Representation Learning With Noisy Text Supervision</title>
+		<author>
+			<persName><forename type="first">Chao</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yinfei</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ye</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yi-Ting</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zarana</forename><surname>Parekh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hieu</forename><surname>Pham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yunhsuan</forename><surname>Quoc V Le</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhen</forename><surname>Sung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tom</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Duerig</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2102.05918</idno>
+		<imprint>
+			<date type="published" when="2021">2021. 2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><forename type="first">Da-Cheng</forename><surname>Juan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chun-Ta</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhen</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Futang</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aleksei</forename><surname>Timofeev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yi-Ting</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yaxi</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tom</forename><surname>Duerig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Andrew</forename><surname>Tomkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sujith</forename><surname>Ravi</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1902.10814</idno>
+		<title level="m">Graph-RISE: Graph-Regularized Image Semantic Embedding</title>
+				<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Unicoder-VL: A Universal Encoder for Vision and Language by Cross-modal Pre-training</title>
+		<author>
+			<persName><forename type="first">Gen</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nan</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yuejian</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ming</forename><surname>Gong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Daxin</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ming</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1908.06066</idno>
+		<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv e-prints, page. arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Unicoder-VL: A Universal Encoder for Vision and Language by Cross-Modal Pre-Training</title>
+		<author>
+			<persName><forename type="first">Gen</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nan</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yuejian</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ming</forename><surname>Gong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Daxin</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ming</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the AAAI Conf. on Artificial Intelligence (AAAI)</title>
+				<meeting>of the AAAI Conf. on Artificial Intelligence (AAAI)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="11336" to="11344" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<author>
+			<persName><forename type="first">Liunian</forename><surname>Harold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Li</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mark</forename><surname>Yatskar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cho-Jui</forename><surname>Da Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kai-Wei</forename><surname>Hsieh</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Chang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1908.03557</idno>
+		<title level="m">VisualBERT: A Simple and Performant Baseline for Vision and Language</title>
+				<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">COCO-CN for Cross-Lingual Image Tagging, Captioning, and Retrieval</title>
+		<author>
+			<persName><forename type="first">Xirong</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chaoxi</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xiaoxu</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Weiyu</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhengxiong</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Gang</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jieping</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Multimedia</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="2347" to="2360" />
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Microsoft COCO: Common Objects in Context</title>
+		<author>
+			<persName><forename type="first">Tsung-Yi</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Michael</forename><surname>Maire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Serge</forename><surname>Belongie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">James</forename><surname>Hays</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Pietro</forename><surname>Perona</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Deva</forename><surname>Ramanan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Piotr</forename><surname>Dollár</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lawrence</forename><surname>Zitnick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 13th European Conf. on Computer Vision (Part V) (ECCV)</title>
+				<meeting>of the 13th European Conf. on Computer Vision (Part V) (ECCV)</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="740" to="755" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">ViLBERT: Pretraining Task-Agnostic Visiolinguistic Representations for Vision-and-Language Tasks</title>
+		<author>
+			<persName><forename type="first">Jiasen</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dhruv</forename><surname>Batra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Devi</forename><surname>Parikh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stefan</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 33rd Conf. on Neural Information Processing Systems (NeurIPS)</title>
+				<meeting>of the 33rd Conf. on Neural Information essing Systems (NeurIPS)</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="13" to="23" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Cross-Lingual Image Caption Generation</title>
+		<author>
+			<persName><forename type="first">Takashi</forename><surname>Miyazaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nobuyuki</forename><surname>Shimizu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 54th Annual Meeting of the Association for Computational Linguistics</title>
+		<title level="s">Long Papers</title>
+		<meeting>of the 54th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1780" to="1790" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Im2Text: Describing Images Using 1 Million Captioned Photographs</title>
+		<author>
+			<persName><forename type="first">Vicente</forename><surname>Ordonez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Girish</forename><surname>Kulkarni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tamara</forename><surname>Berg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 25th Annual Conf. on Neural Information Processing Systems (NeurIPS)</title>
+				<meeting>of the 25th Annual Conf. on Neural Information essing Systems (NeurIPS)</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="1143" to="1151" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">ImageBERT: Cross-modal Pre-training with Large-scale Weak-supervised Image-Text Data</title>
+		<author>
+			<persName><forename type="first">Di</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lin</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jia</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Edward</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Taroon</forename><surname>Bharti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Arun</forename><surname>Sacheti</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2001.07966</idno>
+		<imprint>
+			<date type="published" when="2020">2020. 2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Learning transferable visual models from natural language supervision</title>
+		<author>
+			<persName><forename type="first">Alec</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jong</forename><forename type="middle">Wook</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chris</forename><surname>Hallacy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aditya</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Gabriel</forename><surname>Goh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sandhini</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Girish</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Amanda</forename><surname>Askell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Pamela</forename><surname>Mishkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jack</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Gretchen</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ilya</forename><surname>Sutskever</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Image</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">T2</biblScope>
+			<date type="published" when="2021">2021. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</title>
+		<author>
+			<persName><forename type="first">Colin</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Adam</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Katherine</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sharan</forename><surname>Narang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Michael</forename><surname>Matena</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yanqi</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wei</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Peter</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Machine Learning Research</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="1" to="67" />
+			<date type="published" when="2020">2020. 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset For Automatic Image Captioning</title>
+		<author>
+			<persName><forename type="first">Piyush</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nan</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sebastian</forename><surname>Goodman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Radu</forename><surname>Soricut</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 56th Annual Meeting of the Association for Computational Linguistics</title>
+		<title level="s">Long Papers</title>
+		<meeting>of the 56th Annual Meeting of the Association for Computational Linguistics</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="2556" to="2565" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<author>
+			<persName><forename type="first">Karen</forename><surname>Simonyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Andrew</forename><surname>Zisserman</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1409.1556</idno>
+		<title level="m">Very deep convolutional networks for large-scale image recognition</title>
+				<imprint>
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<author>
+			<persName><forename type="first">Karan</forename><surname>Singhal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Karthik</forename><surname>Raman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cate</forename><surname>Balder Ten</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1905.12260</idno>
+		<title level="m">Learning multilingual word embeddings using image-text data</title>
+				<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">A Shared Task on Multimodal Machine Translation and Crosslingual Image Description</title>
+		<author>
+			<persName><forename type="first">Lucia</forename><surname>Specia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stella</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Khalil</forename><surname>Sima'an</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Desmond</forename><surname>Elliott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the First Conf. on Machine Translation</title>
+		<title level="s">Shared Task Papers (WMT</title>
+		<meeting>of the First Conf. on Machine Translation</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="543" to="553" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">VL-BERT: Pre-training of Generic Visual-Linguistic Representations</title>
+		<author>
+			<persName><forename type="first">Weijie</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xizhou</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yue</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bin</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lewei</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Furu</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jifeng</forename><surname>Dai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 8th International Conf. on Learning Representations (ICLR)</title>
+				<meeting>of the 8th International Conf. on Learning Representations (ICLR)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Revisiting Unreasonable Effectiveness of Data in Deep Learning Era</title>
+		<author>
+			<persName><forename type="first">Chen</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Abhinav</forename><surname>Shrivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Saurabh</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Abhinav</forename><surname>Gupta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2017 IEEE International Conf. on Computer Vision (ICCV)</title>
+				<meeting>of the 2017 IEEE International Conf. on Computer Vision (ICCV)</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="843" to="852" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Rethinking the Inception Architecture for Computer Vision</title>
+		<author>
+			<persName><forename type="first">Christian</forename><surname>Szegedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Vincent</forename><surname>Vanhoucke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sergey</forename><surname>Ioffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jon</forename><surname>Shlens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zbigniew</forename><surname>Wojna</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</title>
+				<meeting>of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="2818" to="2826" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Attention is all you need</title>
+		<author>
+			<persName><forename type="first">Ashish</forename><surname>Vaswani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Noam</forename><surname>Shazeer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Niki</forename><surname>Parmar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jakob</forename><surname>Uszkoreit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Llion</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aidan</forename><forename type="middle">N</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Łukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Illia</forename><surname>Polosukhin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 31st Conf. on Neural Information Processing Systems (NeurIPS)</title>
+				<meeting>of the 31st Conf. on Neural Information essing Systems (NeurIPS)</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="5998" to="6008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Show and Tell: A Neural Image Caption Generator</title>
+		<author>
+			<persName><forename type="first">Oriol</forename><surname>Vinyals</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Alexander</forename><surname>Toshev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Samy</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dumitru</forename><surname>Erhan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the IEEE Conf. on computer vision and pattern recognition</title>
+				<meeting>of the IEEE Conf. on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="3156" to="3164" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Beto, bentz, becas: The surprising cross-lingual effectiveness of BERT</title>
+		<author>
+			<persName><forename type="first">Shijie</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mark</forename><surname>Dredze</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2019 Conf. on Empirical Methods in Natural Language Processing and the 9th International Joint Conf. on Natural Language Processing</title>
+				<meeting>of the 2019 Conf. on Empirical Methods in Natural Language essing and the 9th International Joint Conf. on Natural Language essing</meeting>
+		<imprint>
+			<publisher>EMNLP-IJCNLP</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="833" to="844" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><forename type="first">Linting</forename><surname>Xue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Noah</forename><surname>Constant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Adam</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mihir</forename><surname>Kale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rami</forename><surname>Al-Rfou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aditya</forename><surname>Siddhant</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2010.11934</idno>
+		<title level="m">Aditya Barua, and Colin Raffel. 2020. mT5: A massively multilingual pre-trained text-to-text transformer</title>
+				<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions</title>
+		<author>
+			<persName><forename type="first">Peter</forename><surname>Young</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Alice</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Micah</forename><surname>Hodosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Julia</forename><surname>Hockenmaier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="67" to="78" />
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">From Recognition to Cognition: Visual Commonsense Reasoning</title>
+		<author>
+			<persName><forename type="first">Rowan</forename><surname>Zellers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yonatan</forename><surname>Bisk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ali</forename><surname>Farhadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yejin</forename><surname>Choi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</title>
+				<meeting>of the IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="6713" to="6724" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Unified Vision-Language Pre-Training for Image Captioning and VQA</title>
+		<author>
+			<persName><forename type="first">Luowei</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hamid</forename><surname>Palangi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lei</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Houdong</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jason</forename><forename type="middle">J</forename><surname>Corso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jianfeng</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the AAAI Conf. on Artificial Intelligence (AAAI)</title>
+				<meeting>of the AAAI Conf. on Artificial Intelligence (AAAI)</meeting>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="13041" to="13049" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">A Visual Attention Grounding Neural Model for Multimodal Machine Translation</title>
+		<author>
+			<persName><forename type="first">Mingyang</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Runxiang</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yong</forename><forename type="middle">Jae</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhou</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2018 Conf. on Empirical Methods in Natural Language Processing (EMNLP)</title>
+				<meeting>of the 2018 Conf. on Empirical Methods in Natural Language essing (EMNLP)</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="3643" to="3653" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Aligning books and movies: Towards story-like visual explanations by watching movies and reading books</title>
+		<author>
+			<persName><forename type="first">Yukun</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ryan</forename><surname>Kiros</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rich</forename><surname>Zemel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ruslan</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Raquel</forename><surname>Urtasun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Antonio</forename><surname>Torralba</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sanja</forename><surname>Fidler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2015 IEEE International Conf. on Computer Vision (ICCV)</title>
+				<meeting>of the 2015 IEEE International Conf. on Computer Vision (ICCV)</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="19" to="27" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

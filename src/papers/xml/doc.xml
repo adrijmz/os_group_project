@@ -11,6 +11,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 			<publicationStmt>
 				<publisher/>
 				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-06">June 2023</date>
 			</publicationStmt>
 			<sourceDesc>
 				<biblStruct>
@@ -107,7 +108,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 					</analytic>
 					<monogr>
 						<imprint>
-							<date/>
+							<date type="published" when="2023-06">June 2023</date>
 						</imprint>
 					</monogr>
 					<idno type="MD5">4413515F58DD1B74669F8A68E2DD3590</idno>
@@ -117,7 +118,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:20+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -134,10 +135,163 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>In recent years credit card became one of the essential parts of the people. Sudden increase in E-commerce, customer started using credit card for online purchasing therefore risk of fraud also increases. Instead of carrying a huge amount in hand it is easier to keep credit cards. But nowadays that too becomes unsafe. Nowadays we are facing a big problem on credit card fraud which is increasing in a good percentage. The main purpose is the survey on the various methods applied to detect credit card frauds. From the abnormalities, in the transaction, the fraudulent one is identified. We address this issue in order to implement some machine learning algorithm like random forest, logistic regression in order to detect this kind of fraud. In this paper we increase the efficiency in finding the fraud. However, we discussed and evaluated employee criteria. Currently, the issues of credit card fraud detection have become a big problem for new researchers. We implement an intelligent algorithm which will detect all kind of fraud in a credit card transaction. We handled the problem by finding a pattern of each customer in between fraud and legal transaction. Isolation Forest Algorithm and Local Outlier Factor are used to predict the pattern of transaction for each customer and a decision is made according to them. In order to prevent data from mismatching, all attribute are marked equally.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>In recent years credit card became one of the essential parts of the people. Sudden increase in E-commerce, customer started using credit card for online purchasing therefore risk of fraud also increases. Instead of carrying a huge amount in hand it is easier to keep credit cards. But nowadays that too becomes unsafe. Nowadays we are facing a big problem on credit card fraud which is increasing in a good percentage. The main purpose is the survey on the various methods applied to detect credit card frauds. From the abnormalities, in the transaction, the fraudulent one is identified. We address this issue in order to implement some machine learning algorithm like random forest, logistic regression in order to detect this kind of fraud. In this paper we increase the efficiency in finding the fraud. However, we discussed and evaluated employee criteria. Currently, the issues of credit card fraud detection have become a big problem for new researchers. We implement an intelligent algorithm which will detect all kind of fraud in a credit card transaction. We handled the problem by finding a pattern of each customer in between fraud and legal transaction. Isolation Forest Algorithm and Local Outlier Factor are used to predict the pattern of transaction for each customer and a decision is made according to them.</head><p>In order to prevent data from mismatching, all attribute are marked equally.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Nowadays as we can see that there is a huge increase online payment and the payment is mostly done with the help of credit cards. It becomes a big problem for marketing company to overcome with the credit card fraudulent activities. Fraudulent can be done in many ways such as tax return in any other account, taking loans with wrong information etc. Therefore, we need an efficient fraudulent detection model to minimize fraudulent activity and to minimize their losses. There are a huge number of new techniques which provide different algorithms which help in detecting number of credit card fraudulent activity. Basic understanding of these algorithms will help us in making a significant credit card fraudulent detection model. This paper helps us in finding doubtful credit card transaction by proposing a machine learning algorithm. This type of fraud is happening from past, and till now not much research has done here in this particular area. The types of credit fraud in transactions are bankruptcy fraud, behavioral fraud, counterfeit fraud, application fraud <ref type="bibr" target="#b2">[3]</ref>. There are experiments done before on credit card fraudulent activity on basis of meta-learning. There is certain limit of meta-learning. There are two features which is introduced here in our report is True Positive and False alarm. Both these features play an important role in catching fraudulent because the rate of determining fraudulent behavior is quick. For the better performance of model, we need a better classifier. Different classifier can be combined together with help of meta-learning.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Problem Statement</head><p>Credit card fraud has emerged as a significant challenge in today's digital age. With the increasing reliance on electronic transactions and online shopping, fraudulent activities targeting credit cards have become more sophisticated and prevalent. This problem statement focuses on the detrimental effects of credit card fraud and its impact on individuals, businesses, and the overall economy. Credit card fraud refers to unauthorized and fraudulent use of someone else's credit card information to make purchases or gain access to funds. Fraudsters employ various techniques such as skimming, phishing, identity theft, and card-not-present transactions to obtain sensitive card details and exploit them for financial gain. The consequences of credit card fraud are far-reaching. For individuals, it can result in financial loss, damaged credit scores, and psychological distress due to the invasion of privacy. Businesses also suffer substantial losses due to charge backs, reputation damage, and increased security measures. Moreover, the economy suffers as a whole, as the costs of fraud are ultimately borne by consumers in the form of higher fees and interest rates. Addressing the problem of credit card fraud requires a multi-faceted approach involving collaboration between financial institutions, law enforcement agencies, and individuals. Enhanced security measures, robust fraud detection systems, and consumer education are vital to minimizing the risk of credit card fraud and protecting the interests of individuals and businesses alike.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II.</head><p>ALGORITHM In this paper, we focused on one main algorithms for recommendations: RANDOM FOREST ALGORITHM</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Random Forest Algorithm</head><p>Random Forest is a popular machine learning algorithm that belongs to the supervised learning technique. It can be used for both Classification and Regression problems in ML. It is based on the concept of ensemble learning, which is a process of combining multiple classifiers to solve a complex problem and to improve the performance of the model. As the name suggests, "Random Forest is a classifier that contains a number of decision trees on various subsets of the given dataset and takes the average to improve the predictive accuracy of that dataset." Instead of relying on one decision tree, the random forest takes the prediction from each tree and based on the majority votes of predictions, and it predicts the final output. The greater number of trees in the forest leads to higher accuracy and prevents the problem of overfitting. The below diagram explains the working of the Random Forest algorithm: </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Data Source</head><p>The dataset was retrieved from an open-source website, Kaggle.com. it contains data of transactions that were made in 2013 by credit card users in Europe, in two days only. The dataset consists of 31 attributes, 284,808 rows. 28 attributes are numeric variables that due to confidentiality and privacy of the customers have been transformed using PCA transformation, the three remaining attributes are "Time" which contains the elapsed seconds between the first and other transactions of each attribute, "Amount" is the amount of each transaction, and the final attribute "Class" which contains binary variables where "1" is a case of fraudulent transaction, and "0" is not as case of fraudulent transaction. Dataset Link: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III.</head><p>VARIOUS LIBRARIES USED 1) NNUMPY: NumPy is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basicstatistical operations, random simulation and much more. It is used for numerical data processing </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Benefits of Random Forest</head><p>Here are several key points highlighting the use of Random Forest Classification for this purpose: 1) EEnsemble Learning: Random Forest is an ensemble learning method that combines multiple decision trees to make predictions. It creates a "forest" of decision trees and aggregates their results, making it highly robust and accurate for credit card fraud detection. 2) HHandling Imbalanced Data: Credit card fraud datasets often suffer from imbalanced class distributions, with a majority of transactions being non-fraudulent. Random Forest handles imbalanced data well by automatically adjusting the weights during training, preventing biased predictions. 3) RRobustness: Random Forest is resistant to overfitting and performs well even with noisy and incomplete data. It can handle a large number of input variables and effectively deal with missing values, making it suitable for real-world credit card fraud detection scenarios. 4) HHigh Accuracy: Random Forest can achieve high accuracy in fraud detection due to its ability to capture complex relationships and patterns in the data. It can identify fraudulent transactions based on various features such as transaction amount, location, time, and customer behavior. 5) SSpeed and Efficiency: Random Forest is parallelizable, allowing it to handle large datasets and perform computations efficiently. It can process numerous transactions in real-time, making it suitable for online fraud detection systems that require quick responses. 6) IInterpretability: Random Forest provides insights into the decision-making process by measuring feature importance and constructing decision paths. This transparency aids in understanding the underlying factors contributing to fraud detection and can assist in fraud prevention strategies. 7) IIn summary, Random Forest Classification offers a robust and accurate approach to credit card fraud detection. Its ability to handle imbalanced data, feature importance analysis, and efficiency in handling large datasets make it a valuable tool in combating fraudulent activities and protecting individuals and businesses from financial losses.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. WORK FLOW</head><p>The workflow of credit card fraud detection using Random Forest can be summarized in the following steps: 1) DData Preparation: Collect and preprocess the credit card transaction data, including cleaning, transforming, and normalizing the features. 2) FFeature Selection: Identify relevant features that contribute to fraud detection, considering factors such as transaction amount, location, time, and customer behavior.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Data Visualization and Correlation Mapping</head><p>Heatmap is used to view data correlation to get a good knowledge of data dependencies and perfectly structured dataset with less dependencies and if correlation value of two or more features is greater than +0.7 or -0.7 then they are correlated highly. In this case, the dependencies are quite less that is good enough.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Feature Scaling</head><p>Feature scaling is a crucial preprocessing step in machine learning that aims to normalize the numeric features of a dataset to a consistent scale. It helps to ensure that features with different scales or units contribute equally to the learning process.   Random Forest Classifier is an ensemble learning method that combines multiple decision trees to make predictions. Each tree is trained on a random subset of the data and uses a subset of features to make decisions. The final prediction is made by aggregating the predictions of all the individual trees.</p><p>In the code below: 1) n_estimators is set to 200, indicating the number of decision trees to be included in the random forest. Increasing the number of estimators can potentially improve the model's performance, but it also increases computational complexity. 2) criterion is set to 'entropy'. This criterion is used to measure the quality of a split during the tree building process. The 'entropy' criterion uses information gain to evaluate the purity of the target variable at each split. Alternative criteria include 'gini' (the default) and 'misclassification'. The 'entropy' criterion tends to favor more balanced splits and can work well when dealing with imbalanced datasets.   Fig. <ref type="figure" target="#fig_0">10</ref> V. CONCLUSION In conclusion, credit card fraud detection is a critical area that requires continuous improvement and innovation to combat evolving fraud techniques. Machine learning algorithms, such as Random Forest and deep learning, have shown promise in detecting fraudulent activities by analyzing transaction data and identifying patterns and anomalies. The future of credit card fraud detection holds great potential with advancements in real-time monitoring, unsupervised learning, behavioral biometrics, and collaborative networks. By leveraging these technologies and techniques, financial institutions can enhance their fraud prevention strategies, protect customers from financial losses, and maintain the integrity of the credit card ecosystem. However, it is important to remain vigilant, adapt to new fraud trends, and collaborate across industries to stay one step ahead of fraudsters. The future scope and enhancement for credit card fraud detection include leveraging advanced techniques such as deep learning, unsupervised learning, and behavioral biometrics. Realtime monitoring, enhanced feature engineering, collaborative fraud detection networks, and explainable AI are also areas of focus. These advancements can lead to improved accuracy, faster detection, better understanding of fraud patterns, and increased collaboration among financial institutions, ultimately strengthening credit card fraud prevention and protection.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig.1</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>ISSN: 2321-9653; IC Value: 45.98; SJ Impact Factor: 7.538 Volume 11 Issue VI Jun 2023-Available at www.ijraset.com 2385 © IJRASET: All Rights are Reserved | SJ Impact Factor 7.538 | ISRA Journal Impact Factor 7.894 | 2) PPANDAS: It is a data analysis library which provides data frames. It can select data in rows and columns. It labels the data into rows &amp; columns. 3) Mmatplotlib: It is a comprehensive library for creating static, animated, and interactive visualizationsin Python. It is a twodimensional plotting library for creating graphs and plots (visualization of data). Matplotlib is basically a python package for 2D graph plotting. 4) SScikit-Learn: It is the most useful library for machine learning in Python. It provides a selectionof efficient tools for machine learning including classification, regression, clustering and dimensionalityreduction via a consistence interface in Python. Scikit-Learn is a higher-level library that includesimplementations of several machine learning algorithms. 5) SSeaborn: Seaborn is a data visualization library built on top of matplotlib and closely integrated with pandas data structures in Python. Visualization is the central part of Seaborn which helps in exploration and understanding of data.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>3 )</head><label>3</label><figDesc>TTrain-Test Split: Split the dataset into a training set and a testing set to evaluate the model's performance. 4) RRandom Forest Training: Train the Random Forest model using the training data, building an ensemble of decision trees based on the selected features. 5) MModel Evaluation: Evaluate the model's performance using the testing set, considering metrics such as accuracy, precision, recall, and F1-score. 6) FFeature Importance Analysis: Analyze the feature importance provided by the Random Forest model to identify the most influential factors in fraud detection. 7) PPrediction: Apply the trained model to new, unseen credit card transactions to predict whether they are fraudulent or not. ISSN: 2321-9653; IC Value: 45.98; SJ Impact Factor: 7.538 Volume 11 Issue VI Jun 2023-Available at www.ijraset.com 2386 © IJRASET: All Rights are Reserved | SJ Impact Factor 7.538 | ISRA Journal Impact Factor 7.894 | 8) FFraud Detection and Prevention: Take appropriate actions based on the model predictions, such as blocking suspicious transactions, investigating potential fraud cases, and implementing fraud prevention strategies. By following this workflow, credit card issuers and financial institutions can leverage the power of Random Forest to detect and mitigate credit card fraud effectively. A. Importing Required Libraries and DataFrame Loading: Required libraries such Pandas,Numpy,Seaborn etc are imported and the dataset is imported form for data preparing.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2</figDesc><graphic coords="5,135.57,201.20,323.87,184.33" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 3 ©</head><label>3</label><figDesc>Fig.3</figDesc><graphic coords="5,173.13,464.17,248.50,268.33" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4</figDesc><graphic coords="6,180.37,149.63,234.03,283.50" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 5</head><label>5</label><figDesc>Fig. 5</figDesc><graphic coords="6,164.27,499.17,266.23,53.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6</figDesc><graphic coords="6,178.50,580.37,237.77,150.27" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>E</head><label></label><figDesc>. Data splitting , Selecting Best Features and Model Train Feature selection is an important step in machine learning that involves selecting a subset of relevant features from the original set of features. It helps to improve model performance by reducing overfitting, increasing interpretability, and decreasing training time. SelectKBest is a feature selection technique in scikit-learn that selects the top K features based on univariate statistical tests. It operates on the principle of evaluating the relationship between each feature and the target variable independently and selecting the K features with the highest scores. Train-Test Split is a common technique used in machine learning to evaluate the performance of a model on unseen data. It involves splitting the available dataset into two separate sets: a training set and a testing set. The training set is used to train the model, while the testing set is used to evaluate the model's performance on unseen data. By evaluating the model on data that it has not seen during training, we can get an estimate of how well the model generalizes to new, unseen examples.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 7</head><label>7</label><figDesc>Fig. 7</figDesc><graphic coords="7,191.57,394.17,249.20,324.33" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 8</head><label>8</label><figDesc>Fig. 8</figDesc><graphic coords="8,163.10,110.90,268.57,208.83" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig. 9 F</head><label>9</label><figDesc>Fig. 9</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">ISSN: 2321-9653; IC Value: 45.98; SJ Impact Factor: 7.538 Volume 11 Issue VI Jun 2023-Available at www.ijraset.com</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1">© IJRASET: All Rights are Reserved | SJ Impact Factor 7.538 | ISRA Journal Impact Factor 7.894 |</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection Using Enhanced Random Forest Classifier for Imbalanced Data</title>
+	</analytic>
+	<monogr>
+		<title level="j">Huthaifa I Ashqar</title>
+		<editor>AlsharifHasan Mohamad Aburbeian</editor>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">GAN-based Data Augmentation for Credit Card Fraud Detection</title>
+		<editor>EmilijaStrelcenia, SimantPrakoonwit</editor>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Credit card fraud detection using supervised learning approach</title>
+		<editor>Rashmi More, Chetan Awati, Suresh Shirgave, Rashmi Deshmukh, Sonam Patil</editor>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">An efficient study of fraud detection system using Ml techniques</title>
+		<author>
+			<persName><forename type="first">Josephine</forename><surname>Isabella</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sujatha</forename><surname>Srinivasan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Suseendran</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">A cost-sensitive weighted random forest technique for credit card fraud detection</title>
+		<editor>Debashree Devi, Saroj K Biswas, Biswajit Purkayastha</editor>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Research on Credit Card Fraud Detection Model Based on Distance Sum</title>
+		<author>
+			<persName><forename type="first">Wen-Fang</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Na</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Joint Conference on Artificial Intelligence</title>
+				<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection Web Application using Streamlit and Machine Learning</title>
+	</analytic>
+	<monogr>
+		<title level="j">Vipul Jain</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<author>
+			<persName><forename type="first">Mohana</forename><surname>Kavitha</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Kumar</surname></persName>
+		</author>
+		<title level="m">IEEE International Conference on Data Science and Information System (ICDSIS)</title>
+				<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Design and Implementation of Different Machine Learning Algorithms for Credit Card Fraud Detection</title>
+		<editor>Aditi Singh, Anoushka Singh, Anshul Aggarwal, Anamika Chauhan</editor>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="volume">10</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m">International Conference on Electrical,Computer, Communications and Mechatronics Engineering (ICECCME)</title>
+				<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

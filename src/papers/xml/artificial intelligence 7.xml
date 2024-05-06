@@ -107,7 +107,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -115,10 +115,1598 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</encodingDesc>
 		<profileDesc>
 			<abstract>
-				<p>Artificial intelligence (AI) aims to mimic human cognitive functions. It is bringing a paradigm shift to healthcare, powered by increasing availability of healthcare data and rapid progress of analytics techniques. We survey the current status of AI applications in healthcare and discuss its future. AI can be applied to various types of healthcare data (structured and unstructured). Popular AI techniques include machine learning methods for structured data, such as the classical support vector machine and neural network, and the modern deep learning, as well as natural language processing for unstructured data. Major disease areas that use AI tools include cancer, neurology and cardiology. We then review in more details the AI applications in stroke, in the three major areas of early detection and diagnosis, treatment, as well as outcome prediction and prognosis evaluation. We conclude with discussion about pioneer AI systems, such as IBM Watson, and hurdles for real-life deployment of AI.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Artificial intelligence (AI) aims to mimic human cognitive functions. It is bringing a paradigm shift to healthcare, powered by increasing availability of healthcare data and rapid progress of analytics techniques. We survey the current status of AI applications in healthcare and discuss its future. AI can be applied to various types of healthcare data (structured and unstructured). Popular AI techniques include machine learning methods for structured data, such as the classical support vector machine and neural network, and the modern deep learning, as well as natural language processing for unstructured data. Major disease areas that use AI tools include cancer, neurology and cardiology. We then review in more details the AI applications in stroke, in the three major areas of early detection and diagnosis, treatment, as well as outcome prediction and prognosis evaluation. We conclude with discussion about pioneer AI systems, such as IBM Watson, and hurdles for real-life deployment of AI.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Overview Of the medicAl ArtificiAl intelligence (Ai) reseArch</head><p>Recently AI techniques have sent vast waves across healthcare, even fuelling an active discussion of whether AI doctors will eventually replace human physicians in the future. We believe that human physicians will not be replaced by machines in the foreseeable future, but AI can definitely assist physicians to make better clinical decisions or even replace human judgement in certain functional areas of healthcare (eg, radiology). The increasing availability of healthcare data and rapid development of big data analytic methods has made possible the recent successful applications of AI in healthcare. Guided by relevant clinical questions, powerful AI techniques can unlock clinically relevant information hidden in the massive amount of data, which in turn can assist clinical decision making. <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref> In this article, we survey the current status of AI in healthcare, as well as discuss its future. We first briefly review four relevant aspects from medical investigators' perspectives: 1. motivations of applying AI in healthcare 2. data types that have be analysed by AI systems 3. mechanisms that enable AI systems to generate clinical meaningful results 4. disease types that the AI communities are currently tackling.</p><p>motivation</p><p>The advantages of AI have been extensively discussed in the medical literature. <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref> AI can use sophisticated algorithms to 'learn' features from a large volume of healthcare data, and then use the obtained insights to assist clinical practice. It can also be equipped with learning and self-correcting abilities to improve its accuracy based on feedback. An AI system can assist physicians by providing up-to-date medical information from journals, textbooks and clinical practices to inform proper patient care. <ref type="bibr" target="#b5">6</ref> In addition, an AI system can help to reduce diagnostic and therapeutic errors that are inevitable in the human clinical practice. <ref type="bibr">3 4 6-10</ref> Moreover, an AI system extracts useful information from a large patient population to assist making real-time inferences for health risk alert and health outcome prediction. <ref type="bibr" target="#b10">11</ref> healthcare data Before AI systems can be deployed in healthcare applications, they need to be 'trained' through data that are generated from clinical activities, such as screening, diagnosis, treatment assignment and so on, so that they can learn similar groups of subjects, associations between subject features and outcomes of interest. These clinical data often exist in but not limited to the form of demographics, medical notes, electronic recordings from medical devices, physical examinations and clinical laboratory and images. <ref type="bibr" target="#b11">12</ref> Specifically, in the diagnosis stage, a substantial proportion of the AI literature analyses data from diagnosis imaging, genetic testing and electrodiagnosis (figure <ref type="figure" target="#fig_0">1</ref>). For example, Jha and Topol urged radiologists to adopt AI technologies when analysing diagnostic images that contain vast data information. <ref type="bibr" target="#b12">13</ref> Li et al studied the uses of abnormal genetic Artificial intelligence in healthcare: past, present and future Fei Jiang, <ref type="bibr" target="#b0">1</ref> Yong Jiang, <ref type="bibr" target="#b1">2</ref> Hui Zhi, <ref type="bibr" target="#b2">3</ref> Yi Dong, <ref type="bibr" target="#b3">4</ref> Hao Li, 5 Sufeng Ma, <ref type="bibr" target="#b5">6</ref> Yilong Wang, <ref type="bibr" target="#b6">7</ref> Qiang Dong, <ref type="bibr" target="#b3">4</ref> Haipeng Shen, <ref type="bibr" target="#b7">8</ref> Yongjun Wang <ref type="bibr" target="#b8">9</ref> Open Access expression in long non-coding RNAs to diagnose gastric cancer. <ref type="bibr" target="#b13">14</ref> Shin et al developed an electrodiagnosis support system for localising neural injury. <ref type="bibr" target="#b14">15</ref> In addition, physical examination notes and clinical laboratory results are the other two major data sources (figure <ref type="figure" target="#fig_0">1</ref>). We distinguish them with image, genetic and electrophysiological (EP) data because they contain large portions of unstructured narrative texts, such as clinical notes, that are not directly analysable. As a consequence, the corresponding AI applications focus on first converting the unstructured text to machine-understandable electronic medical record (EMR). For example, Karakülah et al used AI technologies to extract phenotypic features from case reports to enhance the diagnosis accuracy of the congenital anomalies. <ref type="bibr" target="#b15">16</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ai devices</head><p>The above discussion suggests that AI devices mainly fall into two major categories. The first category includes machine learning (ML) techniques that analyse structured data such as imaging, genetic and EP data. In the medical applications, the ML procedures attempt to cluster patients' traits, or infer the probability of the disease outcomes. <ref type="bibr" target="#b16">17</ref> The second category includes natural language processing (NLP) methods that extract information from unstructured data such as clinical notes/ medical journals to supplement and enrich structured medical data. The NLP procedures target at turning texts to machine-readable structured data, which can then be analysed by ML techniques. <ref type="bibr" target="#b17">18</ref> For better presentation, the flow chart in figure 2 describes the road map from clinical data generation, through NLP data enrichment and ML data analysis, to clinical decision making. We comment that the road map starts and ends with clinical activities. As powerful as AI techniques can be, they have to be motivated by clinical problems and be applied to assist clinical practice in the end.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>disease focus</head><p>Despite the increasingly rich AI literature in healthcare, the research mainly concentrates around a few disease types: cancer, nervous system disease and cardiovascular disease (figure <ref type="figure" target="#fig_1">3</ref>). We discuss several examples below. 1. Cancer: Somashekhar et al demonstrated that the IBM Watson for oncology would be a reliable AI system for assisting the diagnosis of cancer through a doubleblinded validation study. <ref type="bibr" target="#b18">19</ref> Esteva et al analysed clinical images to identify skin cancer subtypes. <ref type="bibr" target="#b19">20</ref> 2. Neurology: Bouton et al developed an AI system to restore the control of movement in patients with quadriplegia. <ref type="bibr" target="#b20">21</ref> Farina et al tested the power of an offline man/machine interface that uses the discharge timings of spinal motor neurons to control upper-limb prostheses. <ref type="bibr" target="#b21">22</ref> 3. Cardiology: Dilsizian and Siegel discussed the potential application of the AI system to diagnose the heart disease through cardiac image. <ref type="bibr" target="#b2">3</ref> Arterys recently received clearance from the US Food and Drug Administration (FDA) to market its Arterys Cardio DL application, which uses AI to provide automated, editable ventricle segmentations based on conventional cardiac MRI images. <ref type="bibr" target="#b22">23</ref> The concentration around these three diseases is not completely unexpected. All three diseases are leading causes of death; therefore, early diagnoses are crucial to prevent the deterioration of patients' health status. Furthermore, early diagnoses can be potentially achieved Open Access through improving the analysis procedures on imaging, genetic, EP or EMR, which is the strength of the AI system.</p><p>Besides the three major diseases, AI has been applied in other diseases as well. Two very recent examples were Long et al, who analysed the ocular image data to diagnose congenital cataract disease, <ref type="bibr" target="#b23">24</ref> and Gulshan et al, who detected referable diabetic retinopathy through the retinal fundus photographs. <ref type="bibr" target="#b24">25</ref> The rest of the paper is organised as follows. In section 2, we describe popular AI devices in ML and NLP; the ML techniques are further grouped into classical techniques and the more recent deep learning. Section 3 focuses on discussing AI applications in neurology, from the three aspects of early disease prediction and diagnosis, treatment, outcome prediction and prognosis evaluation.</p><p>We then conclude in section 4 with some discussion about the future of AI in healthcare.</p><p>the Ai devices: ml And nlP In this section, we review the AI devices (or techniques) that have been found useful in the medial applications. We categorise them into three groups: the classical machine learning techniques, <ref type="bibr" target="#b25">26</ref> the more recent deep learning techniques <ref type="bibr" target="#b26">27</ref> and the NLP methods. <ref type="bibr" target="#b27">28</ref> classical ml ML constructs data analytical algorithms to extract features from data. Inputs to ML algorithms include patient 'traits' and sometimes medical outcomes of Figure <ref type="figure">2</ref> The road map from clinical data generation to natural language processing data enrichment, to machine learning data analysis, to clinical decision making. EMR, electronic medical record; EP, electrophysiological.</p><p>on April Depending on whether to incorporate the outcomes, ML algorithms can be divided into two major categories: unsupervised learning and supervised learning. Unsupervised learning is well known for feature extraction, while supervised learning is suitable for predictive modelling via building some relationships between the patient traits (as input) and the outcome of interest (as output). More recently, semisupervised learning has been proposed as a hybrid between unsupervised learning and supervised learning, which is suitable for scenarios where the outcome is missing for certain subjects. These three types of learning are illustrated in figure <ref type="figure" target="#fig_2">4</ref>.</p><p>Clustering and principal component analysis (PCA) are two major unsupervised learning methods. Clustering groups subjects with similar traits together into clusters, without using the outcome information. Clustering algorithms output the cluster labels for the patients through maximising and minimising the similarity of the patients within and between the clusters. Popular clustering algorithms include k-means clustering, hierarchical clustering and Gaussian mixture clustering. PCA is mainly for dimension reduction, especially when the trait is recorded in a large number of dimensions, such as the number of genes in a genome-wide association study. PCA projects the data  On the other hand, supervised learning considers the subjects' outcomes together with their traits, and goes through a certain training process to determine the best outputs associated with the inputs that are closest to the outcomes on average. Usually, the output formulations vary with the outcomes of interest. For example, the outcome can be the probability of getting a particular clinical event, the expected value of a disease level or the expected survival time.</p><p>Clearly, compared with unsupervised learning, supervised learning provides more clinically relevant results; hence AI applications in healthcare most often use supervised learning. (Note that unsupervised learning can be used as part of the preprocessing step to reduce dimensionality or identify subgroups, which in turn makes the follow-up supervised learning step more efficient.) Relevant techniques include linear regression, logistic regression, naïve Bayes, decision tree, nearest neighbour, random forest, discriminant analysis, support vector machine (SVM) and neural network. <ref type="bibr" target="#b26">27</ref> Figure <ref type="figure" target="#fig_3">5</ref> displays the popularity of the various supervised learning techniques in medical applications, which clearly shows that SVM and neural network are the most popular ones. This remains the case when restricting to the three major data types (image, genetic and EP), as shown in figure <ref type="figure" target="#fig_4">6</ref>.</p><p>Below we will provide more details about the mechanisms of SVM and neural networks, along with application examples in the cancer, neurological and cardiovascular disease areas.</p><p>support vector machine SVM is mainly used for classifying the subjects into two groups, where the outcome Y i is a classifier: Y i = −1 or 1 represents whether the ith patient is in group 1 or 2, respectively. (The method can be extended for scenarios with more than two groups.) The basic assumption is that the subjects can be separated into two groups through a decision boundary defined on the traits X ij , which can be written as:</p><formula xml:id="formula_0">a i = ∑ p j=1 w j X ij + b</formula><p>, where w j is the weight putting on the jth trait to manifest its relative importance on affecting the outcome among the others. The decision rule then follows that if a i &gt;0, the ith patient is classified to group 1, that is, labelling Y i = −1; if a i &lt;0, the patient is classified to group 2, that is, labelling Y i =1. The class memberships are indeterminate for the points with a i =0. See figure <ref type="figure" target="#fig_5">7</ref> for an illustration with p = 2, b = 0 , a 1 =1, and a 2 =−1.</p><p>The training goal is to find the optimal w j s so that the resulting classifications agree with the outcomes as much as possible, that is, with the smallest misclassification error, the error of classifying a patient into the wrong group. Intuitively, the best weights must allow (1) the sign of a i to be the same as Y i so the classification is correct; and (2) |a i | to be far away from 0 so the ambiguity of the classification is minimised. These can be achieved by selecting w j s that minimise a quadratic loss function. <ref type="bibr" target="#b28">29</ref> Furthermore, assuming that the new patients come from the same population, the resulting w j s can be applied to classify these new patients based on their traits.</p><p>An important property of SVM is that the determination of the model parameters is a convex optimisation problem so the solution is always global optimum. Furthermore, many existing convex optimisation tools are readily applicable for the SVM implementation. As such, SVM has been extensively used in medical research. For instance, Orrù et al applied SVM to identify imaging biomarkers of neurological and psychiatric disease. <ref type="bibr" target="#b29">30</ref> Sweilam et al reviewed the use of SVM in the diagnosis of cancer. <ref type="bibr" target="#b30">31</ref> Khedher et al used the Open Access combination of SVM and other statistical tools to achieve early detection of Alzheimer's disease. <ref type="bibr" target="#b31">32</ref> Farina et al used SVM to test the power of an offline man/machine interface that controls upper-limb prostheses. <ref type="bibr" target="#b21">22</ref> neural network One can think about neural network as an extension of linear regression to capture complex non-linear relationships between input variables and an outcome. In neural Open Access network, the associations between the outcome and the input variables are depicted through multiple hidden layer combinations of prespecified functionals. The goal is to estimate the weights through input and outcome data so that the average error between the outcome and their predictions is minimised. We describe the method in the following example.</p><p>Mirtskhulava et al used neural network in stroke diagnosis. <ref type="bibr" target="#b32">33</ref> In their analysis, the input variables X i1 , . . . , X ip are p=16 stroke-related symptoms, including paraesthesia of the arm or leg, acute confusion, vision, problems with mobility and so on. The outcome Y i is binary: Y i =1/0 indicates the ith patient has/does not have stroke. The output parameter of interest is the probability of stroke, a i , which carries the form of</p><formula xml:id="formula_1">a i = h { ∑ D k=1 w 2l f k ( ∑ p l=1 w 1l X il + w 10 ) + w 20 } .</formula><p>In the above equation, the w 10 and w 20 ≠0 guarantee the above form to be valid even when all X ij , f k are 0; the w 1l and w 2l s are the weights to characterise the relative importance of the corresponding multiplicands on affecting the outcome; the f k s and h are prespecified functionals to manifest how the weighted combinations influence the disease risk as a whole. A stylised illustration is provided in figure <ref type="figure" target="#fig_6">8</ref>.</p><p>The training goal is to find the weights w ij , which minimise the prediction error</p><formula xml:id="formula_2">∑ n i=1 ( Y i − a i ) 2 .</formula><p>The minimisation can be performed through standard optimisation algorithms, such as local quadratic approximation or  Open Access gradient descent optimisation, that are included in both MATLAB and R. If the new data come from the same population, the resulting w ij can be used to predict the outcomes based on their specific traits. <ref type="bibr" target="#b28">29</ref> Similar techniques have been used to diagnose cancer by Khan et al, where the inputs are the PCs estimated from 6567 genes and the outcomes are the tumour categories. <ref type="bibr" target="#b33">34</ref> Dheeba et al used neural network to predict breast cancer, with the inputs being the texture information from mammographic images and the outcomes being tumour indicators. <ref type="bibr" target="#b34">35</ref> Hirschauer et al used a more sophisticated neural network model to diagnose Parkinson's disease based on the inputs of motor, non-motor symptoms and neuroimages. <ref type="bibr" target="#b35">36</ref> deep learning: a new era of ml Deep learning is a modern extension of the classical neural network technique. One can view deep learning as a neural network with many layers (as in figure <ref type="figure" target="#fig_7">9</ref>). Rapid development of modern computing enables deep learning to build up neural networks with a large number of layers, which is infeasible for classical neural networks. As such, deep learning can explore more complex non-linear patterns in the data. Another reason for the recent popularity of deep learning is due to the increase of the volume and complexity of data. <ref type="bibr" target="#b36">37</ref> Figure <ref type="figure" target="#fig_8">10</ref> shows that the application of deep learning in the field of medical research nearly doubled in 2016. In addition, figure <ref type="figure" target="#fig_9">11</ref> shows that a clear majority of deep learning is used in imaging analysis, which makes sense given that images are naturally complex and high volume.</p><p>Different from the classical neural network, deep learning uses more hidden layers so that the algorithms can handle complex data with various structures. <ref type="bibr" target="#b26">27</ref> In the medical applications, the commonly used deep learning algorithms include convolution neural network (CNN), recurrent neural network, deep belief network and deep neural network. Figure <ref type="figure" target="#fig_10">12</ref> depicts their trends and relative popularities from 2013 to 2016. One can see that the CNN is the most popular one in 2016.</p><p>The CNN is developed in viewing of the incompetence of the classical ML algorithms when handling high dimensional data, that is, data with a large number of traits. Traditionally, the ML algorithms are designed to analyse data when the number of traits is small. However, the image data are naturally high-dimensional because each image normally contains thousands of pixels as traits. One solution is to perform dimension reduction: first preselect a subset of pixels as features, and then perform the ML algorithms on the resulting lower dimensional features. However, heuristic feature selection procedures may lose information in the images. Unsupervised learning techniques such as PCA or clustering can be used for datadriven dimension reduction.</p><p>The CNN was first proposed and advocated for the high-dimensional image analysis by Lecun et al. <ref type="bibr" target="#b37">38</ref> The inputs for CNN are the properly normalised pixel values on the images. The CNN then transfers the pixel values in the image through weighting in the convolution layers and sampling in the subsampling layers alternatively. The final output is a recursive function of the weighted Open Access input values. The weights are trained to minimise the average error between the outcomes and the predictions. The implementation of CNN has been included in popular software packages such as Caffe from Berkeley AI Research, <ref type="bibr" target="#b38">39</ref> CNTK from Microsoft <ref type="bibr" target="#b39">40</ref> and TensorFlow from Google. <ref type="bibr" target="#b40">41</ref> Recently, the CNN has been successfully implemented in the medical area to assist disease diagnosis. Long et al used it to diagnose congenital cataract disease through learning the ocular images. <ref type="bibr" target="#b23">24</ref> The CNN yields over 90% accuracy on diagnosis and treatment suggestion. Esteva et al performed the CNN to identify skin cancer from clinical images. <ref type="bibr" target="#b19">20</ref> The proportions of correctly predicted malignant lesions (ie, sensitivity) and benign lesions (ie, specificity) are both over 90%, which indicates the superior performance of the CNN. Gulshan et al applied the CNN to detect referable diabetic retinopathy through the retinal fundus photographs. <ref type="bibr" target="#b24">25</ref> The sensitivity and specificity of the algorithm are both over 90%, which demonstrates the effectiveness of using the technique on the diagnosis of diabetes. It is worth mentioning that in all these applications, the performance of the CNN is  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>natural language processing</head><p>The image, EP and genetic data are machine-understandable so that the ML algorithms can be directly performed after proper preprocessing or quality control processes. However, large proportions of clinical information are in the form of narrative text, such as physical examination, clinical laboratory reports, operative notes and discharge summaries, which are unstructured and incomprehensible for the computer program. Under this context, NLP targets at extracting useful information from the narrative text to assist clinical decision making. <ref type="bibr" target="#b27">28</ref> An NLP pipeline comprises two main components: (1) text processing and (2) classification. Through text processing, the NLP identifies a series of disease-relevant keywords in the clinical notes based on the historical databases. <ref type="bibr" target="#b41">42</ref> Then a subset of the keywords are selected through examining their effects on the classification of the normal and abnormal cases. The validated keywords then enter and enrich the structured data to support clinical decision making.</p><p>The NLP pipelines have been developed to assist clinical decision making on alerting treatment arrangements, monitoring adverse effects and so on. For example, Fiszman et al showed that introducing NLP for reading the chest X-ray reports would assist the antibiotic assistant system to alert physicians for the possible need for anti-infective therapy. <ref type="bibr" target="#b42">43</ref> Miller et al used NLP to automatically monitor the laboratory-based adverse effects. <ref type="bibr" target="#b43">44</ref> Furthermore, the NLP pipelines can help with disease diagnosis. For instance, Castro et al identified 14 cerebral aneurysms disease-associated variables through implementing NLP on the clinical notes. <ref type="bibr" target="#b44">45</ref> The resulting variables are successfully used for classifying the normal patients and the patients with cerebral, with 95% and 86% accuracy rates on the training and validation samples, respectively. Afzal et al implemented the NLP to extract the peripheral arterial disease-related keywords from narrative clinical notes. The keywords are then used to classify the normal and the patients with peripheral arterial disease, which achieves over 90% accuracy. <ref type="bibr" target="#b41">42</ref> Ai APPlicAtiOns in strOke Stroke is a common and frequently occurring disease that affects more than 500 million people worldwide. It is the leading cause of death in China and the fifth in North America. Stroke had cost about US$689 billion in medical expenses across the world, causing heavy burden to countries and families. <ref type="bibr">46 47</ref> Therefore, research on prevention and treatment for stroke has great significance. In recent years, AI techniques have been used in more and more stroke-related studies. Below we summarise some of the relevant AI techniques in the three main areas of stroke care: early disease prediction and diagnosis, treatment, as well as outcome prediction and prognosis evaluation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>early detection and diagnosis</head><p>Stroke, for 85% of the time, is caused by thrombus in the vessel called cerebral infarction. However, for lack of judgement of early stroke symptom, only a few patients could receive timely treatment. Villar et al developed a movement-detecting device for early stroke prediction. <ref type="bibr" target="#b47">48</ref> Two ML algorithms -genetic fuzzy finite state machine Open Access and PCA -were implemented into the device for the model building solution. The detection process included a human activity recognition stage and a stroke-onset detection stage. Once the movement of the patient is significantly different from the normal pattern, an alert of stroke would be activated and evaluated for treatment as soon as possible. Similarly, Maninini et al proposed a wearable device for collecting data about normal/pathological gaits for stroke prediction. <ref type="bibr" target="#b48">49</ref> The data would be extracted and modelled by hidden Markov models and SVM, and the algorithm could correctly classify 90.5% of the subjects to the right group.</p><p>For diagnosis of stroke, neuroimaging techniques, including MRI and CT, are important for disease evaluation. Some studies have tried to apply ML methods to neuroimaging data to assist with stroke diagnosis. Rehme et al used SVM in resting-state functional MRI data, by which endophenotypes of motor disability after stroke were identified and classified. <ref type="bibr" target="#b49">50</ref> SVM can correctly classify patients with stroke with 87.6% accuracy. Griffis et al tried naïve Bayes classification to identify stroke lesion in T1-weighted MRI. <ref type="bibr" target="#b50">51</ref> The result is comparable with human expert manual lesion delineation. Kamnitsas et al tried three-dimensional CNN (3D CNN) for lesion segmentation in multimodel brain MRI. <ref type="bibr" target="#b51">52</ref> They also used fully connected conditional random field model for final postprocessing of the CNN's soft segmentation maps. Rondina et al analysed stroke anatomical MRI images using Gaussian process regression, and found that the patterns of voxels performed better than lesion load per region as the predicting features. <ref type="bibr" target="#b52">53</ref> ML methods have also been applied to analyse CT scans from patients with stroke. Free-floating intraluminal thrombus may be formed as lesion after stroke, which is difficult to be distinguished with carotid plaque on the CT imaging. Thornhill et al used three ML algorithms to classify these two types by quantitative shape analysis, including linear discriminant analysis, artificial neural network and SVM. <ref type="bibr" target="#b53">54</ref> The accuracy for each method varies between 65.2% and 76.4%. treatment ML has also been applied for predicting and analysing the performance of stroke treatment. As a critical step of emergency measure, the outcome of intravenous thrombolysis (tPA) has strong relationship with the prognosis and survival rate. Bentley et al used SVM to predict whether patients with tPA treatment would develop symptomatic intracranial haemorrhage by CT scan. <ref type="bibr" target="#b54">55</ref> They used whole-brain images as the input into the SVM, which performed better than conventional radiology-based methods. To improve the clinical decision-making process of tPA treatment, Love et al proposed a stroke treatment model by analysing practice guidelines, meta-analyses and clinical trials using Bayesian belief network. <ref type="bibr" target="#b55">56</ref> The model consisted of 56 different variables and three decisions for analysing the procedure of diagnosis, treatment and outcome prediction. Ye et al used interaction trees and subgroup analysis to explore appropriate tPA dosage based on patient characteristics, taking into account both the risk of bleeding and the treatment efficacy. <ref type="bibr" target="#b56">57</ref> Outcome prediction and prognosis evaluation Many factors can affect stroke prognosis and disease mortality. Compared with conventional methods, ML methods have advantages in improving prediction performance. To better support clinical decision-making process, Zhang et al proposed a model for predicting 3-month treatment outcome by analysing physiological parameters during 48 hours after stroke using logistic regression. <ref type="bibr" target="#b57">58</ref> Asadi et al compiled a database of clinical information of 107 patients with acute anterior or posterior circulation stroke who underwent intra-arterial therapy. <ref type="bibr" target="#b58">59</ref> The authors analysed the data via artificial neural network and SVM, and obtained prediction accuracy above 70%. They also used ML techniques to identify factors influencing outcome in brain arteriovenous malformation treated with endovascular embolisation. <ref type="bibr" target="#b59">60</ref> While standard regression analysis model could only achieve a 43% accuracy rate, their methods worked much better with 97.5% accuracy.</p><p>Birkner et al used an optimal algorithm to predict 30-day mortality and obtained more accurate prediction than existing methods. <ref type="bibr" target="#b60">61</ref> Similarly, King et al used SVM to predict stroke mortality at discharge. <ref type="bibr" target="#b61">62</ref> In addition, they proposed the use of the synthetic minority oversampling technique to reduce the stroke outcome prediction bias caused by between-class imbalance among multiple data sets.</p><p>Brain images have been analysed to predict the outcome of stroke treatment. Chen et al analysed CT scan data via ML for evaluating the cerebral oedema following hemispheric infarction. <ref type="bibr" target="#b63">63</ref> They built random forest to automatically identify cerebrospinal fluid and analyse the shifts on CT scan, which is more efficient and accurate than conventional methods. Siegel et al extracted functional connectivity from MRI and functional MRI data, and used ridge regression and multitask learning for cognitive deficiency prediction after stroke. <ref type="bibr" target="#b64">64</ref> Hope et al studied the relationship between lesions extracted from MRI images and the treatment outcome via Gaussian process regression model. <ref type="bibr" target="#b65">65</ref> They used the model to predict the severity of cognitive impairments after stroke and the course of recovery over time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>cOnclusiOn And discussiOn</head><p>We reviewed the motivation of using AI in healthcare, presented the various healthcare data that AI has analysed and surveyed the major disease types that AI has been deployed. We then discussed in details the two major categories of AI devices: ML and NLP. For ML, we focused on the two most popular classical techniques: SVM and neural network, as well as the modern deep learning technique. We then surveyed the three major categories of AI applications in stroke care.</p><p>A successful AI system must possess the ML component for handling structured data (images, EP data, genetic Open Access data) and the NLP component for mining unstructured texts. The sophisticated algorithms then need to be trained through healthcare data before the system can assist physicians with disease diagnosis and treatment suggestions.</p><p>The IBM Watson system is a pioneer in this field. The system includes both ML and NLP modules, and has made promising progress in oncology. For example, in a cancer research, 99% of the treatment recommendations from Watson are coherent with the physician decisions. <ref type="bibr" target="#b66">66</ref> Furthermore, Watson collaborated with Quest Diagnostics to offer the AI Genetic Diagnostic Analysis. <ref type="bibr" target="#b66">66</ref> In addition, the system started to make impact on actual clinical practices. For example, through analysing genetic data, Watson successfully identified the rare secondary leukaemia caused by myelodysplastic syndromes in Japan. <ref type="bibr" target="#b67">67</ref> The cloud-based CC-Cruiser in <ref type="bibr" target="#b23">24</ref> can be one prototype to connect an AI system with the front-end data input and the back-end clinical actions. More specifically, when patients come, with their permission, their demographic information and clinical data (images, EP results, genetic results, blood pressure, medical notes and so on) are collected into the AI system. The AI system then uses the patients' data to come up with clinical suggestions. These suggestions are sent to physicians to assist with their clinical decision making. Feedback about the suggestions (correct or wrong) will also be collected and fed back into the AI system so that it can keep improving accuracy.</p><p>Stroke is a chronic disease with acute events. Stroke management is a rather complicated process with a series of clinical decision points. Traditionally clinical research solely focused on a single or very limited clinical questions, while ignoring the continuous nature of stroke management. Taking the advantage of large amount of data with rich information, AI is expected to help with studying much more complicated yet much closer to real-life clinical questions, which then leads to better decision making in stroke management. Recently, researchers have started endeavours along this direction and obtained promising initial results. <ref type="bibr" target="#b56">57</ref> Although the AI technologies are attracting substantial attentions in medical research, the real-life implementation is still facing obstacles. The first hurdle comes from the regulations. Current regulations lack of standards to assess the safety and efficacy of AI systems. To overcome the difficulty, the US FDA made the first attempt to provide guidance for assessing AI systems. <ref type="bibr" target="#b68">68</ref> The first guidance classifies AI systems to be the 'general wellness products', which are loosely regulated as long as the devices intend for only general wellness and present low risk to users. The second guidance justifies the use of real-world evidence to access the performance of AI systems. Lastly, the guidance clarifies the rules for the adaptive design in clinical trials, which would be widely used in assessing the operating characteristics of AI systems. Not long after the disclosure of these guidances, Arterys' medical imaging platform became the first FDA-approved deep learning clinical platform that can help cardiologists to diagnose cardiac diseases. <ref type="bibr" target="#b22">23</ref> The second hurdle is data exchange. In order to work well, AI systems need to be trained (continuously) by data from clinical studies. However, once an AI system gets deployed after initial training with historical data, continuation of the data supply becomes a crucial issue for further development and improvement of the system. Current healthcare environment does not provide incentives for sharing data on the system. Nevertheless, a healthcare revolution is under way to stimulate data sharing in the USA. <ref type="bibr" target="#b69">69</ref> The reform starts with changing the health service payment scheme. Many payers, mostly insurance companies, have shifted from rewarding the physicians by shifting the treatment volume to the treatment outcome. Furthermore, the payers also reimburse for a medication or a treatment procedure by its efficiency. Under this new environment, all the parties in the healthcare system, the physicians, the pharmaceutical companies and the patients, have greater incentives to compile and exchange information. Similar approaches are being explored in China. correction notice This paper has been corrected since it was published Online First. Owing to a scripting error, some of the publisher names in the references were replaced with 'BMJ Publishing Group'. This only affected the full text version, not the PDF. We have since corrected these errors and the correct publishers have been inserted into the references. Open Access This is an Open Access article distributed in accordance with the Creative Commons Attribution Non Commercial (CC BY-NC 4.0) license, which permits others to distribute, remix, adapt, build upon this work non-commercially, and license their derivative works on different terms, provided the original work is properly cited and the use is non-commercial. See: http:// creativecommons. org/ licenses/ by-nc/ 4. 0/</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc>Figure 1 The data types considered in the artificial intelligence artificial (AI) literature. The comparison is obtained through searching the diagnosis techniques in the AI literature on the PubMed database.</figDesc><graphic coords="2,104.78,48.50,385.71,239.54" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 3</head><label>3</label><figDesc>Figure 3 The leading 10 disease types considered in the artificial intelligence (AI) literature. The first vocabularies in the disease names are displayed. The comparison is obtained through searching the disease types in the AI literature on PubMed.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4</head><label>4</label><figDesc>Figure 4 Graphical illustration of unsupervised learning, supervised learning and semisupervised learning. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="4,79.07,48.50,437.13,238.44" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 5</head><label>5</label><figDesc>Figure5The machine learning algorithms used in the medical literature. The data are generated through searching the machine learning algorithms within healthcare on PubMed.</figDesc><graphic coords="5,104.78,48.50,385.71,214.47" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 6</head><label>6</label><figDesc>Figure 6 The machine learning algorithms used for imaging (upper), genetic (middle) and electrophysiological (bottom) data. The data are generated through searching the machine learning algorithms for each data type on PubMed. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="6,129.28,48.50,336.72,595.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 7</head><label>7</label><figDesc>Figure 7 An illustration of the support vector machine.</figDesc><graphic coords="7,43.97,48.50,240.95,218.99" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 8</head><label>8</label><figDesc>Figure 8 An illustration of neural network. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="7,104.78,368.81,385.71,353.70" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 9</head><label>9</label><figDesc>Figure 9 An illustration of deep learning with two hidden layers.</figDesc><graphic coords="8,104.78,48.50,385.71,280.16" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 10</head><label>10</label><figDesc>Figure 10 Current trend for deep learning. The data are generated through searching the deep learning in healthcare and disease category on PubMed.</figDesc><graphic coords="9,104.78,48.50,385.71,232.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 11</head><label>11</label><figDesc>Figure 11 The data sources for deep learning. The data are generated through searching deep learning in combination with the diagnosis techniques on PubMed. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="9,104.78,478.66,385.71,233.05" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 12</head><label>12</label><figDesc>Figure12The four main deep learning algorithm and their popularities. The data are generated through searching algorithm names in healthcare and disease category on PubMed.</figDesc><graphic coords="10,104.78,48.50,385.71,256.63" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head></head><label></label><figDesc>Figures 6-9 have also been corrected. competing interests None declared. Provenance and peer review Commissioned; internally peer reviewed. data sharing statement No additional data are available.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="3,85.04,48.50,425.20,459.93" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>22, 2024 by guest. Protected by copyright.</figDesc><table><row><cell>Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</cell></row><row><cell>http://svn.bmj.com/</cell></row></table><note>Open Accessinterest. A patient's traits commonly include baseline data, such as age, gender, disease history and so on, and disease-specific data, such as diagnostic imaging, gene expressions, EP test, physical examination results, clinical symptoms, medication and so on. Besides the traits, patients' medical outcomes are often collected in clinical research. These include disease indicators, patient's survival times and quantitative disease levels, for example, tumour sizes. To fix ideas, we denote the jth trait of the ith patient by X ij , and the outcome of interest by Y i .</note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">Jiang F, et al. Stroke and Vascular Neurology 2017;2:e000101. doi:10.1136/svn-2017-000101</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1">on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The inevitable application of big data to health care</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Murdoch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Detsky</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2013.393</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">309</biblScope>
+			<biblScope unit="page" from="1351" to="1352" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">How Healthcare can refocus on its Super-Customers (Patients, n =1) and Customers (Doctors and Nurses) by Leveraging Lessons from Amazon</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kolker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Özdemir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kolker</surname></persName>
+		</author>
+		<idno type="DOI">10.1089/omi.2016.0077</idno>
+	</analytic>
+	<monogr>
+		<title level="j">OMICS</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="329" to="333" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Artificial intelligence in medicine and cardiac imaging: harnessing big data and advanced computing to provide personalized medical diagnosis and treatment</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Dilsizian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">L</forename><surname>Siegel</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11886-013-0441-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Cardiol Rep</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">441</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The coming of age of artificial intelligence in medicine</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">L</forename><surname>Patel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">H</forename><surname>Shortliffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stefanelli</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.artmed.2008.07.017</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Med</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="5" to="17" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Adapting to Artificial Intelligence: radiologists and pathologists as information specialists</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Topol</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2016.17438</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">316</biblScope>
+			<biblScope unit="page" from="2353" to="2354" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">How to replicate Watson hardware and systems design for your own use in your basement</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pearson</surname></persName>
+		</author>
+		<ptr target="https://www.ibm.com/developerworks/community/blogs/InsideSystemStorage/entry/" />
+	</analytic>
+	<monogr>
+		<title level="m">ibm_ watson_ how_ to_ build_ your_ own_ watson_ jr_ in_ your_ basement7? lang= en</title>
+				<imprint>
+			<date type="published" when="2011-06">2011. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Epidemiology of medical error</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Weingart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Gibberd</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/bmj.320.7237.774</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BMJ</title>
+		<imprint>
+			<biblScope unit="volume">320</biblScope>
+			<biblScope unit="page" from="774" to="777" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Diagnostic error in internal medicine</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Graber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Franklin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gordon</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/archinte.165.13.1493</idno>
+		<ptr target="http://svn.bmj.com/StrokeVascNeurol" />
+	</analytic>
+	<monogr>
+		<title level="j">Arch Intern Med</title>
+		<imprint>
+			<biblScope unit="volume">165</biblScope>
+			<biblScope unit="page" from="1493" to="1499" />
+			<date type="published" when="2005-04-22">2005. April 22. June 2017</date>
+		</imprint>
+	</monogr>
+	<note>Downloaded from</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Diagnostic errors in the intensive care unit: a systematic review of autopsy studies</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Winters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Custer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Galvagno</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/bmjqs-2012-000803</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BMJ Qual Saf</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="894" to="902" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Cognitive and system factors contributing to diagnostic errors in radiology</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Nagy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Weaver</surname></persName>
+		</author>
+		<idno type="DOI">10.2214/AJR.12.10375</idno>
+	</analytic>
+	<monogr>
+		<title level="j">AJR Am J Roentgenol</title>
+		<imprint>
+			<biblScope unit="volume">201</biblScope>
+			<biblScope unit="page" from="611" to="617" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Using artificial intelligence to improve hospital inpatient care</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Neill</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MIS.2013.51</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Intell Syst</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="92" to="95" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Guidance for industry: electronic source data in clinical investigations</title>
+		<author>
+			<persName><forename type="first">Administration</forename><surname>Ufad</surname></persName>
+		</author>
+		<ptr target="https://www.fda.gov/downloads/drugs/guidances/ucm328691.pdf" />
+		<imprint>
+			<date type="published" when="2013-06">2013. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Radiomics: images are more than pictures, they are data</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Gillies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Kinahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hricak</surname></persName>
+		</author>
+		<idno type="DOI">10.1148/radiol.2015151169</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">278</biblScope>
+			<biblScope unit="page" from="563" to="577" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Integrated analysis of long noncoding RNA competing interactions reveals the potential role in progression of human gastric Cancer</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">Y</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Z</forename><surname>Yao</surname></persName>
+		</author>
+		<idno type="DOI">10.3892/ijo.2016.3407</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Oncol</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="1965" to="1976" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Electrodiagnosis support system for localizing neural injury in an upper limb</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Song</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/jamia.2009.001594</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Med Inform Assoc</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="345" to="347" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Computer based extraction of phenoptypic features of human congenital anomalies from the digital literature with natural language processing techniques</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Karakülah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Dicle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Koşaner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stud Health Technol Inform</title>
+		<imprint>
+			<biblScope unit="volume">205</biblScope>
+			<biblScope unit="page" from="570" to="574" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Machine Learning and the Profession of Medicine</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Darcy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Louie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">W</forename><surname>Roberts</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2015.18421</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">315</biblScope>
+			<biblScope unit="page" from="551" to="552" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Automated identification of postoperative complications within an electronic medical record using natural language processing</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Murff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fitzhenry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Matheny</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2011.1204</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">306</biblScope>
+			<biblScope unit="page" from="848" to="855" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Abstract S6-07: double blinded validation study to assess performance of IBM artificial intelligence platform, Watson for oncology in comparison with manipal multidisciplinary tumour board ? first study of 638 breast Cancer cases</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Somashekhar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kumarc</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rauthan</surname></persName>
+		</author>
+		<idno type="DOI">10.1158/1538-7445.SABCS16-S6-07</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="S6" to="07" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Dermatologist-level classification of skin Cancer with deep neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Esteva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kuprel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Novoa</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature21056</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">542</biblScope>
+			<biblScope unit="page" from="115" to="118" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Restoring cortical control of functional movement in a human with quadriplegia</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Bouton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shaikhouni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">V</forename><surname>Annetta</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature17435</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">533</biblScope>
+			<biblScope unit="page" from="247" to="250" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Man/machine interface based on the discharge timings of spinal motor neurons after targeted muscle reinnervation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Farina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vujaklija</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sartori</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41551-016-0025</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Biomed Eng</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">25</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">First FDA approval for clinical Cloud-Based Deep Learning in Healthcare</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Marr</surname></persName>
+		</author>
+		<ptr target="https://www.forbes.com/sites/bernardmarr/2017/01/20/first-fda-approval-for-clinical-cloud-based-deep-learning-in-healthcare/#7a0ed8dc161c" />
+		<imprint>
+			<date type="published" when="2017-06">2017. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">An artificial intelligence platform for the multihospital collaborative management of congenital cataracts</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Development and Validation of a Deep Learning Algorithm for detection of Diabetic Retinopathy in retinal fundus photographs</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Gulshan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Coram</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2016.17216</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">316</biblScope>
+			<biblScope unit="page" from="2402" to="2410" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">An introduction to Statistical Learning with applications in R</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>James</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Witten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hastie</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+	<note>First Edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Goodfellow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Deep</forename><surname>Courville</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Learning</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<publisher>The MIT Press</publisher>
+		</imprint>
+	</monogr>
+	<note>First Edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Foundations of statistical natural language processing</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kantor</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+			<publisher>MIT Press</publisher>
+			<biblScope unit="page" from="91" to="92" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Bishop</surname></persName>
+		</author>
+		<title level="m">Pattern recognition and machine Learning (Information Science and Statistics</title>
+				<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Using support Vector Machine to identify imaging biomarkers of neurological and psychiatric disease: a critical review</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Orrù</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Pettersson-Yeo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Marquand</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.neubiorev.2012.01.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurosci Biobehav Rev</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="1140" to="1152" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Support vector machine for diagnosis Cancer disease: a comparative study</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">H</forename><surname>Sweilam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Tharwat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Abdel</forename><surname>Moniem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Moniem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nka</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eij.2010.10.005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Egyptian Informatics Journal</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="81" to="92" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Early diagnosis of Alzheimer?s disease based on partial least squares, principal component analysis and support vector machine using segmented MRI images</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Khedher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ram</forename><forename type="middle">?</forename><surname>Rez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rriz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.neucom.2014.09.072</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page" from="139" to="150" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<author>
+			<persName><forename type="first">L</forename><surname>Mirtskhulava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Al-Majeed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pearce</surname></persName>
+		</author>
+		<title level="m">Artificial Neural Network Model in Stroke diagnosis. modelling and simulation (UKSim), 2015 17th UKSim-AMSS International Conference on</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Classification and diagnostic prediction of cancers using gene expression profiling and artificial neural networks</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ringnér</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/89044</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Med</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="673" to="679" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Computer-aided detection of breast Cancer on mammograms: a swarm intelligence optimized wavelet neural network approach</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dheeba</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Albert</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tamil</forename><surname>Selvi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jbi.2014.01.010</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Biomed Inform</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="45" to="52" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Computer-Aided diagnosis of Parkinson&apos;s Disease Using Enhanced Probabilistic Neural Network</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Hirschauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Adeli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Buford</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10916-015-0353-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Med Syst</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">179</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Deep Learning for Health Informatics</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ravi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Deligianni</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/JBHI.2016.2636665</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J Biomed Health Inform</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="4" to="21" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Gradient-based learning applied to document recognition</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bottou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/5.726791</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc IEEE Inst Electr Electron Eng</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="2278" to="2324" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Research</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Caffe</surname></persName>
+		</author>
+		<ptr target="http://caffe.berkeleyvision.org/" />
+		<imprint>
+			<date type="published" when="2017-06">2017. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">CNTK: microsoft&apos;s Open-Source Deep-Learning Toolkit</title>
+	</analytic>
+	<monogr>
+		<title level="m">ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+				<editor>
+			<persName><forename type="first">F</forename><surname>Seide</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Agarwal</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">TensorFlow: large-scale Machine Learning on heterogeneous distributed Systems</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Barham</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Mining peripheral arterial disease cases from narrative clinical notes using natural language processing</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Afzal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Abram</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jvs.2016.11.031</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Vasc Surg</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="1753" to="1761" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Automatic detection of acute bacterial pneumonia from chest X-ray reports</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fiszman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">W</forename><surname>Chapman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aronsky</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/jamia.2000.0070593</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Med Inform Assoc</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="593" to="604" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Using electronic medical record data to report laboratory adverse events</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D</forename><surname>Getz</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/bjh.14538</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Haematol</title>
+		<imprint>
+			<biblScope unit="volume">177</biblScope>
+			<biblScope unit="page" from="283" to="286" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Large-scale identification of patients with cerebral aneurysms using natural language processing</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">M</forename><surname>Castro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dligach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Finan</surname></persName>
+		</author>
+		<idno type="DOI">10.1212/WNL.0000000000003490</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurology</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page" from="164" to="168" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Stroke biomarkers: progress and challenges for diagnosis, prognosis, differentiation, and treatment</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Saenger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Christenson</surname></persName>
+		</author>
+		<idno type="DOI">10.1373/clinchem.2009.133801</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clin Chem</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="21" to="33" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Role of health insurance in averting economic hardship in families after acute stroke in China</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Heeley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Huang</surname></persName>
+		</author>
+		<idno type="DOI">10.1161/STROKEAHA.108.540054</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Stroke</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="2149" to="2156" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Improving human activity recognition and its application in early stroke diagnosis</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Villar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>González</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sedano</surname></persName>
+		</author>
+		<idno type="DOI">10.1142/S0129065714500361</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Neural Syst</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">1450036</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">A machine Learning Framework for Gait classification using inertial sensors: application to Elderly, Post-Stroke and Huntington&apos;s Disease Patients</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mannini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Trojaniello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Cereatti</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/s16010134</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">134</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Identifying neuroimaging markers of Motor Disability in acute stroke by machine Learning Techniques</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Rehme</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Volz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Feis</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/cercor/bhu100</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cereb Cortex</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="3046" to="3056" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Voxel-based gaussian naïve Bayes classification of ischemic stroke lesions in individual T1-weighted MRI scans</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Griffis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Allendorfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Szaflarski</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jneumeth.2015.09.019</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurosci Methods</title>
+		<imprint>
+			<biblScope unit="volume">257</biblScope>
+			<biblScope unit="page" from="97" to="108" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Efficient multi-scale 3D CNN with fully connected CRF for accurate brain lesion segmentation</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kamnitsas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ledig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">F</forename><surname>Newcombe</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.media.2016.10.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Med Image Anal</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="61" to="78" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Decoding post-stroke motor function from structural brain imaging</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Rondina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Filippone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Girolami</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.nicl.2016.07.014</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroimage Clin</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="372" to="380" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Can shape analysis differentiate free-floating internal carotid artery Thrombus from atherosclerotic plaque in patients evaluated with CTA?for stroke or transient ischemic attack?</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Thornhill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jaberi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.acra.2013.11.011</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Acad Radiol</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="345" to="354" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Prediction of stroke thrombolysis outcome using CT brain machine learning</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bentley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ganesalingam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Carlton</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.nicl.2014.02.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroimage Clin</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="635" to="640" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Unifying acute stroke treatment guidelines for a bayesian belief network</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Love</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Arnold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>El-Saden</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stud Health Technol Inform</title>
+		<imprint>
+			<biblScope unit="volume">192</biblScope>
+			<biblScope unit="page">1012</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title level="m" type="main">Using Evidence-Based medicine through Advanced Data Analytics to work toward a National Standard for Hospital-based acute ischemic Stroke treatment</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Dong</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note>Mainland China</note>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Acute ischaemic stroke prediction from physiological time series patterns</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ye</surname></persName>
+		</author>
+		<idno type="DOI">10.4066/AMJ.2013.1650</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Australas Med J</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="280" to="286" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Machine learning for outcome prediction of acute ischemic stroke post intra-arterial therapy</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Asadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Dowling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Yan</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0088225</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">e88225</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Outcomes and complications after endovascular treatment of Brain Arteriovenous Malformations: a Prognostication Attempt using artificial Intelligence</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Asadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Kok</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Looby</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.wneu.2016.09.086</idno>
+	</analytic>
+	<monogr>
+		<title level="j">World Neurosurg</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page" from="562" to="569" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Creating diagnostic scores using data-adaptive regression: an application to prediction of 30-day mortality among stroke victims in a rural hospital in India</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Birkner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kalantri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Solao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ther Clin Risk Manag</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="475" to="484" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Predicting discharge mortality after acute ischemic stroke using balanced data</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Speier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>El-Saden</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AMIA Annu Symp Proc</title>
+		<imprint>
+			<biblScope unit="volume">2014</biblScope>
+			<biblScope unit="page" from="1787" to="1796" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title/>
+		<idno type="DOI">10.1136/svn-2017-000101on21</idno>
+		<ptr target="http://svn.bmj.com/StrokeVascNeurol" />
+		<imprint>
+			<date type="published" when="2017-06">April 22. 2024. June 2017</date>
+		</imprint>
+	</monogr>
+	<note>by guest. Protected by copyright. Downloaded from</note>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Automated quantification of cerebral edema following hemispheric infarction: application of a machinelearning algorithm to evaluate CSF shifts on serial head CTs</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Dhar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Heitsch</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.nicl.2016.09.018</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroimage Clin</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="673" to="680" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Disruptions of network connectivity predict impairment in multiple behavioral domains after stroke</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Siegel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">E</forename><surname>Ramsey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Z</forename><surname>Snyder</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1521083113</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="E4367" to="E4376" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Predicting outcome and recovery after stroke with lesions extracted from MRI images</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Hope</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Seghier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Leff</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.nicl.2013.03.005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroimage Clin</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="424" to="433" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lohr</surname></persName>
+		</author>
+		<ptr target="https://www.nytimes.com/2016/10/17/technology/ibm-is-counting-on-its-bet-on-watson-and-paying-big-money-for-it.html" />
+		<title level="m">IBM is counting on its bet on Watson, and Paying Big Money for It</title>
+				<imprint>
+			<date type="published" when="2016-06">2016. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<monogr>
+		<author>
+			<persName><forename type="first">T</forename><surname>Otake</surname></persName>
+		</author>
+		<ptr target="http://www.japantimes.co.jp/news/2016/08/11/national/science-health/ibm-big-data-used-for-rapid-diagnosis-of-rare-leukemia-case-in-japan" />
+		<title level="m">IBM Big Data used for rapid diagnosis of rare leukemia case in Japan</title>
+				<imprint>
+			<date type="published" when="2016-06">2016. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<author>
+			<persName><forename type="first">J</forename><surname>Graham</surname></persName>
+		</author>
+		<ptr target="https://www.forbes.com/sites/theapothecary/2016/08/19/artificial-intelligence-machine-learning-and-the-fda/#4aca26121aa1" />
+	</analytic>
+	<monogr>
+		<title level="m">Machine Learning, and the FDA</title>
+				<imprint>
+			<date type="published" when="2016-06">2016. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<title level="m" type="main">The big-data revolution in US health care: accelerating value and innovation</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kayyali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Knott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kuiken</surname></persName>
+		</author>
+		<ptr target="http://www.mckinsey.com/industries/healthcare-systems-and-services/our-insights/the-big-data-revolution-in-us-health-care" />
+		<imprint>
+			<date type="published" when="2013-06">2013. Jun 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<monogr>
+		<title/>
+		<idno type="DOI">10.1136/svn-2017-000101on21</idno>
+		<ptr target="http://svn.bmj.com/StrokeVascNeurol" />
+		<imprint>
+			<date type="published" when="2017-06">April 22. 2024. June 2017</date>
+		</imprint>
+	</monogr>
+	<note>by guest. Protected by copyright. Downloaded from</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

@@ -11,6 +11,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 			<publicationStmt>
 				<publisher/>
 				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-05">May 2023</date>
 			</publicationStmt>
 			<sourceDesc>
 				<biblStruct>
@@ -58,8 +59,9 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 						<title level="a" type="main">Credit Card Fraud Detection using Python &amp; Machine Learning Algorithms</title>
 					</analytic>
 					<monogr>
+						<idno type="ISSN">2321-9653</idno>
 						<imprint>
-							<date/>
+							<date type="published" when="2023-05">May 2023</date>
 						</imprint>
 					</monogr>
 					<idno type="MD5">8E1752F8AA8929BDFAA8CB7266F22EB4</idno>
@@ -69,7 +71,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -77,10 +79,259 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</encodingDesc>
 		<profileDesc>
 			<abstract>
-				<p>Browsing and many other online sites have increased the digital payment modes through which risk of frauds during transactions got increased. It is necessary to have a look on fraud transactions so that the customers does not pay for what they haven&apos;t done. Such complications may be intercept with Data mining through Machine Learning. It aims to display the customization of a data set by applying machine learning with Credit Card Fraud Detection. The CCFD complications comprise of analyzing previous transactions through credit card along the data of the unauthorized users. These models are then applied to analyze whether the new transaction is authorized or not. In this project, we have concentrated on examining and pre-refining the data sets in addition to the deployment of numerous inconsistency observation methods such as Logical Regression, Random Forest, Decision tree, XG Boost on Credit Card Transaction data.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Browsing and many other online sites have increased the digital payment modes through which risk of frauds during transactions got increased. It is necessary to have a look on fraud transactions so that the customers does not pay for what they haven't done. Such complications may be intercept with Data mining through Machine Learning. It aims to display the customization of a data set by applying machine learning with Credit Card Fraud Detection. The CCFD complications comprise of analyzing previous transactions through credit card along the data of the unauthorized users. These models are then applied to analyze whether the new transaction is authorized or not. In this project, we have concentrated on examining and pre-refining the data sets in addition to the deployment of numerous inconsistency observation methods such as Logical Regression, Random Forest, Decision tree, XG Boost on Credit Card Transaction data.</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. FOREWORD</head><p>Swindling through credit card during a transaction is an uncertified and undesirable access one's bank account by a person irrespective of the authorized holder without his knowing. Required prevention measures should be taken to prevent this unwanted access along with the actions corresponding to crooked enactment can be considered to reduce it and protect against homogenous events in the future. A bank card in general allude to a card that is entrust with cardholder (account holder), usually grant him to buy products and assistance in under borrowing limit or take out cash further. It delivers the authorized user a favor of the time with money at any place, i.e., it provides time for their client to pay back later in a authorized time, and payment can be done from anywhere without having cash money. It is an easy target. Dodgers always attempt to make every unauthorized transaction legal, which creates difficulty to detect frauds. Machine learning modules and methods are working to survey all the authorized and unauthorized transactions.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. LITERATURE VIEW</head><p>Multiple supervised and semi-supervised machine learning algorithms are now applied for fraud detection. Although these techniques and algorithms are accurate in certain respects, they were unable to offer a lasting and reliable solution. Strong class imbalance, the inclusion of labeled and unlabelled samples, and improving the ability of transactions with high accuracy are the three key obstacles we must face. Other supervised machine learning techniques for detecting credit card fraud include Decision Trees, Logistic Regression, Random Forest, etc. The behavioral characteristics of typical and unusual transactions are trained and tested using these algorithms. In highly skewed credit card fraud, they are exploited. By using both an under-and over-sampling strategy, data may be balanced. All methods operate in different ways, but we must choose the most effective one. The under-sampling model should not be taken into account because some information was lost during under-sampling. Logistic regression is the most straightforward model, with ROC values of 0.99 in the train set and 0.97 in the test set. Every approach has some potential for failure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. CLASSIFIERS A. Logistic Regression</head><p>An effective machine learning approach for credit card fraud detection is logistic regression. It is a binary classification method that calculates the likelihood of a transaction being fraudulent or not depending on the features that are provided as input. Overall, because it is straightforward to construct, simple to read, and capable of handling both numerical and categorical data, the logistic regression method can be a valuable tool in credit card fraud detection systems. It might not always be the most accurate algorithm for this task, and more complicated fraud detection scenarios can call for other methods like random forest or deep learning.</p><formula xml:id="formula_0">y = α0 + α1X1 + α2X2 +•••+ αnXn q = 1/1+e^-y</formula><p>where the value of q will be between 0 and 1. q is the probability that determines the prediction of a given class. Te closer q is to 1, the more accurately it predicts a particular class.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Decision Tree</head><p>Systems for detecting credit card fraud may find a decision tree algorithm to be an effective tool. The programme divides the data recursively into smaller groups based on the most important attributes until a determination of whether a transaction is fraudulent or not can be made. An overview of the decision tree algorithm's potential applications in a system for detecting credit card fraud is given below: 1) Gather Information: The first stage is to gather information on credit card transactions, such as the date, place, amount, and kind of transaction. The decision tree algorithm will use this data as its input. 2) Preprocess Data: After data has been gathered, it must be preprocessed to eliminate any noise or pointless characteristics. This might involve feature selection, normalisation, and data cleaning. 3) Split Data: Training and testing sets are created from the pre-processed data. The decision tree model is constructed using the training set, and its performance is assessed using the testing set.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4) Construct Decision Tree:</head><p>A decision tree model is then constructed using the training data and the decision tree method. The method chooses the feature that best divides the data into the most different groups at each node of the tree. 5) Model Evaluation: Using testing data, the decision tree model is assessed to see how well it predicts whether transactions are fraudulent or not. Metrics like accuracy, recall, F1 score, and precision can be used to evaluate this. 6) Improve Model: If the model is not accurate enough, it may be made more accurate by adjusting the algorithm's parameters or by utilising more sophisticated approaches like ensemble learning or feature engineering. 7) Use Model: When the decision tree model is accurate enough, it may be used to automatically flag questionable transactions for additional examination by human investigators in a system for detecting credit card fraud. Overall, because it is simple to understand, can handle both numerical and categorical data, and can spot intricate patterns in the data, the decision tree algorithm can be a beneficial tool in credit card fraud detection systems. It might not always be the most accurate algorithm for this task, and more complicated fraud detection scenarios can call for other methods like neural networks or support vector machines.</p><p>©IJRASET: All Rights are Reserved | SJ Impact Factor 7.538 | ISRA Journal Impact Factor 7.894 | C. Random Forest A robust machine learning approach called random forest may be applied to systems that find credit card fraud. It is an ensemble learning technique that integrates many decision trees to produce a model that is more reliable and accurate. A high-level description of how the random forest algorithm can be applied in a system to identify credit card fraud is given below: 1) Gather Information: The first stage is to gather information on credit card transactions, such as the date, place, amount, and kind of transaction. The random forest method will use this data as input. 2) Preprocess Data: After data has been gathered, it must be preprocessed to eliminate any noise or pointless characteristics. This may involve feature cleansing, data normalisation, and feature selection. Each decision tree produced by the algorithm is constructed using a randomly sampled portion of the training data as well as a randomly sampled subset of the features. The average or majority vote of the forecasts from each tree is then used to merge them. 5) Model Evaluation: Using testing data, the random forest model is assessed to see how well it predicts fraudulent or nonfraudulent transactions. 6) Improve Model: If the model isn't accurate enough, it may be made more precise by adjusting the algorithm's parameters or by applying more sophisticated methods like boosting or stacking. 7) Implement Model: Once the random forest model is reliable enough, it can be implemented in a system that detects credit card fraud to automatically flag transactions that are suspect for additional examination by human investigators. Overall, because it can handle both numerical and categorical data, can spot intricate patterns in the data, and is less prone to overfitting than single decision trees, the random forest algorithm can be a beneficial tool in credit card fraud detection systems. It might not always be the most precise algorithm for this task, though, and there are other methods such as deep learning or anomaly detection that may be needed for more complex fraud detection scenarios.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. XG BOOST</head><p>A distributed gradient boosting library that has been optimized for speed, adaptability, and portability is called XG Boost. Under the gradient boosting framework, machine learning algorithms are implemented. Many data science issues may be quickly and accurately solved using the parallel tree boosting offered by XG Boost (also known as GBDT, GBM). The same code may address issues and is compatible with key distributed environments including Hadoop, SGE, and MPI. Contrary to many other algorithms, XGBoost is an ensemble learning method, combining the output of several base learners to produce a prediction. The foundation learners in XGBoost are Decision Trees, the same as in Random Forests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. METHODOLOGY A. Task division</head><p>Task division is a technique used to break down a complex task into sub tasks, which can be more easy to manage. In the context of credit card fraud detection (CCFD), task divisioncan help us to recognize the individual steps involved in the fraud detection process and improve the efficiency of the overall system. FORMULA TEXT Accuracy and precision are never suitable criteria for evaluating a model, hence in our suggested methodology, we employ the following formulas. But when evaluating any model, accuracy and precision are always thought of as the fundamental factor.</p><p>we have evaluated accuracy,sensitivity and the specificity by using and the outcomes were given by the following formulas.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head> Precision Precision = {tp} / {tp+fp}</head><p> Recall Recall = {tp} / {tp+fn}</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 :</head><label>1</label><figDesc>Fig. 1: Taxonomy for Frauds</figDesc><graphic coords="2,64.80,447.84,481.20,189.36" type="vector_box" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 :</head><label>2</label><figDesc>Fig. 2: Frauds Using Card Not Present Transaction</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>3 )</head><label>3</label><figDesc>Split Data: Training and testing sets are created from the pre-processed data. The random forest model is constructed using the training set, and its performance is assessed using the testing set. 4) Create a Random Forest: A Random Forest model is created by applying the Random Forest algorithm to the training data.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>B. Data AdditionTo Collect and acquire transaction data from various sources such as credit card originators, transaction hatchways, and the other processors.©IJRASET: AllRights are Reserved | SJ Impact Factor 7.538 | ISRA Journal Impact Factor 7.894 | VII.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="7,156.96,556.56,297.60,169.20" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">ISSN: 2321-9653; IC Value: 45.98; SJ Impact Factor: 7.538 Volume 11 Issue V May 2023-Available at www.ijraset.com</note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Data pre-compilation</head><p>Clean and compilation of the transaction data, including removing replication, filling hidden values, and transforming variables as necessary. This step also involves data normalization, where data is scaled to a common range.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Model Training</head><p>In order to forecast the likelihood of a fraudulent transaction or unauthorized access, models used in the detection of credit card fraud are trained using machine learning techniques using transaction data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Evaluation of Models</head><p>After training and testing of the models on the basis of performance ,the models were executed which can further help in recognizing the most accurate and effective algorithm.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V.</head><p>DATASET A research was made by European cardholders in September 2013 for 2 days, in which they used a dataset that includes credit card transactions. In total of 284807 transactions, 0.172% were found fraudulent. All the attributes in the dataset are numbers and has 30 features (V1, V28), time and amount. Last column represents the class (type of transaction). One denotes the fraud and zero denotes the other transactions. V1 to V28 are not named because of data security and integrity. Because of the highly imbalanced nature of dataset, these models have very low accuracy. Synthetic Minority Oversampling approach (SMOTE) method in the Data-Preprocessing phase used to resolve issue of class imbalance. It selects among various samples that are close to each other, draw a line between the data points and create a new instance of minority class.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>VI.</head><p>FEATURE SELECTION When using a machine learning approach, feature selection (FS) is an important stage. The huge feature space that results from the training and testing procedures might have a detrimental effect on how well the models are presented overall. The type of problem an investigator is attempting to solve determines the specific FS approach that should be employed. An overview of situations when applying an FS approach enhanced the performance of ML models is given in the paragraph that follows. 1) Kasongo used a GA-based FS to improve the way ML-based models were used in the field of intrusion detection systems. The PSOSSAE attained an accuracy of 97.3% on the Framingham heart disease dataset, the findings showed that the use of GA increased the performance of the RF classifier. Hemavathi used enhanced principal component analysis (EPCA) to implement a successful FS approach in a unified setting. The outcomes showed that using the EPCA produces the best outcomes in both supervised and unsupervised settings. 2) To identify fraud in an e-banking context, we used a hybrid FS and GA techniques. According to the experimental findings, using an FS approach to financial fraud datasets improves how well the models are presented overall.</p><p>©IJRASET: All Rights are Reserved | SJ Impact Factor 7.538 | ISRA Journal Impact Factor 7.894 |</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>VIII. EXPERIMENTAL RESULTS</head><p>On the original and SMOTE datasets, we have tested a few models. When the data are tallied, it is clear that there are significant variances in the accuracy, precision, and MCC. We even employed one-class SVM, which works best with datasets of binary classes. We may also use one-class SVM as our dataset contains two classes. Table <ref type="table">3</ref>, shows the results on the dataset before applying SMOTE  Following the application of several algorithms to three separate groups, rating scores are produced for each type of classifier. The system is guided by this dynamic evolution in limitation to promptly adapt to new cardholders' transaction behaviors. stayed with a feedback process to address the concept drift issue. We found that while dealing with imbalanced datasets, the Matthews Correlation Coefficient was the superior metric. There were other options than MCC. We experimented with balancing the dataset and discovered that the classifiers were operating more effectively than previously. The use of one-class classifiers, such as one-class SVM, is an alternative method for addressing imbalanced datasets. Finally, we discovered that, when compared to decision tree and random forest, logistic regression provided the most accurate findings.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">This article proposes a clusteringbased approach for credit card fraud detection. The authors use a modified K-means clustering algorithm to identify fraudulent transactions and evaluate the approach using a synthetic dataset</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Hossain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Islam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A H</forename><surname>Akhand</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>A new clustering-based approach for credit card fraud detection</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">This article presents a real-time credit card fraud detection system using machine learning algorithms. The authors evaluate the system&apos;s performance using real-world credit card transaction data and compare it with other state-of-the-art methods</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mishra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Sahoo</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>Real-time credit card fraud detection using machine learning algorithms</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection using Machine Learning Techniques: A Systematic Literature Review</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Smith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Big Data</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="29" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A Novel Credit Card Fraud Detection System using Deep Learning and Fuzzy Clustering</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Wilson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">189</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2022">2022</date>
+			<publisher>Example of Book referencing</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m">Machine Learning and Data Mining for Computer Security: Methods and Applications&quot; Author: Marcus A. Maloof ; Publisher: Springer Science &amp; Business Media; Year: 2006 Example of Referencing of an Article</title>
+				<meeting><address><addrLine>Book</addrLine></address></meeting>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Credit Card Fraud Detection: A Review</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Garg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Handbook of Research on Computational Intelligence for Engineering, Science, and Business</title>
+				<editor>
+			<persName><forename type="first">P</forename><surname>Vasant</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">J</forename><surname>Abbot</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">F</forename><surname>Neri</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>IGI Global</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="83" to="97" />
+		</imprint>
+	</monogr>
+	<note type="report_type">Tech. Report</note>
+	<note>Example of referencing of a B</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Example of referencing of a Ph. D. Dissertation: ©IJRASET: All Rights are Reserved | SJ Impact Factor 7</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Smith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">538 | ISRA Journal Impact Factor</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+		<respStmt>
+			<orgName>XYZ University</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">B. Tech.) report</note>
+	<note>Credit Card Fraud Detection using Machine Learning</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Development of an Effective Credit Card Fraud Detection System</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Doe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Doctor of Philosophy</title>
+				<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+		<respStmt>
+			<orgName>ABC University</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Ph.D.) dissertation</note>
+	<note>Example of referencing of a Conference Paper</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A Comparison of Machine Learning Techniques for Credit Card Fraud Detection</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Machine Learning (ICML)</title>
+				<meeting><address><addrLine>Sydney, Australia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note>Example of referencing of an Article from Internet</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Machine Learning for Credit Card Fraud Detection: A Review</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Brown</surname></persName>
+		</author>
+		<ptr target="https://medium.com/@emilybrown/machine-learning-for-credit-card-fraud-detection-a-review-ded6c12d6ef1" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">How Credit Card Fraud Detection Works. Investopedia</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Smith</surname></persName>
+		</author>
+		<ptr target="https://www.investopedia.com/articles/personal-finance/100215/how-credit-card-fraud-detection-works" />
+		<imprint>
+			<date type="published" when="2023-05-09">May 9, 2023</date>
+		</imprint>
+	</monogr>
+	<note>asp Example of referencing of an Article from Application Note</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Credit Card Fraud Detection using Neural Networks</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Doe</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<publisher>XYZ Corporation</publisher>
+		</imprint>
+	</monogr>
+	<note>Application Note Number AN-1234</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

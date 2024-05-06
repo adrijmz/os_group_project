@@ -77,7 +77,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -88,10 +88,1419 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				<keywords>Covid-19 Machine learning Artificial intelligence Pandemic</keywords>
 			</textClass>
 			<abstract>
-				<p>Background and objective: During the recent global urgency, scientists, clinicians, and healthcare experts around the globe keep on searching for a new technology to support in tackling the Covid-19 pandemic. The evidence of Machine Learning (ML) and Artificial Intelligence (AI) application on the previous epidemic encourage researchers by giving a new angle to fight against the novel Coronavirus outbreak. This paper aims to comprehensively review the role of AI and ML as one significant method in the arena of screening, predicting, forecasting, contact tracing, and drug development for SARS-CoV-2 and its related epidemic. Method: A selective assessment of information on the research article was executed on the databases related to the application of ML and AI technology on Covid-19. Rapid and critical analysis of the three crucial parameters, i.e., abstract, methodology, and the conclusion was done to relate to the model&apos;s possibilities for tackling the SARS-CoV-2 epidemic. Result: This paper addresses on recent studies that apply ML and AI technology towards augmenting the researchers on multiple angles. It also addresses a few errors and challenges while using such algorithms in real-world problems. The paper also discusses suggestions conveying researchers on model design, medical experts, and policymakers in the current situation while tackling the Covid-19 pandemic and ahead. Conclusion: The ongoing development in AI and ML has significantly improved treatment, medication, screening, prediction, forecasting, contact tracing, and drug/vaccine development process for the Covid-19 pandemic and reduce the human intervention in medical practice. However, most of the models are not deployed enough to show their real-world operation, but they are still up to the mark to tackle the SARS-CoV-2 epidemic.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Background and objective: During the recent global urgency, scientists, clinicians, and healthcare experts around the globe keep on searching for a new technology to support in tackling the Covid-19 pandemic. The evidence of Machine Learning (ML) and Artificial Intelligence (AI) application on the previous epidemic encourage researchers by giving a new angle to fight against the novel Coronavirus outbreak. This paper aims to comprehensively review the role of AI and ML as one significant method in the arena of screening, predicting, forecasting, contact tracing, and drug development for SARS-CoV-2 and its related epidemic.</p><p>Method: A selective assessment of information on the research article was executed on the databases related to the application of ML and AI technology on Covid-19. Rapid and critical analysis of the three crucial parameters, i.e., abstract, methodology, and the conclusion was done to relate to the model's possibilities for tackling the SARS-CoV-2 epidemic.</p><p>Result: This paper addresses on recent studies that apply ML and AI technology towards augmenting the researchers on multiple angles. It also addresses a few errors and challenges while using such algorithms in real-world problems. The paper also discusses suggestions conveying researchers on model design, medical experts, and policymakers in the current situation while tackling the Covid-19 pandemic and ahead.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion:</head><p>The ongoing development in AI and ML has significantly improved treatment, medication, screening, prediction, forecasting, contact tracing, and drug/vaccine development process for the Covid-19 pandemic and reduce the human intervention in medical practice. However, most of the models are not deployed enough to show their real-world operation, but they are still up to the mark to tackle the SARS-CoV-2 epidemic.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>There are several disease outbreaks that invaded humanity in World history. World Health Organization (WHO), its co-operating clinicians and various national authorities around the globe fight against these pandemics to date. Since the first Covid-19 (Coronavirus) disease case confirmed in China December 2019 Wuhan District, the outbreak continues to spread all across the world, and on 30th January 2020 WHO declared the pandemic as an international concern of public health emergency <ref type="bibr" target="#b0">[1]</ref> . The novel Coronavirus (SARS-CoV-2) disease spread on more than 185 countries infecting more than 7,145,800 individuals and causing 407,067 deaths by June 09, 2020 <ref type="bibr">[ 2 , 3 ]</ref>. To address this global novel pandemic, WHO, scientists and clinicians in medical industries are searching for new technology to screen infected patients in various stages, find best clinical trials, control the spread of this virus, develop a vaccine for curing infected patients, trace contact of the infected patient. Recent studies identified that Machine Learning and Artificial Intelligence are promising technology employed by various healthcare providers as they result in better scale-up, speed-up processing power, reliable and even outperform human in specific healthcare tasks <ref type="bibr" target="#b3">[4]</ref> . Therefore, healthcare industries and clinicians worldwide employed various ML and AI technology to tackle the Covid-19 pandemic to address the challenges during the outbreak. In medical industries, AI is not applied to replace the human interactions, but to provide decision support for clinicians on what they are modeled for <ref type="bibr" target="#b4">[5]</ref> . https://doi.org/10.1016/j.chaos.2020.110059 0960-0779/© 2020 Elsevier Ltd. All rights reserved.</p><p>This paper focuses on the novel Covid-19 epidemic and how the modern AI and ML technology were recently employed to solve the challenges during the outburst. We present comprehensive reviews of studies on the model and technology applied to tackle the novel Covid-19 pandemic. The studies further discuss types of AI and ML methods recently employed integration and types of the dataset, the final performance of each proposed model, and present on the pros and cons of modern techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">ML and AI recently employed to tackle health care SARS-CoV-2 outbreak</head><p>AI and ML technology are used to improve the accuracy of prediction for screening both infectious and non-infectious diseases <ref type="bibr" target="#b5">[6]</ref> . The relation with health care begins with the evolution of the first expert system called MYCIN developed in 1976 <ref type="bibr" target="#b6">[7]</ref> . MYCIN was designed to use 450 rules collected from a medical expert to treat bacterial infection by suggesting antibiotics to the patients. Such an expert system serves as clinical decision support for clinicians and medical experts <ref type="bibr" target="#b7">[8]</ref> . Recent studies evident on the prospect of ML and AI technology for the various pandemic outbreak, it supports healthcare experts in various communicable diseases (SARS, EBOLA, HIV, COVID_19) <ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref> and non-communicable diseases (Cancer, Diabetic, Heart disease, and Stroke) <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref> outbreak.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">ML and AI technology in SARS-CoV-2 screening and treatment</head><p>Early detection of any disease, be it infectious and noninfectious, is critically an important task for early treatment to save more lives <ref type="bibr">[ 26 , 27 ]</ref>. Fast diagnosis and screening process helps prevent the spread of pandemic diseases like SARS-CoV-2, costeffective, and speed up the related diagnosis. The development of an expert system for health care assists in the new order of identification screening and management of SARS-CoV-2 carrier by more cost-effective com pared to the traditional method. ML and AI are used to augment the diagnosis and screening process of the iden-tified patient with radio imaging technology akin to Computed Tomography (CT), X-Ray, and Clinical blood sample data. In this regard, Table <ref type="table">1</ref> shows selective information on diagnosis and screening proposed for the Coronavirus disease. The healthcare expert can use radiology images like X-ray and CT scans as routine tools to augment traditional diagnosis and screening. Unfortunately, the performance of such devices is moderate during the high outburst of the SARS-CoV-2 pandemic. In this regard, studies <ref type="bibr" target="#b27">[28]</ref> show the potential of AI and ML tools by suggesting a new model that comes with rapid and valid method SARS-CoV-2 diagnosis using Deep Convolutional Network. The study shows that diagnosis utilizing an expert system employing AI and ML on 1020 CT images of 108 Covid-19 infected patients along with viral pneumonia of 86 patients, the remarkable performance suggests the use of the convolutional neural network (Resnet-101) as an adjuvant tool for radiologist resulting 86.27%, 83.33% of accuracy and specificity respectively.</p><p>Recent studies design an auxiliary tool to increase the accuracy of Covid-19 diagnosis with new model Automatic COVID-19 detection based on deep learning algorithm <ref type="bibr" target="#b28">[ 29 ]</ref>. The developed model uses raw chest X-ray images of 127 infected patients with 500 nofindings and pneumonia cases of 500 records. With remarkable performance accuracy, binary class of 98.08%, and multi-class with 87.02%. Multi-classes proved the applicability of the expert system to assist radiology in validating in screening process rapidly and accurately.</p><p>Furthermore, researchers have found four important medical features combinations of clinical, laboratory features, and demographic information using GHS, CD3 percentage, total protein, and patient age employing Support Vector Machine as the primary feature classification model <ref type="bibr" target="#b29">[30]</ref> . The new model is effective and robust in predicting patients in critical/severe conditions, and the empirical results show that a combination of the four-feature results an AUROC of 0.9996 and 0.9757 in training and testing datasets respectively. The survival and the cox-multivariant regression analysis revealed the model's significance towards and auxiliary tools for the healthcare expert.</p><p>After evaluating 253 clinical blood samples from Wuhan, researchers found eleven (bilirubin total, creatine kinase isoenzyme, GLU, creatinine, kalium, lactate dehydrogenase, platelet distribution width, calcium, basophil, total protein, and magnesium) key relevant indices which can assist as a discrimination tool of Covid-19 for healthcare expert toward rapid diagnosis <ref type="bibr" target="#b30">[31]</ref> . The studies show that 11 relevant indices are extracted after employing the Random Forest algorithm with an overall accuracy of 95.95% and 96.97% specificity respectively. Furthermore, the authors published that the tools were deployed and are available on webserver at http://lishuyan.lzu.edu.cn/COVID2019 _ 2/ to assist healthcare experts.</p><p>The above studies give the evidence of an application of the expert system; designing rapid diagnosis was the main objective along with augmentation of accuracy. Prompt and early detection reduce the spread of the disease and reserve more time to the healthcare expert to correspond to the next diagnosis to save more lives, resulting in low-cost medical expenditure. However, majority of the studied paper employed a single classification algorithm on individual data or more. Therefore it is suggested to come up with a hybrid classification method applying more potential algorithm on multi-database or hybrid-database consisting of clinical, mammographic, and demographic data, as each type of data has a significant factor that could represent the true identity of the infected patients and deployment of the application in the real world.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">ML and AI technology in SARS-Cov-2 contact tracing</head><p>If a person diagnoses and is confirmed with Covid-19, the next important step is contact tracing prevention of the wider spread of the disease. According to WHO, the infection spreads from personto-person primarily through saliva, droplets, or discharges from the nose through contact transmission <ref type="bibr" target="#b31">[32]</ref> . To take control on the spread of SARS-Cov-2, contact tracing is an essential public health tool used to break the chain of virus transmission <ref type="bibr" target="#b32">[33]</ref> . The process of contact tracing is to identify and manage people who are recently exposed to an infected Covid-19 patient to avoid further spread. Generally, the process identifies the infected person with a follow-up for 14 days since the exposure. If employed thoroughly, this process can break the transmission chain of the current novel coronavirus and suppress the outbreak by giving a higher chance of adequate controls and helping reduce the magnitude of the recent pandemic. In this regard, various infected countries come up with a digital contact tracing process with the mobile application, utilizing different technologies like Bluetooth, Global Positioning System (GPS), Social graph, contact details, network-based API, mobile tracking data, card transaction data, and system physical address. The digital contact tracing process can perform virtually real-time and much faster compared to the non-digital system. All these digital apps are designed to collect individual personal data, which will be analyzed by ML and AI tools to trace a person who is vulnerable to the novel virus due to their recent contacted chain.</p><p>As shown in Table <ref type="table" target="#tab_0">2</ref> , articles <ref type="bibr">[ 34 , 35 ]</ref> listed various countries competent with such ML and AL-based contact tracing applications. Studies show that over 36 Countries successfully employed digital contact tracing use following centralized, decentralized, or hybrid of both techniques were proposed to lessen the effort and augment the effectiveness of the traditional healthcare diagnosis processes. Concerning contact tracing, studies have proven the use of ML and AI in augmentation of contact tracing process against infectious Chronic Wasting disease <ref type="bibr" target="#b35">[36]</ref> . After applying Graph theory on infectious animal disease epidemics data, mainly shipment data between each farm, the resultant graph properties generated by the proposed model can be used to exploit to augment contact tracing more efficiently. Moreover, the generated graphs have a potential prediction impact on the number of infections that can take place. However, there are still limitations in addressing the scenario, privacy, control over the data, and even data security breach. Countries are working to overcome the challenges; some countries like Israel "passed an emergency law to use mobile phone data" to tackle the current pandemic <ref type="bibr" target="#b36">[37]</ref> . Among the world contact tracing apps, some countries app violated privacy law and reported unsafe <ref type="bibr" target="#b34">[35]</ref> so far they do the job acceptably by supplement the manual tracing process. However, virtually every country has their contact tracing application individually, as the outbreak continues to spread across the world, it becomes a global health emergency.</p><p>To fight against the Covid-19 as one, one should provide a standard de-facto centralized contact tracing application to trace every human being all around the world. Also, it is reported that some specific query needs to address: "Is it mandatory or voluntary?" "Is the attempt clear or translucent?" "Is information gathering lessened?" "Will collected information be demolished as declared?", "Is the data safe with the host" and "Are there any restrictions or control on utilizing the information?".</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">ML and AI technology in SARS-CoV-2 prediction and forecasting</head><p>Selective information shown in Table <ref type="table" target="#tab_1">3</ref> indicates the applications of ML and AI in forecasting and predicting the novel pandemic. A new novel model, that forecast and predicting 1-3 to 6 days ahead of total Covid-19 patient of 10 Brazilian states, using stacking-ensemble with support vector regression algorithm on the cumulative positive Covid-19 cases of Brazilian data was proposed, thus augmenting the short-term forecasting process to alert the healthcare expert and the government to tackle the pandemic <ref type="bibr" target="#b37">[38]</ref> . Recent studies suggested a novel model using a supervised multilayered recursive classifier called XGBoost on clinical and mammographic factor datasets. After applying the model, researchers found out those three significant key features (high-sensitivity Creactive protein, lymphocyte and lactic dehydrogenase (LDH)) of the 75 features clinical and blood test samples result to be the highest rank of 90% accuracy in predicting and assessing Covid-19 patient into general, severe and mortality rate <ref type="bibr" target="#b38">[39]</ref> . Furthermore, comparatively higher value in single lactic dehydrogenase appears to be a significant factor in classifying most patients in need of in-tensive medical care, as LDH degree related to various respiratory disorder diseases, namely asthma and bronchitis, and pneumonia. The forecast model employed decision rule to forecast rapidly and predict infected individuals at the highest risk, authorized patients to be manageable for intensive care, and possibly lessen the transience rate. A Canadian based forecasting model using time-series was developed employing Deep learning algorithm for the longshort-term-memory network, the studies found out a key factor intended for predicting the course with an ending point estimation of the current SARS-CoV-2 epidemic in Canada and all over the globe <ref type="bibr" target="#b39">[40]</ref> . The suggested model forecast ending point of this SARS-CoV-2 outbreak in Canada will be around June 2020. Based on the data collected from John Hopkins University <ref type="bibr" target="#b2">[3]</ref> , the prediction was likely to be accurate as newly infected cases have dropped rapidly and proven the applicability of the expert system in predicting and forecasting for the current pandemic outbreak by revealing key significant features. The real-time forecasting model was proposed combining the goodness of the wavelet-based forecasting model and autoregressive integrated moving average based time-series model <ref type="bibr" target="#b40">[41]</ref> . The model solves the problem by generating short-term forecasts of the SARS-CoV-2 for various countries (India, United Kingdom, Canada, South Korea, and France) to assist healthcare experts and policymakers as a preliminary cautioning module for each target country.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">ML and AI technology in SARS-CoV-2 drugs and vaccination</head><p>Since the coronavirus epidemic fury, researchers and healthcare experts around the globe ubiquitously urged to develop a possible choice to tackle the development of drug and vaccine for the SARS-CoV-2 pandemic, and ML/AI technology constitutes to be an enthralling road. Concerning the possibility of drug choice for infected patient's treatment, instant testing on the existing old marketable medicines for novel SARS-CoV-2 carrier in a human being is essential.</p><p>Researchers from Taiwan are building a new model to augment the development of a novel drug <ref type="bibr">[42]</ref> . After applying the ML and AI technology-based model on two datasets (one using the 3C-like protease constraint and other data-holding records of infected SARS-CoV, SARS-Cov-2, influenza, and human immunodeficiency virus (HIV)) using Deep Neural Network on the eighty old drugs with potential for Covid-19 treatment, the study suggested eight drugs, i.e., vismodegib, gemcitabine, clofazimine, celecoxib, brequinar, conivaptan, bedaquiline and tolcapone are found virtually effective against feline infectious peritonitis coronavirus. Furthermore, other five drugs like homoharringtonine, salinomycin, boceprevir, tilorone and chloroquine are also found operational during AI experimental environment.</p><p>A novel molecule transformer-drug target interaction model was proposed jointly by researchers from the US and Korea to tackle the need for an antiviral drug that can treat the Covid-19 virus <ref type="bibr">[43]</ref> . The study compares the accessible virtual screening and molecular docking application called AutoDock Vina with the proposed model employing a deep learning algorithm on 3C-like proteinase of Covid-19 and FDA approved 3,410 existing drugs available in the market. The result revealed that a popular antiretroviral drug used to treat HIV called Antazanavir (Kd of 94.94 nM) is the best drug for Covid-19 medication, followed by Remdisivir (Kd of 113.13 nM). Furthermore, results revealed that some medications like darunavir, ritonavir, and lopinavir were outlined to tackle viral proteinases. It was also found that various antiviral compounds like Kaletra might be utilized for the medicine of Covid-19 human patients.</p><p>A group of researchers from the USA discovered an antiviral drug for treating the Ebola virus. The discovery was first active in the year 2014 <ref type="bibr" target="#b43">[44]</ref> , starting with ML and AI-based pharmacophore computational analyzing on a limited size of in vitro infected carriers of the Ebola virus. The study proposed an amodiaquine and chloroquine compound popularly used to treat the malaria virus. Furthermore, after uncovering a decade of drug development based on ML and AI technology, a fusion of computational screening method with docking application and machine learning for choosing supplementary medication to investigate on SARS-CoV-2 was proposed <ref type="bibr" target="#b44">[45]</ref> . Researchers refer to the successful discovery of Ebola <ref type="bibr" target="#b43">[44]</ref> , and the Zika virus <ref type="bibr" target="#b45">[46]</ref> experience gain belief that the same model could be repeatedly utilized for drug discovery on Covid-19 and future virus pandemic ahead.</p><p>The selected review paper adopted various methodologies and technologies addressing the classical method of classification based on statistics to an advanced modern AI and ML algorithm. The use of computational tools, combined with docking application, was found to be more active in predicting the reusability of an existing old drug on Covid-19 medication and dramatically minimize the level of a risk factor in the development of medicine more costeffective process. During this urgency, the use of ML and AI can augment the drug development process by lessening the time slot on discovering a supplementary treatment and medication for the carrier by drawing a vast probability over security, manageability, and clinical information on the existing drug compound. Issues and challenges found in this area were the limited resource of comprehensive hybrid data and real-life deployment of the application.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Conclusion and discussion</head><p>Since the outbreak of the novel SARS-CoV-2, scientists and medical industries around the globe ubiquitously urged to fight against the pandemic, searching alternative method of rapid screening and prediction process, contact tracing, forecasting, and development of vaccine or drugs with the more accurate and reliable operation. Machine Learning and Artificial Intelligence are such promising methods employed by various healthcare providers. This paper addresses on recent studies that apply such advance technology in augmenting the researchers in multiple angles, addressing the troubles and challenges while using such algorithm in assisting medical expert in real-world problems. This paper also discusses suggestions conveying researchers on AI/MLbased model design, medical experts, and policymakers on few errors encountered in the current situation while tackling the current pandemic. This review shows that the use of modern technology with AI and ML dramatically improves the screening, prediction, contact tracing, forecasting, and drug/vaccine development with extreme reliability. Majority of the paper employed deep learning algorithms and is found to have more potential, robust, and advance among the other learning algorithms. However, the current urgency requires an improved model with high-end performance accuracy in screening and predicting the SARS-CoV-2 with a different kind of related disease by analyzing the clinical, mammographic, and demographic information of the suspects and infected patients. Finally, it is evident that AI and ML can significantly improve treatment, medication, screening &amp; prediction, forecasting, contact tracing, and drug/vaccine development for the Covid-19 pandemic and reduce the human intervention in medical practice. However, most of the models are not deployed enough to show their real-world operation, but they are still up to the mark to tackle the pandemic.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of Competing Interest</head><p>None.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 2</head><label>2</label><figDesc>Contact tracing application used by Countries.</figDesc><table><row><cell>Sl. No</cell><cell>Country</cell><cell>Contact tracing App</cell><cell>Location tracking</cell><cell>Launch on</cell></row><row><cell>1</cell><cell>Australia</cell><cell>COVIDSafe</cell><cell>BlueTrace protocol: Bluetooth</cell><cell>April 14, 2020</cell></row><row><cell>2</cell><cell>Austria</cell><cell>Stopp Corona</cell><cell>Bluetooth, Google/Apple</cell><cell>March, 2020</cell></row><row><cell>3</cell><cell>Bahrain</cell><cell>BeAware Bahrain</cell><cell>Bluetooth &amp; GSM</cell><cell>March 31, 2020</cell></row><row><cell>4</cell><cell>Bulgaria</cell><cell>ViruSafe</cell><cell>GSM</cell><cell>May, 2020</cell></row><row><cell>5</cell><cell>China</cell><cell>conjunction with Alipay</cell><cell>GPS, GSM, credit-card-transaction-history</cell><cell>Very little Info</cell></row><row><cell>6</cell><cell>Cyprus</cell><cell>CovTracer</cell><cell>GPS, GSM</cell><cell>May, 2020</cell></row><row><cell>7</cell><cell>Colombia</cell><cell>CoronApp</cell><cell>GPS</cell><cell>April 12, 2020</cell></row><row><cell>8</cell><cell>Czech Republic</cell><cell>eRouška (eFacemask)</cell><cell>BlueTrace protocol: Bluetooth</cell><cell>April 15, 2020</cell></row><row><cell>9</cell><cell>Estonia</cell><cell>Estonia's App</cell><cell>Google/Apple, DP-3T, Bluetooth</cell><cell>April, 2020</cell></row><row><cell>10</cell><cell>Finland</cell><cell>Ketju</cell><cell>DP-3T, Bluetooth</cell><cell>May, 2020</cell></row><row><cell>11</cell><cell>France</cell><cell>StopCovid</cell><cell>Bluetooth</cell><cell>May, 2020</cell></row><row><cell>12</cell><cell>Germany</cell><cell>CoronaApp</cell><cell>Bluetooth, Google/Apple</cell><cell>May, 2020</cell></row><row><cell>13</cell><cell>Ghana</cell><cell>GH Covid-19 Tracker App</cell><cell>GPS</cell><cell>April 12, 2020</cell></row><row><cell>14</cell><cell>Hungary</cell><cell>VírusRadar</cell><cell>Bluetooth</cell><cell>May 13, 2020</cell></row><row><cell>15</cell><cell>Iceland</cell><cell>Rakning C-19</cell><cell>GPS</cell><cell>April 2020</cell></row><row><cell>16</cell><cell>India</cell><cell>Aarogya Setu</cell><cell>Bluetooth &amp; location-generated social graph</cell><cell>April 2, 2020</cell></row><row><cell>17</cell><cell>Iran</cell><cell>Mask.ir</cell><cell>GSM</cell><cell>May, 2020</cell></row><row><cell>18</cell><cell>Ireland</cell><cell>HSE Covid-19 App</cell><cell>Bluetooth, Google/Apple</cell><cell>May, 2020</cell></row><row><cell>19</cell><cell>Israel</cell><cell>HaMagen</cell><cell>Standard location APIs</cell><cell>March, 2020</cell></row><row><cell>20</cell><cell>Italy</cell><cell>Immuni</cell><cell>Bluetooth, Google/Apple</cell><cell>May, 2020</cell></row><row><cell>21</cell><cell>Jordan</cell><cell>AMAN App -Jordan</cell><cell>GPS</cell><cell>May, 2020</cell></row><row><cell>22</cell><cell>Latvia</cell><cell>Apturi Covid</cell><cell>Bluetooth</cell><cell>May, 29, 2020</cell></row><row><cell>23</cell><cell>Malaysia</cell><cell>MyTrace</cell><cell>Bluetooth, Google/Apple</cell><cell>May 3, 2020</cell></row><row><cell>24</cell><cell>Mexico</cell><cell>CovidRadar</cell><cell>Bluetooth</cell><cell>May, 2020</cell></row><row><cell>25</cell><cell>New Zealand</cell><cell>NZ COVID Tracer</cell><cell>Contact details and physical address</cell><cell>May 20, 2020</cell></row><row><cell>26</cell><cell>North Macedonia</cell><cell>StopKorona</cell><cell>Bluetooth</cell><cell>April 13, 2020</cell></row><row><cell>27</cell><cell>Norway</cell><cell>Smittestopp</cell><cell>Bluetooth and GSM</cell><cell>April 16, 2020</cell></row><row><cell>28</cell><cell>Poland</cell><cell>ProteGO</cell><cell>Bluetooth</cell><cell>May, 2020</cell></row><row><cell>29</cell><cell>Qatar</cell><cell>Ehteraz</cell><cell>Bluetooth and GSM</cell><cell>May, 2020</cell></row><row><cell>30</cell><cell>Saudi Arabia</cell><cell>Corona Map</cell><cell>Bluetooth</cell><cell>April 3, 2020</cell></row><row><cell>31</cell><cell>Singapore</cell><cell>TraceTogether</cell><cell>BlueTrace protocol, Bluetooth</cell><cell>March 20, 2020</cell></row><row><cell>32</cell><cell>South Korea</cell><cell>Non-app-based</cell><cell>Mobile device tracking data and card transaction data</cell><cell>May, 2020</cell></row><row><cell>33</cell><cell>Switzerland</cell><cell>SwissCovid</cell><cell>DP-3T protocol, Bluetooth, Google/Apple</cell><cell>May 20, 2020</cell></row><row><cell>34</cell><cell>Turkey</cell><cell>Hayat Eve Sigar</cell><cell>Bluetooth, GSM</cell><cell>April, 2020</cell></row><row><cell>35</cell><cell>UAE</cell><cell>TraceCovid</cell><cell>Bluetooth</cell><cell>May, 2020</cell></row><row><cell>36</cell><cell>UK</cell><cell>NHS Covid-19 App</cell><cell>Bluetooth</cell><cell>May, 2020</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 3</head><label>3</label><figDesc>ML and AI applications: prediction and forecasting SARS-CoV-2.</figDesc><table><row><cell>Publication</cell><cell>ML/AI method</cell><cell>Types of data</cell><cell>No of patients</cell><cell cols="2">Validation method Results</cell></row><row><cell>Ribeiro, M. H. D. M.,</cell><cell>Support Vector Regression and</cell><cell>Clinical</cell><cell>40.581</cell><cell>Holdout</cell><cell>Accuracy: Error in range of</cell></row><row><cell>et al ., [37]</cell><cell>stacking-ensemble</cell><cell></cell><cell></cell><cell></cell><cell>0.87%-3.51% one, 1 .02%-5.63%</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>three and 0.95% -6.90% six day</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>ahead</cell></row><row><cell>Yan, L. et al ., [38]</cell><cell>XGBoost classifier</cell><cell>Clinical, Blood</cell><cell>485</cell><cell>Cross-validation</cell><cell>Accuracy: 90%</cell></row><row><cell></cell><cell></cell><cell>samples of 75</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>features</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Chimmula, V.K.R.,</cell><cell>Deep Learning using LSTM</cell><cell>Demographic</cell><cell>John Hopkins University &amp;</cell><cell>Cross-validation</cell><cell>Ending point of the pandemic</cell></row><row><cell>et al ., [39]</cell><cell>network</cell><cell></cell><cell>Canadian Health authority, data</cell><cell></cell><cell>outbreak in Canada was</cell></row><row><cell></cell><cell></cell><cell></cell><cell>containing infected cases upto</cell><cell></cell><cell>predicted on June 2020</cell></row><row><cell></cell><cell></cell><cell></cell><cell>March 31, 2020</cell><cell></cell><cell></cell></row><row><cell>Chakraborty, T. and</cell><cell>Hybrid Wavelet-autoregressive</cell><cell>Demographic</cell><cell>India: 64 UK: 65 Canada:70</cell><cell>Cross-validation</cell><cell>Real-time forecast and 10 days</cell></row><row><cell>Ghosh, I. [40]</cell><cell>integrated moving average model</cell><cell></cell><cell>France: 71 South Korea: 76</cell><cell></cell><cell>ahead, Observed seven key</cell></row><row><cell></cell><cell>and regression tree</cell><cell></cell><cell></cell><cell></cell><cell>features associated with dead</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>rate.</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">World health organization declares global emergency: a review of the 2019 novel coronavirus (COVID-19)</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sohrabi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Alsafi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O'</forename><surname>Neill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kerwan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Al-Jabir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Losifidis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Agha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ijsu.2020.02.034</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Surg</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">WHO: World Health Organization</title>
+		<ptr target="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" />
+	</analytic>
+	<monogr>
+		<title level="m">Coronavirus disease (COVID-2019) situation Reports</title>
+				<imprint>
+			<date type="published" when="2020-06">2020. June 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">COVID-19 Dashboard by the</title>
+		<ptr target="https://www.coronavirus.jhu.edu/map.html" />
+		<imprint>
+			<date type="published" when="2020-06">2020. June 2020</date>
+		</imprint>
+		<respStmt>
+			<orgName>JHU: John Hopkins University ; Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The potential for artificial intelligence in healthcare</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Davenport</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kalakota</surname></persName>
+		</author>
+		<idno type="DOI">10.7861/futurehosp.6-2-94</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Fut Healthc J</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="94" to="98" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Intelligent decision making: an AI-based approach</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Phillips-Wren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ichalkaranje</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Jain</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-540-76829-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Studies in computational intelligence</title>
+		<editor>L.C.</editor>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Use of artificial intelligence in infectious diseases</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Agrebi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Larbi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/b978-0-12-817133-2.00018-5</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial intelligence in precision health</title>
+		<imprint>
+			<biblScope unit="page" from="415" to="438" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Computer-based medical consultations</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">H</forename><surname>Shortliffe</surname></persName>
+		</author>
+		<idno>doi: 101016/B978-0-4 4 4-00179-550 0 08-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mycin</title>
+		<imprint>
+			<date type="published" when="1976">1976</date>
+			<publisher>Elsevier</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Machine learning for clinical decision support in infectious diseases: a narrative review of current applications</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Peiffer-Smadja</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Rawson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Buchard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pantelis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F-X</forename><surname>Lescure</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Birgand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Holmes</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cmi.2019.09.009</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clin Microbiol Infect</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">An adaptive machine learning approach to improve automatic iceberg detection from SAR images</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Barbat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wesche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Werhli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Mata</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.isprsjprs.2019.08.015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ISPRS J Photogramm Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">156</biblScope>
+			<biblScope unit="page" from="247" to="259" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Deep nonsmooth nonnegative matrix factorization network factorization network with semi-supervised learning for SAR image change detection</title>
+		<author>
+			<persName><forename type="first">H-C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Emery</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.isprsjprs.2019.12.002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ISPRS J Photogramm Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<biblScope unit="page" from="167" to="179" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Change detection in SAR images by artificial immune multi-objective clustering</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Jiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Stolkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.engappai.2014.02.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Eng Appl Artif Intell</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="53" to="67" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">A novel target detection method for SAR images based on shadow proposal and saliency analysis</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>You</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.neucom.2017.06.004</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="volume">267</biblScope>
+			<biblScope unit="page" from="220" to="231" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Machine-learning prognostic models from the 2014-16 Ebola Outbreak: data-harmonization challenges, validation strategies, and mHealth applications</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Colubri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M-A</forename><surname>Hartley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Siakor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Wolfman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Felix</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sesay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Shaffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Garry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Grant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Levine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Sabeti</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eclinm.2019.06.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">EClinicalMedicine</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Large-scale machine learning of media outlets for understanding public reactions to nation-wide viral infection outbreaks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M-G</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Min</forename><forename type="middle">H</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y-S</forename><surname>Yoon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ymeth.2017.07.027</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Methods</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page" from="50" to="59" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Two-steps learning of Fuzzy Cognitive Maps for prediction and knowledge discovery on the HIV-1 drug resistance</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Nápoles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Grau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Grau</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2013.08.012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst Appl</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="821" to="830" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Automated diagnosis of HIV-associated neurocognitive disorders using large-scale Granger causality analysis of resting-state functional MRI</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Chockanathan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Dsouza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Z</forename><surname>Abidin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Schifitto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Wismüller</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compbiomed.2019.01.006</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol Med</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page" from="24" to="30" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">COVID-19 detection using deep learning models to exploit social mimic optimization and structured chest X-ray images using fuzzy color and stacking approaches</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>To Gaçar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ergen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Cömert</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compbiomed.2020.103805</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol Med</title>
+		<imprint>
+			<biblScope unit="volume">121</biblScope>
+			<biblScope unit="page">103805</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Breast cancer detection by leveraging Machine Learning. ICT Express</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Vaka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Soni</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.icte.2020.04.009</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Machine learning methods for computer-aided breast cancer diagnosis using histopathology: a narrative review</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Saxena</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gyanchandani</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmir.2019.11.001</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Med Imaging Radiat Sci</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Diabetic retinopathy detection through novel tetragonal local octa patterns and extreme learning machines</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nazir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Irtaza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Shabbir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Javed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Akram</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Mahmood</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.artmed.2019.07.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Med</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Machine learning and data mining methods in diabetes research</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kavakiotis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Tsave</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Salifoglou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Maglaveras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vlahavas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Chouvarda</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.csbj.2016.12.005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Struct Biotechnol J</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="104" to="116" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Artificial plant optimization algorithm to detect heart rate &amp; presence of heart disease using machine learning</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Choudhary</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Chawla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sharma</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.artmed.2019.101752</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Med</title>
+		<imprint>
+			<biblScope unit="page">101752</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Classification models for heart disease prediction using feature selection and PCA. Informatics in medicine unlocked</title>
+		<author>
+			<persName><forename type="first">Karen</forename><surname>Garate-Escamilla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hassani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H E</forename><surname>Andres</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.imu.2020.100330</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page">100330</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A hybrid machine learning approach to cerebral stroke prediction based on imbalanced medical dataset</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fan</forename><forename type="middle">W</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.artmed.2019.101723</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Med</title>
+		<imprint>
+			<biblScope unit="page">101723</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Deep learning IoT system for online stroke detection in skull computed tomography images</title>
+		<author>
+			<persName><forename type="first">Dourado</forename><surname>Jr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cmjm</forename><surname>Da Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Spp</forename><surname>Da Nóbrega</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rvm</forename><surname>Da</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Barros</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Filho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ppr</forename><surname>De Albuquerque</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Vhc</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.comnet.2019.01.019</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Net</title>
+		<imprint>
+			<biblScope unit="volume">152</biblScope>
+			<biblScope unit="page" from="25" to="39" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Artificial Intelligence (AI) applications for COVID-19 pandemic</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Vaishya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Javaid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">H</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Haleem</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.dsx.2020.04.012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Metab Syndr</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="337" to="339" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Correlation of chest CT and RT-PCR testing in coronavirus disease 2019 (COVID-19) in China: a report of 1014 cases</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xia</surname></persName>
+		</author>
+		<idno type="DOI">10.1148/radiol.2020200642</idno>
+		<ptr target="https://doi.org/10.1148/radiol.2020200642" />
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Application of deep learning technique to manage COVID-19 in routine clinical practice using CT images: results of 10 convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Ardakani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Kanafi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">R</forename><surname>Acharya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Khadem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mohammadi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compbiomed.2020.103795</idno>
+		<ptr target="https://doi.org/10.1016/j.compbiomed.2020.103795" />
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol Med</title>
+		<imprint>
+			<biblScope unit="volume">121</biblScope>
+			<biblScope unit="page">103795</biblScope>
+			<date type="published" when="2020">2020. 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Automated detection of COVID-19 cases using deep neural networks with Xray images</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ozturk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Talo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Yildirim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">B</forename><surname>Baloglu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Yildirim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rajendra</forename><surname>Acharya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compbiomed.2020.103792</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Biol Med</title>
+		<imprint>
+			<biblScope unit="page">103792</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Combination of four clinical indicators predicts the severe/critical symptom of patients infected COVID-19</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jcv.2020.104431</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Clin Virol</title>
+		<imprint>
+			<biblScope unit="page">104431</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">Rapid and accurate identification of COVID-19 infection through machine learning based on clinical available blood test results</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jzhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1101/2020.04.02.20051136</idno>
+		<ptr target="https://doi.org/10.1101/2020.04.02" />
+		<imprint>
+			<date type="published" when="2020">2020. 20051136</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">WHO: World Health Organization, 2020. Health Topic, Coronavirus disease overview</title>
+		<ptr target="https://www.who.int/health-topics/coronavirus#tab=tab_1" />
+		<imprint>
+			<date type="published" when="2020-05">May 2020</date>
+			<biblScope unit="volume">29</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Contact tracing in the context of COVID-19</title>
+		<ptr target="https://www.who.int/publications-detail/contact-tracing-in-the-context-of-covid-19" />
+		<imprint>
+			<date type="published" when="2020-05">2020. May 2020</date>
+			<biblScope unit="volume">29</biblScope>
+		</imprint>
+	</monogr>
+	<note>WHO: World Health Organization</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Covid-19 apps</title>
+		<author>
+			<persName><surname>Wikipedia</surname></persName>
+		</author>
+		<ptr target="https://en.wikipedia.org/wiki/COVID-19_" />
+	</analytic>
+	<monogr>
+		<title level="m">apps#Centralized _ contact _ tracing</title>
+				<imprint>
+			<date type="published" when="2020-06">2020. June 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Covid Tracing Tracker -a flood of coronavirus apps are tracking us. Now it&apos;s time to keep track of them</title>
+		<ptr target="https://www.technologyreview.com/2020/05/07/1000961/launching-mittr-covid-tracing-tracker/" />
+		<imprint>
+			<date type="published" when="2020-06">June, 2020</date>
+		</imprint>
+		<respStmt>
+			<orgName>MIT</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Contact tracing for the control of infectious disease epidemics: chronic wasting disease in deer farms</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Rorres</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Romano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mossey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Grubesic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Zellner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smith</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.epidem.2017.12.006</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Epidemics</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="71" to="75" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<ptr target="https://www.bbc.com/news/technology-51930681" />
+		<title level="m">BBC: Coronavirus: Israel enables emergency spy powers</title>
+				<imprint>
+			<date type="published" when="2020-06">June 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Short-term forecasting COVID-19 cumulative confirmed cases: perspectives for Brazil</title>
+		<author>
+			<persName><forename type="first">Mhdm</forename><surname>Ribeiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Da Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">C</forename><surname>Mariani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lds</forename><surname>Coelho</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.chaos.2020.109853</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chaos, Solitons Fractals</title>
+		<imprint>
+			<biblScope unit="page">109853</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">An interpretable mortality prediction model for COVID-19 patients</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H-T</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Goncalves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Jing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Jiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Mombaerts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jin</forename><forename type="middle">J</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename></persName>
+		</author>
+		<idno type="DOI">10.1038/s42256-020-0180-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Mach Intell</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Time series forecasting of COVID-19 transmission in Canada using LSTM Networks</title>
+		<author>
+			<persName><forename type="first">Vkr</forename><surname>Chimmula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.chaos.2020.109864</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chaos, Solitons Fractals</title>
+		<imprint>
+			<biblScope unit="page">109864</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Real-time forecasts and risk assessment of novel coronavirus (COVID-19) cases: a data-driven analysis</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Chakraborty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Ghosh</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.chaos.2020.109850</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chaos, Solitons Fractals</title>
+		<imprint>
+			<biblScope unit="page">109850</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Artificial intelligence approach fighting COVID-19 with repurposing drugs</title>
+		<author>
+			<persName><forename type="first">Y-Y</forename><surname>Ke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T-T</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T-K</forename><surname>Yeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W-Z</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-E</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H-C</forename><surname>Hung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T-A</forename><surname>Hsu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-S</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W-H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T-J</forename><surname>Chiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H-K</forename><surname>Sytwu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C-T</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.bj.2020.05.001</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed J</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Predicting commercially available antiviral drugs that may act on the novel coronavirus (SARS-CoV-2) through a drug-target interaction deep learning model</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Beck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.csbj.2020.03.025</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Struct Biotechnol J</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="784" to="790" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">A common feature pharmacophore for FDA-approved drugs inhibiting the Ebola virus</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ekins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Freundlich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Coffee</surname></persName>
+		</author>
+		<idno>F10 0 0Research</idno>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">277</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Déjà vu: stimulating open drug discovery for SARS-CoV-2</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ekins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mottin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Prps</forename><surname>Ramos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bkp</forename><surname>Sousa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Neves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Foil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Zorn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Braga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Coffee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Southan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Puhl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Andrade</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.drudis.2020.03.019</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Drug Discov Today</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Open drug discovery for the Zika virus</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ekins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mietchen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Coffee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Stratton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Freundlich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Freitas-Junior</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Muratov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Siqueira-Neto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Andrade</surname></persName>
+		</author>
+		<idno type="DOI">10.12688/f1000research.8013.1</idno>
+		<ptr target="http://dx.doi.org/10.12688/f1000research.8013.1" />
+	</analytic>
+	<monogr>
+		<title level="m">F10 0 0 Research</title>
+				<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

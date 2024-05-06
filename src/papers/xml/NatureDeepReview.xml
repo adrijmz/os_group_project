@@ -88,7 +88,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:20+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -99,5 +99,2043 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>M</head><p>achine-learning technology powers many aspects of modern society: from web searches to content filtering on social networks to recommendations on e-commerce websites, and it is increasingly present in consumer products such as cameras and smartphones. Machine-learning systems are used to identify objects in images, transcribe speech into text, match news items, posts or products with users' interests, and select relevant results of search. Increasingly, these applications make use of a class of techniques called deep learning.</p><p>Conventional machine-learning techniques were limited in their ability to process natural data in their raw form. For decades, constructing a pattern-recognition or machine-learning system required careful engineering and considerable domain expertise to design a feature extractor that transformed the raw data (such as the pixel values of an image) into a suitable internal representation or feature vector from which the learning subsystem, often a classifier, could detect or classify patterns in the input.</p><p>Representation learning is a set of methods that allows a machine to be fed with raw data and to automatically discover the representations needed for detection or classification. Deep-learning methods are representation-learning methods with multiple levels of representation, obtained by composing simple but non-linear modules that each transform the representation at one level (starting with the raw input) into a representation at a higher, slightly more abstract level. With the composition of enough such transformations, very complex functions can be learned. For classification tasks, higher layers of representation amplify aspects of the input that are important for discrimination and suppress irrelevant variations. An image, for example, comes in the form of an array of pixel values, and the learned features in the first layer of representation typically represent the presence or absence of edges at particular orientations and locations in the image. The second layer typically detects motifs by spotting particular arrangements of edges, regardless of small variations in the edge positions. The third layer may assemble motifs into larger combinations that correspond to parts of familiar objects, and subsequent layers would detect objects as combinations of these parts. The key aspect of deep learning is that these layers of features are not designed by human engineers: they are learned from data using a general-purpose learning procedure.</p><p>Deep learning is making major advances in solving problems that have resisted the best attempts of the artificial intelligence community for many years. It has turned out to be very good at discovering intricate structures in high-dimensional data and is therefore applicable to many domains of science, business and government. In addition to beating records in image recognition <ref type="bibr">[1]</ref><ref type="bibr">[2]</ref><ref type="bibr">[3]</ref><ref type="bibr">[4]</ref> and speech recognition <ref type="bibr">[5]</ref><ref type="bibr">[6]</ref><ref type="bibr">[7]</ref> , it has beaten other machine-learning techniques at predicting the activity of potential drug molecules 8 , analysing particle accelerator data 9,10 , reconstructing brain circuits <ref type="bibr">11</ref> , and predicting the effects of mutations in non-coding DNA on gene expression and disease <ref type="bibr" target="#b0">12,</ref><ref type="bibr" target="#b1">13</ref> . Perhaps more surprisingly, deep learning has produced extremely promising results for various tasks in natural language understanding <ref type="bibr" target="#b2">14</ref> , particularly topic classification, sentiment analysis, question answering <ref type="bibr" target="#b3">15</ref> and language translation <ref type="bibr" target="#b4">16,</ref><ref type="bibr" target="#b5">17</ref> .</p><p>We think that deep learning will have many more successes in the near future because it requires very little engineering by hand, so it can easily take advantage of increases in the amount of available computation and data. New learning algorithms and architectures that are currently being developed for deep neural networks will only accelerate this progress.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supervised learning</head><p>The most common form of machine learning, deep or not, is supervised learning. Imagine that we want to build a system that can classify images as containing, say, a house, a car, a person or a pet. We first collect a large data set of images of houses, cars, people and pets, each labelled with its category. During training, the machine is shown an image and produces an output in the form of a vector of scores, one for each category. We want the desired category to have the highest score of all categories, but this is unlikely to happen before training. We compute an objective function that measures the error (or distance) between the output scores and the desired pattern of scores. The machine then modifies its internal adjustable parameters to reduce this error. These adjustable parameters, often called weights, are real numbers that can be seen as 'knobs' that define the input-output function of the machine. In a typical deep-learning system, there may be hundreds of millions of these adjustable weights, and hundreds of millions of labelled examples with which to train the machine.</p><p>To properly adjust the weight vector, the learning algorithm computes a gradient vector that, for each weight, indicates by what amount the error would increase or decrease if the weight were increased by a tiny amount. The weight vector is then adjusted in the opposite direction to the gradient vector.</p><p>The </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Deep learning</head><p>Yann LeCun 1,2 , Yoshua Bengio 3 &amp; Geoffrey Hinton 4,5</p><p>be seen as a kind of hilly landscape in the high-dimensional space of weight values. The negative gradient vector indicates the direction of steepest descent in this landscape, taking it closer to a minimum, where the output error is low on average. In practice, most practitioners use a procedure called stochastic gradient descent (SGD). This consists of showing the input vector for a few examples, computing the outputs and the errors, computing the average gradient for those examples, and adjusting the weights accordingly. The process is repeated for many small sets of examples from the training set until the average of the objective function stops decreasing. It is called stochastic because each small set of examples gives a noisy estimate of the average gradient over all examples. This simple procedure usually finds a good set of weights surprisingly quickly when compared with far more elaborate optimization techniques <ref type="bibr" target="#b6">18</ref> . After training, the performance of the system is measured on a different set of examples called a test set. This serves to test the generalization ability of the machine -its ability to produce sensible answers on new inputs that it has never seen during training.</p><p>Many of the current practical applications of machine learning use linear classifiers on top of hand-engineered features. A two-class linear classifier computes a weighted sum of the feature vector components. If the weighted sum is above a threshold, the input is classified as belonging to a particular category.</p><p>Since the 1960s we have known that linear classifiers can only carve their input space into very simple regions, namely half-spaces separated by a hyperplane <ref type="bibr" target="#b7">19</ref> . But problems such as image and speech recognition require the input-output function to be insensitive to irrelevant variations of the input, such as variations in position, orientation or illumination of an object, or variations in the pitch or accent of speech, while being very sensitive to particular minute variations (for example, the difference between a white wolf and a breed of wolf-like white dog called a Samoyed). At the pixel level, images of two Samoyeds in different poses and in different environments may be very different from each other, whereas two images of a Samoyed and a wolf in the same position and on similar backgrounds may be very similar to each other. A linear classifier, or any other 'shallow' classifier operating on in input space is also transformed (shown in the middle panel) by hidden units. This is an illustrative example with only two input units, two hidden units and one output unit, but the networks used for object recognition or natural language processing contain tens or hundreds of thousands of units. Reproduced with permission from C. Olah (http://colah.github.io/). b, The chain rule of derivatives tells us how two small effects (that of a small change of x on y, and that of y on z) are composed. A small change Δx in x gets transformed first into a small change Δy in y by getting multiplied by ∂y/∂x (that is, the definition of partial derivative). Similarly, the change Δy creates a change Δz in z. Substituting one equation into the other gives the chain rule of derivatives -how Δx gets turned into Δz through multiplication by the product of ∂y/∂x and ∂z/∂x. It also works when x, y and z are vectors (and the derivatives are Jacobian matrices). c, The equations used for computing the forward pass in a neural net with two hidden layers and one output layer, each constituting a module through which one can backpropagate gradients. At each layer, we first compute the total input z to each unit, which is a weighted sum of the outputs of the units in the layer below. Then a non-linear function f(.) is applied to z to get the output of the unit. For simplicity, we have omitted bias terms. The non-linear functions used in neural networks include the rectified linear unit (ReLU) f(z) = max(0,z), commonly used in recent years, as well as the more conventional sigmoids, such as the hyberbolic tangent, f(z) = (exp(z) − exp(−z))/(exp(z) + exp(−z)) and logistic function logistic, f(z) = 1/(1 + exp(−z)). d, The equations used for computing the backward pass. At each hidden layer we compute the error derivative with respect to the output of each unit, which is a weighted sum of the error derivatives with respect to the total inputs to the units in the layer above. We then convert the error derivative with respect to the output into the error derivative with respect to the input by multiplying it by the gradient of f(z). At the output layer, the error derivative with respect to the output of a unit is computed by differentiating the cost function. This gives y l − t l if the cost function for unit l is 0.5(y l − t l ) 2 , where t l is the target value. Once the ∂E/∂z k is known, the error-derivative for the weight w jk on the connection from unit j in the layer below is just y j ∂E/∂z k .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Input</head><p>(2)</p><formula xml:id="formula_0">Output (1 sigmoid) Hidden (2 sigmoid) a b d c y y x y x   = y z   x y   z y z z y   = Δ Δ Δ Δ Δ Δ z y z x y x     = x z y z x x y       =</formula><p>Compare outputs with correct answer to get error derivatives</p><formula xml:id="formula_1">j k E y l = y l t l E z l = E y l y l z l l E y j = w jk E z k E z j = E y j y j z j E y k = w kl E z l E z k = E y k y k z k w kl w jk w ij i j k y l = f (z l ) z l = w kl y k l y j = f (z j ) z j = w ij x i y k = f (z k ) z k = w jk y j</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Output units</head><p>Input units</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Hidden units H2</head><p>Hidden units H1</p><formula xml:id="formula_2">w kl w jk w ij k  H2 k  H2 I  out j  H1 i  Input i</formula><p>raw pixels could not possibly distinguish the latter two, while putting the former two in the same category. This is why shallow classifiers require a good feature extractor that solves the selectivity-invariance dilemma -one that produces representations that are selective to the aspects of the image that are important for discrimination, but that are invariant to irrelevant aspects such as the pose of the animal.</p><p>To make classifiers more powerful, one can use generic non-linear features, as with kernel methods <ref type="bibr" target="#b8">20</ref> , but generic features such as those arising with the Gaussian kernel do not allow the learner to generalize well far from the training examples <ref type="bibr" target="#b9">21</ref> . The conventional option is to hand design good feature extractors, which requires a considerable amount of engineering skill and domain expertise. But this can all be avoided if good features can be learned automatically using a general-purpose learning procedure. This is the key advantage of deep learning. A deep-learning architecture is a multilayer stack of simple modules, all (or most) of which are subject to learning, and many of which compute non-linear input-output mappings. Each module in the stack transforms its input to increase both the selectivity and the invariance of the representation. With multiple non-linear layers, say a depth of 5 to 20, a system can implement extremely intricate functions of its inputs that are simultaneously sensitive to minute details -distinguishing Samoyeds from white wolves -and insensitive to large irrelevant variations such as the background, pose, lighting and surrounding objects.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Backpropagation to train multilayer architectures</head><p>From the earliest days of pattern recognition <ref type="bibr" target="#b10">22,</ref><ref type="bibr" target="#b11">23</ref> , the aim of researchers has been to replace hand-engineered features with trainable multilayer networks, but despite its simplicity, the solution was not widely understood until the mid 1980s. As it turns out, multilayer architectures can be trained by simple stochastic gradient descent. As long as the modules are relatively smooth functions of their inputs and of their internal weights, one can compute gradients using the backpropagation procedure. The idea that this could be done, and that it worked, was discovered independently by several different groups during the 1970s and 1980s <ref type="bibr" target="#b12">[24]</ref><ref type="bibr" target="#b13">[25]</ref><ref type="bibr" target="#b14">[26]</ref><ref type="bibr" target="#b15">[27]</ref> .</p><p>The backpropagation procedure to compute the gradient of an objective function with respect to the weights of a multilayer stack of modules is nothing more than a practical application of the chain rule for derivatives. The key insight is that the derivative (or gradient) of the objective with respect to the input of a module can be computed by working backwards from the gradient with respect to the output of that module (or the input of the subsequent module) (Fig. <ref type="figure" target="#fig_1">1</ref>). The backpropagation equation can be applied repeatedly to propagate gradients through all modules, starting from the output at the top (where the network produces its prediction) all the way to the bottom (where the external input is fed). Once these gradients have been computed, it is straightforward to compute the gradients with respect to the weights of each module.</p><p>Many applications of deep learning use feedforward neural network architectures (Fig. <ref type="figure" target="#fig_1">1</ref>), which learn to map a fixed-size input (for example, an image) to a fixed-size output (for example, a probability for each of several categories). To go from one layer to the next, a set of units compute a weighted sum of their inputs from the previous layer and pass the result through a non-linear function. At present, the most popular non-linear function is the rectified linear unit (ReLU), which is simply the half-wave rectifier f(z) = max(z, 0). In past decades, neural nets used smoother non-linearities, such as tanh(z) or 1/(1 + exp(−z)), but the ReLU typically learns much faster in networks with many layers, allowing training of a deep supervised network without unsupervised pre-training <ref type="bibr" target="#b16">28</ref> . Units that are not in the input or output layer are conventionally called hidden units. The hidden layers can be seen as distorting the input in a non-linear way so that categories become linearly separable by the last layer (Fig. <ref type="figure" target="#fig_1">1</ref>).</p><p>In the late 1990s, neural nets and backpropagation were largely forsaken by the machine-learning community and ignored by the computer-vision and speech-recognition communities. It was widely thought that learning useful, multistage, feature extractors with little prior knowledge was infeasible. In particular, it was commonly thought that simple gradient descent would get trapped in poor local minima -weight configurations for which no small change would reduce the average error.</p><p>In practice, poor local minima are rarely a problem with large networks. Regardless of the initial conditions, the system nearly always reaches solutions of very similar quality. Recent theoretical and empirical results strongly suggest that local minima are not a serious issue in general. Instead, the landscape is packed with a combinatorially large number of saddle points where the gradient is zero, and the surface curves up in most dimensions and curves down in the remainder <ref type="bibr" target="#b17">29,</ref><ref type="bibr" target="#b18">30</ref>   (CIFAR). The researchers introduced unsupervised learning procedures that could create layers of feature detectors without requiring labelled data. The objective in learning each layer of feature detectors was to be able to reconstruct or model the activities of feature detectors (or raw inputs) in the layer below. By 'pre-training' several layers of progressively more complex feature detectors using this reconstruction objective, the weights of a deep network could be initialized to sensible values. A final layer of output units could then be added to the top of the network and the whole deep system could be fine-tuned using standard backpropagation <ref type="bibr" target="#b21">[33]</ref><ref type="bibr" target="#b22">[34]</ref><ref type="bibr" target="#b23">[35]</ref> . This worked remarkably well for recognizing handwritten digits or for detecting pedestrians, especially when the amount of labelled data was very limited <ref type="bibr" target="#b24">36</ref> .</p><p>The first major application of this pre-training approach was in speech recognition, and it was made possible by the advent of fast graphics processing units (GPUs) that were convenient to program <ref type="bibr" target="#b25">37</ref> and allowed researchers to train networks 10 or 20 times faster. In 2009, the approach was used to map short temporal windows of coefficients extracted from a sound wave to a set of probabilities for the various fragments of speech that might be represented the frame in the centre of the window. It achieved record-breaking results on a standard speech recognition benchmark that used a small vocabulary <ref type="bibr" target="#b26">38</ref> and was quickly developed to give record-breaking results on a large vocabulary task <ref type="bibr" target="#b27">39</ref> . By 2012, versions of the deep net from 2009 were being developed by many of the major speech groups 6 and were already being deployed in Android phones. For smaller data sets, unsupervised pre-training helps to prevent overfitting <ref type="bibr" target="#b28">40</ref> , leading to significantly better generalization when the number of labelled examples is small, or in a transfer setting where we have lots of examples for some 'source' tasks but very few for some 'target' tasks. Once deep learning had been rehabilitated, it turned out that the pre-training stage was only needed for small data sets.</p><p>There was, however, one particular type of deep, feedforward network that was much easier to train and generalized much better than networks with full connectivity between adjacent layers. This was the convolutional neural network (ConvNet) <ref type="bibr" target="#b29">41,</ref><ref type="bibr" target="#b30">42</ref> . It achieved many practical successes during the period when neural networks were out of favour and it has recently been widely adopted by the computervision community.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Convolutional neural networks</head><p>ConvNets are designed to process data that come in the form of multiple arrays, for example a colour image composed of three 2D arrays containing pixel intensities in the three colour channels. Many data modalities are in the form of multiple arrays: 1D for signals and sequences, including language; 2D for images or audio spectrograms; and 3D for video or volumetric images. There are four key ideas behind ConvNets that take advantage of the properties of natural signals: local connections, shared weights, pooling and the use of many layers.</p><p>The architecture of a typical ConvNet (Fig. <ref type="figure" target="#fig_2">2</ref>) is structured as a series of stages. The first few stages are composed of two types of layers: convolutional layers and pooling layers. Units in a convolutional layer are organized in feature maps, within which each unit is connected to local patches in the feature maps of the previous layer through a set of weights called a filter bank. The result of this local weighted sum is then passed through a non-linearity such as a ReLU. All units in a feature map share the same filter bank. Different feature maps in a layer use different filter banks. The reason for this architecture is twofold. First, in array data such as images, local groups of values are often highly correlated, forming distinctive local motifs that are easily detected. Second, the local statistics of images and other signals are invariant to location. In other words, if a motif can appear in one part of the image, it could appear anywhere, hence the idea of units at different locations sharing the same weights and detecting the same pattern in different parts of the array. Mathematically, the filtering operation performed by a feature map is a discrete convolution, hence the name.</p><p>Although the role of the convolutional layer is to detect local conjunctions of features from the previous layer, the role of the pooling layer is to merge semantically similar features into one. Because the relative positions of the features forming a motif can vary somewhat, reliably detecting the motif can be done by coarse-graining the position of each feature. A typical pooling unit computes the maximum of a local patch of units in one feature map (or in a few feature maps). Neighbouring pooling units take input from patches that are shifted by more than one row or column, thereby reducing the dimension of the representation and creating an invariance to small shifts and distortions. Two or three stages of convolution, non-linearity and pooling are stacked, followed by more convolutional and fully-connected layers. Backpropagating gradients through a ConvNet is as simple as through a regular deep network, allowing all the weights in all the filter banks to be trained.</p><p>Deep neural networks exploit the property that many natural signals are compositional hierarchies, in which higher-level features are obtained by composing lower-level ones. In images, local combinations of edges form motifs, motifs assemble into parts, and parts form objects. Similar hierarchies exist in speech and text from sounds to phones, phonemes, syllables, words and sentences. The pooling allows representations to vary very little when elements in the previous layer vary in position and appearance.</p><p>The convolutional and pooling layers in ConvNets are directly inspired by the classic notions of simple cells and complex cells in visual neuroscience <ref type="bibr" target="#b31">43</ref> , and the overall architecture is reminiscent of the LGN-V1-V2-V4-IT hierarchy in the visual cortex ventral pathway <ref type="bibr" target="#b32">44</ref> . When ConvNet models and monkeys are shown the same picture, the activations of high-level units in the ConvNet explains half of the variance of random sets of 160 neurons in the monkey's inferotemporal cortex <ref type="bibr" target="#b33">45</ref> . ConvNets have their roots in the neocognitron <ref type="bibr" target="#b34">46</ref> , the architecture of which was somewhat similar, but did not have an end-to-end supervised-learning algorithm such as backpropagation. A primitive 1D ConvNet called a time-delay neural net was used for the recognition of phonemes and simple words <ref type="bibr" target="#b35">47,</ref><ref type="bibr" target="#b36">48</ref> .</p><p>There have been numerous applications of convolutional networks going back to the early 1990s, starting with time-delay neural networks for speech recognition <ref type="bibr" target="#b35">47</ref> and document reading <ref type="bibr" target="#b30">42</ref> . The document reading system used a ConvNet trained jointly with a probabilistic model that implemented language constraints. By the late 1990s this system was reading over 10% of all the cheques in the United States. A number of ConvNet-based optical character recognition and handwriting recognition systems were later deployed by Microsoft <ref type="bibr" target="#b37">49</ref> . ConvNets were also experimented with in the early 1990s for object detection in natural images, including faces and hands <ref type="bibr" target="#b38">50,</ref><ref type="bibr" target="#b39">51</ref> , and for face recognition <ref type="bibr" target="#b40">52</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Image understanding with deep convolutional networks</head><p>Since the early 2000s, ConvNets have been applied with great success to the detection, segmentation and recognition of objects and regions in images. These were all tasks in which labelled data was relatively abundant, such as traffic sign recognition <ref type="bibr" target="#b41">53</ref> , the segmentation of biological images <ref type="bibr" target="#b42">54</ref> particularly for connectomics <ref type="bibr" target="#b43">55</ref> , and the detection of faces, text, pedestrians and human bodies in natural images <ref type="bibr" target="#b24">36,</ref><ref type="bibr" target="#b38">50,</ref><ref type="bibr" target="#b39">51,</ref><ref type="bibr" target="#b44">[56]</ref><ref type="bibr" target="#b45">[57]</ref><ref type="bibr" target="#b46">[58]</ref> . A major recent practical success of ConvNets is face recognition <ref type="bibr" target="#b47">59</ref> .</p><p>Importantly, images can be labelled at the pixel level, which will have applications in technology, including autonomous mobile robots and self-driving cars <ref type="bibr" target="#b48">60,</ref><ref type="bibr" target="#b49">61</ref> . Companies such as Mobileye and NVIDIA are using such ConvNet-based methods in their upcoming vision systems for cars. Other applications gaining importance involve natural language understanding <ref type="bibr" target="#b2">14</ref> and speech recognition 7 .</p><p>Despite these successes, ConvNets were largely forsaken by the mainstream computer-vision and machine-learning communities until the ImageNet competition in 2012. When deep convolutional networks were applied to a data set of about a million images from the web that contained 1,000 different classes, they achieved spectacular results, almost halving the error rates of the best competing approaches 1 . This success came from the efficient use of GPUs, ReLUs, a new regularization technique called dropout <ref type="bibr" target="#b50">62</ref> , and techniques to generate more training examples by deforming the existing ones. This success has brought about a revolution in computer vision; ConvNets are now the dominant approach for almost all recognition and detection tasks 4,58,59,63-65 and approach human performance on some tasks. A recent stunning demonstration combines ConvNets and recurrent net modules for the generation of image captions (Fig. <ref type="figure" target="#fig_3">3</ref>).</p><p>Recent ConvNet architectures have 10 to 20 layers of ReLUs, hundreds of millions of weights, and billions of connections between units. Whereas training such large networks could have taken weeks only two years ago, progress in hardware, software and algorithm parallelization have reduced training times to a few hours.</p><p>The performance of ConvNet-based vision systems has caused most major technology companies, including Google, Facebook, Microsoft, IBM, Yahoo!, Twitter and Adobe, as well as a quickly growing number of start-ups to initiate research and development projects and to deploy ConvNet-based image understanding products and services.</p><p>ConvNets are easily amenable to efficient hardware implementations in chips or field-programmable gate arrays <ref type="bibr" target="#b54">66,</ref><ref type="bibr" target="#b55">67</ref> . A number of companies such as NVIDIA, Mobileye, Intel, Qualcomm and Samsung are developing ConvNet chips to enable real-time vision applications in smartphones, cameras, robots and self-driving cars.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Distributed representations and language processing</head><p>Deep-learning theory shows that deep nets have two different exponential advantages over classic learning algorithms that do not use distributed representations <ref type="bibr" target="#b9">21</ref> . Both of these advantages arise from the power of composition and depend on the underlying data-generating distribution having an appropriate componential structure <ref type="bibr" target="#b28">40</ref> . First, learning distributed representations enable generalization to new combinations of the values of learned features beyond those seen during training (for example, 2 n combinations are possible with n binary features) <ref type="bibr" target="#b56">68,</ref><ref type="bibr" target="#b57">69</ref> . Second, composing layers of representation in a deep net brings the potential for another exponential advantage <ref type="bibr" target="#b58">70</ref> (exponential in the depth).</p><p>The hidden layers of a multilayer neural network learn to represent the network's inputs in a way that makes it easy to predict the target outputs. This is nicely demonstrated by training a multilayer neural network to predict the next word in a sequence from a local There are many vegetables at the fruit stand.</p><p>A woman is throwing a frisbee in a park.</p><p>A little girl sitting on a bed with a teddy bear.</p><p>A group of people sitting on a boat in the water.</p><p>A gira e standing in a forest with trees in the background.</p><p>A dog is standing on a hardwood oor.</p><p>A stop sign is on a road with a mountain in the background context of earlier words <ref type="bibr" target="#b59">71</ref> . Each word in the context is presented to the network as a one-of-N vector, that is, one component has a value of 1 and the rest are 0. In the first layer, each word creates a different pattern of activations, or word vectors (Fig. <ref type="figure">4</ref>). In a language model, the other layers of the network learn to convert the input word vectors into an output word vector for the predicted next word, which can be used to predict the probability for any word in the vocabulary to appear as the next word. The network learns word vectors that contain many active components each of which can be interpreted as a separate feature of the word, as was first demonstrated <ref type="bibr" target="#b15">27</ref> in the context of learning distributed representations for symbols. These semantic features were not explicitly present in the input. They were discovered by the learning procedure as a good way of factorizing the structured relationships between the input and output symbols into multiple 'micro-rules' . Learning word vectors turned out to also work very well when the word sequences come from a large corpus of real text and the individual micro-rules are unreliable <ref type="bibr" target="#b59">71</ref> . When trained to predict the next word in a news story, for example, the learned word vectors for Tuesday and Wednesday are very similar, as are the word vectors for Sweden and Norway. Such representations are called distributed representations because their elements (the features) are not mutually exclusive and their many configurations correspond to the variations seen in the observed data. These word vectors are composed of learned features that were not determined ahead of time by experts, but automatically discovered by the neural network. Vector representations of words learned from text are now very widely used in natural language applications <ref type="bibr" target="#b2">14,</ref><ref type="bibr" target="#b5">17,</ref><ref type="bibr" target="#b60">[72]</ref><ref type="bibr" target="#b61">[73]</ref><ref type="bibr" target="#b62">[74]</ref><ref type="bibr" target="#b63">[75]</ref><ref type="bibr" target="#b64">[76]</ref> . The issue of representation lies at the heart of the debate between the logic-inspired and the neural-network-inspired paradigms for cognition. In the logic-inspired paradigm, an instance of a symbol is something for which the only property is that it is either identical or non-identical to other symbol instances. It has no internal structure that is relevant to its use; and to reason with symbols, they must be bound to the variables in judiciously chosen rules of inference. By contrast, neural networks just use big activity vectors, big weight matrices and scalar non-linearities to perform the type of fast 'intuitive' inference that underpins effortless commonsense reasoning.</p><p>Before the introduction of neural language models <ref type="bibr" target="#b59">71</ref> , the standard approach to statistical modelling of language did not exploit distributed representations: it was based on counting frequencies of occurrences of short symbol sequences of length up to N (called N-grams). The number of possible N-grams is on the order of V N , where V is the vocabulary size, so taking into account a context of more than a handful of words would require very large training corpora. N-grams treat each word as an atomic unit, so they cannot generalize across semantically related sequences of words, whereas neural language models can because they associate each word with a vector of real valued features, and semantically related words end up close to each other in that vector space (Fig. <ref type="figure">4</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Recurrent neural networks</head><p>When backpropagation was first introduced, its most exciting use was for training recurrent neural networks (RNNs). For tasks that involve sequential inputs, such as speech and language, it is often better to use RNNs (Fig. <ref type="figure">5</ref>). RNNs process an input sequence one element at a time, maintaining in their hidden units a 'state vector' that implicitly contains information about the history of all the past elements of the sequence. When we consider the outputs of the hidden units at different discrete time steps as if they were the outputs of different neurons in a deep multilayer network (Fig. <ref type="figure">5</ref>, right), it becomes clear how we can apply backpropagation to train RNNs.</p><p>RNNs are very powerful dynamic systems, but training them has proved to be problematic because the backpropagated gradients either grow or shrink at each time step, so over many time steps they typically explode or vanish <ref type="bibr" target="#b65">77,</ref><ref type="bibr" target="#b66">78</ref> .</p><p>Thanks to advances in their architecture <ref type="bibr" target="#b67">79,</ref><ref type="bibr" target="#b68">80</ref> and ways of training them <ref type="bibr" target="#b69">81,</ref><ref type="bibr" target="#b70">82</ref> , RNNs have been found to be very good at predicting the next character in the text <ref type="bibr" target="#b71">83</ref> or the next word in a sequence <ref type="bibr" target="#b63">75</ref> , but they can also be used for more complex tasks. For example, after reading an English sentence one word at a time, an English 'encoder' network can be trained so that the final state vector of its hidden units is a good representation of the thought expressed by the sentence. This thought vector can then be used as the initial hidden state of (or as extra input to) a jointly trained French 'decoder' network, which outputs a probability distribution for the first word of the French translation. If a particular first word is chosen from this distribution and provided as input to the decoder network it will then output a probability distribution for the second word of the translation and so on until a full stop is chosen <ref type="bibr" target="#b5">17,</ref><ref type="bibr" target="#b60">72,</ref><ref type="bibr" target="#b64">76</ref> . Overall, this process generates sequences of French words according to a probability distribution that depends on the English sentence. This rather naive way of performing machine translation has quickly become competitive with the state-of-the-art, and this raises serious doubts about whether understanding a sentence requires anything like the internal symbolic expressions that are manipulated by using inference rules. It is more compatible with the view that everyday reasoning involves many simultaneous analogies Figure <ref type="figure">4</ref> | Visualizing the learned word vectors. On the left is an illustration of word representations learned for modelling language, non-linearly projected to 2D for visualization using the t-SNE algorithm <ref type="bibr" target="#b91">103</ref> . On the right is a 2D representation of phrases learned by an English-to-French encoder-decoder recurrent neural network <ref type="bibr" target="#b63">75</ref> . One can observe that semantically similar words or sequences of words are mapped to nearby representations. The distributed representations of words are obtained by using backpropagation to jointly learn a representation for each word and a function that predicts a target quantity such as the next word in a sequence (for language modelling) or a whole sequence of translated words (for machine translation) <ref type="bibr" target="#b6">18,</ref><ref type="bibr" target="#b63">75</ref> . </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>REVIEW INSIGHT</head><p>that each contribute plausibility to a conclusion <ref type="bibr" target="#b72">84,</ref><ref type="bibr" target="#b73">85</ref> . Instead of translating the meaning of a French sentence into an English sentence, one can learn to 'translate' the meaning of an image into an English sentence (Fig. <ref type="figure" target="#fig_3">3</ref>). The encoder here is a deep Con-vNet that converts the pixels into an activity vector in its last hidden layer. The decoder is an RNN similar to the ones used for machine translation and neural language modelling. There has been a surge of interest in such systems recently (see examples mentioned in ref. 86).</p><p>RNNs, once unfolded in time (Fig. <ref type="figure">5</ref>), can be seen as very deep feedforward networks in which all the layers share the same weights. Although their main purpose is to learn long-term dependencies, theoretical and empirical evidence shows that it is difficult to learn to store information for very long <ref type="bibr" target="#b66">78</ref> .</p><p>To correct for that, one idea is to augment the network with an explicit memory. The first proposal of this kind is the long short-term memory (LSTM) networks that use special hidden units, the natural behaviour of which is to remember inputs for a long time <ref type="bibr" target="#b67">79</ref> . A special unit called the memory cell acts like an accumulator or a gated leaky neuron: it has a connection to itself at the next time step that has a weight of one, so it copies its own real-valued state and accumulates the external signal, but this self-connection is multiplicatively gated by another unit that learns to decide when to clear the content of the memory.</p><p>LSTM networks have subsequently proved to be more effective than conventional RNNs, especially when they have several layers for each time step <ref type="bibr" target="#b75">87</ref> , enabling an entire speech recognition system that goes all the way from acoustics to the sequence of characters in the transcription. LSTM networks or related forms of gated units are also currently used for the encoder and decoder networks that perform so well at machine translation <ref type="bibr" target="#b5">17,</ref><ref type="bibr" target="#b60">72,</ref><ref type="bibr" target="#b64">76</ref> .</p><p>Over the past year, several authors have made different proposals to augment RNNs with a memory module. Proposals include the Neural Turing Machine in which the network is augmented by a 'tape-like' memory that the RNN can choose to read from or write to <ref type="bibr" target="#b76">88</ref> , and memory networks, in which a regular network is augmented by a kind of associative memory <ref type="bibr" target="#b77">89</ref> . Memory networks have yielded excellent performance on standard question-answering benchmarks. The memory is used to remember the story about which the network is later asked to answer questions.</p><p>Beyond simple memorization, neural Turing machines and memory networks are being used for tasks that would normally require reasoning and symbol manipulation. Neural Turing machines can be taught 'algorithms' . Among other things, they can learn to output a sorted list of symbols when their input consists of an unsorted sequence in which each symbol is accompanied by a real value that indicates its priority in the list <ref type="bibr" target="#b76">88</ref> . Memory networks can be trained to keep track of the state of the world in a setting similar to a text adventure game and after reading a story, they can answer questions that require complex inference <ref type="bibr" target="#b78">90</ref> . In one test example, the network is shown a 15-sentence version of the The Lord of the Rings and correctly answers questions such as "where is Frodo now?" <ref type="bibr" target="#b77">89</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The future of deep learning</head><p>Unsupervised learning <ref type="bibr" target="#b79">[91]</ref><ref type="bibr" target="#b80">[92]</ref><ref type="bibr" target="#b81">[93]</ref><ref type="bibr" target="#b82">[94]</ref><ref type="bibr" target="#b83">[95]</ref><ref type="bibr" target="#b84">[96]</ref><ref type="bibr" target="#b85">[97]</ref><ref type="bibr" target="#b86">[98]</ref> had a catalytic effect in reviving interest in deep learning, but has since been overshadowed by the successes of purely supervised learning. Although we have not focused on it in this Review, we expect unsupervised learning to become far more important in the longer term. Human and animal learning is largely unsupervised: we discover the structure of the world by observing it, not by being told the name of every object.</p><p>Human vision is an active process that sequentially samples the optic array in an intelligent, task-specific way using a small, high-resolution fovea with a large, low-resolution surround. We expect much of the future progress in vision to come from systems that are trained end-toend and combine ConvNets with RNNs that use reinforcement learning to decide where to look. Systems combining deep learning and reinforcement learning are in their infancy, but they already outperform passive vision systems <ref type="bibr" target="#b87">99</ref> at classification tasks and produce impressive results in learning to play many different video games <ref type="bibr" target="#b88">100</ref> .</p><p>Natural language understanding is another area in which deep learning is poised to make a large impact over the next few years. We expect systems that use RNNs to understand sentences or whole documents will become much better when they learn strategies for selectively attending to one part at a time <ref type="bibr" target="#b64">76,</ref><ref type="bibr" target="#b74">86</ref> .</p><p>Ultimately, major progress in artificial intelligence will come about through systems that combine representation learning with complex reasoning. Although deep learning and simple reasoning have been used for speech and handwriting recognition for a long time, new paradigms are needed to replace rule-based manipulation of symbolic expressions by operations on large vectors <ref type="bibr" target="#b89">101</ref>   <ref type="figure" target="#fig_1">1</ref>) can be directly applied to the computational graph of the unfolded network on the right, to compute the derivative of a total error (for example, the log-probability of generating the right sequence of outputs) with respect to all the states s t and all the parameters.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>objective function, averaged over all the training examples, can Deep learning allows computational models that are composed of multiple processing layers to learn representations of data with multiple levels of abstraction. These methods have dramatically improved the state-of-the-art in speech recognition, visual object recognition, object detection and many other domains such as drug discovery and genomics. Deep learning discovers intricate structure in large data sets by using the backpropagation algorithm to indicate how a machine should change its internal parameters that are used to compute the representation in each layer from the representation in the previous layer. Deep convolutional nets have brought about breakthroughs in processing images, video, speech and audio, whereas recurrent nets have shone light on sequential data such as text and speech.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 |</head><label>1</label><figDesc>Figure1| Multilayer neural networks and backpropagation. a, A multilayer neural network (shown by the connected dots) can distort the input space to make the classes of data (examples of which are on the red and blue lines) linearly separable. Note how a regular grid (shown on the left) in input space is also transformed (shown in the middle panel) by hidden units. This is an illustrative example with only two input units, two hidden units and one output unit, but the networks used for object recognition or natural language processing contain tens or hundreds of thousands of units. Reproduced with permission from C. Olah (http://colah.github.io/). b, The chain rule of derivatives tells us how two small effects (that of a small change of x on y, and that of y on z) are composed. A small change Δx in x gets transformed first into a small change Δy in y by getting multiplied by ∂y/∂x (that is, the definition of partial derivative). Similarly, the change Δy creates a change Δz in z. Substituting one equation into the other gives the chain rule of derivatives -how Δx gets turned into Δz through multiplication by the product of ∂y/∂x and ∂z/∂x. It also works when x, y and z are vectors (and the derivatives are Jacobian matrices). c, The equations used for computing the forward pass in a neural net with two hidden layers and one output layer, each constituting a module through</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 |</head><label>2</label><figDesc>Figure 2 | Inside a convolutional network. The outputs (not the filters) of each layer (horizontally) of a typical convolutional network architecture applied to the image of a Samoyed dog (bottom left; and RGB (red, green, blue) inputs, bottom right). Each rectangular image is a feature map</figDesc><graphic coords="3,70.57,209.97,63.40,63.40" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 |</head><label>3</label><figDesc>Figure 3 | From image to text. Captions generated by a recurrent neural network (RNN) taking, as extra input, the representation extracted by a deep convolution neural network (CNN) from a test image, with the RNN trained to 'translate' high-level representations of images into captions (top). Reproduced</figDesc><graphic coords="5,40.69,317.50,80.66,79.82" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>. The analysis seems to show that saddle points with only a few downward curving directions are present in very large numbers, but almost all of them have very similar values of the objective function. Hence, it does not much matter which of these saddle points the algorithm gets stuck at. Interest in deep feedforward networks was revived around 2006 (refs 31-34) by a group of researchers brought together by the Canadian Institute for Advanced Research</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>25 February; accepted 1 May 2015. 1</head><label></label><figDesc>. Krizhevsky, A., Sutskever, I. &amp; Hinton, G. ImageNet classification with deep convolutional neural networks. In Proc. Advances in Neural Information Processing Systems 25 1090-1098 (2012).</figDesc><table /><note>. ■ Received</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>This report was a breakthrough that used convolutional nets to almost halve the error rate for object recognition, and precipitated the rapid adoption of deep learning by the computer vision community. 2</head><label></label><figDesc>. Farabet, C., Couprie, C., Najman, L. &amp; LeCun, Y. Learning hierarchical features for scene labeling. IEEE Trans. Pattern Anal. Mach. Intell. 35, 1915-1929 (2013). 3. Tompson, J., Jain, A., LeCun, Y. &amp; Bregler, C. Joint training of a convolutional network and a graphical model for human pose estimation. In Proc. Advances in Neural Information Processing Systems 27 1799-1807 (2014). 4. Szegedy, C. et al. Going deeper with convolutions. Preprint at http://arxiv.org/ abs/1409.4842 (2014). 5. Mikolov, T., Deoras, A., Povey, D., Burget, L. &amp; Cernocky, J. Strategies for training large scale neural network language models. In Proc. Automatic Speech Recognition and Understanding 196-201 (2011). 6. Hinton, G. et al. Deep neural networks for acoustic modeling in speech recognition. IEEE Signal Processing Magazine 29, 82-97 (2012). This</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>joint paper from the major speech recognition laboratories, summarizing the breakthrough achieved with deep learning on the task of phonetic classification for automatic speech recognition, was the first major industrial application of deep learning</head><label></label><figDesc>. 7. Sainath, T., Mohamed, A.-R., Kingsbury, B. &amp; Ramabhadran, B. Deep convolutional neural networks for LVCSR. In Proc. Acoustics, Speech and Signal Processing 8614-8618 (2013). 8. Ma, J., Sheridan, R. P., Liaw, A., Dahl, G. E. &amp; Svetnik, V. Deep neural nets as a method for quantitative structure-activity relationships. J. Chem. Inf. Model. 55, 263-274 (2015). 9. Ciodaro, T., Deva, D., de Seixas, J. &amp; Damazio, D. Online particle detection with neural networks based on topological calorimetry information. J. Phys. Conf. Series 368, 012030 (2012). 10. Kaggle. Higgs boson machine learning challenge. Kaggle https://www.kaggle.</figDesc><table><row><cell>o</cell><cell></cell><cell></cell><cell></cell><cell>o t−1</cell><cell></cell><cell>o t</cell><cell></cell><cell>o t+1</cell></row><row><cell>V s</cell><cell>W</cell><cell>W</cell><cell>V</cell><cell>s t−1</cell><cell>V</cell><cell>s t</cell><cell>V</cell><cell cols="2">s t+1</cell></row><row><cell>U</cell><cell>Unfold</cell><cell></cell><cell></cell><cell>U</cell><cell>W</cell><cell>U</cell><cell>W</cell><cell>U</cell><cell>W</cell></row><row><cell>x</cell><cell></cell><cell></cell><cell></cell><cell>x t−1</cell><cell></cell><cell>x t</cell><cell cols="2">x t+1</cell></row><row><cell>Figure 5 | A</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table><note>com/c/higgs-boson (2014). 11. Helmstaedter, M. et al. Connectomic reconstruction of the inner plexiform layer in the mouse retina. Nature 500, 168-174 (2013).</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>recurrent neural network and the unfolding in time of the computation involved in its forward computation.</head><label></label><figDesc>The artificial neurons (for example, hidden units grouped under node s with values s t at time t) get inputs from other neurons at previous time steps (this is represented with the black square, representing a delay of one time step, on the left). In this way, a recurrent neural network can map an input sequence with elements x t into an output sequence with elements o t , with each o t depending on all the previous x t ʹ (for tʹ ≤ t). The same parameters (matrices U,V,W ) are used at each time step. Many other architectures are possible, including a variant in which the network can generate a sequence of outputs (for example, words), each of which is used as inputs for the next time step. The backpropagation algorithm (Fig.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">© 2015 Macmillan Publishers Limited. All rights reserved</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1">8 M A Y 2 0 1 5 | V O L 5 2 1 | N A T U R E | 4</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2">9REVIEW INSIGHT© 2015 Macmillan Publishers Limited. All rights reserved</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_3">REVIEW INSIGHT© 2015 Macmillan Publishers Limited. All rights reserved</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>The authors would like to thank the Natural Sciences and Engineering Research Council of Canada, the Canadian Institute For Advanced Research (CIFAR), the National Science Foundation and Office of Naval Research for support. Y.L. and Y.B. are CIFAR fellows.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Author Information Reprints and permissions information is available at www.nature.com/reprints. The authors declare no competing financial interests. Readers are welcome to comment on the online version of this paper at go.nature.com/7cjbaa. Correspondence should be addressed to Y.L. (yann@cs.nyu.edu).</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Deep learning of the tissueregulated splicing code</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Leung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Frey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="121" to="129" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The human splicing code reveals new insights into the genetic determinants of disease</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">347</biblScope>
+			<biblScope unit="page">6218</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Natural language processing (almost) from scratch</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Collobert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="2493" to="2537" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Question answering with subgraph embeddings</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bordes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chopra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Weston</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1406.3676v3" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Empirical Methods in Natural Language Processing</title>
+				<meeting>Empirical Methods in Natural Language essing</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">On using very large target vocabulary for neural machine translation</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jean</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Memisevic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1412.2007" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ACL-IJCNLP</title>
+				<meeting>ACL-IJCNLP</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">This paper showed state-of-the-art machine translation results with the architecture introduced in ref. 72, with a recurrent network trained to read a sentence in one language, produce a semantic representation of its meaning</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Vinyals</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="middle">Q V</forename><surname>Le</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="3104" to="3112" />
+		</imprint>
+	</monogr>
+	<note>Sequence to sequence learning with neural networks. and generate a translation in another language</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">The tradeoffs of large scale learning</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bottou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Bousquet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="161" to="168" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">O</forename><surname>Duda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Hart</surname></persName>
+		</author>
+		<title level="m">Pattern Classification and Scene Analysis</title>
+				<imprint>
+			<publisher>Wiley</publisher>
+			<date type="published" when="1973">1973</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Learning with Kernels</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Schölkopf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Smola</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<publisher>MIT Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">The curse of highly variable functions for local kernel machines</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Delalleau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Le Roux</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="107" to="114" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Pandemonium: a paradigm for learning in mechanisation of thought processes</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">G</forename><surname>Selfridge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Symposium on Mechanisation of Thought Processes</title>
+				<meeting>Symposium on Mechanisation of Thought esses</meeting>
+		<imprint>
+			<date type="published" when="1958">1958</date>
+			<biblScope unit="page" from="513" to="526" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">The Perceptron -A Perceiving and Recognizing Automaton</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Rosenblatt</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1957">1957</date>
+		</imprint>
+		<respStmt>
+			<orgName>Cornell Aeronautical Laboratory</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Tech. Rep. 85-460-1</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Beyond Regression: New Tools for Prediction and Analysis in the Behavioral Sciences</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Werbos</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1974">1974</date>
+		</imprint>
+		<respStmt>
+			<orgName>Harvard Univ.</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">PhD thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Parker</surname></persName>
+		</author>
+		<idno>TR-47</idno>
+		<imprint>
+			<date type="published" when="1985">1985</date>
+			<publisher>MIT Press</publisher>
+		</imprint>
+	</monogr>
+	<note type="report_type">Learning Logic Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Une procédure d&apos;apprentissage pour Réseau à seuil assymétrique in Cognitiva 85: a la Frontière de l&apos;Intelligence Artificielle, des Sciences de la Connaissance et des Neurosciences</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1985">1985</date>
+			<biblScope unit="page" from="599" to="604" />
+		</imprint>
+	</monogr>
+	<note>in French</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Learning representations by back-propagating errors</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Rumelhart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Williams</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">323</biblScope>
+			<biblScope unit="page" from="533" to="536" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">This paper showed that supervised training of very deep neural networks is much faster if the hidden layers are composed of ReLU</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Glorot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bordes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="middle">Y</forename><surname>Bengio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 14th International Conference on Artificial Intelligence and Statistics</title>
+				<meeting>14th International Conference on Artificial Intelligence and Statistics</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="315" to="323" />
+		</imprint>
+	</monogr>
+	<note>Deep sparse rectifier neural networks</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Identifying and attacking the saddle point problem in highdimensional non-convex optimization</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Dauphin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="2933" to="2941" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The loss surface of networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Choromanska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Henaff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mathieu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Arous</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1412.0233" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Conference on AI and Statistics</title>
+				<meeting>Conference on AI and Statistics</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">What kind of graphical model is the brain?</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 19th International Joint Conference on Artificial intelligence</title>
+				<meeting>19th International Joint Conference on Artificial intelligence</meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="page" from="1765" to="1775" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">This paper introduced a novel and effective way of training very deep neural networks by pre-training one hidden layer at a time using the unsupervised learning procedure for restricted Boltzmann machines</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Osindero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-W</forename><surname>Teh</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="1527" to="1554" />
+		</imprint>
+	</monogr>
+	<note>A fast learning algorithm for deep belief nets. Neural Comp</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">This report demonstrated that the unsupervised pre-training method introduced in ref. 32 significantly improves performance on test data and generalizes the method to other unsupervised representation-learning techniques</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lamblin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Popovici</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="153" to="160" />
+		</imprint>
+	</monogr>
+	<note>Greedy layer-wise training of deep networks. such as auto-encoders</note>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Efficient learning of sparse representations with an energy-based model</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ranzato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Poultney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chopra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="1137" to="1144" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Reducing the dimensionality of data with neural networks</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">313</biblScope>
+			<biblScope unit="page" from="504" to="507" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Pedestrian detection with unsupervised multi-stage feature learning</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sermanet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kavukcuoglu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chintala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1212.0142" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Computer Vision and Pattern Recognition</title>
+				<meeting>International Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Large-scale deep unsupervised learning using graphics processors</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Raina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Madhavan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Ng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 26th Annual International Conference on Machine Learning</title>
+				<meeting>26th Annual International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">873</biblScope>
+			<biblScope unit="page">880</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Acoustic modeling using deep belief networks</title>
+		<author>
+			<persName><forename type="first">A.-R</forename><surname>Mohamed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Dahl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Audio Speech Lang. Process</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="14" to="22" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Context-dependent pre-trained deep neural networks for large vocabulary speech recognition</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Dahl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Acero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Audio Speech Lang. Process</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="33" to="42" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Representation learning: a review and new perspectives</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Courville</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vincent</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Pattern Anal. Machine Intell</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="1798" to="1828" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">This is the first paper on convolutional networks trained by backpropagation for the task of classifying low-resolution images of handwritten digits</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="1990">1990</date>
+			<biblScope unit="page" from="396" to="404" />
+		</imprint>
+	</monogr>
+	<note>Handwritten digit recognition with a back-propagation network</note>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">This overview paper on the principles of end-to-end training of modular systems such as deep neural networks using gradient-based optimization showed how neural networks (and in particular convolutional nets) can be combined with search or inference mechanisms to model complex outputs that are interdependent</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bottou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Haffner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE</title>
+				<meeting>IEEE</meeting>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="2278" to="2324" />
+		</imprint>
+	</monogr>
+	<note>Gradient-based learning applied to document recognition. such as sequences of characters associated with the content of a document</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Receptive fields, binocular interaction, and functional architecture in the cat&apos;s visual cortex</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Hubel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Wiesel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Physiol</title>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<biblScope unit="page" from="106" to="154" />
+			<date type="published" when="1962">1962</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Distributed hierarchical processing in the primate cerebral cortex</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Felleman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C V</forename><surname>Essen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cereb. Cortex</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1" to="47" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Deep neural networks rival the representation of primate it cortex for core visual object recognition</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Cadieu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Comp. Biol</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">e1003963</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Neocognitron: a new algorithm for pattern recognition tolerant of deformations and shifts in position</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Fukushima</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Miyake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognition</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="455" to="469" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Phoneme recognition using time-delay neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Waibel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hanazawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shikano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Acoustics Speech Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="328" to="339" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Experiments with time delay networks and dynamic time warping for speaker independent isolated digit recognition</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bottou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fogelman-Soulié</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Blanchet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lienard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. EuroSpeech</title>
+				<meeting>EuroSpeech</meeting>
+		<imprint>
+			<date type="published" when="1989">1989</date>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page" from="537" to="540" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Best practices for convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Simard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">Y</forename><surname>Steinkraus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Platt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Document Analysis and Recognition</title>
+				<meeting>Document Analysis and Recognition</meeting>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="958" to="963" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Original approach for the localisation of objects in images</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Vaillant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Monrocq</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Vision, Image, and Signal Processing</title>
+				<meeting>Vision, Image, and Signal essing</meeting>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="245" to="250" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nowlan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Platt</surname></persName>
+		</author>
+		<title level="m">Neural Information Processing Systems</title>
+				<imprint>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="page" from="901" to="908" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Face recognition: a convolutional neural-network approach</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lawrence</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Giles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Tsoi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Back</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Neural Networks</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="98" to="113" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Multi-column deep neural network for traffic sign classification</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ciresan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Meier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Masci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schmidhuber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Networks</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="333" to="338" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Toward automatic phenotyping of developing embryos from videos</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Image Process</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1360" to="1371" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Convolutional networks can learn to generate affinity graphs for image segmentation</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Turaga</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="511" to="538" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Convolutional face finder: a neural architecture for fast and robust face detection</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Delakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Pattern Anal. Machine Intell</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="1408" to="1423" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Synergistic face detection and pose estimation with energy-based models</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Osadchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Miller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="1197" to="1215" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Efficient object localization using convolutional networks</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tompson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Goroshin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Bregler</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1411.4280" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Conference on Computer Vision and Pattern Recognition</title>
+				<meeting>Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Deepface: closing the gap to human-level performance in face verification</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Taigman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ranzato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wolf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Conference on Computer Vision and Pattern Recognition</title>
+				<meeting>Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="1701" to="1708" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Learning long-range vision for autonomous off-road driving</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hadsell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Field Robot</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="120" to="144" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Scene parsing with multiscale feature learning, purity trees, and optimal covers</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Farabet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Couprie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Najman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1202.2160" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Machine Learning</title>
+				<meeting>International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Dropout: a simple way to prevent neural networks from overfitting</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Srivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Krizhevsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Machine Learning Res</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="1929" to="1958" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Overfeat: integrated recognition, localization and detection using convolutional networks</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sermanet</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1312.6229" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Learning Representations</title>
+				<meeting>International Conference on Learning Representations</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Rich feature hierarchies for accurate object detection and semantic segmentation</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Girshick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Donahue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Darrell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Malik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Conference on Computer Vision and Pattern Recognition</title>
+				<meeting>Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="580" to="587" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Very deep convolutional networks for large-scale image recognition</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Simonyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zisserman</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1409.1556" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Learning Representations</title>
+				<meeting>International Conference on Learning Representations</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">An analog neural network processor with programmable topology</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Boser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Sackinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bromley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Jackel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Solid State Circuits</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="2017" to="2025" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Large-scale FPGA-based convolutional networks</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Farabet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Scaling up Machine Learning: Parallel and Distributed Approaches</title>
+				<imprint>
+			<publisher>Cambridge Univ. Press</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="399" to="419" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title level="m" type="main">Learning Deep Architectures for AI (Now</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">When does a mixture of products contain a product of mixtures?</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Montufar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Morton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Discrete Math</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="321" to="347" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">On the number of linear regions of deep neural networks</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">F</forename><surname>Montufar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pascanu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="2924" to="2932" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">This paper introduced neural language models, which learn to convert a word symbol into a word vector or word embedding composed of learned semantic features</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ducharme</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vincent</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="932" to="938" />
+		</imprint>
+	</monogr>
+	<note>A neural probabilistic language model. in order to predict the next word in a sequence</note>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Learning phrase representations using RNN encoder-decoder for statistical machine translation</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Conference on Empirical Methods in Natural Language Processing</title>
+				<meeting>Conference on Empirical Methods in Natural Language essing</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="1724" to="1734" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Continuous space language models</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Schwenk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Speech Lang</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="492" to="518" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Parsing natural scenes and natural language with recursive neural networks</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Socher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><surname>C-Y</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Manning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Ng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Machine Learning</title>
+				<meeting>International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="129" to="136" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Distributed representations of words and phrases and their compositionality</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mikolov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Corrado</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dean</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="3111" to="3119" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Neural machine translation by jointly learning to align and translate</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bahdanau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1409.0473" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Learning Representations</title>
+				<meeting>International Conference on Learning Representations</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<monogr>
+		<title level="m" type="main">Untersuchungen zu dynamischen neuronalen Netzen</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hochreiter</surname></persName>
+		</author>
+		<editor>T.U. Münich</editor>
+		<imprint>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+	<note>in German] Diploma thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Learning long-term dependencies with gradient descent is difficult</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Simard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Frasconi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Neural Networks</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="157" to="166" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">This paper introduced LSTM recurrent networks, which have become a crucial ingredient in recent advances with recurrent networks because they are good at learning long-range dependencies</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hochreiter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schmidhuber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="1735" to="1780" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+	<note>Long short-term memory</note>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Hierarchical recurrent neural networks for long-term dependencies</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Elhihi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<ptr target="http://papers.nips.cc/paper/1102-hierarchical-recurrent-neural-networks-for-long-term-dependencies" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="volume">8</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<title level="m" type="main">Training Recurrent Neural Networks</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+		<respStmt>
+			<orgName>Univ. Toronto</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">PhD thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">On the difficulty of training recurrent neural networks</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pascanu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mikolov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 30th International Conference on Machine Learning</title>
+				<meeting>30th International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="1310" to="1318" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Generating text with recurrent neural networks</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Martens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 28th International Conference on Machine Learning</title>
+				<meeting>28th International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="1017" to="1024" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lakoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Johnson</surname></persName>
+		</author>
+		<title level="m">Metaphors We Live By</title>
+				<imprint>
+			<publisher>Univ. Chicago Press</publisher>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<monogr>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">T</forename><surname>Rogers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Mcclelland</surname></persName>
+		</author>
+		<title level="m">Semantic Cognition: A Parallel Distributed Processing Approach</title>
+				<imprint>
+			<publisher>MIT Press</publisher>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Show, attend and tell: Neural image caption generation with visual attention</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Xu</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1502.03044" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Learning Representations</title>
+				<meeting>International Conference on Learning Representations</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Speech recognition with deep recurrent neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Graves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A.-R</forename><surname>Mohamed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Acoustics, Speech and Signal Processing</title>
+				<meeting>International Conference on Acoustics, Speech and Signal essing</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="6645" to="6649" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><surname>Graves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wayne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Danihelka</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1410.5401" />
+		<title level="m">Neural Turing machines</title>
+				<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Weston</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chopra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bordes</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Memory</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Networks</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1410.3916" />
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<monogr>
+		<title level="m" type="main">Towards AI-complete question answering: a set of prerequisite toy tasks</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Weston</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bordes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chopra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mikolov</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1502.05698" />
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">The wake-sleep algorithm for unsupervised neural networks</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Dayan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Frey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Neal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">268</biblScope>
+			<biblScope unit="page" from="1558" to="1161" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">Deep Boltzmann machines</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Salakhutdinov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Artificial Intelligence and Statistics</title>
+				<meeting>International Conference on Artificial Intelligence and Statistics</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="448" to="455" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Extracting and composing robust features with denoising autoencoders</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vincent</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P.-A</forename><surname>Manzagol</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 25th International Conference on Machine Learning</title>
+				<meeting>25th International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="1096" to="1103" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">Learning convolutional feature hierarchies for visual recognition</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kavukcuoglu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1090" to="1098" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Learning fast approximations of sparse coding</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gregor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Machine Learning</title>
+				<meeting>International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="399" to="406" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">Modeling natural images using gated MRFs</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ranzato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Mnih</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Susskind</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Pattern Anal. Machine Intell</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="2206" to="2222" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Deep generative stochastic networks trainable by backprop</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Thibodeau-Laufer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Alain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yosinski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 31st International Conference on Machine Learning</title>
+				<meeting>31st International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="226" to="234" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Semi-supervised learning with deep generative models</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kingma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Rezende</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mohamed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Welling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Advances in Neural Information Processing Systems</title>
+				<meeting>Advances in Neural Information essing Systems</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="3581" to="3589" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Multiple object recognition with visual attention</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ba</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Mnih</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kavukcuoglu</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1412.7755" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Learning Representations</title>
+				<meeting>International Conference on Learning Representations</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Human-level control through deep reinforcement learning</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Mnih</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">518</biblScope>
+			<biblScope unit="page" from="529" to="533" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">From machine learning to machine reasoning</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bottou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mach. Learn</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page" from="133" to="149" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Show and tell: a neural image caption generator</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Vinyals</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Toshev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Erhan</surname></persName>
+		</author>
+		<ptr target="http://arxiv.org/abs/1502.03044" />
+	</analytic>
+	<monogr>
+		<title level="m">Proc. International Conference on Machine Learning</title>
+				<meeting>International Conference on Machine Learning</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">Visualizing data using t-SNE</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Van Der Maaten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Research</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="2579" to="2605" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

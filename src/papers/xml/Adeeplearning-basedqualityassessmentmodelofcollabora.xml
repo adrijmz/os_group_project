@@ -73,7 +73,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -89,10 +89,1449 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>Wikipedia is becoming increasingly critical in helping people obtain information and knowledge. Its leading advantage is that users can not only access information but also modify it. However, this presents a challenging issue: how can we measure the quality of a Wikipedia article? The existing approaches assess Wikipedia quality by statistical models or traditional machine learning algorithms. However, their performance is not satisfactory. Moreover, most existing models fail to extract complete information from articles, which degrades the model&apos;s performance. In this article, we first survey related works and summarise a comprehensive feature framework. Then, state-of-the-art deep learning models are introduced and applied to assess Wikipedia quality. Finally, a comparison among deep learning models and traditional machine learning models is conducted to validate the effectiveness of the proposed model. The models are compared extensively in terms of their training and classification performance. Moreover, the importance of each feature and the importance of different feature sets are analysed separately.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Wikipedia is becoming increasingly critical in helping people obtain information and knowledge. Its leading advantage is that users can not only access information but also modify it. However, this presents a challenging issue: how can we measure the quality of a Wikipedia article? The existing approaches assess Wikipedia quality by statistical models or traditional machine learning algorithms. However, their performance is not satisfactory. Moreover, most existing models fail to extract complete information from articles, which degrades the model's performance. In this article, we first survey related works and summarise a comprehensive feature framework. Then, state-of-the-art deep learning models are introduced and applied to assess Wikipedia quality. Finally, a comparison among deep learning models and traditional machine learning models is conducted to validate the effectiveness of the proposed model. The models are compared extensively in terms of their training and classification performance. Moreover, the importance of each feature and the importance of different feature sets are analysed separately.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Since 2001, Wikipedia has become the most popular web-based, collaboratively edited document repository. The quality improvement of articles has been the main concern for Wikipedia <ref type="bibr" target="#b0">[1]</ref>. Currently, there are approximately 40 million articles in more than 270 languages. In contrast to traditional media, users can not only access the information but also edit Wikipedia content immediately and arbitrarily. There are few staff members who review users' modifications before they are published <ref type="bibr" target="#b0">[1]</ref>. Due to its large volume and flexibility, Wikipedia has attracted substantial attention from academia and industry.</p><p>Recently, Wikipedia has grown considerably. However, its growth raises a serious challenge: How good is the information quality in Wikipedia? Another issue is that only 0.1% of the articles are of high quality <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. Therefore, there is a strong demand to improve article quality. First, we need to measure article quality, but there are so many articles that it is infeasible to assess every article manually. Some researchers have proposed statistics or formulas to measure article quality <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b3">4]</ref>. However, some of these metrics are so oversimplified that they cannot accurately assess article quality. In addition, some methods are not automatic and need considerable human labour. Traditional machine learning algorithms, such as support vector regression (SVR) and k-nearest neighbours (KNN), have also been applied <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>. Although there are some automatic classification methods, their performances are unsatisfactory. In addition, some methods fail to use comprehensive feature sets when training models. Moreover, some models treat the quality classification problem as a one-class classification problem, which leads to a nonexclusive classification result. Since there is a specific classifier for each class, it might result in one sample belonging to multiple classes at the same time. To solve these problems, a deep learning-based multiclass quality assessment model with a comprehensive feature framework is proposed. Our contributions are as follows.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>•</head><p>To the best of our knowledge, this is the first comprehensive and extensive comparison of state-of-the-art deep learning models and traditional machine learning models such as the convolutional neural network (CNN), deep neural network (DNN), long short-term memory (LSTM), CNN-LSTM, bidirectional LSTM (biLSTM), stacked LSTM, KNN, support vector machine (SVM), naı ¨ve Bayes and decision tree in terms of assessing Wikipedia article quality.</p><p>• A comprehensive feature framework is proposed and used for deep learning models.</p><p>• A detailed and complete comparison of deep learning models and several traditional machine learning models is conducted from different dimensions, including classification performance and training performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>•</head><p>The importance of different features and feature sets is investigated separately, which can provide better guidelines for feature selection.</p><p>The remainder of this article is organised as follows. Section 2 investigates the related work. Section 3 summarises the different features that represent articles. Section 4 introduces the basic concept of deep learning models and how models handle features. Section 5 introduces the Wikipedia data set and discusses the experimental results. Finally, Section 6 concludes the article.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related work</head><p>In this section, we discuss how to assess the quality of Wikipedia articles using different existing approaches, and we also analyse the previous feature framework and attach the contributions of the article at the end of the section.</p><p>Wikipedia has been the most popular online encyclopaedia and knowledge database. However, the quality of the articles on Wikipedia is a serious issue since any users can edit content in Wikipedia immediately and arbitrarily. It is infeasible to estimate each article quality manually, so an efficient and automatic approach is necessary. In this section, studies on the quality assessment of Wikipedia articles are discussed.</p><p>Previous studies employed formulas or statistics to assess article quality. Some studies hypothesised that the author was the critical factor affecting article quality. Hu et al. <ref type="bibr" target="#b11">[12]</ref> assessed Wikipedia quality based on contributions and the authority of contributors. de La Robertie et al. <ref type="bibr" target="#b2">[3]</ref> proposed a generic formulation between authors' interactions and article quality score. The model was tested by extracting the incorporating features from a coedit graph. Several studies have attempted to quantify author reputation. Adler et al. <ref type="bibr" target="#b12">[13]</ref> used an improved algorithm to compute the quality of English Wikipedia articles based on the reputation of original authors through the revision history of each article. The authority of the reviewers was considered <ref type="bibr" target="#b11">[12]</ref>. In Javanmardi et al. <ref type="bibr" target="#b13">[14]</ref>, the authors derived three computational models of user reputation according to user edit patterns and statistics <ref type="bibr" target="#b14">[15]</ref>. However, the defect is that most of these methods need too much human effort. It is infeasible to manually estimate the quality of each article, so an efficient and automatic approach is necessary.</p><p>Article stability is also considered to evaluate article quality. The literature works <ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref> proposed persistent word revisions (PWR) to count the number of revisions that a word survives. Priedhorsky et al. <ref type="bibr" target="#b19">[20]</ref> devised a similar index called persistent word view (PWV) by calculating the retention time of an author's contribution. Suzuki and Yoshikawa <ref type="bibr" target="#b20">[21]</ref> extended this method and considered the impact of vandals who deliberately deleted good-quality texts; they proposed a computing method that took advantage of not only the text survival rate but also the editor's qualities, but this approach is not scalable. In addition, Nemoto et al. <ref type="bibr" target="#b21">[22]</ref> considered the preexisting social capital of editors and thought it had a positive correlation with the article quality level. However, classification performance is not preferable, especially for high-quality articles. These methods failed to consider other important features, such as article content and structure.</p><p>Intuitively, article quality is directly related to the text, so features based on the wiki page were proposed. Hardik et al. <ref type="bibr" target="#b3">[4]</ref> conducted a detailed analysis of Wikipedia documents with some big data techniques. There are usually two types of features that are commonly used in the evaluation of article quality <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b23">24]</ref>. One feature is content, such as the count of various types of sentences and words. For instance, Blumenstock <ref type="bibr" target="#b24">[25]</ref> simply chose word count as the Wikipedia quality metric and obtained good results in detecting featured articles. The other feature is structural features, such as the number and ratio of pictures, sections, paragraphs and lists in the article. <ref type="bibr">Dang and Ignat [8]</ref> presented an automatic assessment model that combined these two feature sets with some traditional readability indicators into the model, such as the Flesh-Kincaid grade level <ref type="bibr" target="#b25">[26]</ref>, the Smog index <ref type="bibr" target="#b26">[27]</ref>, the Coleman-Liau index <ref type="bibr" target="#b27">[28]</ref> and the Linsear write formula <ref type="bibr" target="#b28">[29]</ref>. Moreover, the writing style was proposed as a metric to measure textual information. Lipka and Stein <ref type="bibr" target="#b29">[30]</ref> pioneered the application of writing style by employing various trigram vectors to describe featured articles. Xu and Luo <ref type="bibr" target="#b30">[31]</ref> assumed that high-quality articles had more statistical features on lexical usage, so they selected eight basic metrics to measure article quality, including the numbers of verbs, nouns and sentences.</p><p>Website link analysis was applied to assess the quality of Wikipedia pages. Kamps and Koolen <ref type="bibr" target="#b31">[32]</ref> introduced Wikipedia link analysis. Their work suggested a possible relationship among out-links, in-links and the importance of articles. In the work described in Pateman and Johnson <ref type="bibr" target="#b32">[33]</ref>, Wikipedia articles were evaluated and corrected using inherent links. Using the MapReduce-based link analysis system, Hardik et al. <ref type="bibr" target="#b3">[4]</ref> applied a link-ability factor to describe the diversity and expandability of Wikipedia. de Ruvo and Santone <ref type="bibr" target="#b33">[34]</ref> investigated the influence of the article network by PageRank. In addition, the author relationship network has attracted more attention because the editors' intensive cooperative behaviours lead to high-quality articles <ref type="bibr" target="#b34">[35]</ref>. However, various collaboration patterns among contributors have a negative effect on article quality <ref type="bibr" target="#b35">[36]</ref>. Li et al. <ref type="bibr" target="#b36">[37]</ref> studied relationships among article editors and quality assessment. Bykau et al. <ref type="bibr" target="#b9">[10]</ref> applied a novel multivariable algorithm that was based on the page revision history. Their experiments on the entire English Wikipedia data set suggested that the approach had higher precision and recall than conventional approaches. With regard to these approaches, researchers usually adopt few metrics to assess article quality. Few of them consider article quality from a comprehensive perspective.</p><p>To describe an article completely, comprehensive quality metric systems have been introduced. Anderka [1] constructed a multidimensional and multilevel wiki quality evaluation system. In Dalip et al. <ref type="bibr" target="#b5">[6]</ref>, the feature framework was organised into six views. It was reduced by using the SPEA2 multiobjective genetic algorithm. Warncke-Wang et al. <ref type="bibr" target="#b37">[38]</ref> initially adopted 17 features. They used empirical research to simplify the model. Finally, an actional model with five dimensions, including Completeness, Informativeness, NumHeadings, ArticleLength and NumReferences/ArticleLength, was established. Halfaker <ref type="bibr" target="#b38">[39]</ref> improved Warncke-Wang's actional model by examining the dynamics of Wikipedia quality at a finer granularity through historical versions of articles. In addition, some researchers simplified quality evaluation by merging relevant metrics. For example, based on peer-reviewed data, Suzuki <ref type="bibr" target="#b39">[40]</ref> presented a Wikipedia article assessment method that combined the h-index with the p-ratio. Ofek and Rokach <ref type="bibr" target="#b40">[41]</ref> proposed a set of indicators that referred to meta-content features and author-based features. This model could predict whether a Wikipedia biography would be accepted with nearly 97% AUC. However, these models are not completely automatic, and the assessment still needs considerable manual intervention.</p><p>Recently, machine learning models were applied to classify Wikipedia article quality. Some models were adopted, such as SVM, KNN, multinomial logistic regression and regression trees. Wang applied a decision tree and SVM to some actionable features <ref type="bibr" target="#b37">[38]</ref>. Dalip et al. <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b41">42]</ref> applied SVR to classify Wikipedia article quality. The impact of features on assessment was studied in detail. However, this model failed to achieve good performance. In Dalip et al. <ref type="bibr" target="#b4">[5]</ref>, a general multiview framework that applied a meta learning method to obtaining features was developed. The quality was thought to be a continuous value. This framework was also extended to estimate the quality of Q&amp;A forums. In contrast to previous works, Agrawal and DeAlfaro <ref type="bibr" target="#b42">[43]</ref> developed a quality prediction model combining LSTM and neural networks (NN) that outperformed NN. Quang-Vinh Dang et al. assessed Wikipedia quality using content format features and readability scores. However, it considers only limited Wikipedia article information <ref type="bibr" target="#b43">[44]</ref>. Kapugama et al. <ref type="bibr" target="#b8">[9]</ref> categorised and labelled Wikipedia search results. In their methodology, K-means clustering, and agglomerative hierarchical clustering algorithms were used to group clusters. Then, the latent Dirichlet allocation was used for labelling groups.</p><p>There are some recent studies that introduce deep learning models to assess Wikipedia article quality. In Dang and Ignat <ref type="bibr" target="#b7">[8]</ref>, doc2vec was used to represent Wikipedia articles, and DNN was applied to classify article quality. Subsequently, scholars adopted a deep learning method based on a recurrent neural network (RNN) and LSTM to achieve higher accuracy and efficiency compared with previous approaches <ref type="bibr" target="#b44">[45]</ref>. Moreover, Shen et al. <ref type="bibr" target="#b45">[46]</ref> created a hybrid model that combined biLSTMs with hand-engineered features. However, they fail to use a comprehensive feature framework when classifying article quality.</p><p>Our research aims to fill the following gaps. (a) There are few papers that adopt a comprehensive feature framework. They usually only take advantage of certain aspects of Wikipedia articles. (b) There is still a lack of research that has applied deep learning models to Wikipedia article quality assessment. (c) There is no extensive performance comparison of various deep learning and conventional machine learning models to classify Wikipedia article quality. (d) There are few studies that discuss selecting a better feature set to achieve satisfactory classification performance. In our research, a complete performance comparison with a comprehensive feature framework was conducted. Seven different deep learning and four traditional machine learning models are adopted in the experiment. The importance of different features or feature sets is investigated separately, which can provide better guidelines for feature selection.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Representation of Wikipedia articles</head><p>In this section, the proposed representation of Wikipedia articles in this article is introduced. After the analysis and summarization of existing research, a comprehensive feature framework is presented with each feature and related studies listed and described.</p><p>Currently, there are many studies on how to conduct feature engineering for Wikipedia articles. However, most of this work focuses on only partial features. Few studies have analysed and summarised the existing work. In this section, we perform an extensive review of the existing feature frameworks <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b5">6,</ref><ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b41">42,</ref><ref type="bibr" target="#b43">44,</ref><ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref><ref type="bibr" target="#b51">[52]</ref><ref type="bibr" target="#b52">[53]</ref><ref type="bibr" target="#b53">[54]</ref> and propose a comprehensive feature framework as a representation of Wikipedia articles. Text statistics are indicators that measure basic article statistics <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b22">23]</ref>, including word count and character count. Structural features describe how an article is organised. These features are summarised in the studies of <ref type="bibr">Dalip et al. and Stvilia et al. [23,</ref><ref type="bibr" target="#b48">49]</ref>. Intuitively, the better the article structure is, the better the article will be. Writing styles quantify parts of speech and usages of different types of words <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b5">6]</ref>. The writing styles tend to represent the writing level achieved by the author. Therefore, it is highly related to article quality. Readability scores represent the grade level or education level that readers need to understand the texts <ref type="bibr" target="#b25">[26,</ref><ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b41">42,</ref><ref type="bibr" target="#b47">48,</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref><ref type="bibr" target="#b51">[52]</ref>. Edit history represents the revision history for each Wikipedia article <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b41">42,</ref><ref type="bibr" target="#b48">49,</ref><ref type="bibr" target="#b52">53]</ref>. Usually, more editing will make Wikipedia articles more understandable and readable. Network features are based on a Wikipedia link graph <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b53">54]</ref>. Network features focus on relationships among different Wikipedia articles. The features are shown in Table <ref type="table" target="#tab_0">1</ref>. In Table <ref type="table" target="#tab_0">1</ref>, each feature is described and examples of research works which use the feature are listed. For each article, we extract features in Table <ref type="table" target="#tab_0">1</ref> and concatenate them as a feature vector. Consequently, for each Wikipedia article, we obtain one feature vector including text statistics, article structure, writing styles, readability score, edit history and network features. Each feature for the Wikipedia article is a numeric value, so the feature vector is a vector of numeric values. This feature vector is input to machine learning models. Initially, we assume that each feature is equally important in our model, so the weights for all features are one by default. We conduct an importance analysis for features and feature sets given classification labels in the experiment section. This assigns different weights to each feature or feature set. Ratio between the number of edges of a node and its n neighbouring nodes and the total number of edges <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b53">54]</ref> Translation_count Count of translation the article to other languages <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b53">54]</ref> (continued)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Quality assessment models</head><p>In this section, we present quality assessment models in more detail. It starts with the introduction of input representation, followed by the description of seven deep learning models used in our experiment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Input representation</head><p>For each Wikipedia article, the feature vector x ∈ R l (l is the feature size), which includes text statistics, structure features, writing style, edit history and network features, is derived. In equation ( <ref type="formula" target="#formula_0">1</ref>), x is the concatenation of these features.</p><p>⊕ represents the concatenation operation, and x i represents one feature from Section 3</p><formula xml:id="formula_0">x = x 1:l = x 1 ⊕ x 2 ⊕ x 3 . . . ⊕ x l<label>ð1Þ</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">RNN</head><p>An RNN is a kind of NN that can memorise training information from previous time steps <ref type="bibr" target="#b54">[55]</ref>. For each time step t, the input of an RNN includes input vector x t at time t and hidden state vector h tÀ1 ∈ R m at time t − 1. x t is the feature vector for the current Wikipedia article, while h tÀ1 is the processed feature vector from the last time step. For our training, at each time step, the feature vector for one article will be fed into the RNN. h tÀ1 is the result for the last Wikipedia article. The output of the RNN is a hidden state vector h t ∈ R m at time t. h t is the processed result for this article. The hidden states can be obtained by recursively applying equation ( <ref type="formula" target="#formula_1">2</ref>)</p><formula xml:id="formula_1">h t = f W x t + Uh tÀ1 + b ð Þ ð<label>2Þ</label></formula><p>where W ∈ R m × l is the input to the hidden states matrix. U ∈ R m × m is hidden states-to-hidden states matrix. b ∈ R m is a bias vector. f is an elementwise nonlinear function. In equation ( <ref type="formula" target="#formula_1">2</ref>), the RNN can take advantage of training information for the last time step. In our research, the RNN can not only consider features for this article but also features for previous articles. However, it fails to learn the long-term dependencies <ref type="bibr" target="#b54">[55]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Bidirectional RNNs</head><p>The current RNN takes only training information from the past. However, regarding the language processing problem, the subsequent context is also important. Therefore, two RNNs are stacked. The forward layer processes the subsequent context, while the backward layer processes the past context <ref type="bibr" target="#b55">[56]</ref>. x t is a feature vector for each Wikipedia article. The forward layer processes Wikipedia article in the same way as an RNN, while the backward layer processes Wikipedia articles in a reverse order. Apart from the relationship between previous and current articles, this architecture can also consider the relationship from subsequent and current articles. Formulas (3)-( <ref type="formula" target="#formula_4">5</ref>) are shown as follows</p><formula xml:id="formula_2">h t ! = H W x hx t + W hh htÀ1 + b h<label>ð3Þ</label></formula><formula xml:id="formula_3">h t = H W xh x t + W h h h tÀ1 + b h<label>ð4Þ</label></formula><formula xml:id="formula_4">y t = W yh h + W y h h t ! + b y<label>ð5Þ</label></formula><p>Table <ref type="table" target="#tab_0">1</ref>. Continued Features Description Sources assortativity_in_degree_in_degree Ratio between in degree of the article and in degree of articles' neighbours <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b53">54]</ref> assortativity_in_degree_out_degree Ratio between in degree of the article and out degree of articles' neighbours <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b53">54]</ref> assortativity_out_degree_in_degree Ratio between out degree of the article and in degree of articles' neighbours <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b53">54]</ref> where h is the forward sequence. h is the backward sequence. x is the input. y is the output. W is the corresponding matrix. H is the nonlinear activation function.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">LSTM</head><p>To solve the long-term memory problem, LSTM is applied since it can process the training information at much earlier time steps. LSTM includes three gates: forget gate, input gate and output gate. The forget gate is used to decide which cell state is thrown away. The input gate controls the states to be updated. The output gate controls the results to be output. The output is based on the cell states with filtering conditions <ref type="bibr" target="#b56">[57,</ref><ref type="bibr" target="#b57">58]</ref>. For each Wikipedia article, feature vector x t is extracted. Then, x t is used to obtain the input gate, output gate and forget gate to obtain representation for the current article. Equations ( <ref type="formula" target="#formula_5">6</ref>)- <ref type="bibr" target="#b9">(10)</ref> show the updates at time t. From the following equations, we find that the representation of this article includes features for previous articles</p><formula xml:id="formula_5">i t = σ W i x t + U i h tÀ1 + b i À Á<label>ð6Þ</label></formula><formula xml:id="formula_6">f t = σ W f x t + U f h tÀ1 + b f À Á<label>ð7Þ</label></formula><formula xml:id="formula_7">o t = σ W o x t + U o h tÀ1 + b o ð Þ ð<label>8Þ</label></formula><formula xml:id="formula_8">c t = f t c tÀ1 + i t tanh W c h tÀ1 + U c x t + b g ð Þ<label>ð9Þ</label></formula><formula xml:id="formula_9">h t = o t tanh c t ð Þ<label>ð10Þ</label></formula><p>where i t is the input gate. f t is the forget gate. o t is the output gate. When H in equations ( <ref type="formula" target="#formula_2">3</ref>) and ( <ref type="formula" target="#formula_3">4</ref>) is implemented as in equations ( <ref type="formula" target="#formula_5">6</ref>)-( <ref type="formula" target="#formula_9">10</ref>), we can obtain biLSTMs <ref type="bibr" target="#b58">[59]</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.">CNN</head><p>A CNN focuses on a data set with a grid-like topology. Usually, there are three different layers in a CNN: a convolution layer, pooling layer and classification layer <ref type="bibr" target="#b59">[60]</ref>. The input vector x is the feature vector for each Wikipedia article. The filter W ∈ R K × B (K is window size) convolutes K features as x i:i + KÀ1 from the input vector x to obtain the local feature lf i in equation <ref type="bibr" target="#b10">(11)</ref>. Equation ( <ref type="formula" target="#formula_11">12</ref>) represents feature map fm</p><formula xml:id="formula_10">lf i = f W :x i:i + KÀ1 + b ð Þ ð<label>11Þ</label></formula><p>where b is the bias vector and f is an elementwise nonlinear function</p><formula xml:id="formula_11">fm = lf 1 , lf 2 , lf 3 , lf 4 , . . . , lf LÀK + 1 ½ ð<label>12Þ</label></formula><p>Then, we can conduct the pooling operation on the feature map. The pooling layer can effectively reduce the feature dimensions. Consequently, a CNN can yield high classification performance with less training time. The dense layer conducts classification based on the output from the pooling layer <ref type="bibr" target="#b60">[61]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.7.">CNN-LSTM</head><p>In CNN-LSTM, the CNN is used to extract features from text representations for each Wikipedia article. Then, LSTM classifies article quality based on features from CNN <ref type="bibr" target="#b61">[62]</ref>. Finally, the dense layer outputs the classification result. CNN-LSTM combines advantages from a CNN and LSTM, including considering long-term dependence among Wikipedia articles and better classification performance with less training time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Experiments</head><p>In this section, we discuss our experiments and their results. First, we introduce the data set. Second, we review the seven deep learning models and compare four typical machine learning models in terms of classification and training performance. Finally, we present the most important features and feature set which contributes to the quality classification of Wikipedia articles.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.">Data set</head><p>Wikipedia articles in English are chosen for experiments. The source files are available from Wikimedia Downloads. The content and metadata are embedded in XML. To obtain text content, a wiki extractor is adopted (Wikipedia Extractor). The structural features are extracted from the source files. The revision history and network information can be obtained from the wiki data set website (Wikimedia Downloads). There are six Wikipedia quality levels: featured article (FA), A class (AC), good article (GA), B class (BC), start class (ST), and stub class (SB) <ref type="bibr" target="#b0">[1]</ref>. After review of some samples in each class, we noticed that the differences among adjacent classes are not significant due to the manual classification. For instance, the quality of FA and AC articles is close, while the quality of AC and SB is very different. Therefore, to improve the classification performance, three quality classes, high, medium and low, are proposed. The high-quality class includes FA and AC. The medium class includes GA and BC. The low quality includes ST and SB. These three classes are distributed equally. In our experiment, only 3294 articles were selected. There are two reasons. First, some articles are too short to extract enough features. Second, the information such as edit history or reference/link relationship for many articles is incomplete. The data set is partitioned randomly into a training set and testing set with proportions of 60% and 40%, respectively. The experiment was repeated 20 times to obtain the average performance metrics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.">Result analysis</head><p>In this section, the results are discussed. All experiments are implemented in Keras 2.0.8 and TensorFlow 1.1.0. For the parameters, epochs, batch size, and dropout rate are set as 15, 195 and 0.2, respectively. 5.2.1. Classification performance. Accuracy, precision, recall, F1-score and F-beta score are adopted to measure classification performance. These are informative and direct indicators of a model's performance <ref type="bibr" target="#b62">[63,</ref><ref type="bibr" target="#b63">64]</ref>. Tables <ref type="table" target="#tab_4">2 and 3</ref> show the classification performance of the deep learning models and conventional machine learning models, respectively.</p><p>Table <ref type="table" target="#tab_3">2</ref> reports that stacked LSTMs acquire the best performance for all the metrics. This is due to its complicated model architecture. Three layers of LSTMs are stacked together, which can extract more minute but important patterns. Compared with basic LSTM, dropout leads to performance degradation. Dropout is specific for avoiding overfitting in the model <ref type="bibr" target="#b64">[65]</ref>. It might make performance worse. Contrary to what we expect, the CNN performs the worst. In most cases, the CNN has high performance in learning relevant features and ruling out irrelevant features <ref type="bibr" target="#b53">[54,</ref><ref type="bibr" target="#b61">62]</ref>. Moreover, after comparison of basic LSTM and CNN-LSTM, we find that the CNN degrades the model performance.</p><p>According to Table <ref type="table" target="#tab_4">3</ref>, we can determine that both the decision tree and SVM yield preferable classification performance. However, the decision tree is slightly better than SVM. The decision tree has a leading classification performance. It generates better scores than other models in terms of accuracy, precision, F1 and F-beta. Naı ¨ve Bayes is not suitable for classifying Wikipedia article quality. It has low F1 and F-beta scores.</p><p>LSTM and its variants are proficient in classifying Wikipedia article quality. Regarding conventional machine learning algorithms, both the decision tree and SVM perform better than most deep learning models except stacked LSTMs. Due to the complex model architecture, stacked LSTMs have slightly better performance than decision trees. In addition, we compare our classification accuracy with other state-of-art models. The accuracy of our model is 12.3% better than the accuracy of the random forest, which is 64% <ref type="bibr" target="#b7">[8]</ref>.</p><p>In summary, stacked LSTMs are the best model among deep learning models, while the decision tree performs the best in traditional machine learning models. Except for precision, stacked LSTMs are slightly better than the decision tree for the other three metrics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.2.">Confusion matrix.</head><p>The confusion matrix for each model is reported in Figure <ref type="figure" target="#fig_1">1</ref>. Generally, these models can identify low-quality articles very well, but they fail to identify the other two classes. This can be explained partially by the fact that the articles are originally classified manually. This classification is subjective, and the boundary between medium and good/low articles is not clear. The CNN and DNN perform poorly when classifying medium-quality articles. However, the DNN performs very well when classifying good-quality articles. Stacked LSTMs outperform other deep learning models when classifying medium-quality articles. However, traditional machine learning models are better at classifying medium-quality articles than deep learning models. Naı ¨ve Bayes yields preferable performance in classifying low-quality articles, while it fails to distinguish good-quality articles from others. Averagely, the decision tree has a balanced classification result, even though it is not very good at classifying low-quality articles. Comparing stacked LSTMs and decision trees, we find that stacked LSTMs are much better than decision trees when classifying low-quality Wikipedia articles, while decision trees have better performance when classifying good-quality articles. The accuracy is very close when classifying medium-quality articles for two models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.3.">Training performance.</head><p>In Figure <ref type="figure" target="#fig_2">2</ref>, the accuracy of most models increases slowly at first. Then, it rises quickly and reaches a plateau. In addition, stacked LSTMs perform the best, while the CNN has the worst performance. Moreover, the training accuracy of basic LSTM is close to that of LSTM with dropout. This indicates that dropout has little impact on training performance. Figure <ref type="figure" target="#fig_3">3</ref> gives the training cross-entropy loss for each model. The cross-entropy is the metric that measures error probabilities in discrete classifications (Objectives). The training loss for most models decreases monotonically except for CNN-LSTM. Stacked LSTMs reach the lowest training loss, while the loss for the CNN is the highest. For CNN-LSTM, the training loss first decreases. However, its loss rises from epoch 10 to 11 and ends with a high value. Moreover, CNN performs the worst and reaches approximately 0.52. For LSTM with dropout and basic LSTM, their model training losses are almost the same. Compared with basic LSTM and LSTM with dropout, bidirectional LSTM performs better. 5.2.4. Feature importance analysis. In this section, we conduct feature importance analysis. Stacked LSTMs are applied due to their best performance. We run the model several times. Every time, we delete one feature and train models with  the other remaining features. The feature importance is different between the results of the stacked LSTMs with a complete feature set and those with a reduced feature set. The larger the feature importance is, the more important the feature is. A positive importance means that the feature contributes to the increase in classification accuracy, while a negative importance means that the feature worsens the performance. Due to page restrictions, we show only the top ten features with the highest importance and lowest importance in Table <ref type="table" target="#tab_5">4</ref>. Conjunction, sub_conjunction and passive_sentence_count are the three most important features. This suggests    that the writing style is highly related to article quality. If the author uses more conjunctions, subconjunctions and passive sentences, the article will be more sophisticated. However, len_sentences, reciprocity and clustering_coefficient are the features with the least importance. Len_sentences is the feature that contradicts our expectation. Intuitively, the better article usually has more long sentences. This is because Wikipedia is for the public with different knowledge backgrounds. The shorter sentence can also help the public to obtain knowledge much easier. Therefore, both long and short sentences are preferable for a good-quality article.</p><p>5.2.5. Feature set analysis. In this section, each feature set is analysed. The feature framework has six feature sets: writing style, text statistics, structural features, readability scores, network features and edit history. The stacked LSTMs are used due to their best classification performance.</p><p>In Table <ref type="table" target="#tab_6">5</ref>, we observe that text statistics outperform other feature sets. Intuitively, an article with more words tends to be of better quality. In addition, structural features yield good performance. Therefore, the length and structure of an article are highly related to its quality. However, readability scores perform the worst. This is because readability scores focus on how difficult an article is to understand and read. Generally, the feature framework with all feature sets performs better than only one feature set as a feature framework.</p><p>Figure <ref type="figure" target="#fig_4">4</ref> presents the model training accuracy for different feature sets. The accuracy for most models increases slowly at first and then reaches a plateau. After epoch three, the training accuracy increases sharply. It eventually achieves good training accuracy. However, unlike other feature sets, the training accuracy for the readability scores increases slowly and ends with a small value. The accuracy for text statistics is the highest in the end. Figure <ref type="figure" target="#fig_5">5</ref> shows that the loss for most models decreases significantly at first and reaches a plateau with a low training loss, while the loss for readability scores remains high and has only a slight decrease. The model with readability scores has a high training loss in the end. However, text statistics yield a preferable model training loss.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Conclusion and discussion</head><p>In this article, a novel deep learning-based quality assessment approach for Wikipedia is presented. First, based on related works, a comprehensive feature framework is summarised. The feature framework is fed into a deep learning model and traditional machine learning models: CNN, DNN, basic LSTM, LSTM with dropout, stacked LSTMs, biLSTMs, CNN-LSTM, SVM, naı ¨ve bayes, KNN and decision tree. Extensive and detailed experiments based on these models and feature frameworks are conducted. The results show that stacked LSTMs are the best model that can efficiently distinguish Wikipedia articles with different article qualities. Stacked LSTMs are the best model among deep learning models, while the decision tree performs the best in traditional machine learning models. Except for precision, stacked LSTMs are  slightly better than the decision tree for the other three metrics. According to the confusion matrix, stacked LSTMs yield much better performance when classifying low-quality articles. The decision tree has a significantly better accuracy when classifying good-quality articles. The accuracy is very close when classifying medium-quality articles with two models. There are many theoretical and practical implications to our research. As far as we know, this is the first article that proposes an extensive comparison among different deep learning models to classify Wikipedia article quality using a comprehensive feature framework. The existing Wikipedia quality assessment models tend to adopt only partial Wikipedia features, such as content features or structural features. Our feature framework collects information for Wikipedia articles, such as content features, structural features, and author-related features. This framework can offer a more complete description of each Wikipedia article with a better article quality classification accuracy. Our findings also provide several important implications for practice. Currently, there are many Wikipedia articles. It is impossible to assess each article manually. The first practical implication is that our project proposes an automatic and practical quality classification method that can accelerate Wikipedia article quality assessments and save considerable human effort. Another critical implication is that our research has provided a guideline for the best deep learning model and feature sets to assess Wikipedia article quality. After the experiments, we found that stacked LSTMs are the best classification models. The readability scores contribute the least to the classification performance. Generally, our findings suggest that stacked LSTMs with all feature sets, including writing style, text statistics, structural features, network features and edit history, are the best classification methods for Wikipedia articles.</p><p>In terms of limitations, only approximately 3000 articles are selected. The size of the data set is insufficient for training for two reasons. First, some articles are too short to extract enough features. Second, the information related to many articles is incomplete. For example, some articles do not have a long enough edit history or network information to generate related features. Another limitation is that this classification framework is applicable to Wikipedia articles in only English since some features in text statistics and writing style are based on only English grammar.</p><p>In future work, to generalise the classification framework, we will further investigate feature design to enlarge the sample size. In addition, we will introduce some other state-of-the-art machine learning models, such as the attention model and transformer into our framework to improve the model classification performance. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>4 . 5 .</head><label>45</label><figDesc>W i , W f , W o and W c are inputs to the hidden state matrixes. U i , U f , U o and U c are the hidden states to the hidden states matrixes. b i , b f , b o and b g are the bias vectors. σ is a sigmoid function, and tanh is a hyperbolic tangent function. is the elementwise multiplication [58]. Variants of LSTMs 4.5.1. BiLSTMs. BiLSTMs are combinations of bidirectional RNNs and LSTMs that use both past and future information. The extracted features for each article are fed into bidirectional LSTMs. The forward LSTM processes Wikipedia articles in the same way as LSTM, while backward LSTM processes Wikipedia articles in a reverse order. This model has two advantages. (a) It considers the dependence not only among previous Wikipedia articles and current Wikipedia articles but also subsequent Wikipedia articles and current Wikipedia articles. (b) It solves the long-term memory problem.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Confusion matrices for different models.</figDesc><graphic coords="10,63.16,75.91,456.15,523.16" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Model training accuracy.</figDesc><graphic coords="11,195.93,279.89,216.06,151.48" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Model training loss.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Model training accuracy.</figDesc><graphic coords="12,183.18,151.60,216.06,151.94" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Model training loss.</figDesc><graphic coords="13,195.93,75.91,216.06,152.67" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Feature description.</figDesc><table><row><cell>Features</cell><cell>Description</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>Continued</figDesc><table><row><cell>Features</cell><cell>Description</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head></head><label></label><figDesc>. In this model, one LSTM operates in the forward direction to obtain h t ! , while another LSTM operates in the backward direction to obtain h t . The hidden states from two LSTMs are concatenated as h t = ½h t ! ; h t [58]. 4.5.2. Stacked LSTMs. Stacked LSTMs have multiple LSTMs. Unlike biLSTMs, all LSTMs in this model take only training information from previous time steps. The features for each Wikipedia article are put into stacked LSTMs. Due to a more sophisticated architecture, stacked LSTMs extract more important features based on the input from the Wikipedia article, which contributes to classification performance.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 2 .</head><label>2</label><figDesc>Classification performance of deep learning models.</figDesc><table><row><cell></cell><cell>Stacked LSTMs</cell><cell>DNN</cell><cell>CNN</cell><cell>CNN + LSTM</cell><cell>LSTM with dropout</cell><cell>Basic LSTM</cell><cell>Bidirectional LSTMs</cell></row><row><cell>Accuracy</cell><cell>0.7185</cell><cell>0.6866</cell><cell>0.6343</cell><cell>0.6730</cell><cell>0.6791</cell><cell>0.6904</cell><cell>0.6965</cell></row><row><cell>Precision</cell><cell>0.7169</cell><cell>0.6802</cell><cell>0.6087</cell><cell>0.6665</cell><cell>0.6696</cell><cell>0.6855</cell><cell>0.6905</cell></row><row><cell>F1</cell><cell>0.7165</cell><cell>0.6707</cell><cell>0.5973</cell><cell>0.6659</cell><cell>0.6660</cell><cell>0.6821</cell><cell>0.6880</cell></row><row><cell>F-beta</cell><cell>0.7167</cell><cell>0.6680</cell><cell>0.5989</cell><cell>0.6668</cell><cell>0.6658</cell><cell>0.6810</cell><cell>0.6876</cell></row><row><cell cols="6">LSTM: long short-term memory; DNN: deep neural network; CNN: convolutional neural network.</cell><cell></cell><cell></cell></row><row><cell cols="4">The bold values point out the best performance.</cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 3 .</head><label>3</label><figDesc>Classification performance of conventional machine learning models.</figDesc><table><row><cell></cell><cell>Decision tree</cell><cell>SVM</cell><cell>KNN</cell><cell>Naı ¨ve Bayes</cell></row><row><cell>Accuracy</cell><cell>0.7109</cell><cell>0.7079</cell><cell>0.6631</cell><cell>0.5986</cell></row><row><cell>Precision</cell><cell>0.7172</cell><cell>0.7095</cell><cell>0.6711</cell><cell>0.6460</cell></row><row><cell>F1</cell><cell>0.7135</cell><cell>0.7055</cell><cell>0.6659</cell><cell>0.5724</cell></row><row><cell>F-beta</cell><cell>0.7156</cell><cell>0.7070</cell><cell>0.6687</cell><cell>0.5948</cell></row><row><cell cols="2">SVM: support vector machine; KNN: k-nearest neighbours.</cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">The bold values point out the best performance.</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 4 .</head><label>4</label><figDesc>Feature importance.</figDesc><table><row><cell>Feature</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 5 .</head><label>5</label><figDesc>Accuracy for each feature set.</figDesc><table><row><cell>Model</cell><cell>Writing style</cell><cell>Text statistics</cell><cell>Structural features</cell><cell>Readability scores</cell><cell>Network features</cell><cell>Edit history</cell></row><row><cell>Accuracy</cell><cell>0.6343</cell><cell>0.6912</cell><cell>0.6555</cell><cell>0.3414</cell><cell>0.6184</cell><cell>0.6032</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">Journal of Information Science, 2019, pp. 1-16 Ó The Author(s), DOI: 10.1177/0165551519877646</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>The authors thank Daniel Hasan Dalip and Dr Pa ´vel Calado for their helpful guidance and support.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of conflicting interests</head><p>The author(s) declared no potential conflicts of interest with respect to the research, authorship and/or publication of this article.</p></div>
+			</div>
+
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Funding</head><p>The author(s) disclosed receipt of the following financial support for the research, authorship, and/or publication of this article: This research was supported by National Natural Science Foundation of China (No. 71774121) and the worldclass discipline "Library, Information and Data Science" by the Ministry of Education of the People's Republic of China.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ORCID iD</head><p>Ping Wang https://orcid.org/0000-0003-0033-4150</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Analyzing and predicting quality flaws in user-generated content: the case of Wikipedia</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Anderka</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<pubPlace>Weimar</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Bauhaus-Universita ¨t</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">PhD Thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A breakdown of quality flaws in Wikipedia</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Anderka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Stein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2nd Joint WICOW/AIRWeb workshop on web quality</title>
+				<meeting>the 2nd Joint WICOW/AIRWeb workshop on web quality<address><addrLine>Lyon; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012-04-16">16 April 2012</date>
+			<biblScope unit="page" from="11" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Measuring article quality in Wikipedia using the collaboration network</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>De La Robertie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pitarch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Teste</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2015 IEEE/ACM international conference on advances in social networks analysis and mining</title>
+				<meeting>the 2015 IEEE/ACM international conference on advances in social networks analysis and mining<address><addrLine>Paris; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2015-08-25">25 August 2015</date>
+			<biblScope unit="page" from="464" to="471" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Link analysis of Wikipedia documents using mapreduce</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Hardik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Anirudh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Balaji</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE international conference on information reuse and integration</title>
+				<meeting>the IEEE international conference on information reuse and integration<address><addrLine>San Francisco, CA; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015-08">August 2015</date>
+			<biblScope unit="page" from="582" to="588" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A general multiview framework for assessing the quality of collaboratively created content on web 2.0</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Dalip</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gonc Xalves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Assoc Inf Sci Technol</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="286" to="308" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Quality assessment of collaborative content with minimal information</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Dalip</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lima</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Gonc</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Ma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/ACM joint conference on digital libraries</title>
+				<meeting>the IEEE/ACM joint conference on digital libraries<address><addrLine>London; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014-09-12">8-12 September 2014</date>
+			<biblScope unit="page" from="201" to="210" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A new approach to detecting content anomalies in Wikipedia</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Sinanc</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Yavanoglu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 12th international conference on machine learning and applications</title>
+				<meeting>the 12th international conference on machine learning and applications<address><addrLine>Miami, FL; Piscataway, NJ</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013-12-07">4-7 Dec. 2013</date>
+			<biblScope unit="page" from="288" to="293" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Measuring quality of collaboratively edited documents: the case of Wikipedia</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Dang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ignat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE 2nd international conference on collaboration and internet computing (CIC)</title>
+				<meeting>the IEEE 2nd international conference on collaboration and internet computing (CIC)<address><addrLine>Pittsburgh, PA; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016-11-03">1-3 November 2016</date>
+			<biblScope unit="page" from="266" to="275" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Enhancing Wikipedia search results using text mining</title>
+		<author>
+			<persName><forename type="first">Kdcg</forename><surname>Kapugama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sas</forename><surname>Lorensuhewa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mal</forename><surname>Kalyani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 16th international conference on advances in ICT for emerging regions (ICTer)</title>
+				<meeting>the 16th international conference on advances in ICT for emerging regions (ICTer)<address><addrLine>Negombo, Sri Lanka; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016-09-03">1-3 September 2016</date>
+			<biblScope unit="page" from="168" to="175" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Fine-grained controversy detection in Wikipedia</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bykau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Korn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Srivastava</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE 31st international conference on data engineering</title>
+				<meeting>the IEEE 31st international conference on data engineering<address><addrLine>Seoul, South Korea; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015-04">April 2015</date>
+			<biblScope unit="page" from="1573" to="1584" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Based ranking of Wikipedia articles</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ganjisaffar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Javanmardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lopes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the international conference on computational aspects of social networks</title>
+				<meeting>the international conference on computational aspects of social networks<address><addrLine>Fontainebleau; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2009-06-27">24 June-27 June 2009</date>
+			<biblScope unit="page" from="98" to="104" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Measuring article quality in Wikipedia: models and evaluation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">P</forename><surname>Lim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 16th ACM conference on information and knowledge management</title>
+				<meeting>the 16th ACM conference on information and knowledge management<address><addrLine>Lisbon, Portugal; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2007-11-10">6-10 November 2007</date>
+			<biblScope unit="page" from="243" to="252" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Assigning trust to Wikipedia content</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Adler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chatterjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>De Alfaro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 4th international symposium on wikis</title>
+				<meeting>the 4th international symposium on wikis<address><addrLine>Porto, Portugal; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2008-09-10">8-10 September 2008</date>
+			<biblScope unit="page" from="1" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Modeling user reputation in wikis</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Javanmardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lopes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Baldi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stat Anal Data Min</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="126" to="139" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Statistical measure of quality in Wikipedia</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Javanmardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lopes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the first workshop on social media analytics</title>
+				<meeting>the first workshop on social media analytics<address><addrLine>Washington, DC; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010-07">July 2010</date>
+			<biblScope unit="page" from="132" to="138" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Assessing the quality of Wikipedia articles with lifecycle based metrics</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Wo ¨hner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Peters</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 5th international symposium on wikis and open collaboration</title>
+				<meeting>the 5th international symposium on wikis and open collaboration<address><addrLine>Orlando, FL; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2009-10">October 2009</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">On measuring the quality of Wikipedia articles</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>De La Calzada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dekhtyar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 4th workshop on information credibility</title>
+				<meeting>the 4th workshop on information credibility<address><addrLine>Raleigh, NC; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010-04-27">27 April 2010</date>
+			<biblScope unit="page" from="11" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Measuring the quality of edits to Wikipedia</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Biancani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the international symposium on open collaboration</title>
+				<meeting>the international symposium on open collaboration<address><addrLine>Berlin; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2014-08">August 2014</date>
+			<biblScope unit="page" from="1" to="33" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">A jury of your peers: quality, experience and ownership in Wikipedia</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Halfaker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kittur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kraut</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 5th international symposium on wikis and open collaboration</title>
+				<meeting>the 5th international symposium on wikis and open collaboration<address><addrLine>Orlando, FL; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2009-10">October 2009</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Creating, destroying, and restoring value in Wikipedia</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Priedhorsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Lam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2007 international ACM conference on supporting group work</title>
+				<meeting>the 2007 international ACM conference on supporting group work<address><addrLine>Sanibel Island, FL; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2007-11">November 2007</date>
+			<biblScope unit="page" from="259" to="268" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Mutual evaluation of editors and texts for assessing quality of Wikipedia articles</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Suzuki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yoshikawa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 8th annual international symposium on wikis and open collaboration</title>
+				<meeting>the 8th annual international symposium on wikis and open collaboration<address><addrLine>Linz, Austria; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012-08">August 2012</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Social capital increases efficiency of collaboration among Wikipedia editors</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Nemoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Gloor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Laubacher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 22nd ACM conference on hypertext and hypermedia</title>
+				<meeting>the 22nd ACM conference on hypertext and hypermedia<address><addrLine>Eindhoven; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2011-06-09">6-9 June 2011</date>
+			<biblScope unit="page" from="231" to="240" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Automatic quality assessment of content created collaboratively by web communities: a case study of Wikipedia</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dalip</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gonc Xalves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th ACM/IEEE-CS joint conference on digital libraries</title>
+				<meeting>the 9th ACM/IEEE-CS joint conference on digital libraries<address><addrLine>Austin, TX; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2009-06">June 2009</date>
+			<biblScope unit="page" from="295" to="304" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Predicting quality flaws in user-generated content: the case of Wikipedia</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Anderka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Stein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lipka</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 35th international ACM SIGIR conference on research and development in information retrieval</title>
+				<meeting>the 35th international ACM SIGIR conference on research and development in information retrieval<address><addrLine>Portland, OR; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012-08">August 2012</date>
+			<biblScope unit="page" from="981" to="990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Size matters: word count as a measure of quality on Wikipedia</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Blumenstock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 17th international conference on World Wide Web</title>
+				<meeting>the 17th international conference on World Wide Web<address><addrLine>Beijing, China; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2008-04-25">21-25 April 2008</date>
+			<biblScope unit="page" from="1095" to="1096" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Kincaid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Fishburne</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Jr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Rogers</surname></persName>
+		</author>
+		<idno>8-75</idno>
+		<imprint>
+			<date type="published" when="1975-02">February 1975</date>
+			<publisher>Institute for Simulation and Training</publisher>
+			<pubPlace>Millington, TN</pubPlace>
+		</imprint>
+	</monogr>
+	<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">SMOG grading-a new readability formula</title>
+		<author>
+			<persName><forename type="first">Mc</forename><surname>Laughlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">H</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Read</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="639" to="646" />
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A computer readability formula designed for machine scoring</title>
+		<author>
+			<persName><forename type="first">Coleman</forename><forename type="middle">M</forename><surname>Liau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Appl Psychol</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="283" to="284" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">How to use readability formulas to access and select English reading materials</title>
+		<author>
+			<persName><forename type="first">H-H</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Educ Media Libr Sci</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="229" to="254" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Identifying featured articles in Wikipedia: writing style matters</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lipka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Stein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 19th international conference on World Wide Web</title>
+				<meeting>the 19th international conference on World Wide Web<address><addrLine>Raleigh, NC; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010-04-30">26-30 April 2010</date>
+			<biblScope unit="page" from="1147" to="1148" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Measuring article quality in Wikipedia: lexical clue model</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Luo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd symposium on web society</title>
+				<meeting>the 3rd symposium on web society<address><addrLine>Port Elizabeth, South Africa; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2011-10-28">26-28 October 2011</date>
+			<biblScope unit="page" from="141" to="146" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Is Wikipedia link structure different?</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kamps</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Koolen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the second ACM international conference on web search and data mining</title>
+				<meeting>the second ACM international conference on web search and data mining<address><addrLine>Barcelona; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2009-02-12">9-12 February 2009</date>
+			<biblScope unit="page" from="232" to="241" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Using the Wikipedia link structure to correct the Wikipedia link structure</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Pateman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2nd workshop on the people&apos;s web meets NLP: collaboratively constructed semantic resources</title>
+				<meeting>the 2nd workshop on the people&apos;s web meets NLP: collaboratively constructed semantic resources<address><addrLine>Beijing, China; Stroudsburg, PA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACL</publisher>
+			<date type="published" when="2009-08">August 2009</date>
+			<biblScope unit="page" from="10" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Analysing wiki quality using probabilistic model checking</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>De Ruvo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Santone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE 24th international conference on enabling technologies: infrastructure for collaborative enterprises</title>
+				<meeting>the IEEE 24th international conference on enabling technologies: infrastructure for collaborative enterprises<address><addrLine>Larnaca, Cyprus; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015-06-17">15 June-17 June 2015</date>
+			<biblScope unit="page" from="224" to="229" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Cooperation and quality in Wikipedia</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Wilkinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Huberman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2007 international symposium on Wikis</title>
+				<meeting>the 2007 international symposium on Wikis<address><addrLine>Montreal, QC, Canada; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2007-10-25">21-25 October 2007</date>
+			<biblScope unit="page" from="157" to="164" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Who does what: collaboration patterns in the Wikipedia and their impact on article quality</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ram</forename><forename type="middle">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Trans Manag Inf Syst</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1" to="23" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Automatically assessing Wikipedia article quality by exploiting article-editor networks</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in information retrieval</title>
+				<meeting><address><addrLine>Vienna, Austria; Cham</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2015-04-02">2 April 2015</date>
+			<biblScope unit="page" from="574" to="580" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Tell me more: an actionable quality model for Wikipedia</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Warncke-Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cosley</forename><forename type="middle">D</forename><surname>Riedl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th international symposium on open collaboration</title>
+				<meeting>the 9th international symposium on open collaboration<address><addrLine>Hong Kong, China; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2013-08">August 2013</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Interpolating quality dynamics in Wikipedia and demonstrating the keilana effect</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Halfaker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 13th international symposium on open collaboration</title>
+				<meeting>the 13th international symposium on open collaboration<address><addrLine>Galway; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2017-08">August 2017</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Quality assessment of Wikipedia articles using h-index</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Suzuki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Inf Process</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="22" to="30" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A classifier to determine which Wikipedia biographies will be accepted</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ofek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rokach</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Assoc Inf Sci Technol</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="213" to="218" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Automatic assessment of document quality in web collaborative digital libraries</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Dalip</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gonc Xalves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Data Inf Qual</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">14</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Predicting the quality of user contributions via LSTMs</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Agrawal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Dealfaro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 12th international symposium on open collaboration</title>
+				<meeting>the 12th international symposium on open collaboration<address><addrLine>Berlin; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2016-08-19">17-19 August 2016</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Quality assessment of Wikipedia articles without feature engineering</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Dang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ignat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2016 IEEE/ ACM joint conference on digital libraries (JCDL)</title>
+				<meeting>the 2016 IEEE/ ACM joint conference on digital libraries (JCDL)<address><addrLine>Newark, NJ; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016-06-23">19-23 June 2016</date>
+			<biblScope unit="page" from="27" to="30" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">An end-to-end learning solution for assessing the quality of Wikipedia articles</title>
+		<author>
+			<persName><forename type="first">Q-V</forename><surname>Dang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C-L</forename><surname>Ignat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 13th international symposium on open collaboration</title>
+				<meeting>the 13th international symposium on open collaboration<address><addrLine>Galway; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2017-08">August 2017</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">A hybrid model for quality assessment of Wikipedia articles</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Baldwin</surname></persName>
+		</author>
+		<ptr target="https://pdfs.semanticscho-lar.org/8946/03d927860010ed3554a9922a992838188d81.pdf?_ga=2.152178489.1047445110.1568451902-1540706140.1559042995" />
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Australasian language technology association workshop</title>
+				<meeting>the Australasian language technology association workshop<address><addrLine>Brisbane, QLD, Australia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017-12">December 2017</date>
+			<biblScope unit="page" from="43" to="52" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">AIMQ: a methodology for information quality assessment</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">W</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Strong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Kahn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf Manage</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="133" to="146" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">Automatically assessing the quality of Wikipedia articles. School of Information</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Blumenstock</surname></persName>
+		</author>
+		<ptr target="https://escholarship.org/uc/item/18s3z11b" />
+		<imprint>
+			<date type="published" when="2008-06">2008. June 2018</date>
+		</imprint>
+		<respStmt>
+			<orgName>UC Berkeley</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Assessing information quality of a community-based encyclopedia</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Stvilia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Linda</surname></persName>
+		</author>
+		<ptr target="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.78.6243" />
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the international conference on information quality (ICIQ)</title>
+				<meeting>the international conference on information quality (ICIQ)<address><addrLine>Cambridge, MA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006-11-12">10-12 November 2006</date>
+			<biblScope unit="page" from="442" to="454" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">A new readability yardstick</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Flesch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Appl Psychol</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="221" to="233" />
+			<date type="published" when="1948">1948</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">The fog index after twenty years</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gunning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Bus Commun</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="3" to="13" />
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Bjo ˆmsson</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Lasbarhet</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1968">1968</date>
+			<publisher>Liber</publisher>
+			<pubPlace>Stockholm</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Wikipedia as participatory journalism: reliable sources? Metrics for evaluating collaborative media as a news resource</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lih</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="31" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Assessing the quality of information on Wikipedia: a deep-learning approach</title>
+		<author>
+			<persName><forename type="first">Wang</forename><forename type="middle">P</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename></persName>
+		</author>
+		<idno type="DOI">10.1002/asi.24210</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Assoc Inf Sci Tech. Epub ahead of print</title>
+		<imprint>
+			<date type="published" when="2019-04-08">8 April 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Emonet: fine-grained emotion detection with gated recurrent neural networks</title>
+		<author>
+			<persName><forename type="first">Abdul-Mageed M</forename><surname>Ungar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 55th annual meeting of the association for computational linguistics</title>
+				<meeting>the 55th annual meeting of the association for computational linguistics<address><addrLine>Vancouver, BC, Canada; Stroudsburg, PA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACL</publisher>
+			<date type="published" when="2017-08-04">30 July-4 August 2017</date>
+			<biblScope unit="page" from="718" to="728" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Deep bidirectional LSTM modeling of timbre and prosody for emotional voice conversion</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ming</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xie</surname></persName>
+		</author>
+		<ptr target="https://www.isca-speech.org/archive/Interspeech_2016/abstracts/1053.html" />
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 17th annual conference of the international speech communication association</title>
+				<meeting>the 17th annual conference of the international speech communication association<address><addrLine>San Francisco, CA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Interspeech</publisher>
+			<date type="published" when="2016-09">September 2016</date>
+			<biblScope unit="page" from="2453" to="2457" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><surname>Olah</surname></persName>
+		</author>
+		<ptr target="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" />
+		<title level="m">Understanding LSTM networks</title>
+				<imprint>
+			<date type="published" when="2015-06">2015. June 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Leveraging knowledge bases in LSTMs for improving machine reading</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mitchell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 55th annual meeting of the association for computational linguistics</title>
+		<title level="s">Long Papers</title>
+		<meeting>the 55th annual meeting of the association for computational linguistics<address><addrLine>Vancouver, BC, Canada; Stroudsburg, PA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACL</publisher>
+			<date type="published" when="2017-01">January 2017. Jul 2017</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1436" to="1446" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A deep bidirectional LSTM approach for video-realistic talking head</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimed Tools Appl</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="5287" to="5309" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">ImageNet classification with deep convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Krizhevsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sutskever</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 25th international conference on neural information processing systems</title>
+				<meeting>the 25th international conference on neural information processing systems<address><addrLine>Lake Tahoe, NV; Red Hook</addrLine></address></meeting>
+		<imprint>
+			<publisher>Curran Associates, Inc</publisher>
+			<date type="published" when="2012-12-06">3-6 December 2012</date>
+			<biblScope unit="page" from="1097" to="1105" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Learning and transferring mid-level image representations using convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Oquab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bottou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Laptev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+				<meeting>the IEEE conference on computer vision and pattern recognition<address><addrLine>Columbus, OH; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014-06">June 2014</date>
+			<biblScope unit="page" from="1717" to="1724" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<monogr>
+		<title level="m" type="main">Text classifier algorithms in machine learning</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Trusov</surname></persName>
+		</author>
+		<ptr target="https://blog.statsbot.co/text-classifier-algorithms-in-machine-learning-acc115293278" />
+		<imprint>
+			<date type="published" when="2017-06">2017. June 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title level="m" type="main">A deep belief network based machine learning system for risky host detection</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<ptr target="https://arxiv.org/abs/1801.00025" />
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">The relationship between Precision-Recall and ROC curves</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goadrich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 23rd international conference on machine learning</title>
+				<meeting>the 23rd international conference on machine learning<address><addrLine>Pittsburgh, PA; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2006-06">June 2006</date>
+			<biblScope unit="page" from="233" to="240" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Dropout: a simple way to prevent neural networks from overfitting</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Srivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Krizhevsky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Mach Learn Res</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="1929" to="1958" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

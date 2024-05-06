@@ -1,0 +1,3 @@
+
+After defining the problem, we'll examine the various techniques (pre-and post-dynamic) for managing installment card fraud recognition, as well as collect all the data from various elements of card-based monetary fraud (regions, fraudulent activity, etc.). When all of the information has been gathered, it's time to put it into practice. It is best to avoid using data that has been gleaned from several sources because it has little practical use until it can be combined. For this collaboration, we're looking into novel datacombination approaches that can help us find the location of financial fraud. The Fraud Prevention and Detection systems were developed utilizing a variety of data mining techniques, including rule learning, rule generation, and rule selection.
+			

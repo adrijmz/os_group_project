@@ -71,7 +71,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -89,10 +89,922 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>In this modern scientific digital world, credit card usage has enormously increased everyday. Simultaneously a huge amount of credit card misuse also has been expressively popular. It prompts monetary misfortunes for both charge cardholders and monetary associations. To keep away from that, monetary associations created and conveyed Visa extortion discovery techniques. In the upcoming years, everybody will utilise the greatest exchange through online mode just to save their time. So we partition this review into two primary parts. In the first part, we centre around old-style AI models, and in this part we focus on what the client knows (knowledge-based strategy). For the second part, we focus more on the turn of events procedure of client verification, and their conduct biometrics to distinguish an individual remarkable conduct while utilising their electronic gadgets. An outline of the current methodology in this writing review means to grow a more precise, dependable, versatile, super-fast, effective, and modest model of charge card extortion identification.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this modern scientific digital world, credit card usage has enormously increased everyday. Simultaneously a huge amount of credit card misuse also has been expressively popular. It prompts monetary misfortunes for both charge cardholders and monetary associations. To keep away from that, monetary associations created and conveyed Visa extortion discovery techniques. In the upcoming years, everybody will utilise the greatest exchange through online mode just to save their time. So we partition this review into two primary parts. In the first part, we centre around old-style AI models, and in this part we focus on what the client knows (knowledge-based strategy). For the second part, we focus more on the turn of events procedure of client verification, and their conduct biometrics to distinguish an individual remarkable conduct while utilising their electronic gadgets. An outline of the current methodology in this writing review means to grow a more precise, dependable, versatile, super-fast, effective, and modest model of charge card extortion identification.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>These days as we likely know the whole gang has, all things considered, discard online portion procedures; consequently the risk of customer accreditations is in harm's way. This is a regular kind of deception these days. Conspicuous evidence of distortion is an essential discussion standing up to gigantic financial associations <ref type="bibr" target="#b27">(Tounekti et al., 2019)</ref> and banking territory which has caused given the increase in control card portions. There exist seven unmistakable kinds of MasterCard blackmail:</p><p>1 internet assistance 2 credit card 3 healthcare 4 TV set and microelectronic broadcasting 5 overseas money bids and phony stunts 6 computer hardware and programming 7 investment-related.</p><p>Thusly, we have endeavoured to handle this key issue for the end customers. Electronic business locales and banking zones need to challenge certifiable safety problems as an effect of the inadequacy of virtual extortion, hamstring, spyware, and stealing of secretive information. The safety of a virtual store is not the single basis for the proprietors to track business training efficiently; anyway, it is additionally critical for clients to remain calm. To give an ensured shopping stage, e-stores use different sorts of approval systems, and biometrics is seen as the best of all. Not in the least like customary check measures, does not biometrics anticipate that clients should set a mysterious key, keep on recalling it and hide it from others. Machine learning-based scam recognition:</p><p>• discovering scam spontaneously</p><p>• instantaneous gushing</p><p>• fewer intervals wanted for confirmation approaches</p><p>• classifying unseen connections in statistics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1.2">Super-fast</head><p>Machine learning is suited for scam finding. When it comes to fake choices, we need the results as super-fast. Numerous teams of specialists run thousands of queries and connect to discover the finest result. It is all done in the present scenario and takes a fraction of seconds. As well as at present, it is evaluating distinct consumer activities. It is continuously studying usual consumer action, so once commercials are irregular this can spontaneously chunk or else banner an expense on behalf of expert analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1.3">Ascendable</head><p>Every internet business needs to raise its agreement estimations. Yet, with ML it is very inverse. ML frameworks increase with prevalent data file since provides the framework extra samples of upright and awful example. Honest and misleading clients. From this perfect anticipate extortion in impending exchanges quickly as conceivable by activities of cardholders spending design.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1.4">Effective and cheap</head><p>It runs enough instalments each second. The expense is additionally reasonable is only the expense of the worker running. Humans can cause mistakes however machines anticipate information examination in a division of time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.1.5">Extra perfect</head><p>It gives more accuracy from predictive data scrutiny. These prototypes are astute to gain from examples of common exercises. They are exceptionally quick if any abnormality occurs during exchange it will anticipate the fake one and not consider an exchange.</p><p>Officially, there are various sorts of learning systems like managed, semi-regulated, unaided, supported, transduction. The two most broadly received AI strategies are managed to realise, which prepares the calculation on predefined named datasets, and unaided realising, which gives the calculation unlabelled preparing information to permit learning the examples and relationships in the info information. In the accompanying, our methodology these two learning systems in more detail.</p><p>Progressed charge card extortion recognisable proof techniques are parted into:</p><p>• Unaided. For example, PCA, LOF, one-class SVM, and isolation forest.</p><p>• Directed. Like decision trees (for example ExtremeGradientBoost and LightGBM), random forest, and K-nearest neighbour (KNN).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.2">Supervised learning</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.2.1">Supervised</head><p>Regulated learning incorporates ML calculations that learn under the event of a boss. Supervised ML methods can predict with the help of a labelled dataset. Among regulated ML extortion ID techniques, we characterise choice trees, arbitrary backwoods, KNN, and innocent Bayes. The properly administered knowledge measure contains variable factors, the first variable is (x), and the second variable is (y). We apply an estimation to contemplate the preparation volume of contribution to the profit. In straightforward arithmetic, the yield (y) is a reliant variable of info (x) as shown by:</p><formula xml:id="formula_0">( ) y f x =</formula><p>Here, our ultimate objective is to attempt to surmise the planning capacity (f), with the goal that we can anticipate the yield factors (Y) when we have new information (X). KNN is a grouping calculation that checks similitude's dependent expanse in multi-dimensional space <ref type="bibr" target="#b13">(Hines and Youssef, 2018)</ref>. It is used for the social affair of MasterCard blackmail recognisable proof by manipulative nearest point. This methodology is not unprotected against uproar and lost file centres which resources making greater data files in the fewer period. Additionally, it is definite and needs less work as a planner to adjust the figurine. The distance in KNN between two data portrayals can be considered by using a grouped technique, anyway generally by using the Euclidean distance. KNN is important. The results show that well-constructed functions and majority class undersampling can successfully detect fraud using ANN, SVM.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Figure 3 Formal supervised learning</head><p>XGBoost and light gradient boosting machine are a solitary kind of slope that helped decision trees calculation, made for quickness just an augmenting the effectiveness of processing interval and memorial assets <ref type="bibr" target="#b22">(Samy and Parthiban, 2018)</ref>. PCA for representation and SVM and XGBoost for classification. This mixing calculation strategy of new models is included to repair the mistakes brought about by surviving figure. To exchange a fake charge the outcome (possibility) of numerous decision trees is summed up -through each upcoming tree improves their outcomes dependent mistakes prepared by its archetypes. Subjective random forest area algorithm is a request count that is included various decision trees. Every tree has centre points with circumstances, which describe an authority conclusion subject to most vital worth.</p><p>The random forest area figuring for distortion distinguishing proof and shirking had both fundamental factors have extraordinary at expecting a thing. Anomaly is the first one, concluding the lines and fragments of information picked discretionarily from the datasets and embedded into various decision trees, number 1 gets underlying 2,000 lines, number 2 gets lines 3,000 to 4,000, and number 3 gets segments 5,000 to 6,000.</p><p>The 2nd thing forest area of trees that add to an authority end as opposed to just a single decision tree. The best benefit of assortment reduction in the model overfitting, while the tendency remains as in past.</p><p>Particular ML models are used to recognise threats; they have their benefits and disservices. Some models are exceptionally difficult to interpret, explain, and study, but they are incredibly accurate (for instance neural associations, boosting, social events, etc.) others are less troublesome, so it can be successfully unravelled and envisioned as plenty of rules (for instance decision trees).</p><p>It is indispensable to setup the coercion revelation model interminably every time different data appears, a different distortion structures/models should learn false data recognised exactly on schedule as could truly be considered typical.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.3">Unsupervised learning</head><p>Unaided ML techniques utilise unlabelled information to discover examples and conditions in the charge card extortion recognition dataset, making it conceivable to accumulate information tests by likenesses without manual marking, anonymised charge card information of one of the main banks in Egypt <ref type="bibr" target="#b29">(Umuhoza et al., 2020)</ref>.</p><p>PCA empowers the performance of an examining information investigation to uncover the internal construction of the information and clarify its varieties. Principle components analysis is perhaps the best well-known procedure on behalf of inconsistency identification <ref type="bibr" target="#b3">(Arun and Lakshmi, 2021</ref>) genetic algorithm's oversampling approach improves error prediction performance and reduces the rate of false positives.</p><p>PCA looks for connections among highlights - <ref type="bibr" target="#b20">(Randhawa et al., 2018)</ref> which on account of Visa exchanges could be time, area, and measure of cash spent -and figures out which mix of qualities adds to the inconstancy in the results. Such joined element esteems permit the formation of a tighter element space named head segments.</p><p>Local outlier factor perceives in what manner a particular data test to be a special case (irregularity). It is a greater amount of the most standard peculiarity area procedures. To process the outlier factor, the amount of neighbouring data centres are measured by the model of thickness, modification from their thickness of new information centres. Uncertainty a particular information point has a liberally small thickness that appeared differently concerning its close neighbours it is a special case.</p><p>One-class support vector machine is a blueprint calculating assists with perceiving inconsistencies in information. This calculation licenses one to administer imbalanced information-related issues like extortion location.</p><p>The thought behind one-class SVM is to prepare just on a strong measure of authentic exchanges and afterward distinguish peculiarities or oddities by contrasting every new information points with them.</p><p>Isolation forest is an inconsistency location technique with decision tree families. The fundamental thought of IF, which separates it from extra mainstream exception discovery calculations, is that it unequivocally identifies inconsistencies as opposed to reporting the progressive information focuses. IF is worked of decision trees where the detachment of information focuses happens first on account of haphazardly choosing a divided worth amid base and most extreme estimation of the picked highlight.</p><p>In this way, if we have a bunch of authentic exchanges, the isolation forest calculation will characterise deceitful MasterCard exchanges in light of their qualities -which are frequently altogether different from the qualities positive exchanges have (for example they occur further away from the ordinary information focuses in the component space). Necessities for instalment extortion recognition with simulated intelligence-based techniques.</p><p>To run a computer-based intellect-driven methodology for Visa extortion investigation, various necessities ought to be encountered. It guarantees that the typical arrives at its finest discovery total <ref type="bibr" target="#b37">(Zheng et al., 2020;</ref><ref type="bibr" target="#b26">Taha and Malebary, 2020)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.3.1">Quantity of information</head><p>Preparing great machine learning models requires critical interior recorded information. That implies if you need more past fake and typical exchanges, it is difficult to execute an ML model. Because the nature of the preparation cycle relies upon the nature of the data sources. Since it is an infrequent situation the preparation set holds an equivalent measure of information tests in both classes, how many attributes a dataset has decreased, or else information increase methods may be utilised.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.3.2">Nature of information</head><p>Models might be liable to inclination dependent on the nature of verifiable information. This assertion implies that if the stage maintainers did not gather and sort the information perfectly and appropriately or even blended the data of fake exchanges in with the data of typical ones that are probably going to cause a significant predisposition in the model's outcomes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.3.3">The honesty of components</head><p>If we have sufficient information that is all around organised and balanced and is combined pleasantly probabilities may countless threats recognition will function well for clients and their business. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.4">How does MasterCard extortion occur?</head><p>Incorrect Visa information is generally due to the cardholder's carelessness with their information or breaking into the security of a website <ref type="bibr" target="#b15">(Kalid et al., 2020)</ref>. Here are some models:</p><p>• a buyer reveals his MasterCard number to new people</p><p>• if the card is missing or has been taken by someone else, it will be used</p><p>• suggested recipient takes the e-mail and hooligans use it</p><p>• sales reps double the amounts of their cardholder cards</p><p>• creation of a counterfeit visa. Once your card has been misused, an unauthorised charge will be made; as such, the who discovers it uses it to make a purchase. Criminals can also make their name and use the card or order person some products through a cell phone or computer. There is also the problem of using a counterfeit MasterCard, a counterfeit card with the actual data taken from the cardholders. Particularly insecure as victims have their real cards but do not know someone has a fake card. The fake cards look very authentic and have the logos and attractive coded parts of the original. Fake MasterCard cards are usually destroyed by thieves after a few successful instalments, not long before an injured person understands the problem and reports it.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.5">Problem statement</head><p>Charge card cheats are expanding intensely due to misrepresentation monetary misfortune is expanding definitely. Consistently because of misrepresentation billions of sums lost. To dissect the extortion there is an absence of exploration. Many ML calculations are carried out to identify genuine charge card extortion. ANN and crossover calculations are applied <ref type="bibr" target="#b19">(Omar et al., 2021)</ref>. Recommended the use of three proposed assessments ROA, ROS, and RONS, on both diversion and genuine information.</p><p>The main challenges involved in credit card fraud detection are: Colossal information is prepared each day and the model form should be sufficiently quick to react to the trick on schedule. Imbalanced: information for example the majority of the exchanges (99.8%) are not false which makes it truly hard for distinguishing the deceitful ones. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.5.1">Data availability as the data is mostly private</head><p>Misclassified Information can be another significant issue, as few out of every odd false exchange is gotten and revealed. Versatile strategies utilised against the model by the tricksters.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.5.2">How to tackle these challenges?</head><p>The model utilised should be straightforward and quick enough to recognise the oddity and group it as a false exchange as fast as could be expected. Awkwardness can be managed by appropriately utilising some calculations. For securing the protection of the client the dimensionality of the information can be decreased.</p><p>A more dependable source should be taken which two fold check the information, in any event for preparing the model.</p><p>We can simplify the model and interpretable so when the con artist adjusts to it with simply a few changes we can have another model going to send. In previous research, we have seen all systems revolve around online fakes since it is to be a broadcaster. In any case, a huge segment gives the outcome subject to an exact dataset, which is the issue depicted by unstable data. As furthermore a couple of works have mishandled the astounding advances in the simulated intelligence methodologies for estimate and cataloguing. From this model what the client knows (knowledge-based system) and what the customer access to (object-based method). We concentrate on the greater improvement technique of customer confirmation, and their lead biometrics to recognise an individual novel direct while using their electronic contraptions. In this paper, we base on that results and endeavour to assess the identical dataset. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Info information</head><p>With regards to misrepresentation recognition, data should as much as possible.</p><p>For managed ML, the information should be named as great (real clients who have never dedicated misrepresentation) or terrible (clients with a chargeback related to them or have been physically named as fraudsters) <ref type="bibr" target="#b5">(Can et al., 2020)</ref> misrepresentation recognition framework could choose to utilise the most suitable identification model and lift execution. Just as producing numerous discovery models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Concentrate highlights</head><p>We bunch highlights into five fundamental classifications, every one which has hundreds or thousands of single highlights: character No of digits in the client's e-mail address, age record, gadgets client was seen on, misrepresentation client's IP address pace. In their 1st week of month more no of orders request, items exchanges, normal request esteem, hazardous container substance. Instalment strategies Misrepresentation pace of giving bank, the likeness between client names and charging name, cards from various nations.</p><p>Areas transportation address <ref type="bibr" target="#b20">(Randhawa et al., 2018)</ref> coordinates with the charging address, dispatching nation matches nation of client's IP address, extortion rate at client's area. Organisation number of messages, telephone numbers, or instalment strategies shared inside an organisation, age of the client's organisation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Train calculation</head><p>A count is a lot of rules to be followed when dealing with multipart issues, like a mathematical condition or even a method. The estimation uses customer data depicted by our features to sort out some way to make conjectures, e.g., distortion/not coercion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 1</head><p>Restricting the covering degree to improve <ref type="bibr" target="#b19">(Omar et al., 2021)</ref>  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IEEE Access (2021)</head><p>February 1, Vol. 9, pp.28101-28110. Recommended the use of three proposed assessments ROA, ROS, and RONS, on both diversion and genuine information. Those calculations hope to diminish the cover degree and circle the figuring out some approach to isolated datasets to upgrade the social event of class-imbalanced information. The outcomes show that RONS includes an accomplishment in unmistakable the basic highlights in model choice, while both ROA and ROS get a huge transcendent to the degree F-measure and Gmean. In future work, they will add more imbalanced datasets and arrange re-enacted knowledge models in their assessments to support their strategy.</p><p>Arun and Lakshmi Genetic algorithm-based oversampling approach to prune the class imbalance issue in software defect prediction.</p><p>Soft Computing (2021) August, Vol. 29, pp.1-7. The proposed algorithm produces a minority class of synthetic samples based on a distribution measure, ensuring that the samples in the class are diverse and efficient.</p><p>The proposed oversampling algorithm was compared to a non-sampling approach using 20 error prediction datasets from SMOTE, BSMOTE, ADASYN, random oversampling, MAHAKIL, and promise repositories and five prediction models.</p><p>The results show that the genetic algorithm's oversampling approach improves error prediction performance and reduces the rate of false positives.   Introduced the champion challenger framework to compare models. We took advantage of various realistic metrics, taking into account real constraints. The model was compared in two phases: offline testing and post-release testing. The winning model is now available on our partner's system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 1</head><p>Restricting the covering degree to improve <ref type="bibr" target="#b19">(Omar et al., 2021)</ref>   <ref type="formula">2018</ref>) April, pp.129-134 In their analysis, they kept the number of neurons in each hidden layer constant. By varying the number of neurons in each layer, and can gain additional insight into the effect of network size on the performance of their model using ANN.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 1</head><p>Restricting the covering degree to improve <ref type="bibr" target="#b19">(Omar et al., 2021)</ref> class-imbalanced learning under pitiful component choice (continued)</p><p>At first, we'll train the computation on an online seller's own recorded data; we call this a planning set. The more coercion in this planning set the better, so the machine has lots of advisers for acquire from.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Create a model</head><p>When preparing is finished we have a model explicit to their business, which can recognise extortion in milliseconds.</p><p>We continually watch out for the model to ensure it is carrying on as it ought to, and we're continually searching for approaches to improve it. We consistently improve, refresh and transfer another model for each customer so the framework will consistently recognise the most recent extortion strategies. Utilising ML strategies to forestall misrepresentation and stop honest individuals losing cash. There are sure fraudy circumstances which the model ought to consistently get ona few models are:</p><p>• high speed of new instalment strategies, e.g., a client adds new ten instalment cards in 60 minutes</p><p>• suspicious e-mail address, e.g., a confound between the record name or name on the card, or discourteous/mischievous words in the e-mail</p><p>• a client submitting bunches of requests of high worth great, e.g., extravagance things</p><p>• orders from an especially fraudy area, transportation to a known misrepresentation area of interest or a PO Box as opposed to a private location.</p><p>These models ought to be hailed as fraudy -so what happens when the machine makes an expectation? The ML score is basically a number between 0-100. This score depicts our gauge of how deceitful a client is. To score a client, we remove many signs about a specific client: the quantity of cards they have added as of late, the distance between the letters on the console in their e-mail, regardless of whether they have reordered a card, and so forth.</p><p>On the off chance that the model identifies the extortion accurately, we can convey it to be utilised against the online deals'. We additionally do some programmed presence of mind investigation on ongoing information for which we do not have misrepresentation names to guarantee the model will carry on effectively when it is sent.</p><p>1 customer places order 2 ML generates features 3 model predicts risk score -block-review-allow.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">Greater security</head><p>Internet for the client's new online exercises like instalment conduct, web-based media, and government managed retirement, IP area, gadget movement and charging address. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 2</head><p>Comparison table</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Models Advantages Disadvantages</head><p>One class support vector machine</p><p>Small changes in the data do not affect the stability of the model.</p><p>Long training time, a lot of memory is required.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Logistic regression</head><p>Provides information on the size of the coefficient with direction (positive/negative).</p><p>If (number of observations &lt;=""b="" style="box-sizing: inherit;"&gt; may be an overfitting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gaussian naïve Bayes</head><p>The estimation and preparing process is quick and gives the best outcomes with little informational indexes.</p><p>All attributes of the training data are assumed to be independent of other characteristics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>K-neighbour classification</head><p>Since no training period is required, new data can easily be added.</p><p>The estimation and preparing process is quick and gives the best outcomes with little informational indexes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Random forest</head><p>Bagging and set learning, which reduces overfitting and improves the accuracy of a model.</p><p>It is complex in nature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Comparison of different machine learning algorithm</head><p>Here five algorithms are used in this study, namely (svm), lgr, GNB, NB classifier K, and random forest. After experimenting with this algorithm, we applied the XGBoost and Isolation forest to find the best algorithm parameters that would give our model a good accuracy rating.</p><p>• Support vector machine <ref type="bibr" target="#b18">(Makki et al., 2019)</ref>: we use the SVM algorithm because it works well for problems based on nonlinear classification, it also works with uneven data structure, and because it reduces the risk of overfitting in a model to a very low level.</p><p>• Logistic regression <ref type="bibr" target="#b10">(Dal Pozzolo et al., 2018)</ref>: works best when applied to data that contains mapped attributes. The need for computing resources is very low. Since it is easy to implement, we can mark it as our benchmark and then work on other algorithms. It usually has the best informational output for the classification method.</p><p>• GNB (naïve Bayes): it is a conditional probability algorithm, so it is good to work with datasets in real time. It can lead to a good recommendation system design. It can be applied to large datasets. Use a formula to find the conditional probability. This formula is:</p><formula xml:id="formula_1">( | ) ( | )* ( )</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>| ( ) P A B P B A P A P B =</head><p>where P(A ||B) = posterior probability, P(B| A) = prior probability, P(A) = probability, P(A) = evidence. The result is a probabilistic prediction with less training dataset. It can also process continuous and discrete data.</p><p>• K-neighbour classifier: it is useful for taking care of loud information. It is a memory-based methodology where we can utilise the two sorts of arrangement (twofold class and various class) without extra exertion. The assessment and getting ready cycle is fast and gives the best results with minimal enlightening lists.</p><p>• The random forest: the information does not need to be rescaled or changed into this. It very well may be applied to arrangement and relapse issues. The calculation isolates the information dependent on its trademark and each tree has a high difference and a low inclination, which prompts a decent outcome. It prepares the model at rapid, is likewise simple to carry out and can deal with a considerable lot of element misfortune and dataset blunders <ref type="bibr" target="#b17">(Li et al., 2020)</ref>. They proposed another sort of misfortune work, full focus misfortune (FCL), which thinks about the two distances and points among highlights.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Methodology</head><p>A systematic literature review is the most commonly used method for the systematic literature review used to compose this systematic literature review. In accordance with this methodology, we investigated and discussed the relevant articles in this literature review.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Inclusion and exclusion</head><p>We follow a criterion for the inclusion of articles in this literature review. This criterion ensures that the added works are complete and written in English.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Quality inspection</head><p>Before articles are added to this literature review, their quality is assessed. The quality assessment process is carried out based on the researcher's work presented in this article.</p><p>In our study, we will discuss different types of machine learning algorithms used by different researchers for the purpose of CCF detection. Our main objective is to provide a complete literature review on this problem. This literature search also identifies various attributes of the clients that can be used to train the algorithm for this purpose <ref type="bibr" target="#b30">(Wu and Liu, 2019;</ref><ref type="bibr" target="#b7">Carneiro et al., 2017;</ref><ref type="bibr" target="#b0">Adewumi and Akinyelu, 2017;</ref><ref type="bibr" target="#b6">Carminati et al., 2015)</ref>. The proposed system is detection and before preventing fraudulent transactions and activities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Method used</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Dataset</head><p>In this assessment the charge card deception revelation dataset was used, which can be downloaded from Kaggle. This dataset contains trades, occurred in two days, made in September 2013 by European cardholders. The test size of informational index which is in csv design contains 144 mb <ref type="bibr" target="#b4">(Awoyemi et al., 2017)</ref>.</p><p>The dataset contains 31 mathematical highlights. Since a portion of the information factors contains monetary data, the PCA change of these data factors were acted to keep these data obscure. Three of the given features were not changed. Feature 'time' shows the time between first trade and every single trade in the dataset. Feature 'sum' is the proportion of the trades made with Visa. Feature 'class' addresses the imprint, and takes only two characteristics: regard 1 if there ought to be an event of blackmail trade and 0 regardless.</p><p>Dataset contains 284,807 trades where 492 trades were cheats and the rest were affirmed <ref type="bibr" target="#b4">(Awoyemi et al., 2017)</ref>. Contemplating the numbers, we can see that this dataset is uncommonly imbalanced, where only 0.173% of trades are named as cheats. Since the circulation proportion of classes assumes a significant part in model exactness and accuracy, pre-preparing of the information is essential.</p><p>Features in credit card data  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Algorithm implementation</head><p>At the point (support vector algorithm) to the informational collection, we partition it into preparing information and test information by applying a boundary to our preparation test division strategy. As a boundary, we name the size of the test, which is 0.25 for the informational collection. This implies that the all-out information is partitioned into two sections where it is 0.75 for preparing purposes and the rest for testing purposes 0.25 as referenced. We additionally pass every one of the characteristics and the objective class in two unique factors. Then, we fabricate a model of our SVC technique wherein the preparation information is fit to prepare the model. When the model is prepared, it predicts the qualities from our test information. Therefore, we get the arrangement report and the confusion matrix. The above network is the eventual outcome of the SVM calculation with certifiable positive is 71,073, fake negative is 75, fake positive is 9, authentic negative is 45. In this model, according to our chaos lattice, the right expected characteristics are 71,118 and the Incorrect expected characteristics are 84. If we use the standard show measure Matthews Association Coefficient (MCC) for twofold course of action, the best motivator for SVC is 0.558. The collaboration for any leftover estimation is something almost identical, yet the procedures have been changed. Additionally, for the calculated relapse.</p><p>The above network is a consequence of strategic relapse. In which genuine positive is 71,070, bogus positive is 40, bogus negative is 12, genuine negative is 80. In this model, the right prescient qualities are 71,150 and wrong prescient qualities are 52. Furthermore, the MCC score for the strategic relapse model is 0.761. Since the best score of MCC is 1 when contrasted with MCC's most noteworthy score it is a further developed calculation for Visa misrepresentation location.</p><p>Guileless Bayes, K-closest neighbour and irregular backwoods utilised strategies are calculated relapse, Gaussian NB, K-neighbours classifier, and arbitrary woods classifier individually. Accordingly, we have produced the disarray lattice for every one of the calculations and on the best resultant calculation.</p><p>The lattice shaped by the <ref type="bibr" target="#b34">Zhang et al. (2020)</ref> and <ref type="bibr" target="#b23">Samy et al. (2020)</ref> naive Bayes calculation compares to the strategic relapse for this informational index. This implies that the credulous Bayes calculation MCC score for the recorded informational collection is 0.761. The calculations can deliver various outcomes for an alternate Mastercard misrepresentation recognition informational index, which can change in size dependent on the f1 score and recuperation esteems in the two calculations.   Presently on the off chance that we check out the correlation table, the best score for MCC is 0.848 given by segregation woodland with the arbitrary boundaries. Then, at that point, we pick the separation backwoods calculation and apply the XGBoost strategy to track down the best boundaries and again with the new boundaries we produce a model and think about the outcomes.  </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 Figure 2</head><label>12</label><figDesc>Figure 1 Types of frauds (see online version for colours)</figDesc><graphic coords="3,96.25,421.08,288.06,168.42" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 4</head><label>4</label><figDesc>Figure 4 Gradient-boosted decision trees algorithm (see online version for colours)</figDesc><graphic coords="6,131.95,299.58,216.77,68.67" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 5</head><label>5</label><figDesc>Figure 5 Progressive visa extortion ID techniques and their benefits (see online version for colours)</figDesc><graphic coords="8,131.83,295.80,217.09,201.66" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 6</head><label>6</label><figDesc>Figure 6 Number of worldwide non-cash transactions (billions), by regions, 2016-2021F (see online version for colours)</figDesc><graphic coords="9,60.31,127.32,360.06,182.10" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 7</head><label>7</label><figDesc>Figure 7 Types of fraud (see online version for colours)</figDesc><graphic coords="10,92.11,77.82,296.34,166.32" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 8</head><label>8</label><figDesc>Figure 8 Fraud using card not present (CNP) transaction (see online version for colours)</figDesc><graphic coords="10,103.57,473.70,273.42,93.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 9</head><label>9</label><figDesc>Figure 9 How an ML framework functions (see online version for colours)</figDesc><graphic coords="11,59.74,216.50,361.04,70.66" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 10</head><label>10</label><figDesc>Figure 10 Flow of payment process (see online version for colours)</figDesc><graphic coords="17,60.31,228.12,360.06,193.86" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 11</head><label>11</label><figDesc>Figure 11 Block diagram for credit card transaction</figDesc><graphic coords="18,132.61,77.88,216.12,110.16" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head></head><label></label><figDesc>registering fingerprint scanning. 2 joint authentication. Mix of at least two above confirmation plans can be used to validate clients and upgrade the precision of verification framework. A portion of the blend techniques incorporate iris and contact validation; example and contact confirmation; PIN and contact verification; and open example and development-based touch verification.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 12</head><label>12</label><figDesc>Figure 12 Confusion matrix of logistic regression and naïve Bayes (see online version for colours)</figDesc><graphic coords="21,168.01,415.02,143.82,96.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 13 Figure 14</head><label>1314</label><figDesc>Figure 13In this 0 represents legitimate and 1 represents fraud transactions</figDesc><graphic coords="22,150.25,136.98,180.06,114.72" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 15</head><label>15</label><figDesc>Figure 15 Confusion matrix for K nearest neighbour (see online version for colours)</figDesc><graphic coords="23,167.95,243.24,144.00,96.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 16</head><label>16</label><figDesc>Figure 16 Confusion matrix for isolation forest (see online version for colours)</figDesc><graphic coords="23,168.43,441.60,143.70,95.94" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 17</head><label>17</label><figDesc>Figure 17 Isolation forest with XGBoost algorithm with confusion matrix (see online version for colours)</figDesc><graphic coords="24,168.73,159.72,143.88,94.44" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="4,59.69,75.64,361.31,197.67" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>class-imbalanced learning under pitiful component choice</figDesc><table><row><cell>Findings</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Source</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Title</cell><cell>Minimising the overlapping degree</cell><cell>to improve class-imbalanced</cell><cell>learning under sparse feature</cell><cell>selection: application to fraud</cell><cell>detection.</cell></row><row><cell>Author</cell><cell>Omar et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>Proposed appointment of Visa trade data can change with the changes in the trade practices of customers, yet the movements are moderate usually. These movements are yet huge for perceiving trade distortion since they achieve a supposed thought skim issue. Proposed the forecast exactness pace of the GBDT (inclination lift choice tree) model is higher than the customary AI-based models. The GBDT technique gave the best precision of 88.7% while using the K-implies destroyed resampling strategy on Taiwan customers' credit datasets. Characterise and portray the means that can be taken to fabricate a conduct-based division model that separates African credit cardholders dependent on their buying information. They show the proposed approach at work utilising anonymised charge card information of one of the main banks in Egypt, the Business Global Bank of Egypt. Proposed irregular woods and multi-facet perceptron classifiers showed a critical improvement over the expert model for the 0 to 10 and 1,000 to 100,000 sum range in Turkish Lira. Consequently, a shrewd misrepresentation recognition framework could choose to utilise the most suitable identification model and lift execution. Just as producing numerous discovery models dependent on the exchange attributes contrarily influenced the model's presentation.</figDesc><table><row><cell>IEEE Transactions on</cell><cell>Computational Social</cell><cell>Systems (2020) August 27,</cell><cell>Vol. 7, No. 5, pp.1304-1316.</cell><cell>IEEE Access (2020)</cell><cell>October, Vol. 8,</cell><cell>pp.201173-201198.</cell><cell>SAIEE Africa Research</cell><cell>Journal (2020), September,</cell><cell>Vol. 111, No. 3, pp.95-101.</cell><cell></cell><cell>IEEE Access (2020)</cell><cell>September, Vol. 8,</cell><cell>pp.166095-166109.</cell></row><row><cell>Improved transfer AdaBoost and</cell><cell>its application to transaction fraud</cell><cell>detection</cell><cell></cell><cell>An investigation of credit card</cell><cell>default prediction in the</cell><cell>imbalanced datasets</cell><cell>Using unsupervised machine</cell><cell>learning techniques for</cell><cell>behavioural-based credit card users</cell><cell>segmentation in Africa</cell><cell>'Closer look into the characteristics</cell><cell>of fraudulent card transactions'</cell></row><row><cell>Zheng et al.</cell><cell></cell><cell></cell><cell></cell><cell>Alam et al.</cell><cell></cell><cell></cell><cell>Umuhoza et al.</cell><cell></cell><cell></cell><cell></cell><cell>Can et al.</cell><cell></cell></row></table><note>Feng et al.  </note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 1</head><label>1</label><figDesc>Restricting the covering degree to improve<ref type="bibr" target="#b19">(Omar et al., 2021)</ref> class-imbalanced learning under pitiful component choice (continued) Proposed better detachability and separation of highlights so it can improve the exhibition of their extortion identification model and keep its soundness. They proposed another sort of misfortune work, full focus misfortune (FCL), which thinks about the two distances and points among highlights and, hence, can exhaustively regulate the profound portrayal of learning. Later on, plan to consider the idea of float issue from the part of misfortune work. Proposed a shrewd methodology for distinguishing misrepresentation in Visa exchanges utilising an improved light slope boosting machine (OLightGBM). Later on, they intend to consider the idea of float issue from the part of misfortune work. As indicated by the consequence of every conduct, the naive Bayes model is utilised to ascertain the likelihood that the current exchange has a place with misrepresentation, lastly decide if the current exchange is extortion. Later on, we will focus closely on the issue of online model refreshing and making the strategy more powerful.</figDesc><table><row><cell>Findings</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>This paper attempt to study different techniques proposed to solve the class</cell><cell>imbalance problem. Under-sampling, oversampling, and synthetic sampling</cell><cell>techniques such as SMOTE, borderline-SMOTE, SMOTE Boost, cluster-based</cell><cell>oversampling, ADASYN, and ensemble techniques such as bagging, boosting, and</cell><cell>GASEN.</cell><cell>Utilised a numerous classifiers framework (MCS) on these two informational</cell><cell>indexes:</cell><cell cols="2">1 visa cheats (CCF)</cell><cell>2 charge card default instalments (CCDP).</cell><cell>The MCS utilises a successive choice mix system to deliver exact peculiarity</cell><cell>identification. Presently, specialists had endeavoured profound learning</cell><cell>calculations, for example, long transient memory (LSTM) and profound conviction</cell><cell>organisations for identifying oddities in charge card exchanges.</cell><cell>The paper introduced an original methodology that utilises the client's dynamic</cell><cell>practices (i.e., profile highlights, client exchange history) to adequately recognise</cell><cell>unusual and dubious exchanges. The proposed approach has been tried by executing</cell><cell>a trial with reasonable information and approved the outcome with affirmed dubious</cell><cell>clients. The proposed model has accomplished in general exactness 92.11% which</cell><cell>is viewed as much better as contrasted and the measurable models that utilisation</cell><cell>the pre-characterised set of rules.</cell><cell>Proposed a multi-conduct identification model dependent on new exchange conduct</cell><cell>is proposed.</cell></row><row><cell>Source</cell><cell>IEEE Transactions on</cell><cell>Computational Social</cell><cell>Systems (2020) April,</cell><cell>Vol. 7, No. 2, pp.569-579,</cell><cell>date of publication: 17</cell><cell>February 2020.</cell><cell>IEEE Access (2020)</cell><cell>February, Vol. 8,</cell><cell>pp.25579-25587</cell><cell></cell><cell>Springer (2020) pp.745-757</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>IEEE Access (2020)</cell><cell>February Vol. 8,</cell><cell>pp.28210-28221.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>International Journal of</cell><cell>Business Intelligence and</cell><cell>Data Mining (2020) Vol. 17,</cell><cell>No. 2, pp.143-158.</cell><cell>IEEE Access (2020) Vol. 8,</cell><cell>pp.25210-25220, date of</cell><cell>publication: 31 January 2020</cell></row><row><cell>Title</cell><cell>'Deep representation learning with</cell><cell>full centre loss for credit card fraud</cell><cell>detection'</cell><cell></cell><cell></cell><cell></cell><cell>'An intelligent approach to credit</cell><cell>card fraud detection using an</cell><cell>optimised light gradient boosting</cell><cell>machine'</cell><cell>'Class imbalance in software fault</cell><cell>prediction data set' in artificial</cell><cell>intelligence and evolutionary</cell><cell>computations in engineering</cell><cell>systems'</cell><cell>'A multiple classifiers system for</cell><cell>anomaly detection in credit card</cell><cell>data with unbalanced and</cell><cell cols="2">overlapped classes'</cell><cell></cell><cell></cell><cell>'A novel dynamic approach to</cell><cell>identifying suspicious customers in</cell><cell>money transactions'</cell><cell>'Fraud detection method for</cell><cell>low-frequency transaction'</cell></row><row><cell>Author</cell><cell>Li et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Taha and</cell><cell>Malebary</cell><cell></cell><cell></cell><cell>Arun and</cell><cell>Lakshmi</cell><cell></cell><cell></cell><cell></cell><cell>Kalid et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Shaikh and Nazir</cell><cell>Zhang et al.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 1</head><label>1</label><figDesc>Restricting the covering degree to improve<ref type="bibr" target="#b19">(Omar et al., 2021)</ref> class-imbalanced learning under pitiful component choice (continued) This white paper focuses on sampling unbalanced data. Based on the idea of subsampling, Gauss mixed subsampling (GMUS) has been proposed to make the data distribution uniform. Unlike mainstream random under sampling, GMUS uses a Gaussian mixed model to fit most of the training set and select samples by combining the log-likelihood values of a small number of samples. Experiments with 16 public records and real credit card transaction records have shown that GMUS works well in both AUC and F1 values and can improve the detection rate of minority samples.</figDesc><table><row><cell>Findings</cell><cell>Suggests a viable recommended structure for logic and web usage mining. A</cell><cell>fundamental advance in technology is to separate functionality from web files and</cell><cell>generate compelling ideas. Until then, collect the logic of your site and use the ideas</cell><cell>and basic terms that are removed from the report and used for analysis.</cell><cell></cell><cell>Proposed factual investigation (Chi-square test), customers can pay utilising mobile</cell><cell>electronic payment system (MEPS) during their online exchange; have a favoured</cell><cell>instalment framework dependent on its security, expenses, convenience, and</cell><cell>usability just as on their number one internet browser for these exchanges. In the</cell><cell>future clients who support numerous instalment strategies -improvements that</cell><cell>would encourage trades among shippers and clients.</cell><cell>Proposed better k-mean, fuzzy c-means, and neural network. The used data file is</cell><cell>noticeable and creating a new name as an independent neural organisation</cell><cell>arrangement is the principal part of this investigation, which assists with decreasing</cell><cell>the grouping execution time and getting the best precision results. In future work,</cell><cell>they attempt to improve the viability and execution of their proposed approach by</cell><cell>applying some profound learning calculations.</cell><cell>Paper proposed moved toward SVM and ANN, considering that different model'</cell><cell>presumptions and conditions are difficult to meet. Their exploratory investigation</cell><cell>uncovered that the methodologies typically used to take care of lop-sidedness issues</cell><cell>may have undesirable outcomes when the unevenness is outrageous, for example,</cell><cell>creating countless bogus positives. Consequently, they intend to build up a versatile</cell><cell>climate utilising large information innovation.</cell><cell></cell><cell></cell><cell>The proposed concept has been extended to include an online learning model. Using</cell><cell>the internet guide, credit card fraud. The proposed system is detection and before</cell><cell>preventing fraudulent transactions and activities reduce the unification of waste in</cell><cell>the economy and industry.</cell><cell>They conducted a comparative study of deep learning and hybrid ensembles.</cell></row><row><cell>Source</cell><cell>Artificial Intelligence and</cell><cell>Evolutionary Computations</cell><cell>in Engineering Systems</cell><cell>(2020) pp.571-581,</cell><cell>Springer, Singapore.</cell><cell>IEEE Access (2019) Vol. 8,</cell><cell>pp.735-766, date of</cell><cell>publication: 23 December</cell><cell>2019</cell><cell></cell><cell></cell><cell>IEEE Access (2019) August,</cell><cell>Vol. 7, pp.109320-109327.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>IEEE Access (2019) July,</cell><cell>Vol. 7, pp.93010-93022.</cell><cell></cell><cell></cell><cell></cell><cell>Proc. Int. Joint Conf. Neural</cell><cell>Netw. (IJCNN), July 2019,</cell><cell>pp.1-8.</cell><cell>Proc. ICDM (2019),</cell><cell>pp.88-102</cell><cell>Expert Syst. Appl., (2019)</cell><cell>August 15, Vol. 128,</cell><cell>pp.214-224.</cell></row><row><cell>Title</cell><cell>'Intelligent web-history based on a</cell><cell>hybrid clustering algorithm for</cell><cell>future-internet systems'</cell><cell></cell><cell></cell><cell>'Users supporting multiple (M)EPS</cell><cell>in online purchases'</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>'Improve profiling bank</cell><cell>customer's behaviour using</cell><cell>machine learning'</cell><cell></cell><cell></cell><cell></cell><cell>'An experimental study with</cell><cell>imbalanced classification</cell><cell>approaches for credit card fraud</cell><cell>detection'</cell><cell></cell><cell>'GMM-based under sampling and</cell><cell>its application for credit card fraud</cell><cell>detection'</cell><cell>'A hybrid model on learning cross</cell><cell>features for transaction fraud</cell><cell>detection'</cell><cell>'Champion-challenger analysis for</cell><cell>credit card fraud detection: Hybrid</cell><cell>ensemble and deep learning'</cell></row><row><cell>Author</cell><cell>Samy et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Tounekti et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Dawood et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Makki et al.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>Zhang et al.</cell><cell></cell><cell></cell><cell>Wu and Liu</cell><cell></cell><cell>Kim et al.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head></head><label></label><figDesc>In the context of credit card fraud, the framework is derived from decision theory. In addition, They showed how to use the utility function to identify the best economically fraudulent strategy.</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="5">class-imbalanced</cell></row><row><cell cols="5">learning under pitiful component choice (continued)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>principal component records all classifiers achieved pre-processing results for</cell><cell>datasets compared to with an accuracy greater than 95.0.</cell><cell>In this paper, they applied a self-organising map (SOM) technique to segment</cell><cell>individuals based on credit information. It reduces data complexity and dimensions.</cell><cell>Especially when there are unclear non-linear relationships between data features</cell><cell>increase. This method provides clearer and more intuitive segmentation that cannot</cell><cell>be achieved with other traditional methods.</cell><cell></cell><cell></cell><cell>The results show that well-constructed functions and majority class undersampling</cell><cell>can successfully detect fraud using ANN, SVM, or RF by 90% or more. However,</cell><cell>given the long RF duration, restaurant owners will find it more convenient to use</cell><cell>SVMs or KNNs.</cell></row><row><cell></cell><cell></cell><cell>American Journal of</cell><cell>Computational Mathematics</cell><cell>(2018) Vol. 8, No. 3, p.197.</cell><cell></cell><cell>Proc. Syst. Inf. Eng. Design</cell><cell>Symp. (SIEDS) (2018)</cell><cell>April, pp.237-242</cell><cell>1st Int. Conf. Data Intell.</cell><cell>Secur. (ICDIS), (2018)</cell><cell>April, pp.32-35.</cell><cell>Proc.Syst. Inf. Eng. Design</cell><cell>Symp. (SIEDS), (</cell></row><row><cell></cell><cell></cell><cell>'Customer segmentation of credit</cell><cell>card default by self-organising</cell><cell>map'</cell><cell></cell><cell>'A utilitarian approach to</cell><cell>adversarial learning in credit card</cell><cell>fraud detection'</cell><cell>'Machine learning applied to</cell><cell>rotating check fraud detection'</cell><cell>'Deep learning detecting fraud in</cell><cell>credit card transactions'</cell></row><row><cell></cell><cell></cell><cell>Wu and Wang</cell><cell></cell><cell></cell><cell></cell><cell>Cody et al.</cell><cell></cell><cell></cell><cell>Hines and</cell><cell>Youssef</cell><cell>Roy et al.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 3</head><label>3</label><figDesc>For comparing the models MCC values</figDesc><table><row><cell>Models</cell><cell>Recall value</cell><cell>F1-score</cell><cell>MCC value</cell></row><row><cell>SVM</cell><cell>0.82</cell><cell>1.00</cell><cell>0.568</cell></row><row><cell>Naïve Bayesian</cell><cell>0.81</cell><cell>0.98</cell><cell>0.771</cell></row><row><cell>Logistic regression</cell><cell>0.93</cell><cell>1.00</cell><cell>0.771</cell></row><row><cell>Knn</cell><cell>0.74</cell><cell>1.00</cell><cell>0.783</cell></row><row><cell>Isolation forest</cell><cell>0.79</cell><cell>1.00</cell><cell>0.858</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 4</head><label>4</label><figDesc>After applying XGBoost generated parametersIn the table, we can see that the best worth diverged from the best MCC regard is 1. The accompanying worth is made by the IF calculation with new boundaries created by the framework search calculation which is 0.89. From here we can see since we are further developing results.Is representation recognition utilising MasterCard is an intense issue in monetary administrations. The misfortune because of Visa misrepresentation is expanding with the increment in online business. This investigation manages methods that assist with discovering the MasterCard extortion. There are various technique used in machine learning to find out the online credit card fraud and to generate a fraud risk score Using XGBoost, Isolation forest, KNN, Logistic regression, SVM, and to solve classification problem.</figDesc><table><row><cell>Models</cell><cell>Recall value</cell><cell>F1-score</cell><cell>MCC value</cell></row><row><cell>XGBoost with random parameters</cell><cell>0.89</cell><cell>1.00</cell><cell>0.848</cell></row><row><cell>XGBoost with Grid Search parameters</cell><cell>0.90</cell><cell>1.00</cell><cell>0.89</cell></row><row><cell>5 Conclusions</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">'Using cost-sensitive learning and feature selection algorithms' IEEE Access (2020) April, Vol. 8, pp.69979-69996. Proposed an expense touchy component choice general vector machine (CFGVM) calculation dependent on GVM and BALO calculations to handle the imbalanced grouping issue, conveying distinctive expense loads to various classes of tests. In our strategy, the BALO calculation decides the expense loads and concentrates more critical highlights to improve the order execution.</note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"> <ref type="formula">2013</ref><p>). The purpose of this white paper is to introduce you to the cutting edge of adaptive e-learning systems by explaining its dimensions, design, architecture, and theoretical approach as an alternative to traditional learning.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">A survey of machine-learning and nature-inspired based credit card fraud detection techniques</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Adewumi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Akinyelu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Syst. Assurance Eng. Manage</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">S2</biblScope>
+			<biblScope unit="page" from="937" to="953" />
+			<date type="published" when="2017-11">2017. November</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">An investigation of credit card default prediction in the imbalanced datasets</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Alam</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2020.3033784</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="201173" to="201198" />
+			<date type="published" when="2020-10">2020. October</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Class imbalance in software fault prediction data set&apos; in Artificial Intelligence and Evolutionary Computations in Engineering Systems</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Arun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lakshmi</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<publisher>Springer</publisher>
+			<biblScope unit="page" from="745" to="757" />
+			<pubPlace>Singapore</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Genetic algorithm-based oversampling approach to prune the class imbalance issue in software defect prediction</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Arun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lakshmi</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00500-021-06112-6</idno>
+		<ptr target="https://doi.org/10.1007/s00500-021-06112-6" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note>Soft Comput</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection using machine learning techniques: a comparative analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Awoyemi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">O</forename><surname>Adetunmbi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Oluwadare</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ICCNI</title>
+				<meeting>ICCNI<address><addrLine>Lagos, Nigeria</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017-10">2017. October</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Closer Look into the characteristics of fraudulent card transactions</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Can</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2020.3022315</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="166095" to="166109" />
+			<date type="published" when="2020-09">2020. September</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">BankSealer: a decision support system for online banking fraud analysis and investigation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Carminati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Caron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Maggi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Epifani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zanero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Secur</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="175" to="186" />
+			<date type="published" when="2015-09">2015. September</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A data mining-based system for credit-card fraud detection in e-tail</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Carneiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Figueira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Costa</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.dss.2017.01.002</idno>
+		<ptr target="https://doi.org/10.1016/j.dss.2017.01.002" />
+	</analytic>
+	<monogr>
+		<title level="j">Decis. Support Syst</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page" from="91" to="101" />
+			<date type="published" when="2017-03">2017. March</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A utilitarian approach to adversarial learning in credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Cody</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Beling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Syst. Inf. Eng. Design Symp. (SIEDS)</title>
+				<meeting>Syst. Inf. Eng. Design Symp. (SIEDS)</meeting>
+		<imprint>
+			<date type="published" when="2018-04">2018. April</date>
+			<biblScope unit="page" from="237" to="242" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Feature engineering strategies for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Correa Bahnsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aouada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stojanovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ottersten</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2015.12.030</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="134" to="142" />
+			<date type="published" when="2016-06">2016. June</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection: a realistic modeling and a novel learning strategy</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dal Pozzolo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="3784" to="3797" />
+			<date type="published" when="2018-08">2018. August</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Improve profiling bank customer&apos;s behavior using machine learning</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A E</forename><surname>Dawood</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2019.2934644</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="109320" to="109327" />
+			<date type="published" when="2019-08">2019. August</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Using cost-sensitive learning and feature selection algorithms</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Feng</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2020.2987364</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="69979" to="69996" />
+			<date type="published" when="2020-04">2020. April</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Machine learning applied to rotating check fraud detection</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hines</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Youssef</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 1st Int. Conf. Data Intell. Secur. (ICDIS)</title>
+				<meeting>1st Int. Conf. Data Intell. Secur. (ICDIS)</meeting>
+		<imprint>
+			<date type="published" when="2018-04">2018. April</date>
+			<biblScope unit="page" from="32" to="35" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection: a novel approach using aggregation strategy and feedback mechanism</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Luan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Internet Things J</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="3637" to="3647" />
+			<date type="published" when="2018-10">2018. October</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A multiple classifiers system for anomaly detection in credit card data with unbalanced and overlapped classes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Kalid</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2020.2972009</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="28210" to="28221" />
+			<date type="published" when="2020-02">2020. February</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Champion-challenger analysis for credit card fraud detection: hybrid ensemble and deep learning</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-K</forename><surname>Nam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-A</forename><surname>Yoon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-I</forename><surname>Kim</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2019.03.042</idno>
+		<ptr target="https://doi.org/10.1016/j.eswa.2019.03.042" />
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst.Appl</title>
+		<imprint>
+			<biblScope unit="volume">128</biblScope>
+			<biblScope unit="page" from="214" to="224" />
+			<date type="published" when="2019-08">2019. August</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Deep representation learning with full center loss for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Computational Social Systems</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="569" to="579" />
+			<date type="published" when="2020-02-17">2020. 17 February, April</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">An experimental study with imbalanced classification approaches for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Makki</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2019.2927266</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="93010" to="93022" />
+			<date type="published" when="2019-07">2019. July</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Minimizing the overlapping degree to improve class-imbalanced learning under sparse feature selection: application to fraud detection</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Omar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Rustam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mehmood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Choi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="28101" to="28110" />
+			<date type="published" when="2021-02">2021. February</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection using AdaBoost and majority voting</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Randhawa</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2018.2806420</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="14277" to="14284" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Deep learning detecting fraud in credit card transactions</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mahoney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Alonzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Beling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Syst. Inf. Eng. Design Symp. (SIEDS)</title>
+				<meeting>Syst. Inf. Eng. Design Symp. (SIEDS)</meeting>
+		<imprint>
+			<date type="published" when="2018-04">2018. April</date>
+			<biblScope unit="page" from="129" to="134" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">A novel feature extraction approach using principal component analysis and quantum behaved particle swarm optimization-support vector networks for enhancing face recognition</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Samy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Parthiban</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computational and Theoretical Nanoscience</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="3012" to="3016" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Intelligent web-history based on a hybrid clustering algorithm for future-internet systems</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Samy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Sivakumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Negi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Artificial Intelligence and Evolutionary Computations in Engineering Systems</title>
+				<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="571" to="581" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Architecture of adaptive e-learning ecosystem</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Selvakumarasamy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dekson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Emerging Trends &amp; Technology in Computer Science (IJETTCS)</title>
+		<idno type="ISSN">2278-6856</idno>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">A novel dynamic approach to identifying suspicious customers in money transactions</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Shaikh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nazir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Business Intelligence and Data Mining</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="143" to="158" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">An intelligent approach to credit card fraud detection using an optimized light gradient boosting machine</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Taha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Malebary</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2020.2971354</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="25579" to="25587" />
+			<date type="published" when="2020-02">2020. February</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Users supporting multiple (M)EPS in online purchases</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Tounekti</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<publisher>IEEE Access</publisher>
+			<biblScope unit="page">23</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>December</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2019.2961785</idno>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="735" to="766" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Using unsupervised machine learning techniques for behavioral-based credit card users segmentation in Africa</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Umuhoza</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SAIEE Africa Research Journal</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="95" to="101" />
+			<date type="published" when="2020-09">2020. September</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">A hybrid model on learning cross features for transaction fraud detection</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ICDM</title>
+				<meeting>ICDM</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="88" to="102" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Customer segmentation of credit card default by self-organizing map</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C-C</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">American Journal of Computational Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">197</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Credit card fraud detection using machine learning as data mining technique</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">S</forename><surname>Yee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sagadevan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">H A H</forename><surname>Malim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Telecommunication, Electronic and Computer Engineering (JTEC)</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="23" to="27" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">GMM-based undersampling and its application for credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. Int. Joint Conf. Neural Netw. (IJCNN)</title>
+				<meeting>Int. Joint Conf. Neural Netw. (IJCNN)</meeting>
+		<imprint>
+			<date type="published" when="2019-07">2019. July</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Fraud detection method for low-frequency transaction</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<publisher>IEEE Access</publisher>
+			<biblScope unit="page">31</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title/>
+		<idno type="DOI">10.1109/ACCESS.2020.2970614</idno>
+		<imprint>
+			<date>January</date>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="25210" to="25220" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Transaction fraud detection based on total order relation and behavior diversity</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Comput. Social Syst</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="796" to="806" />
+			<date type="published" when="2018-09">2018. September</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Improved TrAdaBoost and its application to transaction fraud detection</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Computational Social Systems</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1304" to="1316" />
+			<date type="published" when="2020-08-27">2020. 27 August</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

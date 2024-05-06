@@ -67,7 +67,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:20+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:23+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -84,10 +84,393 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 				</keywords>
 			</textClass>
 			<abstract>
-				<p>After defining the problem, we&apos;ll examine the various techniques (pre-and post-dynamic) for managing installment card fraud recognition, as well as collect all the data from various elements of card-based monetary fraud (regions, fraudulent activity, etc.). When all of the information has been gathered, it&apos;s time to put it into practice. It is best to avoid using data that has been gleaned from several sources because it has little practical use until it can be combined. For this collaboration, we&apos;re looking into novel datacombination approaches that can help us find the location of financial fraud. The Fraud Prevention and Detection systems were developed utilizing a variety of data mining techniques, including rule learning, rule generation, and rule selection.</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>After defining the problem, we'll examine the various techniques (pre-and post-dynamic) for managing installment card fraud recognition, as well as collect all the data from various elements of card-based monetary fraud (regions, fraudulent activity, etc.). When all of the information has been gathered, it's time to put it into practice. It is best to avoid using data that has been gleaned from several sources because it has little practical use until it can be combined. For this collaboration, we're looking into novel datacombination approaches that can help us find the location of financial fraud. The Fraud Prevention and Detection systems were developed utilizing a variety of data mining techniques, including rule learning, rule generation, and rule selection.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>We then described the approach, which consists of several layers that operate in concert to detect and prevent fraud at various levels. We use the "onion model," in which the use of different layers has a synergistic effect of increasing and strengthening a secure programmer by appropriately carrying out security components. It's usually the safest and most effective technique to cope with the risks of PC fraud. Also, for fraud prevention, that will most likely offer the best results. This entails the usage of many layers of security, such as encryption, firewalls, interruption discovery frameworks, episode reaction mechanisms, and framework monitoring by external inspectors. Also, each layer has its own capacity. A layered methodology surveys movement at different stages and uses number of logical methodologies. What's more, it is discovered that if crossover or blend of approaches utilized in regarded to different stages, it give the more grounded insurance and that will be very viable to fraud location and the executives.</p><p>We plan the model system after the investigation stage and methods are introduced. The framework will be made up of various modules, such as data mining classifiers, programming programmers, a capacity part, and a fraud-ready framework (User alert/System alert) that computes the fraud-ready worth to maximize correct forecasts and keep up with inaccurate expectations at a satisfactory level. If a fraud is discovered, we must receive a fraud alert message through a variety of methods, including face-to-face, telephone, internet tactics, and other methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Requirement Specification or Analysis</head><p>All the card gave to the client in the bank are put away in the structured set of data Payment System. The database store all the data seeing the card, for example, account number, card number, exchange limit, late condition of record (equilibrium of record or the card is inert/idle and so forth).</p><p>LET S the set of records of the card in CK = 𝒄 𝟏 𝒌 , 𝒄 𝟐 𝒌 , 𝒄 𝟑. 𝒌 … … … 𝒄 𝑺 𝑲 database, which holds all the information about all cards used in Payment Card System.𝑪 𝟏 𝑲 is a record in a database that has information about the cardCKand its unique card number is one of its parts.</p><p>Every one of the subtleties are gotten by the preparing focal point of installment framework when any money related or non-financial occasions are finished by the cardholder's like withdrawal of money, buying, balance articulation and so forth The insight concerning an occasions is described as exchange message that incorporates card number, how much exchange have been done, exchange time and date, which kind of occasion he/she has done, card number retailer identifier and so on.</p><p>Let Tn = {T 1 ,T </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fraud Detection and Prevention System (FDPS)</head><p>The location of fraud in installment cards needed to be immediate, in the event that the fraud isn't identified at the hour of identification period, it is exceptionally difficult to recover the misfortune. It is tracked down that the clients typically not regularly check their set of experiences of internet banking reliably and accordingly not ready to discover and report fraudulent exchanges right away get-togethers occurring of a fraud. That makes the opportunity of misfortune recuperation extremely low. In addition, all alarms made from the fraud identification framework need to be physically examined, which is very tedious. Fraud discovery and counteraction framework are thusly assessed to have profoundly exact, a high fraud location rate, and a low bogus positive rate for making a little, controllable number of cautions in complex installment cards business.</p><p>The current techniques show insufficient execution in precision or/and proficiency when straightforwardly put on to installment card fraud discovery.</p><p>Visa fraud recognition frequently accentuations on determining explicit standards of conduct of a specific client or gathering, however fraud-identified with installment card exchanges are exceptionally unique and appear to be highly identified with authentic client conduct. A confident heading emerged as of late that breaks down the contrast among real and fraudulent conduct, and creates comparing techniques for arising designs.  designs, yet additionally propose another strategy, a differentiation vector, to incorporate the consecutive conduct contrast into the social exchange database for mining more viable difference designs.  The framework fuses and coordinates a few data mining models, cost delicate neural organization, design mining, and choice woods.  Because various models find fraud and real personal conduct standards from various points, their blend catches standards of conduct in a more extensive manner.  Each model can be handily retrained over the long haul to stay up to date with changes in fraud conduct.</p><p>The quantity of investigations displayed in the following section that our "Fraud Detection and Prevention System" have low bogus positive and a higher identification rate than a particular exemplary data mining model, outperforming the current guideline based framework utilized in every significant bank. In addition, our FDPS produces similarly fitting discovery execution when the data set is profoundly imbalanced. The grouping personal conduct standards found additionally offer further data about scientific sign for fraud identification. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Designed Model</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Description Of Model</head><p>The framework comprises of a distribution center, profiling module, programming programs, a profiler screen development module, a capacity part and a data mining classifiers modules like a fake neural organization (ANN), Find laws and others. The distribution center contains value-based and recorded data. Specialized investigation (TA) instruments (e.g., Link examination, choice tree, and so on) will break down this data to create the fraudulent principles as though/THEN standards. The product projects will be utilized to standardize, control and store the guidelines that are created and chosen by the examination apparatuses and an AI choice program. The profiler screen development module produces a bunch of profilers from the found fraud rules and a bunch of profiling layouts launched by the fraud rule conditions.</p><p>In the capacity part, data for various purposes will be put away, for example, the client profiles, preparing and testing data for preparing the finder module, etc. The preparation data is given as contribution to the indicator module, where a classifier is prepared to arrange the various perceptions of examples into positive or negative events. Profiling module will be utilized to fabricate client profiles as per the fraud decides conditions that chose and the arrangement of layouts gave. Every client will have a profile address the ordinary profiling practices for that client record, for example, cardholder shopping propensities, the recurrence of buys, normal buys, area of buys, and other value-based components. In the identifier use step, these profiles are utilized to coordinate with new exchange with the client profile, choose if there is a huge deviation of the exchange from the client profile, and give numeric qualities addressing the fraudulent movement for each fraudulent pointer. This load of numeric qualities then, at that point passed to the indicator as information boundaries, where the locator joins these proof components to create a yield proposal about the new exchange.</p><p>Figure attracts our attention as a possible fraud detection strategy. For each client, an example of a legitimate exchange and an example of a fraudulent exchange are derived from their actual exchanges and fraudulent exchanges, respectively, using standard thing set mining during the pre-production stage.</p><p>The coordination with calculation then identifies which design the upcoming exchange is most coordinated with throughout the testing stage. When a new exchange is more likely to be coordinating with a verifiable example of a specific client, the calculation returns "0" (i.e., a verifiable exchange), and when a new exchange is more likely to be coordinating with a fraudulent example of a specific client, the calculation returns "1" (ie., a fraud example) (i.e., fraudulent exchange).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Learning Fraud Rules</head><p>Rule learning includes seeking the data of transaction for signals of fraud. In the system, indicators are connective rules determined by a standard rule learning program. As discussed previously, a clear method of mining fraud signals is to make a sample set be made up of all genuine and fraud transactions, and make use of rule learning algorithm on the sample set. In two steps rule learning is carried out. For every account rules are generated nearby based on variations amongst the fraudulent and normal, in rule selection they are combined.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Rule Generation</head><p>To make the fraud pointer as grouping rule, we utilize the standard learning program. Preclude Learning convey a typical -to-selective inquiry of the space of connective guidelines. Rule Learning utilizes a pillar look for rules with sureness factors over a client characterized limit. We used a simple recurrence-based probability gauge, modified for small cases, as our conviction factor for these runs. For managing tremendous measures of qualities few attributes are utilized to show exchanges, notwithstanding this expansiveness first marker spread techniques is likewise utilized, with the goal that the calculation's time intricacy does not depend on the quantity of trademark esteems.</p><p>Rule Learning provides a local set of rules for each account, indicating the fraud on that account. Each rule, as well as the account from which it was established, is kept track of. The normal Rule Learning covering heuristic was removed, resulting in the creation of all rules with the potential to evaluate over the threshold. This technique was chosen because rule creation is local in detector design, and coverage decisions should not be decided locally. Then comes rule selection, which contains data on coverage and generality.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Selection of Rule</head><p>Later whole record has been handled the progression to the choice of rule is finished. The objective of this progression is to obtain a bunch of decides that will do as fraud pointers. A standard determination step is important on the grounds that the standard age step ordinarily produces a huge number of rules altogether, the vast majority of which are explicit just too single records.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>In this part we have investigated the issue definition and study the different methodologies (pre-dynamic and post-dynamic) for managing installment card fraud recognition and counteraction and assembled all the data from different parts of the card based monetary fraud, regions, conduct of the fraudulent and so forth We have utilize the idea of 'onion model' in which the utilization of different layers will have the synergistic impact to increment and improve a safe program by appropriately carrying out insurance systems. A layered methodology evaluates action at different stages and uses number of scientific methodologies. What's more, it is discovered that if cross breed or mix of approaches utilized in regarded to different stages, it give the more grounded assurance and that will be very successful to fraud location and the board.</p><p>We have planned the model system, which is dynamic/versatile and extensible. It likewise have offices to make online principles and disconnected investigation.</p><p>The planned model comprise of different modules and configuration design coordinating with calculation which arranges the fraudulent, dubious or a certified exchanges and alarms the framework to permit, hold or deny the exchange.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fraud</head><label></label><figDesc>Detection and Prevention System (FDPS) figure 1proposes a powerful model for recognizing complex installment card fraud proficiently. The fundamental ideas, benefits and coming about commitments of the model are as per the following, Fraud prevention during transaction processing,  Fraud prevention during customer profile/id creation/ updating.  Fraud detection by looking all the transaction.  Fraud detection by looking reconciling daily for all customer profile.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Core Design System  It offers an effective answer for making area information, experience learned in the standard based location framework, benefits from various models, and refinement by space specialists.  It inserts precise modules by choosing highlights dependent on data acquire, separating contrast conduct, building classifiers, creating a general danger score for each internet banking exchange, and recognizing examples of fraudulent conduct. This makes it an installment cards fraud recognition framework that doesn't meddle with any current framework or its administration.  We not just build succession conduct data for distinguishing contrastdesigns, yet additionally propose another strategy, a differentiation vector, to incorporate the consecutive conduct contrast into the social exchange database for mining more viable difference designs.  The framework fuses and coordinates a few data mining models, cost delicate neural organization, design mining, and choice woods.  Because various models find fraud and real personal conduct standards from various points, their blend catches standards of conduct in a more extensive manner.  Each model can be handily retrained over the long haul to stay up to date with changes in fraud conduct.</figDesc><graphic coords="4,70.80,79.60,407.40,153.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Designed FDPS Model</figDesc><graphic coords="5,71.00,89.00,402.80,450.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>2 ………T i …………T n } be</head><label></label><figDesc>take its standards from the set 𝒕𝒆𝒓 𝒋 = {'ATM', 'POS'} wherever ATM and POS are the terminals where the transaction was initiated. At least two values may contained by a symbolic fields (e.g., card type) up to a number of hundred thousand values (as code of merchant, for example).As every new transaction are accomplished in the payment system the size of the transaction set 𝑻 𝒏 increases. Consider the transactions accomplished after time 𝒕 𝒏 up to 𝒕 𝒏+𝒌 are new ones and denote them as𝑻 𝒏+𝟏 , 𝑻𝒏+𝟐 , … … … … 𝑻 𝒏+𝒌 . Let 𝑻 𝒄𝒌 = { 𝑻 𝒊 |𝑻 𝒊 = 𝒄 𝒌 , 𝑻 𝒊 ∊ 𝑻 𝒏 } be the set of transactions 𝑻 𝒄 𝒌 ⊆ 𝑻 𝒏 accomplished in payment system using card 𝒄 𝒌 ∊ 𝑪 𝒏 𝒖𝒑𝒕𝒐 𝒕𝒊𝒎𝒆 𝒕 𝒏 The problem of fraud detection is to classify the fraudulent transaction when new transactions, 𝑻 𝒏+𝟏 = 𝑻 𝟏 𝒏+𝟏 ; … . 𝑻 𝒋 𝒏+𝟏 ; … … 𝑻 𝒎 𝒏+𝟏 Take place by the details of the transaction 𝑻 𝒏 have been performed in the past and the appropriate record 𝑪 𝒏 𝒊 in Database. To classify a transaction, you must first decide which class it belongs to (fraudulent or lawful).</figDesc><table><row><cell>type" may</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>the set of PS transactions that have been</cell></row><row><cell cols="3">done up to this point tn , where T i =𝑻 𝟏 𝒊 … … … 𝑻 𝒋 𝒊 … … … 𝑻 𝒎 𝒊 some moment, is the</cell></row><row><cell cols="3">message in regard to the i th transaction. Every constituent 𝑻 𝒋 𝒊 keeps numerical</cell></row><row><cell cols="3">(for e.g. the amount of 91 transaction) or symbolic information (channel, city, type</cell></row><row><cell cols="3">of operation, code of retailer etc.). An analogue (numerical) component 𝑻 𝒋 𝒊 ∊ 𝑹.</cell></row><row><cell cols="3">A representative element𝑻 𝒋 𝒊 (which are a common) takes its values from some</cell></row><row><cell>discrete set.𝑻 𝒋 𝒊 ∊ 𝒕𝒆𝒓 𝒋 = { 𝒓 𝒋 ……… 𝟏</cell><cell>𝒓 𝒋 ……. 𝒔</cell><cell>𝒓 𝒋 𝒔𝒋 } were𝒓 𝒋 𝒔 , s th unique value of 𝑻 𝒋 𝒊 -"terminal</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Data mining application in credit card fraud detectionsystem</title>
+		<author>
+			<persName><forename type="first">Francisca</forename><forename type="middle">N</forename><surname>O;</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Engineering Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="311" to="322" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Real-time credit card fraud detection usingcomputational intelligence</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Quah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M;</forename><surname>Sriganesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1721" to="1732" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Creditcardfrauddetectionusingselforganizingmaps</title>
+		<author>
+			<persName><forename type="first">;</forename><surname>Zaslavskyvandstrizhaka</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information&amp;Security</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="48" to="63" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Detectingcreditcardfraudbygeneticalgorithm and scatter search</title>
+		<author>
+			<persName><forename type="first">Dumaneandozcelikm</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="13057" to="13063" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A CONCEPTUAL DISCUSSION ABOUT AN INTUITIONISTIC FUZZY-SETS AND ITS APPLICATIONS</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yogeesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">P K</forename><surname>Chenniappan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Research in IT and Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="45" to="55" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Credit card frauddetectionusingBayesianandneuralnetworks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Maes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tuyls</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Vanschoen Winkel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B;</forename><surname>Manderick</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="page" from="261" to="270" />
+		</imprint>
+	</monogr>
+	<note>inProceedingsofthe1stInternationalNAISO Congresson Neuro Fuzzy Technologies</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Credit card frauddetection using hidden Markov model</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Srivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kundu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sural</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mazumdar</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Dependable andSecureComputing</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="37" to="48" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Mining Personal Banking Data to Detect Fraud</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SelectedContributions in Data Analysis and Classification, Studies in Classification, DataAnalysis,and KnowledgeOrganization</title>
+				<meeting><address><addrLine>BerlinHeidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="377" to="386" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Mining information from credit cardtime series for timelier fraud detection</title>
+		<author>
+			<persName><forename type="first">Seyedhossein L</forename><surname>Hashemi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceeding of the 5th InternationalSymposiumonTelecommunications(IST&apos;10)</title>
+				<meeting>eeding of the 5th InternationalSymposiumonTelecommunications(IST&apos;10)<address><addrLine>Tehran,Iran</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2010-12">2010. December</date>
+			<biblScope unit="page" from="619" to="624" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Association rulesapplied to credit card fraud detection</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>S´anchez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Vila</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cerda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Serrano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="3630" to="3640" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Study on Clustering Method Based on K-Means Algorithm</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yogeesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Advances and Scholarly Researches in Allied Education</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="2230" to="7540" />
+			<date type="published" when="2020">2020</date>
+			<publisher>JASRAE</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Research on credit card fraud detection model based onclassweightedsupportvectormachine</title>
+		<author>
+			<persName><forename type="first">Ju C;</forename><surname>Luq</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JournalofConvergenceInformationT echnology</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="62" to="68" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Post-pandemic health and its sustainability: Educational situation</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">W</forename><surname>Suryasa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rodríguez-Gámez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Koldoris</surname></persName>
+		</author>
+		<idno type="DOI">10.53730/ijhs.v6n1.5949</idno>
+		<ptr target="https://doi.org/10.53730/ijhs.v6n1.5949" />
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Health Sciences</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Artificialimmunesystemsfor thedetection ofcredit cardfraud</title>
+		<author>
+			<persName><forename type="first">Rayp</forename><surname>Wongn</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Stephensg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Systems</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="53" to="76" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">The differences between gross motor, fine motor and language development on toddler based on the age of breast milk weaning</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A R</forename><surname>Darmayanti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Armayanti</surname></persName>
+		</author>
+		<idno type="DOI">10.31295/ijhms.v3n1.191</idno>
+		<ptr target="https://doi.org/10.31295/ijhms.v3n1.191" />
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Health &amp; Medical Sciences</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="123" to="129" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Credit card frauddetection:afusionapproachusingDempster-ShafertheoryandBayesianlearning</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Panigrahi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kundu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sural</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Majumdar</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Fusion</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="354" to="363" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Mathematical Approach to Representation of Locations Using K-Means Clustering Algorithm</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yogeesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Mathematics And its Applications (IJMAA)</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="2347" to="1557" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>

@@ -18,130 +18,178 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 					<analytic>
 						<author>
 							<persName><roleName>Dr</roleName><forename type="first">Daniel</forename><surname>Shu</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
-								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
-								</address>
-							</affiliation>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
-								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
-								</address>
-							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Wei</forename><surname>Ting</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">National Eye Center</orgName>
+								<orgName type="department" key="dep2">Duke-NUS Medical School</orgName>
+								<orgName type="institution">Singapore Eye Research Institute</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<country key="SG">Singapore</country>
 								</address>
 							</affiliation>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff2">
+								<orgName type="institution">National University of Singapore</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<settlement>Singapore</settlement>
+									<country key="SG">Singapore</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Louis</forename><forename type="middle">R</forename><surname>Pasquale</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Ophthalmology</orgName>
+								<orgName type="institution">Mt Sinai Hospital</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<settlement>New York City</settlement>
+									<region>New York</region>
+									<country key="US">USA</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Lily</forename><surname>Peng</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff4">
+								<orgName type="institution">Google AI Healthcare</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<addrLine>Mountain View</addrLine>
+									<region>California</region>
+									<country key="US">USA</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">John</forename><forename type="middle">Peter</forename><surname>Campbell</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff5">
+								<orgName type="institution" key="instit1">Casey Eye Institute</orgName>
+								<orgName type="institution" key="instit2">Oregon Health and Science University</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<settlement>Portland</settlement>
+									<region>Oregon</region>
+									<country key="US">USA</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Aaron</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff6">
+								<orgName type="department" key="dep1">Department of Ophthalmology</orgName>
+								<orgName type="department" key="dep2">School of Medicine</orgName>
+								<orgName type="institution">University of Washington</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<settlement>Seattle</settlement>
+									<region>Washington</region>
+									<country key="US">USA</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Rajiv</forename><surname>Raman</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff7">
+								<orgName type="department">Vitreo-retinal Department</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<addrLine>Sankara Nethralaya, Tamil Nadu</addrLine>
+									<settlement>Chennai</settlement>
+									<country key="IN">India</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Gavin</forename><surname>Siew</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
-								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
-								</address>
-							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Wei</forename><surname>Tan</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">National Eye Center</orgName>
+								<orgName type="department" key="dep2">Duke-NUS Medical School</orgName>
+								<orgName type="institution">Singapore Eye Research Institute</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">National University of Singapore</orgName>
+								<address>
+									<settlement>Singapore</settlement>
+									<country key="SG">Singapore</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Leopold</forename><surname>Schmetterer</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">National Eye Center</orgName>
+								<orgName type="department" key="dep2">Duke-NUS Medical School</orgName>
+								<orgName type="institution">Singapore Eye Research Institute</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">National University of Singapore</orgName>
+								<address>
+									<settlement>Singapore</settlement>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff8">
+								<orgName type="department">Department of Ophthalmology</orgName>
+								<orgName type="institution" key="instit1">Lee Kong Chian School of Medicine</orgName>
+								<orgName type="institution" key="instit2">Nanyang Technological University</orgName>
+								<address>
+									<settlement>Singapore</settlement>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff9">
+								<orgName type="department">Department of Clinical Pharmacology</orgName>
+								<orgName type="institution">Medical University of Vienna</orgName>
+								<address>
+									<settlement>Vienna</settlement>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff10">
+								<orgName type="department">Center for Medical Physics and Biomedical Engineering</orgName>
+								<orgName type="institution">Medical University of Vienna</orgName>
+								<address>
+									<settlement>Vienna</settlement>
+									<country key="AT">Austria</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Pearse</forename><forename type="middle">A</forename><surname>Keane</surname></persName>
-							<affiliation key="aff0">
-								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
+							<affiliation key="aff11">
+								<orgName type="institution" key="instit1">Vitreo-retinal Service</orgName>
+								<orgName type="institution" key="instit2">Moorfields Eye Hospital</orgName>
 								<address>
-									<postCode>168751</postCode>
-									<country>Singapore, Singapore</country>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
 								</address>
 							</affiliation>
 						</author>
 						<author>
 							<persName><forename type="first">Tien</forename><forename type="middle">Yin</forename><surname>Wong</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">National Eye Center</orgName>
+								<orgName type="department" key="dep2">Duke-NUS Medical School</orgName>
+								<orgName type="institution">Singapore Eye Research Institute</orgName>
+								<address>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">National University of Singapore</orgName>
+								<address>
+									<settlement>Singapore</settlement>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
 							<affiliation key="aff0">
 								<orgName type="institution">Medical SchoolSingapore National Eye Center</orgName>
 								<address>
@@ -165,16 +213,1727 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-04-22T21:21+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T00:24+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
 			</appInfo>
 		</encodingDesc>
 		<profileDesc>
-			<abstract/>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Artificial intelligence (AI) based on deep learning (DL) has sparked tremendous global interest in recent years. DL has been widely adopted in image recognition, speech recognition and natural language processing, but is only beginning to impact on healthcare. In ophthalmology, DL has been applied to fundus photographs, optical coherence tomography and visual fields, achieving robust classification performance in the detection of diabetic retinopathy and retinopathy of prematurity, the glaucoma-like disc, macular oedema and age-related macular degeneration. DL in ocular imaging may be used in conjunction with telemedicine as a possible solution to screen, diagnose and monitor major eye diseases for patients in primary care and community settings. Nonetheless, there are also potential challenges with DL application in ophthalmology, including clinical and technical challenges, explainability of the algorithm results, medicolegal issues, and physician and patient acceptance of the AI 'black-box' algorithms. DL could potentially revolutionise how ophthalmology is practised in the future. This review provides a summary of the state-of-the-art DL systems described for ophthalmic applications, potential challenges in clinical deployment and the path forward.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>InTroduCTIon</head><p>Artificial intelligence (AI) is the fourth industrial revolution in mankind's history. <ref type="bibr" target="#b0">1</ref> Deep learning (DL) is a class of state-of-the-art machine learning techniques that has sparked tremendous global interest in the last few years. 2 DL uses representation-learning methods with multiple levels of abstraction to process input data without the need for manual feature engineering, automatically recognising the intricate structures in high-dimensional data through projection onto a lower dimensional manifold. 2 Compared with conventional techniques, DL has been shown to achieve significantly higher accuracies in many domains, including natural language processing, computer vision 3-5 and voice recognition. <ref type="bibr" target="#b5">6</ref> In medicine and healthcare, DL has been primarily applied to medical imaging analysis, in which DL systems have shown robust diagnostic performance in detecting various medical conditions, including tuberculosis from chest X-rays, 7 8 malignant melanoma on skin photographs 9 and lymph node metastases secondary to breast cancer from tissue sections. 10 DL has similarly been applied to</p></div>
+			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>ocular imaging, principally fundus photographs and optical coherence tomography (OCT). Major ophthalmic diseases which DL techniques have been used for include diabetic retinopathy (DR), <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref> glaucoma, <ref type="bibr">11 16</ref> age-related macular degeneration (AMD) <ref type="bibr">11 17 18</ref> and retinopathy of prematurity (ROP). <ref type="bibr" target="#b18">19</ref> DL has also been applied to estimate refractive error and cardiovascular risk factors (eg, age, blood pressure, smoking status and body mass index). <ref type="bibr">20 21</ref> A primary benefit of DL in ophthalmology could be in screening, such as for DR and ROP, for which well-established guidelines exist. Other conditions, such as glaucoma and AMD, may also require screening and long-term follow-up. However, screening requires tremendous manpower and financial resources from healthcare systems, in both developed countries and in low-income and middle-income countries. The use of DL, coupled with telemedicine, may be a long-term solution to screen and monitor patients within primary eye care settings. This review summarises new DL systems for ophthalmology applications, potential challenges in clinical deployment and potential paths forward.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>dL AppLICATIons In ophThALmoLogy diabetic retinopathy</head><p>Globally, 600 million people will have diabetes by 2040, with a third having DR. <ref type="bibr" target="#b21">22</ref> A pooled analysis of 22 896 people with diabetes from 35 population-based studies in the USA, Australia, Europe and Asia (between 1980 and 2008) showed that the overall prevalence of any DR (in type 1 and type 2 diabetes) was 34.6%, with 7% vision-threatening diabetic retinopathy. <ref type="bibr" target="#b21">22</ref> Screening for DR, coupled with timely referral and treatment, is a universally accepted strategy for blindness prevention. DR screening can be performed by different healthcare professionals, including ophthalmologists, optometrists, general practitioners, screening technicians and clinical photographers. The screening methods comprise direct ophthalmoscopy, <ref type="bibr" target="#b23">23</ref> dilated slit lamp biomicroscopy with a hand-held lens (90 D or 78 D), <ref type="bibr" target="#b24">24</ref> mydriatic or non-mydriatic retinal photography, <ref type="bibr" target="#b23">23</ref> teleretinal screening, <ref type="bibr" target="#b25">25</ref> and retinal video recording. <ref type="bibr" target="#b26">26</ref> Nonetheless, DR screening programmes are challenged by issues related to implementation, availability of human assessors and long-term financial sustainability. <ref type="bibr" target="#b27">27</ref> Over the past few years, DL has revolutionised the diagnostic performance in detecting DR. <ref type="bibr" target="#b1">2</ref>  this technique, many groups have shown excellent diagnostic performance (table <ref type="table" target="#tab_0">1</ref>). <ref type="bibr" target="#b13">14</ref> Abràmoff et al <ref type="bibr" target="#b13">14</ref> showed that a DL system was able to achieve an area under the receiver operating characteristic curve (AUC) of 0.980, with sensitivity and specificity of 96.8% and 87.0%, respectively, in the detection of referable DR (defined as moderate non-proliferative DR or worse, including diabetic macular oedema (DMO)) on Messidor-2 data set. Similarly, Gargeya and Leng 15 reported an AUC of 0.97 using cross-validation on the same data set, and 0.94 and 0.95 in two independent test sets (Messidor-2 and E-Ophtha).</p><p>More recently, Gulshan and colleagues <ref type="bibr" target="#b11">12</ref> from Google AI Healthcare reported another DL system with excellent diagnostic performance. The DL system was developed using 128 175 retinal images, graded between 3 and 7 times for DR and DMO by a panel of 54 US licensed ophthalmologists and ophthalmology residents between May and December 2015. The test set consisted of approximately 10 000 images retrieved from two publicly available databases (EyePACS-1 and Messidor-2), graded by at least seven US board-certified ophthalmologists with high intragrader consistency. The AUC was 0.991 and 0.990 for EyePACS-1 and Messidor-2, respectively (table <ref type="table" target="#tab_0">1</ref>).</p><p>Although a number of groups have demonstrated good results using DL systems on publicly available data sets, the DL systems were not tested in real-world DR screening programmes. In addition, the generalisability of a DL system to populations of different ethnicities, and retinal images captured using different cameras, still remains uncertain. Ting et al <ref type="bibr" target="#b10">11</ref> reported a clinically acceptable diagnostic performance of a DL system, developed and tested using the Singapore Integrated Diabetic Retinopathy Programme over a 5-year period, and 10 external data sets recruited from 6 different countries, including Singapore, China, Hong Kong, Mexico, USA and Australia. The DL system, developed using the DL architecture VGG- AUC ranged from 0.889 to 0.983 for the 10 external data sets (n=40 752 images). More recently, the DL system, developed by Abramoff et al, <ref type="bibr" target="#b28">28</ref> has obtained a US Food and Drug Administration approval for the diagnosis of DR. It was evaluated in a prospective, although observational setting, achieving 87.2% sensitivity and 90.7% specificity. 28</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Age-related macular degeneration</head><p>AMD is a major cause of vision impairment in the elderly population globally. The Age-Related Eye Disease Study (AREDS) classified AMD stages into none, early, intermediate and late AMD. <ref type="bibr" target="#b29">29</ref> The American Academy of Ophthalmology recommends that people with intermediate AMD should be at least seen once every 2 years. It is projected that 288 million patients may have some forms of AMD by 2040, <ref type="bibr" target="#b30">30</ref> with approximately 10% having intermediate AMD or worse. <ref type="bibr" target="#b29">29</ref> With the ageing population, there is an urgent clinical need to have a robust DL system to screen these patients for further evaluation in tertiary eye care centres. Ting et al <ref type="bibr" target="#b10">11</ref> reported a clinically acceptable DL system diagnostic performance in detecting referable AMD (table <ref type="table" target="#tab_0">1</ref>). Specifically, the DL system was trained and tested using 108 558 retinal images from 38 189 patients. Fovea-centred images without macula segmentation were used in this study. Given that this was the DR screening population, there were relatively few patients with referable AMD. For the other two studies, <ref type="bibr">17 18</ref> DL systems were developed using the AREDS data set, with a high number of referable AMD (intermediate AMD or worse). Using a fivefold cross-validation, Burlina et al <ref type="bibr" target="#b16">17</ref> reported a diagnostic accuracy of between 88.4% and 91.6%, with an AUC of between 0.94 and 0.96. Unlike Ting et al, <ref type="bibr" target="#b10">11</ref> the authors presegmented the macula region prior to training and testing, with an 80/20 split between the training and testing in each fold. In terms of the DL architecture, both AlexNet and OverFeat have been used, with AlexNet yielding a better performance. Using the same AREDS data set, Grassmann et al <ref type="bibr" target="#b17">18</ref> reported a sensitivity of 84.2% in the detection of any AMD. In this study, the authors used six convolutional neural networks-AlexNet, GoogleNet, VGG, Inception-V3, ResNet and Inception-ResNet-V2-to train different models. Data augmentation was also used to increase the diversity of data set and to reduce the risk of overfitting. For the AREDS data set, all the photographs were captured as analogue photographs and then digitised later. Whether this affects the DL system's performance remains uncertain. In addition, all three abovementioned studies did not have any results for external validation on the individual DL systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>dm, choroidal neovascularisation and other macular diseases</head><p>OCT has had a transformative effect on the management of macular diseases, specifically neovascular AMD and DMO.</p><p>OCT also provides a near-microscopic view of the retina in vivo with quick acquisition protocols revealing structural detail that cannot be seen using other ophthalmic examination techniques. Thus, the number of macular OCTs has grown from 4.3 million in 2012 to 6.4 million in 2016 in the US Medicare population alone, and will most likely continue to grow worldwide. <ref type="bibr" target="#b31">31</ref> From a DL perspective, macular OCTs possess a number of attractive qualities as a modality for DL. First is the explosive growth in the number of macular OCTs that are routinely collected around the world. This large number of OCTs is required to train DL systems where having many training examples can aid in the convergence of many-layered networks with millions of parameters. Second, macular OCTs have dense three-dimensional structural information that is usually consistently captured. Unlike real-world images or even colour fundus photographs, the field of view of the macula and the foveal fixation is usually consistent from one volume scan to another. This lowers the complexity of the computer vision task significantly and allows networks to reach meaningful performance with smaller data sets. Third, OCTs provide structural detail that is not easily visible using conventional imaging techniques on April 22, 2024 by guest. Protected by copyright. http://bjo.bmj.com/ Br J Ophthalmol: first published as 10.1136/bjophthalmol-2018-313173 on 25 October 2018. Downloaded from review Figure <ref type="figure">1</ref> Archetype analysis with 16 visual field (VF) archetypes (ATs) that were derived from an unsupervised computer algorithm described by Elze et al. <ref type="bibr" target="#b49">49</ref> and provide an avenue for uncovering novel biomarkers of the disease.</p><p>One of the first applications of DL to macular OCTs was in automated classification of AMD. Approximately 100 000 OCT B-scans were used to train a DL classifier based on VGG-16 to achieve an AUC of 0.97 (table 2). <ref type="bibr" target="#b32">32</ref> Few studies used a technique known as transfer learning, where a neural network is pretrained on ImageNet and subsequently then trained on OCT B-scans for retinal disease classification. <ref type="bibr" target="#b33">[33]</ref><ref type="bibr" target="#b34">[34]</ref><ref type="bibr" target="#b35">[35]</ref> Of note, these initial studies involve the use of two-dimensional DL models trained on single OCT B-scans rather than three-dimensional models trained on OCT volumes. This may be a barrier to their potential clinical applicability.</p><p>DL has also had a transformative impact in boundary and feature-level segmentation using neural networks that have been developed for semantic segmentation such as the U-Net. <ref type="bibr" target="#b36">36</ref> Specifically, these networks have been trained to segment intraretinal fluid cysts and subretinal fluid on OCT B-scans. <ref type="bibr">13 37 38</ref> Deep convolutional networks surpassed traditional methods in the quality of segmentation of retinal anatomical boundaries. <ref type="bibr" target="#b39">[39]</ref><ref type="bibr" target="#b40">[40]</ref><ref type="bibr" target="#b41">[41]</ref> Also similar approaches were used to segment en-face OCTA images to segment the foveal avascular zone. <ref type="bibr" target="#b42">42</ref> More recently, DeepMind and the Moorfields Eye Hospital have combined the power of neural networks for both segmentation and classification tasks using a novel AI framework. In this approach, a segmentation network is first used to delineate a range of 15 different retinal morphological features and OCT acquisition artefacts. The output of this network is then passed to a classification network which makes a referral triage decision from four categories (urgent, semiurgent, routine, observation) and classifies the presence of 10 different OCT pathologies (choroidal neovascularisation (CNV), macular oedema without CNV, drusen, geographic atrophy, epiretinal membrane, vitreomacular traction, full-thickness macular hole, partial thickness macular hole, central serous retinopathy and 'normal'). <ref type="bibr" target="#b43">43</ref> Using this approach, the Moorfields-DeepMind system reports a performance on par with experts for these classification tasks (although in a retrospective setting). Moreover, the generation of an intermediate tissue representation by the first, segmentation network means that the framework can be generalised across OCT systems from multiple different vendors without prohibitive requirements for retraining. In the near term, this DL system will be implemented in an existing realworld clinical pathway-the rapid access 'virtual' clinics that are now widely used for triaging of macular disease in the UK. <ref type="bibr" target="#b44">44</ref> In the longer term, the system could be used in triaging patients outside the hospital setting, particularly as OCT systems are increasingly being adopted by optometrists in the community. <ref type="bibr" target="#b45">45</ref> on April 22, 2024  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>glaucoma</head><p>The global prevalence of glaucoma for people aged 40-80 is 3.4%, and by the year 2040 it is projected there will be approximately 112 million affected individuals worldwide. <ref type="bibr" target="#b46">46</ref> Clinicians and patients alike would welcome improvements in disease detection, assessment of progressive structural and functional damage, treatment optimisation so as to prevent visual disability, and accurate long-term prognosis.</p><p>Glaucoma is an optic nerve disease categorised by excavation and erosion of the neuroretinal rim that clinically manifests itself by increased optic nerve head (ONH) cupping. Yet, because the ONH area varies by fivefold, there is virtually no cup to disc ratio (CDR) that defines pathological cupping, hampering disease detection. <ref type="bibr" target="#b47">47</ref> Li et al <ref type="bibr" target="#b15">16</ref> and Ting et al <ref type="bibr" target="#b10">11</ref> trained computer algorithms to detect the glaucoma-like disc, defined as a vertical CDR of 0.7 and 0.8, respectively. Investigators have also applied machine learning methods to distinguish glaucomatous nerve fibre layer damage from normal scans on wide-angle OCTs (9×12 mm). <ref type="bibr" target="#b48">48</ref> Future opportunities include training a neural network to identify the disc that would be associated with manifest visual field (VF) loss across the spectrum of disc size, as our current treatment strategies are aligned with slowing disease detection. Furthermore, DL could be used to detect progressive structural optic nerve changes in glaucoma.</p><p>In glaucoma, retinal ganglion cell axons atrophy in a confined space within the ONH and ophthalmologists typically rely on low dimensional psychophysical data to detect the functional consequences of that damage. The outputs from these tests typically provide reliability parameters, age-matched normative comparisons and summary global indices, but more detailed analysis of this functional data is lacking. Elze et al <ref type="bibr" target="#b49">49</ref> developed an unsupervised computer program to analyse VF that recognises clinically relevant VF loss patterns and assigns a weighting coefficient for each of them (figure <ref type="figure">1</ref>). This method has proven useful in the detection of early VF loss from glaucoma. <ref type="bibr" target="#b50">50</ref> Furthermore, a myriad of computer programs to detect VF progression exist, ranging from assessment of global indices over time to point-wise analyses, to sectoral VF analysis; however, these approaches are often not aligned with clinical ground truth nor with one another. <ref type="bibr" target="#b51">51</ref>  <ref type="bibr" target="#b52">52</ref> Yousefi et al <ref type="bibr" target="#b53">53</ref> developed a machinebased algorithm that detected VF progression earlier than these conventional strategies. More machine learning algorithms that provide quantitative information about regional VF progression can be expected in the future.</p><p>Although intraocular pressure (IOP)-lowering has been shown to be therapeutically effective in delaying glaucoma progression, some demonstrated that disease progression is still inevitable, <ref type="bibr" target="#b54">[54]</ref><ref type="bibr" target="#b55">[55]</ref><ref type="bibr" target="#b56">[56]</ref> suggesting that we have not arrived at optimised treatment regimens for the various forms of glaucoma. Kazemian et al <ref type="bibr" target="#b57">57</ref> developed a clinical forecasting tool that uses tonometric and VF data to project disease trajectories at different target IOPs. Further refinement of this tool that integrates other ophthalmic and non-ophthalmic data would be useful to establish target IOPs and the best strategies to achieve them on a case-by-case basis. Finally, it is documented that patients with newly diagnosed glaucoma harbour fears of going blind <ref type="bibr" target="#b58">58</ref> ; perhaps, the use of machine learning that incorporates genome-wide data, lifestyle behaviour and medical history into a forecasting algorithm will allow early prognostication regarding the future risk of requiring invasive surgery or losing functional vision from glaucoma.</p><p>As machine learning algorithms are revised, the practising ophthalmologist will have a host of tools available to diagnose glaucoma, detect disease progression and identify optimised treatment strategies using a precision medicine approaches. In an ideal future scenario, they may also have clinical forecasting tools that inform patients as to their overall prognosis and expected clinical course with or without treatment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>retinopathy of prematurity</head><p>ROP is a leading cause of childhood blindness worldwide, with an annual incidence of ROP-related blindness of 32 000 worldwide. <ref type="bibr" target="#b59">59</ref> The regional epidemiology of the disease varies based on a number of factors, including the number of preterm births, neonatal mortality of preterm children and capacity to monitor exposure to oxygen. ROP screening either directly via ophthalmoscopic examination or telemedical evaluation using digital fundus photography can identify the earliest signs of severe ROP, and with timely treatment can prevent most cases of blindness from ROP. <ref type="bibr">60 61</ref> Due to the high number of preterm births, reductions in neonatal mortality, and limited capacity for oxygen monitoring and ROP screening, the highest burden of blinding ROP today is in low-income and middle-income countries. <ref type="bibr" target="#b62">62</ref> There are two main barriers to effective implementation of ROP screening: (1) the diagnosis of ROP is subjective, with significant interexaminer variability in the diagnosis leading to inconsistent application of evidence-based interventions <ref type="bibr" target="#b63">63</ref> ; and (2) there are too few trained examiners in many regions of the world. <ref type="bibr" target="#b64">64</ref> Telemedicine has emerged as a viable model to address the latter problem, at least in regions where the cost of a fundus camera is not prohibitive, by allowing a single physician to virtually examine infants over a large geographical area. However, telemedicine itself does not solve the subjectivity problem in ROP diagnosis. Indeed, the acute-phase ROP study found nearly adjudication because the graders disagreed on one of three criteria for clinically significant ROP. <ref type="bibr" target="#b65">65</ref> There have been a number of early attempts to use DL for automated diagnosis of ROP, <ref type="bibr">19 66</ref> which could potentially address both implementation barriers for ROP screening. Most recently, Brown et al <ref type="bibr" target="#b18">19</ref> reported the results of a fully automated DL system that could diagnose plus disease, the most important feature of severe ROP, with an AUC of 0.98 compared with a consensus reference standard diagnosis combining image-based diagnosis and ophthalmoscopy (table <ref type="table" target="#tab_0">1</ref>). When directly compared with the eight international experts in ROP diagnosis, the i-ROP DL system agreed with the consensus diagnosis more frequently than six out of eight experts. Subsequent work found that the i-ROP DL system could also produce a severity score for ROP that demonstrated promise for objective monitoring of disease progression, regression and response to treatment. <ref type="bibr" target="#b67">67</ref> When compared with the same set of 100 images ranked in order of disease severity by experts, the algorithm had 100% sensitivity an 94% specificity in the detection of pre-plus or worse disease.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>potential challenges</head><p>Despite the high level of accuracy of the AI-based models in many of the diseases in ophthalmology, there are still many clinical and technical challenges for clinical implementation and real-time deployment of these models in clinical practice (table <ref type="table" target="#tab_2">3</ref>). These challenges could arise in different stages in both the research and clinical settings. First, many of the studies have used training data sets from relatively homogeneous populations. <ref type="bibr">12 14 15</ref> AI training and testing using retinal images is often subject to numerous variabilities, including width of field, field of view, image magnification, image quality and participant ethnicities. Diversifying the data set, in terms of ethnicities, and image-capture hardware could help to address this challenge. <ref type="bibr" target="#b10">11</ref> Another challenge in the development of AI models in ophthalmology has been the limited availability of large amounts of data for both the rare diseases (eg, ocular tumours) and for common diseases which are not imaged routinely in clinical practice such as cataracts. Furthermore, there are diseases such as glaucoma and ROP where there will be disagreement and interobserver on April 22, 2024 by guest. Protected by copyright. http://bjo.bmj.com/ Br J Ophthalmol: first published as 10.1136/bjophthalmol-2018-313173 on 25 October 2018. Downloaded from review Figure <ref type="figure">3</ref> A representative screenshot from the output of the Moorfields-DeepMind deep learning system for optical coherence tomography segmentation and classification. In this case, the system correctly diagnoses a case of central serous retinopathy with secondary choroidal neovascularisation and recommends urgent referral to an ophthalmologist. Through the creation of an intermediate tissue representation (seen here as two-dimensional thickness maps for each morphological parameter), the system provides 'explainability' for the ophthalmologist.</p><p>variability in the definition of the disease phenotype. The algorithm learns from what they are presented with. The software is unlikely to produce accurate outcomes if the training set of images given to the AI tool is too small or not representative of real patient populations. More evidence on ways of getting high-quality ground-truth labels is required for different imaging tools. Krause et al <ref type="bibr" target="#b68">68</ref> reported that adjudication grades by retina specialists were a more rigorous reference standard, especially to detect artefacts and missed microaneurysms in DR, than a majority decision and improved the algorithm performance.</p><p>Second, many AI groups have reported robust diagnostic performance for their DL systems, although some papers did not show how the power calculation was performed for the independent data sets. A power calculation should take the following into consideration: the prevalence of the disease, type 1 and 2 errors, CIs, desired precision and so on. It is important to first preset the desired operating threshold on the training set, followed by analysis of performance metrics such as sensitivity and specificity on the test set to assess calibration of the algorithm.</p><p>Third, large-scale adoption of AI in healthcare is still not on the horizon as clinicians and patients are still concerned about AI and DL being 'black-boxes'. In healthcare, it is not only the quantitative algorithmic performance, but the underlying features through which the algorithm classifies disease which is important to improve physician acceptance. Generating heat maps highlighting the regions of influence on the image which contributed to the algorithm conclusion may be a first step (figure <ref type="figure" target="#fig_0">2</ref>), although such maps are often challenging to interpret (what does it mean if a map highlights an area of vitreous on an OCT of a patient with drusen?). <ref type="bibr" target="#b69">69</ref> They may also struggle to deal with negations (what would it mean to highlight the most important part of an ophthalmic image that demonstrates that there is no disease present?). <ref type="bibr">70 71</ref> An alternative approach has been used for the DL system developed by the Moorfields Eye Hospital and DeepMind-in this system, the generation of an intermediate tissue representation by a segmentation network is used to highlight for the clinician (and quantify) the relevant areas of retinal pathology (figure <ref type="figure">3</ref>). <ref type="bibr" target="#b43">43</ref> It is also important on April 22, 2024 by guest. Protected by copyright. http://bjo.bmj.com/ Br J Ophthalmol: first published as 10.1136/bjophthalmol-2018-313173 on 25 October 2018. Downloaded from review to highlight that 'interpretability' of DL systems may mean different things to a healthcare professional than to a machine learning expert. Although it seems likely that interpretable algorithms will be more readily accepted by ophthalmologists, future applied clinical research will be necessary to determine whether this is the case and whether it leads to tangible benefits for patients in terms of clinical effectiveness.</p><p>Lastly, the current AI screening systems for DR have been developed and validated using two-dimensional images and lack stereoscopic qualities, thus making identification of elevated lesions like retinal tractions challenging. Incorporating the information from multimodal imaging in future AI algorithms may potentially address this challenge. In addition, the medicolegal aspects and the regulatory approvals vary in different countries and settings, and more work will be needed in these areas. An important challenge to the clinical adoption of AI-based technology is how the patients entrust clinical care to machines. Keel et al <ref type="bibr" target="#b72">72</ref> evaluated the patient acceptability of AI-based DR screening within endocrinology outpatient setting and reported that 96% of participants were satisfied or very satisfied with the automated screening model. <ref type="bibr" target="#b72">72</ref> However, in different populations and settings, the patient's acceptability for AI-based screening may vary and may pose challenge in its implementation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ConCLusIons</head><p>DL is the state-of-the-art AI machine learning technique that has revolutionised the AI field. For ophthalmology, DL has shown clinically acceptable diagnostic performance in detecting many retinal diseases, in particular DR and ROP. Future research is crucial in evaluating the clinical deployment and cost-effectiveness of different DL systems in the clinical practice. To improve clinical acceptance of DL systems, it is important to unravel the 'black-box' nature of DL using existing and future methodologies. Although there are challenges ahead, DL will likely impact on the practice of medicine and ophthalmology in the coming decades.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 2</head><label>2</label><figDesc>Figure 2 Some examples of heat maps showing the abnormal areas in the retina. (A) Severe non-proliferative diabetic retinopathy (NPDR); (B) geographic atrophy in advanced age-related macular degeneration (AMD) on fundus photographs 11 ; and (C) diabetic macular oedema on optical coherence tomography.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="4,85.00,331.07,425.28,389.76" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="6,99.16,287.19,396.96,422.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="7,85.00,286.99,425.28,411.84" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Using on April 22, 2024 by guest. Protected by copyright. Summary table for the different DL systems in the detection of referable diabetic retinopathy, glaucoma suspect, age-related macular degeneration and retinopathy of prematurity using fundus photographs</figDesc><table><row><cell>dL systems</cell><cell>year</cell><cell>Test data sets</cell><cell cols="2">Test images (n) Cnn</cell><cell>AuC</cell><cell cols="2">sensitivity (%) specificity (%)</cell></row><row><cell cols="2">Referable diabetic retinopathy</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Abràmoff et al 14</cell><cell>2016</cell><cell>Messidor-2</cell><cell>1748</cell><cell>AlexNet/VGG</cell><cell>0.98</cell><cell>96.80</cell><cell>87.00</cell></row><row><cell>Gulshan et al 12</cell><cell>2016</cell><cell>Messidor-2</cell><cell>1748</cell><cell>Inception-V3</cell><cell>0.99</cell><cell>87</cell><cell>98.50</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>96.10</cell><cell>93.90</cell></row><row><cell></cell><cell></cell><cell>EyePACS-1</cell><cell>9963</cell><cell></cell><cell>0.991</cell><cell>90.30</cell><cell>98.10</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>97.50</cell><cell>93.40</cell></row><row><cell>Gargeya and Leng 15</cell><cell>2017</cell><cell>Kaggle images</cell><cell>75 137</cell><cell>Customised CNN</cell><cell>0.97</cell><cell>NA</cell><cell>NA</cell></row><row><cell></cell><cell></cell><cell>E-Ophtha</cell><cell>463</cell><cell></cell><cell>0.96</cell><cell>NA</cell><cell>NA</cell></row><row><cell></cell><cell></cell><cell>Messidor-2</cell><cell>1748</cell><cell></cell><cell>0.94</cell><cell>NA</cell><cell>NA</cell></row><row><cell>Ting et al 11</cell><cell>2017</cell><cell>SiDRP 14-15</cell><cell>71 896</cell><cell>VGG-19</cell><cell>0.936</cell><cell>90.50</cell><cell>91.60</cell></row><row><cell></cell><cell></cell><cell>Guangdong</cell><cell>15 798</cell><cell></cell><cell>0.949</cell><cell>98.70</cell><cell>81.60</cell></row><row><cell></cell><cell></cell><cell>SIMES</cell><cell>3052</cell><cell></cell><cell>0.889</cell><cell>97.10</cell><cell>82.00</cell></row><row><cell></cell><cell></cell><cell>SINDI</cell><cell>4512</cell><cell></cell><cell>0.917</cell><cell>99.3</cell><cell>73.3</cell></row><row><cell></cell><cell></cell><cell>SCES</cell><cell>1936</cell><cell></cell><cell>0.919</cell><cell>100</cell><cell>76.30</cell></row><row><cell></cell><cell></cell><cell>BES</cell><cell>1052</cell><cell></cell><cell>0.929</cell><cell>94.40</cell><cell>88.50</cell></row><row><cell></cell><cell></cell><cell>AFEDS</cell><cell>1968</cell><cell></cell><cell>0.98</cell><cell>98.80</cell><cell>86.50</cell></row><row><cell></cell><cell></cell><cell>RVEEH</cell><cell>2302</cell><cell></cell><cell>0.983</cell><cell>98.90</cell><cell>92.20</cell></row><row><cell></cell><cell></cell><cell>Mexican</cell><cell>1172</cell><cell></cell><cell>0.95</cell><cell>91.80</cell><cell>84.80</cell></row><row><cell></cell><cell></cell><cell>CUHK</cell><cell>1254</cell><cell></cell><cell>0.948</cell><cell>99.3</cell><cell>83.10</cell></row><row><cell></cell><cell></cell><cell>HKU</cell><cell>7706</cell><cell></cell><cell>0.964</cell><cell>100</cell><cell>81.30</cell></row><row><cell>Abràmoff et al 28</cell><cell>2018</cell><cell>10 primary care practice</cell><cell>892 patients</cell><cell>Alex/VGG</cell><cell>NA</cell><cell>87.2</cell><cell>90.7</cell></row><row><cell></cell><cell></cell><cell>sites from the USA</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Glaucoma suspect*</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Ting et al 11</cell><cell>2017</cell><cell>SiDRP 14-15</cell><cell>71 896</cell><cell>VGG-19</cell><cell>0.942</cell><cell>96.40</cell><cell>93.20</cell></row><row><cell>Li et al 16</cell><cell>2018</cell><cell>Guangdong</cell><cell>48 116</cell><cell></cell><cell>0.986</cell><cell>95.60</cell><cell>92.00</cell></row><row><cell cols="2">Age-related macular degeneration</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Ting et al 11</cell><cell>2017</cell><cell>SiDRP 14-15</cell><cell>35 948</cell><cell>VGG-19</cell><cell>0.932</cell><cell>93.20</cell><cell>88.70</cell></row><row><cell>Burlina et al 17</cell><cell>2017</cell><cell>AREDS</cell><cell>120 656</cell><cell>AlexNet, OverFeat</cell><cell>0.940-0.96</cell><cell>NA</cell><cell>NA</cell></row><row><cell>Grassmann et al 18</cell><cell>2018</cell><cell>AREDS</cell><cell>120 656</cell><cell>AlexNet, GoogleNet, VGG,</cell><cell>NA</cell><cell>84.20</cell><cell>94.30</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>Inception-V3, ResNet, Inception-</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>ResNet-V2</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Retinopathy of prematurity</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Brown et al 19</cell><cell>2018</cell><cell>i-ROP</cell><cell>100</cell><cell>Inception-V1 and U-Net</cell><cell>NA</cell><cell>100</cell><cell>94</cell></row></table><note>http://bjo.bmj.com/ Br J Ophthalmol: first published as 10.1136/bjophthalmol-2018-313173 on 25 October 2018. Downloaded from review The diagnostic performance is not comparable between the different DL systems given the different data sets used in the individual study. *Definition of glaucoma suspect: (1) Ting et al<ref type="bibr" target="#b10">11</ref> -vertical cup to disc ratio of 0.8 or greater, and any glaucomatous disc changes; (2) Li et al<ref type="bibr" target="#b15">16</ref> -vertical cup to disc ratio of 0.7 or greater, and any glaucomatous disc changes. AFEDS, African American Eye Disease Study; AREDS, Age-Related Eye Disease Study; AUC, area under the receiver operating characteristic curve; BES, Beijing Eye Study; CNN, convolutional neural network; CUHK, Chinese University Hong Kong; DL, deep learning; SiDRP 14-15, Singapore Integrated Diabetic Retinopathy Screening Programme; HKU, Hong Kong University; NA, not available; RVEEH, Royal Victorian Eye and Ear Hospital; SCES, Singapore Chinese Eye Study; SIMES, Singapore Malay Eye Study; SINDI, Singapore Indian Eye Study.</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>review Table 2 Summary table for the different DL systems in the detection of retinal diseases using OCT dL systems year disease oCT machines Test images Cnn AuC Accuracy (%) sensitivity (%) specificity (%)</head><label></label><figDesc></figDesc><table><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>Br J Ophthalmol: first published as 10.1136/bjophthalmol-2018-313173 on 25 October 2018. Downloaded from</cell></row><row><cell>Lee et al 13 32 Trader et al 33 Kermany et al 34 2018 2017 2018 De Fauw et al 43 2018</cell><cell>Exudative AMD Exudative AMD CNV DMO Drusen 1. Multiclass comparison 2. Limited model 3. Binary model CNV vs normal DMO vs normal Drusen vs normal Urgent, semiurgent, routine and observation only oedema, FTMH, PTMH, CSR, VMT, GA, drusen, ERM Normal, CNV, macular</cell><cell>Spectralis Spectralis Spectralis Topcon Spectralis</cell><cell>19, was reported to have AUC, sensitivity and specificity of 0.936, 90.5% and 91.6% in detecting referable DR. For vision-threatening DR, the corresponding statistics were 0.958, 100% and 91.1%. The VGG-16 0.928 87.60 84.60 91.50 Inception-V3 0.980 100 NA NA Inception-V3 0.999 96.50 97.80 97.40 0.988 93.40 96.60 94.00 1 100 100 100 0.999 98.20 96.80 99.60 0.999 99 98 99.20 997 patients 1. Deep segmentation 20 613 100 1000 network using U-Net Urgent referral 0.992 94.5 network using a custom 29 CNN layers with 5 pooling layers referral 0.999 116 patients 2. Deep classification Urgent 96.6</cell><cell>http://bjo.bmj.com/ on April 22, 2024 by guest. Protected by copyright.</cell></row></table><note>The diagnostic performance is not comparable between the different DL systems given the different data sets used in the individual study. AUC for specific conditions: CNV 0.993; macular oedema 0.990; normal 0.995; FTMH 1.00; PTMH 0.999; CSR 0.995; VMT 0.980; GA 0.990; drusen 0.967; and ERM 0.966. AMD, age-related macular degeneration; AUC, area under the receiver operating characteristic curve; CNN, convolutional neural network; CNV, choroidal neovascularisation; CSR, central serous chorioretinopathy; DL, deep learning; DMO, diabetic macular oedema; ERM, epiretinal membrane; FTMH, full-thickness macula hole; GA, geographic atrophy; NA, not available; OCT, optical coherence tomography; PTMH, partial thickness macula hole; VMT, vitreomacular traction.</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>by guest. Protected by copyright. The clinical and technical challenges in building and deploying deep learning (DL) techniques from 'bench to bedside'</figDesc><table><row><cell>http://bjo.bmj.com/</cell></row></table><note>2. Lack of generalisability-not tested widely in different populations or on data collected from different devices. 3. Explainability of the results 1. Demonstration of the regions 'deemed' abnormal by DL. 2. Methods to generate heat maps-occlusion tests, class activation, integrated gradient method, soft attention map and so on. 4. Clinical deployment of DL Systems 1. Recommendation of the potential clinical deployment sites. 2. Application of regulatory approval from health authorities (eg, US Food and Drug Administration, Europe CE marking and so on). 3. Conducting prospective clinical trials. 4. Medical rebate scheme and medicolegal requirement. 5. Ethical challenges.</note></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Funding This project received funding from the National Medical Research Council (NMRC), Ministry of Health (MOH), Singapore National Health Innovation Center, Innovation to Develop Grant (NHIC-I2D-1409022), SingHealth Foundation Research Grant (SHF/FG648S/2015), and the Tanoto Foundation, and unrestricted donations to the Retina Division, Johns Hopkins University School of Medicine. For the Singapore Epidemiology of Eye Diseases (SEED) study, we received funding from NMRC, MOH (grants 0796/2003, IRG07nov013, IRG09nov014, STaR/0003/2008 and STaR/2013; CG/SERI/2010) and Biomedical Research Council (grants 08/1/35/19/550 and 09/1/35/19/616). The Singapore Integrated Diabetic Retinopathy Programme (SiDRP) received funding from the MOH, Singapore (grants AIC/RPDD/SIDRP/SERI/ FY2013/0018 and AIC/HPD/FY2016/0912). In USA, it is supported by the National Institutes of Health (K12 EY027720, R01EY019474, P30EY10572, P41EB015896), by the National Science Foundation (SCH-1622542, SCH-1622536, SCH-1622679) and by unrestricted departmental funding from Research to Prevent Blindness. PAK is supported by a UK National Institute for Health Research (NIHR) Clinician Scientist Award (NIHR-CS--2014-12-023). The views expressed are those of the authors and not necessarily those of the NHS, the NIHR or the Department of Health.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Competing interests DSWT and TYW are the coinventors of a deep learning system for retinal diseases. LP is a member of Google AI Healthcare. LRP is a nonpaid consultant for Visulytix. PAK is a consultant for DeepMind. open access This is an open access article distributed in accordance with the Creative Commons Attribution Non Commercial (CC BY-NC 4.0) license, which permits others to distribute, remix, adapt, build upon this work non-commercially, and license their derivative works on different terms, provided the original work is properly cited, appropriate credit is given, any changes made indicated, and the use is non-commercial. See: http:// creativecommons. org/ licenses/ by-nc/ 4.0</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The fourth industrial revolution: what it means, how to respond</title>
+		<ptr target="https://www.weforum.org/agenda/2016/01/the-fourth-industrial-revolution-what-it-means-and-how-to-respond/" />
+	</analytic>
+	<monogr>
+		<title level="j">World Economic Forum</title>
+		<imprint>
+			<date type="published" when="2016-08">2016. Aug 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Deep learning</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature14539</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">521</biblScope>
+			<biblScope unit="page" from="436" to="444" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Accelerating very deep convolutional networks for classification and detection</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>He</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TPAMI.2015.2502579</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Pattern Anal Mach Intell</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="1943" to="1955" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Deep convolutional neural networks for computeraided detection: cnn architectures, dataset characteristics and transfer learning</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">R</forename><surname>Roth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TMI.2016.2528162</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Med Imaging</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="1285" to="1298" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Joint training of a convolutional network and a graphical model for human pose estimation</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tompson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="1799" to="1807" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Deep neural networks for acoustic modeling in speech recognition</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Signal Processing Magazine</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="82" to="97" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Deep learning at chest radiography: automated classification of pulmonary tuberculosis by using convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lakhani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sundaram</surname></persName>
+		</author>
+		<idno type="DOI">10.1148/radiol.2017162326</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">284</biblScope>
+			<biblScope unit="page" from="574" to="582" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Clinical applicability of deep learning system in detecting tuberculosis with chest radiography</title>
+		<author>
+			<persName><forename type="first">Dsw</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Yi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Hui</surname></persName>
+		</author>
+		<idno type="DOI">10.1148/radiol.2017172407</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Radiology</title>
+		<imprint>
+			<biblScope unit="volume">286</biblScope>
+			<biblScope unit="page" from="729" to="731" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Dermatologist-level classification of skin cancer with deep neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Esteva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kuprel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Novoa</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature21056</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">542</biblScope>
+			<biblScope unit="page" from="115" to="118" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Diagnostic assessment of deep learning algorithms for detection of lymph node metastases in women with breast cancer</title>
+		<author>
+			<persName><forename type="first">Ehteshami</forename><surname>Bejnordi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Veta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Johannes</forename><surname>Van Diest</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2017.14585</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">318</biblScope>
+			<biblScope unit="page" from="2199" to="2210" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Development and validation of a deep learning system for diabetic retinopathy and related eye diseases using retinal images from multiethnic populations with diabetes</title>
+		<author>
+			<persName><forename type="first">Dsw</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Cheung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lim</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2017.18152</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">318</biblScope>
+			<biblScope unit="page" from="2211" to="2223" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Gulshan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Coram</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2016.17216</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">316</biblScope>
+			<biblScope unit="page" from="2402" to="2410" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Deep-learning based, automated segmentation of macular edema in optical coherence tomography</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Tyring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">P</forename><surname>Deruyter</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/BOE.8.003440</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed Opt Express</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="3440" to="3448" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Improved automated detection of diabetic retinopathy on a publicly available dataset through integration of deep learning</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Abràmoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Erginay</surname></persName>
+		</author>
+		<idno type="DOI">10.1167/iovs.16-19964</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Invest Ophthalmol Vis Sci</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="5200" to="5206" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Automated identification of diabetic retinopathy using deep learning</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gargeya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Leng</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2017.02.008</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page" from="962" to="969" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Efficacy of a deep learning system for detecting glaucomatous optic neuropathy based on color fundus photographs</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Keel</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2018.01.023</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="1199" to="1206" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Automated grading of age-related macular degeneration from color fundus images using deep convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Burlina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pekala</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jamaophthalmol.2017.3782</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page" from="1170" to="1176" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A deep learning algorithm for prediction of age-related eye disease study severity scale for age-related macular degeneration from color fundus photography</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Grassmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mengelkamp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Brandl</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2018.02.037</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="1410" to="1420" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Automated diagnosis of plus disease in retinopathy of prematurity using deep convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Beers</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jamaophthalmol.2018.1934</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="page" from="803" to="810" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Prediction of cardiovascular risk factors from retinal fundus photographs via deep learning</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Poplin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Varadarajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Blumer</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41551-018-0195-0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Biomed Eng</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="158" to="164" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Deep learning for predicting refractive error from retinal fundus images</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Varadarajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Poplin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Blumer</surname></persName>
+		</author>
+		<idno type="DOI">10.1167/iovs.18-23887</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Invest Ophthalmol Vis Sci</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="2861" to="2868" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Global prevalence and major risk factors of diabetic retinopathy</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Yau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Rogers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kawasaki</surname></persName>
+		</author>
+		<idno type="DOI">10.2337/dc11-1909</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Care</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="556" to="564" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<ptr target="http://bjo.bmj.com/" />
+	</analytic>
+	<monogr>
+		<title level="j">Br J Ophthalmol: first published as</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<date type="published" when="1136">April 22. 2024. 1136/bjophthalmol-2018-313173 on 25 October 2018</date>
+		</imprint>
+	</monogr>
+	<note>by guest. Protected by copyright. Downloaded from review</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Effectiveness of screening and monitoring tests for diabetic retinopathy--a systematic review</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hutchinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mcintosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Peters</surname></persName>
+		</author>
+		<idno type="DOI">10.1046/j.1464-5491.2000.00250.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabet Med</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="495" to="506" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Comparison of two reference standards in validating two field mydriatic digital photography as a method of screening for diabetic retinopathy</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Scanlon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Malhotra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Greenwood</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/bjo.87.10.1258</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="1258" to="1263" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Sustainingremote-area programs: retinal camera use by Aboriginal health workers and nurses in a Kimberley partnership</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Murray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Metcalf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Lewis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">MedJ Aust</title>
+		<imprint>
+			<biblScope unit="volume">182</biblScope>
+			<biblScope unit="page" from="520" to="523" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Retinal video recording a new way to image and diagnose diabetic retinopathy</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Tay-Kearney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Constable</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2011.04.009</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page" from="1588" to="1593" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Diabetic retinopathy: global prevalence, major risk factors, screening practices and public health challenges: a review</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Cheung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">Y</forename><surname>Wong</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/ceo.12696</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clin Exp Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="260" to="277" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy in primary care offices</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Abramoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">T</forename><surname>Lavin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Birch</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41746-018-0040-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">NPJ Digit Med</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1" to="8" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Effect of omega-3 fatty acids, lutein/zeaxanthin, or other nutrient supplementation on cognitive function: the areds2 randomized clinical trial</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">Y</forename><surname>Chew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Clemons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Agrón</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.2015.9677</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">314</biblScope>
+			<biblScope unit="page" from="791" to="801" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Global prevalence of age-related macular degeneration and disease burden projection for 2020 and 2040: a systematic review and metaanalysis</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S2214-109X(13)70145-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Lancet Glob Health</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="e106" to="116" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">CMS medicare provider utilization and payment data</title>
+		<author>
+			<persName><forename type="first">Medicaid</forename><surname>Centers For Medicare</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Services</surname></persName>
+		</author>
+		<ptr target="https://www.cms.gov/" />
+	</analytic>
+	<monogr>
+		<title level="m">Research-Statistics-Data-and-Systems/ Statistics-Trends-and-Reports/ Medicare-Provider-Charge-Data/ index. html</title>
+				<imprint>
+			<date type="published" when="2018-09">2018. Sep 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Deep learning is effective for classifying normal versus age-related macular degeneration OCT images</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Baughman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.oret.2016.12.009</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmol Retina</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="322" to="327" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Automated detection of exudative age-related macular degeneration in spectral domain optical coherence tomography using deep learning</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Treder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Lauermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Eter</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00417-017-3850-3</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Graefes Arch Clin Exp Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">256</biblScope>
+			<biblScope unit="page" from="259" to="265" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Identifying medical diagnoses and treatable diseases by image-based deep learning</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Kermany</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goldbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Cai</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2018.02.010</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">172</biblScope>
+			<biblScope unit="page" from="1122" to="1131" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">AI for medical imaging goes deep</title>
+		<author>
+			<persName><forename type="first">Dsw</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Burlina</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41591-018-0029-3</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Med</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="539" to="540" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">U-Net: convolutional networks for biomedical image segmentation</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Ronneberger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Brox</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Medical Image Computing and Computer-Assisted Intervention -MICCAI</title>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">ReLayNet: retinal layer and fluid segmentation of macular optical coherence tomography using fully convolutional networks</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Conjeti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Spk</forename><surname>Karri</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/BOE.8.003627</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed Opt Express</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="3627" to="3642" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Deep learning approach for the detection and quantification of intraretinal cystoid fluid in multivendor optical coherence tomography</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">G</forename><surname>Venhuizen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Van Ginneken</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liefers</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/BOE.9.001545</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed Opt Express</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="1545" to="1569" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Effect of patch size and network architecture on a convolutional neural network approach for automatic segmentation of OCT retinal layers</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hamwood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Alonso-Caneiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Read</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/BOE.9.003049</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed Opt Express</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="3049" to="3066" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Automatic segmentation of nine retinal layer boundaries in OCT images of non-exudative AMD patients using deep learning and graph search</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Cunefare</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/BOE.8.002732</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed Opt Express</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="2732" to="2744" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Automated segmentation of the choroid in EDI-OCT images with retinal pathology using convolution neural networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Oguz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Fetal Infant Ophthalmic Med Image Anal</title>
+		<imprint>
+			<biblScope unit="volume">10554</biblScope>
+			<biblScope unit="page" from="177" to="184" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Segmentation of the foveal microvasculature using deep learning networks</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Prentašic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Heisler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Mammo</surname></persName>
+		</author>
+		<idno type="DOI">10.1117/1.JBO.21.7.075008</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Biomed Opt</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">75008</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Clinically applicable deep learning for diagnosis and referral in retinal disease</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>De Fauw</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Ledsam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Romera-Paredes</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41591-018-0107-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Med</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="1342" to="1350" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">How to defuse a demographic time bomb: the way forward</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Buchan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Amoaku</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Barnes</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/eye.2017.114</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Eye</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="1519" to="1522" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<ptr target="https://www.aop.org.uk/ot/industry/high-street/2017/05/22/oct-rollout-in-every-specsavers-announced" />
+		<title level="m">OCT rollout in every specsavers announced</title>
+				<imprint>
+			<date type="published" when="2018-09">2018. Sep 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Global prevalence of glaucoma and projections of glaucoma burden through 2040: a systematic review and meta-analysis</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Tham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">Y</forename><surname>Wong</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2014.05.013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">121</biblScope>
+			<biblScope unit="page" from="2081" to="2090" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Size of the optic nerve scleral canal and comparison with intravital determination of optic disc dimensions</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Jonas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Gusek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Guggenmoos-Holzmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF02181183</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Graefes Arch Clin Exp Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">226</biblScope>
+			<biblScope unit="page" from="213" to="215" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Retinal nerve fiber layer features identified by unsupervised machine learning on optical coherence tomography scans predict glaucoma progression</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Christopher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Belghith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">N</forename><surname>Weinreb</surname></persName>
+		</author>
+		<idno type="DOI">10.1167/iovs.17-23387</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Invest Ophthalmol Vis Sci</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="2748" to="2756" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Patterns of functional vision loss in glaucoma determined with archetypal analysis</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Elze</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Pasquale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Q</forename><surname>Shen</surname></persName>
+		</author>
+		<idno type="DOI">10.1098/rsif.2014.1118</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J R Soc Interface</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Reversal of glaucoma hemifield test results and visual field features in glaucoma</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Pasquale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Q</forename><surname>Shen</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2017.09.021</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="352" to="360" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Interobserver agreement and intraobserver reproducibility of the subjective determination of glaucomatous visual field progression</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Tanna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Bandi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Budenz</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2010.04.038</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page" from="60" to="65" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Interobserver agreement on visual field progression in glaucoma: a comparison of methods</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Viswanathan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Crabb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Mcnaught</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/bjo.87.6.726</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="726" to="730" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Detection of longitudinal visual field progression in glaucoma using machine learning</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yousefi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kiwaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zheng</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ajo.2018.06.007</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">193</biblScope>
+			<biblScope unit="page" from="71" to="79" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">The Ocular Hypertension Treatment Study: a randomized trial determines that topical ocular hypotensive medication delays or prevents the onset of primary open-angle glaucoma</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Kass</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Heuer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Higginbotham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arch Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="701" to="713" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Reduction of intraocular pressure and glaucoma progression: results from the Early Manifest Glaucoma Trial</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Heijl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Leske</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bengtsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arch Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="1268" to="1279" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Comparison of glaucomatous progression between untreated patients with normal-tension glaucoma and patients with therapeutically reduced intraocular pressures. Collaborative Normal-Tension Glaucoma Study Group</title>
+		<idno type="DOI">10.1016/S0002-9394(98)00223-2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page" from="487" to="497" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Personalized prediction of glaucoma progression under different target intraocular pressure levels using filtered forecasting methods</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kazemian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Lavieri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Van Oyen</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2017.10.033</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="569" to="577" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Interim clinical outcomes in the Collaborative Initial Glaucoma Treatment Study comparing initial treatment randomized to medications or surgery</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Lichter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Musch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Gillespie</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S0161-6420(01)00873-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="1943" to="1953" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Update on blindness due to retinopathy of prematurity globally and in India</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Blencowe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Moxon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gilbert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Indian Pediatr</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="S89" to="92" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note>Suppl</note>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Cryotherapy for retinopathy of prematurity--a prospective study</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O'</forename><surname>Keefe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+		<idno type="DOI">10.1136/bjo.76.5.289</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="289" to="291" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Multicenter trial of cryotherapy for retinopathy of prematurity: ophthalmological outcomes at 10 years</title>
+	</analytic>
+	<monogr>
+		<title level="j">Arch Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="1110" to="1118" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+		<respStmt>
+			<orgName>Cryotherapy for Retinopathy of Prematurity Cooperative Group</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Retinopathy of prematurity in middle-income countries</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gilbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rahi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Eckstein</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S0140-6736(97)01107-0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Lancet</title>
+		<imprint>
+			<biblScope unit="volume">350</biblScope>
+			<biblScope unit="page" from="12" to="14" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">An international comparison of retinopathy of prematurity grading performance within the Benefits of Oxygen Saturation Targeting II trials</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Fleck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Juszczak</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/eye.2017.150</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Eye</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="74" to="80" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Implementation and evaluation of a teleeducation system for the diagnosis of ophthalmic disease by international trainees</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Swan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Jonas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AMIA Annu Symp Proc</title>
+		<imprint>
+			<biblScope unit="volume">2015</biblScope>
+			<biblScope unit="page" from="366" to="375" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Validated system for centralized grading of retinopathy of prematurity: telemedicine approaches to evaluating acute-phase retinopathy of prematurity (e-ROP) study</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Daniel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Quinn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Hildebrand</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jamaophthalmol.2015.0460</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA Ophthalmol</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="675" to="682" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<monogr>
+		<title level="m" type="main">Automated retinopathy of prematurity case detection with convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Worrall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Brostow</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Fully automated disease severity assessment and treatment monitoring in retinopathy of prematurity using deep learning</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Beers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Medical Imaging</title>
+		<imprint>
+			<biblScope unit="volume">10579</biblScope>
+			<date type="published" when="2018">2018. 2018</date>
+			<publisher>Imaging Informatics for Healthcare, Research, and Applications</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Grader variability and the importance of reference standards for evaluating machine learning models for diabetic retinopathy</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Krause</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Gulshan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Rahimy</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ophtha.2018.01.034</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="1264" to="1272" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<title level="m" type="main">Top-down visual saliency guided by captions</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Ramanishka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<ptr target="https://arxiv.org/abs/1612.07360" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Retinal lesion detection with deep learning using image patches</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+		<idno type="DOI">10.1167/iovs.17-22721</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Invest Ophthalmol Vis Sci</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="590" to="596" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Deep image mining for diabetic retinopathy screening</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Quellec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Charrière</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Boudi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.media.2017.04.012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Med Image Anal</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="178" to="193" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Feasibility and patient acceptability of a novel artificial intelligence-based screening model for diabetic retinopathy at endocrinology outpatient services: a pilot study</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Keel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Scheetz</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41598-018-22612-2</idno>
+		<ptr target="http://bjo.bmj.com/" />
+	</analytic>
+	<monogr>
+		<title level="j">Br J Ophthalmol: first published as</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">4330</biblScope>
+			<date type="published" when="1136">2018. April 22. 2024. 1136/bjophthalmol-2018-313173 on 25 October 2018</date>
+		</imprint>
+	</monogr>
+	<note>Sci Rep. Downloaded from</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
 	</text>
 </TEI>
