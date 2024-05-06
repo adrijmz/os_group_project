@@ -40,7 +40,7 @@ def main(folder_path, output_directory):
                     xml_file.write(metadata_xml)
 
 # read every xml file to get the title and save it in a .txt file
-def get_doi_from_xml(xml_directory, title_directory, abstract_directory):
+def get_doi_from_xml(xml_directory, title_directory, abstract_directory, acknowledgements_directory):
     for filename in os.listdir(xml_directory):
         if filename.endswith(".xml"):
             xml_path = os.path.join(xml_directory, filename)
@@ -70,6 +70,18 @@ def get_doi_from_xml(xml_directory, title_directory, abstract_directory):
                     abstract_path = os.path.join(abstract_directory, abstract_filename)
                     with open(abstract_path, "w") as abstract_file:
                         abstract_file.write(abstract)
+                
+                acknowledgements_start = xml_content.find('<div type="acknowledgement">')
+                if acknowledgements_start != -1:
+                    acknowledgements_start += len('<div type="acknowledgement">')
+                    acknowledgements_end = xml_content.find('</div>', acknowledgements_start)
+                    acknowledgements = xml_content[acknowledgements_start:acknowledgements_end]
+                    acknowledgements = delete_labels_from_abstract(acknowledgements)
+                    # Guardar el acknowledgement en un archivo .txt en la carpeta acknowledgements
+                    acknowledgements_filename = os.path.splitext(filename)[0] + ".txt"
+                    acknowledgements_path = os.path.join(acknowledgements_directory, acknowledgements_filename)
+                    with open(acknowledgements_path, "w") as acknowledgements_file:
+                        acknowledgements_file.write(acknowledgements)
 
 if __name__ == "__main__":
 
@@ -94,10 +106,12 @@ if __name__ == "__main__":
     xml_directory = args.OUTPUT
     title_directory = './papers/doi/'
     abstract_directory = './papers/abstract/'
+    acknowledgements_directory = './papers/acknowledgements/'
 
     # Crear la carpeta de salida si no existe
     os.makedirs(xml_directory, exist_ok=True)
     os.makedirs(title_directory, exist_ok=True)
     os.makedirs(abstract_directory, exist_ok=True)
+    os.makedirs(acknowledgements_directory, exist_ok=True)
     main(pdf_directory, xml_directory)
-    get_doi_from_xml(xml_directory, title_directory, abstract_directory)
+    get_doi_from_xml(xml_directory, title_directory, abstract_directory, acknowledgements_directory)
