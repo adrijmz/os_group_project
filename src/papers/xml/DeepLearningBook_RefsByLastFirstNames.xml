@@ -75,7 +75,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-05-06T15:12+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-06T21:12+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -150,8 +150,8 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figures 4 .</head><label>4</label><figDesc>4 to 4.10 show additional examples (unpublished) for the original un-coded speech spectrograms and their reconstructions using the deep autoencoder. They give a diverse number of binary codes for either a single or three consecutive frames in the spectrogram samples.</figDesc></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 4 . 5 :</head><label>45</label><figDesc>Figure 4.5: Same as Figure 4.4 but with a different TIMIT speech utterance.</figDesc><graphic coords="44,183.12,175.47,256.36,198.72" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 4 . 6 :</head><label>46</label><figDesc>Figure 4.6: The original speech spectrogram and the reconstructed counterpart. A total of 936 binary codes are used for three adjacent frames.</figDesc><graphic coords="44,179.16,429.79,264.00,159.80" type="bitmap" /></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 4 . 7 :</head><label>47</label><figDesc>Figure 4.7: Same as Figure 4.6 but with a different TIMIT speech utterance.</figDesc><graphic coords="45,179.16,174.79,264.00,159.44" type="bitmap" /></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 4 . 8 :</head><label>48</label><figDesc>Figure 4.8: Same as Figure 4.6 but with yet another TIMIT speech utterance.</figDesc><graphic coords="45,179.16,384.67,264.00,159.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 4 . 7 :</head><label>47</label><figDesc>Figure 4.7: Same as Figure 4.6 but with a different TIMIT speech utterance.</figDesc><graphic coords="45,179.16,384.67,264.00,159.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 4 . 8 :</head><label>48</label><figDesc>Figure 4.8: Same as Figure 4.6 but with yet another TIMIT speech utterance.</figDesc></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 4 . 9 :</head><label>49</label><figDesc>Figure 4.9: The original speech spectrogram and the reconstructed counterpart. A total of 2000 binary codes with one for each single frame.</figDesc><graphic coords="46,179.16,392.92,264.00,158.51" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 4 . 10 :</head><label>410</label><figDesc>Figure 4.10: Same as Figure 4.9 but with a different TIMIT speech utterance.</figDesc></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Figure 5 . 1 :</head><label>51</label><figDesc>Figure 5.1: A pictorial view of sampling from a RBM during RBM learning (courtesy of Geoff Hinton).</figDesc><graphic coords="52,179.16,175.61,264.00,73.54" type="bitmap" /></figure>

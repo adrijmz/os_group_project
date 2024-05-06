@@ -15,17 +15,17 @@ def extract_metadata_pdf(pdf_path):
         print("Error al procesar el archivo:", pdf_path)
         return None
     
-def delete_labels_from_abstract(abstract):
-    # Eliminar las etiquetas HTML del abstract
+def delete_labels_from_abstract(text):
+    # Eliminar las etiquetas HTML del text
     while True:
-        start = abstract.find("<")
+        start = text.find("<")
         if start == -1:
             break
-        end = abstract.find(">", start)
+        end = text.find(">", start)
         if end == -1:
             break
-        abstract = abstract[:start] + abstract[end + 1:]
-    return abstract
+        text = text[:start] + text[end + 1:]
+    return text
 
 def main(folder_path, output_directory):
     for filename in os.listdir(folder_path):
