@@ -41,7 +41,11 @@ def print_lda_topics(num_words, lda_model):
 def get_topic_probability(lda_model, dictionary, document):
     bow = dictionary.doc2bow(preprocess(document))
     topic_probability = lda_model[bow]
-    return topic_probability
+    if topic_probability:
+        max_prob_topic = max(topic_probability, key=lambda item: item[1])
+        return max_prob_topic
+    else:
+        return None
 
 def main():
     directory = "papers/abstract"
@@ -53,10 +57,14 @@ def main():
         if abstract.endswith(".txt"):
             with open(os.path.join(directory, abstract), 'r', encoding='utf-8') as file:
                 document = file.read()
-                topic_probability = get_topic_probability(lda_model, dictionary, document)
-                print(f"Abstract {abstract}")
-                for topic, prob in topic_probability:
+                max_topic_probability = get_topic_probability(lda_model, dictionary, document)
+                if max_topic_probability is not None:
+                    topic, prob = max_topic_probability
+                    print(f"Abstract \"{abstract}\"")
                     print(f"Topic: {topic}, Probability: {prob:.4f}")
+                else:
+                    print(f"Error analyzing abstract {abstract} or zero probability")
+        print("")
 
 if __name__=="__main__":
     main()
