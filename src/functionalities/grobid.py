@@ -40,7 +40,7 @@ def main(folder_path, output_directory):
                     xml_file.write(metadata_xml)
 
 # read every xml file to get the title and save it in a .txt file
-def get_doi_from_xml(xml_directory, title_directory, abstract_directory, acknowledgements_directory):
+def get_metadata_fron_xml(xml_directory, title_directory, abstract_directory, acknowledgements_directory):
     for filename in os.listdir(xml_directory):
         if filename.endswith(".xml"):
             xml_path = os.path.join(xml_directory, filename)
@@ -114,4 +114,4 @@ if __name__ == "__main__":
     os.makedirs(abstract_directory, exist_ok=True)
     os.makedirs(acknowledgements_directory, exist_ok=True)
     main(pdf_directory, xml_directory)
-    get_doi_from_xml(xml_directory, title_directory, abstract_directory, acknowledgements_directory)
+    get_metadata_fron_xml(xml_directory, title_directory, abstract_directory, acknowledgements_directory)

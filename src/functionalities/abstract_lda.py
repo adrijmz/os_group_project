@@ -1,5 +1,6 @@
 import os
-from gensim import corpora, models
+from gensim.models import LdaModel
+from gensim.corpora import Dictionary
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -24,9 +25,9 @@ def preprocess(text):
 
 # Function to train the LDA model
 def train_lda(documents, num_topics=10, passes=15):
-    dictionary = corpora.Dictionary(documents)
+    dictionary = Dictionary(documents)
     corpus = [dictionary.doc2bow(doc) for doc in documents]
-    lda_model = models.LdaModel(corpus, num_topics=num_topics, id2word=dictionary, passes=passes)
+    lda_model = LdaModel(corpus, num_topics=num_topics, id2word=dictionary, passes=passes)
     return lda_model, dictionary, corpus
 
 def get_lda_topics(num_words, lda_model):
@@ -47,7 +48,7 @@ def get_topic_probability(lda_model, dictionary, document):
         return None
 
 def write_results(directory, abstract, topic, probability):
-    with open(os.path.join(directory, f"{abstract}_result.txt"), 'w', encoding='utf-8') as file:
+    with open(os.path.join(directory, f"{abstract}.txt"), 'w', encoding='utf-8') as file:
         file.write(f"Topic: {topic}, Probability: {probability:.4f}\n")
 
 def process_abstracts(directory, lda_model, dictionary, output_directory, topics):

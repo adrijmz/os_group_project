@@ -1,0 +1,1 @@
+Topic: ['dl', 'ha', 'wit', 'task', 'text', 'learning', 'language', 'image', 'row', 'applied'], Probability: 0.9849

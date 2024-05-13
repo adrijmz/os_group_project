@@ -1,0 +1,1 @@
+Topic: ['wikipedia', 'claim', 'citation', 'system', 'source', 'reference', 'information', 'process', 'human', 'one'], Probability: 0.9956

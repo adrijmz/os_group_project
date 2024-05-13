@@ -1,1 +1,0 @@
-Topic: ['deep', 'learning', 'ai', 'processing', 'application', 'asr', 'information', 'technology', 'use', 'speech'], Probability: 0.9928

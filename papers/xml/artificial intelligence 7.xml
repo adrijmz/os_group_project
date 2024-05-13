@@ -107,7 +107,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-05-06T21:12+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-13T19:57+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -134,8 +134,8 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 7</head><label>7</label><figDesc>Figure 7 An illustration of the support vector machine.</figDesc><graphic coords="7,43.97,48.50,240.95,218.99" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 8</head><label>8</label><figDesc>Figure 8 An illustration of neural network. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="7,104.78,368.81,385.71,353.70" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 9</head><label>9</label><figDesc>Figure 9 An illustration of deep learning with two hidden layers.</figDesc><graphic coords="8,104.78,48.50,385.71,280.16" type="bitmap" /></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 10</head><label>10</label><figDesc>Figure 10 Current trend for deep learning. The data are generated through searching the deep learning in healthcare and disease category on PubMed.</figDesc><graphic coords="9,104.78,48.50,385.71,232.80" type="bitmap" /></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 11</head><label>11</label><figDesc>Figure 11 The data sources for deep learning. The data are generated through searching deep learning in combination with the diagnosis techniques on PubMed. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="9,104.78,478.66,385.71,233.05" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 10</head><label>10</label><figDesc>Figure 10 Current trend for deep learning. The data are generated through searching the deep learning in healthcare and disease category on PubMed.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 11</head><label>11</label><figDesc>Figure 11 The data sources for deep learning. The data are generated through searching deep learning in combination with the diagnosis techniques on PubMed. on April 22, 2024 by guest. Protected by copyright. http://svn.bmj.com/ Stroke Vasc Neurol: first published as 10.1136/svn-2017-000101 on 21 June 2017. Downloaded from</figDesc><graphic coords="9,104.78,48.50,385.71,232.80" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 12</head><label>12</label><figDesc>Figure12The four main deep learning algorithm and their popularities. The data are generated through searching algorithm names in healthcare and disease category on PubMed.</figDesc><graphic coords="10,104.78,48.50,385.71,256.63" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head></head><label></label><figDesc>Figures 6-9 have also been corrected. competing interests None declared. Provenance and peer review Commissioned; internally peer reviewed. data sharing statement No additional data are available.</figDesc></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="3,85.04,48.50,425.20,459.93" type="bitmap" /></figure>

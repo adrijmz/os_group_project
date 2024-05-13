@@ -1,1 +1,0 @@
-Topic: ['ai', 'technology', 'gene', 'learning', 'development', 'sustainable', 'study', 'intelligence', 'model', 'transaction'], Probability: 0.9955

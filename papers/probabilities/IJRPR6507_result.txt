@@ -1,1 +1,0 @@
-Topic: ['logistic', 'regression', 'accuracy', 'size', 'novel', 'sample', 'using', 'result', 'detection', 'fraud'], Probability: 0.9857

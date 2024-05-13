@@ -1,1 +1,0 @@
-Topic: ['card', 'credit', 'model', 'fraud', 'technology', 'ai', 'ml', 'detection', 'part', 'pandemic'], Probability: 0.9895

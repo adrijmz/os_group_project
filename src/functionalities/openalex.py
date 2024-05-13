@@ -33,28 +33,34 @@ def main():
             if filename.endswith('.txt'):
                 # Leer los títulos del archivo
                 with open(os.path.join(dois_files, filename), 'r') as file:
-                    dois = [line.strip() for line in file.readlines()]
+                    doi = file.read()
+                
+                results = query_openalex(doi)
 
-                # Iterar sobre los títulos y realizar la consulta para cada uno
-                for doi in dois:
-                    results = query_openalex(doi)
-                    if results:
-                        # Escribir los resultados en el archivo CSV
-                        for result in results['results']:
-                            authorships = result.get('authorships', [])
-                            for author in authorships:
-                                name = author.get('author').get('display_name')
-                                
-                                intitutions = author.get('institutions', [])
+                if results:
+                    # Escribir los resultados en el archivo CSV solo del primer resultado
+                    for result in results['results']:
+                        authorships = result.get('authorships', [])
+                        for author in authorships:
+                            name = author.get('author').get('display_name')
+                            
+                            intitutions = author.get('institutions', [])
 
-                                if intitutions:
-                                    for institution in intitutions:
-                                        writer.writerow({
-                                            'DOI': doi,
-                                            'Name': name,
-                                            'Institution': institution.get('display_name')
-                                        })
-                    sleep(1)
+                            if intitutions:
+                                for institution in intitutions:
+                                    writer.writerow({
+                                        'DOI': doi,
+                                        'Name': name,
+                                        'Institution': institution.get('display_name')
+                                    })
+                            else:
+                                writer.writerow({
+                                    'DOI': doi,
+                                    'Name': name,
+                                    'Institution': 'N/A'
+                                })
+                        break
+                sleep(1)
 
     print("Results have been saved to", output_path)     
 

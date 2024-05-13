@@ -1,0 +1,1 @@
+Topic: ['deep', 'learning', 'asr', 'approach', 'book', 'processing', 'information', 'model', 'many', 'wa'], Probability: 0.7308

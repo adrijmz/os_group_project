@@ -1,1 +1,0 @@
-Topic: ['data', 'surrogate', 'fraud', 'operation', 'credit', 'card', 'bank', 'multivariate', 'real', 'distribution'], Probability: 0.9897
