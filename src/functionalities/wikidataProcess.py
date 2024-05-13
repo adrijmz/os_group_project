@@ -32,7 +32,7 @@ LIMIT 1
 
 def main():
     # Ruta para guardar el archivo CSV
-    output_path = './papers/wikidata/results.csv'
+    output_path = '../../papers/wikidata/results.csv'
 
     # Crear la carpeta para guardar los resultados si no existe
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -45,7 +45,7 @@ def main():
         writer.writeheader()
 
         # Iterar sobre los archivos en la carpeta de títulos
-        titles_folder = './papers/doi/'
+        titles_folder = '../../papers/doi/'
         for filename in os.listdir(titles_folder):
             if filename.endswith('.txt'):
                 # Leer los títulos del archivo

@@ -18,10 +18,10 @@ def tokenize_text(read_dir, write_dir):
                         text_tokenized.write(token + " ")
 
 if __name__ == "__main__":
-    abstract_directory = './papers/abstract/'
-    acknowledgements_directory = './papers/acknowledgements/'
-    tokenized_abstract_directory = './papers/token/abstract/'
-    tokenized_acknowledgements_directory = './papers/token/acknowledgements/'
+    abstract_directory = '../../papers/abstract/'
+    acknowledgements_directory = '../../papers/acknowledgements/'
+    tokenized_abstract_directory = '../../papers/token/abstract/'
+    tokenized_acknowledgements_directory = '../../papers/token/acknowledgements/'
 
     os.makedirs(tokenized_abstract_directory, exist_ok=True)
     os.makedirs(tokenized_acknowledgements_directory, exist_ok=True)
