@@ -1,0 +1,1 @@
+Topic: ['wikipedia', 'model', 'claim', 'citation', 'learning', 'system', 'information', 'knowledge', 'source', 'existing'], Probability: 0.9956

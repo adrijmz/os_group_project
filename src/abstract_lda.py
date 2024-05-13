@@ -29,14 +29,13 @@ def train_lda(documents, num_topics=10, passes=15):
     lda_model = models.LdaModel(corpus, num_topics=num_topics, id2word=dictionary, passes=passes)
     return lda_model, dictionary, corpus
 
-def print_lda_topics(num_words, lda_model):
-    print("LDA TOPICS")
+def get_lda_topics(num_words, lda_model):
+    topics = []
     for topic_id in range(lda_model.num_topics):
         topic_words = lda_model.show_topic(topic_id, topn=num_words)
-        print(f"Topic {topic_id}:")
-        words = ', '.join([word for word, prob in topic_words])
-        print(words)
-    print("")
+        words = [word for word, prob in topic_words]
+        topics.append(words)
+    return topics
 
 def get_topic_probability(lda_model, dictionary, document):
     bow = dictionary.doc2bow(preprocess(document))
@@ -47,12 +46,11 @@ def get_topic_probability(lda_model, dictionary, document):
     else:
         return None
 
-def main():
-    directory = "papers/abstract"
-    documents = process_documents(directory)
-    lda_model, dictionary, corpus = train_lda(documents)
-    num_words = 10
-    print_lda_topics(num_words, lda_model)
+def write_results(directory, abstract, topic, probability):
+    with open(os.path.join(directory, f"{abstract}_result.txt"), 'w', encoding='utf-8') as file:
+        file.write(f"Topic: {topic}, Probability: {probability:.4f}\n")
+
+def process_abstracts(directory, lda_model, dictionary, output_directory, topics):
     for abstract in os.listdir(directory):
         if abstract.endswith(".txt"):
             with open(os.path.join(directory, abstract), 'r', encoding='utf-8') as file:
@@ -60,11 +58,20 @@ def main():
                 max_topic_probability = get_topic_probability(lda_model, dictionary, document)
                 if max_topic_probability is not None:
                     topic, prob = max_topic_probability
-                    print(f"Abstract \"{abstract}\"")
-                    print(f"Topic: {topic}, Probability: {prob:.4f}")
+                    write_results(output_directory, os.path.splitext(abstract)[0], topics[topic], prob)
                 else:
                     print(f"Error analyzing abstract {abstract} or zero probability")
-        print("")
+
+def main():
+    directory = "papers/abstract"
+    output_directory = "papers/probabilities"
+    num_words = 10
+
+    os.makedirs(output_directory, exist_ok=True)
+    documents = process_documents(directory)
+    lda_model, dictionary, corpus = train_lda(documents)
+    topics = get_lda_topics(num_words, lda_model)
+    process_abstracts(directory, lda_model, dictionary, output_directory, topics)
 
 if __name__=="__main__":
     main()
