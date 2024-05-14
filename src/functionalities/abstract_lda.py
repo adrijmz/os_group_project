@@ -38,6 +38,12 @@ def get_lda_topics(num_words, lda_model):
         topics.append(words)
     return topics
 
+def write_topics(topics, output_directory):
+    with open(f"{output_directory}/topics.txt", 'w', encoding='utf-8') as file:
+        for idx, topic_words in enumerate(topics):
+            file.write(f"Topic {idx}: ")
+            file.write(', '.join(topic_words) + '\n\n')
+
 def get_topic_probability(lda_model, dictionary, document):
     bow = dictionary.doc2bow(preprocess(document))
     topic_probability = lda_model[bow]
@@ -66,12 +72,16 @@ def process_abstracts(directory, lda_model, dictionary, output_directory, topics
 def main():
     directory = "../../papers/abstract"
     output_directory = "../../papers/probabilities"
+    topic_directory = "../../papers/topics"
     num_words = 10
 
     os.makedirs(output_directory, exist_ok=True)
+    os.makedirs(topic_directory, exist_ok=True)
+
     documents = process_documents(directory)
     lda_model, dictionary, corpus = train_lda(documents)
     topics = get_lda_topics(num_words, lda_model)
+    write_topics(topics, topic_directory)
     process_abstracts(directory, lda_model, dictionary, output_directory, topics)
 
 if __name__=="__main__":

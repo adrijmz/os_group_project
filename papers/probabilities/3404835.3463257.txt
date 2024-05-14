@@ -1,1 +1,1 @@
-Topic: ['dl', 'ha', 'wit', 'task', 'text', 'learning', 'language', 'image', 'row', 'applied'], Probability: 0.9849
+Topic: ['model', 'fraud', 'wit', 'data', 'learning', 'ha', 'technique', 'information', 'card', 'wikipedia'], Probability: 0.9933

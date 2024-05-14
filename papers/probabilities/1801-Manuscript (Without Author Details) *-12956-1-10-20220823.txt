@@ -1,1 +1,1 @@
-Topic: ['deep', 'learning', 'asr', 'approach', 'book', 'processing', 'information', 'model', 'many', 'wa'], Probability: 0.7308
+Topic: ['learning', 'transaction', 'model', 'machine', 'deep', 'fraud', 'network', 'technology', 'card', 'algorithm'], Probability: 0.9895

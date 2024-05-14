@@ -1,1 +1,1 @@
-Topic: ['gene', 'imaging', 'article', 'diagnostic', 'wiki', 'exam', 'well', 'radiology', 'increase', 'human'], Probability: 0.9921
+Topic: ['wikipedia', 'claim', 'system', 'citation', 'fraud', 'learning', 'one', 'credit', 'card', 'increase'], Probability: 0.9921

@@ -1,1 +1,1 @@
-Topic: ['card', 'credit', 'fraud', 'data', 'transaction', 'algorithm', 'detection', 'customer', 'increase', 'problem'], Probability: 0.5037
+Topic: ['card', 'credit', 'transaction', 'fraud', 'part', 'customer', 'authorized', 'algorithm', 'increased', 'time'], Probability: 0.9900

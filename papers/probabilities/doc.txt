@@ -1,1 +1,1 @@
-Topic: ['card', 'credit', 'fraud', 'data', 'transaction', 'algorithm', 'detection', 'customer', 'increase', 'problem'], Probability: 0.9642
+Topic: ['wikipedia', 'claim', 'system', 'citation', 'fraud', 'learning', 'one', 'credit', 'card', 'increase'], Probability: 0.4985

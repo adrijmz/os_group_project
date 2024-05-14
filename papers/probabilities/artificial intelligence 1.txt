@@ -1,1 +1,1 @@
-Topic: ['gene', 'imaging', 'article', 'diagnostic', 'wiki', 'exam', 'well', 'radiology', 'increase', 'human'], Probability: 0.9911
+Topic: ['ai', 'learning', 'dl', 'deep', 'ha', 'gene', 'technology', 'human', 'application', 'article'], Probability: 0.9911
