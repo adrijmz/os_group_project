@@ -1,7 +1,8 @@
 [![DOI](https://zenodo.org/badge/783363515.svg)](https://zenodo.org/doi/10.5281/zenodo.11200165)
 
-
 # Repository Overview
+
+https://os-group-project.readthedocs.io/en/latest/
 
 The project aims to create a knowledge graph by extracting information from articles. It provides functionalities to extract metadata, process data from Wikidata and OpenAlex, perform topic modeling, and create a knowledge graph. The project can be installed either using Docker or from the source. To extract all information the script use the service GROBID (2008-2022) <https://github.com/kermitt2/grobid>, Wikidata <https://www.wikidata.org/wiki/Wikidata:Main_Page> and OpenAlex <https://openalex.org>.
 
