@@ -70,9 +70,9 @@ def process_abstracts(directory, lda_model, dictionary, output_directory, topics
                     print(f"Error analyzing abstract {abstract} or zero probability")
 
 def main():
-    directory = "../../papers/abstract"
-    output_directory = "../../papers/probabilities"
-    topic_directory = "../../papers/topics"
+    directory = "papers/abstract"
+    output_directory = "papers/probabilities"
+    topic_directory = "papers/topics"
     num_words = 10
 
     os.makedirs(output_directory, exist_ok=True)

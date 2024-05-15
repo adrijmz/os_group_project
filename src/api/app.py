@@ -6,7 +6,7 @@ from rdflib import Graph
 # Crear el grafo RDF
 g = Graph()
 # Cargar el grafo desde un archivo RDF existente o construirlo desde cero
-g.parse("../functionalities/papers.xml")
+g.parse("src/functionalities/papers.xml")
 
 # Iniciar la aplicación Dash
 app = dash.Dash(__name__)

@@ -15,7 +15,7 @@ def query_openalex(doi):
     
 def main():
     # Ruta para guardar el archivo CSV
-    output_path = '../../papers/openalex/results.csv'
+    output_path = 'papers/openalex/results.csv'
 
     # Crear la carpeta para guardar los resultados si no existe
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -28,7 +28,7 @@ def main():
         writer.writeheader()
 
         # Iterar sobre los archivos en la carpeta de títulos
-        dois_files = '../../papers/doi/'
+        dois_files = 'papers/doi/'
         for filename in os.listdir(dois_files):
             if filename.endswith('.txt'):
                 # Leer los títulos del archivo

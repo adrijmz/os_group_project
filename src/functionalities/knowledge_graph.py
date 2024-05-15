@@ -117,11 +117,11 @@ topic_and_prob_by_title = {}
 topic_and_prob_by_doi = {}
 possible_topics = []
 
-wikidata_res = '../../papers/wikidata/results.csv'
-openalex_res = '../../papers/openalex/results.csv'
-prob_res = '../../papers/probabilities/'
-doi_res = '../../papers/doi/'
-topic_res = '../../papers/topics/'
+wikidata_res = 'papers/wikidata/results.csv'
+openalex_res = 'papers/openalex/results.csv'
+prob_res = 'papers/probabilities/'
+doi_res = 'papers/doi/'
+topic_res = 'papers/topics/'
 
 # read authors
 with open(openalex_res, 'r') as f:

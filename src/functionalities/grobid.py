@@ -4,6 +4,9 @@ import argparse
 
 
 def extract_metadata_pdf(pdf_path):
+
+    # uncomment the following line to use the server instead of the local grobid (docker bridge network must be created)
+    # url = "http://server:8070/api/processFulltextDocument"
     url = "http://localhost:8070/api/processFulltextDocument"
     files = {'input': open(pdf_path, 'rb')}
     headers = {}
@@ -91,22 +94,22 @@ if __name__ == "__main__":
     
     parser.add_argument(
         '--INPUT',
-        default='../../papers/pdf/',
+        default='papers/pdf/',
         type=str,
         help='Directory containing PDFs')
 
     parser.add_argument(
         '--OUTPUT',
-        default='../../papers/xml/',
+        default='papers/xml/',
         type=str,
         help='Directory to save the output files')
 
     args = parser.parse_args()
     pdf_directory = args.INPUT
     xml_directory = args.OUTPUT
-    title_directory = '../../papers/doi/'
-    abstract_directory = '../../papers/abstract/'
-    acknowledgements_directory = '../../papers/acknowledgements/'
+    title_directory = 'papers/doi/'
+    abstract_directory = 'papers/abstract/'
+    acknowledgements_directory = 'papers/acknowledgements/'
 
     # Crear la carpeta de salida si no existe
     os.makedirs(xml_directory, exist_ok=True)
