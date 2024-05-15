@@ -1,0 +1,13 @@
+site_name: Paper KG documentation
+
+nav:
+  - Home: index.md
+  - Install: install.md
+  - Usage: usage.md
+  - Examples: examples.md
+  
+theme:
+  name: readthedocs
+
+extra:
+  author: Adrian Jimenez Cano
