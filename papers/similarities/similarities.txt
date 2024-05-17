@@ -1,0 +1,10 @@
+doc.txt;fin_irjmets1686906858.txt;0.5706
+IJHS-9534+4155-4173.txt;fin_irjmets1686906858.txt;0.3442
+IJHS-9534+4155-4173.txt;doc.txt;0.3399
+doc.txt;doc-2.txt;0.3283
+1801-Manuscript (Without Author Details) *-12956-1-10-20220823.txt;fin_irjmets1686906858.txt;0.3187
+doc-2.txt;fin_irjmets1686906858.txt;0.3160
+doc.txt;1801-Manuscript (Without Author Details) *-12956-1-10-20220823.txt;0.3040
+IJHS-9534+4155-4173.txt;1801-Manuscript (Without Author Details) *-12956-1-10-20220823.txt;0.2888
+1801-Manuscript (Without Author Details) *-12956-1-10-20220823.txt;doc-2.txt;0.2840
+artificial intelligence 10.txt;artificial intelligence 7.txt;0.2387

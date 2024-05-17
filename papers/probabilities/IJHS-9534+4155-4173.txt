@@ -1,1 +1,1 @@
-Topic: ['wikipedia', 'claim', 'system', 'citation', 'fraud', 'learning', 'one', 'credit', 'card', 'increase'], Probability: 0.9875
+Topic: ['dl', 'gene', 'ha', 'credit', 'data', 'fraud', 'card', 'wiki', 'challenge', 'community'], Probability: 0.9875

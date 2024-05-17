@@ -1,1 +1,1 @@
-Topic: ['model', 'fraud', 'wit', 'data', 'learning', 'ha', 'technique', 'information', 'card', 'wikipedia'], Probability: 0.9897
+Topic: ['data', 'fraud', 'model', 'card', 'ha', 'disease', 'ml', 'credit', 'using', 'study'], Probability: 0.9897

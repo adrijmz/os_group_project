@@ -1,1 +1,1 @@
-Topic: ['ai', 'development', 'sustainable', 'target', 'study', 'impact', 'goal', 'sdgs', 'result', 'enable'], Probability: 0.9955
+Topic: ['ai', 'transaction', 'development', 'sustainable', 'target', 'card', 'data', 'study', 'authorized', 'credit'], Probability: 0.9955

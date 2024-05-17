@@ -1,1 +1,1 @@
-Topic: ['data', 'machine', 'model', 'learning', 'disease', 'ml', 'study', 'method', 'may', 'paper'], Probability: 0.9944
+Topic: ['data', 'fraud', 'model', 'card', 'ha', 'disease', 'ml', 'credit', 'using', 'study'], Probability: 0.9944

@@ -21,9 +21,8 @@ docker run --name paper_kg --network kg_red paper_kg
 ```
 
 When all scripts have finished executing, access this URL to make queries to the knowledge graph:
-```bash
-http://127.0.0.1:8050/
-```
+- http://127.0.0.1:8050/
+
 
 #### If you want to see the files generated and you have used Docker to run extractor, execute the following command
 
@@ -59,9 +58,8 @@ python src/api/app.py
 ```
 
 When app.py script have finished executing, access this URL to make queries to the knowledge graph:
-```bash
-http://127.0.0.1:8050/
-```
+- http://127.0.0.1:8050/
+
 
 To access the GROBID service, go to the following URL
 - http://localhost:8070/

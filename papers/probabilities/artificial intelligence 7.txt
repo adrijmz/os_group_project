@@ -1,1 +1,1 @@
-Topic: ['ai', 'learning', 'data', 'healthcare', 'deep', 'knowledge', 'linkage', 'graph', 'wikidata', 'wordnet'], Probability: 0.9909
+Topic: ['ai', 'transaction', 'fraud', 'technology', 'card', 'algorithm', 'credit', 'machine', 'data', 'use'], Probability: 0.8956

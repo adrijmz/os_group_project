@@ -25,7 +25,6 @@ WHERE {{
 LIMIT 1
     """
     result = return_sparql_query_results(query)
-    print(result)
 
     # Devolver resultados
     return result['results']['bindings']

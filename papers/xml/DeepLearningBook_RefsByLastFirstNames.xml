@@ -75,7 +75,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 		</fileDesc>
 		<encodingDesc>
 			<appInfo>
-				<application version="0.7.2" ident="GROBID" when="2024-05-13T19:57+0000">
+				<application version="0.7.2" ident="GROBID" when="2024-05-16T23:29+0000">
 					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
 					<ref target="https://github.com/kermitt2/grobid"/>
 				</application>
@@ -152,8 +152,8 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.co
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 4 . 6 :</head><label>46</label><figDesc>Figure 4.6: The original speech spectrogram and the reconstructed counterpart. A total of 936 binary codes are used for three adjacent frames.</figDesc><graphic coords="44,179.16,429.79,264.00,159.80" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 4 . 7 :</head><label>47</label><figDesc>Figure 4.7: Same as Figure 4.6 but with a different TIMIT speech utterance.</figDesc><graphic coords="45,179.16,384.67,264.00,159.80" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 4 . 8 :</head><label>48</label><figDesc>Figure 4.8: Same as Figure 4.6 but with yet another TIMIT speech utterance.</figDesc></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 4 . 9 :</head><label>49</label><figDesc>Figure 4.9: The original speech spectrogram and the reconstructed counterpart. A total of 2000 binary codes with one for each single frame.</figDesc><graphic coords="46,179.16,392.92,264.00,158.51" type="bitmap" /></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 4 . 10 :</head><label>410</label><figDesc>Figure 4.10: Same as Figure 4.9 but with a different TIMIT speech utterance.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 4 . 9 :</head><label>49</label><figDesc>Figure 4.9: The original speech spectrogram and the reconstructed counterpart. A total of 2000 binary codes with one for each single frame.</figDesc><graphic coords="46,179.16,175.02,264.00,160.17" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 4 . 10 :</head><label>410</label><figDesc>Figure 4.10: Same as Figure 4.9 but with a different TIMIT speech utterance.</figDesc><graphic coords="46,179.16,392.92,264.00,158.51" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Figure 5 . 1 :</head><label>51</label><figDesc>Figure 5.1: A pictorial view of sampling from a RBM during RBM learning (courtesy of Geoff Hinton).</figDesc><graphic coords="52,179.16,175.61,264.00,73.54" type="bitmap" /></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Figure 5 . 2 :</head><label>52</label><figDesc>Figure 5.2: An illustration of the DBN-DNN architecture.</figDesc></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>Figure 5 . 3 :</head><label>53</label><figDesc>Figure 5.3: Interface between DBN/DNN and HMM to form a DNN-HMM. This architecture, developed at Microsoft, has been successfully used in speech recognition experiments reported in<ref type="bibr" target="#b66">[67,</ref><ref type="bibr" target="#b67">68]</ref>. [after<ref type="bibr" target="#b66">[67,</ref><ref type="bibr" target="#b67">68]</ref>, @IEEE].</figDesc><graphic coords="57,191.16,174.85,240.00,303.38" type="bitmap" /></figure>

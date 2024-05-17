@@ -1,1 +1,1 @@
-Topic: ['wikipedia', 'claim', 'system', 'citation', 'fraud', 'learning', 'one', 'credit', 'card', 'increase'], Probability: 0.9956
+Topic: ['wikipedia', 'claim', 'citation', 'system', 'card', 'model', 'source', 'human', 'user', 'information'], Probability: 0.9956

@@ -17,4 +17,4 @@ RUN python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt'); 
 # EXPOSE 5000
 
 # Run app.py when the container launches
-CMD ["bash", "-c", "python src/functionalities/grobid.py && python src/functionalities/wikidataProcess.py && python src/functionalities/openalex.py && python src/functionalities/abstract_lda.py && python src/functionalities/knowledge_graph.py && python src/api/app.py"]
+CMD ["bash", "-c", "python src/functionalities/grobid.py && python src/functionalities/wikidataProcess.py && python src/functionalities/openalex.py && python src/functionalities/abstract_lda.py && python src/functionalities/abstract_similarity.py && python src/functionalities/knowledge_graph.py && python src/api/app.py"]

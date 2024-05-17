@@ -1,20 +1,20 @@
-Topic 0: learning, transaction, model, machine, deep, fraud, network, technology, card, algorithm
+Topic 0: learning, technology, ml, ai, deep, higher, education, artificial, recent, paper
 
-Topic 1: wikipedia, claim, system, citation, fraud, learning, one, credit, card, increase
+Topic 1: ai, transaction, fraud, technology, card, algorithm, credit, machine, data, use
 
-Topic 2: model, fraud, wit, data, learning, ha, technique, information, card, wikipedia
+Topic 2: ai, transaction, development, sustainable, target, card, data, study, authorized, credit
 
-Topic 3: ai, learning, data, healthcare, deep, knowledge, linkage, graph, wikidata, wordnet
+Topic 3: task, text, row, knowledge, base, additional, table, generation, using, gap
 
-Topic 4: task, row, text, generation, knowledge, additional, table, base, using, filling
+Topic 4: wikipedia, claim, citation, system, card, model, source, human, user, information
 
-Topic 5: ai, learning, dl, deep, ha, gene, technology, human, application, article
+Topic 5: dl, gene, ha, credit, data, fraud, card, wiki, challenge, community
 
-Topic 6: learning, deep, application, processing, area, information, criterion, multimodal, use, research
+Topic 6: data, fraud, model, card, ha, disease, ml, credit, using, study
 
-Topic 7: ai, development, sustainable, target, study, impact, goal, sdgs, result, enable
+Topic 7: fraud, card, credit, imaging, increase, learning, algorithm, transaction, diagnostic, problem
 
-Topic 8: card, credit, transaction, fraud, part, customer, authorized, algorithm, increased, time
+Topic 8: application, deep, area, learning, processing, information, three, natural, language, use
 
-Topic 9: data, machine, model, learning, disease, ml, study, method, may, paper
+Topic 9: model, wit, learning, wikipedia, information, performance, article, multimodal, example, image
 

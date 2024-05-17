@@ -62,7 +62,6 @@ def get_metadata_fron_xml(xml_directory, title_directory, abstract_directory, ac
                     title_file.write(doi)
 
                 abstract_start = xml_content.find('<abstract>')
-                print(' For file: ', filename, ' abstract start: ', abstract_start)
                 if(abstract_start != -1):
                     abstract_start += len('<abstract>')
                     abstract_end = xml_content.find('</abstract>')

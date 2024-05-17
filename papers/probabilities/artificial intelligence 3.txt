@@ -1,1 +1,1 @@
-Topic: ['ai', 'learning', 'dl', 'deep', 'ha', 'gene', 'technology', 'human', 'application', 'article'], Probability: 0.9942
+Topic: ['learning', 'technology', 'ml', 'ai', 'deep', 'higher', 'education', 'artificial', 'recent', 'paper'], Probability: 0.9942

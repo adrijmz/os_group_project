@@ -29,8 +29,11 @@ def read_abstract(file_path):
         return file.read()
 
 def main():
-    abstract_dir = "../../papers/abstract"
+    abstract_dir = "papers/abstract"
+    similarities_dir = "papers/similarities"
     abstarct_to_show = 10
+
+    os.makedirs(similarities_dir, exist_ok=True)
     
     print("Calculating similarities between abstracts...\n")
     similarities = []
@@ -53,9 +56,12 @@ def main():
     print("\n")
 
     similarities.sort(key=lambda x: x[2], reverse=True)
-    for i in range(min(abstarct_to_show, len(similarities))):
-        abstract_file1, abstract_file2, similarity = similarities[i]
-        print(f"Abstract {abstract_file1} and Abstract {abstract_file2} have a similarity of {similarity:.4f}")
+    with open(os.path.join(similarities_dir, "similarities.txt"), 'w', encoding='utf-8') as file:
+        for i in range(min(abstarct_to_show, len(similarities))):
+            abstract_file1, abstract_file2, similarity = similarities[i]
+            print(f"Abstract {abstract_file1} and Abstract {abstract_file2} have a similarity of {similarity:.4f}")
+            file.write(f"{abstract_file1};{abstract_file2};{similarity:.4f}\n")
+
 
 if __name__ == "__main__":
     main()

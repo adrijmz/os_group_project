@@ -1,1 +1,1 @@
-Topic: ['ai', 'learning', 'dl', 'deep', 'ha', 'gene', 'technology', 'human', 'application', 'article'], Probability: 0.9928
+Topic: ['ai', 'transaction', 'fraud', 'technology', 'card', 'algorithm', 'credit', 'machine', 'data', 'use'], Probability: 0.9928

@@ -1,1 +1,1 @@
-Topic: ['learning', 'transaction', 'model', 'machine', 'deep', 'fraud', 'network', 'technology', 'card', 'algorithm'], Probability: 0.9920
+Topic: ['ai', 'transaction', 'fraud', 'technology', 'card', 'algorithm', 'credit', 'machine', 'data', 'use'], Probability: 0.9920
