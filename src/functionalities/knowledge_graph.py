@@ -6,7 +6,7 @@ import re
 import urllib
 
 class Publication:
-    def __init__(self, title, doi, cites, num_pages, publication_date, language, pages, published_in, main_subject, instance_of, author, topic, similar_papers):
+    def __init__(self, title, doi, cites, num_pages, publication_date, language, pages, published_in, main_subject, instance_of, author, topic, similar_papers, entities):
         self._title = title
         self._doi = doi
         self._cites = cites
@@ -20,6 +20,7 @@ class Publication:
         self._author = author
         self._topic = topic
         self._similar_papers = similar_papers
+        self._entities = entities
 
     # Getters
     def get_title(self):
@@ -60,6 +61,9 @@ class Publication:
 
     def get_similar_papers(self):
         return self._similar_papers
+    
+    def get_entities(self):
+        return self._entities
 
     #Other fucntions
     def display_info(self):
@@ -76,6 +80,7 @@ class Publication:
         print("Author:", self._author)
         print("Topic:", self._topic)
         print("Similar Papers:", self._similar_papers)
+        print("Entities:", self._entities)
         print("\n")
 
 list_papers = []
@@ -86,6 +91,7 @@ topic_and_prob_by_doi = {}
 possible_topics = []
 similarities_by_doi = {}
 similarities_by_title = []
+entities_by_doi = {}
 
 wikidata_res = 'papers/wikidata/results.csv'
 openalex_res = 'papers/openalex/results.csv'
@@ -93,6 +99,7 @@ prob_res = 'papers/probabilities/'
 doi_res = 'papers/doi/'
 topic_res = 'papers/topics/'
 similarities_res = 'papers/similarities/'
+ner_res = 'papers/ner/'
 aux_list = []
 
 # read authors
@@ -174,8 +181,16 @@ for filename in os.listdir(doi_res):
                         similarities_by_doi[doi2] = [doi1]
                     else:
                         similarities_by_doi[doi2].append(doi1)
-            
 
+# read ner
+for filename in os.listdir(ner_res):
+    with open(ner_res + filename, 'r') as f:
+        with open(doi_res + filename, 'r') as f2:
+            entities = f.read()
+            doi = f2.read()
+            entities = str(entities.replace('[', '').replace(']', '').replace(",", " -"))
+            entities_by_doi[doi] = entities
+            
 # read csv
 with open(wikidata_res, 'r') as f:
     # skip header
@@ -206,6 +221,11 @@ with open(wikidata_res, 'r') as f:
         else:
             topic = ""
 
+        if doi in entities_by_doi:
+            entities = entities_by_doi[doi]
+        else:
+            entities = ""
+
         similar_papers = []
         
         if doi in similarities_by_doi:
@@ -218,7 +238,7 @@ with open(wikidata_res, 'r') as f:
         title = title.replace(",", "")
         cleaned_topics = topic.replace("'", "").replace(",", "").replace(" ", "_")
 
-        paper = Publication(title, doi, line_split[2], line_split[3], line_split[4], line_split[5], line_split[6], line_split[7], line_split[8], line_split[9], authors, cleaned_topics, similar_papers)
+        paper = Publication(title, doi, line_split[2], line_split[3], line_split[4], line_split[5], line_split[6], line_split[7], line_split[8], line_split[9], authors, cleaned_topics, similar_papers, entities)
         list_papers.append(paper)
 
 
@@ -240,6 +260,7 @@ for paper in list_papers:
     g.add((paper_uri, URIRef("http://schema.org/author"), Literal(paper.get_author())))
     g.add((paper_uri, URIRef("http://schema.org/topic"), Literal(paper.get_topic())))
     g.add((paper_uri, URIRef("http://schema.org/similarPapers"), Literal(paper.get_similar_papers())))
+    g.add((paper_uri, URIRef("http://schema.org/acknowledges"), Literal(paper.get_entities())))
 
 for topic in possible_topics:
     topic_uri = URIRef("http://example.org/"+topic)
