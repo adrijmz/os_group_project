@@ -1,0 +1,1 @@
+['KTH Sustainability Office', 'Swedish Research Council', 'Jacobs Foundation', 'Swedish Foundation for Strategic Research', 'Autonomous Systems', 'Leibniz Competition', 'European Union', 'Horizon 2020', 'Research and Innovation', 'Ethics and Governance of AI Fund', 'F. N']

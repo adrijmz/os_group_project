@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 preferred-citation:
   authors:
     - family-names: "Jiménez Cano"
-    given-names: "Adrián"
+      given-names: "Adrián"
     - family-names: "Guerra Pantojo"
       given-names: "Daniel"
     - family-names: "Turégano Ramos"

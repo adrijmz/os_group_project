@@ -117,6 +117,7 @@ python src/functionalities/grobid.py
 python src/functionalities/wikidataProcess.py
 python src/functionalities/openalex.py
 python src/functionalities/abstract_lda.py
+python src/functionalities/ner.py
 python src/functionalities/knowledge_graph.py
 python src/api/app.py
 ```
