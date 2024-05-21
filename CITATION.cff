@@ -1,5 +1,5 @@
-cff-version: "1.0.0"
-message: "If you use this software, please cite it as below."
+title: "Extractor: Extract data from a PDF file"
+license: "MIT"
 authors:
   - family-names: "Jiménez Cano"
     given-names: "Adrián"
@@ -7,7 +7,16 @@ authors:
     given-names: "Daniel"
   - family-names: "Turégano Ramos"
     given-names: "Adrián"
-title: "Knowledge Graph from PDF papers"
-year: 2024
-doi: "10.5281/zenodo.11200165"
-url: "https://github.com/adrijmz/os_group_project"
+cff-version: "1.0.0"
+preferred-citation:
+  authors:
+  - family-names: "Jiménez Cano"
+    given-names: "Adrián"
+  - family-names: "Guerra Pantojo"
+    given-names: "Daniel"
+  - family-names: "Turégano Ramos"
+    given-names: "Adrián"
+  title: "Extractor: Extract data from a PDF file"
+  type: "software"
+  year: 2024
+  doi: "10.5281/zenodo.11200165"
